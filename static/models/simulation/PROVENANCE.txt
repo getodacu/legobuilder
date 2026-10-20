@@ -1,0 +1,42 @@
+RoboBuild original procedural simulation props
+Author attribution: RoboBuild
+Source path: scripts/assets/simulation-props.py
+Source SHA-256: 6e7c96eff0109b55c33b95681290d9502559048cb852f5562d250629c1a41947
+License identifier: LicenseRef-Project-Original
+
+This identifier records original project authorship, not a new license grant.
+This source and generated work remain subject to the project's applicable
+licensing; this notice does not change it, assert public domain, or claim any
+third-party license/endorsement. No external meshes, CAD, textures, fonts,
+vendor logos, manufacturer measurements, or copied assets are used.
+
+All dimensions below are OUR explicit original design parameters, not measured
+or manufacturer specifications. These are visual simulation props outside the
+official robot BOM and manual steps, not robot stand-ins. There is no physical
+validation, rigid-body, collision, material calibration, or friction claim.
+Evidence: app-authored; confidence 1 in authorship/design; sources [].
+
+robobuild-demo-block: unbranded teal demonstration foam-like polymer block,
+not an official Hand scoring brick. X16 x Y20(height) x Z32 mm, centered origin,
+1 mm inward edge bevel (4 segments). Runtime bounds mm:
+[-8,-10,-16] to [8,10,16]. Fixed material robobuild-demo-foam.
+
+robobuild-course-marker: X32 x Y48(height) x Z32 mm, base origin Y=0.
+Charcoal circular base outer diameter32 mm, height4 mm, inward bevel0.75 mm
+(3 segments). One continuous orange/white shared-ring tapered body, 64 radial
+segments, bottom radius11 mm, top radius3.5 mm, softened foot and top lip.
+The foot seats 0.5 mm inside the base. White bands Y16..24 and Y33..41 mm;
+all remaining body faces orange. Runtime bounds mm:
+[-16,0,-16] to [16,48,16]. Fixed materials robobuild-marker-charcoal,
+robobuild-marker-orange, robobuild-marker-white.
+
+Blender Z-up becomes glTF Y-up at export: (x,y,z) -> (x,z,-y).
+Meter mesh coordinates, baked object transforms, no recentering. GeometryAsset
+nativeUnits=m; nativeToScene identity rotation/position and uniform scale1000.
+This is the only meter-to-scene-mm conversion. Materials are fixed opaque PBR
+colors with authored roughness, not measured real-world material properties.
+No textures, external dependencies, animations, or Draco decoder requirement.
+
+Generated asset hashes:
+/models/simulation/demo-block.glb SHA-256 cd0cf1a0e73efe5c46c00d58dab26f35e5ad8ef9bb004cf07448b4106055ced4
+/models/simulation/course-marker.glb SHA-256 d4e72852acbda28bec2d42e4b09c2e85bb37d3a92e9bb2c5cabe5e9693be3e4c

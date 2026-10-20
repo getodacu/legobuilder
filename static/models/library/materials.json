@@ -1,0 +1,138 @@
+[
+  {
+    "id": "ldraw-0",
+    "color": "#1b2a34",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-1",
+    "color": "#1e5aa8",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-2",
+    "color": "#00852b",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-4",
+    "color": "#b40000",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-14",
+    "color": "#fac80a",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-15",
+    "color": "#f4f4f4",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-19",
+    "color": "#d7ba8c",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-26",
+    "color": "#901f76",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-47",
+    "color": "#fcfcfc",
+    "category": "transparent",
+    "opacity": 0.5,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-70",
+    "color": "#5f3109",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-71",
+    "color": "#969696",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-72",
+    "color": "#646464",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-322",
+    "color": "#68c3e2",
+    "category": "plastic",
+    "opacity": 1,
+    "roughness": 0.38,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-334",
+    "color": "#dfc176",
+    "category": "metal",
+    "opacity": 1,
+    "roughness": 0.25,
+    "metalness": 0.85
+  },
+  {
+    "id": "ldraw-494",
+    "color": "#d0d0d0",
+    "category": "metal",
+    "opacity": 1,
+    "roughness": 0.25,
+    "metalness": 0.85
+  },
+  {
+    "id": "ldraw-511",
+    "color": "#f4f4f4",
+    "category": "rubber",
+    "opacity": 1,
+    "roughness": 0.95,
+    "metalness": 0
+  },
+  {
+    "id": "ldraw-10322",
+    "color": "#68c3e2",
+    "category": "rubber",
+    "opacity": 1,
+    "roughness": 0.95,
+    "metalness": 0
+  }
+]

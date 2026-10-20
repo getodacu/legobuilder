@@ -1,0 +1,4209 @@
+{
+  "schemaVersion": 1,
+  "buildId": "advanced-driving-base",
+  "researchedOn": "2026-10-20",
+  "evidencePolicy": "All136 numbered steps manually inspected in rendered PDF imagery. Editorial observations are not manual quotations. Exact quantities below are visible parts-callout quantities, summed once at introduction. Null is unknown, never an inferred count. Catalogue inventories are not build quantities.",
+  "privateArtifactPolicy": "Downloaded PDFs, rendered pages, and screenshots are private research artifacts under .research-cache/advanced-driving-base, not distributable app/static assets. Public availability does not grant redistribution rights.",
+  "geometryCrosswalk": {
+    "documentation": "../lego-part-crosswalk.md",
+    "data": "lego-part-crosswalk.json",
+    "authority": "Contextual source-shape and material selection by build/local key; geometryId is an LDraw basename, not a certified manufacturer element ID or exact2019 mold. sourceCorrections includes black-angle4x4 and the book4 p11 coaxial stop-bush / p18 white cross-block corrections. Book4 p28 top axle/pin pair is also corrected to existing grey-axlepin2/18651."
+  },
+  "sources": [
+    {
+      "id": "lesson",
+      "url": "https://education.lego.com/en-us/lessons/prime-competition-ready/assembling-an-advanced-driving-base/",
+      "role": "Primary build lesson and original fivePDF links"
+    },
+    {
+      "id": "index",
+      "url": "https://education.lego.com/en-us/product-resources/spike-prime/downloads/building-instructions/",
+      "role": "Primary current named fivePDF links; Tools is a separate heading"
+    },
+    {
+      "id": "catalog-expansion",
+      "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt3e340817c93629a0/66016a8d9497241adef62cf9/le_spike_prime_expansion_element_overview_45681.pdf?locale=en-us",
+      "role": "Official element names, colors, element IDs;2021 overview is not a buildBOM",
+      "sha256": "ed30bc4270327240861fd556c30ce9a0c2dabc2831d15825e1c39befce4f161d",
+      "privateCachePath": ".research-cache/advanced-driving-base/element-overview-45681.pdf"
+    },
+    {
+      "id": "catalog-base",
+      "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt28cad37f1f002fd3/5f8801b982eaa522ca601c89/le_spike_prime_element_overview.pdf",
+      "role": "Official2019 base/expansion visual element overviews; names but no element IDs",
+      "sha256": "f59143b85a740fc0f7ebf0a5657929fad67b610c6ce22038501ced119c26946d",
+      "privateCachePath": ".research-cache/advanced-driving-base/element-overview-45678.pdf"
+    },
+    {
+      "id": "products",
+      "url": "https://education.lego.com/en-us/teacher-resources/lego-education-spike-prime/support-technical-info/lego-education-spike-prime-support-technical-info-product-info/",
+      "role": "ProductSKUs; product SKU is not an element ID"
+    }
+  ],
+  "documents": [
+    {
+      "book": 1,
+      "displayTitle": "Advanced Driving Base \u2014 Front Part",
+      "titleProvenance": "Official download-index link label; no title is embedded in the PDF metadata",
+      "pdfEmbeddedTitle": "",
+      "lessonSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us",
+      "downloadIndexSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt9d23fa8f579e63ea/5f8802346c54ba0f72c2081e/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us",
+      "privateCachePath": ".research-cache/advanced-driving-base/book1.pdf",
+      "indexPrivateCachePath": ".research-cache/advanced-driving-base/index-book1.pdf",
+      "sourceVariantsByteIdentical": true,
+      "sha256": "903c68142601a3fbd50a4c22eac64e1fd950bd037b667626e4eacc362e8d7901",
+      "byteLength": 25841573,
+      "pdfPageCount": 38,
+      "numberedStepCount": 38,
+      "pdfMetadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Adobe InDesign CC 2017 (Windows)",
+        "producer": "Adobe PDF Library 15.0",
+        "creationDate": "D:20191112133804+01'00'",
+        "modDate": "D:20191112133815+01'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "formalRevision": null,
+      "formalRevisionNote": "No explicit revision string located. PDF creation/modification timestamps and content SHA-256 are the locked revision evidence, not asset-URL timestamp strings.",
+      "pageMap": [
+        {
+          "pdfPage": 1,
+          "step": 1,
+          "extractedText": "9\n2x\n9\n1x\n1\n"
+        },
+        {
+          "pdfPage": 2,
+          "step": 2,
+          "extractedText": "2x\n2\n"
+        },
+        {
+          "pdfPage": 3,
+          "step": 3,
+          "extractedText": "2x\n3\n"
+        },
+        {
+          "pdfPage": 4,
+          "step": 4,
+          "extractedText": "1x\n4\n"
+        },
+        {
+          "pdfPage": 5,
+          "step": 5,
+          "extractedText": "5x\n5\n"
+        },
+        {
+          "pdfPage": 6,
+          "step": 6,
+          "extractedText": "2x\n2x\n6\n"
+        },
+        {
+          "pdfPage": 7,
+          "step": 7,
+          "extractedText": "6x\n7\n"
+        },
+        {
+          "pdfPage": 8,
+          "step": 8,
+          "extractedText": "8\n2x\n1x\n"
+        },
+        {
+          "pdfPage": 9,
+          "step": 9,
+          "extractedText": "1x\n1x\n9\n"
+        },
+        {
+          "pdfPage": 10,
+          "step": 10,
+          "extractedText": "10\n"
+        },
+        {
+          "pdfPage": 11,
+          "step": 11,
+          "extractedText": "4x\n1x\n11\n"
+        },
+        {
+          "pdfPage": 12,
+          "step": 12,
+          "extractedText": "1x\n1x\n12\n"
+        },
+        {
+          "pdfPage": 13,
+          "step": 13,
+          "extractedText": "1x\n13\n"
+        },
+        {
+          "pdfPage": 14,
+          "step": 14,
+          "extractedText": "14\n"
+        },
+        {
+          "pdfPage": 15,
+          "step": 15,
+          "extractedText": "1x\n15\n"
+        },
+        {
+          "pdfPage": 16,
+          "step": 16,
+          "extractedText": "2x\n16\n1x\n"
+        },
+        {
+          "pdfPage": 17,
+          "step": 17,
+          "extractedText": "1x\n17\n"
+        },
+        {
+          "pdfPage": 18,
+          "step": 18,
+          "extractedText": "1x\n1x\n18\n"
+        },
+        {
+          "pdfPage": 19,
+          "step": 19,
+          "extractedText": "19\n"
+        },
+        {
+          "pdfPage": 20,
+          "step": 20,
+          "extractedText": "2x\n20\n"
+        },
+        {
+          "pdfPage": 21,
+          "step": 21,
+          "extractedText": "1x\n21\n"
+        },
+        {
+          "pdfPage": 22,
+          "step": 22,
+          "extractedText": "22\n"
+        },
+        {
+          "pdfPage": 23,
+          "step": 23,
+          "extractedText": "2x\n23\n1x\n"
+        },
+        {
+          "pdfPage": 24,
+          "step": 24,
+          "extractedText": "1x\n24\n"
+        },
+        {
+          "pdfPage": 25,
+          "step": 25,
+          "extractedText": "1x\n1x\n25\n"
+        },
+        {
+          "pdfPage": 26,
+          "step": 26,
+          "extractedText": "26\n"
+        },
+        {
+          "pdfPage": 27,
+          "step": 27,
+          "extractedText": "2x\n27\n"
+        },
+        {
+          "pdfPage": 28,
+          "step": 28,
+          "extractedText": "1x\n28\n"
+        },
+        {
+          "pdfPage": 29,
+          "step": 29,
+          "extractedText": "29\n"
+        },
+        {
+          "pdfPage": 30,
+          "step": 30,
+          "extractedText": "15\n15\n1x\n30\n"
+        },
+        {
+          "pdfPage": 31,
+          "step": 31,
+          "extractedText": "4x\n2x\n31\n"
+        },
+        {
+          "pdfPage": 32,
+          "step": 32,
+          "extractedText": "2x\n32\n"
+        },
+        {
+          "pdfPage": 33,
+          "step": 33,
+          "extractedText": "33\n"
+        },
+        {
+          "pdfPage": 34,
+          "step": 34,
+          "extractedText": "4x\n2x\n34\n"
+        },
+        {
+          "pdfPage": 35,
+          "step": 35,
+          "extractedText": "35\n"
+        },
+        {
+          "pdfPage": 36,
+          "step": 36,
+          "extractedText": "36\n"
+        },
+        {
+          "pdfPage": 37,
+          "step": 37,
+          "extractedText": "2x\n1x\n37\n"
+        },
+        {
+          "pdfPage": 38,
+          "step": 38,
+          "extractedText": "38\n"
+        }
+      ]
+    },
+    {
+      "book": 2,
+      "displayTitle": "Advanced Driving Base \u2014 Right Side",
+      "titleProvenance": "Official download-index link label; no title is embedded in the PDF metadata",
+      "pdfEmbeddedTitle": "",
+      "lessonSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us",
+      "downloadIndexSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt0ee7fdaec9e58ae1/5f88021925f8972408a02fde/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us",
+      "privateCachePath": ".research-cache/advanced-driving-base/book2.pdf",
+      "indexPrivateCachePath": ".research-cache/advanced-driving-base/index-book2.pdf",
+      "sourceVariantsByteIdentical": true,
+      "sha256": "7985dd81ea0a880de3ac0223f4d2e382ff359cdad3bc733a688a19c5506a758b",
+      "byteLength": 12523868,
+      "pdfPageCount": 24,
+      "numberedStepCount": 24,
+      "pdfMetadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Adobe InDesign CC 2017 (Windows)",
+        "producer": "Adobe PDF Library 15.0",
+        "creationDate": "D:20191112134121+01'00'",
+        "modDate": "D:20191112134126+01'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "formalRevision": null,
+      "formalRevisionNote": "No explicit revision string located. PDF creation/modification timestamps and content SHA-256 are the locked revision evidence, not asset-URL timestamp strings.",
+      "pageMap": [
+        {
+          "pdfPage": 1,
+          "step": 1,
+          "extractedText": "5x\n1\n1x\n"
+        },
+        {
+          "pdfPage": 2,
+          "step": 2,
+          "extractedText": "1x\n2\n"
+        },
+        {
+          "pdfPage": 3,
+          "step": 3,
+          "extractedText": "2x\n1x\n2x\n3\n"
+        },
+        {
+          "pdfPage": 4,
+          "step": 4,
+          "extractedText": "4\n1x\n"
+        },
+        {
+          "pdfPage": 5,
+          "step": 5,
+          "extractedText": "2x\n5\n"
+        },
+        {
+          "pdfPage": 6,
+          "step": 6,
+          "extractedText": "1x\n6\n"
+        },
+        {
+          "pdfPage": 7,
+          "step": 7,
+          "extractedText": "5\n5\n1x\n1x\n7\n"
+        },
+        {
+          "pdfPage": 8,
+          "step": 8,
+          "extractedText": "1x\n1x\n8\n"
+        },
+        {
+          "pdfPage": 9,
+          "step": 9,
+          "extractedText": "3\n1x\n3\n1x\n9\n"
+        },
+        {
+          "pdfPage": 10,
+          "step": 10,
+          "extractedText": "1x\n10\n"
+        },
+        {
+          "pdfPage": 11,
+          "step": 11,
+          "extractedText": "1x\n11\n"
+        },
+        {
+          "pdfPage": 12,
+          "step": 12,
+          "extractedText": "1x\n12\n"
+        },
+        {
+          "pdfPage": 13,
+          "step": 13,
+          "extractedText": "13\n"
+        },
+        {
+          "pdfPage": 14,
+          "step": 14,
+          "extractedText": "4\n4\n1x\n14\n"
+        },
+        {
+          "pdfPage": 15,
+          "step": 15,
+          "extractedText": "2x\n15\n"
+        },
+        {
+          "pdfPage": 16,
+          "step": 16,
+          "extractedText": "2x\n1x\n16\n"
+        },
+        {
+          "pdfPage": 17,
+          "step": 17,
+          "extractedText": "1x\n17\n"
+        },
+        {
+          "pdfPage": 18,
+          "step": 18,
+          "extractedText": "1x\n18\n"
+        },
+        {
+          "pdfPage": 19,
+          "step": 19,
+          "extractedText": "2x\n19\n"
+        },
+        {
+          "pdfPage": 20,
+          "step": 20,
+          "extractedText": "1x\n20\n"
+        },
+        {
+          "pdfPage": 21,
+          "step": 21,
+          "extractedText": "1x\n21\n"
+        },
+        {
+          "pdfPage": 22,
+          "step": 22,
+          "extractedText": "22\n"
+        },
+        {
+          "pdfPage": 23,
+          "step": 23,
+          "extractedText": "1x\n1x\n23\n"
+        },
+        {
+          "pdfPage": 24,
+          "step": 24,
+          "extractedText": "24\n"
+        }
+      ]
+    },
+    {
+      "book": 3,
+      "displayTitle": "Advanced Driving Base \u2014 Left Side",
+      "titleProvenance": "Official download-index link label; no title is embedded in the PDF metadata",
+      "pdfEmbeddedTitle": "",
+      "lessonSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us",
+      "downloadIndexSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt493de8c0e8747730/5f88021dce1f390e99419eca/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us",
+      "privateCachePath": ".research-cache/advanced-driving-base/book3.pdf",
+      "indexPrivateCachePath": ".research-cache/advanced-driving-base/index-book3.pdf",
+      "sourceVariantsByteIdentical": true,
+      "sha256": "03f0b4d6bdf4daf5f7fbbaa27a8443ce253a84582f0af4ee9f5ca1a981cd60c3",
+      "byteLength": 13043161,
+      "pdfPageCount": 24,
+      "numberedStepCount": 24,
+      "pdfMetadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Adobe InDesign CC 2017 (Windows)",
+        "producer": "Adobe PDF Library 15.0",
+        "creationDate": "D:20191112134319+01'00'",
+        "modDate": "D:20191112134325+01'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "formalRevision": null,
+      "formalRevisionNote": "No explicit revision string located. PDF creation/modification timestamps and content SHA-256 are the locked revision evidence, not asset-URL timestamp strings.",
+      "pageMap": [
+        {
+          "pdfPage": 1,
+          "step": 1,
+          "extractedText": "5x\n1\n1x\n"
+        },
+        {
+          "pdfPage": 2,
+          "step": 2,
+          "extractedText": "1x\n2\n"
+        },
+        {
+          "pdfPage": 3,
+          "step": 3,
+          "extractedText": "2x\n1x\n2x\n3\n"
+        },
+        {
+          "pdfPage": 4,
+          "step": 4,
+          "extractedText": "4\n1x\n"
+        },
+        {
+          "pdfPage": 5,
+          "step": 5,
+          "extractedText": "2x\n5\n"
+        },
+        {
+          "pdfPage": 6,
+          "step": 6,
+          "extractedText": "1x\n6\n"
+        },
+        {
+          "pdfPage": 7,
+          "step": 7,
+          "extractedText": "5\n5\n1x\n1x\n7\n"
+        },
+        {
+          "pdfPage": 8,
+          "step": 8,
+          "extractedText": "1x\n1x\n8\n"
+        },
+        {
+          "pdfPage": 9,
+          "step": 9,
+          "extractedText": "3\n1x\n3\n1x\n9\n"
+        },
+        {
+          "pdfPage": 10,
+          "step": 10,
+          "extractedText": "1x\n10\n"
+        },
+        {
+          "pdfPage": 11,
+          "step": 11,
+          "extractedText": "1x\n11\n"
+        },
+        {
+          "pdfPage": 12,
+          "step": 12,
+          "extractedText": "1x\n12\n"
+        },
+        {
+          "pdfPage": 13,
+          "step": 13,
+          "extractedText": "13\n"
+        },
+        {
+          "pdfPage": 14,
+          "step": 14,
+          "extractedText": "4\n4\n1x\n14\n"
+        },
+        {
+          "pdfPage": 15,
+          "step": 15,
+          "extractedText": "2x\n15\n"
+        },
+        {
+          "pdfPage": 16,
+          "step": 16,
+          "extractedText": "2x\n1x\n16\n"
+        },
+        {
+          "pdfPage": 17,
+          "step": 17,
+          "extractedText": "1x\n17\n"
+        },
+        {
+          "pdfPage": 18,
+          "step": 18,
+          "extractedText": "1x\n18\n"
+        },
+        {
+          "pdfPage": 19,
+          "step": 19,
+          "extractedText": "2x\n19\n"
+        },
+        {
+          "pdfPage": 20,
+          "step": 20,
+          "extractedText": "1x\n20\n"
+        },
+        {
+          "pdfPage": 21,
+          "step": 21,
+          "extractedText": "1x\n21\n"
+        },
+        {
+          "pdfPage": 22,
+          "step": 22,
+          "extractedText": "22\n"
+        },
+        {
+          "pdfPage": 23,
+          "step": 23,
+          "extractedText": "1x\n1x\n23\n"
+        },
+        {
+          "pdfPage": 24,
+          "step": 24,
+          "extractedText": "24\n"
+        }
+      ]
+    },
+    {
+      "book": 4,
+      "displayTitle": "Advanced Driving Base \u2014 Rear Part",
+      "titleProvenance": "Official download-index link label; no title is embedded in the PDF metadata",
+      "pdfEmbeddedTitle": "",
+      "lessonSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us",
+      "downloadIndexSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us",
+      "privateCachePath": ".research-cache/advanced-driving-base/book4.pdf",
+      "indexPrivateCachePath": ".research-cache/advanced-driving-base/index-book4.pdf",
+      "sourceVariantsByteIdentical": true,
+      "sha256": "6d8c32bc457e17a2f816da54a422f9cf4f0cde55235a5d3d610816d846342b89",
+      "byteLength": 14096333,
+      "pdfPageCount": 31,
+      "numberedStepCount": 31,
+      "pdfMetadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Adobe InDesign CC 2017 (Windows)",
+        "producer": "Adobe PDF Library 15.0",
+        "creationDate": "D:20191112134215+01'00'",
+        "modDate": "D:20191112134221+01'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "formalRevision": null,
+      "formalRevisionNote": "No explicit revision string located. PDF creation/modification timestamps and content SHA-256 are the locked revision evidence, not asset-URL timestamp strings.",
+      "pageMap": [
+        {
+          "pdfPage": 1,
+          "step": 1,
+          "extractedText": "9\n2x\n9\n1x\n1\n"
+        },
+        {
+          "pdfPage": 2,
+          "step": 2,
+          "extractedText": "9\n9\n1x\n2\n"
+        },
+        {
+          "pdfPage": 3,
+          "step": 3,
+          "extractedText": "2x\n3\n"
+        },
+        {
+          "pdfPage": 4,
+          "step": 4,
+          "extractedText": "4x\n4\n"
+        },
+        {
+          "pdfPage": 5,
+          "step": 5,
+          "extractedText": "5\n1x\n"
+        },
+        {
+          "pdfPage": 6,
+          "step": 6,
+          "extractedText": "4x\n6\n"
+        },
+        {
+          "pdfPage": 7,
+          "step": 7,
+          "extractedText": "4x\n1x\n7\n"
+        },
+        {
+          "pdfPage": 8,
+          "step": 8,
+          "extractedText": "1x\n8\n"
+        },
+        {
+          "pdfPage": 9,
+          "step": 9,
+          "extractedText": "9\n"
+        },
+        {
+          "pdfPage": 10,
+          "step": 10,
+          "extractedText": "1x\n10\n"
+        },
+        {
+          "pdfPage": 11,
+          "step": 11,
+          "extractedText": "4x\n4x\n11\n"
+        },
+        {
+          "pdfPage": 12,
+          "step": 12,
+          "extractedText": "12\n"
+        },
+        {
+          "pdfPage": 13,
+          "step": 13,
+          "extractedText": "9\n9\n2x\n13\n"
+        },
+        {
+          "pdfPage": 14,
+          "step": 14,
+          "extractedText": "1x\n1x\n14\n"
+        },
+        {
+          "pdfPage": 15,
+          "step": 15,
+          "extractedText": "15\n"
+        },
+        {
+          "pdfPage": 16,
+          "step": 16,
+          "extractedText": "3\n3\n3\n3\n2x\n3\n4x\n16\n"
+        },
+        {
+          "pdfPage": 17,
+          "step": 17,
+          "extractedText": "2x\n2x\n17\n"
+        },
+        {
+          "pdfPage": 18,
+          "step": 18,
+          "extractedText": "2x\n18\n"
+        },
+        {
+          "pdfPage": 19,
+          "step": 19,
+          "extractedText": "19\n"
+        },
+        {
+          "pdfPage": 20,
+          "step": 20,
+          "extractedText": "13\n2x\n13\n1x\n20\n"
+        },
+        {
+          "pdfPage": 21,
+          "step": 21,
+          "extractedText": "21\n"
+        },
+        {
+          "pdfPage": 22,
+          "step": 22,
+          "extractedText": "13\n13\n1x\n22\n"
+        },
+        {
+          "pdfPage": 23,
+          "step": 23,
+          "extractedText": "4x\n2x\n23\n"
+        },
+        {
+          "pdfPage": 24,
+          "step": 24,
+          "extractedText": "24\n"
+        },
+        {
+          "pdfPage": 25,
+          "step": 25,
+          "extractedText": "2x\n1x\n25\n"
+        },
+        {
+          "pdfPage": 26,
+          "step": 26,
+          "extractedText": "26\n"
+        },
+        {
+          "pdfPage": 27,
+          "step": 27,
+          "extractedText": "2x\n1x\n27\n"
+        },
+        {
+          "pdfPage": 28,
+          "step": 28,
+          "extractedText": "28\n2x\n"
+        },
+        {
+          "pdfPage": 29,
+          "step": 29,
+          "extractedText": "29\n"
+        },
+        {
+          "pdfPage": 30,
+          "step": 30,
+          "extractedText": "7\n7\n2x\n7\n2x\n30\n"
+        },
+        {
+          "pdfPage": 31,
+          "step": 31,
+          "extractedText": "31\n"
+        }
+      ]
+    },
+    {
+      "book": 5,
+      "displayTitle": "Advanced Driving Base \u2014 Assembly",
+      "titleProvenance": "Official download-index link label; no title is embedded in the PDF metadata",
+      "pdfEmbeddedTitle": "",
+      "lessonSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us",
+      "downloadIndexSource": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt12341bbb85ea4318/5f8802c42792080f77214054/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us",
+      "privateCachePath": ".research-cache/advanced-driving-base/book5.pdf",
+      "indexPrivateCachePath": ".research-cache/advanced-driving-base/index-book5.pdf",
+      "sourceVariantsByteIdentical": true,
+      "sha256": "5099a43ac8a262d8a3003145699bc4bcb4ebef07d23d1a4414f080c5dc98d935",
+      "byteLength": 34765847,
+      "pdfPageCount": 23,
+      "numberedStepCount": 19,
+      "pdfMetadata": {
+        "format": "PDF 1.4",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Adobe InDesign CC 2017 (Windows)",
+        "producer": "Adobe PDF Library 15.0",
+        "creationDate": "D:20190821074419+02'00'",
+        "modDate": "D:20190821074438+02'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "formalRevision": null,
+      "formalRevisionNote": "No explicit revision string located. PDF creation/modification timestamps and content SHA-256 are the locked revision evidence, not asset-URL timestamp strings.",
+      "pageMap": [
+        {
+          "pdfPage": 1,
+          "step": null,
+          "extractedText": "1\n2\n4\n5\n3\n+\n+\n+\n"
+        },
+        {
+          "pdfPage": 2,
+          "step": null,
+          "extractedText": ""
+        },
+        {
+          "pdfPage": 3,
+          "step": null,
+          "extractedText": ""
+        },
+        {
+          "pdfPage": 4,
+          "step": 1,
+          "extractedText": "D\n1\n1x\n"
+        },
+        {
+          "pdfPage": 5,
+          "step": 2,
+          "extractedText": "B\nF\n2\n"
+        },
+        {
+          "pdfPage": 6,
+          "step": 3,
+          "extractedText": "A\n3\n"
+        },
+        {
+          "pdfPage": 7,
+          "step": 4,
+          "extractedText": "C\n4\n"
+        },
+        {
+          "pdfPage": 8,
+          "step": 5,
+          "extractedText": "E\n5\n"
+        },
+        {
+          "pdfPage": 9,
+          "step": 6,
+          "extractedText": "6\n"
+        },
+        {
+          "pdfPage": 10,
+          "step": 7,
+          "extractedText": "7\n"
+        },
+        {
+          "pdfPage": 11,
+          "step": 8,
+          "extractedText": "8\n"
+        },
+        {
+          "pdfPage": 12,
+          "step": 9,
+          "extractedText": "9\n"
+        },
+        {
+          "pdfPage": 13,
+          "step": 10,
+          "extractedText": "10\n"
+        },
+        {
+          "pdfPage": 14,
+          "step": 11,
+          "extractedText": "2x\n1x\n11\n"
+        },
+        {
+          "pdfPage": 15,
+          "step": 12,
+          "extractedText": "12\n"
+        },
+        {
+          "pdfPage": 16,
+          "step": 13,
+          "extractedText": "5\n5\n5\n2x\n13\n"
+        },
+        {
+          "pdfPage": 17,
+          "step": 14,
+          "extractedText": "2x\n14\n"
+        },
+        {
+          "pdfPage": 18,
+          "step": 15,
+          "extractedText": "1x\n1x\n15\n"
+        },
+        {
+          "pdfPage": 19,
+          "step": 16,
+          "extractedText": "1x\n16\n"
+        },
+        {
+          "pdfPage": 20,
+          "step": 17,
+          "extractedText": "4x\n17\n"
+        },
+        {
+          "pdfPage": 21,
+          "step": 18,
+          "extractedText": "18\n"
+        },
+        {
+          "pdfPage": 22,
+          "step": 19,
+          "extractedText": "19\n"
+        },
+        {
+          "pdfPage": 23,
+          "step": null,
+          "extractedText": ""
+        }
+      ]
+    }
+  ],
+  "parts": {
+    "black-pin2": {
+      "name": "Connector Peg With Friction",
+      "color": "Black",
+      "elementId": "6279875",
+      "catalogPage": 1,
+      "identifierCaveat": "2021 element overview identifier; exact 2019 mold/revision is not resolved",
+      "ldrawShapeCandidates": [
+        "2780.dat",
+        "61332.dat"
+      ],
+      "ldrawCandidateStatus": "Geometry alternatives, not verified interchangeable historical molds"
+    },
+    "black-beam9": {
+      "name": "Beam, 9",
+      "color": "Black",
+      "elementId": "4645732",
+      "catalogPage": 1,
+      "holeGrid": "9 collinear through holes",
+      "ldrawShapeCandidate": "40490.dat",
+      "ldrawSource": "https://library.ldraw.org/library/official/parts/40490.dat"
+    },
+    "grey-pinbeam3": {
+      "name": "Beam With 4 Connector Pegs, 3",
+      "color": "Grey",
+      "elementId": "6282158",
+      "catalogPage": 2,
+      "identifierCaveat": "2021 identifier; exact 2019 mold/revision unresolved. The 2019 manual visibly shows a round center side hole, so do not replace with a cross-hole mold without comparison.",
+      "ldrawShapeCandidates": [
+        "48989.dat",
+        "65489.dat"
+      ],
+      "ldrawCandidateStatus": "Old round-center connector48989 versus newer cross-center65489 must be distinguished"
+    },
+    "frame11x15": {
+      "name": "Frame, 11x15",
+      "color": "Medium Azur",
+      "elementId": "6245375",
+      "catalogPage": 1,
+      "holeGrid": "11x15 outer grid; not a solid plate"
+    },
+    "blue-pin3": {
+      "name": "Connector Peg With Friction, 3",
+      "color": "Blue",
+      "elementId": "4514553",
+      "catalogPage": 1
+    },
+    "white-doublecross": {
+      "name": "Double Cross Block",
+      "color": "White",
+      "elementId": "6276981",
+      "catalogPage": 2,
+      "sourceCorrection": {
+        "crosswalk": "lego-part-crosswalk.json#/sourceCorrections/11",
+        "evidence": [
+          {
+            "book": 4,
+            "pdfPage": 16,
+            "printedStep": 16
+          },
+          {
+            "book": 4,
+            "pdfPage": 18,
+            "printedStep": 18
+          }
+        ],
+        "detail": "p18 callout is two white axle/pin/axle cross blocks fitted to four yellow axles, not the former grey-anglepin3/55615 association. Merge that mistaken two-unit family into white-doublecross: book4 2\u21924, wholeADB 4\u21926; removed family2\u21920; book4 68 and wholeADB234 unchanged. No integral pins or current-kit inventory recounted."
+      }
+    },
+    "medium-motor": {
+      "name": "Medium Angular Motor",
+      "color": "White / Medium Azur housing",
+      "elementId": null,
+      "catalogPage": null,
+      "identifierCaveat": "2019 base overview labels Medium Motor, but does not print element ID; do not substitute large motor ID",
+      "productSku": "45603"
+    },
+    "blue-wireclip": {
+      "name": "Wire Clip With Cross Hole",
+      "color": "Blue",
+      "elementId": null,
+      "catalogPage": null
+    },
+    "green-wireclip": {
+      "name": "Wire Clip With Cross Hole",
+      "color": "Green",
+      "elementId": null,
+      "catalogPage": null
+    },
+    "red-wireclip": {
+      "name": "Wire Clip With Cross Hole",
+      "color": "Red",
+      "elementId": "6263067",
+      "catalogPage": 1
+    },
+    "magenta-wireclip": {
+      "name": "Wire Clip With Cross Hole",
+      "color": "Dark Pink",
+      "elementId": null,
+      "catalogPage": null
+    },
+    "yellow-wireclip": {
+      "name": "Wire Clip With Cross Hole",
+      "color": "Yellow",
+      "elementId": "6263069",
+      "catalogPage": 1
+    },
+    "pink-connector3": {
+      "name": "Connector Beam 1x3x3",
+      "color": "Dark Pink",
+      "elementId": "6252656",
+      "catalogPage": 2
+    },
+    "grey-iframe3x5": {
+      "name": "I-Frame, 3x5 90 degrees",
+      "color": "Grey",
+      "elementId": "6055519",
+      "catalogPage": 2
+    },
+    "color-sensor": {
+      "name": "Color Sensor",
+      "color": "White / Black housing",
+      "elementId": "6217705",
+      "catalogPage": 2,
+      "productSku": "45605"
+    },
+    "ballcup": {
+      "name": "I-Frame With Ball Cup, 3x5 / diameter19mm",
+      "color": "Medium Azur",
+      "elementId": "6261590",
+      "catalogPage": 1
+    },
+    "ball19": {
+      "name": "Ball, diameter19mm",
+      "color": "White",
+      "elementId": "6261647",
+      "catalogPage": 2
+    },
+    "azur-angle3x5": {
+      "name": "Angular Beam, 3x5",
+      "color": "Medium Azur",
+      "elementId": "6173003",
+      "catalogPage": 1
+    },
+    "black-beam15": {
+      "name": "Beam, 15",
+      "color": "Black",
+      "elementId": "4542573",
+      "catalogPage": 1
+    },
+    "red-axlepin3": {
+      "name": "Connector Peg With Friction / Axle, 2+1",
+      "color": "Red",
+      "elementId": "6209519",
+      "catalogPage": 1
+    },
+    "yellow-brick2x4": {
+      "name": "Brick With Cross Holes, 2x4",
+      "color": "Yellow",
+      "elementId": "6244914",
+      "catalogPage": 1
+    },
+    "black-tube1": {
+      "name": "Tube, 1",
+      "color": "Black",
+      "elementId": "6121485",
+      "catalogPage": 1
+    },
+    "grey-gear28": {
+      "name": "Double Bevel Gear, 28 Tooth",
+      "color": "Grey",
+      "elementId": "6259270",
+      "catalogPage": 2,
+      "identifierCaveat": "Matched manual toothed disc image to overview image; manual does not print tooth count or ID"
+    },
+    "large-motor": {
+      "name": "Large Angular Motor",
+      "color": "White / Medium Azur housing",
+      "elementId": "6265698",
+      "catalogPage": 2,
+      "productSku": "45602"
+    },
+    "black-frame5x7": {
+      "name": "Frame, 5x7",
+      "color": "Black",
+      "elementId": "6016154",
+      "catalogPage": 1
+    },
+    "wheel88": {
+      "name": "Wheel, 88x14mm",
+      "color": "Black with Medium Azur tread",
+      "elementId": "6261593",
+      "catalogPage": 1
+    },
+    "grey-axle5": {
+      "name": "Axle, 5",
+      "color": "Grey",
+      "elementId": "4211639",
+      "catalogPage": 2
+    },
+    "grey-bush": {
+      "name": "Bushing",
+      "color": "Grey",
+      "elementId": "6275844",
+      "catalogPage": 2,
+      "identifierCaveat": "2021 element identifier; exact 2019 mold unresolved"
+    },
+    "black-doubleangle3x7": {
+      "name": "Double Angular Beam, 3x7 45 degrees",
+      "color": "Black",
+      "elementId": "6271152",
+      "catalogPage": 1
+    },
+    "grey-cross2x1": {
+      "name": "Perpendicular Cross Block, 2x1 (visual family)",
+      "color": "Grey",
+      "elementId": null,
+      "catalogPage": null,
+      "identifierCaveat": "Same grey perpendicular connector in side steps7,8,11; exact 2019 element identifier unresolved, not a plain bushing",
+      "ldrawShapeCandidate": "6536.dat",
+      "ldrawSource": "https://library.ldraw.org/parts/11777",
+      "ldrawCandidateStatus": "Source-backed shape candidate only; no historical official element-ID crosswalk established",
+      "ldrawLicense": "CC BY 4.0",
+      "ldrawAuthor": "James Jessiman"
+    },
+    "yellow-axle3": {
+      "name": "Axle, 3",
+      "color": "Yellow",
+      "elementId": "6130007",
+      "catalogPage": 1
+    },
+    "black-axle4": {
+      "name": "Axle, 4",
+      "color": "Black",
+      "elementId": "370526",
+      "catalogPage": 1
+    },
+    "black-angle4x4": {
+      "name": "Technic Cross Block 3 x 2 (Axle/Triple Pin)",
+      "color": "Light bluish gray",
+      "elementId": null,
+      "catalogPage": null,
+      "geometryId": "63869",
+      "ldrawShapeCandidate": "63869.dat",
+      "ldrawSource": "https://library.ldraw.org/library/official/parts/63869.dat",
+      "identificationStatus": "high-source-shape; exact 2019 mold and manufacturer element ID unresolved",
+      "identifierCaveat": "Same functional family as grey-cross3x2; its 2021 element association is not transferred to this key. geometryId selects geometry only.",
+      "sourceCorrection": {
+        "crosswalk": "lego-part-crosswalk.json#/sourceCorrections/0",
+        "originalName": "Angular Beam, 4x4",
+        "originalColor": "Black",
+        "rejectedElementId": "6278125",
+        "rejectedCatalogPage": 1,
+        "evidence": [
+          {
+            "book": 2,
+            "pdfPage": 18,
+            "step": 18
+          },
+          {
+            "book": 3,
+            "pdfPage": 18,
+            "step": 18
+          }
+        ],
+        "detail": "Both callouts show the gray 3x2 cross block also introduced at page 16, not a black bent beam. Stable key and both quantity-1 callouts retained."
+      }
+    },
+    "grey-cross3x2": {
+      "name": "Cross Block, 3x2",
+      "color": "Grey",
+      "elementId": "6331441",
+      "catalogPage": 2,
+      "identifierCaveat": "2021 identifier; exact 2019 mold unresolved"
+    },
+    "yellow-beam3": {
+      "name": "Beam, 3",
+      "color": "Yellow",
+      "elementId": "4153707",
+      "catalogPage": 1
+    },
+    "grey-pin3cross": {
+      "name": "Technic Pin Long with Stop Bush",
+      "color": "Light bluish gray",
+      "elementId": "4211865",
+      "catalogPage": 2,
+      "geometryId": "32054",
+      "ldrawShapeCandidate": "32054.dat",
+      "ldrawSource": "https://library.ldraw.org/library/official/parts/32054.dat",
+      "identificationStatus": "high-source-shape; exact 2019 mold not certified",
+      "sourceCorrection": {
+        "crosswalk": "lego-part-crosswalk.json#/sourceCorrections/10",
+        "originalName": "Connector Peg With Friction / Cross Hole, 2+1",
+        "rejectedGeometryId": "87082",
+        "evidence": [
+          {
+            "book": 4,
+            "pdfPage": 11,
+            "printedStep": 11
+          },
+          {
+            "book": 4,
+            "pdfPage": 12,
+            "printedStep": 12
+          }
+        ]
+      }
+    },
+    "azur-wireclip": {
+      "name": "Wire Clip With Cross Hole",
+      "color": "Medium Azur",
+      "elementId": "6263192",
+      "catalogPage": 1
+    },
+    "azur-beam13": {
+      "name": "Beam, 13",
+      "color": "Medium Azur",
+      "elementId": "6261643",
+      "catalogPage": 1
+    },
+    "yellow-tube2": {
+      "name": "Tube, 2",
+      "color": "Yellow",
+      "elementId": "6173122",
+      "catalogPage": 1
+    },
+    "pink-frame7x11": {
+      "name": "Frame, 7x11",
+      "color": "Dark Pink",
+      "elementId": "6252663",
+      "catalogPage": 2
+    },
+    "azur-beam7": {
+      "name": "Beam, 7",
+      "color": "Medium Azur",
+      "elementId": "6261638",
+      "catalogPage": 1
+    },
+    "grey-axlepin2": {
+      "name": "Straight Axle With Connector Peg, axle2 + pin1 (visual family)",
+      "color": "Grey",
+      "elementId": null,
+      "catalogPage": null,
+      "identifierCaveat": "Rear step30 shows straight grey axle2 plus pin1; exact element identifier unresolved",
+      "ldrawShapeCandidate": "18651.dat",
+      "ldrawSource": "https://library.ldraw.org/parts/1221",
+      "ldrawCandidateStatus": "Source-backed shape candidate only; no historical official element-ID crosswalk established.11214 is the opposite2L-pin variant and is not this shape.",
+      "ldrawLicense": "CC BY 4.0",
+      "ldrawAuthor": "Owen Burgoyne [C3POwen]",
+      "sourceCorrection": {
+        "crosswalk": "lego-part-crosswalk.json#/sourceCorrections/12",
+        "evidence": [
+          {
+            "book": 4,
+            "pdfPage": 28,
+            "printedStep": 28
+          },
+          {
+            "book": 4,
+            "pdfPage": 30,
+            "printedStep": 30
+          },
+          {
+            "book": 5,
+            "pdfPage": 12,
+            "printedStep": 9
+          }
+        ],
+        "detail": "Book4 p28 introduces two gray2L axle/1L pin connectors, same shape as the bottom pair on p30, not black2780 pins. Gray axles project through uprights toward hub yellow holes in book5 p12. Book4 black-pin2 22\u219220 and grey-axlepin2 2\u21924; wholeADB75\u219273 and2\u21924. Book4 68 and full234 unchanged."
+      }
+    },
+    "hub": {
+      "name": "Large Hub with battery installed",
+      "color": "White / Yellow",
+      "elementId": null,
+      "catalogPage": null,
+      "identifierCaveat": "Base overview gives names, not element identifiers",
+      "productSku": "45601"
+    },
+    "brown-axle5stop": {
+      "name": "Axle With End Stop, 5",
+      "color": "Brown",
+      "elementId": "6159763",
+      "catalogPage": 1
+    }
+  },
+  "steps": [
+    {
+      "book": 1,
+      "step": 1,
+      "pdfPage": 1,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=1",
+      "observation": "Begin 9-hole beam; insert two black friction pins from far face through holes4 and6, counting from upper-left end of displayed beam.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "black-beam9",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 2,
+      "pdfPage": 2,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=2",
+      "observation": "Two grey 3-length beams with four integral pins attach to near side of black beam, across end holes1/3 and7/9; two pins of each grey connector remain projecting toward viewer.",
+      "addedParts": [
+        {
+          "partKey": "grey-pinbeam3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 3,
+      "pdfPage": 3,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=3",
+      "observation": "Insert black pins downward into upward-facing outer end hole of each grey connector. This completes the first three-step bracket seed.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 4,
+      "pdfPage": 4,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=4",
+      "observation": "Join bracket to outside of one frame rail; grey projecting pins face into frame side holes, black vertical pins remain upward.",
+      "addedParts": [
+        {
+          "partKey": "frame11x15",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 5,
+      "pdfPage": 5,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=5",
+      "observation": "Insert five side-facing frame connection pins at the shown rail locations; two arrows plus three already-inserted instances define placement.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 5,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 6,
+      "pdfPage": 6,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=6",
+      "observation": "Build two white double-cross connectors, each with blue3-pin inserted axially through one end cross hole, short pin end emerging above.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "white-doublecross",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 7,
+      "pdfPage": 7,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=7",
+      "observation": "Attach two white connector units onto frame near motor rail ends, blue ends upward; insert six additional upward black frame pins at pictured edge locations.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 6,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 8,
+      "pdfPage": 8,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=8",
+      "observation": "Prepare medium motor, circular output pointing upward and cable toward lower-right; set output index marks as inset, insert blue3-pins laterally into housing mount holes.",
+      "addedParts": [
+        {
+          "partKey": "medium-motor",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        },
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 9,
+      "pdfPage": 9,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=9",
+      "observation": "Fit blue and green cable clips on opposite sides of medium motor housing.",
+      "addedParts": [
+        {
+          "partKey": "blue-wireclip",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        },
+        {
+          "partKey": "green-wireclip",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 10,
+      "pdfPage": 10,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=10",
+      "observation": "Lower medium motor onto prepared frame mount; cable traverses frame opening, circular output upward.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 11,
+      "pdfPage": 11,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=11",
+      "observation": "Insert four lateral black pins into magenta 1x3x3 connector block, two at each side.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "pink-connector3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 12,
+      "pdfPage": 12,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=12",
+      "observation": "Attach grey I-frame side bracket to magenta block; add one blue pin at bracket side.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-iframe3x5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 13,
+      "pdfPage": 13,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=13",
+      "observation": "Attach red cable clip to blue pin on I-frame bracket.",
+      "addedParts": [
+        {
+          "partKey": "red-wireclip",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 14,
+      "pdfPage": 14,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=14",
+      "observation": "Lower magenta-and-grey bracket over medium motor, pinning to surrounding frame connectors.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 15,
+      "pdfPage": 15,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=15",
+      "observation": "Rotate camera to opposite side; add second grey I-frame bracket on other motor side.",
+      "addedParts": [
+        {
+          "partKey": "grey-iframe3x5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 16,
+      "pdfPage": 16,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=16",
+      "observation": "Prepare first color sensor with two blue3-pins pointing upward from mount side.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "color-sensor",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 17,
+      "pdfPage": 17,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=17",
+      "observation": "Attach grey four-pin beam to sensor side using protruding mount pins; sensor lens remains unobstructed.",
+      "addedParts": [
+        {
+          "partKey": "grey-pinbeam3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 18,
+      "pdfPage": 18,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=18",
+      "observation": "Press white19mm ball into Medium Azur ball-cup frame; ball surface protrudes downward in final driving orientation.",
+      "addedParts": [
+        {
+          "partKey": "ballcup",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "ball19",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 19,
+      "pdfPage": 19,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=19",
+      "observation": "Join first ball-cup frame to first color-sensor unit using grey connector.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 20,
+      "pdfPage": 20,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=20",
+      "observation": "Insert two black pins into visible side holes of ball-cup frame.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 21,
+      "pdfPage": 21,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=21",
+      "observation": "Attach Medium Azur L-shaped3x5 beam to this caster/sensor unit; long arm projects toward center of eventual front rail.",
+      "addedParts": [
+        {
+          "partKey": "azur-angle3x5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 22,
+      "pdfPage": 22,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=22",
+      "observation": "Attach first caster/sensor unit to front frame/motor side; sensor is outboard and downward-facing after final rotation.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 23,
+      "pdfPage": 23,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=23",
+      "observation": "Prepare second color sensor with two blue3-pins.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "color-sensor",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 24,
+      "pdfPage": 24,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=24",
+      "observation": "Attach second grey four-pin beam to second sensor, mirrored placement.",
+      "addedParts": [
+        {
+          "partKey": "grey-pinbeam3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 25,
+      "pdfPage": 25,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=25",
+      "observation": "Prepare second white ball in Medium Azur ball-cup frame.",
+      "addedParts": [
+        {
+          "partKey": "ballcup",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "ball19",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 26,
+      "pdfPage": 26,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=26",
+      "observation": "Join second caster frame to second sensor unit.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 27,
+      "pdfPage": 27,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=27",
+      "observation": "Insert two black side pins into second ball-cup frame.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 28,
+      "pdfPage": 28,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=28",
+      "observation": "Attach second3x5 angular beam, mirrored relative to first sensor/caster.",
+      "addedParts": [
+        {
+          "partKey": "azur-angle3x5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 29,
+      "pdfPage": 29,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=29",
+      "observation": "Attach second caster/sensor unit on other motor side.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 30,
+      "pdfPage": 30,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=30",
+      "observation": "Add black15-hole rail spanning two sensor/caster units across front.",
+      "addedParts": [
+        {
+          "partKey": "black-beam15",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 31,
+      "pdfPage": 31,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=31",
+      "observation": "Make two yellow2x4 cross-hole brick units, two red axle/pins per brick, axles entering holes in brick face opposite studs.",
+      "addedParts": [
+        {
+          "partKey": "red-axlepin3",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "yellow-brick2x4",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 32,
+      "pdfPage": 32,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=32",
+      "observation": "Slide one short black tube onto one red pin in each yellow brick unit.",
+      "addedParts": [
+        {
+          "partKey": "black-tube1",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 33,
+      "pdfPage": 33,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=33",
+      "observation": "Mount both yellow brick units atop outer front supports, studs outward/up in displayed orientation.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 34,
+      "pdfPage": 34,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=34",
+      "observation": "Make two magenta connector blocks, each with two upward black pins.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "pink-connector3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 35,
+      "pdfPage": 35,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=35",
+      "observation": "Attach the two magenta connector blocks alongside motor, their pinned edges upward.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 36,
+      "pdfPage": 36,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=36",
+      "observation": "Rotate camera to opposite end; no additional parts.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 37,
+      "pdfPage": 37,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=37",
+      "observation": "Insert two black pins into opposing round holes of grey28-tooth double-bevel gear; not into center cross axle hole.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-gear28",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 1,
+      "step": 38,
+      "pdfPage": 38,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt2d17fa746ea991e5/5ec8e83df11f7e3ed6d502d7/advanced-driving-base-bi-pdf-book1of5.pdf?locale=en-us#page=38",
+      "observation": "Mount grey gear on circular medium-motor output, using the two pin connections; no external tool is added.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 1,
+      "pdfPage": 1,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=1",
+      "observation": "Right wheel module. Prepare large motor with five black housing pins; align circular output index mark as shown.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 5,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "large-motor",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 2,
+      "pdfPage": 2,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=2",
+      "observation": "Attach black5x7 frame to output-end housing mounts.",
+      "addedParts": [
+        {
+          "partKey": "black-frame5x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 3,
+      "pdfPage": 3,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=3",
+      "observation": "Add grey four-pin beam support with two upward black pins and two projecting blue3-pins on frame end.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-pinbeam3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 4,
+      "pdfPage": 4,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=4",
+      "observation": "Place88mm wheel directly over circular motor output.",
+      "addedParts": [
+        {
+          "partKey": "wheel88",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 5,
+      "pdfPage": 5,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=5",
+      "observation": "Pin wheel to motor output with two blue3-pins in opposing wheel center holes.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 6,
+      "pdfPage": 6,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=6",
+      "observation": "Place magenta connector block over wheel center/output assembly.",
+      "addedParts": [
+        {
+          "partKey": "pink-connector3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 7,
+      "pdfPage": 7,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=7",
+      "observation": "Begin outside wheel support: grey5-axle through grey perpendicular2x1 cross-block.",
+      "addedParts": [
+        {
+          "partKey": "grey-axle5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-cross2x1",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 8,
+      "pdfPage": 8,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=8",
+      "observation": "Slide black double-angular beam onto axle and secure with second grey perpendicular2x1 cross-block.",
+      "addedParts": [
+        {
+          "partKey": "grey-cross2x1",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        },
+        {
+          "partKey": "black-doubleangle3x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 9,
+      "pdfPage": 9,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=9",
+      "observation": "Attach grey four-pin beam to support upper end with yellow3-axle.",
+      "addedParts": [
+        {
+          "partKey": "grey-pinbeam3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "yellow-axle3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 10,
+      "pdfPage": 10,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=10",
+      "observation": "Add matching black angular beam parallel to first, forming paired outside wheel support.",
+      "addedParts": [
+        {
+          "partKey": "black-doubleangle3x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 11,
+      "pdfPage": 11,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=11",
+      "observation": "Fit third grey perpendicular2x1 cross-block at support bottom.",
+      "addedParts": [
+        {
+          "partKey": "grey-cross2x1",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 12,
+      "pdfPage": 12,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=12",
+      "observation": "Insert black pin into small grey connector.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 13,
+      "pdfPage": 13,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=13",
+      "observation": "Lower outside wheel-support unit over wheel, connect bottom support to frame; yellow arrow indicates engagement.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 14,
+      "pdfPage": 14,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=14",
+      "observation": "Insert black4-axle into wheel/output support at shown center-line mount.",
+      "addedParts": [
+        {
+          "partKey": "black-axle4",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 15,
+      "pdfPage": 15,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=15",
+      "observation": "Rotate camera to motor rear side and insert two black housing pins.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 16,
+      "pdfPage": 16,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=16",
+      "observation": "Make grey cross-block unit with two blue3-pins.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-cross3x2",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 17,
+      "pdfPage": 17,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=17",
+      "observation": "Join third black angular beam to grey cross block.",
+      "addedParts": [
+        {
+          "partKey": "black-doubleangle3x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 18,
+      "pdfPage": 18,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=18",
+      "observation": "Attach a second light bluish gray 3x2 axle/triple-pin cross block to the blue pins at the base of the black double-angular beam, bracing the outer support.",
+      "addedParts": [
+        {
+          "partKey": "black-angle4x4",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "source-corrected visual functional-family match; geometry 63869.dat, manufacturer element ID unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 19,
+      "pdfPage": 19,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=19",
+      "observation": "Insert two red axle/pins into grey cross-block unit.",
+      "addedParts": [
+        {
+          "partKey": "red-axlepin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 20,
+      "pdfPage": 20,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=20",
+      "observation": "Add grey I-frame to the red axle/pin mounts.",
+      "addedParts": [
+        {
+          "partKey": "grey-iframe3x5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 21,
+      "pdfPage": 21,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=21",
+      "observation": "Cap end with yellow3-hole beam.",
+      "addedParts": [
+        {
+          "partKey": "yellow-beam3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 22,
+      "pdfPage": 22,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=22",
+      "observation": "Attach this braced rear support to motor housing and wheel support; directional arrows show fit.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 23,
+      "pdfPage": 23,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=23",
+      "observation": "Prepare blue3-pin and side-specific cable clip.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "magenta-wireclip",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 2,
+      "step": 24,
+      "pdfPage": 24,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltaab3ff32deffc66d/5ec8e800f32b1a633f9052dd/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=24",
+      "observation": "Rotate camera and attach cable clip to housing side. Left and right clips differ by color.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 1,
+      "pdfPage": 1,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=1",
+      "observation": "Left wheel module. Prepare large motor with five black housing pins; align circular output index mark as shown.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 5,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "large-motor",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 2,
+      "pdfPage": 2,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=2",
+      "observation": "Attach black5x7 frame to output-end housing mounts.",
+      "addedParts": [
+        {
+          "partKey": "black-frame5x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 3,
+      "pdfPage": 3,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=3",
+      "observation": "Add grey four-pin beam support with two upward black pins and two projecting blue3-pins on frame end.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-pinbeam3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 4,
+      "pdfPage": 4,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=4",
+      "observation": "Place88mm wheel directly over circular motor output.",
+      "addedParts": [
+        {
+          "partKey": "wheel88",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 5,
+      "pdfPage": 5,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=5",
+      "observation": "Pin wheel to motor output with two blue3-pins in opposing wheel center holes.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 6,
+      "pdfPage": 6,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=6",
+      "observation": "Place magenta connector block over wheel center/output assembly.",
+      "addedParts": [
+        {
+          "partKey": "pink-connector3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 7,
+      "pdfPage": 7,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=7",
+      "observation": "Begin outside wheel support: grey5-axle through grey perpendicular2x1 cross-block.",
+      "addedParts": [
+        {
+          "partKey": "grey-axle5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-cross2x1",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 8,
+      "pdfPage": 8,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=8",
+      "observation": "Slide black double-angular beam onto axle and secure with second grey perpendicular2x1 cross-block.",
+      "addedParts": [
+        {
+          "partKey": "grey-cross2x1",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        },
+        {
+          "partKey": "black-doubleangle3x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 9,
+      "pdfPage": 9,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=9",
+      "observation": "Attach grey four-pin beam to support upper end with yellow3-axle.",
+      "addedParts": [
+        {
+          "partKey": "grey-pinbeam3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "yellow-axle3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 10,
+      "pdfPage": 10,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=10",
+      "observation": "Add matching black angular beam parallel to first, forming paired outside wheel support.",
+      "addedParts": [
+        {
+          "partKey": "black-doubleangle3x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 11,
+      "pdfPage": 11,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=11",
+      "observation": "Fit third grey perpendicular2x1 cross-block at support bottom.",
+      "addedParts": [
+        {
+          "partKey": "grey-cross2x1",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 12,
+      "pdfPage": 12,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=12",
+      "observation": "Insert black pin into small grey connector.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 13,
+      "pdfPage": 13,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=13",
+      "observation": "Lower outside wheel-support unit over wheel, connect bottom support to frame; yellow arrow indicates engagement.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 14,
+      "pdfPage": 14,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=14",
+      "observation": "Insert black4-axle into wheel/output support at shown center-line mount.",
+      "addedParts": [
+        {
+          "partKey": "black-axle4",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 15,
+      "pdfPage": 15,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=15",
+      "observation": "Rotate camera to motor rear side and insert two black housing pins.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 16,
+      "pdfPage": 16,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=16",
+      "observation": "Make grey cross-block unit with two blue3-pins.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-cross3x2",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 17,
+      "pdfPage": 17,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=17",
+      "observation": "Join third black angular beam to grey cross block.",
+      "addedParts": [
+        {
+          "partKey": "black-doubleangle3x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 18,
+      "pdfPage": 18,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=18",
+      "observation": "Attach a second light bluish gray 3x2 axle/triple-pin cross block to the blue pins at the base of the black double-angular beam, bracing the outer support.",
+      "addedParts": [
+        {
+          "partKey": "black-angle4x4",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "source-corrected visual functional-family match; geometry 63869.dat, manufacturer element ID unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 19,
+      "pdfPage": 19,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=19",
+      "observation": "Insert two red axle/pins into grey cross-block unit.",
+      "addedParts": [
+        {
+          "partKey": "red-axlepin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 20,
+      "pdfPage": 20,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=20",
+      "observation": "Add grey I-frame to the red axle/pin mounts.",
+      "addedParts": [
+        {
+          "partKey": "grey-iframe3x5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 21,
+      "pdfPage": 21,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=21",
+      "observation": "Cap end with yellow3-hole beam.",
+      "addedParts": [
+        {
+          "partKey": "yellow-beam3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 22,
+      "pdfPage": 22,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=22",
+      "observation": "Attach this braced rear support to motor housing and wheel support; directional arrows show fit.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 23,
+      "pdfPage": 23,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=23",
+      "observation": "Prepare blue3-pin and side-specific cable clip.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "yellow-wireclip",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 3,
+      "step": 24,
+      "pdfPage": 24,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=24",
+      "observation": "Rotate camera and attach cable clip to housing side. Left and right clips differ by color.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 1,
+      "pdfPage": 1,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=1",
+      "observation": "Attach two grey four-pin beams to black9-hole beam.",
+      "addedParts": [
+        {
+          "partKey": "grey-pinbeam3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "black-beam9",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 2,
+      "pdfPage": 2,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=2",
+      "observation": "Attach second black9-hole beam parallel, sandwiching connectors.",
+      "addedParts": [
+        {
+          "partKey": "black-beam9",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 3,
+      "pdfPage": 3,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=3",
+      "observation": "Insert two upward black pins into connector ends.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 4,
+      "pdfPage": 4,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=4",
+      "observation": "Insert four lateral black pins into rail assembly.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 5,
+      "pdfPage": 5,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=5",
+      "observation": "Attach medium motor; set output index as inset.",
+      "addedParts": [
+        {
+          "partKey": "medium-motor",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 6,
+      "pdfPage": 6,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=6",
+      "observation": "Add four black pins to motor housing mounts.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 7,
+      "pdfPage": 7,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=7",
+      "observation": "Build magenta connector with four side-facing black pins.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "pink-connector3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 8,
+      "pdfPage": 8,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=8",
+      "observation": "Attach grey I-frame to magenta connector.",
+      "addedParts": [
+        {
+          "partKey": "grey-iframe3x5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 9,
+      "pdfPage": 9,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=9",
+      "observation": "Mount bracket over medium motor.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 10,
+      "pdfPage": 10,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=10",
+      "observation": "Rotate camera; add second grey I-frame on opposite side.",
+      "addedParts": [
+        {
+          "partKey": "grey-iframe3x5",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 11,
+      "pdfPage": 11,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=11",
+      "observation": "Make four extended connectors by inserting the short end of each blue6558 friction pin coaxially into a gray32054 long pin with stop bush.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-pin3cross",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 12,
+      "pdfPage": 12,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=12",
+      "observation": "Install the four existing coaxial blue6558/gray32054 connector units into motor housing; no new parts.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 13,
+      "pdfPage": 13,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=13",
+      "observation": "Install two more parallel9-hole black beams on extended pins.",
+      "addedParts": [
+        {
+          "partKey": "black-beam9",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 14,
+      "pdfPage": 14,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=14",
+      "observation": "Make blue-pin cable clip unit.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "azur-wireclip",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 15,
+      "pdfPage": 15,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=15",
+      "observation": "Attach cable clip between rear black rails; route motor cable as depicted.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 16,
+      "pdfPage": 16,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=16",
+      "observation": "Make two white double-cross connector units using four yellow3-axles.",
+      "addedParts": [
+        {
+          "partKey": "white-doublecross",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "yellow-axle3",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 17,
+      "pdfPage": 17,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17",
+      "observation": "Add grey I-frames and Medium Azur clips to these two mount units.",
+      "addedParts": [
+        {
+          "partKey": "grey-iframe3x5",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "azur-wireclip",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 18,
+      "pdfPage": 18,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=18",
+      "observation": "Fit two upper white32184 axle/pin/axle cross blocks over the four yellow axles on the prepared units; the lower white pair was introduced on p16.",
+      "addedParts": [
+        {
+          "partKey": "white-doublecross",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "high-source-shape; corrected by direct manual p18 inspection"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 19,
+      "pdfPage": 19,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
+      "observation": "Attach both mount units to opposite motor sides.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 20,
+      "pdfPage": 20,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=20",
+      "observation": "Prepare Medium Azur13-hole rail with two blue3-pins.",
+      "addedParts": [
+        {
+          "partKey": "blue-pin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "azur-beam13",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 21,
+      "pdfPage": 21,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=21",
+      "observation": "Mount prepared13-hole rail across bracket ends.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 22,
+      "pdfPage": 22,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=22",
+      "observation": "Add second parallel13-hole rail.",
+      "addedParts": [
+        {
+          "partKey": "azur-beam13",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 23,
+      "pdfPage": 23,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=23",
+      "observation": "Make two yellow tubular standoffs with black pins at each end.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "yellow-tube2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 24,
+      "pdfPage": 24,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=24",
+      "observation": "Attach yellow standoffs above rail ends.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 25,
+      "pdfPage": 25,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=25",
+      "observation": "Insert two black pins into grey28-tooth double-bevel gear.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "grey-gear28",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 26,
+      "pdfPage": 26,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=26",
+      "observation": "Attach gear to circular motor output.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 27,
+      "pdfPage": 27,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=27",
+      "observation": "Prepare magenta7x11 frame with two red axle/pins.",
+      "addedParts": [
+        {
+          "partKey": "pink-frame7x11",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "red-axlepin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 28,
+      "pdfPage": 28,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=28",
+      "observation": "Insert two gray18651 axle2/pin1 connectors into the upper magenta frame: short pin ends enter frame, long cross axles project outward through uprights toward the hub.",
+      "addedParts": [
+        {
+          "partKey": "grey-axlepin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "high-source-shape; corrected by direct manual p28 inspection"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 29,
+      "pdfPage": 29,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=29",
+      "observation": "Lower magenta frame onto yellow standoffs and motor-top brackets.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 30,
+      "pdfPage": 30,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=30",
+      "observation": "Build two Medium Azur7-hole vertical leg units with straight grey axle2/pin1 connectors inserted through bottom beam holes; axles project perpendicular to beam length.",
+      "addedParts": [
+        {
+          "partKey": "grey-axlepin2",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        },
+        {
+          "partKey": "azur-beam7",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 4,
+      "step": 31,
+      "pdfPage": 31,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=31",
+      "observation": "Rotate camera; install two vertical7-hole legs on outer sides of rear module.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 1,
+      "pdfPage": 4,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=4",
+      "observation": "Connect front medium motor cable to hub port D.",
+      "addedParts": [
+        {
+          "partKey": "hub",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual family only; element identifier unresolved"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 2,
+      "pdfPage": 5,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=5",
+      "observation": "Connect front two color sensors to B and F, following crossed cable routes shown.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 3,
+      "pdfPage": 6,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=6",
+      "observation": "Connect left side large motor to A; module is upper-left in this assembly camera.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 4,
+      "pdfPage": 7,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=7",
+      "observation": "Connect rear medium motor to C.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 5,
+      "pdfPage": 8,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=8",
+      "observation": "Connect right side large motor to E; module is lower-right in this assembly camera.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 6,
+      "pdfPage": 9,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=9",
+      "observation": "Join left wheel module to front frame.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 7,
+      "pdfPage": 10,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=10",
+      "observation": "Join right wheel module to opposite front frame side.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 8,
+      "pdfPage": 11,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=11",
+      "observation": "Place hub on upper structural mounts, managing cables beneath/along sides.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 9,
+      "pdfPage": 12,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=12",
+      "observation": "Slide rear subassembly into side-module mounts; four red arrow lines show connection direction.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 10,
+      "pdfPage": 13,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=13",
+      "observation": "Rear module seated; no new parts.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 11,
+      "pdfPage": 14,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=14",
+      "observation": "Prepare second magenta7x11 frame with two red axle/pins.",
+      "addedParts": [
+        {
+          "partKey": "pink-frame7x11",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "red-axlepin3",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 12,
+      "pdfPage": 15,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=15",
+      "observation": "Rotate camera and fit frame around front top gear / motor.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 13,
+      "pdfPage": 16,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=16",
+      "observation": "Insert two5-long brown end-stop axles downward through side support holes.",
+      "addedParts": [
+        {
+          "partKey": "brown-axle5stop",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 14,
+      "pdfPage": 17,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=17",
+      "observation": "Turn whole build upside down and add two grey bushings to projecting axle ends.",
+      "addedParts": [
+        {
+          "partKey": "grey-bush",
+          "quantity": 2,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 15,
+      "pdfPage": 18,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=18",
+      "observation": "Prepare underside reinforcement frame with grey integral-pin connector.",
+      "addedParts": [
+        {
+          "partKey": "grey-pinbeam3",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        },
+        {
+          "partKey": "black-frame5x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 16,
+      "pdfPage": 19,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=19",
+      "observation": "Attach second5x7 frame to make paired underside reinforcement.",
+      "addedParts": [
+        {
+          "partKey": "black-frame5x7",
+          "quantity": 1,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 17,
+      "pdfPage": 20,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=20",
+      "observation": "Insert four upward black pins in reinforcement corners as displayed.",
+      "addedParts": [
+        {
+          "partKey": "black-pin2",
+          "quantity": 4,
+          "quantityEvidence": "Visible illustrated parts callout on this PDF page",
+          "identificationStatus": "visual catalog match"
+        }
+      ],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": true,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 18,
+      "pdfPage": 21,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=21",
+      "observation": "Install paired-frame reinforcement into underside of front opening; rotate robot back.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    },
+    {
+      "book": 5,
+      "step": 19,
+      "pdfPage": 22,
+      "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltdfc58a87376f5440/5ec8e868afa52a7b5193fda0/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=22",
+      "observation": "Final upright assembly view; no additional parts.",
+      "addedParts": [],
+      "existingSubassembliesCountedAgain": false,
+      "newPartsCalloutPresent": false,
+      "metricTransforms": null
+    }
+  ],
+  "inventoryEvidence": {
+    "accounting": "Each visible new-parts callout counted once; installation-only / camera-turn pages have no new parts. Reused subassemblies are not added again. Hub counted as one assembled hub with battery; battery insertion on assembly PDF p3 is unnumbered preparation, not a second hub. Integral motor/sensor cables are not independent BOM pieces.",
+    "byBook": {
+      "1": {
+        "black-pin2": 29,
+        "black-beam9": 1,
+        "grey-pinbeam3": 4,
+        "frame11x15": 1,
+        "blue-pin3": 9,
+        "white-doublecross": 2,
+        "medium-motor": 1,
+        "blue-wireclip": 1,
+        "green-wireclip": 1,
+        "pink-connector3": 3,
+        "grey-iframe3x5": 2,
+        "red-wireclip": 1,
+        "color-sensor": 2,
+        "ballcup": 2,
+        "ball19": 2,
+        "azur-angle3x5": 2,
+        "black-beam15": 1,
+        "red-axlepin3": 4,
+        "yellow-brick2x4": 2,
+        "black-tube1": 2,
+        "grey-gear28": 1
+      },
+      "2": {
+        "black-pin2": 10,
+        "large-motor": 1,
+        "black-frame5x7": 1,
+        "grey-pinbeam3": 2,
+        "blue-pin3": 7,
+        "wheel88": 1,
+        "pink-connector3": 1,
+        "grey-axle5": 1,
+        "black-doubleangle3x7": 3,
+        "yellow-axle3": 1,
+        "grey-cross2x1": 3,
+        "black-axle4": 1,
+        "grey-cross3x2": 1,
+        "black-angle4x4": 1,
+        "red-axlepin3": 2,
+        "grey-iframe3x5": 1,
+        "yellow-beam3": 1,
+        "magenta-wireclip": 1
+      },
+      "3": {
+        "black-pin2": 10,
+        "large-motor": 1,
+        "black-frame5x7": 1,
+        "grey-pinbeam3": 2,
+        "blue-pin3": 7,
+        "wheel88": 1,
+        "pink-connector3": 1,
+        "grey-axle5": 1,
+        "black-doubleangle3x7": 3,
+        "yellow-axle3": 1,
+        "grey-cross2x1": 3,
+        "black-axle4": 1,
+        "grey-cross3x2": 1,
+        "black-angle4x4": 1,
+        "red-axlepin3": 2,
+        "grey-iframe3x5": 1,
+        "yellow-beam3": 1,
+        "yellow-wireclip": 1
+      },
+      "4": {
+        "grey-pinbeam3": 2,
+        "black-beam9": 4,
+        "black-pin2": 20,
+        "medium-motor": 1,
+        "pink-connector3": 1,
+        "grey-iframe3x5": 4,
+        "blue-pin3": 7,
+        "grey-pin3cross": 4,
+        "azur-wireclip": 3,
+        "white-doublecross": 4,
+        "yellow-axle3": 4,
+        "azur-beam13": 2,
+        "yellow-tube2": 2,
+        "grey-gear28": 1,
+        "pink-frame7x11": 1,
+        "red-axlepin3": 2,
+        "grey-axlepin2": 4,
+        "azur-beam7": 2
+      },
+      "5": {
+        "hub": 1,
+        "pink-frame7x11": 1,
+        "red-axlepin3": 2,
+        "brown-axle5stop": 2,
+        "grey-bush": 2,
+        "grey-pinbeam3": 1,
+        "black-frame5x7": 2,
+        "black-pin2": 4
+      }
+    },
+    "wholeBuildByVisualPartFamily": {
+      "black-pin2": 73,
+      "black-beam9": 5,
+      "grey-pinbeam3": 11,
+      "frame11x15": 1,
+      "blue-pin3": 30,
+      "white-doublecross": 6,
+      "medium-motor": 2,
+      "blue-wireclip": 1,
+      "green-wireclip": 1,
+      "pink-connector3": 6,
+      "grey-iframe3x5": 8,
+      "red-wireclip": 1,
+      "color-sensor": 2,
+      "ballcup": 2,
+      "ball19": 2,
+      "azur-angle3x5": 2,
+      "black-beam15": 1,
+      "red-axlepin3": 12,
+      "yellow-brick2x4": 2,
+      "black-tube1": 2,
+      "grey-gear28": 2,
+      "large-motor": 2,
+      "black-frame5x7": 4,
+      "wheel88": 2,
+      "grey-axle5": 2,
+      "grey-bush": 2,
+      "black-doubleangle3x7": 6,
+      "yellow-axle3": 6,
+      "grey-cross2x1": 6,
+      "black-axle4": 2,
+      "grey-cross3x2": 2,
+      "black-angle4x4": 2,
+      "yellow-beam3": 2,
+      "magenta-wireclip": 1,
+      "yellow-wireclip": 1,
+      "grey-pin3cross": 4,
+      "azur-wireclip": 3,
+      "azur-beam13": 2,
+      "yellow-tube2": 2,
+      "pink-frame7x11": 2,
+      "grey-axlepin2": 4,
+      "azur-beam7": 2,
+      "hub": 1,
+      "brown-axle5stop": 2
+    },
+    "wholeBuildManualCountIncludingAssembledHub": 234,
+    "partFamilyIdentifiersExact": false,
+    "quantityStatus": "All introduction quantities transcribed from visible callouts; ambiguous shape identifiers are explicitly unresolved even when their counts are exact.",
+    "accessoriesExcluded": [
+      "Dozer Blade",
+      "Lift Arm",
+      "Crates",
+      "Mission Modules"
+    ],
+    "catalogSetQuantitiesUsedAsBuildCounts": false
+  },
+  "firstVerifiedSubassembly": {
+    "name": "Front bracket seed",
+    "scope": "Book1 steps1\u20133 only; not the complete38-step Front Part",
+    "status": "Source-verified attachment topology; not a fully registered CAD assembly",
+    "coordinateConvention": {
+      "x": "Along black9-hole beam from upper-left end h1 toward lower-right end h9 in book1 p1",
+      "y": "Across beam hole axes, positive from far face toward visible near face in book1 p1",
+      "z": "Upward through grey connector end holes in book1 p3",
+      "coordinateOrigin": "Center of black beam h1 at mid-depth; physical placement of non-beam attachment planes remains null",
+      "holePitchMm": 8,
+      "holePitchLdu": 20,
+      "pitchStatus": "Exact adjacent hole pitch20LDU read from LDraw40490.dat; conversion to8mm is approximate under LDraw scale, not a dimension printed in the manual. These are attachment anchors, not DAT part-origin transforms.",
+      "ldrawScaleSource": "https://www.ldraw.org/article/218.html#ldu",
+      "beamGeometrySource": "https://library.ldraw.org/library/official/parts/40490.dat",
+      "beamDatConvention": "40490.dat long axis is Z and hole axes Y; scene seed uses editorial x/y/z axes and requires explicit registration.",
+      "scaledMmCoordinatesApproximate": true
+    },
+    "components": [
+      {
+        "instance": "beam-1",
+        "partKey": "black-beam9",
+        "quantity": 1,
+        "manualPage": 1,
+        "holeCentersXGrid": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "holeCentersXMm": [
+          0,
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "holeCentersXLdu": [
+          0,
+          20,
+          40,
+          60,
+          80,
+          100,
+          120,
+          140,
+          160
+        ],
+        "partOriginTransform": null
+      },
+      {
+        "instances": [
+          "pin-1",
+          "pin-2"
+        ],
+        "partKey": "black-pin2",
+        "quantity": 2,
+        "manualPage": 1,
+        "target": "beam-1",
+        "targetHolesOneBased": [
+          4,
+          6
+        ],
+        "anchorXGrid": [
+          3,
+          5
+        ],
+        "anchorXMm": [
+          24,
+          40
+        ],
+        "anchorXLdu": [
+          60,
+          100
+        ],
+        "insertionAxis": "+y",
+        "insertionDepthMm": null
+      },
+      {
+        "instances": [
+          "grey-connector-1",
+          "grey-connector-2"
+        ],
+        "partKey": "grey-pinbeam3",
+        "quantity": 2,
+        "manualPage": 2,
+        "target": "beam-1",
+        "targetHolesOneBased": [
+          [
+            1,
+            3
+          ],
+          [
+            7,
+            9
+          ]
+        ],
+        "anchorXGrid": [
+          [
+            0,
+            2
+          ],
+          [
+            6,
+            8
+          ]
+        ],
+        "anchorXMm": [
+          [
+            0,
+            16
+          ],
+          [
+            48,
+            64
+          ]
+        ],
+        "insertionAxis": "-y for the integral pins entering the black beam; opposite integral pins project +y",
+        "partOriginTransform": null
+      },
+      {
+        "instances": [
+          "pin-3",
+          "pin-4"
+        ],
+        "partKey": "black-pin2",
+        "quantity": 2,
+        "manualPage": 3,
+        "target": [
+          "grey-connector-1",
+          "grey-connector-2"
+        ],
+        "targetFeature": "outermost upward-facing round hole of each grey connector",
+        "anchorXGrid": [
+          0,
+          8
+        ],
+        "anchorXMm": [
+          0,
+          64
+        ],
+        "anchorXLdu": [
+          0,
+          160
+        ],
+        "insertionAxis": "-z; free pin ends point +z",
+        "insertionDepthMm": null
+      }
+    ],
+    "uncertainties": [
+      "No insertion depth or connector-plane y/z coordinate is dimensioned by the manual.",
+      "No numeric Euler camera angles are provided; camera orientation is the explicit qualitative page convention above.",
+      "Element IDs come from official2021 overview visual matching; 2019 mold variants require DAT comparison."
+    ]
+  },
+  "relationships": [
+    {
+      "name": "Left propulsion",
+      "motor": "large-motor",
+      "port": "A",
+      "wheel": "wheel88",
+      "book": 3,
+      "pages": [
+        1,
+        4,
+        5,
+        13,
+        14
+      ],
+      "kind": "Direct motor output to wheel; paired outside angular beams support wheel axis",
+      "gearRatio": 1,
+      "gearRatioStatus": "Derived from directly pinned output-to-wheel connection; not printed numeric ratio"
+    },
+    {
+      "name": "Right propulsion",
+      "motor": "large-motor",
+      "port": "E",
+      "wheel": "wheel88",
+      "book": 2,
+      "pages": [
+        1,
+        4,
+        5,
+        13,
+        14
+      ],
+      "kind": "Mirrored direct wheel drive, braced outside motor",
+      "gearRatio": 1,
+      "gearRatioStatus": "Derived from direct pinned output connection"
+    },
+    {
+      "name": "Front tool output",
+      "motor": "medium-motor",
+      "port": "D",
+      "output": "grey-gear28",
+      "book": 1,
+      "pages": [
+        8,
+        10,
+        37,
+        38
+      ],
+      "kind": "Grey gear pinned directly onto upward medium motor output; no mating external gear or independent tool in these five manuals"
+    },
+    {
+      "name": "Rear tool output",
+      "motor": "medium-motor",
+      "port": "C",
+      "output": "grey-gear28",
+      "book": 4,
+      "pages": [
+        5,
+        25,
+        26
+      ],
+      "kind": "Grey gear pinned directly onto upward medium motor output; no attached independent tool"
+    },
+    {
+      "name": "Sensors",
+      "parts": "color-sensor",
+      "ports": [
+        "B",
+        "F"
+      ],
+      "book": 5,
+      "pages": [
+        5,
+        23
+      ],
+      "kind": "Two downward-facing front sensors, mounted beside caster units; B/F connection arrows are explicit; world-left/right assignment not numerically registered"
+    },
+    {
+      "name": "Caster support",
+      "parts": [
+        "ballcup",
+        "ball19"
+      ],
+      "book": 1,
+      "pages": [
+        18,
+        19,
+        22,
+        25,
+        26,
+        29
+      ],
+      "kind": "Two passive ball-in-cup support units beside front sensors; no steering servo, track or distance sensor shown"
+    },
+    {
+      "name": "Structural closure",
+      "book": 5,
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "kind": "Front frame + two separately built wheel sides + rear motor module + top hub + added front7x11 frame + underside paired5x7 reinforcement"
+    }
+  ],
+  "simulation": {
+    "status": "Engineering inference from verified mechanism topology, not official simulation validation",
+    "actuatedRotationalDof": 4,
+    "actuatedDofEvidence": "Two independent large-motor wheel outputs plus two independent medium-motor tool outputs; official lesson motor counts and assembly port map",
+    "passiveDof": "Each caster ball can roll within its cup; no numeric constrained-friction model supplied",
+    "baseMotion": "Differential-drive planar translation/yaw inferred from independently driven coaxial wheels; no holonomic lateral actuator",
+    "feasible": "Kinematic differential drive, wheel rotation, free medium output rotation and two ground color samples. Whole-build simulation must not invent tool loads or gear trains.",
+    "notVerified": [
+      "Wheel-center separation",
+      "Actual rolling radius under load",
+      "Mass/inertia and center of mass",
+      "Motor torque/speed/load curves at chosen supply",
+      "Floor friction and slip",
+      "Sensor mounting metric coordinates and sample footprint",
+      "Cable collision mechanics",
+      "Exact insertion depths and world transforms for complete front module",
+      "All official example-program behavior"
+    ]
+  },
+  "cadInvestigation": {
+    "officialPages": "Both requested official pages link PDF building instructions, not CAD/MPD. No authorized complete CAD assembly was linked by these pages.",
+    "officialWebViewer": "https://spike.legoeducation.com/prime/models/blte4788002edb15a78",
+    "officialWebViewerObservation": "Static reader gives application loading shell; parent independently investigating dynamic resources. No geometry/transforms recovered by this research.",
+    "ecosystemRepository": "https://library.ldraw.org/omr",
+    "queries": [
+      "advanced driving base mpd ldr studio",
+      "advanced driving base LEGO LDraw model",
+      "site:omr.ldraw.org SPIKE",
+      "site:forums.ldraw.org driving base"
+    ],
+    "result": "No exact Advanced Driving Base assembly CAD/MPD found in these searches. This is a scoped negative result, not proof no model exists. Alternate community driving bases were not substituted. LDraw part geometry availability is separate from assembly provenance.",
+    "licenseStatus": "No complete assembly model license established; never assume a publicly visible manual/viewer permits redistribution."
+  },
+  "uncertainties": [
+    "Embedded PDF titles are blank and no formal revision string located; SHA-256 and PDF timestamps lock consulted content.",
+    "2021 element IDs visually matched to2019 build images may represent newer molds.",
+    "Medium motor, assembled hub, blue/green/magenta wire clips and two grey connector families have unresolved element IDs. Product SKUs are separately identified where official.",
+    "All quantities are exact by pictured family; an unresolved element ID does not license guessing a mold.",
+    "Complete numeric CAD transforms have not been recovered. Oblique assembly drawings establish topology but do not dimension insertion depths.",
+    "Manual camera rotations are pictorial, not numeric Euler angles.",
+    "First bracket coordinates describe attachment anchors, not ready-to-render DAT part-origin transforms.",
+    "Current2021 expansion overview is not a claim that later45681 set inventory equals2019 lesson requirements.",
+    "No independent Tools accessory is integrated by the five locked manuals."
+  ]
+}

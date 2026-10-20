@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "robobuild-demo-block",
+      "url": "/models/simulation/demo-block.glb",
+      "format": "glb",
+      "sha256": "cd0cf1a0e73efe5c46c00d58dab26f35e5ad8ef9bb004cf07448b4106055ced4",
+      "dependencyIds": [],
+      "nativeUnits": "m",
+      "nativeToScene": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1000,
+          1000,
+          1000
+        ]
+      },
+      "preserveOrigin": true,
+      "attribution": [
+        {
+          "sourcePath": "scripts/assets/simulation-props.py",
+          "sourceUrl": "/models/simulation/PROVENANCE.txt",
+          "sha256": "6e7c96eff0109b55c33b95681290d9502559048cb852f5562d250629c1a41947",
+          "originalHeader": "RoboBuild original procedural simulation props; no external source assets or manufacturer dimensions. Project licensing unchanged.",
+          "authors": [
+            "RoboBuild"
+          ],
+          "licenseIds": [
+            "LicenseRef-Project-Original"
+          ],
+          "licenseUrls": [
+            "/models/simulation/PROVENANCE.txt"
+          ],
+          "modifications": [
+            "Generated directly from original meter-valued design parameters; bevels and transforms baked before glTF Y-up export. No acquired mesh modified. Runtime uniform scale 1000 converts meters to scene millimeters exactly once."
+          ]
+        }
+      ],
+      "materialSlots": [
+        {
+          "id": "robobuild-demo-foam",
+          "colorMode": "fixed",
+          "materialId": "robobuild-demo-foam"
+        }
+      ]
+    },
+    {
+      "id": "robobuild-course-marker",
+      "url": "/models/simulation/course-marker.glb",
+      "format": "glb",
+      "sha256": "d4e72852acbda28bec2d42e4b09c2e85bb37d3a92e9bb2c5cabe5e9693be3e4c",
+      "dependencyIds": [],
+      "nativeUnits": "m",
+      "nativeToScene": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "quaternion": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "scale": [
+          1000,
+          1000,
+          1000
+        ]
+      },
+      "preserveOrigin": true,
+      "attribution": [
+        {
+          "sourcePath": "scripts/assets/simulation-props.py",
+          "sourceUrl": "/models/simulation/PROVENANCE.txt",
+          "sha256": "6e7c96eff0109b55c33b95681290d9502559048cb852f5562d250629c1a41947",
+          "originalHeader": "RoboBuild original procedural simulation props; no external source assets or manufacturer dimensions. Project licensing unchanged.",
+          "authors": [
+            "RoboBuild"
+          ],
+          "licenseIds": [
+            "LicenseRef-Project-Original"
+          ],
+          "licenseUrls": [
+            "/models/simulation/PROVENANCE.txt"
+          ],
+          "modifications": [
+            "Generated directly from original meter-valued design parameters; bevels and transforms baked before glTF Y-up export. No acquired mesh modified. Runtime uniform scale 1000 converts meters to scene millimeters exactly once."
+          ]
+        }
+      ],
+      "materialSlots": [
+        {
+          "id": "robobuild-marker-charcoal",
+          "colorMode": "fixed",
+          "materialId": "robobuild-marker-charcoal"
+        },
+        {
+          "id": "robobuild-marker-orange",
+          "colorMode": "fixed",
+          "materialId": "robobuild-marker-orange"
+        },
+        {
+          "id": "robobuild-marker-white",
+          "colorMode": "fixed",
+          "materialId": "robobuild-marker-white"
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "id": "robobuild-demo-foam",
+      "name": "RoboBuild demonstration foam \u2014 teal",
+      "color": "#23a6a0",
+      "metalness": 0,
+      "roughness": 0.9,
+      "opacity": 1,
+      "category": "plastic",
+      "evidence": {
+        "category": "app-authored",
+        "confidence": 1,
+        "sources": [],
+        "note": "RoboBuild original design and display material parameters, not an official robot component or physical/material validation. Foam-like polymer is represented by the existing plastic display category. No manufacturer claim, collision dynamics, or rigid-body calibration."
+      }
+    },
+    {
+      "id": "robobuild-marker-charcoal",
+      "name": "RoboBuild marker base \u2014 charcoal",
+      "color": "#28313a",
+      "metalness": 0,
+      "roughness": 0.8,
+      "opacity": 1,
+      "category": "rubber",
+      "evidence": {
+        "category": "app-authored",
+        "confidence": 1,
+        "sources": [],
+        "note": "RoboBuild original design and display material parameters, not an official robot component or physical/material validation. Foam-like polymer is represented by the existing plastic display category. No manufacturer claim, collision dynamics, or rigid-body calibration."
+      }
+    },
+    {
+      "id": "robobuild-marker-orange",
+      "name": "RoboBuild marker body \u2014 orange",
+      "color": "#f27621",
+      "metalness": 0,
+      "roughness": 0.48,
+      "opacity": 1,
+      "category": "plastic",
+      "evidence": {
+        "category": "app-authored",
+        "confidence": 1,
+        "sources": [],
+        "note": "RoboBuild original design and display material parameters, not an official robot component or physical/material validation. Foam-like polymer is represented by the existing plastic display category. No manufacturer claim, collision dynamics, or rigid-body calibration."
+      }
+    },
+    {
+      "id": "robobuild-marker-white",
+      "name": "RoboBuild marker bands \u2014 warm white",
+      "color": "#f4f2e8",
+      "metalness": 0,
+      "roughness": 0.52,
+      "opacity": 1,
+      "category": "plastic",
+      "evidence": {
+        "category": "app-authored",
+        "confidence": 1,
+        "sources": [],
+        "note": "RoboBuild original design and display material parameters, not an official robot component or physical/material validation. Foam-like polymer is represented by the existing plastic display category. No manufacturer claim, collision dynamics, or rigid-body calibration."
+      }
+    }
+  ]
+}
