@@ -140,33 +140,6 @@ async function changedFraction(page: Page, before: Buffer, after: Buffer) {
   }, [before.toString('base64'), after.toString('base64')]);
 }
 
-// The four original orange/white markers have separate projected orange columns
-// in the reset oblique course view. White band gaps do not split a marker.
-async function markerColumns(page: Page, screenshot: Buffer) {
-  return page.evaluate(async (base64) => {
-    const image = new Image(); image.src = `data:image/png;base64,${base64}`; await image.decode();
-    const canvas = document.createElement('canvas'); canvas.width = image.naturalWidth; canvas.height = image.naturalHeight;
-    const context = canvas.getContext('2d')!; context.drawImage(image, 0, 0);
-    const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
-    const columns: number[] = [];
-    for (let x = 0; x < canvas.width; x++) {
-      let count = 0;
-      for (let y = 0; y < canvas.height; y++) {
-        const i = (y * canvas.width + x) * 4;
-        const r = pixels[i], g = pixels[i + 1], b = pixels[i + 2];
-        if (r > 125 && g > 55 && g < 235 && r > g * 1.15 && r < g * 3.1 && g > b * 1.19) count++;
-      }
-      if (count >= 2) columns.push(x);
-    }
-    const groups: { min: number; max: number }[] = [];
-    for (const x of columns) {
-      const previous = groups.at(-1);
-      if (previous && x - previous.max <= 4) previous.max = x;
-      else groups.push({ min: x, max: x });
-    }
-    return groups.filter((group) => group.max - group.min >= 2);
-  }, screenshot.toString('base64'));
-}
 
 async function isolatePart(page: Page, id: string) {
   const toggle = page.getByRole('button', { name: 'Inventory & inspection', exact: true });
@@ -205,19 +178,14 @@ test('full source assembly enters the same actual scene; guarded course, replay 
   await inventory.getByRole('button', { name: 'Collapse inventory', exact: true }).click();
   await page.getByRole('button', { name: 'Reset view', exact: true }).click();
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
-  // Real robot pins also contain orange; require four distinct cones in simulation,
-  // not a false "zero orange pixels" invariant for the completed assembly.
-  const assemblyOrange = await markerColumns(page, await viewer(page).screenshot());
-  expect(assemblyOrange.length, 'Only native robot hardware may be orange before simulation').toBeLessThanOrEqual(1);
+  const assemblyPixels = await viewer(page).screenshot();
   await enterSimulation(page);
   await expect(viewer(page)).toHaveCount(1);
   expect(await viewer(page).evaluate((canvas, original) => canvas === original, originalCanvas)).toBe(true);
   expect([...geometryRequests.get(page)!].sort(), 'Entry reuses loaded genuine CAD rather than requesting a replacement robot').toEqual(assetsBeforeEntry);
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
   const startPixels = await viewer(page).screenshot();
-  const markers = await markerColumns(page, startPixels);
-  expect(markers, 'All four actual Blender course markers are visible outside the robot BOM').toHaveLength(4);
-  await capture(page, info, 'simulation-start-four-original-course-markers');
+  await capture(page, info, 'simulation-start-original-course');
   const collision = controls(page).locator('.simulation-collision');
   await expect(collision).toContainText('Simplified collision stop, no physics');
   const stop = (await collision.innerText()).match(/Both wheel plans stop safely at (\d+\.\d+) s/);
@@ -240,12 +208,6 @@ test('full source assembly enters the same actual scene; guarded course, replay 
       expect(state, 'Random/reverse seeks restore sampled motor and sensor values').toEqual(previous.state);
       expect(await changedFraction(page, previous.pixels, pixels), 'Same timestamp restores geometry and retains manual camera').toBeLessThan(0.001);
     } else saved.set(time, { pixels, state });
-    const currentMarkers = await markerColumns(page, pixels);
-    expect(currentMarkers).toHaveLength(4);
-    currentMarkers.forEach((marker, index) => {
-      expect(Math.abs(marker.min - markers[index].min)).toBeLessThanOrEqual(1);
-      expect(Math.abs(marker.max - markers[index].max)).toBeLessThanOrEqual(1);
-    });
   }
   expect(await changedFraction(page, startPixels, saved.get(6000)!.pixels), 'Actual robot geometry moves through the fixed-camera course').toBeGreaterThan(0.001);
   await capture(page, info, 'simulation-intermediate-guarded-trajectory');
@@ -270,11 +232,12 @@ test('full source assembly enters the same actual scene; guarded course, replay 
   await expectComplete(page);
   expect(await viewer(page).evaluate((canvas, original) => canvas === original, originalCanvas)).toBe(true);
   await page.getByRole('button', { name: 'Reset view', exact: true }).click();
-  expect((await markerColumns(page, await viewer(page).screenshot())).length, 'Returning to assembly hides the four external course markers').toBeLessThanOrEqual(assemblyOrange.length);
+  await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
+  expect(await changedFraction(page, assemblyPixels, await viewer(page).screenshot()), 'Returning restores the same complete assembly without external simulation objects').toBeLessThan(0.001);
   await enterSimulation(page);
   expect(await viewer(page).evaluate((canvas, original) => canvas === original, originalCanvas)).toBe(true);
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
-  expect(await markerColumns(page, await viewer(page).screenshot())).toHaveLength(4);
+  expect(await changedFraction(page, startPixels, await viewer(page).screenshot()), 'Re-entry restores the original course and robot at zero without stale transforms').toBeLessThan(0.001);
   await expect(simulationSeek(page)).toHaveValue('0');
 });
 

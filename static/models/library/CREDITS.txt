@@ -1,6 +1,6 @@
 RoboBuild licensed LDraw component library
 
-63 researched roots, 484 selected DAT source files. Source origins retained.
+64 researched roots, 485 selected DAT source files. Source origins retained.
 Original DAT text is packed without editing into MPD FILE sections.
 Runtime conversion: Rx(pi) * scale(0.4), LDU to scene mm. No endorsement by LEGO or LDraw.
 Mixed files retain CC BY 2.0 and CC BY 4.0 history obligations; see licenses/CAreadme.txt.
@@ -2399,6 +2399,14 @@ https://library.ldraw.org/library/official/parts/32316.dat
 CC-BY-4.0
 https://creativecommons.org/licenses/by/4.0/
 SHA-256 321a837bbef296bdff22a2619dc2832eb8f241e9444c753e3a32b466706f42e1
+
+parts/32348.dat
+Ishino Keiichiro
+https://library.ldraw.org/library/official/parts/32348.dat
+CC-BY-2.0 + CC-BY-4.0
+https://creativecommons.org/licenses/by/2.0/
+https://creativecommons.org/licenses/by/4.0/
+SHA-256 e3bfd1bb85696b7079974511b3b7ad1c686cd90e6dc7abec9281b5e1c7abb981
 
 parts/32498.dat
 Ross Crawford [rosco]

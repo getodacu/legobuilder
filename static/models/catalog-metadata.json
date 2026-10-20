@@ -67,7 +67,7 @@
       "edition": "Pass the Brick — 2019 export",
       "category": "Coupled gripper",
       "complexity": "Intermediate",
-      "description": "Complete28-numbered-step /39-prepared-unit source reconstruction with one F-powered coupled linkage. Native registrations and browser comparison remain independently unchecked; the separate original-block grip/hold/release demonstration is a RoboBuild extension."
+      "description": "Complete28-numbered-step /39-prepared-unit source reconstruction with one F-powered coupled linkage. Independently compared nominal handle/motor/linkage contacts, corrected4×4 jaws and diagonal H seats; physical fits remain unchecked. The separate original-block grip/hold/release demonstration is a RoboBuild extension."
     },
     "coverage": {
       "documentedSteps": 28,
@@ -81,37 +81,37 @@
           "status": "partial",
           "verified": 0,
           "total": 39,
-          "note": "39 individual prepared-unit identities reconcile to published numbered-step callout family rows; independent automated gate not yet exercised."
+          "note": "39 individual prepared-unit identities reconcile to published numbered-step callout family rows; corrected32348 jaws preserve every instance and source step."
         },
         "geometry": {
           "status": "partial",
           "verified": 0,
           "total": 39,
-          "note": "Genuine licensed LDraw roots and separate56903/61254 units; source selection/mold and independent view checks pending."
+          "note": "Genuine licensed LDraw roots; independent p17/p25 four-hole-per-arm comparison corrects32271 to32348. Historical connector mold remains provisional."
         },
         "placement": {
           "status": "partial",
           "verified": 0,
           "total": 39,
-          "note": "Native bore/shaft origins retained; all source registrations explicitly unchecked, particularly frame bridge and H crossbar indices."
+          "note": "33 nominal contacts independently compared against actual source figures/native features across25 identities: p4–8 complete handle/hub, p9–13 motor underside, p20–30 jaw/H seats and p31 rear motor join. No physical-fit promotion; fingertip stack remains unapproved."
         },
         "kinematics": {
           "status": "partial",
           "verified": 0,
           "total": 1,
-          "note": "One actual powered azure crank; two nonlinear passive closure systems on the real assembled hierarchy. Parent must exercise branch/residual/native alignment tests."
+          "note": "One actual powered azure crank; two nonlinear source-indexed passive loops, equal8mm rear lever lengths on opposite sides, diagonal H span hypot(32,16). Parent must exercise corrected branch/residual tests."
         },
         "simulation": {
           "status": "partial",
           "verified": 0,
           "total": 1,
-          "note": "Separate original GLB block; two actual tyre contact anchors, continuous grip/hold/release extension authored, not independently validated."
+          "note": "Separate original GLB block; tyre contact registration recomputed from corrected source linkage. Grip/hold/release regression awaits parent execution."
         }
       },
       "outstandingDeviations": [
-        "All new placements require independent parent manual/CAD/browser comparison; no automatically verified fit claims.",
-        "Frame bridge48989 historical mold and selected mounting frames remain provisional; source-selected H hole indices/rest branch need independent comparison.",
-        "Physical jaw endpoints, force, motor-power calibration, compliant contact and full collision clearance are unknown; limits are modeled only.",
+        "Nominal source contact evidence is not physical fit, collision or tolerance certification; no verified-step/component count promotion.",
+        "Frame bridge48989 historical mold remains provisional; four nominal seats independently compared. Wheel/brick/tile underside seating and exact wheel-axle engagement require further native/section or physical measurement.",
+        "Physical jaw endpoints, force, motor-power calibration, compliant tyre contact and full swept collision clearance are unknown; 0…0.6rad range is modeled only.",
         "Battery is prepared inside hub; six lesson scoring-brick types are unknown and excluded; no invented Force Sensor.",
         "Lesson prose left/right buttons differs from linked SVG left press/release; the calibrated position demo is explicitly a RoboBuild extension.",
         "Captive lead electrical topology is documented but flexible route/length is not reconstructed."
@@ -152,7 +152,7 @@
           "status": "partial",
           "verified": 0,
           "total": 63,
-          "note": "All source instructions represented, but diagram-selected nominal native mating features need independent manual/mesh comparison."
+          "note": "Detector frame/L/crossblock/hub and plate-join contacts source-audited; Head output/bracket seats compared. Whole-step mesh fit and remaining contacts unchecked."
         },
         "kinematics": {
           "status": "partial",
@@ -164,15 +164,15 @@
           "status": "partial",
           "verified": 0,
           "total": 1,
-          "note": "Authored deterministic response scenario using source violet sequence and distinct labeled extensions; not yet exercised."
+          "note": "Authored deterministic response scenario using source violet sequence and distinct labeled extensions; current corrections not yet exercised."
         }
       },
       "outstandingDeviations": [
-        "Native mating fits and source camera comparisons remain independently unverified; not acceptance-complete.",
+        "Bounded Detector support/exterior and Head native-seat audit is not whole-model source/mesh verification; not acceptance-complete.",
         "48989 circular-center crossblock is a provisional historical mold.",
         "Physical motor-port-to-axis mapping is UNKNOWN; A→yaw/F→body is a modeling assumption, not source truth.",
         "Modeled ±35° demo travel is not a physical stop or cable-clearance calibration.",
-        "Flexible cable paths are illustrative; no measured cable length.",
+        "Retainer clips capture flexible leads, not a rigid motor mount; absent lead geometry leaves its exact global seat UNKNOWN. Flexible cable paths are illustrative; no measured cable length.",
         "Teacher red-A/green-F and possible-solution violet-A programs remain distinct; authored demo does not claim an automatic defect classifier."
       ]
     }

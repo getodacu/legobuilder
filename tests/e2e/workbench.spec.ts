@@ -363,6 +363,9 @@ test('inspection, presentation modes and camera controls preserve assembly accou
   await page.keyboard.press('ArrowLeft');
   await expect(page.getByRole('button', { name: 'Resume auto camera', exact: true })).toBeVisible();
   await expect.poll(async () => (await viewer(page).screenshot()).equals(beforeManualOrbit), { message: 'Manual orbit changes the actual camera view' }).toBe(false);
+  await page.getByRole('button', { name: 'Reset view', exact: true }).click();
+  await expect.poll(async () => (await viewer(page).screenshot()).equals(beforeManualOrbit), { message: 'Reset restores the authored source view, not an unrelated generic rear camera' }).toBe(true);
+  await expect(page.getByRole('button', { name: 'Resume auto camera', exact: true })).toBeVisible();
   await seek(page, 4000);
   await expect(page.getByRole('button', { name: 'Resume auto camera', exact: true })).toBeVisible();
   await expectCounts(page, 3, 1);

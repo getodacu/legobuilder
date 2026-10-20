@@ -8,6 +8,7 @@
   let selected = $state<Extract<CatalogEntry, { status: 'available' }> | null>(null);
   let Workspace = $state.raw<typeof import('#lib/components/Workspace.svelte').default | null>(null);
   let workspaceError = $state('');
+  let visits = $state<Record<string, { timeMs: number; installed: number; total: number; steps: number }>>({});
   let request = 0;
 
   async function open(entry: Extract<CatalogEntry, { status: 'available' }>) {
@@ -28,8 +29,9 @@
     }
   }
 
-  async function back() {
+  async function back(progress?: { timeMs: number; installed: number; total: number; steps: number }) {
     const id = selected?.identity.id;
+    if (id && progress) visits = { ...visits, [id]: progress };
     request++;
     selected = null;
     workspaceError = '';
@@ -47,7 +49,7 @@
 {#if selected}
   {#if Workspace}
     {#key selected.identity.id}
-      <Workspace entry={selected} onBack={() => void back()} />
+      <Workspace entry={selected} initialTimeMs={visits[selected.identity.id]?.timeMs ?? 0} onBack={(progress) => void back(progress)} />
     {/key}
   {:else}
     <div class="workspace-loading">
@@ -66,5 +68,5 @@
     </div>
   {/if}
 {:else}
-  <Catalog entries={catalog} onOpen={(entry) => void open(entry)} />
+  <Catalog entries={catalog} {visits} onOpen={(entry) => void open(entry)} />
 {/if}

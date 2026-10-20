@@ -146,6 +146,43 @@ Loose objects: four two-brick sample packages (magenta, red, blue, green)
 
 Electrical identities on book 2 page 20 are exact: **A and F → motors; C → Distance Sensor; D → Color Sensor**. The diagram alone does not label which motor axis is A versus F; that physical-axis assignment remains unverified rather than guessed from the expressive movement names. The main model’s alignment insets and the lesson’s **Align Motors Correctly** tip are functional requirements, not decorative artwork.
 
+### Source-native seating audit (2026-10-20)
+
+Original Detector pp4–9/16 and Head pp3–14/20 were inspected alongside the selected licensed DATs under the private geometry cache. Detector pp5/6/8 were additionally rendered from the original PDF at3× scale, resolving individual occupied/empty holes. These comparisons found actual reconstruction faults, not merely missing confidence labels:
+
+| Source proof | Native selected contacts (LDU, before N) | Corrected authored result |
+|---|---|---|
+| Detector pp5–6: four pins sit along the frame's seven-hole sides, entering the second/fourth holes of each five-hole L leg |64179 `(±40,−10,60/20)`;32526 long-leg Z60/20 and corresponding lower Y face |Removed quarter-turn of the frame, reduced rail separation48→32 mm, and replaced incorrect L endpoints Z0/80 with the source holes. |
+| Detector pp6–8: L short legs project outward; p8 leaves each middle short-leg hole empty |32526 `(0/40,±10,80)`;39369 `(±40/±80,−10,−180)` |Short legs now face out; four plate-join collars are at world X±16/±32, Y8, Z72 mm. Pins insert upward from underneath, and the plate follows from below. |
+| Detector p7: integral crossblock pins occupy alternate remaining long-leg holes |32526 long-leg Z0/40;48989 lower bases `(0,±20,+10)`, upper bases `(0,±20,−10)` |Crossblocks are centered at `[±16,20,96]` mm; lower contacts Y16 and upper contacts Y24, with native20-LDU pin extensions. L installation now includes an8 mm downward stage. |
+| Detector p16: hub stands on the two crossblocks |`s/u9402s01.dat` end bores X±40, Y−20/0/+20, Z±110;45601 adds native shell translation `(0,−30,0)` |Correct root-native selected bores `(±40,−10/−50,−110)`, not previous X±60/untranslated Y±20. Hub origin `[0,68,84]` seats four real vertical end bores at Z88/104 mm. |
+| Detector pp4–5: red clip mounts over the rear-corner tan axle |64179 `(40,−10,−60)` and49283 native Z−10 face |Clip bore is now vertical and coaxial with the tan axle, rather than horizontal; face contact is `[16,8,128]` mm. |
+| Head pp3–6/10: lower edge mount and reversed upper output |Lower54696p01 disc `(0,−50,±20)` meets39793 edge `(−30,0,±20)`; upper disc's four `(±20,−50,0)` / `(0,−50,±20)` bores meet39793 main-face cross `(±20,−10,0)` / `(0,−10,±20)` |Lower mount and reversed body/rotor hierarchy retained. Registered all four real output-retaining pin contacts and an8 mm +X upper-motor insertion rather than only a transfer/center-pivot description. |
+| Head pp7–9: gray/tan prepared coupling |6536 axle face `(−10,0,0)`, round-pin face `(0,20,+10)`;39793 main face `(0,+10,0)`;3749 axle projects native +X |Corrected backwards tan-axle installation from−X to+X into the elbow and registered all three real collar/face contacts.3673 stays a plain round pin, not a cross axle. |
+| Head pp10–12: sensor bracket on upper motor housing, sensor on orthogonal bracket holes |Motor housing `(30,±20,140)`;39793 main-face cross;37316 sensor side `(70,±20,0)` |Existing bracket contacts remain consistent: world Z−60 housing interface, Z−68 sensor interface. No guessed center-rear sensor holes or moving/fixed motor-body swap. |
+
+The numerical regression samples the consumer assembly frame, independently transcribes source-selected contacts and checks both face coincidence and bore-axis directions. It does **not** establish molded interference, tolerances or a wholly verified source step. Full-step/component verified counts remain zero; all placement-fit fields remain unchecked.55 robot +8 sample callout identities, all30 numbered steps, separate loose samples and the actual motor body/rotor hierarchy are unchanged in scope.
+
+Head p14 was inspected directly at4× scale (2235×1676), with p13's opposite view and p20's diagram. The cached lesson alternative has the same recorded SHA-256 as the index download, not higher-information artwork. Overlapping leads, crossings and a hidden-side connector prevent independent tracing of both motor paths. A/F physical-axis mapping therefore remains **unknown**; the app's A→yaw/F→upper-body command mapping remains explicitly authored, not a source wiring assertion.
+
+### Exterior contacts and cable-supported retainer (2026-10-20)
+
+Detector PDF pp12–15 and Head pp15–17/19 were reopened individually; Detector p15 and Head pp17/19 were also rendered at3× directly from the locked originals. The native comparison uses39789/3749,24309 with `s/24309s01.dat`,41749 and mirrored41750,39369 with `s/39369s01.dat`,49283 and32062:
+
+| Source support path | Native evidence (LDU, before N) | Reconstruction correction / limit |
+|---|---|---|
+| Detector pp12–13: inverted preparation, two pin/axles per brick, then turn/mount both surrounds |39789 bottom Y24; outer vertical axle holes X±20, Z0.3749 axle +X and pin −X.39369 top Y−10, ordinary20-LDU Technic grid |Brick roots X8→24 mm; pin collars Y17.6→8 mm and X0/16→16/32 mm. Collars now meet both the underside axle holes and plate bores. Prepared bricks turn upside-down and axle preparation enters the exposed underside. Stable instance IDs are retained, even when their embedded numbers no longer describe the pose. |
+| Detector p14: curves occupy the rear half of the brick studs |24309 rear bottom plane Y24; stud pockets X±10, Z0/−20; rear underside tube `(0,20,−10)` lies between pockets. The recessed front tube `(0,12,20)` is not this seat |Curve roots `[24,24,z]`→`[28,27.2,z]`, Ry(+pi/2). Four pockets match brick studs X10/30, Z±10. Exact nominal contact is independent of tube-center coincidence; no stud is placed on a between-stud tube axis. |
+| Detector p15: handed panels on the Color Sensor's reading side, four rear stud sockets per panel |41749 underside Y24, sockets X0/−20 and Z±10;41750 reflects X. Both front soles reach Y48 near native Z−120 |41750 root `[16,27.2,12]`;41749 `[16,27.2,68]`. Their original Ry(−pi/2) already points toward−X and is retained. Corrected handed-side selection and4 mm lateral half-stud error; sockets now occupy the brick's front columns X−30/−10. Soles reach the plate at world Y8. |
+| Panel front support is bearing, not a fictitious stud clutch |39369 repeats `connhole.dat` plus half-grid `npeghole.dat`; no stud primitives. Panel front sole is molded Y48 geometry |Only rear stud-pocket attachment is registered as fixed. Front sole height/reading-side position is independently asserted; toe interference, bearing patch and retention remain unchecked. |
+| Head pp15–17: two clips joined by a red2L axle capture the flexible bundle |49283 native-Z bore, thickness20 LDU with Z±10 faces;32062 native-X shaft endpoints ±20. Cable-channel arms extend native Y−10…−29 |Old clip bores were perpendicular to the axle. Two coaxial clip bores now touch at their adjoining faces and enclose the entire40-LDU shaft, with flush outer ends. Retainer display position moves to the far side beside the upper motor; both clips and axle remain real inventory units. |
+
+**Retainer support is the flexible leads themselves.** Head p17 shows the bundle passing through the open clip arms, not an axle entering a motor hole or a rigid bracket. The clip/axle internal fit is exact nominal DAT geometry; its whole-assembly position is not dimensioned. The displayed far-side seat is explicitly `unknown` numerical evidence at confidence0.35, with `diagram-derived` placement. Pitch parenting preserves existing playback ownership and does not certify a rigid mount. Rendered flexible lead geometry is absent, so the support cannot be visually reconstructed without a separately justified route; no cable length, bundle thickness, rigid support or measured flex path is invented. Motor A/F physical-axis assignment remains **UNKNOWN**.
+
+The independent consumer-frame fixture adds surround underside/plate collar coincidence and axes, inverted preparation/insertion, all sixteen curve/panel stud pockets, front sole height/direction, and both clip bores, joining faces and shaft endpoints. It deliberately does not assert a measured global retainer seat. All30 steps,55 robot units +8 sample units and the existing body/rotor/sensor hierarchy remain unchanged. No build/test/lint/formatter was run.
+
+
+
 ## Documented capabilities versus actual lesson behavior
 
 ### Color Sensor
@@ -185,9 +222,9 @@ All downloaded originals and rendered manual/program imagery remain private deve
 ## Remaining gaps
 
 - Numerical manufacturer design/element IDs remain uncertified and structured `partId` fields remain null. Source-shape geometry is now resolved contextually in the crosswalk; exact historical mold variants remain uncertain.
-- Complete authorized assembled CAD, exact coordinates, hole indices, motor axes/limits and cable-safe travel are not established.
-- A/F motor-port-to-physical-axis mapping has not been independently traced.
+- No complete authorized assembled CAD or manufacturer-coordinate/fit certificate is established. The bounded contact selection above includes the Detector surrounds, curves and handed panels and the retainer's internal clip/axle stack. Molded clearance, upper/lower motor pointer zero, gray elbow retention, panel toe bearing and exact cable-supported retainer position remain unverified. Flexible lead geometry is absent; motor limits, cable lengths, flex route and cable-safe travel are not established.
+- A/F motor-port-to-physical-axis mapping remains unknown after the higher-resolution p14 and cached identical alternative inspection.
 - Embedded lesson videos were not downloaded or frame-inspected; motion claims here come from actually rendered official program SVGs and official prose.
 - There is **no integration gap**: the final joining steps, combined hierarchy and wiring are present and inspected.
 
-No app code, build, lint, test or formatter work was performed for this research slice.
+The source-native audit updated only the robot model, its unit regression and robot-specific research/validation records. No build, test, lint or formatter was run for these corrections.

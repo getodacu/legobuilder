@@ -1,6 +1,6 @@
 # Advanced Driving Base simulation browser contract
 
-`tests/e2e/simulation.spec.ts` was exercised in Chromium after integration: **3/3 passed alone and again within the 16/16 all-spec union**, including completed source assembly/real MPD asset reuse, guarded course and deterministic scrubbing, independent C/D gear motion, typed B/F events, repeatable reset, and 320 px controls without horizontal overflow. It does **not** constitute mechanical-fit approval, collision physics or manufacturer validation. The scenario shares the completed model and WebGL canvas.
+`tests/e2e/simulation.spec.ts` passed within the final **18/18** Chromium all-spec union, including completed source assembly/real MPD reuse, guarded course and deterministic scrubbing, independent C/D gear motion, typed B/F events, reset and320px controls without horizontal overflow. The full-course regression passed1/1 alone after correcting history-dependent studio lighting and now checks same-pixel assembly return/course re-entry instead of a brittle orange-column classifier. This does **not** constitute mechanical-fit approval, collision physics or manufacturer validation. Simulation shares the completed model and WebGL canvas.
 
 ## Entry, source accounting and scene continuity
 

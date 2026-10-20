@@ -17,7 +17,7 @@
       "package-sorter": 45,
       "hand-quality": 36
     },
-    "selectedGenuineRoots": 63,
+    "selectedGenuineRoots": 64,
     "selectedRootsReusingBaselineRoot": 16,
     "baselineDependencyFilesPromotedToRoot": 2,
     "baselineRootsPreserved": 23,
@@ -36,9 +36,10 @@
     "unresolvedVisualShapeFamilies": [],
     "historicalMoldsCertified": false,
     "quantitiesChanged": false,
-    "selectedDependencyClosureDatFiles": 484,
-    "selectedDependencyClosureBytes": 1319515,
-    "familyDistributionCorrected": true
+    "selectedDependencyClosureDatFiles": 485,
+    "selectedDependencyClosureBytes": 1323112,
+    "familyDistributionCorrected": true,
+    "rootMembershipNote": "Per-file includedBySelectedRoots arrays retain the initial inspection snapshot. Current exact membership is derived from each selected asset dependencyClosure; the Hand32348 promotion reuses all41 already-selected dependencies and adds only its existing cached root to runtime selection."
   },
   "inputs": [
     {
@@ -5721,11 +5722,11 @@
       "localKey": "black-angled-beam",
       "originalDescription": "Black angled perforated jaw link",
       "originalColor": null,
-      "correctedName": "Technic Beam  3 x  7 Liftarm Bent 53.13",
-      "geometryId": "32271",
-      "dat": "32271.dat",
-      "localPath": ".research-cache/geometry/ldraw/parts/32271.dat",
-      "sourceUrl": "https://library.ldraw.org/library/official/parts/32271.dat",
+      "correctedName": "Technic Beam  4 x  4 Liftarm Bent 53.13",
+      "geometryId": "32348",
+      "dat": "32348.dat",
+      "localPath": ".research-cache/geometry/ldraw/parts/32348.dat",
+      "sourceUrl": "https://library.ldraw.org/library/official/parts/32348.dat",
       "elementIds": [],
       "retailSku": null,
       "material": {
@@ -5760,7 +5761,7 @@
       "moldUncertainty": "Exact physical manufacturing revision is not certified by this manual-to-CAD visual comparison.",
       "alternativeGeometryCandidates": [],
       "correctionIndexes": [],
-      "notes": [],
+      "notes": ["Independent enlarged Hand PDFp17/25 printed14/22 callouts show four-hole/four-hole arms sharing a bend. Genuine32348 replaces wrongly selected32271 only in Hand; rear source-selected rounds are native(16,0,72)/(32,0,84), terminal cross(48,0,96). Neither physical historical mold nor all contacts are certified."],
       "dimensionsMm": null
     },
     {
@@ -7257,9 +7258,42 @@
       "detail": "Book4 p28 introduces two gray2L axle/1L pin connectors, same shape as the bottom pair on p30, not black2780 pins. Gray axles project through uprights toward hub yellow holes in book5 p12. Book4 black-pin2 22→20 and grey-axlepin2 2→4; wholeADB75→73 and2→4. Book4 68 and full234 unchanged.",
       "rejectedStepPartKey": "black-pin2",
       "rejectedGeometryId": "2780"
+    },
+    {
+      "input": "hand-quality",
+      "build": "robotic-hand",
+      "key": "black-angled-beam",
+      "rejectedGeometryId": "32271",
+      "correctedGeometryId": "32348",
+      "detail": "Official Pass-the-Brick2019 PDFp17/25 printed14/22 depicts4x4 bent beams, not3x7. Two existing Hand instances retain identities and quantities. Compare real32348 native ground-round(32,0,84), first rear-round(16,0,72) and terminal cross(48,0,96); Sorter32271 remains unchanged. Cached original mixed CC BY2.0/4.0 root and all41 dependencies are already license/hash recorded."
     }
   ],
   "assets": [
+    {
+      "description": "Technic Beam  4 x  4 Liftarm Bent 53.13",
+      "sourceUrl": "https://library.ldraw.org/library/official/parts/32348.dat",
+      "localPath": ".research-cache/geometry/ldraw/parts/32348.dat",
+      "sha256": "e3bfd1bb85696b7079974511b3b7ad1c686cd90e6dc7abec9281b5e1c7abb981",
+      "bytes": 3597,
+      "authors": ["Ishino Keiichiro"],
+      "licenseStatements": ["Licensed under CC BY 2.0 and CC BY 4.0 : see CAreadme.txt"],
+      "geometryId": "32348",
+      "dat": "32348.dat",
+      "elementIds": [],
+      "retailSku": null,
+      "historicalMoldCertification": false,
+      "dependencyClosure": [
+        "p/1-16chrd.dat", "p/1-16cyli.dat", "p/1-16cylo.dat", "p/1-16edge.dat", "p/1-16tang.dat",
+        "p/1-8chrd.dat", "p/1-8cyli.dat", "p/1-8edge.dat", "p/1-8ndis.dat", "p/1-8ring8.dat",
+        "p/2-4cyli.dat", "p/2-4edge.dat", "p/2-4ring16.dat", "p/2-4ring2.dat", "p/2-4ring8.dat",
+        "p/3-16tndis.dat", "p/3-8ring12.dat", "p/4-4cyli.dat", "p/4-4edge.dat", "p/4-4ring3.dat",
+        "p/4-4ring8.dat", "p/8/3-8chrd.dat", "p/8/3-8cyli.dat", "p/8/3-8cylo.dat", "p/8/3-8edge.dat",
+        "p/axl5ho10.dat", "p/axl5hol9.dat", "p/axlehol4.dat", "p/beamhole.dat", "p/connhole.dat",
+        "p/empty.dat", "p/npeghol2.dat", "p/npeghol3a.dat", "p/npeghol4.dat", "p/npeghol4a.dat",
+        "p/npeghol7.dat", "p/npeghol7a.dat", "p/npeghole.dat", "p/peghole.dat", "p/rect2p.dat",
+        "p/rect3.dat", "parts/32348.dat"
+      ]
+    },
     {
       "description": "Technic Axle Pin Long with Friction with  2L Pin",
       "sourceUrl": "https://library.ldraw.org/library/official/parts/11214.dat",
@@ -96690,8 +96724,8 @@
         },
         {
           "localKey": "black-angled-beam",
-          "geometryId": "32271",
-          "dat": "32271.dat",
+          "geometryId": "32348",
+          "dat": "32348.dat",
           "color": 0
         },
         {

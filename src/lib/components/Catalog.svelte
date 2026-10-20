@@ -2,7 +2,7 @@
   import { onMount, tick } from 'svelte';
   import type { CatalogEntry } from '#lib/types/model.ts';
 
-  let { entries, onOpen }: { entries: CatalogEntry[]; onOpen: (entry: Extract<CatalogEntry, { status: 'available' }>) => void } = $props();
+  let { entries, visits, onOpen }: { entries: CatalogEntry[]; visits: Record<string, { timeMs: number; installed: number; total: number; steps: number }>; onOpen: (entry: Extract<CatalogEntry, { status: 'available' }>) => void } = $props();
   let failedPreviews = $state<string[]>([]);
   let mounted = $state(false);
   onMount(() => { mounted = true; });
@@ -36,6 +36,7 @@
       {#each entries as entry, index (entry.identity.id)}
         {@const partial = entry.coverage.implementedSteps < entry.coverage.documentedSteps}
         {@const fitUnchecked = entry.coverage.verifiedSteps < entry.coverage.documentedSteps || entry.coverage.dimensions.placement.status !== 'complete'}
+        {@const visit = visits[entry.identity.id]}
         <article class:available={entry.status === 'available'} class="build-card">
           <div class="card-preview">
             <span class="card-index">{String(index + 1).padStart(2, '0')}</span>
@@ -52,7 +53,10 @@
             <p>{entry.identity.description}</p>
             <dl class="card-facts"><div><dt>Edition</dt><dd>{entry.identity.edition}</dd></div><div><dt>Complexity</dt><dd>{entry.identity.complexity}</dd></div><div><dt>Inventory scope</dt><dd>{entry.coverage.dimensions.inventory.note}</dd></div><div><dt>Verified reconstruction</dt><dd>{entry.coverage.verifiedSteps} source steps · {entry.coverage.verifiedComponents} components</dd></div></dl>
             {#if entry.status === 'available'}
-              <button id={`open-${entry.identity.id}`} class="primary card-action" disabled={!mounted} onclick={() => onOpen(entry)}>Open {partial ? 'partial ' : ''}workbench <span aria-hidden="true">↗</span></button>
+              <div class="visit-progress" aria-label={`${entry.identity.name} visit progress`}>
+                {#if visit && visit.timeMs > 0}<strong>{visit.steps === entry.coverage.documentedSteps ? 'Authored assembly reached' : 'Paused this visit'}</strong><span>{visit.installed}/{visit.total} robot units · {visit.steps}/{entry.coverage.documentedSteps} source steps</span><progress value={visit.steps} max={entry.coverage.documentedSteps} aria-label={`${entry.identity.name} source-step progress`}></progress>{:else}<span>Not started this visit</span>{/if}
+              </div>
+              <button id={`open-${entry.identity.id}`} class="primary card-action" disabled={!mounted} onclick={() => onOpen(entry)}>{visit && visit.timeMs > 0 ? 'Resume' : 'Open'} {partial ? 'partial ' : ''}workbench <span aria-hidden="true">↗</span></button>
             {:else}
               <button class="secondary card-action" disabled={!mounted} onclick={(event) => showSources(entry, event)}>View sources & limitations <span aria-hidden="true">↗</span></button>
             {/if}
@@ -60,7 +64,7 @@
         </article>
       {/each}
     </div>
-    <footer class="catalog-footer"><p>Built around evidence, not approximations disguised as completion.</p><span>Independent learning tool. Not affiliated with or endorsed by LEGO Education or VEX Robotics.</span></footer>
+    <footer class="catalog-footer"><p>Built around evidence, not approximations disguised as completion. <a href="/models/library/CREDITS.txt" target="_blank" rel="noreferrer">Geometry & preview credits ↗</a></p><span>Independent learning tool. Not affiliated with or endorsed by LEGO Education or VEX Robotics.</span></footer>
   </main>
 </div>
 
@@ -78,3 +82,7 @@
     <p class="small">Sources are linked, not redistributed. A public download does not imply permission to convert or redistribute app geometry.</p>
   {/if}
 </dialog>
+
+<style>
+  .visit-progress{display:flex;flex-direction:column;gap:4px;margin:16px 0;font-size:12px;color:var(--muted)}.visit-progress strong{color:var(--ink)}.visit-progress progress{width:100%;height:5px;accent-color:var(--teal)}
+</style>

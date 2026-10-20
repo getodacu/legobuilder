@@ -3,10 +3,11 @@
   import RobotScene from '#lib/components/RobotScene.svelte';
   import Timeline from '#lib/components/Timeline.svelte';
   import SimulationControls from '#lib/components/SimulationControls.svelte';
+  import MechanismGuide from '#lib/components/MechanismGuide.svelte';
   import { compileAssembly, createFrame, sampleAssembly, getStepTime } from '#lib/assembly/engine.ts';
   import type { AssemblyFrame, CatalogEntry, CompiledAssembly, RendererController, RobotModel, SimulationFrame, SourceReference, ViewOptions } from '#lib/types/model.ts';
 
-  let { entry, onBack }: { entry: Extract<CatalogEntry, { status: 'available' }>; onBack: () => void } = $props();
+  let { entry, initialTimeMs = 0, onBack }: { entry: Extract<CatalogEntry, { status: 'available' }>; initialTimeMs?: number; onBack: (progress?: { timeMs: number; installed: number; total: number; steps: number }) => void } = $props();
   let model = $state.raw<RobotModel | null>(null);
   let compiled = $state.raw<CompiledAssembly | null>(null);
   let frame = $state.raw<AssemblyFrame | null>(null);
@@ -36,6 +37,7 @@
   let selectedPartId = $state<string | null>(null);
   let autoCamera = $state(true);
   let view = $state<ViewOptions>({ mode: 'studio', explodedFactor: 0, labels: false, showJoints: false, showConnections: false, isolatedPartIds: [] });
+  let showEducation = $state(false);
   let wide = $state(false);
   let leftOpen = $state(false);
   let rightOpen = $state(false);
@@ -269,7 +271,7 @@
       partIndex = new Map(assembly.partIds.map((id, index) => [id, index]));
       model = candidate; compiled = assembly; frame = output;
       stepIndex = -1;
-      sample(0);
+      sample(initialTimeMs);
       if (!candidate.sourceDocuments.some((document) => document.id === sourceDocumentId && document.pageCount !== undefined)) sourceDocumentId = candidate.sourceDocuments.find((document) => document.pageCount !== undefined)?.id ?? '';
     } catch (error) {
       if (!request.signal.aborted && !disposed) loadError = error instanceof Error ? error.message : String(error);
@@ -292,7 +294,7 @@
 <svelte:window onkeydown={keyboard} />
 <div class="workspace-shell">
   <header class="workspace-header">
-    <button class="wordmark wordmark-button" onclick={() => { pause(true); simulationControls?.pause(); onBack(); }} aria-label="Back to build catalog"><span class="alignment-mark" aria-hidden="true"></span>RoboBuild</button>
+    <button class="wordmark wordmark-button" onclick={() => { pause(true); simulationControls?.pause(); onBack(compiled && model ? { timeMs, installed: stats.robotInstalled, total: stats.robotTotal, steps: model.steps.filter((step, index) => step.kind === 'numbered-instruction' && compiled!.stepTimes[index].endMs <= timeMs).length } : undefined); }} aria-label="Back to build catalog"><span class="alignment-mark" aria-hidden="true"></span>RoboBuild</button>
     <div class="workspace-identity"><span class="eyebrow">{entry.identity.manufacturer} / {entry.identity.category}</span><h1>{entry.identity.name}</h1></div>
     <span class="coverage-badge header-coverage">{coverage.implementedSteps}/{coverage.documentedSteps} authored{coverage.implementedSteps < coverage.documentedSteps ? ' · partial source coverage' : coverage.verifiedSteps < coverage.documentedSteps || coverage.dimensions.placement.status !== 'complete' ? ' · new fits unverified' : ' source steps'}</span>
     <button bind:this={helpTrigger} onclick={openHelp} aria-haspopup="dialog">Keyboard help <kbd>?</kbd></button>
@@ -345,6 +347,7 @@
           <div class="view-options-content">
             <p class="eyebrow">Millimeters · Y-up</p>
             <div class="overlay-toolbar"><label><input type="checkbox" checked={view.labels} onchange={() => toggleOverlay('labels')} /> Labels</label><label><input type="checkbox" checked={view.showJoints} disabled={!model?.joints.length} onchange={() => toggleOverlay('showJoints')} /> Joint axes{!model?.joints.length ? ' (none recorded)' : ''}</label><label><input type="checkbox" checked={view.showConnections} disabled={!model?.connections.length && !model?.parts.some((part) => part.connectionPoints.length)} onchange={() => toggleOverlay('showConnections')} /> Connections / mounts</label></div>
+            <div class="overlay-toolbar"><label><input type="checkbox" bind:checked={showEducation} /> Educational explanations</label></div>
             <p class="small">Explode changes presentation only, never source time or installed counts.</p>
           </div>
         </details>
@@ -359,6 +362,7 @@
       </div>
       <div class="camera-toolbar"><div class="camera-actions"><button disabled={blocked} onclick={() => controller?.resetCamera()}>Reset view</button><button disabled={blocked} onclick={() => controller?.fit('all')}>Fit whole</button><button disabled={blocked} onclick={() => controller?.fit('active')}>Focus active</button><button disabled={blocked || !selectedModule} onclick={() => { if (selectedModule) controller?.fit({ subassemblyId: selectedModule.id }); }}>Fit module</button></div><div class="camera-status">{#if simulationActive}<span>Simulation camera · manual orbit</span>{:else if autoCamera}<span>Auto camera</span>{:else}<span>Manual camera</span><button disabled={blocked} onclick={resumeCamera}>Resume auto camera</button>{/if}</div></div>
       <div class="assembly-summary" aria-label="Assembly counts"><span><strong class="mono">{stats.robotInstalled}/{stats.robotTotal}</strong> units installed</span><span><strong class="mono">{stats.robotTotal - stats.robotInstalled}</strong> remaining</span><span><strong class="mono">{stats.stepsComplete}/{stats.stepsTotal}</strong> {stats.stepsTotal === coverage.documentedSteps ? 'source steps' : 'timeline stages'}</span>{#if reducedMotion}<span>Reduced motion</span>{/if}{#if view.explodedFactor}<span>Exploded view</span>{/if}{#if view.isolatedPartIds.length}<button onclick={() => view = { ...view, isolatedPartIds: [] }}>Exit isolate</button>{/if}</div>
+      {#if showEducation && model}<MechanismGuide {model} simulationFrame={simulationActive ? simulationFrame : null} {revision} {stepIndex} {selectedPartId} onSelect={(id) => selectPart(id)} onStep={selectStep} />{/if}
       {#if !simulationActive}<section class="simulation-gate" aria-label="Post-assembly demonstration"><button class:primary={simulationAvailable} disabled={blocked || !simulationAvailable} aria-describedby="simulation-lock" onclick={enterSimulation}>{simulationAvailable ? 'Enter post-assembly demonstration' : 'Simulation locked'}</button><p id="simulation-lock">{simulationLock}</p></section>{/if}
       {#if currentStep?.warnings.length}<div class="compact-warning"><span title={currentStep.warnings[0]}><strong>Step warning:</strong> {currentStep.warnings[0]}</span><button onclick={() => void revealWarnings()}>Read {currentStep.warnings.length > 1 ? 'warnings' : 'warning'}</button></div>{/if}
     </section>
@@ -404,5 +408,6 @@
   <p>The native seek range supports arrow keys for one-millisecond changes and Home / End for endpoints. Manual seeking pauses. Play step, Play all and Reverse have independent visible buttons. Speed changes preserve position and endpoint.</p>
   <p>Shortcuts do not capture typing, IME composition, native button Space, range keys or dialog keys. Manual camera movement stops automatic framing until Resume auto camera.</p>
   <p>View options contains labels, joint axes and connection overlays. Instructions → Assembly status & viewing contains module accounting and separate sample/fastener counts. Below the scene, demonstration entry requires the complete implemented manifest and assembly end, with an available mechanism scenario. Placement verification remains separately disclosed. In simulation, Home / End seek its endpoints; manual motor edits pause and reset the selected motor plan without overwriting other motors. A step warning’s Read warning button opens its full text in Instructions.</p>
+  <p>Educational explanations in View options follows the declared joints, native parts, motor bindings, sensor evidence, structural connections and operation prerequisites. Click an inspection action to select its real component, or a prerequisite to seek its source step. Missing mechanisms and app-authored inputs remain explicit.</p>
   <p class="small">Reduced motion makes assembly playback jump to its requested endpoint and disables automatic camera flights. Simulation starts paused and moves only with explicit playback or seeking. Counts change only at source-backed instance installation events.</p>
 </dialog>

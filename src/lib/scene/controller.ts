@@ -1,7 +1,7 @@
 import {
   ACESFilmicToneMapping, Box3, BufferAttribute, BufferGeometry, Color, DirectionalLight, DynamicDrawUsage,
   EdgesGeometry, GridHelper, Group, HemisphereLight, InstancedMesh, LineBasicMaterial,
-  LineSegments, Matrix4, Mesh, OrthographicCamera, PCFSoftShadowMap, PerspectiveCamera,
+  LineSegments, Matrix4, Mesh, OrthographicCamera, PCFShadowMap, PerspectiveCamera,
   PlaneGeometry, PMREMGenerator, Quaternion, Raycaster, Scene, ShadowMaterial, Sphere,
   SRGBColorSpace, Vector2, Vector3, WebGLRenderer, type WebGLRenderTarget
 } from 'three';
@@ -102,7 +102,7 @@ export class SceneController implements RendererController {
     this.renderer.toneMapping = ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.12;
     this.renderer.shadowMap.enabled = true;
-    this.renderer.shadowMap.type = PCFSoftShadowMap;
+    this.renderer.shadowMap.type = PCFShadowMap;
     this.renderer.setPixelRatio(this.ratio);
     this.scene.background = new Color('#f4f1ea');
     const room = new RoomEnvironment();
@@ -442,7 +442,6 @@ export class SceneController implements RendererController {
     this.environmentVisible = frame.environmentVisible.includes(1);
     if (this.environmentVisible && !wasEnvironmentVisible) this.flight = null;
     this.applyFrame();
-    if (first || wasEnvironmentVisible !== this.environmentVisible) this.configureStudio();
     if (first) this.fitBounds('all', false);
     if (!first && returningToInventory && this.autoCamera && !this.environmentVisible) this.fitBounds('all', false);
     const preset = this.currentPreset();
@@ -513,6 +512,7 @@ export class SceneController implements RendererController {
       }
     }
     this.overlays?.update(this.matrices, frame, this.view, this.included);
+    this.configureStudio();
     this.dirty = true;
   }
 
@@ -626,7 +626,12 @@ export class SceneController implements RendererController {
 
   resetCamera(): void {
     this.onManual();
-    this.camera.position.copy(this.controls.target).add(new Vector3(160, 130, 200));
+    const preset = this.currentPreset();
+    if (preset) { this.applyPreset(preset, false); return; }
+    const assembled = this.frame && this.frame.timeMs > 0 ? this.cameraSteps.at(-1)?.preset : undefined;
+    if (assembled) this.position.fromArray(assembled.position).sub(this.center.fromArray(assembled.target));
+    else this.position.set(160, 130, 200);
+    this.camera.position.copy(this.controls.target).add(this.position);
     this.camera.up.set(0, 1, 0);
     this.fitBounds('all', false);
   }
@@ -703,14 +708,13 @@ export class SceneController implements RendererController {
       this.bounds.union(this.partBounds.copy(this.handleById.get(this.model.simulationObjects![index].geometryId)!.bounds).applyMatrix4(this.propMatrices[index]));
     }
     if (this.bounds.isEmpty()) return;
-    const size = this.bounds.getSize(new Vector3());
-    const span = Math.max(100, size.length());
-    const center = this.bounds.getCenter(new Vector3());
+    const span = Math.max(100, this.bounds.getSize(this.scale).length());
+    const center = this.bounds.getCenter(this.center);
     const floorY = this.environmentVisible && this.courseRootY !== null ? this.courseRootY : this.bounds.min.y - 0.25;
     this.ground.position.set(center.x, floorY, center.z);
     this.ground.scale.set(span * 8, span * 8, 1);
     this.grid.position.set(center.x, floorY + 0.05, center.z);
-    this.light.position.copy(center).add(new Vector3(-span, span * 2, span));
+    this.light.position.copy(center).add(this.position.set(-span, span * 2, span));
     this.light.target.position.copy(center);
     const camera = this.light.shadow.camera;
     camera.left = camera.bottom = -span; camera.right = camera.top = span;

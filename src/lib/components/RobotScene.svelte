@@ -117,7 +117,7 @@
     <summary>Camera help</summary>
     <p>Drag to orbit. Right-drag or two-finger drag to pan. Scroll or pinch to zoom.</p>
     <p>Focus the viewer: arrow keys orbit, Shift + arrows pan, + / − zoom, R resets, F focuses selection or active parts. Use the inventory to select any part.</p>
-    <p>At time zero, the camera fits the staged inventory. Advancing playback or scrubbing starts the authored instruction views. Reset and Fit frame the current component bounds.</p>
+    <p>At time zero, the camera fits the staged inventory. Advancing playback or scrubbing starts the authored instruction views. Reset restores the current source view; Fit frames current component bounds. In simulation, Reset frames the robot without distant course props.</p>
     <p>Manual movement pauses automatic camera framing until Resume auto camera is selected.</p>
   </details>
 </div>

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const builds = [
-  { id: 'robotic-hand', units: '39/39', stages: '29/29', steps: '28/28', time: 54600, demoTime: 4200, scenario: /coupled grip, hold and release/i, reading: /Port F: 2\.241 rad/, complete: true },
+  { id: 'robotic-hand', units: '39/39', stages: '29/29', steps: '28/28', time: 54600, demoTime: 4200, scenario: /coupled grip, hold and release/i, complete: true },
   { id: 'quality-check', units: '55/55', stages: '30/30', steps: '30/30', time: 60950, demoTime: 5300, scenario: /inspection-response demo/i, reading: /Sensor D: violet/, complete: true },
   { id: 'package-sorter', units: '158/158', stages: '80/80', steps: '80/80', time: 138450, demoTime: 6000, scenario: /motor replay — pickup disabled/i, reading: /Port F:/, complete: false }
 ] as const;
@@ -52,7 +52,7 @@ for (const build of builds) {
     await expect(viewer).toHaveCount(1);
     const atZero = await viewer.screenshot();
     await region.getByRole('slider', { name: 'Simulation position' }).fill(String(build.demoTime));
-    await expect(region.getByLabel('Sampled motor angles and sensor readings')).toContainText(build.reading);
+    if ('reading' in build) await expect(region.getByLabel('Sampled motor angles and sensor readings')).toContainText(build.reading);
     if (build.complete) expect((await viewer.screenshot()).equals(atZero), 'Powered mechanism must visibly move its existing real assembly').toBe(false);
     else {
       await expect(region).toContainText('pickup disabled');

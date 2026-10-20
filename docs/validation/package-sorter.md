@@ -18,7 +18,17 @@ The model is `packageSorter` in `src/lib/models/package-sorter.ts`, ID `package-
 
 Parent integration exercised strict manifest build, `npm run check`, the unit suite, and Chrome `additional-robots.spec.ts` (3/3 across additional robots); the authoring-only note is superseded. The permanent `tests/unit/package-sorter.test.ts` **skips the unresolved full-cycle pickup test explicitly**; no green sorting acceptance is implied.
 
-Original Chrome source-stage captures: [Base 53 mirrored fork bracket, 154/158 robot units, fit unverified](screenshots/package-sorter-fork-unverified.webp), and [assembled Python source-command replay at 6.0 s, pickup disabled](screenshots/package-sorter-source-replay-no-pickup.webp). No image is offered as evidence of correct fork contact or an actual delivered package.
+Original Chromium WebGL captures at1512×982 cover the source timeline below. They demonstrate renderer/transport states, **not** correct fork contacts, nonlinear closure or an actual delivered package:
+
+| State | Installed robot units; source steps | Live capture |
+|---|---|---|
+| Staged inventory |0/158;0/80 |[Inventory](screenshots/sorter-source-inventory.png) |
+| Robot19 + Base11 assembled |78/158;30/80 |[Base](screenshots/sorter-source-base-seated.png) |
+| Base53 approach, 55%, geometry unverified |155/158;71/80 |[Fork approach](screenshots/sorter-source-fork-approach-unverified.png) |
+| Final authored state;8 separate samples also installed |158/158;80/80 |[Unverified final assembly](screenshots/sorter-source-final-unverified.png) |
+| Same endpoint, technical mode |158/158;80/80 |[Technical](screenshots/sorter-source-technical.png) |
+| Same endpoint, exploded presentation |158/158;80/80 |[Exploded](screenshots/sorter-source-exploded.png) |
+| Source commands at6s, **pickup disabled** |158/158;80/80 |[Motor replay only](screenshots/sorter-source-command-replay-only.png) |
 
 ## Locked source edition and accounting
 
@@ -161,7 +171,7 @@ The Python rate250°/s and shake1000°/s are source values. SVG25% is **not** as
 
 Runnable tests independently transcribe all45 family rows and R/B/P quantities, including the two p24 stable-ID exceptions and corrected30/4 Base pin-family accounting; check authentic DAT and palette identities, source pages, exact one-time introductions, installation milestones, the101-unit whole-arm merge, initial whole inventory visibility and deterministic arbitrary-time sampling. A dedicated behavioral regression requires those exact p24 IDs to be black6628 towballs with native sphere-center frames, real2739a socket-center frames and40mm fixed span, preserving their original source installation and unchecked assembled-fit flags. Native-frame tests also cover both real motor pivots, opposite axial seats, the z28's nativeZ axis and39789 sample stacking. Program checks independently assert the magenta/reject command outputs and Python/SVG final-order distinction. Replay checks prove only supported output motion; they do not call a static fork a successful pickup.
 
-The source full-cycle/nonlinear-closure/two-contact delivery test is explicitly skipped with the precise blocker. Parent integration after the p24 identity correction passed `npm run models:build` (166 tracked units, 80/80 steps), `npm run check` (868 files, zero errors/warnings), `npm run test:unit` (46 passed, one sorter pickup acceptance skipped) and `env -u CI npm run test:e2e` (16/16 real Chromium cases). The source-program replay was exercised without claiming real package contact. **Manual-to-WebGL fit comparison, unintended intersections, hole alignment, cable envelopes, calibrated exploded view, performance, full capture/release continuity and distinct physical outputs remain unexercised**. No source-accurate sorting acceptance pass is claimed here.
+The source full-cycle/nonlinear-closure/two-contact delivery test remains explicitly skipped with its precise blocker. Final parent integration passed `npm run models:build` (166 tracked units,80/80 steps), `npm run check` (871 files, zero errors/warnings), `npm run test:unit` (52 passed, one Sorter pickup acceptance skipped), static production build and `env -u CI npm run test:e2e` (18/18 real Chromium cases). Source-program replay and the complete source-state screenshot set were exercised without claiming real package contact. **Full manual-to-WebGL fit, unintended intersections, hole alignment, cable envelopes, calibrated explosion, continuous capture/release and distinct physical outputs remain unverified.** No source-accurate sorting acceptance pass is claimed.
 
 [robot]: https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltebfffd33fc0a5e72/5f8802a1bc43790f5c4389f2/automate-it-bi-pdf-book1of3.pdf?locale=en-us
 [base]: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us

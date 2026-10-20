@@ -88,6 +88,89 @@ test('Quality source inventory, integration, real native mates and serial body/r
   assert.deepEqual(finalView.stages, []);
   assert.equal(model.steps.find((step) => step.id === 'quality-robot-head-step12')?.action, 'wiring');
 
+  // Consumer-frame contact fixture transcribed from Detector pp5–9/16, not model connection constants.
+  // 64179 seven-hole rails are X±40; 32526 frame pins are holes Z20/60,
+  // crossblock pins occupy Z0/40, and the outward short-leg pins are X0/40 at Z80.
+  const contact = (a: string, ap: Vec3, aa: Vec3, b: string, bp: Vec3, ba: Vec3): void => {
+    const aPose = pose(frame, a), bPose = pose(frame, b);
+    close(nativePoint(aPose, ap), nativePoint(bPose, bp), `${a}/${b} selected face contact`);
+    const av = nativePoint(aPose, aa).map((value, index) => (value - aPose.position[index]!) / 0.4);
+    const bv = nativePoint(bPose, ba).map((value, index) => (value - bPose.position[index]!) / 0.4);
+    assert.ok(Math.abs(av.reduce((sum, value, index) => sum + value * bv[index]!, 0)) > 1 - 1e-7, `${a}/${b} actual bore axes`);
+  };
+  for (const [side, sign] of [['left', -1], ['right', 1]] as const) {
+    const beam = `quality-l-beam-${side}`, block = `quality-hub-crossblock-${sign * 24}`;
+    for (const z of [20, 60]) contact('quality-rear-frame', [sign * 40, -10, z], [0, 1, 0], beam, [0, sign * 10, z], [0, 1, 0]);
+    for (const direction of [-1, 1]) {
+      contact(beam, [0, -sign * 10, 20 - direction * 20], [0, 1, 0], block, [0, direction * 20, 10], [0, 0, 1]);
+      // u9402 shell translation (0,-30,0) matters: X±60 are NOT end-facing bores.
+      contact('quality-hub', [sign * 40, -30 + direction * 20, -110], [0, 0, 1], block, [0, -direction * 20, -10], [0, 0, 1]);
+    }
+    for (const x of [0, 40]) contact(beam, [x, sign * 10, 80], [0, 1, 0], 'quality-baseplate', [sign * (40 + x), -10, -180], [0, 1, 0]);
+    const insertion = model.operations.find((entry) => entry.id === `quality-install-${beam}`)!.stages.find((stage) => stage.phase === 'insert')!.insertion!;
+    close(insertion.axis, [0, -1, 0], 'L beam slides down the four real frame pins');
+    assert.equal(insertion.depthMm, 8);
+  }
+  contact('quality-rear-frame', [40, -10, -60], [0, 1, 0], 'quality-rear-red-clip', [0, 0, -10], [0, 0, 1]);
+  for (const x of [-32, -16, 16, 32]) {
+    const insertion = model.operations.find((entry) => entry.id === `quality-install-quality-plate-join-pin-${x / 2}`)!.stages.find((stage) => stage.phase === 'insert')!.insertion!;
+    close(insertion.axis, [0, 1, 0], 'Short-leg pins enter from underneath before the plate');
+    assert.equal(insertion.depthMm, 8);
+  }
+  contact('quality-gray-elbow', [-10, 0, 0], [1, 0, 0], 'quality-gray-axle-pin', [0, 0, 0], [1, 0, 0]);
+  contact('quality-gray-elbow', [0, 20, 10], [0, 0, 1], 'quality-plain-gray-pin', [0, 0, 0], [1, 0, 0]);
+  contact('quality-lower-square', [0, 10, 0], [0, 1, 0], 'quality-gray-axle-pin', [0, 0, 0], [1, 0, 0]);
+  const tanInsertion = model.operations.find((entry) => entry.id === 'quality-install-quality-gray-axle-pin')!.stages.find((stage) => stage.phase === 'insert')!.insertion!;
+  close(tanInsertion.axis, [1, 0, 0], 'Tan axle enters the elbow in its protruding axle direction, not backwards');
+
+  // Independent exterior fixture: Detector pp12–15, native 39789/24309/41749/41750.
+  // The 39369 grid has NO studs. Only the rear brick pockets clutch the panels;
+  // their Y48 front soles merely bear on the plate's Y−10 top plane.
+  for (const [side, plateZ] of [['left', -40], ['right', -160]] as const) {
+    const brick = `quality-yellow-brick-${side}`;
+    for (const [index, brickX, plateX] of [[0, -20, 40], [16, 20, 80]]) {
+      const id = `quality-surround-pin-${side}-${index}`;
+      contact(brick, [brickX!, 24, 0], [0, 1, 0], id, [0, 0, 0], [1, 0, 0]);
+      contact('quality-baseplate', [plateX!, -10, plateZ], [0, 1, 0], id, [0, 0, 0], [1, 0, 0]);
+    }
+    for (const [bx, bz, cx, cz] of [[10, -10, -10, 0], [10, 10, 10, 0], [30, -10, -10, -20], [30, 10, 10, -20]]) contact(brick, [bx!, 0, bz!], [0, 1, 0], `quality-yellow-curve-${side}`, [cx!, 24, cz!], [0, 1, 0]);
+    const panel = `quality-panel-${side}`;
+    const pockets = side === 'left'
+      ? [[-30, -10, 20, -10], [-30, 10, 0, -10], [-10, -10, 20, 10], [-10, 10, 0, 10]]
+      : [[-30, -10, 0, -10], [-30, 10, -20, -10], [-10, -10, 0, 10], [-10, 10, -20, 10]];
+    for (const [bx, bz, px, pz] of pockets) contact(brick, [bx!, 0, bz!], [0, 1, 0], panel, [px!, 24, pz!], [0, 1, 0]);
+    const sole = nativePoint(pose(frame, panel), [0, 48, -120]);
+    close(sole, [-32, 8, side === 'left' ? 12 : 68], 'Panel front sole faces reading side, at plate height');
+    const insertion = model.operations.find((entry) => entry.id === `quality-install-${panel}`)!.stages.find((stage) => stage.phase === 'insert')!.insertion!;
+    close(insertion.axis, [0, -1, 0], 'Panel seats downward onto brick studs');
+    assert.equal(insertion.depthMm, 1.6);
+  }
+  assert.equal(model.parts.find((entry) => entry.id === 'quality-panel-left')!.geometryId, '41750');
+  assert.equal(model.parts.find((entry) => entry.id === 'quality-panel-right')!.geometryId, '41749');
+  sampleAssembly(compiled, getStepTime(compiled, 'quality-idea-detector-step9').endMs, frame);
+  const preparedBrick = pose(frame, 'quality-yellow-brick-left');
+  assert.ok(nativePoint(preparedBrick, [0, 24, 0])[1] > preparedBrick.position[1], 'Source preparation shows the brick underside upward');
+  for (const side of ['left', 'right']) for (const index of [0, 16]) {
+    const insertion = model.operations.find((entry) => entry.id === `quality-install-quality-surround-pin-${side}-${index}`)!.stages.find((stage) => stage.phase === 'insert')!.insertion!;
+    close(insertion.axis, [0, -1, 0], 'Axle enters downward into the prepared inverted brick');
+    assert.equal(insertion.depthMm, 8);
+  }
+  sampleAssembly(compiled, compiled.durationMs, frame);
+  // Head pp15–17: two 20-LDU clips around a 40-LDU axle, not crossed bores.
+  contact('quality-retainer-azure', [0, 0, 0], [0, 0, 1], 'quality-retainer-axle', [10, 0, 0], [1, 0, 0]);
+  contact('quality-retainer-magenta', [0, 0, 0], [0, 0, 1], 'quality-retainer-axle', [-10, 0, 0], [1, 0, 0]);
+  contact('quality-retainer-azure', [0, 0, 10], [0, 0, 1], 'quality-retainer-magenta', [0, 0, -10], [0, 0, 1]);
+  contact('quality-retainer-azure', [0, 0, -10], [0, 0, 1], 'quality-retainer-axle', [20, 0, 0], [1, 0, 0]);
+  contact('quality-retainer-magenta', [0, 0, 10], [0, 0, 1], 'quality-retainer-axle', [-20, 0, 0], [1, 0, 0]);
+  for (const id of ['quality-retainer-azure', 'quality-retainer-magenta']) {
+    const clip = model.parts.find((entry) => entry.id === id)!;
+    assert.equal(clip.placementEvidence!.evidence.category, 'unknown', 'Cable-supported global seat is not an exact rigid mount');
+    assert.match(clip.placementEvidence!.evidence.note, /Flexible lead geometry is absent/);
+    assert.ok(nativePoint(pose(frame, id), [0, -20, 0])[1] > pose(frame, id).position[1], 'Clip channel opens above its bush, not sideways through the motor');
+  }
+  const retainerIds = model.subassemblies.find((entry) => entry.id === 'quality-retainer')!.partInstanceIds;
+  assert.ok(model.connections.filter((entry) => entry.type !== 'electrical' && (retainerIds.includes(entry.a.partInstanceId) || retainerIds.includes(entry.b.partInstanceId))).every((entry) => retainerIds.includes(entry.a.partInstanceId) && retainerIds.includes(entry.b.partInstanceId)), 'No invented rigid motor contact supports the cable retainer');
+
   // Independent source-native probes: no reuse of the model's authored point frames.
   // 54696p01 rotor occurrence (0,-50,0); lower disc bores Z±20;
   // 39793 lower edge connhol3 (-30,0,±20); u9366 side bores (30,±20,140).
@@ -98,6 +181,14 @@ test('Quality source inventory, integration, real native mates and serial body/r
   }
   for (const x of [-32, -16]) close(nativePoint(pose(frame, 'quality-upper-motor'), [30, -(x + 24) / 0.4, 140]), pose(frame, `quality-upper-body-pin-${x}`).position, 'Upper real motor housing side bore');
   close(nativePoint(pose(frame, 'quality-upper-motor'), [0, -50, 0]), [-4, 52, -48], 'Upper native rotor is the actual pitch pivot');
+  // Head pp5/10: all four pins retain the reversed output; the center is only its pivot.
+  for (const [y, z, sx, sz, mx, mz] of [[44, -48, -20, 0, 0, -20], [60, -48, 20, 0, 0, 20], [52, -56, 0, 20, 20, 0], [52, -40, 0, -20, -20, 0]]) {
+    contact('quality-lower-square', [sx!, -10, sz!], [0, 1, 0], 'quality-upper-motor', [mx!, -50, mz!], [0, 1, 0]);
+    close(nativePoint(pose(frame, 'quality-upper-motor'), [mx!, -50, mz!]), pose(frame, `quality-coupling-pin-${y}-${z}`).position, 'Reversed output pin collar');
+  }
+  const upperInsertion = model.operations.find((entry) => entry.id === 'quality-install-quality-upper-motor')!.stages.find((stage) => stage.phase === 'insert')!.insertion!;
+  close(upperInsertion.axis, [1, 0, 0], 'Reversed upper output slides onto the prepared face pins');
+  assert.equal(upperInsertion.depthMm, 8);
   for (const color of ['green', 'blue', 'red', 'violet']) {
     const lower = model.parts.find((part) => part.id === `quality-sample-${color}-1`)!;
     const upper = model.parts.find((part) => part.id === `quality-sample-${color}-2`)!;
