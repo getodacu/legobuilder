@@ -2983,12 +2983,6 @@
         },
         {
           "manual": "base2019",
-          "pdfPage": 24,
-          "printedStep": 22,
-          "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us#page=24"
-        },
-        {
-          "manual": "base2019",
           "pdfPage": 28,
           "printedStep": 26,
           "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us#page=28"
@@ -3315,6 +3309,12 @@
         },
         {
           "manual": "base2019",
+          "pdfPage": 24,
+          "printedStep": 22,
+          "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us#page=24"
+        },
+        {
+          "manual": "base2019",
           "pdfPage": 52,
           "printedStep": 50,
           "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us#page=52"
@@ -3339,7 +3339,10 @@
       "moldUncertainty": "Exact physical manufacturing revision is not certified by this manual-to-CAD visual comparison.",
       "alternativeGeometryCandidates": [],
       "correctionIndexes": [],
-      "notes": [],
+      "notes": [
+        "Base2019 p24 step22 shows two spherical-headed towball pins, matching p52/p56; p25 places the 6L steering-link sockets over them. Historical instance IDs base2019:peg-black-friction:19 and :20 remain stable but their source partKey is corrected to peg-black-knob; genuine2780 instances are not aliased.",
+        "Native6628.dat sphere center is(-10,0,0) LDU, radius8; native2739a.dat socket centers are(0,0,0) and(0,0,100) LDU. These are local feature identities, not a claim of assembled loop closure."
+      ],
       "dimensionsMm": null
     },
     {

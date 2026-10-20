@@ -10198,8 +10198,8 @@
     },
     {
       "id": "base2019:peg-black-friction:19",
-      "name": "Technic Pin with Friction and Slots",
-      "geometryId": "2780",
+      "name": "Technic Pin Towball with Friction",
+      "geometryId": "6628",
       "materialId": "ldraw-0",
       "category": "connector",
       "inventoryScope": "robot",
@@ -10223,9 +10223,9 @@
       },
       "initialTransform": {
         "position": [
-          -264.00000000000006,
-          8.120400047302246,
-          594.8002124786377
+          -264.80000000000007,
+          8.2,
+          594.8000000000001
         ],
         "quaternion": [
           0,
@@ -10239,7 +10239,62 @@
           1
         ]
       },
-      "connectionPoints": [],
+      "connectionPoints": [
+        {
+          "id": "towball-center",
+          "type": "surface",
+          "localTransform": {
+            "position": [
+              -4,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 24,
+                  "instructionId": "22",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source assembly relationship and printed part callout."
+            },
+            "placement": "diagram-derived",
+            "evidence": {
+              "category": "diagram-derived",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 24,
+                  "instructionId": "22",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Canonical B2p24/p52/p56 spherical-headed callouts; genuine6628.dat sphere center(-10,0,0), radius8LDU. Source identity established; assembled socket fit remains unchecked."
+            },
+            "fit": "unchecked"
+          }
+        }
+      ],
       "sourceReference": {
         "documentId": "base2019",
         "page": 24,
@@ -10260,7 +10315,7 @@
             "confidence": 0.98
           }
         ],
-        "note": "Technic Pin with Friction and Slots; contextual source family peg-black-friction. Native LDraw basename is not a certified manufacturer SKU. Historical mold unchecked."
+        "note": "Technic Pin Towball with Friction; contextual source family peg-black-knob. Native LDraw basename is not a certified manufacturer SKU. Historical mold unchecked."
       },
       "placementEvidence": {
         "relationship": {
@@ -10289,8 +10344,8 @@
     },
     {
       "id": "base2019:peg-black-friction:20",
-      "name": "Technic Pin with Friction and Slots",
-      "geometryId": "2780",
+      "name": "Technic Pin Towball with Friction",
+      "geometryId": "6628",
       "materialId": "ldraw-0",
       "category": "connector",
       "inventoryScope": "robot",
@@ -10314,9 +10369,9 @@
       },
       "initialTransform": {
         "position": [
-          -236.00000000000006,
-          8.120400047302246,
-          594.8002124786377
+          -237.60000000000008,
+          8.2,
+          594.8000000000001
         ],
         "quaternion": [
           0,
@@ -10330,7 +10385,62 @@
           1
         ]
       },
-      "connectionPoints": [],
+      "connectionPoints": [
+        {
+          "id": "towball-center",
+          "type": "surface",
+          "localTransform": {
+            "position": [
+              -4,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 24,
+                  "instructionId": "22",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source assembly relationship and printed part callout."
+            },
+            "placement": "diagram-derived",
+            "evidence": {
+              "category": "diagram-derived",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 24,
+                  "instructionId": "22",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Canonical B2p24/p52/p56 spherical-headed callouts; genuine6628.dat sphere center(-10,0,0), radius8LDU. Source identity established; assembled socket fit remains unchecked."
+            },
+            "fit": "unchecked"
+          }
+        }
+      ],
       "sourceReference": {
         "documentId": "base2019",
         "page": 24,
@@ -10351,7 +10461,7 @@
             "confidence": 0.98
           }
         ],
-        "note": "Technic Pin with Friction and Slots; contextual source family peg-black-friction. Native LDraw basename is not a certified manufacturer SKU. Historical mold unchecked."
+        "note": "Technic Pin Towball with Friction; contextual source family peg-black-knob. Native LDraw basename is not a certified manufacturer SKU. Historical mold unchecked."
       },
       "placementEvidence": {
         "relationship": {
@@ -10405,7 +10515,7 @@
       },
       "initialTransform": {
         "position": [
-          -212.00000000000006,
+          -213.60000000000008,
           7.4,
           635.6
         ],
@@ -10421,7 +10531,128 @@
           1
         ]
       },
-      "connectionPoints": [],
+      "connectionPoints": [
+        {
+          "id": "socket-0",
+          "type": "surface",
+          "localTransform": {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 25,
+                  "instructionId": "23",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source assembly relationship and printed part callout."
+            },
+            "placement": "diagram-derived",
+            "evidence": {
+              "category": "diagram-derived",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 25,
+                  "instructionId": "23",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                },
+                {
+                  "documentId": "base2019",
+                  "page": 53,
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "B2p25 sockets over the p24 towballs; p53/p57 circled fork-end hookup.2739a.dat repeats s/2739as01.dat at z0/100: fixed40mm socket-center span, not a telescoping link or a proven operating branch."
+            },
+            "fit": "unchecked"
+          }
+        },
+        {
+          "id": "socket-100",
+          "type": "surface",
+          "localTransform": {
+            "position": [
+              0,
+              0,
+              -40
+            ],
+            "quaternion": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 25,
+                  "instructionId": "23",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source assembly relationship and printed part callout."
+            },
+            "placement": "diagram-derived",
+            "evidence": {
+              "category": "diagram-derived",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 25,
+                  "instructionId": "23",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                },
+                {
+                  "documentId": "base2019",
+                  "page": 53,
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "B2p25 sockets over the p24 towballs; p53/p57 circled fork-end hookup.2739a.dat repeats s/2739as01.dat at z0/100: fixed40mm socket-center span, not a telescoping link or a proven operating branch."
+            },
+            "fit": "unchecked"
+          }
+        }
+      ],
       "sourceReference": {
         "documentId": "base2019",
         "page": 25,
@@ -10496,7 +10727,7 @@
       },
       "initialTransform": {
         "position": [
-          -192.00000000000006,
+          -193.60000000000008,
           7.4,
           635.6
         ],
@@ -10512,7 +10743,128 @@
           1
         ]
       },
-      "connectionPoints": [],
+      "connectionPoints": [
+        {
+          "id": "socket-0",
+          "type": "surface",
+          "localTransform": {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 25,
+                  "instructionId": "23",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source assembly relationship and printed part callout."
+            },
+            "placement": "diagram-derived",
+            "evidence": {
+              "category": "diagram-derived",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 25,
+                  "instructionId": "23",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                },
+                {
+                  "documentId": "base2019",
+                  "page": 57,
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "B2p25 sockets over the p24 towballs; p53/p57 circled fork-end hookup.2739a.dat repeats s/2739as01.dat at z0/100: fixed40mm socket-center span, not a telescoping link or a proven operating branch."
+            },
+            "fit": "unchecked"
+          }
+        },
+        {
+          "id": "socket-100",
+          "type": "surface",
+          "localTransform": {
+            "position": [
+              0,
+              0,
+              -40
+            ],
+            "quaternion": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 25,
+                  "instructionId": "23",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source assembly relationship and printed part callout."
+            },
+            "placement": "diagram-derived",
+            "evidence": {
+              "category": "diagram-derived",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 25,
+                  "instructionId": "23",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                },
+                {
+                  "documentId": "base2019",
+                  "page": 57,
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "B2p25 sockets over the p24 towballs; p53/p57 circled fork-end hookup.2739a.dat repeats s/2739as01.dat at z0/100: fixed40mm socket-center span, not a telescoping link or a proven operating branch."
+            },
+            "fit": "unchecked"
+          }
+        }
+      ],
       "sourceReference": {
         "documentId": "base2019",
         "page": 25,
@@ -10587,7 +10939,7 @@
       },
       "initialTransform": {
         "position": [
-          -172.40000000000006,
+          -174.00000000000009,
           9,
           619.2
         ],
@@ -10678,7 +11030,7 @@
       },
       "initialTransform": {
         "position": [
-          -140.80000000000007,
+          -142.4000000000001,
           8.2,
           594.8000000000001
         ],
@@ -10769,7 +11121,7 @@
       },
       "initialTransform": {
         "position": [
-          -113.00000000000007,
+          -114.6000000000001,
           8.120400047302246,
           594.8002124786377
         ],
@@ -10860,7 +11212,7 @@
       },
       "initialTransform": {
         "position": [
-          -81.00000000000007,
+          -82.6000000000001,
           8.120400047302246,
           594.8002124786377
         ],
@@ -10951,7 +11303,7 @@
       },
       "initialTransform": {
         "position": [
-          -53.40000000000007,
+          -55.00000000000009,
           9,
           619.2
         ],
@@ -11042,7 +11394,7 @@
       },
       "initialTransform": {
         "position": [
-          -21.800000000000068,
+          -23.40000000000009,
           8.2,
           594.8000000000001
         ],
@@ -11133,7 +11485,7 @@
       },
       "initialTransform": {
         "position": [
-          5.9999999999999325,
+          4.39999999999991,
           8.120400047302246,
           594.8002124786377
         ],
@@ -11224,7 +11576,7 @@
       },
       "initialTransform": {
         "position": [
-          37.99999999999993,
+          36.399999999999906,
           8.120400047302246,
           594.8002124786377
         ],
@@ -11315,7 +11667,7 @@
       },
       "initialTransform": {
         "position": [
-          69.99999999999993,
+          68.3999999999999,
           8.2,
           594.8000000000001
         ],
@@ -11406,7 +11758,7 @@
       },
       "initialTransform": {
         "position": [
-          97.79999999999993,
+          96.1999999999999,
           8.2,
           594.8000000000001
         ],
@@ -11497,7 +11849,7 @@
       },
       "initialTransform": {
         "position": [
-          121.59999999999992,
+          119.9999999999999,
           16.6,
           595.6
         ],
@@ -11588,7 +11940,7 @@
       },
       "initialTransform": {
         "position": [
-          141.1999999999999,
+          139.59999999999988,
           9,
           627.2
         ],
@@ -11679,7 +12031,7 @@
       },
       "initialTransform": {
         "position": [
-          180.7999999999999,
+          179.19999999999987,
           8.120400047302246,
           594.8002124786377
         ],
@@ -11770,7 +12122,7 @@
       },
       "initialTransform": {
         "position": [
-          208.7999999999999,
+          207.19999999999987,
           8.120400047302246,
           594.8002124786377
         ],
@@ -11861,7 +12213,7 @@
       },
       "initialTransform": {
         "position": [
-          236.7999999999999,
+          235.19999999999987,
           8.2,
           594.8000000000001
         ],
@@ -11952,7 +12304,7 @@
       },
       "initialTransform": {
         "position": [
-          264.5999999999999,
+          262.9999999999999,
           8.2,
           594.8000000000001
         ],
@@ -12043,7 +12395,7 @@
       },
       "initialTransform": {
         "position": [
-          288.3999999999999,
+          286.7999999999999,
           16.6,
           595.6
         ],
@@ -12134,7 +12486,7 @@
       },
       "initialTransform": {
         "position": [
-          307.99999999999994,
+          306.3999999999999,
           9,
           627.2
         ],
@@ -12225,7 +12577,7 @@
       },
       "initialTransform": {
         "position": [
-          347.5999999999999,
+          345.9999999999999,
           8.120400047302246,
           594.8002124786377
         ],
@@ -12316,7 +12668,7 @@
       },
       "initialTransform": {
         "position": [
-          375.5999999999999,
+          373.9999999999999,
           8.120400047302246,
           594.8002124786377
         ],
@@ -12407,7 +12759,7 @@
       },
       "initialTransform": {
         "position": [
-          399.19999999999993,
+          397.5999999999999,
           9,
           635.2
         ],
@@ -12498,7 +12850,7 @@
       },
       "initialTransform": {
         "position": [
-          418.3999999999999,
+          416.7999999999999,
           9,
           651.2
         ],
@@ -12589,7 +12941,7 @@
       },
       "initialTransform": {
         "position": [
-          437.5999999999999,
+          435.9999999999999,
           9,
           651.2
         ],
@@ -12680,7 +13032,7 @@
       },
       "initialTransform": {
         "position": [
-          461.1999999999999,
+          459.59999999999985,
           8.120400047302246,
           594.8002124786377
         ],
@@ -12771,7 +13123,7 @@
       },
       "initialTransform": {
         "position": [
-          489.1999999999999,
+          487.59999999999985,
           8.120400047302246,
           594.8002124786377
         ],
@@ -14653,7 +15005,62 @@
           1
         ]
       },
-      "connectionPoints": [],
+      "connectionPoints": [
+        {
+          "id": "towball-center",
+          "type": "surface",
+          "localTransform": {
+            "position": [
+              -4,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 52,
+                  "instructionId": "50",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source assembly relationship and printed part callout."
+            },
+            "placement": "diagram-derived",
+            "evidence": {
+              "category": "diagram-derived",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 52,
+                  "instructionId": "50",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Canonical B2p24/p52/p56 spherical-headed callouts; genuine6628.dat sphere center(-10,0,0), radius8LDU. Source identity established; assembled socket fit remains unchecked."
+            },
+            "fit": "unchecked"
+          }
+        }
+      ],
       "sourceReference": {
         "documentId": "base2019",
         "page": 52,
@@ -15290,7 +15697,62 @@
           1
         ]
       },
-      "connectionPoints": [],
+      "connectionPoints": [
+        {
+          "id": "towball-center",
+          "type": "surface",
+          "localTransform": {
+            "position": [
+              -4,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 56,
+                  "instructionId": "54",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source assembly relationship and printed part callout."
+            },
+            "placement": "diagram-derived",
+            "evidence": {
+              "category": "diagram-derived",
+              "confidence": 0.95,
+              "sources": [
+                {
+                  "documentId": "base2019",
+                  "page": 56,
+                  "instructionId": "54",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Canonical B2p24/p52/p56 spherical-headed callouts; genuine6628.dat sphere center(-10,0,0), radius8LDU. Source identity established; assembled socket fit remains unchecked."
+            },
+            "fit": "unchecked"
+          }
+        }
+      ],
       "sourceReference": {
         "documentId": "base2019",
         "page": 56,
@@ -47355,8 +47817,8 @@
     },
     {
       "id": "base2019-step22",
-      "title": "Base 22 — Add black pins to end connectors",
-      "description": "Add black pins to end connectors",
+      "title": "Base 22 — Add two black towball pins to end connectors",
+      "description": "Add two black towball pins to end connectors",
       "kind": "numbered-instruction",
       "action": "assembly",
       "sourceReferences": [
@@ -83467,9 +83929,9 @@
       "fromTransforms": [
         {
           "position": [
-            -264.00000000000006,
-            8.120400047302246,
-            594.8002124786377
+            -264.80000000000007,
+            8.2,
+            594.8000000000001
           ],
           "quaternion": [
             0,
@@ -83625,9 +84087,9 @@
           "fromTransforms": [
             {
               "position": [
-                -264.00000000000006,
-                8.120400047302246,
-                594.8002124786377
+                -264.80000000000007,
+                8.2,
+                594.8000000000001
               ],
               "quaternion": [
                 0,
@@ -83791,9 +84253,9 @@
       "fromTransforms": [
         {
           "position": [
-            -236.00000000000006,
-            8.120400047302246,
-            594.8002124786377
+            -237.60000000000008,
+            8.2,
+            594.8000000000001
           ],
           "quaternion": [
             0,
@@ -83949,9 +84411,9 @@
           "fromTransforms": [
             {
               "position": [
-                -236.00000000000006,
-                8.120400047302246,
-                594.8002124786377
+                -237.60000000000008,
+                8.2,
+                594.8000000000001
               ],
               "quaternion": [
                 0,
@@ -84115,7 +84577,7 @@
       "fromTransforms": [
         {
           "position": [
-            -212.00000000000006,
+            -213.60000000000008,
             7.4,
             635.6
           ],
@@ -84273,7 +84735,7 @@
           "fromTransforms": [
             {
               "position": [
-                -212.00000000000006,
+                -213.60000000000008,
                 7.4,
                 635.6
               ],
@@ -84351,7 +84813,7 @@
       "fromTransforms": [
         {
           "position": [
-            -192.00000000000006,
+            -193.60000000000008,
             7.4,
             635.6
           ],
@@ -84509,7 +84971,7 @@
           "fromTransforms": [
             {
               "position": [
-                -192.00000000000006,
+                -193.60000000000008,
                 7.4,
                 635.6
               ],
@@ -85207,7 +85669,7 @@
       "fromTransforms": [
         {
           "position": [
-            -172.40000000000006,
+            -174.00000000000009,
             9,
             619.2
           ],
@@ -85365,7 +85827,7 @@
           "fromTransforms": [
             {
               "position": [
-                -172.40000000000006,
+                -174.00000000000009,
                 9,
                 619.2
               ],
@@ -85443,7 +85905,7 @@
       "fromTransforms": [
         {
           "position": [
-            -140.80000000000007,
+            -142.4000000000001,
             8.2,
             594.8000000000001
           ],
@@ -85601,7 +86063,7 @@
           "fromTransforms": [
             {
               "position": [
-                -140.80000000000007,
+                -142.4000000000001,
                 8.2,
                 594.8000000000001
               ],
@@ -85767,7 +86229,7 @@
       "fromTransforms": [
         {
           "position": [
-            -113.00000000000007,
+            -114.6000000000001,
             8.120400047302246,
             594.8002124786377
           ],
@@ -85925,7 +86387,7 @@
           "fromTransforms": [
             {
               "position": [
-                -113.00000000000007,
+                -114.6000000000001,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -86091,7 +86553,7 @@
       "fromTransforms": [
         {
           "position": [
-            -81.00000000000007,
+            -82.6000000000001,
             8.120400047302246,
             594.8002124786377
           ],
@@ -86249,7 +86711,7 @@
           "fromTransforms": [
             {
               "position": [
-                -81.00000000000007,
+                -82.6000000000001,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -86762,7 +87224,7 @@
       "fromTransforms": [
         {
           "position": [
-            -53.40000000000007,
+            -55.00000000000009,
             9,
             619.2
           ],
@@ -86920,7 +87382,7 @@
           "fromTransforms": [
             {
               "position": [
-                -53.40000000000007,
+                -55.00000000000009,
                 9,
                 619.2
               ],
@@ -86998,7 +87460,7 @@
       "fromTransforms": [
         {
           "position": [
-            -21.800000000000068,
+            -23.40000000000009,
             8.2,
             594.8000000000001
           ],
@@ -87156,7 +87618,7 @@
           "fromTransforms": [
             {
               "position": [
-                -21.800000000000068,
+                -23.40000000000009,
                 8.2,
                 594.8000000000001
               ],
@@ -87322,7 +87784,7 @@
       "fromTransforms": [
         {
           "position": [
-            5.9999999999999325,
+            4.39999999999991,
             8.120400047302246,
             594.8002124786377
           ],
@@ -87480,7 +87942,7 @@
           "fromTransforms": [
             {
               "position": [
-                5.9999999999999325,
+                4.39999999999991,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -87646,7 +88108,7 @@
       "fromTransforms": [
         {
           "position": [
-            37.99999999999993,
+            36.399999999999906,
             8.120400047302246,
             594.8002124786377
           ],
@@ -87804,7 +88266,7 @@
           "fromTransforms": [
             {
               "position": [
-                37.99999999999993,
+                36.399999999999906,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -88317,7 +88779,7 @@
       "fromTransforms": [
         {
           "position": [
-            69.99999999999993,
+            68.3999999999999,
             8.2,
             594.8000000000001
           ],
@@ -88475,7 +88937,7 @@
           "fromTransforms": [
             {
               "position": [
-                69.99999999999993,
+                68.3999999999999,
                 8.2,
                 594.8000000000001
               ],
@@ -88641,7 +89103,7 @@
       "fromTransforms": [
         {
           "position": [
-            97.79999999999993,
+            96.1999999999999,
             8.2,
             594.8000000000001
           ],
@@ -88799,7 +89261,7 @@
           "fromTransforms": [
             {
               "position": [
-                97.79999999999993,
+                96.1999999999999,
                 8.2,
                 594.8000000000001
               ],
@@ -88965,7 +89427,7 @@
       "fromTransforms": [
         {
           "position": [
-            121.59999999999992,
+            119.9999999999999,
             16.6,
             595.6
           ],
@@ -89123,7 +89585,7 @@
           "fromTransforms": [
             {
               "position": [
-                121.59999999999992,
+                119.9999999999999,
                 16.6,
                 595.6
               ],
@@ -89201,7 +89663,7 @@
       "fromTransforms": [
         {
           "position": [
-            141.1999999999999,
+            139.59999999999988,
             9,
             627.2
           ],
@@ -89359,7 +89821,7 @@
           "fromTransforms": [
             {
               "position": [
-                141.1999999999999,
+                139.59999999999988,
                 9,
                 627.2
               ],
@@ -89437,7 +89899,7 @@
       "fromTransforms": [
         {
           "position": [
-            180.7999999999999,
+            179.19999999999987,
             8.120400047302246,
             594.8002124786377
           ],
@@ -89595,7 +90057,7 @@
           "fromTransforms": [
             {
               "position": [
-                180.7999999999999,
+                179.19999999999987,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -89761,7 +90223,7 @@
       "fromTransforms": [
         {
           "position": [
-            208.7999999999999,
+            207.19999999999987,
             8.120400047302246,
             594.8002124786377
           ],
@@ -89919,7 +90381,7 @@
           "fromTransforms": [
             {
               "position": [
-                208.7999999999999,
+                207.19999999999987,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -90506,7 +90968,7 @@
       "fromTransforms": [
         {
           "position": [
-            236.7999999999999,
+            235.19999999999987,
             8.2,
             594.8000000000001
           ],
@@ -90664,7 +91126,7 @@
           "fromTransforms": [
             {
               "position": [
-                236.7999999999999,
+                235.19999999999987,
                 8.2,
                 594.8000000000001
               ],
@@ -90830,7 +91292,7 @@
       "fromTransforms": [
         {
           "position": [
-            264.5999999999999,
+            262.9999999999999,
             8.2,
             594.8000000000001
           ],
@@ -90988,7 +91450,7 @@
           "fromTransforms": [
             {
               "position": [
-                264.5999999999999,
+                262.9999999999999,
                 8.2,
                 594.8000000000001
               ],
@@ -91154,7 +91616,7 @@
       "fromTransforms": [
         {
           "position": [
-            288.3999999999999,
+            286.7999999999999,
             16.6,
             595.6
           ],
@@ -91312,7 +91774,7 @@
           "fromTransforms": [
             {
               "position": [
-                288.3999999999999,
+                286.7999999999999,
                 16.6,
                 595.6
               ],
@@ -91390,7 +91852,7 @@
       "fromTransforms": [
         {
           "position": [
-            307.99999999999994,
+            306.3999999999999,
             9,
             627.2
           ],
@@ -91548,7 +92010,7 @@
           "fromTransforms": [
             {
               "position": [
-                307.99999999999994,
+                306.3999999999999,
                 9,
                 627.2
               ],
@@ -91626,7 +92088,7 @@
       "fromTransforms": [
         {
           "position": [
-            347.5999999999999,
+            345.9999999999999,
             8.120400047302246,
             594.8002124786377
           ],
@@ -91784,7 +92246,7 @@
           "fromTransforms": [
             {
               "position": [
-                347.5999999999999,
+                345.9999999999999,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -91950,7 +92412,7 @@
       "fromTransforms": [
         {
           "position": [
-            375.5999999999999,
+            373.9999999999999,
             8.120400047302246,
             594.8002124786377
           ],
@@ -92108,7 +92570,7 @@
           "fromTransforms": [
             {
               "position": [
-                375.5999999999999,
+                373.9999999999999,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -92695,7 +93157,7 @@
       "fromTransforms": [
         {
           "position": [
-            399.19999999999993,
+            397.5999999999999,
             9,
             635.2
           ],
@@ -92853,7 +93315,7 @@
           "fromTransforms": [
             {
               "position": [
-                399.19999999999993,
+                397.5999999999999,
                 9,
                 635.2
               ],
@@ -92931,7 +93393,7 @@
       "fromTransforms": [
         {
           "position": [
-            418.3999999999999,
+            416.7999999999999,
             9,
             651.2
           ],
@@ -93089,7 +93551,7 @@
           "fromTransforms": [
             {
               "position": [
-                418.3999999999999,
+                416.7999999999999,
                 9,
                 651.2
               ],
@@ -93167,7 +93629,7 @@
       "fromTransforms": [
         {
           "position": [
-            437.5999999999999,
+            435.9999999999999,
             9,
             651.2
           ],
@@ -93325,7 +93787,7 @@
           "fromTransforms": [
             {
               "position": [
-                437.5999999999999,
+                435.9999999999999,
                 9,
                 651.2
               ],
@@ -93403,7 +93865,7 @@
       "fromTransforms": [
         {
           "position": [
-            461.1999999999999,
+            459.59999999999985,
             8.120400047302246,
             594.8002124786377
           ],
@@ -93561,7 +94023,7 @@
           "fromTransforms": [
             {
               "position": [
-                461.1999999999999,
+                459.59999999999985,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -93727,7 +94189,7 @@
       "fromTransforms": [
         {
           "position": [
-            489.1999999999999,
+            487.59999999999985,
             8.120400047302246,
             594.8002124786377
           ],
@@ -93885,7 +94347,7 @@
           "fromTransforms": [
             {
               "position": [
-                489.1999999999999,
+                487.59999999999985,
                 8.120400047302246,
                 594.8002124786377
               ],
@@ -114544,7 +115006,7 @@
       "scope": "robot",
       "basis": "prepared-callout-units",
       "accounting": "tracked",
-      "quantity": 32,
+      "quantity": 30,
       "partInstanceIds": [
         "base2019:peg-black-friction:01",
         "base2019:peg-black-friction:02",
@@ -114564,8 +115026,6 @@
         "base2019:peg-black-friction:16",
         "base2019:peg-black-friction:17",
         "base2019:peg-black-friction:18",
-        "base2019:peg-black-friction:19",
-        "base2019:peg-black-friction:20",
         "base2019:peg-black-friction:21",
         "base2019:peg-black-friction:22",
         "base2019:peg-black-friction:23",
@@ -114703,20 +115163,6 @@
           "documentId": "base2019",
           "page": 18,
           "instructionId": "16",
-          "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
-          "confidence": 0.98
-        },
-        {
-          "documentId": "base2019",
-          "page": 24,
-          "instructionId": "22",
-          "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
-          "confidence": 0.98
-        },
-        {
-          "documentId": "base2019",
-          "page": 24,
-          "instructionId": "22",
           "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
           "confidence": 0.98
         },
@@ -115173,6 +115619,50 @@
           "documentId": "base2019",
           "page": 23,
           "instructionId": "21",
+          "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+          "confidence": 0.98
+        }
+      ]
+    },
+    {
+      "id": "inventory-base2019:peg-black-knob",
+      "name": "Technic Pin Towball with Friction",
+      "scope": "robot",
+      "basis": "prepared-callout-units",
+      "accounting": "tracked",
+      "quantity": 4,
+      "partInstanceIds": [
+        "base2019:peg-black-friction:19",
+        "base2019:peg-black-friction:20",
+        "base2019:peg-black-knob:01",
+        "base2019:peg-black-knob:02"
+      ],
+      "sourceReferences": [
+        {
+          "documentId": "base2019",
+          "page": 24,
+          "instructionId": "22",
+          "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+          "confidence": 0.98
+        },
+        {
+          "documentId": "base2019",
+          "page": 24,
+          "instructionId": "22",
+          "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+          "confidence": 0.98
+        },
+        {
+          "documentId": "base2019",
+          "page": 52,
+          "instructionId": "50",
+          "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
+          "confidence": 0.98
+        },
+        {
+          "documentId": "base2019",
+          "page": 56,
+          "instructionId": "54",
           "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
           "confidence": 0.98
         }
@@ -115669,34 +116159,6 @@
           "documentId": "base2019",
           "page": 55,
           "instructionId": "53",
-          "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
-          "confidence": 0.98
-        }
-      ]
-    },
-    {
-      "id": "inventory-base2019:peg-black-knob",
-      "name": "Technic Pin Towball with Friction",
-      "scope": "robot",
-      "basis": "prepared-callout-units",
-      "accounting": "tracked",
-      "quantity": 2,
-      "partInstanceIds": [
-        "base2019:peg-black-knob:01",
-        "base2019:peg-black-knob:02"
-      ],
-      "sourceReferences": [
-        {
-          "documentId": "base2019",
-          "page": 52,
-          "instructionId": "50",
-          "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
-          "confidence": 0.98
-        },
-        {
-          "documentId": "base2019",
-          "page": 56,
-          "instructionId": "54",
           "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blte262c4974fee83b0/5f8802a3ed5ccb12e4342dac/automate-it-bi-pdf-book2of3.pdf?locale=en-us",
           "confidence": 0.98
         }

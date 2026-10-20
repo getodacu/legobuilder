@@ -428,6 +428,7 @@ for (const width of [320, 390]) {
     await assertNoOverflow();
     await capture(page, info, `catalog-${width}`);
     await openWorkbench(page);
+    await expect.poll(() => page.locator('.workspace-header').evaluate((header) => Math.round(header.getBoundingClientRect().top)), { message: 'Opening from a scrolled catalog must show the mobile robot title' }).toBe(0);
     await assertNoOverflow();
     await expect(page.getByRole('button', { name: 'Instructions', exact: true })).toHaveAttribute('aria-expanded', 'false');
     await page.getByRole('button', { name: 'Instructions', exact: true }).click();

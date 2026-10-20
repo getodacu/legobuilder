@@ -72,7 +72,8 @@ export class SceneController implements RendererController {
   private dirty = true;
   private width = 1;
   private height = 1;
-  private ratio = Math.min(window.devicePixelRatio || 1, 1.75);
+  private readonly maxRatio = Math.min(window.devicePixelRatio || 1, 1.75);
+  private ratio = this.maxRatio;
   private slowFrames = 0;
   private fastFrames = 0;
   private readonly raycaster = new Raycaster();
@@ -767,12 +768,20 @@ export class SceneController implements RendererController {
     // Bounded, renderer-local quality adaptation; never changes sampled state.
     this.slowFrames = elapsed > 22 ? this.slowFrames + 1 : 0;
     this.fastFrames = elapsed < 9 ? this.fastFrames + 1 : 0;
-    if (this.slowFrames >= 20 && this.ratio > 1) {
-      this.ratio = Math.max(1, this.ratio - 0.25); this.renderer.setPixelRatio(this.ratio);
-      this.light.shadow.mapSize.set(512, 512); this.light.shadow.map?.dispose(); this.light.shadow.map = null;
+    if (this.slowFrames >= 20 && (this.ratio > 1 || this.light.shadow.mapSize.x > 512)) {
+      if (this.ratio > 1) {
+        this.ratio = Math.max(1, this.ratio - 0.25); this.renderer.setPixelRatio(this.ratio);
+      }
+      if (this.light.shadow.mapSize.x > 512) {
+        this.light.shadow.mapSize.set(512, 512); this.light.shadow.map?.dispose(); this.light.shadow.map = null;
+      }
       this.slowFrames = 0; this.dirty = true;
-    } else if (this.fastFrames >= 180 && this.ratio < Math.min(1.75, window.devicePixelRatio || 1)) {
-      this.ratio = Math.min(1.75, window.devicePixelRatio || 1, this.ratio + 0.25); this.renderer.setPixelRatio(this.ratio);
+    } else if (this.fastFrames >= 180 && (this.ratio < this.maxRatio || this.light.shadow.mapSize.x < 1024)) {
+      if (this.ratio < this.maxRatio) {
+        this.ratio = Math.min(this.maxRatio, this.ratio + 0.25); this.renderer.setPixelRatio(this.ratio);
+      } else {
+        this.light.shadow.mapSize.set(1024, 1024); this.light.shadow.map?.dispose(); this.light.shadow.map = null;
+      }
       this.fastFrames = 0; this.dirty = true;
     }
   };

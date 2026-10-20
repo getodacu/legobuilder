@@ -90,6 +90,7 @@ put(B, 'beam-azure-2-cross', 1, 'rod-left', [[-80, -330, 80]], [90, 0, 90]);
 put(B, 'beam-azure-2-cross', 2, 'rod-right', [[80, -330, 80]], [90, 0, 90]);
 put(B, 'peg-black-friction', 19, 'rod-left', [[-90, -330, 80]]);
 put(B, 'peg-black-friction', 20, 'rod-right', [[90, -330, 80]]);
+// Historical :19/:20 IDs are stable; their corrected research family is6628 towball, not2780.
 put(B, 'rod-gray-6', 1, 'rod-left', [[-100, -330, 180]], [0, 180, 0]);
 put(B, 'rod-gray-6', 2, 'rod-right', [[100, -330, 180]], [0, 180, 0]);
 for (const [side, ordinal, crank, upper, dish, fork] of [[-1, 1, 'crank-left', 'upper-left', 'dish-left', 'fork-left'], [1, 2, 'crank-right', 'upper-right', 'dish-right', 'fork-right']] as const) {
@@ -260,6 +261,15 @@ for (let ordinal = 1; ordinal <= 2; ordinal++) {
   const family = ordinal === 1 ? 'brick-magenta-2x4-cross' : 'brick-yellow-2x4-cross';
   mate(`package-${ordinal}-lower-brick`, pid(P, 'axle-yellow-3', ordinal), [10, 0, 0], pid(P, family), [0, 24, 0]);
   mate(`package-${ordinal}-upper-brick`, pid(P, family), [0, 0, 0], pid(P, family, 2), [0, 24, 0]);
+}
+// Actual ball/socket centers only: this does not assert the currently unchecked
+// world placements close.2739a sockets are not ordinary cylindrical pin holes.
+for (let ordinal = 1; ordinal <= 2; ordinal++) {
+  for (const pin of [partById.get(pid(B, 'peg-black-friction', ordinal + 18))!, partById.get(pid(B, 'peg-black-knob', ordinal))!]) {
+    pin.connectionPoints.push({ id: 'towball-center', type: 'surface', localTransform: native([-10, 0, 0]), evidence: { ...fit(pin.sourceReference!), evidence: evidence('diagram-derived', 'Canonical B2p24/p52/p56 spherical-headed callouts; genuine6628.dat sphere center(-10,0,0), radius8LDU. Source identity established; assembled socket fit remains unchecked.', [pin.sourceReference!], 0.95) } });
+  }
+  const rod = partById.get(pid(B, 'rod-gray-6', ordinal))!;
+  for (const z of [0, 100]) rod.connectionPoints.push({ id: `socket-${z}`, type: 'surface', localTransform: native([0, 0, z]), evidence: { ...fit(rod.sourceReference!), evidence: evidence('diagram-derived', 'B2p25 sockets over the p24 towballs; p53/p57 circled fork-end hookup.2739a.dat repeats s/2739as01.dat at z0/100: fixed40mm socket-center span, not a telescoping link or a proven operating branch.', [rod.sourceReference!, reference(B, ordinal === 1 ? 53 : 57)], 0.95) } });
 }
 const mechanismSource = [reference(B, 13, 11), reference(B, 26, 24), reference(B, 36, 34), reference(B, 53, 51), reference(B, 58, 56)];
 const mechanismFit = { ...fit(mechanismSource[0]), evidence: evidence('diagram-derived', 'Only actual motor output axes are active. The yellow32140/white32184/azure32526 compound linkage hole indexing is unresolved; passive fork animation and pickup are disabled, not replaced by a guessed four-bar or an independent fork motor.', mechanismSource, 0.55) } satisfies PlacementEvidence;

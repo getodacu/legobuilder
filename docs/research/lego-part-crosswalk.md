@@ -104,7 +104,7 @@ Names are the exact source DAT descriptions. Materials are explicit instance cho
 | `frame-azure-11x15` | [`39790.dat`](https://library.ldraw.org/library/official/parts/39790.dat) | Technic Beam 15 x 11 with Open Center 13 x  9 | Medium azure | robot2019 p8 | high-source-shape |
 | `frame-magenta-7x11` | [`39794.dat`](https://library.ldraw.org/library/official/parts/39794.dat) | Technic Beam 11 x  7 with Open Center  9 x  5 | Magenta | robot2019 p8 | high-source-shape |
 | `beam-yellow-3` | [`32523.dat`](https://library.ldraw.org/library/official/parts/32523.dat) | Technic Beam  3 | Yellow | robot2019 p9 | high-source-shape |
-| `peg-black-knob` | [`6628.dat`](https://library.ldraw.org/library/official/parts/6628.dat) | Technic Pin Towball with Friction | Black | robot2019 p10; base2019 p52; base2019 p56 | high-source-shape |
+| `peg-black-knob` | [`6628.dat`](https://library.ldraw.org/library/official/parts/6628.dat) | Technic Pin Towball with Friction | Black | robot2019 p10; base2019 p24, p52, p56 | high-source-shape |
 | `motor-large` | [`54675.dat`](https://library.ldraw.org/library/official/parts/54675.dat) | Electric Powered Up Large Angular Motor with Medium Azure Back | White / fixed source subpart colors | robot2019 p11 | high-source-shape |
 | `connector-gray-3-four-snaps` | [`48989.dat`](https://library.ldraw.org/library/official/parts/48989.dat) | Technic Cross Block 1 x 3 (Pin/Pin/Pin) with 4 Pins | Light bluish gray | robot2019 p11; robot2019 p19; robot2019 p20; base2019 p20 | medium-mold |
 | `angular-azure-3x5` | [`32526.dat`](https://library.ldraw.org/library/official/parts/32526.dat) | Technic Beam  3 x  5 Bent 90 | Medium azure | robot2019 p12; base2019 p34; base2019 p38 | high-source-shape |

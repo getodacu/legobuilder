@@ -1719,10 +1719,10 @@
         {
           "step": 22,
           "pdfPage": 24,
-          "action": "Add black pins to end connectors",
+          "action": "Add two black towball pins to end connectors",
           "partsAdded": [
             {
-              "partKey": "peg-black-friction",
+              "partKey": "peg-black-knob",
               "quantity": 2,
               "quantityConfidence": "verified_printed_callout",
               "instanceIds": [
@@ -1736,7 +1736,7 @@
           "evidence": {
             "documentId": "base2019",
             "pdfPage": 24,
-            "figure": "whole assembly illustration and gray parts callout where present",
+            "figure": "2x callout shows spherical heads, matching p52/p56 towball pins; p25 shows the 6L rod sockets seated on them",
             "renderedContactSheet": ".research-cache/package-sorter/book2-contact-13.jpg"
           },
           "numericMountTransform": null
@@ -2652,7 +2652,7 @@
       "inventoryRollup": [
         {
           "partKey": "peg-black-friction",
-          "quantity": 32
+          "quantity": 30
         },
         {
           "partKey": "tbeam-black-3x3",
@@ -2772,7 +2772,7 @@
         },
         {
           "partKey": "peg-black-knob",
-          "quantity": 2
+          "quantity": 4
         },
         {
           "partKey": "panel-azure-3x11x2",
@@ -3112,7 +3112,7 @@
     },
     {
       "key": "peg-black-knob",
-      "visualDescription": "Connector peg with knob, black",
+      "visualDescription": "Connector peg with spherical towball, black",
       "elementId": null,
       "designId": null,
       "exactSkuStatus": "not printed in requested manuals or 45678 element overview; not verified",
@@ -4422,21 +4422,21 @@
     },
     {
       "id": "base2019:peg-black-friction:19",
-      "partKey": "peg-black-friction",
+      "partKey": "peg-black-knob",
       "documentId": "base2019",
       "introducedAtStep": 22,
       "pdfPage": 24,
       "quantityEvidence": "printed callout",
-      "identityEvidence": "manual rendered callout visually matched to official 45678 element overview; exact SKU not printed"
+      "identityEvidence": "Canonical Base2019 p24 step22 2x callout has spherical towball heads, identical to p52/p56; p25 seats 2739a sockets on them. Resolve as genuine black6628, not2780. Historical instance ID retained; no extra source unit."
     },
     {
       "id": "base2019:peg-black-friction:20",
-      "partKey": "peg-black-friction",
+      "partKey": "peg-black-knob",
       "documentId": "base2019",
       "introducedAtStep": 22,
       "pdfPage": 24,
       "quantityEvidence": "printed callout",
-      "identityEvidence": "manual rendered callout visually matched to official 45678 element overview; exact SKU not printed"
+      "identityEvidence": "Canonical Base2019 p24 step22 2x callout has spherical towball heads, identical to p52/p56; p25 seats 2739a sockets on them. Resolve as genuine black6628, not2780. Historical instance ID retained; no extra source unit."
     },
     {
       "id": "base2019:rod-gray-6:01",
@@ -5017,6 +5017,7 @@
     "samples": "Package sample8 items excluded from sorter158. Book2 step58 references their placement; it does not duplicate their inventory.",
     "editionWarning": "2021 lesson robot removes two knob pegs, so numbered-callout model sum becomes156 if that edition is deliberately chosen.",
     "quantityVsIdentity": "Counts derive from printed x callouts. Names are visually identified. Exact design and color-element identifiers not given; null means unknown, not absent.",
+    "stableIdentityCorrection": "Base2019 p24 step22 instances base2019:peg-black-friction:19 and :20 retain historical IDs but now resolve through partKey peg-black-knob to genuine6628 towballs. Base family quantities are30 plain friction pins +4 towball pins; sorter totals48 +6. All other2780 instances and total158 robot +8 sample units are unchanged.",
     "geometryResolution": "lego-part-crosswalk.json families/sourceCorrections, input + build package-sorter + stable key. geometryId is the LDraw DAT basename, not a certified LEGO design/element ID. Corrected descriptions supersede misleading gray/length keys without changing quantities, instance IDs, source steps or hashes; historical mold and assembled-transform uncertainty remain."
   },
   "sorterInventoryRollup": [
@@ -5026,7 +5027,7 @@
     },
     {
       "partKey": "peg-black-friction",
-      "quantity": 50
+      "quantity": 48
     },
     {
       "partKey": "panel-yellow-11x19",
@@ -5054,7 +5055,7 @@
     },
     {
       "partKey": "peg-black-knob",
-      "quantity": 4
+      "quantity": 6
     },
     {
       "partKey": "motor-large",

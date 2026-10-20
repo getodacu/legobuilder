@@ -15,13 +15,14 @@
     workspaceError = '';
     const current = ++request;
     await tick();
-    document.getElementById('main')?.focus();
+    window.scrollTo(0, 0);
+    document.getElementById('main')?.focus({ preventScroll: true });
     try {
       const module = await import('#lib/components/Workspace.svelte');
       if (current !== request) return;
       Workspace = module.default;
       await tick();
-      document.getElementById('main')?.focus();
+      document.getElementById('main')?.focus({ preventScroll: true });
     } catch (error) {
       if (current === request) workspaceError = error instanceof Error ? error.message : String(error);
     }

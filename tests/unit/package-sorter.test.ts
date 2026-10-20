@@ -11,14 +11,14 @@ import type { AssemblyFrame, Transform, Vec3 } from '../../src/lib/types/model.t
 // totals. Each row is [family, authentic DAT, material, Robot, Base, Packages].
 const families: [string, string, string, number, number, number][] = [
   ['hub', '45601c01', '15', 1, 0, 0],
-  ['peg-black-friction', '2780', '0', 18, 32, 0],
+  ['peg-black-friction', '2780', '0', 18, 30, 0],
   ['panel-yellow-11x19', '39369', '14', 1, 0, 0],
   ['peg-tan-axle', '3749', '19', 5, 6, 0],
   ['clip-red', '49283', '4', 1, 0, 0],
   ['frame-azure-11x15', '39790', '322', 1, 0, 0],
   ['frame-magenta-7x11', '39794', '26', 2, 0, 0],
   ['beam-yellow-3', '32523', '14', 2, 0, 0],
-  ['peg-black-knob', '6628', '0', 2, 2, 0],
+  ['peg-black-knob', '6628', '0', 2, 4, 0],
   ['motor-large', '54675', '15', 1, 0, 0],
   ['connector-gray-3-four-snaps', '48989', '71', 6, 2, 0],
   ['angular-azure-3x5', '32526', '322', 2, 2, 0],
@@ -56,6 +56,8 @@ const families: [string, string, string, number, number, number][] = [
   ['brick-yellow-2x4-cross', '39789', '14', 0, 0, 2],
   ['brick-magenta-2x4-cross', '39789', '26', 0, 0, 2]
 ];
+// Corrected source family, unchanged historical callout identities.
+const correctedTowballIds = ['base2019:peg-black-friction:19', 'base2019:peg-black-friction:20'];
 const compiled = compileAssembly(model);
 function part(id: string) {
   const value = model.parts.find((entry) => entry.id === id);
@@ -78,10 +80,18 @@ test('canonical per-document source families retain identity, palette and all in
   const expectedIds: string[] = [];
   for (const [family, geometry, color, ...counts] of families) {
     ['robot2019', 'base2019', 'packages2019'].forEach((book, index) => {
-      const actual = model.parts.filter((entry) => entry.id.startsWith(`${book}:${family}:`));
+      const stableCount = book === 'base2019' && family === 'peg-black-friction' ? 32 : book === 'base2019' && family === 'peg-black-knob' ? 2 : counts[index];
+      let ids = Array.from({ length: stableCount }, (_, ordinal) => `${book}:${family}:${String(ordinal + 1).padStart(2, '0')}`);
+      if (book === 'base2019' && family === 'peg-black-friction') ids = ids.filter((id) => !correctedTowballIds.includes(id));
+      if (book === 'base2019' && family === 'peg-black-knob') ids.push(...correctedTowballIds);
+      const actual = model.parts.filter((entry) => ids.includes(entry.id));
       assert.equal(actual.length, counts[index], `${book}:${family}`);
-      actual.forEach((entry, ordinal) => {
-        assert.equal(entry.id, `${book}:${family}:${String(ordinal + 1).padStart(2, '0')}`);
+      if (ids.length) {
+        const inventory = model.inventory.find((entry) => entry.id === `inventory-${book}:${family}`)!;
+        assert.equal(inventory.quantity, counts[index]);
+        assert.deepEqual([...inventory.partInstanceIds].sort(), [...ids].sort());
+      }
+      actual.forEach((entry) => {
         assert.equal(entry.geometryId, geometry, entry.id);
         assert.equal(entry.materialId, `ldraw-${color}`, entry.id);
         assert.equal(entry.inventoryScope, book === 'packages2019' ? 'sample' : 'robot');
@@ -176,6 +186,34 @@ test('independent native DAT motor/gear axes and stacked39789 sample through-hol
     close(nativePoint(lower, [0, 24, 0]), nativePoint(gear, [0, 0, 10]), 'lower39789 center through-hole');
     close(nativePoint(upper, [0, 24, 0]), nativePoint(lower, [0, 0, 0]), '39789 brick stud/underside seating');
   }
+});
+
+test('Base p24 source towballs retain their exact identities and genuine native rod socket features', () => {
+  correctedTowballIds.forEach((id, index) => {
+    const pin = part(id), rod = part(`base2019:rod-gray-6:0${index + 1}`);
+    assert.equal(pin.geometryId, '6628', 'The spherical p24 callout is not a plain2780 pin');
+    assert.equal(pin.name, 'Technic Pin Towball with Friction');
+    assert.equal(pin.materialId, 'ldraw-0');
+    assert.equal(pin.sourceReference?.page, 24);
+    assert.equal(pin.sourceReference?.instructionId, '22');
+    assert.equal(rod.geometryId, '2739a');
+    const ball = pin.connectionPoints.find((point) => point.id === 'towball-center')!;
+    const sockets = [0, 100].map((z) => rod.connectionPoints.find((point) => point.id === `socket-${z}`)!);
+    assert.ok(ball && sockets.every(Boolean), 'Real sphere/socket centers must remain inspectable');
+    // Independent DAT transcription:6628 sphere(-10,0,0),2739a sockets z0/100.
+    close(ball.localTransform.position, [-4, 0, 0], '6628 native sphere center');
+    close(sockets[0].localTransform.position, [0, 0, 0], '2739a first socket');
+    close(sockets[1].localTransform.position, [0, 0, -40], '2739a second socket');
+    assert.ok([ball, ...sockets].every((point) => point.type === 'surface' && point.evidence.fit === 'unchecked'));
+    const install = model.installations.filter((event) => event.partInstanceId === id);
+    assert.equal(install.length, 1);
+    assert.equal(install[0].stepId, 'base2019-step22');
+    const assembled = sampleAssembly(compiled, compiled.durationMs, createFrame(compiled));
+    close(composeTransforms(poseOf(assembled, id), ball.localTransform).position, nativePoint(pin.finalTransform, [-10, 0, 0]), 'authentic sphere follows the installed source instance');
+  });
+  assert.equal(model.parts.filter((entry) => entry.geometryId === '2780').length, 48);
+  assert.equal(model.parts.filter((entry) => entry.geometryId === '6628').length, 6);
+  assert.equal(model.linkageConstraints.length, 0, 'Feature identity alone cannot certify closed fork motion');
 });
 
 test('published Python and SVG command variants retain distinct branch outputs and final command ordering', () => {
