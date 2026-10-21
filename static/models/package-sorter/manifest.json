@@ -3,10 +3,10 @@
   "id": "package-sorter",
   "name": "Package Sorter",
   "manufacturer": "LEGO Education",
-  "edition": "Official index2019: Robot19 + Base58 + separate Packages3",
+  "edition": "Robot + Base + Packages · 2019",
   "category": "Color sorting mechanism",
-  "complexity": "Advanced · bilateral closed linkage",
-  "description": "158 prepared robot units plus eight separately built source package units. Authentic licensed geometry and all80 numbered source instructions; assembled fit is unchecked and pickup/sorting is disabled until the compound linkage is reconstructed.",
+  "complexity": "Advanced",
+  "description": "Build the base, moving arm and two packages. The demonstration shows motor movement only; package pickup and sorting are not available.",
   "sourceDocuments": [
     {
       "id": "robot2019",
@@ -45848,7 +45848,7 @@
   "steps": [
     {
       "id": "robot2019-step1",
-      "title": "Robot 1 — Insert two hub attachment pins",
+      "title": "Robot · 1",
       "description": "Insert two hub attachment pins",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -45871,9 +45871,7 @@
         "robot2019:peg-black-friction:01",
         "robot2019:peg-black-friction:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -45898,7 +45896,7 @@
     },
     {
       "id": "robot2019-step2",
-      "title": "Robot 2 — Attach yellow perforated panel to hub",
+      "title": "Robot · 2",
       "description": "Attach yellow perforated panel to hub",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -45917,9 +45915,7 @@
       "requiredPartInstanceIds": [
         "robot2019:panel-yellow-11x19:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 650,
       "cameraPreset": {
         "position": [
@@ -45944,7 +45940,7 @@
     },
     {
       "id": "robot2019-step3",
-      "title": "Robot 3 — Add platform mounting pegs and red wire clip",
+      "title": "Robot · 3",
       "description": "Add platform mounting pegs and red wire clip",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -45973,9 +45969,7 @@
         "robot2019:peg-tan-axle:01",
         "robot2019:clip-red:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3900,
       "cameraPreset": {
         "position": [
@@ -46000,7 +45994,7 @@
     },
     {
       "id": "robot2019-step4",
-      "title": "Robot 4 — Add frame mounting pegs",
+      "title": "Robot · 4",
       "description": "Add frame mounting pegs",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46029,9 +46023,7 @@
         "robot2019:peg-black-friction:11",
         "robot2019:peg-black-friction:12"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3900,
       "cameraPreset": {
         "position": [
@@ -46056,7 +46048,7 @@
     },
     {
       "id": "robot2019-step5",
-      "title": "Robot 5 — Attach front azure frame and two lateral magenta frames",
+      "title": "Robot · 5",
       "description": "Attach front azure frame and two lateral magenta frames",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46079,9 +46071,7 @@
         "robot2019:frame-magenta-7x11:01",
         "robot2019:frame-magenta-7x11:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -46106,7 +46096,7 @@
     },
     {
       "id": "robot2019-step6",
-      "title": "Robot 6 — Build two small yellow motor-support beams",
+      "title": "Robot · 6",
       "description": "Build two small yellow motor-support beams",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46135,9 +46125,7 @@
         "robot2019:beam-yellow-3:01",
         "robot2019:beam-yellow-3:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3900,
       "cameraPreset": {
         "position": [
@@ -46162,7 +46150,7 @@
     },
     {
       "id": "robot2019-step7",
-      "title": "Robot 7 — Attach yellow supports and two black knobbed pegs at far front frame corners",
+      "title": "Robot · 7",
       "description": "Attach yellow supports and two black knobbed pegs at far front frame corners",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46184,9 +46172,7 @@
         "robot2019:peg-black-knob:01",
         "robot2019:peg-black-knob:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2400,
       "cameraPreset": {
         "position": [
@@ -46211,7 +46197,7 @@
     },
     {
       "id": "robot2019-step8",
-      "title": "Robot 8 — Prepare large motor at illustrated zero mark with two four-snap connectors",
+      "title": "Robot · 8",
       "description": "Prepare large motor at illustrated zero mark with two four-snap connectors",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46234,9 +46220,7 @@
         "robot2019:connector-gray-3-four-snaps:01",
         "robot2019:connector-gray-3-four-snaps:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -46261,7 +46245,7 @@
     },
     {
       "id": "robot2019-step9",
-      "title": "Robot 9 — Add two azure angle beams beside motor",
+      "title": "Robot · 9",
       "description": "Add two azure angle beams beside motor",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46282,9 +46266,7 @@
         "robot2019:angular-azure-3x5:01",
         "robot2019:angular-azure-3x5:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -46309,7 +46291,7 @@
     },
     {
       "id": "robot2019-step10",
-      "title": "Robot 10 — Insert motor output mounting pins",
+      "title": "Robot · 10",
       "description": "Insert motor output mounting pins",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46331,9 +46313,7 @@
         "robot2019:peg-black-friction:17",
         "robot2019:peg-black-friction:18"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2400,
       "cameraPreset": {
         "position": [
@@ -46358,7 +46338,7 @@
     },
     {
       "id": "robot2019-step11",
-      "title": "Robot 11 — Attach magenta biscuit on motor output",
+      "title": "Robot · 11",
       "description": "Attach magenta biscuit on motor output",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46377,9 +46357,7 @@
       "requiredPartInstanceIds": [
         "robot2019:biscuit-magenta:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 650,
       "cameraPreset": {
         "position": [
@@ -46404,7 +46382,7 @@
     },
     {
       "id": "robot2019-step12",
-      "title": "Robot 12 — Add blue three-module friction pins to rotating biscuit",
+      "title": "Robot · 12",
       "description": "Add blue three-module friction pins to rotating biscuit",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46425,9 +46403,7 @@
         "robot2019:peg-blue-3-friction:01",
         "robot2019:peg-blue-3-friction:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -46452,7 +46428,7 @@
     },
     {
       "id": "robot2019-step13",
-      "title": "Robot 13 — Mount large motor to platform above yellow supports",
+      "title": "Robot · 13",
       "description": "Mount large motor to platform above yellow supports",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46469,9 +46445,7 @@
         "merge-yaw-motor-mount"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -46496,7 +46470,7 @@
     },
     {
       "id": "robot2019-step14",
-      "title": "Robot 14 — Start two package pedestals with magenta five-module beams",
+      "title": "Robot · 14",
       "description": "Start two package pedestals with magenta five-module beams",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46525,9 +46499,7 @@
         "robot2019:beam-magenta-5:01",
         "robot2019:beam-magenta-5:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3900,
       "cameraPreset": {
         "position": [
@@ -46552,7 +46524,7 @@
     },
     {
       "id": "robot2019-step15",
-      "title": "Robot 15 — Attach gray I-frames",
+      "title": "Robot · 15",
       "description": "Attach gray I-frames",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46573,9 +46545,7 @@
         "robot2019:iframe-gray-3x5:01",
         "robot2019:iframe-gray-3x5:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -46600,7 +46570,7 @@
     },
     {
       "id": "robot2019-step16",
-      "title": "Robot 16 — Add four-snap connectors to pedestals",
+      "title": "Robot · 16",
       "description": "Add four-snap connectors to pedestals",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46621,9 +46591,7 @@
         "robot2019:connector-gray-3-four-snaps:03",
         "robot2019:connector-gray-3-four-snaps:04"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -46648,7 +46616,7 @@
     },
     {
       "id": "robot2019-step17",
-      "title": "Robot 17 — Extend pedestal connectors and add black biscuits",
+      "title": "Robot · 17",
       "description": "Extend pedestal connectors and add black biscuits",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46673,9 +46641,7 @@
         "robot2019:biscuit-black:01",
         "robot2019:biscuit-black:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2600,
       "cameraPreset": {
         "position": [
@@ -46700,7 +46666,7 @@
     },
     {
       "id": "robot2019-step18",
-      "title": "Robot 18 — Add top biscuits and tan axle pegs",
+      "title": "Robot · 18",
       "description": "Add top biscuits and tan axle pegs",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46729,9 +46695,7 @@
         "robot2019:biscuit-black:03",
         "robot2019:biscuit-black:04"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3900,
       "cameraPreset": {
         "position": [
@@ -46756,7 +46720,7 @@
     },
     {
       "id": "robot2019-step19",
-      "title": "Robot 19 — Mount the two pedestals on lateral magenta frames",
+      "title": "Robot · 19",
       "description": "Mount the two pedestals on lateral magenta frames",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46774,9 +46738,7 @@
         "merge-pedestal-right"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2200,
       "cameraPreset": {
         "position": [
@@ -46801,7 +46763,7 @@
     },
     {
       "id": "base2019-step1",
-      "title": "Base 1 — Prepare first black motor foot",
+      "title": "Base · 1",
       "description": "Prepare first black motor foot",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46824,9 +46786,7 @@
         "base2019:peg-black-friction:02",
         "base2019:tbeam-black-3x3:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -46851,7 +46811,7 @@
     },
     {
       "id": "base2019-step2",
-      "title": "Base 2 — Prepare second motor foot",
+      "title": "Base · 2",
       "description": "Prepare second motor foot",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46874,9 +46834,7 @@
         "base2019:peg-black-friction:04",
         "base2019:tbeam-black-3x3:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -46901,7 +46859,7 @@
     },
     {
       "id": "base2019-step3",
-      "title": "Base 3 — Attach feet to medium motor, aligned at shown zero mark",
+      "title": "Base · 3",
       "description": "Attach feet to medium motor, aligned at shown zero mark",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46922,9 +46880,7 @@
       "requiredPartInstanceIds": [
         "base2019:motor-medium:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2850,
       "cameraPreset": {
         "position": [
@@ -46949,7 +46905,7 @@
     },
     {
       "id": "base2019-step4",
-      "title": "Base 4 — Start lower black frame",
+      "title": "Base · 4",
       "description": "Start lower black frame",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -46968,9 +46924,7 @@
       "requiredPartInstanceIds": [
         "base2019:frame-black-5x7:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 650,
       "cameraPreset": {
         "position": [
@@ -46995,7 +46949,7 @@
     },
     {
       "id": "base2019-step5",
-      "title": "Base 5 — Add lower-frame gray pegs",
+      "title": "Base · 5",
       "description": "Add lower-frame gray pegs",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47016,9 +46970,7 @@
         "base2019:peg-gray:01",
         "base2019:peg-gray:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -47043,7 +46995,7 @@
     },
     {
       "id": "base2019-step6",
-      "title": "Base 6 — Seat upright motor in frame; preserve cable route",
+      "title": "Base · 6",
       "description": "Seat upright motor in frame; preserve cable route",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47060,9 +47012,7 @@
         "merge-motor-frame"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -47087,7 +47037,7 @@
     },
     {
       "id": "base2019-step7",
-      "title": "Base 7 — Start second black frame",
+      "title": "Base · 7",
       "description": "Start second black frame",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47106,9 +47056,7 @@
       "requiredPartInstanceIds": [
         "base2019:frame-black-5x7:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 650,
       "cameraPreset": {
         "position": [
@@ -47133,7 +47081,7 @@
     },
     {
       "id": "base2019-step8",
-      "title": "Base 8 — Add four gray pegs",
+      "title": "Base · 8",
       "description": "Add four gray pegs",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47158,9 +47106,7 @@
         "base2019:peg-gray:05",
         "base2019:peg-gray:06"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2600,
       "cameraPreset": {
         "position": [
@@ -47185,7 +47131,7 @@
     },
     {
       "id": "base2019-step9",
-      "title": "Base 9 — Add four black frame joining pegs",
+      "title": "Base · 9",
       "description": "Add four black frame joining pegs",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47210,9 +47156,7 @@
         "base2019:peg-black-friction:07",
         "base2019:peg-black-friction:08"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2600,
       "cameraPreset": {
         "position": [
@@ -47237,7 +47181,7 @@
     },
     {
       "id": "base2019-step10",
-      "title": "Base 10 — Join frames around motor foot",
+      "title": "Base · 10",
       "description": "Join frames around motor foot",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47254,9 +47198,7 @@
         "merge-upper-frame"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -47281,7 +47223,7 @@
     },
     {
       "id": "base2019-step11",
-      "title": "Base 11 — Insert opposite motor-shaft axles, yellow 7m and gray 5m",
+      "title": "Base · 11",
       "description": "Insert opposite motor-shaft axles, yellow 7m and gray 5m",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47303,9 +47245,7 @@
         "base2019:axle-yellow-7:01",
         "base2019:axle-gray-5:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2400,
       "cameraPreset": {
         "position": [
@@ -47330,7 +47270,7 @@
     },
     {
       "id": "base2019-step12",
-      "title": "Base 12 — Prepare two magenta side-support beams",
+      "title": "Base · 12",
       "description": "Prepare two magenta side-support beams",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47355,9 +47295,7 @@
         "base2019:beam-magenta-5:01",
         "base2019:beam-magenta-5:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2600,
       "cameraPreset": {
         "position": [
@@ -47382,7 +47320,7 @@
     },
     {
       "id": "base2019-step13",
-      "title": "Base 13 — Add six side-support mounting pegs",
+      "title": "Base · 13",
       "description": "Add six side-support mounting pegs",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47411,9 +47349,7 @@
         "base2019:peg-black-friction:15",
         "base2019:peg-black-friction:16"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3900,
       "cameraPreset": {
         "position": [
@@ -47438,7 +47374,7 @@
     },
     {
       "id": "base2019-step14",
-      "title": "Base 14 — Attach magenta support beams",
+      "title": "Base · 14",
       "description": "Attach magenta support beams",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47455,9 +47391,7 @@
         "merge-side-supports"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -47482,7 +47416,7 @@
     },
     {
       "id": "base2019-step15",
-      "title": "Base 15 — Add two magenta biscuits and gray angled gear wheel z28",
+      "title": "Base · 15",
       "description": "Add two magenta biscuits and gray angled gear wheel z28",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47505,9 +47439,7 @@
         "base2019:biscuit-magenta:02",
         "base2019:gear-gray-28:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -47532,7 +47464,7 @@
     },
     {
       "id": "base2019-step16",
-      "title": "Base 16 — Start transverse azure arm support with pins",
+      "title": "Base · 16",
       "description": "Start transverse azure arm support with pins",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47555,9 +47487,7 @@
         "base2019:peg-black-friction:17",
         "base2019:peg-black-friction:18"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -47582,7 +47512,7 @@
     },
     {
       "id": "base2019-step17",
-      "title": "Base 17 — Add center magenta biscuit",
+      "title": "Base · 17",
       "description": "Add center magenta biscuit",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47601,9 +47531,7 @@
       "requiredPartInstanceIds": [
         "base2019:biscuit-magenta:03"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 650,
       "cameraPreset": {
         "position": [
@@ -47628,7 +47556,7 @@
     },
     {
       "id": "base2019-step18",
-      "title": "Base 18 — Add two four-snap connectors",
+      "title": "Base · 18",
       "description": "Add two four-snap connectors",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47649,9 +47577,7 @@
         "base2019:connector-gray-3-four-snaps:01",
         "base2019:connector-gray-3-four-snaps:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -47676,7 +47602,7 @@
     },
     {
       "id": "base2019-step19",
-      "title": "Base 19 — Attach first azure 7m beam",
+      "title": "Base · 19",
       "description": "Attach first azure 7m beam",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47695,9 +47621,7 @@
       "requiredPartInstanceIds": [
         "base2019:beam-azure-7:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 650,
       "cameraPreset": {
         "position": [
@@ -47722,7 +47646,7 @@
     },
     {
       "id": "base2019-step20",
-      "title": "Base 20 — Attach second azure 7m beam and mount arm support at motor assembly",
+      "title": "Base · 20",
       "description": "Attach second azure 7m beam and mount arm support at motor assembly",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47742,9 +47666,7 @@
       "requiredPartInstanceIds": [
         "base2019:beam-azure-7:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1750,
       "cameraPreset": {
         "position": [
@@ -47769,7 +47691,7 @@
     },
     {
       "id": "base2019-step21",
-      "title": "Base 21 — Start two track-rod end connectors",
+      "title": "Base · 21",
       "description": "Start two track-rod end connectors",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47790,9 +47712,7 @@
         "base2019:beam-azure-2-cross:01",
         "base2019:beam-azure-2-cross:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -47817,7 +47737,7 @@
     },
     {
       "id": "base2019-step22",
-      "title": "Base 22 — Add two black towball pins to end connectors",
+      "title": "Base · 22",
       "description": "Add two black towball pins to end connectors",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47838,9 +47758,7 @@
         "base2019:peg-black-friction:19",
         "base2019:peg-black-friction:20"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -47865,7 +47783,7 @@
     },
     {
       "id": "base2019-step23",
-      "title": "Base 23 — Attach two black 6L eye-ended steering links; gray stable key is not the material",
+      "title": "Base · 23",
       "description": "Attach two black 6L eye-ended steering links; gray stable key is not the material",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47886,9 +47804,7 @@
         "base2019:rod-gray-6:01",
         "base2019:rod-gray-6:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -47913,7 +47829,7 @@
     },
     {
       "id": "base2019-step24",
-      "title": "Base 24 — Attach track rods to motor-side support structure",
+      "title": "Base · 24",
       "description": "Attach track rods to motor-side support structure",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47931,9 +47847,7 @@
         "merge-rod-right"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2200,
       "cameraPreset": {
         "position": [
@@ -47958,7 +47872,7 @@
     },
     {
       "id": "base2019-step25",
-      "title": "Base 25 — Start first yellow crank bracket",
+      "title": "Base · 25",
       "description": "Start first yellow crank bracket",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -47979,9 +47893,7 @@
         "base2019:angular-yellow-2x4:01",
         "base2019:peg-tan-axle:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48006,7 +47918,7 @@
     },
     {
       "id": "base2019-step26",
-      "title": "Base 26 — Add first crank bracket pins",
+      "title": "Base · 26",
       "description": "Add first crank bracket pins",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48027,9 +47939,7 @@
         "base2019:peg-black-friction:21",
         "base2019:peg-blue-3-friction:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48054,7 +47964,7 @@
     },
     {
       "id": "base2019-step27",
-      "title": "Base 27 — Attach first crank bracket on motor side; change viewpoint",
+      "title": "Base · 27",
       "description": "Attach first crank bracket on motor side; change viewpoint",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48071,9 +47981,7 @@
         "merge-crank-left"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -48098,7 +48006,7 @@
     },
     {
       "id": "base2019-step28",
-      "title": "Base 28 — Start opposite yellow crank bracket",
+      "title": "Base · 28",
       "description": "Start opposite yellow crank bracket",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48119,9 +48027,7 @@
         "base2019:angular-yellow-2x4:02",
         "base2019:peg-tan-axle:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48146,7 +48052,7 @@
     },
     {
       "id": "base2019-step29",
-      "title": "Base 29 — Add opposite crank bracket pins",
+      "title": "Base · 29",
       "description": "Add opposite crank bracket pins",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48167,9 +48073,7 @@
         "base2019:peg-black-friction:22",
         "base2019:peg-blue-3-friction:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48194,7 +48098,7 @@
     },
     {
       "id": "base2019-step30",
-      "title": "Base 30 — Attach opposite crank bracket",
+      "title": "Base · 30",
       "description": "Attach opposite crank bracket",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48211,9 +48115,7 @@
         "merge-crank-right"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -48238,7 +48140,7 @@
     },
     {
       "id": "base2019-step31",
-      "title": "Base 31 — Start first upper link axle connector",
+      "title": "Base · 31",
       "description": "Start first upper link axle connector",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48261,9 +48163,7 @@
         "base2019:peg-tan-axle:04",
         "base2019:double-cross-block-light:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -48288,7 +48188,7 @@
     },
     {
       "id": "base2019-step32",
-      "title": "Base 32 — Attach first azure angle beam",
+      "title": "Base · 32",
       "description": "Attach first azure angle beam",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48307,9 +48207,7 @@
       "requiredPartInstanceIds": [
         "base2019:angular-azure-3x5:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 650,
       "cameraPreset": {
         "position": [
@@ -48334,7 +48232,7 @@
     },
     {
       "id": "base2019-step33",
-      "title": "Base 33 — Add first angle beam mounting pins",
+      "title": "Base · 33",
       "description": "Add first angle beam mounting pins",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48355,9 +48253,7 @@
         "base2019:peg-black-friction:23",
         "base2019:peg-black-friction:24"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48382,7 +48278,7 @@
     },
     {
       "id": "base2019-step34",
-      "title": "Base 34 — Mount first upper link",
+      "title": "Base · 34",
       "description": "Mount first upper link",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48399,9 +48295,7 @@
         "merge-upper-left"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -48426,7 +48320,7 @@
     },
     {
       "id": "base2019-step35",
-      "title": "Base 35 — Start opposite upper link axle connector",
+      "title": "Base · 35",
       "description": "Start opposite upper link axle connector",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48449,9 +48343,7 @@
         "base2019:peg-tan-axle:06",
         "base2019:double-cross-block-light:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -48476,7 +48368,7 @@
     },
     {
       "id": "base2019-step36",
-      "title": "Base 36 — Attach opposite azure angle beam",
+      "title": "Base · 36",
       "description": "Attach opposite azure angle beam",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48495,9 +48387,7 @@
       "requiredPartInstanceIds": [
         "base2019:angular-azure-3x5:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 650,
       "cameraPreset": {
         "position": [
@@ -48522,7 +48412,7 @@
     },
     {
       "id": "base2019-step37",
-      "title": "Base 37 — Add opposite angle beam mounting pins",
+      "title": "Base · 37",
       "description": "Add opposite angle beam mounting pins",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48543,9 +48433,7 @@
         "base2019:peg-black-friction:25",
         "base2019:peg-black-friction:26"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48570,7 +48458,7 @@
     },
     {
       "id": "base2019-step38",
-      "title": "Base 38 — Mount opposite upper link",
+      "title": "Base · 38",
       "description": "Mount opposite upper link",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48587,9 +48475,7 @@
         "merge-upper-right"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -48614,7 +48500,7 @@
     },
     {
       "id": "base2019-step39",
-      "title": "Base 39 — Add magenta rear cross beam",
+      "title": "Base · 39",
       "description": "Add magenta rear cross beam",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48633,9 +48519,7 @@
       "requiredPartInstanceIds": [
         "base2019:beam-magenta-11:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 650,
       "cameraPreset": {
         "position": [
@@ -48660,7 +48544,7 @@
     },
     {
       "id": "base2019-step40",
-      "title": "Base 40 — Attach two vertical black sensor-mast beams",
+      "title": "Base · 40",
       "description": "Attach two vertical black sensor-mast beams",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48681,9 +48565,7 @@
         "base2019:beam-black-15:01",
         "base2019:beam-black-15:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48708,7 +48590,7 @@
     },
     {
       "id": "base2019-step41",
-      "title": "Base 41 — Add mast attachment pins, rotating viewpoint",
+      "title": "Base · 41",
       "description": "Add mast attachment pins, rotating viewpoint",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48733,9 +48615,7 @@
         "base2019:peg-black-friction:29",
         "base2019:peg-black-friction:30"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2600,
       "cameraPreset": {
         "position": [
@@ -48760,7 +48640,7 @@
     },
     {
       "id": "base2019-step42",
-      "title": "Base 42 — Mount color sensor and magenta biscuit",
+      "title": "Base · 42",
       "description": "Mount color sensor and magenta biscuit",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48781,9 +48661,7 @@
         "base2019:color-sensor:01",
         "base2019:biscuit-magenta:04"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48808,7 +48686,7 @@
     },
     {
       "id": "base2019-step43",
-      "title": "Base 43 — Prepare two azure round plates",
+      "title": "Base · 43",
       "description": "Prepare two azure round plates",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48829,9 +48707,7 @@
         "base2019:plate-round-azure-2x2:01",
         "base2019:plate-round-azure-2x2:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48856,7 +48732,7 @@
     },
     {
       "id": "base2019-step44",
-      "title": "Base 44 — Add two transparent dish wheels",
+      "title": "Base · 44",
       "description": "Add two transparent dish wheels",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48877,9 +48753,7 @@
         "base2019:dish-transparent-6x6:01",
         "base2019:dish-transparent-6x6:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48904,7 +48778,7 @@
     },
     {
       "id": "base2019-step45",
-      "title": "Base 45 — Add two black round 2 x 2 tiles with center through-holes",
+      "title": "Base · 45",
       "description": "Add two black round 2 x 2 tiles with center through-holes",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48925,9 +48799,7 @@
         "base2019:tile-round-black-2x2:01",
         "base2019:tile-round-black-2x2:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -48952,7 +48824,7 @@
     },
     {
       "id": "base2019-step46",
-      "title": "Base 46 — Mount two dish assemblies on opposite sides of motor axle",
+      "title": "Base · 46",
       "description": "Mount two dish assemblies on opposite sides of motor axle",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -48970,9 +48842,7 @@
         "merge-dish-right"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2200,
       "cameraPreset": {
         "position": [
@@ -48997,7 +48867,7 @@
     },
     {
       "id": "base2019-step47",
-      "title": "Base 47 — Add front double-cross-block connectors with black 2L axle + 1L friction-pin connectors (3L overall family)",
+      "title": "Base · 47",
       "description": "Add front double-cross-block connectors with black 2L axle + 1L friction-pin connectors (3L overall family)",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49024,9 +48894,7 @@
         "base2019:double-cross-block-light:03",
         "base2019:double-cross-block-light:04"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 4800,
       "cameraPreset": {
         "position": [
@@ -49051,7 +48919,7 @@
     },
     {
       "id": "base2019-step48",
-      "title": "Base 48 — Start first yellow fork carrier",
+      "title": "Base · 48",
       "description": "Start first yellow fork carrier",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49074,9 +48942,7 @@
         "base2019:axle-red-2:01",
         "base2019:angular-yellow-3x7:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -49101,7 +48967,7 @@
     },
     {
       "id": "base2019-step49",
-      "title": "Base 49 — Add black end bracket and black 2L axle + 1L friction-pin connector",
+      "title": "Base · 49",
       "description": "Add black end bracket and black 2L axle + 1L friction-pin connector",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49122,9 +48988,7 @@
         "base2019:angle-black-180:01",
         "base2019:axle-black-2-snap:03"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -49149,7 +49013,7 @@
     },
     {
       "id": "base2019-step50",
-      "title": "Base 50 — Attach first azure fork outer panel and knob peg",
+      "title": "Base · 50",
       "description": "Attach first azure fork outer panel and knob peg",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49170,9 +49034,7 @@
         "base2019:peg-black-knob:01",
         "base2019:panel-azure-3x11x2:01"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -49197,7 +49059,7 @@
     },
     {
       "id": "base2019-step51",
-      "title": "Base 51 — Mount first fork to linkage; circular callout highlights attachment",
+      "title": "Base · 51",
       "description": "Mount first fork to linkage; circular callout highlights attachment",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49214,9 +49076,7 @@
         "merge-fork-left"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -49241,7 +49101,7 @@
     },
     {
       "id": "base2019-step52",
-      "title": "Base 52 — Start mirrored yellow fork carrier",
+      "title": "Base · 52",
       "description": "Start mirrored yellow fork carrier",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49264,9 +49124,7 @@
         "base2019:axle-red-2:02",
         "base2019:angular-yellow-3x7:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1950,
       "cameraPreset": {
         "position": [
@@ -49291,7 +49149,7 @@
     },
     {
       "id": "base2019-step53",
-      "title": "Base 53 — Add mirrored black end bracket and black 2L axle + 1L friction-pin connector",
+      "title": "Base · 53",
       "description": "Add mirrored black end bracket and black 2L axle + 1L friction-pin connector",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49312,9 +49170,7 @@
         "base2019:angle-black-180:02",
         "base2019:axle-black-2-snap:04"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -49339,7 +49195,7 @@
     },
     {
       "id": "base2019-step54",
-      "title": "Base 54 — Attach mirrored azure fork outer panel and knob peg",
+      "title": "Base · 54",
       "description": "Attach mirrored azure fork outer panel and knob peg",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49360,9 +49216,7 @@
         "base2019:peg-black-knob:02",
         "base2019:panel-azure-3x11x2:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -49387,7 +49241,7 @@
     },
     {
       "id": "base2019-step55",
-      "title": "Base 55 — Mount second fork; circular callout highlights attachment",
+      "title": "Base · 55",
       "description": "Mount second fork; circular callout highlights attachment",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49404,9 +49258,7 @@
         "merge-fork-right"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -49431,7 +49283,7 @@
     },
     {
       "id": "base2019-step56",
-      "title": "Base 56 — Lower moving assembly onto rotating biscuit on book1 large motor",
+      "title": "Base · 56",
       "description": "Lower moving assembly onto rotating biscuit on book1 large motor",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49448,9 +49300,7 @@
         "merge-yaw"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1100,
       "cameraPreset": {
         "position": [
@@ -49475,7 +49325,7 @@
     },
     {
       "id": "base2019-step57",
-      "title": "Base 57 — Change viewpoint and route/connect motor and sensor cables",
+      "title": "Base · 57",
       "description": "Change viewpoint and route/connect motor and sensor cables",
       "kind": "numbered-instruction",
       "action": "wiring",
@@ -49501,7 +49351,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
+        "Check the cable route and clearance against the official wiring diagram. Flexible cables are not shown accurately in 3D."
       ],
       "durationMs": 1050,
       "cameraPreset": {
@@ -49527,7 +49377,7 @@
     },
     {
       "id": "packages2019-step1",
-      "title": "Packages 1 — Place two black z36 double-bevel gear wheels as separate package bases, not sorter transmission gears",
+      "title": "Packages · 1",
       "description": "Place two black z36 double-bevel gear wheels as separate package bases, not sorter transmission gears",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49548,9 +49398,7 @@
         "packages2019:gear-gray-36:01",
         "packages2019:gear-gray-36:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -49575,7 +49423,7 @@
     },
     {
       "id": "packages2019-step2",
-      "title": "Packages 2 — Insert one yellow 3m axle in each package",
+      "title": "Packages · 2",
       "description": "Insert one yellow 3m axle in each package",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49596,9 +49444,7 @@
         "packages2019:axle-yellow-3:01",
         "packages2019:axle-yellow-3:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1300,
       "cameraPreset": {
         "position": [
@@ -49623,7 +49469,7 @@
     },
     {
       "id": "packages2019-step3",
-      "title": "Packages 3 — Add two yellow and two magenta cross-hole bricks; underside inset shows alignment",
+      "title": "Packages · 3",
       "description": "Add two yellow and two magenta cross-hole bricks; underside inset shows alignment",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -49648,9 +49494,7 @@
         "packages2019:brick-magenta-2x4-cross:01",
         "packages2019:brick-magenta-2x4-cross:02"
       ],
-      "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2600,
       "cameraPreset": {
         "position": [
@@ -49675,7 +49519,7 @@
     },
     {
       "id": "base2019-step58",
-      "title": "Base 58 — Show placing separate magenta/yellow package samples on lateral pedestals",
+      "title": "Base · 58",
       "description": "Show placing separate magenta/yellow package samples on lateral pedestals",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -49694,8 +49538,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "Hole-grid placement is diagram-derived; assembled fit and cable clearance are not independently verified.",
-        "Reuse the eight existing Packages-book instances; this instruction adds no inventory."
+        "Use the two packages you already built. No extra parts are needed."
       ],
       "durationMs": 2000,
       "cameraPreset": {
@@ -116308,17 +116151,17 @@
   "milestones": [
     {
       "id": "platform-complete",
-      "title": "Book1 platform and pedestals",
+      "title": "Platform and pedestals",
       "stepId": "robot2019-step19"
     },
     {
       "id": "arm-mounted",
-      "title": "Whole moving arm merged with yaw output",
+      "title": "Arm attached to the turntable",
       "stepId": "base2019-step56"
     },
     {
       "id": "samples-built",
-      "title": "Separate source package assemblies",
+      "title": "Both packages built",
       "stepId": "packages2019-step3"
     },
     {

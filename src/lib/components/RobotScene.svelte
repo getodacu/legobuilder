@@ -108,7 +108,7 @@
 <div class="robot-scene" aria-busy={loading}>
   <div class="canvas-host" style:visibility={loaded === model && model !== null ? 'visible' : 'hidden'} bind:this={host}></div>
   {#if loading}
-    <div class="scene-status" role="status">Loading licensed component geometry…</div>
+    <div class="scene-status" role="status">Preparing the 3D parts…</div>
   {/if}
   {#if error}
     <div class="scene-error" role="alert"><strong>3D view unavailable</strong><p>{error}</p><p>Instructions, source links and inventory remain accessible. Reload the workbench after resolving the error.</p></div>
@@ -117,7 +117,7 @@
     <summary>Camera help</summary>
     <p>Drag to orbit. Right-drag or two-finger drag to pan. Scroll or pinch to zoom.</p>
     <p>Focus the viewer: arrow keys orbit, Shift + arrows pan, + / − zoom, R resets, F focuses selection or active parts. Use the inventory to select any part.</p>
-    <p>At time zero, the camera fits the staged inventory. Advancing playback or scrubbing starts the authored instruction views. Reset restores the current source view; Fit frames current component bounds. In simulation, Reset frames the robot without distant course props.</p>
+    <p>The guide opens focused on the first working part. Fit whole shows every component, including the parts tray. Reset restores the current instruction view. In the demonstration, Reset frames the robot without distant course props.</p>
     <p>Manual movement pauses automatic camera framing until Resume auto camera is selected.</p>
   </details>
 </div>
@@ -133,4 +133,5 @@
   .scene-help summary { min-height: 44px; padding: 12px; cursor: pointer; box-sizing: border-box; }
   .scene-help summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
   .scene-help p { margin: 0; padding: 0 12px 12px; }
+  @media(max-width:899px){.scene-help{display:none}}
 </style>

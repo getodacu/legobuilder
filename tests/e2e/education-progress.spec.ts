@@ -1,4 +1,23 @@
 import { test, expect } from '@playwright/test';
+import { chooseStep } from './ui';
+
+test('the catalog keeps the Hand unfinished until its final wiring stage is complete', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('#open-robotic-hand').click();
+  const seek = page.getByLabel('Assembly position');
+  await expect(seek).toBeEnabled();
+  const end = Number(await seek.getAttribute('max'));
+  await seek.fill(String(end - 800));
+  await page.getByRole('button', { name: 'Back to build catalog' }).click();
+  const progress = page.getByLabel('Robot Hand visit progress');
+  await expect(progress).toContainText('Finish the remaining steps');
+  await expect(progress).not.toContainText('Guide completed');
+  await page.locator('#open-robotic-hand').click();
+  await expect(seek).toHaveValue(String(end - 800));
+  await seek.fill(String(end));
+  await page.getByRole('button', { name: 'Back to build catalog' }).click();
+  await expect(progress).toContainText('Guide completed');
+});
 
 test('catalog visit progress resumes the exact reversible assembly state without changing fit claims', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -9,25 +28,23 @@ test('catalog visit progress resumes the exact reversible assembly state without
   await seek.fill('10000');
   await page.getByRole('button', { name: 'Back to build catalog' }).click();
   const progress = page.getByLabel('Advanced Driving Base visit progress');
-  await expect(progress).toContainText('7/234 robot units');
-  await expect(progress).toContainText('3/136 source steps');
-  await expect(page.getByLabel('Robot Hand visit progress')).toContainText('Not started');
-  await expect(page.locator('#open-advanced-driving-base')).toContainText('Resume');
+  await expect(progress).toContainText('3 steps completed this visit');
+  await expect(page.getByLabel('Robot Hand visit progress')).toContainText('Ready when you are');
+  await expect(page.locator('#open-advanced-driving-base')).toContainText('Continue building');
   await page.locator('#open-advanced-driving-base').click();
   await expect(page.locator('.robot-scene')).toHaveAttribute('aria-busy', 'false');
   await expect(seek).toHaveValue('10000');
   await expect(page.getByLabel('Assembly counts')).toContainText('7/234');
   await seek.fill(await seek.getAttribute('max') as string);
   await page.getByRole('button', { name: 'Back to build catalog' }).click();
-  await expect(progress).toContainText('Authored assembly reached');
-  await expect(progress).toContainText('234/234 robot units');
-  await expect(page.getByRole('article').filter({ has: page.locator('#open-advanced-driving-base') })).toContainText('fit unchecked');
+  await expect(progress).toContainText('Guide completed');
+  await expect(page.locator('.intro-note')).toContainText('not been fully checked on physical robots');
   await page.locator('#open-advanced-driving-base').click();
   await expect(page.locator('.robot-scene')).toHaveAttribute('aria-busy', 'false');
   await seek.fill('0');
   await page.getByRole('button', { name: 'Back to build catalog' }).click();
-  await expect(progress).toContainText('Not started this visit');
-  await expect(page.locator('#open-advanced-driving-base')).toContainText('Open');
+  await expect(progress).toContainText('Ready when you are');
+  await expect(page.locator('#open-advanced-driving-base')).toContainText('Start building');
 });
 
 test('educational guide follows source prerequisites, actual CAD selections and reversible live motor/sensor state', async ({ page }, info) => {
@@ -37,20 +54,21 @@ test('educational guide follows source prerequisites, actual CAD selections and 
   await page.goto('/');
   await page.locator('#open-advanced-driving-base').click();
   await expect(page.locator('.robot-scene')).toHaveAttribute('aria-busy', 'false');
-  await page.getByLabel('Implemented source steps').selectOption('book1-step10');
+  await chooseStep(page, 'book1-step10');
   await page.getByText('View options', { exact: true }).click();
-  await page.getByRole('checkbox', { name: 'Educational explanations' }).check();
+  await page.getByRole('checkbox', { name: 'How it works' }).check();
   await page.getByText('View options', { exact: true }).click();
-  const guide = page.getByRole('region', { name: 'Educational mechanism guide' });
+  const guide = page.getByRole('region', { name: 'How it works' });
   await guide.getByRole('combobox', { name: 'Explain' }).selectOption('dependencies');
   await guide.getByRole('button', { name: /Review Front/ }).first().click();
-  await expect(page.getByLabel('Implemented source steps')).toHaveValue('book1-step9');
+  await expect(page.locator('.step-picker select')).toHaveValue('book1-step9');
   const seek = page.getByRole('slider', { name: 'Assembly position' });
   await seek.fill(await seek.getAttribute('max') as string);
   await guide.getByRole('combobox', { name: 'Explain' }).selectOption('motors');
   await guide.getByRole('button', { name: 'Inspect left-drive-motor · port A', exact: true }).click();
-  await expect(page.getByRole('complementary', { name: 'Inventory and inspection' }).locator('dd').filter({ hasText: /^left-motor$/ })).toBeVisible();
-  await page.getByRole('button', { name: 'Enter post-assembly demonstration' }).click();
+  await page.getByText('Technical details', { exact: true }).click();
+  await expect(page.getByRole('complementary', { name: 'Parts and inspection' }).locator('dd').filter({ hasText: /^left-motor$/ })).toBeVisible();
+  await page.getByRole('button', { name: 'Try the movement demo →' }).click();
   const simulationSeek = page.getByRole('slider', { name: 'Simulation position' });
   await simulationSeek.fill('5000');
   // Independent command integration: 4 s × 2 rad/s + 1 s × 1 rad/s.

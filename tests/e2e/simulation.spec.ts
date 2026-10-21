@@ -1,4 +1,5 @@
 import { test, expect, type Locator, type Page, type TestInfo } from '@playwright/test';
+import { openDetails, showParts } from './ui';
 
 const failures = new WeakMap<Page, string[]>();
 const geometryRequests = new WeakMap<Page, Set<string>>();
@@ -38,9 +39,7 @@ async function capture(page: Page, info: TestInfo, name: string) {
 async function expectComplete(page: Page) {
   const counts = page.getByLabel('Assembly counts');
   await expect(counts).toContainText('234/234');
-  await expect(counts).toContainText('0 remaining');
   await expect(counts).toContainText('136/136');
-  await expect(page.locator('.header-coverage')).toContainText('136/136 authored');
 }
 
 async function openCompletedAssembly(page: Page) {
@@ -50,28 +49,28 @@ async function openCompletedAssembly(page: Page) {
   await expect(assemblySeek(page)).toBeEnabled();
   await expect(page.locator('.robot-scene')).toHaveAttribute('aria-busy', 'false');
   await expect(viewer(page)).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Simulation locked', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Try the movement demo →', exact: true })).toHaveCount(0);
   // Completing the former seven-unit seed must not unlock a full-robot demonstration.
   await assemblySeek(page).fill('10000');
   await expect(page.getByLabel('Assembly counts')).toContainText('7/234');
-  await expect(page.getByRole('button', { name: 'Simulation locked', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Try the movement demo →', exact: true })).toHaveCount(0);
   const end = Number(await assemblySeek(page).getAttribute('max'));
   expect(end).toBeGreaterThan(10000);
   await assemblySeek(page).fill(String(end - 1));
-  await expect(page.getByRole('button', { name: 'Simulation locked', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Try the movement demo →', exact: true })).toHaveCount(0);
   await assemblySeek(page).fill(String(end));
   await expectComplete(page);
-  await expect(page.getByRole('button', { name: 'Enter post-assembly demonstration', exact: true })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Try the movement demo →', exact: true })).toBeEnabled();
   return end;
 }
 
 async function enterSimulation(page: Page) {
-  await page.getByRole('button', { name: 'Enter post-assembly demonstration', exact: true }).click();
+  await page.getByRole('button', { name: 'Try the movement demo →', exact: true }).click();
   await expect(controls(page)).toBeVisible();
   await expect(simulationSeek(page)).toHaveValue('0');
-  await expect(controls(page).locator('.simulation-limits')).toContainText('136/136 source steps implemented');
-  await expect(controls(page).locator('.simulation-limits')).toContainText('not a fully verified robot');
-  await expect(page.getByText('Simulation camera · manual orbit', { exact: true })).toBeVisible();
+  await expect(controls(page).locator('.simulation-limits')).toContainText('Physical fit and real-world performance are unverified');
+  if ((page.viewportSize()?.width ?? 0) >= 900) await expect(page.getByText('Simulation camera · manual orbit', { exact: true })).toBeVisible();
+  if ((page.viewportSize()?.width ?? 0) >= 900) await openDetails(page, '.view-options');
   await expectComplete(page);
 }
 
@@ -83,7 +82,7 @@ async function seek(page: Page, timeMs: number) {
 
 async function expandEditors(page: Page) {
   if (await details(page).getAttribute('open') === null) {
-    await details(page).getByText('Motor commands, sensor inputs & source limitations', { exact: true }).click();
+    await details(page).getByText('Motor controls & technical notes', { exact: true }).click();
   }
 }
 
@@ -142,15 +141,15 @@ async function changedFraction(page: Page, before: Buffer, after: Buffer) {
 
 
 async function isolatePart(page: Page, id: string) {
-  const toggle = page.getByRole('button', { name: 'Inventory & inspection', exact: true });
+  const toggle = page.getByRole('button', { name: 'Parts', exact: true });
   if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click();
-  const inventory = page.getByRole('complementary', { name: 'Inventory and inspection' });
-  await inventory.getByRole('button', { name: 'Inventory', exact: true }).click();
+  const inventory = page.getByRole('complementary', { name: 'Parts and inspection' });
+  await inventory.getByRole('button', { name: 'All parts', exact: true }).click();
   await inventory.getByRole('searchbox').fill(id);
   await inventory.locator('.inventory-list button').filter({ has: page.getByText(id, { exact: true }) }).click();
   await expect(inventory.locator('.inspector-facts')).toContainText(id);
   await inventory.getByRole('button', { name: 'Isolate part', exact: true }).click();
-  await inventory.getByRole('button', { name: 'Collapse inventory', exact: true }).click();
+  await inventory.getByRole('button', { name: 'Collapse parts', exact: true }).click();
   await page.getByRole('button', { name: 'Focus active', exact: true }).click();
 }
 
@@ -163,9 +162,10 @@ function wheelReference(port: 'A' | 'E', time: number) {
 
 test('full source assembly enters the same actual scene; guarded course, replay and return preserve all 234 units', async ({ page }, info) => {
   const end = await openCompletedAssembly(page);
-  const inventory = page.getByRole('complementary', { name: 'Inventory and inspection' });
-  await expect(inventory.locator('.inventory-list > li')).toHaveCount(234);
-  await expect(inventory.locator('.inventory-list .part-state')).toHaveText(Array(234).fill('Installed · robot'));
+  await showParts(page);
+  const inventory = page.getByRole('complementary', { name: 'Parts and inspection' });
+  await expect(inventory.locator('.instance-list > li')).toHaveCount(234);
+  await expect(inventory.locator('.inventory-list .part-state')).toHaveText(Array(234).fill('Placed'));
   const originalCanvas = await viewer(page).elementHandle();
   expect(originalCanvas).not.toBeNull();
   const assetsBeforeEntry = [...geometryRequests.get(page)!].sort();
@@ -175,7 +175,8 @@ test('full source assembly enters the same actual scene; guarded course, replay 
   expect(assetsBeforeEntry.some((url) => url.endsWith('/models/simulation/course-marker.glb'))).toBe(true);
   // Match the wide simulation layout before comparing actual geometry pixels.
   await page.getByRole('button', { name: 'Collapse instructions', exact: true }).click();
-  await inventory.getByRole('button', { name: 'Collapse inventory', exact: true }).click();
+  await inventory.getByRole('button', { name: 'Collapse parts', exact: true }).click();
+  await openDetails(page, '.view-options');
   await page.getByRole('button', { name: 'Reset view', exact: true }).click();
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
   const assemblyPixels = await viewer(page).screenshot();
@@ -313,7 +314,9 @@ test('native motor plans move actual independent C/D gears; typed B/F events rew
   await seek(page, 1000);
   expect(await angle(page, 'D')).toBe(0); expect(await angle(page, 'C')).toBe(0);
   await expectComplete(page);
-  await page.getByLabel('Assembly counts').getByRole('button', { name: 'Exit isolate', exact: true }).click();
+  if (await page.locator('.view-options').getAttribute('open') !== null) await page.locator('.view-options > summary').click();
+  await page.getByRole('button', { name: 'Show all parts', exact: true }).click();
+  await openDetails(page, '.view-options');
   await page.getByRole('button', { name: 'Studio', exact: true }).click();
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
   await capture(page, info, 'simulation-restored-scenario-and-typed-input-limitations');
@@ -343,6 +346,6 @@ test('320px simulation transport and native editors remain accessible and operab
   await controls(page).getByRole('button', { name: 'Restore scenario', exact: true }).click();
   await controls(page).getByRole('button', { name: 'Return to assembly end', exact: true }).click();
   await expectComplete(page);
-  await expect(page.getByRole('button', { name: 'Enter post-assembly demonstration', exact: true })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Try the movement demo →', exact: true })).toBeEnabled();
   await noOverflow();
 });

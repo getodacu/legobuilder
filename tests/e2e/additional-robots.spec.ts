@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { chooseStep, openDetails, showParts, showReference } from './ui';
 
 const builds = [
   { id: 'robotic-hand', units: '39/39', stages: '29/29', steps: '28/28', time: 54600, demoTime: 4200, scenario: /coupled grip, hold and release/i, complete: true },
@@ -26,26 +27,32 @@ for (const build of builds) {
     await seek.fill(String(build.time));
     await expect(page.getByLabel('Assembly counts')).toContainText(build.units);
     await expect(page.getByLabel('Assembly counts')).toContainText(build.stages);
-    await expect(page.locator('.header-coverage')).toContainText(`${build.steps} authored · new fits unverified`);
-    await expect(page.getByRole('button', { name: 'Enter post-assembly demonstration' })).toBeEnabled();
+    const references = await showReference(page);
+    await references.getByText('Coverage & limitations', { exact: true }).click();
+    await expect(references).toContainText(`${build.steps} steps implemented`);
+    await expect(references.locator('.notice')).toContainText('not been fully verified on a physical robot');
+    await references.getByRole('button', { name: 'Close reference' }).click();
+    await showParts(page);
+    await openDetails(page, '.view-options');
+    await expect(page.getByRole('button', { name: 'Try the movement demo →' })).toBeEnabled();
     await expect(page.getByRole('button', { name: 'Collapse instructions' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Collapse inventory' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Collapse parts' })).toBeVisible();
     const assembled = await viewer.screenshot();
     expect(assembled.equals(before), 'Real staged assets must seat progressively rather than remain the initial inventory').toBe(false);
     if (build.id === 'package-sorter') {
-      await page.getByRole('combobox', { name: 'Implemented source steps' }).selectOption('base2019-step53');
+      await chooseStep(page, 'base2019-step53');
       await seek.fill('125850');
       await expect(page.getByLabel('Assembly counts')).toContainText('154/158');
       const selectedForkBracket = page.locator('.robot-scene [aria-hidden="true"] > div').filter({ hasText: 'base2019:angle-black-180:02' });
       await expect(selectedForkBracket, 'Automatic source-step camera must reveal the actual distant in-flight fork bracket').toBeVisible();
       await page.getByRole('button', { name: 'Reset view' }).click();
-      await expect(page.locator('.camera-status')).toContainText('Manual camera');
+      await expect(page.getByRole('button', { name: 'Resume auto camera' })).toBeVisible();
       await page.getByRole('button', { name: 'Resume auto camera' }).click();
       await expect(selectedForkBracket).toBeVisible();
       await seek.fill(String(build.time));
       await expect(page.getByLabel('Assembly counts')).toContainText(build.units);
     }
-    await page.getByRole('button', { name: 'Enter post-assembly demonstration' }).click();
+    await page.getByRole('button', { name: 'Try the movement demo →' }).click();
     const region = page.getByRole('region', { name: 'Post-assembly simulation' });
     await expect(region.getByRole('combobox', { name: 'Scenario' })).toHaveValue(build.id === 'robotic-hand' ? 'hand-grip-hold-release-extension' : build.id === 'quality-check' ? 'quality-inspection-response-extension' : 'sorter-python-source-command-replay');
     await expect(region).toContainText(build.scenario);
@@ -63,7 +70,7 @@ for (const build of builds) {
     await region.getByRole('button', { name: 'Return to assembly end' }).click();
     await expect(seek).toHaveValue(String(build.time));
     await expect(page.getByRole('button', { name: 'Collapse instructions' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Collapse inventory' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Collapse parts' })).toBeVisible();
     await seek.fill('0');
     await expect(page.getByLabel('Assembly counts')).toContainText(build.id === 'quality-check' ? '0/55' : build.id === 'package-sorter' ? '0/158' : '0/39');
     await info.attach('post-assembly-reviewed-source', { body: await page.screenshot({ fullPage: true }), contentType: 'image/png' });

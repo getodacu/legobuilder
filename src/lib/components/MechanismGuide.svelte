@@ -49,9 +49,9 @@
   }
 </script>
 
-<section class="mechanism-guide" aria-label="Educational mechanism guide">
-  <div class="mechanism-guide-heading"><h2>Mechanism notes</h2><label>Explain<select bind:value={topic}>{#each topics as [id, title]}<option value={id}>{title}</option>{/each}</select></label></div>
-  <p class="small">Read from this assembly's declared graph. An authored relationship is not a physical-fit certificate. Use View options to draw joint axes and mounting connections.</p>
+<section class="mechanism-guide" aria-label="How it works">
+  <div class="mechanism-guide-heading"><h2>How it works</h2><label>Explain<select bind:value={topic}>{#each topics as [id, title]}<option value={id}>{title}</option>{/each}</select></label></div>
+  <p class="small">Explore how the parts connect and move. Use View options to show joint axes and connections. These explanations do not verify physical fit.</p>
   {#if topic === 'joints'}
     <p class="small">Axes are in each joint's local parent frame; positive rotation follows the right-hand rule. Prismatic coordinates use millimeters, revolute coordinates radians.</p>
     <ul class="relationship-list">{#each model.joints as joint}

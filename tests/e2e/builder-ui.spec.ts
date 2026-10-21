@@ -1,0 +1,75 @@
+import { test, expect } from '@playwright/test';
+import { chooseStep, showParts, showReference } from './ui';
+
+test('building starts with one instruction, grouped required parts and optional references', async ({ page }, info) => {
+  await page.goto('/');
+  await expect(page.locator('.catalog-grid article')).toHaveCount(4);
+  await expect(page.locator('.unavailable-build')).toContainText('V5 Clawbot');
+  await page.locator('#open-advanced-driving-base').click();
+  await expect(page.getByLabel('Assembly position')).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Parts', exact: true })).toHaveAttribute('aria-expanded', 'false');
+  await expect(page.getByRole('heading', { name: 'Prepare the 9-hole beam', exact: true })).toHaveCount(1);
+  await expect(page.locator('.required-list > li')).toHaveCount(2);
+  await expect(page.locator('.required-list')).toContainText('×2');
+  await expect(page.getByRole('button', { name: 'Play step', exact: true })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Next step', exact: true })).toBeEnabled();
+  await expect(page.locator('.view-options')).not.toHaveAttribute('open');
+  await expect(page.locator('.playback-options')).not.toHaveAttribute('open');
+  await page.screenshot({ path: info.outputPath('builder-desktop.png') });
+  const reference = await showReference(page);
+  await expect(reference).toBeVisible();
+  await expect(reference.getByLabel('PDF page', { exact: true })).toHaveValue('1');
+  await reference.getByLabel('PDF page', { exact: true }).fill('2');
+  await expect(page.getByLabel('Assembly position')).toHaveValue('0');
+  await page.keyboard.press('Escape');
+  await expect(page.getByRole('button', { name: 'Reference & credits', exact: true })).toBeFocused();
+  await chooseStep(page, 'book5-step9');
+  await expect(page.locator('#step-warnings')).toContainText('32 mm');
+  await expect(page.locator('#step-warnings')).toContainText('Do not force');
+  await info.attach('builder-desktop', { body: await page.screenshot({ fullPage: true }), contentType: 'image/png' });
+});
+
+for (const width of [320, 390, 1024]) {
+  test(`${width}px: model and instruction stay visible, parts selection and focus work`, async ({ page }, info) => {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto('/');
+    await page.locator('#open-advanced-driving-base').click();
+    await expect(page.locator('.robot-scene')).toHaveAttribute('aria-busy', 'false');
+    const canvas = await page.getByRole('img', { name: /^Interactive assembly/ }).boundingBox();
+    const instructions = await page.locator('#instructions-panel').boundingBox();
+    const footer = await page.locator('.timeline').boundingBox();
+    expect(canvas!.height).toBeGreaterThan(150);
+    expect(instructions!.height).toBeGreaterThan(150);
+    expect(canvas!.y + canvas!.height).toBeLessThanOrEqual(footer!.y);
+    expect(instructions!.y).toBeLessThan(footer!.y);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    await info.attach(`builder-${width}`, { body: await page.screenshot({ path: info.outputPath(`builder-${width}.png`) }), contentType: 'image/png' });
+    await showParts(page);
+    const parts = page.getByRole('complementary', { name: 'Parts and inspection' });
+    await expect(parts.getByRole('heading', { name: 'Parts', exact: true })).toBeFocused();
+    await expect(parts.locator('.instance-list > li')).toHaveCount(234);
+    expect(await parts.locator('.part-group').count()).toBeLessThan(234);
+    await parts.getByRole('searchbox').fill('Technic Beam 9');
+    await expect(parts.locator('.part-group')).toHaveCount(1);
+    await expect(parts.locator('.part-group-name strong')).toHaveText('Technic Beam 9');
+    await parts.getByRole('searchbox').fill('pin-1');
+    await parts.locator('.instance-list button').filter({ has: page.getByText('pin-1', { exact: true }) }).click();
+    await expect(parts.getByRole('heading', { name: 'Black friction pin — beam hole 4' })).toBeVisible();
+    await expect(parts.locator('.part-technical')).not.toHaveAttribute('open');
+    await page.keyboard.press('Shift+Tab');
+    await expect.poll(() => parts.evaluate((element) => element.contains(document.activeElement))).toBe(true);
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('button', { name: 'Parts', exact: true })).toBeFocused();
+    await expect(page.getByRole('button', { name: 'Instructions', exact: true })).toHaveAttribute('aria-expanded', 'true');
+    await page.getByRole('button', { name: 'Next step', exact: true }).click();
+    await expect(page.locator('.guide-step-count')).toContainText('1/136');
+    await expect(page.getByRole('heading', { name: 'Seat the two gray cross blocks', exact: true })).toBeVisible();
+    const seek = page.getByLabel('Assembly position');
+    await seek.fill((await seek.getAttribute('max'))!);
+    await page.getByRole('button', { name: 'Try the movement demo →', exact: true }).click();
+    await expect(page.getByRole('region', { name: 'Post-assembly simulation' })).toBeVisible();
+    await expect(page.getByRole('slider', { name: 'Simulation position' })).toBeEnabled();
+    await page.getByRole('button', { name: 'Return to assembly end', exact: true }).click();
+    await expect(page.getByLabel('Assembly position')).toHaveValue((await seek.getAttribute('max'))!);
+  });
+}

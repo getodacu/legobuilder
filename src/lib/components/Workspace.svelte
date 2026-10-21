@@ -4,10 +4,11 @@
   import Timeline from '#lib/components/Timeline.svelte';
   import SimulationControls from '#lib/components/SimulationControls.svelte';
   import MechanismGuide from '#lib/components/MechanismGuide.svelte';
+  import { groupParts } from './part-groups.ts';
   import { compileAssembly, createFrame, sampleAssembly, getStepTime } from '#lib/assembly/engine.ts';
-  import type { AssemblyFrame, CatalogEntry, CompiledAssembly, RendererController, RobotModel, SimulationFrame, SourceReference, ViewOptions } from '#lib/types/model.ts';
+  import type { AssemblyFrame, CatalogEntry, CompiledAssembly, RendererController, RobotModel, SimulationFrame, SourceReference, ViewOptions, PartInstance } from '#lib/types/model.ts';
 
-  let { entry, initialTimeMs = 0, onBack }: { entry: Extract<CatalogEntry, { status: 'available' }>; initialTimeMs?: number; onBack: (progress?: { timeMs: number; installed: number; total: number; steps: number }) => void } = $props();
+  let { entry, initialTimeMs = 0, onBack }: { entry: Extract<CatalogEntry, { status: 'available' }>; initialTimeMs?: number; onBack: (progress?: { timeMs: number; installed: number; total: number; steps: number; complete: boolean }) => void } = $props();
   let model = $state.raw<RobotModel | null>(null);
   let compiled = $state.raw<CompiledAssembly | null>(null);
   let frame = $state.raw<AssemblyFrame | null>(null);
@@ -39,7 +40,7 @@
   let view = $state<ViewOptions>({ mode: 'studio', explodedFactor: 0, labels: false, showJoints: false, showConnections: false, isolatedPartIds: [] });
   let showEducation = $state(false);
   let wide = $state(false);
-  let leftOpen = $state(false);
+  let leftOpen = $state(true);
   let rightOpen = $state(false);
   let rightTab = $state<'inventory' | 'inspection'>('inventory');
   let search = $state('');
@@ -51,10 +52,12 @@
   let inventoryTrigger: HTMLButtonElement;
   let sceneColumn: HTMLElement;
   let instructionsHeading: HTMLHeadingElement;
+  let instructionsPanel: HTMLElement;
   let inventoryHeading: HTMLHeadingElement;
   let helpDialog: HTMLDialogElement;
-  let helpTrigger: HTMLButtonElement;
   let helpReturnFocus: HTMLElement | null = null;
+  let referenceDialog: HTMLDialogElement;
+  let referenceReturnFocus: HTMLElement | null = null;
   let fetchController: AbortController | null = null;
   let disposed = false;
   let stats = $state({ robotInstalled: 0, robotTotal: 0, sampleInstalled: 0, sampleTotal: 0, fastenersInstalled: 0, fastenersTotal: 0, stepsComplete: 0, stepsTotal: 0 });
@@ -63,8 +66,11 @@
   const selectedPart = $derived(model?.parts.find((part) => part.id === selectedPartId) ?? null);
   const selectedModule = $derived(model?.subassemblies.find((module) => module.id === selectedPart?.subassemblyId) ?? null);
   const currentModule = $derived(model?.subassemblies.find((module) => currentStep?.requiredPartInstanceIds.some((id) => module.partInstanceIds.includes(id))) ?? null);
-  const filteredParts = $derived(model?.parts.filter((part) => (inventoryScope === 'all' || part.inventoryScope === inventoryScope) && `${part.name} ${part.id} ${part.geometryId} ${part.partNumber ?? ''} ${part.category}`.toLowerCase().includes(search.toLowerCase())) ?? []);
+  const allPartGroups = $derived(groupParts(model?.parts ?? [], model?.geometryAssets ?? []));
+  const filteredParts = $derived(allPartGroups.flatMap((group) => group.parts.filter((part) => (inventoryScope === 'all' || part.inventoryScope === inventoryScope) && `${group.name} ${part.name} ${part.id} ${part.geometryId} ${part.partNumber ?? ''} ${part.category} ${model?.materials.find((material) => material.id === part.materialId)?.name ?? ''}`.toLowerCase().includes(search.toLowerCase()))));
   const requiredParts = $derived(model?.parts.filter((part) => currentStep?.requiredPartInstanceIds.includes(part.id)) ?? []);
+  const requiredGroups = $derived(groupParts(requiredParts, model?.geometryAssets ?? []));
+  const inventoryGroups = $derived(groupParts(filteredParts, model?.geometryAssets ?? []));
   const selectedConnections = $derived(model?.connections.filter((connection) => connection.a.partInstanceId === selectedPartId || connection.b.partInstanceId === selectedPartId) ?? []);
   const manualDocuments = $derived(model?.sourceDocuments.filter((document) => document.pageCount !== undefined) ?? []);
   const sourceDocument = $derived(manualDocuments.find((document) => document.id === sourceDocumentId));
@@ -80,7 +86,7 @@
   const sourceComplete = $derived(!!model && coverage.implementedSteps === coverage.documentedSteps && model.steps.filter((step) => step.kind === 'numbered-instruction').length === coverage.documentedSteps);
   const assemblyComplete = $derived(!!compiled && timeMs === compiled.durationMs && stats.robotInstalled === stats.robotTotal && stats.sampleInstalled === stats.sampleTotal && stats.stepsComplete === stats.stepsTotal);
   const simulationAvailable = $derived(sourceComplete && assemblyComplete && !!model?.scenarios.length);
-  const simulationLock = $derived(!model ? 'Load the assembly first.' : !sourceComplete ? `Full implemented source manifest required: ${coverage.implementedSteps}/${coverage.documentedSteps} steps implemented, ${coverage.verifiedSteps} verified. Completing this partial build does not unlock a full-robot demonstration.` : !model.scenarios.length ? 'No source-bound mechanism scenario is declared for this model.' : !assemblyComplete ? 'Complete the entire implemented assembly before entering the demonstration.' : `${coverage.verifiedSteps}/${coverage.documentedSteps} source steps verified. ${coverage.verifiedSteps < coverage.documentedSteps ? 'Placement remains unchecked; demonstration availability is not a verified-robot seal.' : 'See source coverage for fit and measurement limitations.'}`);
+  const simulationLock = $derived(!model ? 'Loading your guide…' : !sourceComplete ? 'This guide is incomplete; a full demonstration is unavailable.' : !model.scenarios.length ? 'No demonstration is available for this robot.' : !assemblyComplete ? 'Available after the last building step.' : 'A simulated preview of movement; physical fit and performance remain unverified.');
   const activeOperation = $derived.by(() => {
     if (!compiled || !model || !currentStep) return null;
     const localTime = timeMs - compiled.stepTimes[stepIndex].startMs;
@@ -143,10 +149,11 @@
     stats.stepsTotal = frame.counts.stepsTotal;
     revision++;
     if (previousStep !== stepIndex) {
+      if (instructionsPanel) instructionsPanel.scrollTop = 0;
       const step = model?.steps[stepIndex];
       const source = step?.sourceReferences[0];
       if (source?.page !== undefined && manualDocuments.some((document) => document.id === source.documentId)) { sourceDocumentId = source.documentId; sourcePage = source.page; }
-      announcement = step ? `${step.title}. ${step.action === 'view' ? 'Source view-only instruction; no parts added.' : step.description}` : 'Staged inventory';
+      announcement = step ? `${step.title}. ${step.action === 'view' ? 'Turn the model to check this view; no parts are added.' : step.description}` : 'Staged inventory';
     }
   }
   function seek(time: number) { if (simulationActive) exitSimulation(); pause(true); sample(time); }
@@ -193,16 +200,24 @@
     const step = model?.steps.find((candidate) => candidate.id === stepId);
     selectPart(step?.requiredPartInstanceIds[0] ?? null, false);
   }
+  function partColor(part: PartInstance) { return model?.materials.find((material) => material.id === part.materialId); }
+  function placedIn(parts: PartInstance[]) {
+    revision;
+    return parts.filter((part) => { const index = partIndex.get(part.id); return index !== undefined && !!frame?.installed[index]; }).length;
+  }
   function partState(id: string) {
     revision;
     const index = partIndex.get(id);
-    return frame && index !== undefined ? frame.active[index] ? (frame.installed[index] ? 'Installed · active' : 'In motion · pending') : frame.installed[index] ? 'Installed' : 'Staged · pending' : 'Unknown';
+    return frame && index !== undefined ? frame.active[index] ? (frame.installed[index] ? 'Placed · active' : 'Moving into place') : frame.installed[index] ? 'Placed' : 'In the parts tray' : 'Unknown';
   }
   function selectPart(id: string | null, reveal = true) {
     selectedPartId = id;
-    if (id && reveal) { rightTab = 'inspection'; rightOpen = true; if (!wide) leftOpen = false; }
+    if (id && reveal) {
+      rightTab = 'inspection'; rightOpen = true;
+      void tick().then(() => { if (rightOpen) inventoryHeading?.focus(); });
+    }
     const part = model?.parts.find((candidate) => candidate.id === id);
-    announcement = part ? `${part.name}, ${part.id}. ${partState(part.id)}.` : 'Selection cleared.';
+    announcement = part ? `${part.name}. ${partState(part.id)}.` : 'Selection cleared.';
   }
   function changeMode(mode: ViewOptions['mode']) { view = { ...view, mode }; }
   function explode() { view = { ...view, explodedFactor: view.explodedFactor ? 0 : 1 }; }
@@ -211,7 +226,7 @@
   function resumeCamera() { if (simulationActive) return; autoCamera = true; controller?.setAutoCamera(true); }
   async function openPanel(panel: 'instructions' | 'inventory') {
     if (panel === 'instructions') { leftOpen = !leftOpen; if (!wide) rightOpen = false; }
-    else { rightOpen = !rightOpen; if (!wide) leftOpen = false; }
+    else { rightOpen = !rightOpen; }
     await tick();
     if (panel === 'instructions' && leftOpen) instructionsHeading?.focus();
     else if (panel === 'inventory' && rightOpen) inventoryHeading?.focus();
@@ -220,22 +235,25 @@
     if (panel === 'instructions') { leftOpen = false; instructionsTrigger?.focus(); }
     else { rightOpen = false; inventoryTrigger?.focus(); }
   }
-  async function revealWarnings() {
-    leftOpen = true;
-    if (!wide) rightOpen = false;
-    await tick();
-    const warnings = document.getElementById('step-warnings');
-    warnings?.focus();
-    warnings?.scrollIntoView({ block: 'nearest' });
-  }
   function openHelp() { helpReturnFocus = document.activeElement as HTMLElement; helpDialog.showModal(); }
+  function openReference() { referenceReturnFocus = document.activeElement as HTMLElement; referenceDialog.showModal(); }
   function keyboard(event: KeyboardEvent) {
-    if (event.defaultPrevented || event.isComposing || event.altKey || event.ctrlKey || event.metaKey || helpDialog?.open) return;
+    if (event.defaultPrevented || event.isComposing || event.altKey || event.ctrlKey || event.metaKey || helpDialog?.open || referenceDialog?.open) return;
     const target = event.target as HTMLElement;
+    if (event.key === 'Tab' && rightOpen && !wide) {
+      const controls = [...document.querySelectorAll<HTMLElement>('#inventory-panel button, #inventory-panel input, #inventory-panel select, #inventory-panel summary, #inventory-panel a')].filter((element) => !element.hasAttribute('disabled') && element.getClientRects().length);
+      const first = controls[0], last = controls.at(-1);
+      if (first && last && (!controls.includes(target) || target === (event.shiftKey ? first : last))) {
+        event.preventDefault(); (event.shiftKey ? last : first).focus();
+      }
+      return;
+    }
     if (target.isContentEditable || target.closest('input, textarea, select, [contenteditable], [role="slider"], dialog, canvas')) return;
     if (event.key === ' ' && target.closest('button, a, summary')) return;
     if (event.key === 'Escape') {
-      if (leftOpen) closePanel('instructions'); else if (rightOpen) closePanel('inventory'); else if (view.isolatedPartIds.length) view = { ...view, isolatedPartIds: [] }; else if (simulationActive) exitSimulation(); else return;
+      const popup = document.querySelector<HTMLDetailsElement>('.view-options[open], .playback-options[open], .step-picker[open]');
+      if (popup && !rightOpen) { popup.open = false; popup.querySelector<HTMLElement>('summary')?.focus(); event.preventDefault(); return; }
+      if (rightOpen) closePanel('inventory'); else if (leftOpen) closePanel('instructions'); else if (view.isolatedPartIds.length) view = { ...view, isolatedPartIds: [] }; else if (simulationActive) exitSimulation(); else return;
       event.preventDefault(); return;
     }
     if (event.key === '?') { event.preventDefault(); openHelp(); return; }
@@ -247,7 +265,7 @@
     else if (key === 'r') controller?.resetCamera(); else if (key === 'f') controller?.fit('all');
     else if (key === 'x') explode(); else if (key === 'l') toggleOverlay('labels');
     else if (key === 't') changeMode(view.mode === 'technical' ? 'studio' : 'technical');
-    else if (key === 'i') { changeMode('inspection'); rightTab = 'inspection'; }
+    else if (key === 'i') { changeMode('inspection'); rightTab = 'inspection'; rightOpen = true; }
     else return;
     event.preventDefault();
   }
@@ -279,7 +297,7 @@
   }
   onMount(() => {
     const layout = matchMedia('(min-width: 1200px)');
-    const layoutChanged = () => { wide = layout.matches; leftOpen = wide; rightOpen = wide; };
+    const layoutChanged = () => { wide = layout.matches; leftOpen = true; rightOpen = false; };
     layoutChanged();
     layout.addEventListener('change', layoutChanged);
     const media = matchMedia('(prefers-reduced-motion: reduce)');
@@ -292,63 +310,50 @@
 </script>
 
 <svelte:window onkeydown={keyboard} />
-<div class="workspace-shell">
+<div class="workspace-shell" class:simulation-active={simulationActive}>
   <header class="workspace-header">
-    <button class="wordmark wordmark-button" onclick={() => { pause(true); simulationControls?.pause(); onBack(compiled && model ? { timeMs, installed: stats.robotInstalled, total: stats.robotTotal, steps: model.steps.filter((step, index) => step.kind === 'numbered-instruction' && compiled!.stepTimes[index].endMs <= timeMs).length } : undefined); }} aria-label="Back to build catalog"><span class="alignment-mark" aria-hidden="true"></span>RoboBuild</button>
-    <div class="workspace-identity"><span class="eyebrow">{entry.identity.manufacturer} / {entry.identity.category}</span><h1>{entry.identity.name}</h1></div>
-    <span class="coverage-badge header-coverage">{coverage.implementedSteps}/{coverage.documentedSteps} authored{coverage.implementedSteps < coverage.documentedSteps ? ' · partial source coverage' : coverage.verifiedSteps < coverage.documentedSteps || coverage.dimensions.placement.status !== 'complete' ? ' · new fits unverified' : ' source steps'}</span>
-    <button bind:this={helpTrigger} onclick={openHelp} aria-haspopup="dialog">Keyboard help <kbd>?</kbd></button>
+    <button class="wordmark wordmark-button" onclick={() => { pause(true); simulationControls?.pause(); onBack(compiled && model ? { timeMs, installed: stats.robotInstalled, total: stats.robotTotal, steps: model.steps.filter((step, index) => step.kind === 'numbered-instruction' && compiled!.stepTimes[index].endMs <= timeMs).length, complete: assemblyComplete } : undefined); }} aria-label="Back to build catalog"><span aria-hidden="true">←</span><span class="brand-name">RoboBuild</span></button>
+    <div class="workspace-identity"><span class="eyebrow">Building guide</span><h1>{entry.identity.name}</h1></div>
+    <div class="workspace-actions">
+      <button bind:this={instructionsTrigger} aria-expanded={leftOpen} aria-controls="instructions-panel" onclick={() => openPanel('instructions')}>Instructions</button>
+      <button bind:this={inventoryTrigger} aria-expanded={rightOpen} aria-controls="inventory-panel" onclick={() => openPanel('inventory')}>Parts</button>
+      <button class="reference-trigger" onclick={openReference} aria-haspopup="dialog">Reference & credits</button>
+      <button class="help-trigger" onclick={openHelp} aria-label="Keyboard help" aria-haspopup="dialog">?</button>
+    </div>
   </header>
-  <div class="workspace-subheader"><span class="small">{entry.identity.edition}</span><div class="panel-buttons"><button bind:this={instructionsTrigger} aria-expanded={leftOpen} aria-controls="instructions-panel" onclick={() => openPanel('instructions')}>Instructions</button><button bind:this={inventoryTrigger} aria-expanded={rightOpen} aria-controls="inventory-panel" onclick={() => openPanel('inventory')}>Inventory & inspection</button></div></div>
   <main id="main" tabindex="-1" class="workspace-main" class:left-open={leftOpen} class:right-open={rightOpen}>
-    {#if leftOpen || rightOpen}<button class="drawer-backdrop" aria-label="Close open panel" onclick={() => closePanel(leftOpen ? 'instructions' : 'inventory')}></button>{/if}
-    <aside id="instructions-panel" class="work-panel instructions-panel" class:panel-open={leftOpen} aria-label="Instructions and sources">
+    {#if rightOpen}<button class="drawer-backdrop" aria-label="Close parts panel" onclick={() => closePanel('inventory')}></button>{/if}
+    <aside bind:this={instructionsPanel} id="instructions-panel" class="work-panel instructions-panel" class:panel-open={leftOpen} aria-label="Build instructions">
       <div class="panel-heading"><h2 bind:this={instructionsHeading} tabindex="-1">Instructions</h2><button onclick={() => closePanel('instructions')} aria-label="Collapse instructions">×</button></div>
       {#if model && compiled && currentStep}
         <div class="panel-content">
-          <p class="eyebrow">{currentModule?.name ?? 'Current module'} · {currentStep.action}</p>
-          <label class="stacked-label">Implemented source steps<select value={currentStep.id} disabled={blocked} onchange={(event) => selectStep(event.currentTarget.value)}>{#each model.steps as step}<option value={step.id}>{step.title}</option>{/each}</select></label>
-          <h3 class="instruction-title">{currentStep.title}</h3><p>{currentStep.description}</p>
-          {#if currentStep.action === 'view'}<div class="notice">Source view-only step. Camera guidance changes; physical parts and counts do not.</div>{/if}
-          {#if activeOperation}<p class="operation-label">{activeOperation.operationType} <span>· {activeOperation.evidence.placement}</span></p><p class="small">{activeOperation.evidence.relationship.note}</p>{/if}
-          <div class="cad-figure"><span class="eyebrow">Original CAD instruction view</span><p>The live center view shows the actual components for this instruction. No official manual images are reproduced.</p><button disabled={blocked} onclick={() => controller?.fit('active')}>Frame active operation ↗</button></div>
-          <h3>Required hardware <span class="mono">{requiredParts.length}</span></h3>
-          {#if requiredParts.length}<ul class="required-list">{#each requiredParts as part}<li><button onclick={() => selectPart(part.id)}><strong>{part.name}</strong><span class="mono">1 × {part.id}</span><span>Geometry (LDraw): {part.geometryId}</span></button></li>{/each}</ul>{:else}<p class="small">No additional hardware in this instruction.</p>{/if}
-          {#if currentStep.warnings.length}<div id="step-warnings" tabindex="-1">{#each currentStep.warnings as warning}<div class="notice warning"><strong>Warning / uncertainty</strong><p>{warning}</p></div>{/each}</div>{/if}
-          <h3>Instruction evidence</h3><ul class="source-list">{#each currentStep.sourceReferences as source}<li><a href={sourceHref(source)} target="_blank" rel="noreferrer">{model.sourceDocuments.find((document) => document.id === source.documentId)?.title ?? source.documentId} ↗</a><span>PDF page {source.page ?? 'unknown'} · printed instruction {source.instructionId ?? 'not numbered'}{source.figure ? ` · figure ${source.figure}` : ''}</span><span>Source confidence {Math.round(source.confidence * 100)}% · evidence rating, not accuracy</span></li>{/each}</ul>
-          <details class="source-browser" open><summary>Browse original manuals</summary><label class="stacked-label">Document<select bind:value={sourceDocumentId} onchange={() => sourcePage = 1}>{#each manualDocuments as document}<option value={document.id}>{document.title}</option>{/each}</select></label><label class="stacked-label">One-based PDF page<input type="number" min="1" max={sourceDocument?.pageCount} value={sourcePage} oninput={(event) => { const value = Number(event.currentTarget.value); if (Number.isInteger(value) && value >= 1 && sourceDocument?.pageCount !== undefined && value <= sourceDocument.pageCount) sourcePage = value; }} /></label>
-            {#if sourceDocument}<a class="button-link" href={`${sourceDocument.sourceUrl.split('#')[0]}#page=${sourcePage}`} target="_blank" rel="noreferrer">Open official page {sourcePage} ↗</a>{/if}
-            <p class="small">Reading a page does not seek. Only an explicitly mapped figure below changes the assembly.</p>
-            {#each pageMappings as mapping}{@const mappedStep = mapping.stepId ?? model.operations.find((operation) => operation.id === mapping.operationId)?.stepId}{#if mappedStep}<button class="source-mapping" disabled={blocked} onclick={() => selectStep(mappedStep)}>Seek {mapping.source.figure ? `figure ${mapping.source.figure}` : `instruction ${mapping.source.instructionId ?? mappedStep}`} →</button>{:else}<p class="small">Reference-only page; no assembly state mapped.</p>{/if}{/each}
-            {#if !pageMappings.length}<p class="small">No implemented assembly mapping for this page. Reference reading only.</p>{/if}
-          </details>
-          <details>
-            <summary>Assembly status & viewing</summary>
-            <p>{stats.robotInstalled}/{stats.robotTotal} tracked robot units installed · {stats.robotTotal - stats.robotInstalled} remaining. {stats.stepsComplete}/{stats.stepsTotal} timeline stages complete; the separate source-step count above excludes non-numbered stages.</p>
-            {#if stats.sampleTotal}<p>{stats.sampleInstalled}/{stats.sampleTotal} sample units installed (separate from robot units).</p>{/if}
-            {#if stats.fastenersTotal}<p>{stats.fastenersInstalled}/{stats.fastenersTotal} fasteners installed.</p>{/if}
-            {#if currentModule}<p>Current module: <strong>{currentModule.name}</strong> · {moduleInstalled}/{currentModule.partInstanceIds.length} tracked direct units installed. No reused component is counted twice.</p>{/if}
-            <p>Staged = pending · moving = active · seated = installed. Counts commit only at seating events.</p>
-            <p>Explode is presentation-only; source time and counts are unchanged. Reduced motion jumps playback to the requested endpoint and disables camera flights.</p>
-            <p>Post-assembly demonstration availability and limitations appear below the live scene. Full implemented coverage is required; authored coverage never establishes verified fit.</p>
-          </details>
-          <details><summary>Whole-source coverage & limitations</summary><p>{model.coverage.implementedSteps}/{model.coverage.documentedSteps} steps implemented · {model.coverage.verifiedSteps} verified</p><p>{model.coverage.dimensions.inventory.note}</p>{#each Object.entries(model.coverage.dimensions) as [name, dimension]}<p class="small"><strong>{name}: {dimension.status}.</strong> {dimension.note}</p>{/each}<ul>{#each model.coverage.outstandingDeviations as deviation}<li>{deviation}</li>{/each}</ul></details>
-          <details><summary>Geometry attribution & licenses</summary>{#each model.geometryAssets as asset}<h4>{asset.id}</h4><ul class="source-list">{#each asset.attribution as attribution}<li><a href={attribution.sourceUrl} target="_blank" rel="noreferrer">{attribution.sourcePath} ↗</a><span>{attribution.authors.join(', ')}</span><span>{attribution.licenseIds.join(' · ')}</span>{#each attribution.licenseUrls as url}<a href={url} target="_blank" rel="noreferrer">License ↗</a>{/each}{#if attribution.modifications.length}<span>Changes: {attribution.modifications.join('; ')}</span>{/if}</li>{/each}</ul>{/each}</details>
-          <details><summary>Material evidence</summary>{#each model.materials as material}<h4>{material.name}</h4><p class="small">{material.evidence.note}</p><ul class="source-list">{#each material.evidence.sources as source}<li><a href={sourceHref(source)} target="_blank" rel="noreferrer">{model.sourceDocuments.find((document) => document.id === source.documentId)?.title ?? source.documentId} ↗</a></li>{/each}</ul>{/each}</details>
-          <p class="small">Independent educational reconstruction. Not affiliated with or endorsed by the manufacturer. Source documents are linked, not redistributed.</p>
+          <div class="step-heading"><span class="eyebrow">Step {stepIndex + 1} of {model.steps.length}</span><details class="step-picker"><summary>Jump to step</summary><label class="stacked-label">Building step<select value={currentStep.id} disabled={blocked} onchange={(event) => selectStep(event.currentTarget.value)}>{#each model.steps as step, index}<option value={step.id}>{index + 1}. {step.title}</option>{/each}</select></label></details></div>
+          <h3 class="instruction-title">{currentStep.title}</h3><p class="instruction-description">{currentStep.description}</p>
+          {#if currentStep.action === 'view'}<p class="step-hint">Rotate the model to check this view. No parts are added.</p>{/if}
+          <section class="step-parts" aria-label="Parts for this step">
+            <h3>{requiredParts.length ? 'Gather these parts' : currentStep.action === 'wiring' ? 'Use the existing cables' : 'Use your assembled parts'}</h3>
+            {#if requiredParts.length}
+              <ul class="required-list">{#each requiredGroups as group (group.key)}{@const part = group.parts[0]}{@const color = partColor(part)}<li><button onclick={() => selectPart(part.id)} aria-label={`Inspect ${group.parts.length} ${color?.name ?? ''} ${group.name}`}><span class="part-swatch" style:background={color?.color} aria-hidden="true"></span><span><strong>{group.name}</strong><span class="small">{color?.name}</span></span><span class="part-quantity">×{group.parts.length}</span></button></li>{/each}</ul>
+            {:else}<p class="small">No additional hardware in this instruction.</p>{/if}
+          </section>
+          {#if currentStep.warnings.length}<div id="step-warnings" class="step-warnings" tabindex="-1">{#each currentStep.warnings as warning}<div class="notice warning"><strong>Before you continue</strong><p>{warning}</p></div>{/each}</div>{/if}
+          <div class="step-reference">{#each currentStep.sourceReferences as source}<a href={sourceHref(source)} target="_blank" rel="noreferrer">Official instructions{source.page !== undefined ? ` · page ${source.page}` : ''} ↗</a>{/each}</div>
+          <p class="guide-caution small">Some 3D fits are unverified. Check connections against the official instructions and never force parts together.</p>
         </div>
-      {:else}<p class="panel-content">{loadError ? 'Instructions could not load. Retry the manifest below.' : 'Loading source-linked instructions…'}</p>{/if}
+      {:else}<p class="panel-content">{loadError ? 'Instructions could not load. Use Retry to try again.' : 'Loading building instructions…'}</p>{/if}
     </aside>
-    <section bind:this={sceneColumn} class="scene-column" aria-label="3D assembly workbench">
+    <section bind:this={sceneColumn} class="scene-column" class:demo-ready={simulationAvailable && !simulationActive} aria-label="3D assembly workbench">
       <div class="scene-toolbar">
-        <div class="mode-buttons" role="group" aria-label="View mode"><button aria-pressed={view.mode === 'studio'} onclick={() => changeMode('studio')}>Studio</button><button aria-pressed={view.mode === 'technical'} onclick={() => changeMode('technical')}>Technical</button><button aria-pressed={view.explodedFactor > 0} onclick={explode}>Explode</button><button aria-pressed={view.mode === 'inspection'} onclick={() => { changeMode('inspection'); rightTab = 'inspection'; }}>Inspection</button></div>
+        <span class="eyebrow">{simulationActive ? 'Movement preview' : 'Your build in 3D'}</span>
         <details class="view-options">
           <summary>View options</summary>
           <div class="view-options-content">
-            <p class="eyebrow">Millimeters · Y-up</p>
-            <div class="overlay-toolbar"><label><input type="checkbox" checked={view.labels} onchange={() => toggleOverlay('labels')} /> Labels</label><label><input type="checkbox" checked={view.showJoints} disabled={!model?.joints.length} onchange={() => toggleOverlay('showJoints')} /> Joint axes{!model?.joints.length ? ' (none recorded)' : ''}</label><label><input type="checkbox" checked={view.showConnections} disabled={!model?.connections.length && !model?.parts.some((part) => part.connectionPoints.length)} onchange={() => toggleOverlay('showConnections')} /> Connections / mounts</label></div>
-            <div class="overlay-toolbar"><label><input type="checkbox" bind:checked={showEducation} /> Educational explanations</label></div>
-            <p class="small">Explode changes presentation only, never source time or installed counts.</p>
+            <div class="mode-buttons" role="group" aria-label="View mode"><button aria-pressed={view.mode === 'studio'} onclick={() => changeMode('studio')}>Studio</button><button aria-pressed={view.mode === 'technical'} onclick={() => changeMode('technical')}>Technical</button><button aria-pressed={view.explodedFactor > 0} onclick={explode}>Explode</button><button aria-pressed={view.mode === 'inspection'} onclick={() => { changeMode('inspection'); rightTab = 'inspection'; rightOpen = true; }}>Inspection</button></div>
+            <div class="overlay-toolbar"><label><input type="checkbox" checked={view.labels} onchange={() => toggleOverlay('labels')} /> Part labels</label><label><input type="checkbox" checked={view.showJoints} disabled={!model?.joints.length} onchange={() => toggleOverlay('showJoints')} /> Joint axes</label><label><input type="checkbox" checked={view.showConnections} disabled={!model?.connections.length && !model?.parts.some((part) => part.connectionPoints.length)} onchange={() => toggleOverlay('showConnections')} /> Connections</label><label><input type="checkbox" bind:checked={showEducation} /> How it works</label></div>
+            <button disabled={blocked || !selectedModule} onclick={() => { if (selectedModule) controller?.fit({ subassemblyId: selectedModule.id }); }}>Fit module</button>
+            <button disabled={blocked} onclick={() => controller?.resetCamera()}>Reset view</button>
+            {#if !simulationActive}<label class="auto-camera"><input type="checkbox" checked={autoCamera} disabled={blocked} onchange={(event) => { autoCamera = event.currentTarget.checked; controller?.setAutoCamera(autoCamera); }} /> Follow building steps</label>{/if}
+            <p class="small">Explode separates parts for viewing. It does not change your guide progress.</p>
           </div>
         </details>
       </div>
@@ -356,58 +361,87 @@
         {#if model && frame}
           {#key sceneAttempt}<RobotScene {model} frame={simulationActive && simulationFrame ? simulationFrame.assembly : frame} {revision} {view} {selectedPartId} onController={(value) => { controller = value; if (value && (reducedMotion || simulationActive)) { autoCamera = false; value.setAutoCamera(false); } }} onReady={() => { ready = true; sceneError = ''; }} onError={reportSceneError} onSelect={(id) => selectPart(id)} onCameraOverride={() => autoCamera = false} />{/key}
         {/if}
-        {#if loading || (!ready && !loadError && !sceneError)}<div class="scene-status" role="status"><span class="eyebrow">Preparing workbench</span><h2>{loading ? 'Loading source-backed model' : 'Loading genuine component geometry'}</h2><p>Transport unlocks when all required assets are ready.</p></div>{/if}
-        {#if loadError || sceneError}<div class="scene-status error-state" role="alert"><span class="eyebrow">Workbench unavailable</span><h2>{loadError ? 'Model could not load' : '3D assets or WebGL could not initialize'}</h2><p>{loadError || sceneError}</p><button class="primary" onclick={() => { if (loadError) void load(); else { sceneError = ''; ready = false; sceneAttempt++; } }}>Retry {loadError ? 'manifest' : '3D workbench'}</button><p class="small">Sources and loaded inventory remain accessible in the side panels. No substitute model is shown.</p></div>{/if}
-        <div class="scene-corner-label"><span class="eyebrow">{simulationActive ? 'Post-assembly · RoboBuild extension' : currentModule?.name ?? 'Source-backed assembly'}</span><strong>{simulationActive ? simulationFrame?.compiled.scenario.title ?? 'Preparing deterministic scenario' : currentStep?.title ?? 'Staged inventory'}</strong></div>
+        {#if loading || (!ready && !loadError && !sceneError)}<div class="scene-status" role="status"><span class="eyebrow">Getting ready</span><h2>{loading ? 'Loading your building guide' : 'Preparing the 3D parts'}</h2><p>Building controls will be ready in a moment.</p></div>{/if}
+        {#if loadError || sceneError}<div class="scene-status error-state" role="alert"><h2>{loadError ? 'Building guide could not load' : '3D view could not start'}</h2><p>{loadError || sceneError}</p><button class="primary" onclick={() => { if (loadError) void load(); else { sceneError = ''; ready = false; sceneAttempt++; } }}>Retry</button><p class="small">You can still use any loaded instructions, parts and manual links.</p></div>{/if}
+        {#if view.isolatedPartIds.length}<button class="exit-isolate" onclick={() => view = { ...view, isolatedPartIds: [] }}>Show all parts</button>{/if}
       </div>
-      <div class="camera-toolbar"><div class="camera-actions"><button disabled={blocked} onclick={() => controller?.resetCamera()}>Reset view</button><button disabled={blocked} onclick={() => controller?.fit('all')}>Fit whole</button><button disabled={blocked} onclick={() => controller?.fit('active')}>Focus active</button><button disabled={blocked || !selectedModule} onclick={() => { if (selectedModule) controller?.fit({ subassemblyId: selectedModule.id }); }}>Fit module</button></div><div class="camera-status">{#if simulationActive}<span>Simulation camera · manual orbit</span>{:else if autoCamera}<span>Auto camera</span>{:else}<span>Manual camera</span><button disabled={blocked} onclick={resumeCamera}>Resume auto camera</button>{/if}</div></div>
-      <div class="assembly-summary" aria-label="Assembly counts"><span><strong class="mono">{stats.robotInstalled}/{stats.robotTotal}</strong> units installed</span><span><strong class="mono">{stats.robotTotal - stats.robotInstalled}</strong> remaining</span><span><strong class="mono">{stats.stepsComplete}/{stats.stepsTotal}</strong> {stats.stepsTotal === coverage.documentedSteps ? 'source steps' : 'timeline stages'}</span>{#if reducedMotion}<span>Reduced motion</span>{/if}{#if view.explodedFactor}<span>Exploded view</span>{/if}{#if view.isolatedPartIds.length}<button onclick={() => view = { ...view, isolatedPartIds: [] }}>Exit isolate</button>{/if}</div>
-      {#if showEducation && model}<MechanismGuide {model} simulationFrame={simulationActive ? simulationFrame : null} {revision} {stepIndex} {selectedPartId} onSelect={(id) => selectPart(id)} onStep={selectStep} />{/if}
-      {#if !simulationActive}<section class="simulation-gate" aria-label="Post-assembly demonstration"><button class:primary={simulationAvailable} disabled={blocked || !simulationAvailable} aria-describedby="simulation-lock" onclick={enterSimulation}>{simulationAvailable ? 'Enter post-assembly demonstration' : 'Simulation locked'}</button><p id="simulation-lock">{simulationLock}</p></section>{/if}
-      {#if currentStep?.warnings.length}<div class="compact-warning"><span title={currentStep.warnings[0]}><strong>Step warning:</strong> {currentStep.warnings[0]}</span><button onclick={() => void revealWarnings()}>Read {currentStep.warnings.length > 1 ? 'warnings' : 'warning'}</button></div>{/if}
+      <div class="camera-toolbar"><div class="camera-actions"><button disabled={blocked} onclick={() => controller?.fit('active')}>Focus active</button><button disabled={blocked} onclick={() => controller?.fit('all')}>Fit whole</button></div><div class="camera-status">{#if simulationActive}<span>Simulation camera · manual orbit</span>{:else if !autoCamera}<button disabled={blocked} onclick={resumeCamera}>Resume auto camera</button>{/if}</div></div>
+
+      {#if showEducation && model}<div class="mechanism-panel"><button class="mechanism-close" onclick={() => showEducation = false}>Close explanation ×</button><MechanismGuide {model} simulationFrame={simulationActive ? simulationFrame : null} {revision} {stepIndex} {selectedPartId} onSelect={(id) => selectPart(id)} onStep={selectStep} /></div>{/if}
+      {#if !simulationActive}<section class="simulation-gate" class:available={simulationAvailable} aria-label="Post-assembly demonstration">{#if simulationAvailable}<button class="primary" disabled={blocked} aria-describedby="simulation-lock" onclick={enterSimulation}>Try the movement demo →</button>{:else}<span class="demo-later">Movement demo</span>{/if}<p id="simulation-lock">{simulationLock}</p></section>{/if}
     </section>
-    <aside id="inventory-panel" class="work-panel inventory-panel" class:panel-open={rightOpen} aria-label="Inventory and inspection">
-      <div class="panel-heading"><h2 bind:this={inventoryHeading} tabindex="-1">Parts & evidence</h2><button onclick={() => closePanel('inventory')} aria-label="Collapse inventory">×</button></div>
-      <div class="panel-tabs" role="group" aria-label="Parts panel"><button aria-pressed={rightTab === 'inventory'} onclick={() => rightTab = 'inventory'}>Inventory</button><button aria-pressed={rightTab === 'inspection'} onclick={() => rightTab = 'inspection'}>Inspection</button></div>
+    <aside id="inventory-panel" class="work-panel inventory-panel" class:panel-open={rightOpen} aria-label="Parts and inspection">
+      <div class="panel-heading"><h2 bind:this={inventoryHeading} tabindex="-1">Parts</h2><button onclick={() => closePanel('inventory')} aria-label="Collapse parts">×</button></div>
+      <div class="panel-tabs" role="group" aria-label="Parts panel"><button aria-pressed={rightTab === 'inventory'} onclick={() => rightTab = 'inventory'}>All parts</button><button aria-pressed={rightTab === 'inspection'} onclick={() => rightTab = 'inspection'}>Selected part</button></div>
       <div class="panel-content">
         {#if rightTab === 'inventory'}
-          <label class="stacked-label">Search family, geometry or instance<input type="search" placeholder="e.g. pin, 32054, instance ID" bind:value={search} /></label><label class="stacked-label">Inventory scope<select bind:value={inventoryScope}><option value="all">Robot & samples (separate scopes)</option><option value="robot">Robot only</option><option value="sample">Samples only</option></select></label>
-          <p class="small">{filteredParts.length} individual instances shown.{coverage.dimensions.inventory.status !== 'complete' ? ' Inventory coverage is incomplete; this is not the complete official inventory.' : ''}{coverage.dimensions.placement.status !== 'complete' ? ' Placement verification remains incomplete, independently of inventory coverage.' : ''} Select a row to inspect its actual CAD instance.</p>
-          <ul class="inventory-list">{#each filteredParts as part}<li><button class:selected={selectedPartId === part.id} aria-pressed={selectedPartId === part.id} onclick={() => selectPart(part.id)}><span class="part-row-heading"><strong>{part.name}</strong><span class="mono">×1</span></span><span class="mono">{part.id}</span><span>Geometry (LDraw): {part.geometryId}</span><span class="part-state">{partState(part.id)} · {part.inventoryScope}</span></button></li>{/each}</ul>
-          {#if !filteredParts.length}<p>No matching instances. Try a family name or clear the search.</p>{/if}
-          {#if model}<details><summary>Source inventory accounting</summary>{#each model.inventory as line}<div class="inventory-evidence"><strong>{line.name} · {line.quantity}</strong><p class="small">{line.scope} · {line.basis} · {line.accounting}{line.discrepancy ? ` · ${line.discrepancy}` : ''}</p></div>{/each}</details>{/if}
+          <label class="stacked-label">Find a part<input type="search" placeholder="Name, color or part number" bind:value={search} /></label>
+          {#if stats.sampleTotal}<label class="stacked-label">Show<select bind:value={inventoryScope}><option value="all">Robot and sample parts</option><option value="robot">Robot parts</option><option value="sample">Sample parts</option></select></label>{/if}
+          <p class="small">{filteredParts.length} components · {inventoryGroups.length} types{coverage.dimensions.inventory.status !== 'complete' ? '. Check the official manual for the complete inventory' : ''}. Expand a type to select an individual piece.</p>
+          <ul class="inventory-list">{#each inventoryGroups as group (group.key)}{@const part = group.parts[0]}{@const color = partColor(part)}<li><details class="part-group" open={!!search.trim()}><summary><span class="part-swatch" style:background={color?.color} aria-hidden="true"></span><span class="part-group-name"><strong>{group.name}</strong><span>{color?.name}{stats.sampleTotal ? ` · ${part.inventoryScope === 'sample' ? 'Sample' : 'Robot'}` : ''} · {placedIn(group.parts)}/{group.parts.length} placed</span></span><span class="part-quantity">×{group.parts.length}</span></summary><ul class="instance-list">{#each group.parts as instance}<li><button class:selected={selectedPartId === instance.id} aria-pressed={selectedPartId === instance.id} onclick={() => selectPart(instance.id)}><strong>{instance.name}</strong><span class="mono">{instance.id}</span><span class="part-state">{partState(instance.id)}</span></button></li>{/each}</ul></details></li>{/each}</ul>
+          {#if !filteredParts.length}<p>No matching parts. Try another name or color.</p><button onclick={() => search = ''}>Clear search</button>{/if}
         {:else if selectedPart}
-          <p class="eyebrow">Actual part instance</p><h3 class="instruction-title">{selectedPart.name}</h3><p class="state-tag">{partState(selectedPart.id)}</p><div class="inspection-actions"><button disabled={blocked} onclick={isolate}>Isolate part</button>{#if view.isolatedPartIds.length}<button onclick={() => view = { ...view, isolatedPartIds: [] }}>Exit isolate</button>{/if}<button onclick={() => selectPart(null)}>Clear selection</button></div>
-          <dl class="inspector-facts"><div><dt>Instance</dt><dd class="mono">{selectedPart.id}</dd></div><div><dt>Manufacturer ID</dt><dd>{selectedPart.partNumber ?? 'Unknown / not asserted'}</dd></div><div><dt>Geometry (LDraw)</dt><dd class="mono">{selectedPart.geometryId}</dd></div><div><dt>Material</dt><dd>{model?.materials.find((material) => material.id === selectedPart.materialId)?.name ?? selectedPart.materialId}</dd></div><div><dt>Scope / family</dt><dd>{selectedPart.inventoryScope} / {selectedPart.category}</dd></div><div><dt>Module / parent</dt><dd>{selectedModule?.name ?? selectedPart.subassemblyId ?? 'No structural parent recorded'}</dd></div><div><dt>Current operation</dt><dd>{activeOperation?.partInstanceIds.includes(selectedPart.id) ? `${activeOperation.operationType} · ${activeOperation.id}` : 'Not active in this operation'}</dd></div><div><dt>Identity evidence</dt><dd>{selectedPart.identityEvidence.category}: {selectedPart.identityEvidence.note}</dd></div><div><dt>Geometry confidence</dt><dd>{Math.round(selectedPart.geometryConfidence * 100)}% evidence rating; not dimensional certification</dd></div><div><dt>Placement</dt><dd>{selectedPart.placementEvidence.placement} · fit {selectedPart.placementEvidence.fit}. {selectedPart.placementEvidence.evidence.note}</dd></div></dl>
-          <h3>Mounting points ({selectedPart.connectionPoints.length})</h3><ul class="mount-list">{#each selectedPart.connectionPoints as point}<li><strong>{point.id}</strong><span>{point.type} · {point.evidence.placement} · fit {point.evidence.fit}</span><span class="mono">Local mm: {point.localTransform.position.join(', ')}</span></li>{/each}</ul>{#if !selectedPart.connectionPoints.length}<p class="small">No source-backed mounting frames recorded.</p>{/if}
-          <h3>Relationships ({selectedConnections.length})</h3><ul class="relationship-list">{#each selectedConnections as connection}{@const otherId = connection.a.partInstanceId === selectedPart.id ? connection.b.partInstanceId : connection.a.partInstanceId}<li><button onclick={() => selectPart(otherId)}>{connection.type} → {otherId}</button><span>{connection.evidence.relationship.category} · fit {connection.evidence.fit}</span><p class="small">{connection.evidence.relationship.note}</p></li>{/each}</ul>{#if !selectedConnections.length}<p class="small">No recorded relationship for this instance.</p>{/if}
-          {#if selectedPart.sourceReference}<a class="button-link" href={sourceHref(selectedPart.sourceReference)} target="_blank" rel="noreferrer">Original instance source ↗</a>{/if}
-        {:else}<div class="inspection-empty"><span class="preview-cross" aria-hidden="true">+</span><h3>Select a real component</h3><p>Pick a component in the scene or select an individual inventory row. Staged parts can be inspected without installing them.</p><button onclick={() => rightTab = 'inventory'}>Browse inventory</button></div>{/if}
+          <h3 class="instruction-title">{selectedPart.name}</h3><p class="state-tag">{partState(selectedPart.id)}</p>
+          <div class="inspection-actions"><button disabled={blocked} onclick={() => controller?.fit('active')}>Focus part</button><button disabled={blocked} onclick={isolate}>Isolate part</button><button onclick={() => selectPart(null)}>Clear selection</button></div>
+          <dl class="part-facts"><div><dt>Color</dt><dd>{partColor(selectedPart)?.name ?? 'Not recorded'}</dd></div><div><dt>Part number</dt><dd>{selectedPart.partNumber ?? 'Not confirmed; see technical details'}</dd></div>{#if selectedModule}<div><dt>Assembly</dt><dd>{selectedModule.name}</dd></div>{/if}</dl>
+          {#if selectedPart.sourceReference}<a class="button-link" href={sourceHref(selectedPart.sourceReference)} target="_blank" rel="noreferrer">View in original instructions ↗</a>{/if}
+          <details class="part-technical"><summary>Technical details</summary>
+            <dl class="inspector-facts"><div><dt>Instance</dt><dd class="mono">{selectedPart.id}</dd></div><div><dt>Geometry (LDraw)</dt><dd class="mono">{selectedPart.geometryId}</dd></div><div><dt>Scope / family</dt><dd>{selectedPart.inventoryScope} / {selectedPart.category}</dd></div><div><dt>Current operation</dt><dd>{activeOperation?.partInstanceIds.includes(selectedPart.id) ? `${activeOperation.operationType} · ${activeOperation.id}` : 'Not active in this operation'}</dd></div><div><dt>Identity evidence</dt><dd>{selectedPart.identityEvidence.category}: {selectedPart.identityEvidence.note}</dd></div><div><dt>Geometry confidence</dt><dd>{Math.round(selectedPart.geometryConfidence * 100)}% evidence rating; not dimensional certification</dd></div><div><dt>Placement</dt><dd>{selectedPart.placementEvidence.placement} · fit {selectedPart.placementEvidence.fit}. {selectedPart.placementEvidence.evidence.note}</dd></div></dl>
+            <h3>Mounting points ({selectedPart.connectionPoints.length})</h3><ul class="mount-list">{#each selectedPart.connectionPoints as point}<li><strong>{point.id}</strong><span>{point.type} · {point.evidence.placement} · fit {point.evidence.fit}</span><span class="mono">Local mm: {point.localTransform.position.join(', ')}</span></li>{/each}</ul>{#if !selectedPart.connectionPoints.length}<p class="small">No mounting frames recorded.</p>{/if}
+            <h3>Connections ({selectedConnections.length})</h3><ul class="relationship-list">{#each selectedConnections as connection}{@const otherId = connection.a.partInstanceId === selectedPart.id ? connection.b.partInstanceId : connection.a.partInstanceId}<li><button onclick={() => selectPart(otherId)}>{connection.type} → {otherId}</button><span>{connection.evidence.relationship.category} · fit {connection.evidence.fit}</span><p class="small">{connection.evidence.relationship.note}</p></li>{/each}</ul>
+          </details>
+        {:else}<div class="inspection-empty"><span class="preview-cross" aria-hidden="true">+</span><h3>Take a closer look</h3><p>Select a part in the model or parts list to focus on it, check its color or see where it belongs.</p><button onclick={() => rightTab = 'inventory'}>Browse parts</button></div>{/if}
       </div>
     </aside>
   </main>
-  {#if simulationActive && compiled}{#key compiled}<SimulationControls bind:this={simulationControls} assembly={compiled} disabled={blocked} onFrame={showSimulationFrame} onExit={exitSimulation} />{/key}{:else if compiled}<Timeline {compiled} {timeMs} {running} {resumable} {speed} disabled={blocked} onSeek={seek} onPlayStep={() => begin('step')} onPlayAll={() => begin('all')} onPause={() => pause()} onResume={resume} onReverse={() => begin('reverse')} onPrevious={previous} onNext={next} onSpeed={(value) => speed = value} onMilestone={selectStep} />{:else}<div class="timeline"><p>{loadError ? 'Assembly transport is unavailable until the manifest loads.' : 'Preparing assembly timeline…'}</p>{#if loadError}<button onclick={() => void load()}>Retry manifest</button>{/if}</div>{/if}
+  <div class="assembly-summary" aria-label="Assembly counts"><span class="guide-step-count"><strong class="mono">{stats.stepsComplete}/{stats.stepsTotal}</strong> guide steps completed</span><span class="guide-part-count"><strong class="mono">{stats.robotInstalled}/{stats.robotTotal}</strong> robot parts shown in place</span>{#if stats.sampleTotal}<span><strong>{stats.sampleInstalled}/{stats.sampleTotal}</strong> sample parts</span>{/if}</div>
+  {#if simulationActive && compiled}{#key compiled}<SimulationControls bind:this={simulationControls} assembly={compiled} disabled={blocked} onFrame={showSimulationFrame} onExit={exitSimulation} />{/key}{:else if compiled}<Timeline {compiled} {timeMs} {running} {resumable} {speed} disabled={blocked} onSeek={seek} onPlayStep={() => begin('step')} onPlayAll={() => begin('all')} onPause={() => pause()} onResume={resume} onReverse={() => begin('reverse')} onPrevious={previous} onNext={next} onSpeed={(value) => speed = value} onMilestone={selectStep} />{:else}<div class="timeline"><p>{loadError ? 'Building controls are unavailable until the guide loads.' : 'Preparing building controls…'}</p>{#if loadError}<button onclick={() => void load()}>Retry</button>{/if}</div>{/if}
 </div>
 <div class="sr-only" aria-live="polite" aria-atomic="true">{announcement}</div>
+<dialog bind:this={referenceDialog} class="reference-dialog" aria-labelledby="reference-title" onclose={() => referenceReturnFocus?.focus()}>
+  <div class="dialog-heading"><div><p class="eyebrow">{entry.identity.name}</p><h2 id="reference-title">Reference & credits</h2></div><button onclick={() => referenceDialog.close()} aria-label="Close reference">Close ×</button></div>
+  {#if model}
+    <p>{entry.identity.edition}</p>
+    <p class="notice">This independent 3D guide has not been fully verified on a physical robot. Use the official instructions to check fit, cable routing and connections.</p>
+    <details class="source-browser" open><summary>Browse original manuals</summary><label class="stacked-label">Document<select bind:value={sourceDocumentId} onchange={() => sourcePage = 1}>{#each manualDocuments as document}<option value={document.id}>{document.title}</option>{/each}</select></label><label class="stacked-label">PDF page<input type="number" min="1" max={sourceDocument?.pageCount} value={sourcePage} oninput={(event) => { const value = Number(event.currentTarget.value); if (Number.isInteger(value) && value >= 1 && sourceDocument?.pageCount !== undefined && value <= sourceDocument.pageCount) sourcePage = value; }} /></label>
+      {#if sourceDocument}<a class="button-link" href={`${sourceDocument.sourceUrl.split('#')[0]}#page=${sourcePage}`} target="_blank" rel="noreferrer">Open official page {sourcePage} ↗</a>{/if}
+      <p class="small">Browsing a manual keeps your current build position. Choose a mapped step below to move the guide.</p>
+      {#each pageMappings as mapping}{@const mappedStep = mapping.stepId ?? model.operations.find((operation) => operation.id === mapping.operationId)?.stepId}{#if mappedStep}<button class="source-mapping" disabled={blocked} onclick={() => { selectStep(mappedStep); referenceDialog.close(); }}>Go to {mapping.source.figure ? `figure ${mapping.source.figure}` : `instruction ${mapping.source.instructionId ?? mappedStep}`} →</button>{:else}<p class="small">Reference page; no building step mapped.</p>{/if}{/each}
+      {#if !pageMappings.length}<p class="small">No building step mapped to this page.</p>{/if}
+    </details>
+    <details><summary>Current step evidence</summary>
+      {#if activeOperation}<p class="operation-label">{activeOperation.operationType} · {activeOperation.evidence.placement}</p><p>{activeOperation.evidence.relationship.note}</p>{/if}
+      <ul class="source-list">{#each currentStep?.sourceReferences ?? [] as source}<li><a href={sourceHref(source)} target="_blank" rel="noreferrer">{model.sourceDocuments.find((document) => document.id === source.documentId)?.title ?? source.documentId} ↗</a><span>PDF page {source.page ?? 'unknown'} · printed instruction {source.instructionId ?? 'not numbered'}{source.figure ? ` · figure ${source.figure}` : ''}</span><span>Source confidence {Math.round(source.confidence * 100)}% · evidence rating, not accuracy</span></li>{/each}</ul>
+    </details>
+    <details><summary>Guide progress & counting</summary>
+      <p>Progress follows the animation; it does not confirm that you have assembled a physical robot. Animation duration is not an estimate of building time.</p>
+      <p>{stats.robotTotal - stats.robotInstalled} robot components remain in the tray. Parts count as placed only when they reach their connection in the animation.</p>
+      {#if stats.sampleTotal}<p>Sample components are counted separately from the robot.</p>{/if}
+      {#if stats.fastenersTotal}<p>{stats.fastenersInstalled}/{stats.fastenersTotal} fasteners placed.</p>{/if}
+      {#if currentModule}<p>Current module: {currentModule.name} · {moduleInstalled}/{currentModule.partInstanceIds.length} components placed.</p>{/if}
+      <p>Reverse is an animation, not a safe disassembly procedure. Explode changes the view only. Reduced motion jumps to the requested step endpoint.</p>
+    </details>
+    <details><summary>Coverage & limitations</summary><p>{model.coverage.implementedSteps}/{model.coverage.documentedSteps} steps implemented · {model.coverage.verifiedSteps} verified</p>{#each Object.entries(model.coverage.dimensions) as [name, dimension]}<p class="small"><strong>{name}: {dimension.status}.</strong> {dimension.note}</p>{/each}<ul>{#each model.coverage.outstandingDeviations as deviation}<li>{deviation}</li>{/each}</ul></details>
+    <details><summary>Source inventory accounting</summary>{#each model.inventory as line}<div class="inventory-evidence"><strong>{line.name} · {line.quantity}</strong><p class="small">{line.scope} · {line.basis} · {line.accounting}{line.discrepancy ? ` · ${line.discrepancy}` : ''}</p></div>{/each}</details>
+    <details><summary>Geometry attribution & licenses</summary>{#each model.geometryAssets as asset}<h4>{asset.id}</h4><ul class="source-list">{#each asset.attribution as attribution}<li><a href={attribution.sourceUrl} target="_blank" rel="noreferrer">{attribution.sourcePath} ↗</a><span>{attribution.authors.join(', ')}</span><span>{attribution.licenseIds.join(' · ')}</span>{#each attribution.licenseUrls as url}<a href={url} target="_blank" rel="noreferrer">License ↗</a>{/each}{#if attribution.modifications.length}<span>Changes: {attribution.modifications.join('; ')}</span>{/if}</li>{/each}</ul>{/each}</details>
+    <details><summary>Material evidence</summary>{#each model.materials as material}<h4>{material.name}</h4><p class="small">{material.evidence.note}</p><ul class="source-list">{#each material.evidence.sources as source}<li><a href={sourceHref(source)} target="_blank" rel="noreferrer">{model.sourceDocuments.find((document) => document.id === source.documentId)?.title ?? source.documentId} ↗</a></li>{/each}</ul>{/each}</details>
+    <p class="small">Not affiliated with or endorsed by the manufacturer. Original manuals are linked, not redistributed. <a href="/models/library/CREDITS.txt" target="_blank" rel="noreferrer">Geometry & preview credits ↗</a></p>
+  {:else}<p>Reference material will appear when the building guide loads.</p>{/if}
+</dialog>
 <dialog bind:this={helpDialog} class="help-dialog" aria-labelledby="help-title" onclose={() => helpReturnFocus?.focus()}>
-  <div class="dialog-heading"><span class="eyebrow">Workbench reference</span><button onclick={() => helpDialog.close()}>Close ×</button></div>
-  <h2 id="help-title">Keyboard & camera</h2>
+  <div class="dialog-heading"><h2 id="help-title">Keyboard & camera</h2><button onclick={() => helpDialog.close()}>Close ×</button></div>
   <dl class="shortcut-list">
-    <div><dt><kbd>[</kbd> / <kbd>]</kbd></dt><dd>Previous / next source-step boundary; in simulation, seek − / + one second</dd></div>
-    <div><dt><kbd>Space</kbd></dt><dd>Pause / resume; when idle, play one assembly step or the simulation in its current direction</dd></div>
-    <div><dt><kbd>R</kbd> / <kbd>F</kbd></dt><dd>Reset view / fit whole assembly</dd></div>
-    <div><dt><kbd>X</kbd></dt><dd>Toggle presentation explode</dd></div>
-    <div><dt><kbd>L</kbd></dt><dd>Toggle instance labels</dd></div>
-    <div><dt><kbd>T</kbd> / <kbd>I</kbd></dt><dd>Technical / Inspection mode</dd></div>
-    <div><dt><kbd>?</kbd></dt><dd>Open this reference</dd></div>
-    <div><dt><kbd>Escape</kbd></dt><dd>Close help or active drawer; otherwise exit isolation or return from simulation to assembly end</dd></div>
+    <div><dt><kbd>[</kbd> / <kbd>]</kbd></dt><dd>Previous / next step. In the demo, move back / forward one second.</dd></div>
+    <div><dt><kbd>Space</kbd></dt><dd>Play, pause or resume the current step.</dd></div>
+    <div><dt><kbd>R</kbd> / <kbd>F</kbd></dt><dd>Reset the view / fit the whole model.</dd></div>
+    <div><dt><kbd>X</kbd> / <kbd>L</kbd></dt><dd>Exploded view / part labels.</dd></div>
+    <div><dt><kbd>T</kbd> / <kbd>I</kbd></dt><dd>Technical view / part inspection.</dd></div>
+    <div><dt><kbd>?</kbd></dt><dd>Open this help.</dd></div>
+    <div><dt><kbd>Escape</kbd></dt><dd>Close a dialog or panel, leave isolation, or return to building.</dd></div>
   </dl>
-  <h3>Camera interaction</h3>
-  <p>Drag to orbit; use the wheel or pinch to zoom; secondary drag to pan. Focus the scene for arrow-key orbit, Shift + arrow-key pan and + / − zoom. Visible Reset, Fit whole and Focus active buttons provide framing alternatives. Touch: one finger orbits, two fingers pan / zoom.</p>
-  <h3>Timeline</h3>
-  <p>The native seek range supports arrow keys for one-millisecond changes and Home / End for endpoints. Manual seeking pauses. Play step, Play all and Reverse have independent visible buttons. Speed changes preserve position and endpoint.</p>
-  <p>Shortcuts do not capture typing, IME composition, native button Space, range keys or dialog keys. Manual camera movement stops automatic framing until Resume auto camera.</p>
-  <p>View options contains labels, joint axes and connection overlays. Instructions → Assembly status & viewing contains module accounting and separate sample/fastener counts. Below the scene, demonstration entry requires the complete implemented manifest and assembly end, with an available mechanism scenario. Placement verification remains separately disclosed. In simulation, Home / End seek its endpoints; manual motor edits pause and reset the selected motor plan without overwriting other motors. A step warning’s Read warning button opens its full text in Instructions.</p>
-  <p>Educational explanations in View options follows the declared joints, native parts, motor bindings, sensor evidence, structural connections and operation prerequisites. Click an inspection action to select its real component, or a prerequisite to seek its source step. Missing mechanisms and app-authored inputs remain explicit.</p>
-  <p class="small">Reduced motion makes assembly playback jump to its requested endpoint and disables automatic camera flights. Simulation starts paused and moves only with explicit playback or seeking. Counts change only at source-backed instance installation events.</p>
+  <h3>Move around the model</h3><p>Drag to rotate; scroll or pinch to zoom; right-drag to pan. On touch screens, use one finger to rotate and two to pan or zoom.</p>
+  <p>With the model focused, use arrow keys to rotate, Shift + arrows to pan, and + / − to zoom. Manual movement stops the camera following building steps; choose Resume auto camera to follow again.</p>
+  <h3>Building controls</h3><p>Next completes the current step. Previous returns to a step boundary. Drag the progress slider to replay any point; Home / End go to the beginning / end. Playback options contains animation speed, Play all, Reverse and milestones.</p>
+  <p>View options contains display styles, part labels, connection overlays and How it works. Reference & credits contains original manuals and technical notes. Guide progress records the animation, not a completed physical build.</p>
+  <p class="small">Reduced motion jumps assembly playback to the requested endpoint and disables camera flights. Demonstrations start paused. Keyboard shortcuts leave typing, sliders and native controls alone.</p>
 </dialog>

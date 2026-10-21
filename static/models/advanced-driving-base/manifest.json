@@ -2,10 +2,10 @@
   "id": "advanced-driving-base",
   "name": "Advanced Driving Base",
   "manufacturer": "LEGO Education",
-  "edition": "2019 five-book export",
+  "edition": "2019 · five instruction books",
   "category": "Mobile robot",
   "complexity": "Advanced",
-  "description": "All 234 prepared source units and 136 numbered instructions are authored. First three instructions/seven-unit datum retain nominal verification; rear-to-drive 32mm bracket span mismatch and new physical fits remain unresolved.",
+  "description": "Build a wheeled base with two drive motors, color sensors and front and rear tool outputs. The rear mounting fit in this guide needs checking against the official instructions.",
   "schemaVersion": 1,
   "parts": [
     {
@@ -94636,9 +94636,7 @@
         "pin-1",
         "pin-2"
       ],
-      "warnings": [
-        "CAD-derived seating is not independently fit-verified. Animation timing and inventory arrangement are RoboBuild presentation."
-      ],
+      "warnings": [],
       "durationMs": 4000,
       "cameraPreset": {
         "position": [
@@ -94685,9 +94683,7 @@
         "grey-connector-1",
         "grey-connector-2"
       ],
-      "warnings": [
-        "CAD-derived seating is not independently fit-verified. Animation timing and inventory arrangement are RoboBuild presentation."
-      ],
+      "warnings": [],
       "durationMs": 3000,
       "cameraPreset": {
         "position": [
@@ -94734,9 +94730,7 @@
         "pin-3",
         "pin-4"
       ],
-      "warnings": [
-        "CAD-derived seating is not independently fit-verified. Animation timing and inventory arrangement are RoboBuild presentation."
-      ],
+      "warnings": [],
       "durationMs": 3000,
       "cameraPreset": {
         "position": [
@@ -94781,9 +94775,7 @@
       "requiredPartInstanceIds": [
         "front-frame"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2300,
       "cameraPreset": {
         "position": [
@@ -94836,9 +94828,7 @@
         "front-right-side-pin-2",
         "front-inner-front-pin"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 9700,
       "cameraPreset": {
         "position": [
@@ -94889,9 +94879,7 @@
         "front-right-white-block",
         "front-right-white-blue-pin"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 7800,
       "cameraPreset": {
         "position": [
@@ -94947,9 +94935,7 @@
         "front-frame-upper-pin-5",
         "front-frame-upper-pin-6"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 11600,
       "cameraPreset": {
         "position": [
@@ -94998,9 +94984,7 @@
         "front-motor-blue-pin-1",
         "front-motor-blue-pin-2"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 5900,
       "cameraPreset": {
         "position": [
@@ -95047,9 +95031,7 @@
         "front-blue-clip",
         "front-green-clip"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 4000,
       "cameraPreset": {
         "position": [
@@ -95092,9 +95074,7 @@
         "front-reuse-front-medium-body-10"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2900,
       "cameraPreset": {
         "position": [
@@ -95147,9 +95127,7 @@
         "front-top-block-pin-3",
         "front-top-block-pin-4"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 9700,
       "cameraPreset": {
         "position": [
@@ -95196,9 +95174,7 @@
         "front-motor-h-brace-1",
         "front-brace-blue-pin"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 4000,
       "cameraPreset": {
         "position": [
@@ -95243,9 +95219,7 @@
       "requiredPartInstanceIds": [
         "front-red-clip"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2300,
       "cameraPreset": {
         "position": [
@@ -95288,9 +95262,7 @@
         "front-reuse-front-motor-brace-14"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2900,
       "cameraPreset": {
         "position": [
@@ -95335,9 +95307,7 @@
       "requiredPartInstanceIds": [
         "front-motor-h-brace-2"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2300,
       "cameraPreset": {
         "position": [
@@ -95386,9 +95356,7 @@
         "front-left-sensor-blue-pin-1",
         "front-left-sensor-blue-pin-2"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 5900,
       "cameraPreset": {
         "position": [
@@ -95433,9 +95401,7 @@
       "requiredPartInstanceIds": [
         "front-left-sensor-crossblock"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2300,
       "cameraPreset": {
         "position": [
@@ -95482,9 +95448,7 @@
         "front-left-ball-cup",
         "front-left-ball"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 4000,
       "cameraPreset": {
         "position": [
@@ -95527,9 +95491,7 @@
         "front-reuse-front-left-caster-19"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2900,
       "cameraPreset": {
         "position": [
@@ -95576,9 +95538,7 @@
         "front-left-caster-pin-1",
         "front-left-caster-pin-2"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 4000,
       "cameraPreset": {
         "position": [
@@ -95623,9 +95583,7 @@
       "requiredPartInstanceIds": [
         "front-left-caster-angle"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2300,
       "cameraPreset": {
         "position": [
@@ -95668,9 +95626,7 @@
         "front-reuse-front-left-sensor-22"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2900,
       "cameraPreset": {
         "position": [
@@ -95719,9 +95675,7 @@
         "front-right-sensor-blue-pin-1",
         "front-right-sensor-blue-pin-2"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 5900,
       "cameraPreset": {
         "position": [
@@ -95766,9 +95720,7 @@
       "requiredPartInstanceIds": [
         "front-right-sensor-crossblock"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2300,
       "cameraPreset": {
         "position": [
@@ -95815,9 +95767,7 @@
         "front-right-ball-cup",
         "front-right-ball"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 4000,
       "cameraPreset": {
         "position": [
@@ -95860,9 +95810,7 @@
         "front-reuse-front-right-caster-26"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2900,
       "cameraPreset": {
         "position": [
@@ -95909,9 +95857,7 @@
         "front-right-caster-pin-1",
         "front-right-caster-pin-2"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 4000,
       "cameraPreset": {
         "position": [
@@ -95956,9 +95902,7 @@
       "requiredPartInstanceIds": [
         "front-right-caster-angle"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2300,
       "cameraPreset": {
         "position": [
@@ -96001,9 +95945,7 @@
         "front-reuse-front-right-sensor-29"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2900,
       "cameraPreset": {
         "position": [
@@ -96048,9 +95990,7 @@
       "requiredPartInstanceIds": [
         "front-sensor-cross-rail"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2300,
       "cameraPreset": {
         "position": [
@@ -96105,9 +96045,7 @@
         "front-right-yellow-axlepin-1",
         "front-right-yellow-axlepin-2"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 11600,
       "cameraPreset": {
         "position": [
@@ -96154,9 +96092,7 @@
         "front-left-yellow-spacer",
         "front-right-yellow-spacer"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 4000,
       "cameraPreset": {
         "position": [
@@ -96200,9 +96136,7 @@
         "front-reuse-front-right-yellow-33"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2900,
       "cameraPreset": {
         "position": [
@@ -96257,9 +96191,7 @@
         "front-right-upright-pin-1",
         "front-right-upright-pin-2"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 11600,
       "cameraPreset": {
         "position": [
@@ -96303,9 +96235,7 @@
         "front-reuse-front-right-upright-35"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2900,
       "cameraPreset": {
         "position": [
@@ -96348,9 +96278,7 @@
         "front-opposite-view"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2300,
       "cameraPreset": {
         "position": [
@@ -96399,9 +96327,7 @@
         "front-gear-pin-1",
         "front-gear-pin-2"
       ],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 5900,
       "cameraPreset": {
         "position": [
@@ -96444,9 +96370,7 @@
         "front-reuse-front-tool-output-38"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only."
-      ],
+      "warnings": [],
       "durationMs": 2900,
       "cameraPreset": {
         "position": [
@@ -96501,10 +96425,7 @@
         "right-housing-pin-4",
         "right-housing-pin-5"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96549,10 +96470,7 @@
       "requiredPartInstanceIds": [
         "right-frame"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96605,10 +96523,7 @@
         "right-frame-pin-1",
         "right-frame-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96653,10 +96568,7 @@
       "requiredPartInstanceIds": [
         "right-wheel"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96703,10 +96615,7 @@
         "right-wheel-pin-1",
         "right-wheel-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96751,10 +96660,7 @@
       "requiredPartInstanceIds": [
         "right-wheel-block"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96801,10 +96707,7 @@
         "right-brace-axle5",
         "right-brace-cross-1"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96851,10 +96754,7 @@
         "right-brace-beam-1",
         "right-brace-cross-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96901,10 +96801,7 @@
         "right-brace-upper-block",
         "right-brace-axle3"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96949,10 +96846,7 @@
       "requiredPartInstanceIds": [
         "right-brace-beam-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -96997,10 +96891,7 @@
       "requiredPartInstanceIds": [
         "right-brace-cross-3"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97045,10 +96936,7 @@
       "requiredPartInstanceIds": [
         "right-brace-pin"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97091,10 +96979,7 @@
         "right-merge-13"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 3400,
       "cameraPreset": {
         "position": [
@@ -97139,10 +97024,7 @@
       "requiredPartInstanceIds": [
         "right-output-axle4"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97189,10 +97071,7 @@
         "right-rear-housing-pin-1",
         "right-rear-housing-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97241,10 +97120,7 @@
         "right-rear-blue-pin-1",
         "right-rear-blue-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97289,10 +97165,7 @@
       "requiredPartInstanceIds": [
         "right-rear-beam"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97337,10 +97210,7 @@
       "requiredPartInstanceIds": [
         "right-rear-cross-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97387,10 +97257,7 @@
         "right-rear-red-pin-1",
         "right-rear-red-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97435,10 +97302,7 @@
       "requiredPartInstanceIds": [
         "right-rear-iframe"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97483,10 +97347,7 @@
       "requiredPartInstanceIds": [
         "right-rear-yellow-beam"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97529,10 +97390,7 @@
         "right-merge-22"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 3400,
       "cameraPreset": {
         "position": [
@@ -97579,10 +97437,7 @@
         "right-clip-pin",
         "right-clip"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97625,10 +97480,7 @@
         "right-merge-24"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 3400,
       "cameraPreset": {
         "position": [
@@ -97683,10 +97535,7 @@
         "left-housing-pin-4",
         "left-housing-pin-5"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97731,10 +97580,7 @@
       "requiredPartInstanceIds": [
         "left-frame"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97787,10 +97633,7 @@
         "left-frame-pin-1",
         "left-frame-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97835,10 +97678,7 @@
       "requiredPartInstanceIds": [
         "left-wheel"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97885,10 +97725,7 @@
         "left-wheel-pin-1",
         "left-wheel-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97933,10 +97770,7 @@
       "requiredPartInstanceIds": [
         "left-wheel-block"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -97983,10 +97817,7 @@
         "left-brace-axle5",
         "left-brace-cross-1"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98033,10 +97864,7 @@
         "left-brace-beam-1",
         "left-brace-cross-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98083,10 +97911,7 @@
         "left-brace-upper-block",
         "left-brace-axle3"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98131,10 +97956,7 @@
       "requiredPartInstanceIds": [
         "left-brace-beam-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98179,10 +98001,7 @@
       "requiredPartInstanceIds": [
         "left-brace-cross-3"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98227,10 +98046,7 @@
       "requiredPartInstanceIds": [
         "left-brace-pin"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98273,10 +98089,7 @@
         "left-merge-13"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 3400,
       "cameraPreset": {
         "position": [
@@ -98321,10 +98134,7 @@
       "requiredPartInstanceIds": [
         "left-output-axle4"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98371,10 +98181,7 @@
         "left-rear-housing-pin-1",
         "left-rear-housing-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98423,10 +98230,7 @@
         "left-rear-blue-pin-1",
         "left-rear-blue-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98471,10 +98275,7 @@
       "requiredPartInstanceIds": [
         "left-rear-beam"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98519,10 +98320,7 @@
       "requiredPartInstanceIds": [
         "left-rear-cross-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98569,10 +98367,7 @@
         "left-rear-red-pin-1",
         "left-rear-red-pin-2"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98617,10 +98412,7 @@
       "requiredPartInstanceIds": [
         "left-rear-iframe"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98665,10 +98457,7 @@
       "requiredPartInstanceIds": [
         "left-rear-yellow-beam"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98711,10 +98500,7 @@
         "left-merge-22"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 3400,
       "cameraPreset": {
         "position": [
@@ -98761,10 +98547,7 @@
         "left-clip-pin",
         "left-clip"
       ],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 2800,
       "cameraPreset": {
         "position": [
@@ -98807,10 +98590,7 @@
         "left-merge-24"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Source/CAD-derived placement is not independent physical fit verification.",
-        "Timing and separate work areas are RoboBuild presentation; original source pages remain private."
-      ],
+      "warnings": [],
       "durationMs": 3400,
       "cameraPreset": {
         "position": [
@@ -98835,7 +98615,7 @@
     },
     {
       "id": "book4-step1",
-      "title": "Rear 1 — Prepare the first nine-hole rail with two gray integral-pin bridge blocks.",
+      "title": "Rear module · 1",
       "description": "Prepare the first nine-hole rail with two gray integral-pin bridge blocks.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -98859,9 +98639,7 @@
         "rear-bridge-1",
         "rear-bridge-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -98886,7 +98664,7 @@
     },
     {
       "id": "book4-step2",
-      "title": "Rear 2 — Close the lower parallel rail pair.",
+      "title": "Rear module · 2",
       "description": "Close the lower parallel rail pair.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -98906,9 +98684,7 @@
       "requiredPartInstanceIds": [
         "rear-lower-rail-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -98933,7 +98709,7 @@
     },
     {
       "id": "book4-step3",
-      "title": "Rear 3 — Insert the two upward-facing black pins.",
+      "title": "Rear module · 3",
       "description": "Insert the two upward-facing black pins.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -98955,9 +98731,7 @@
         "rear-lower-up-pin-1",
         "rear-lower-up-pin-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -98982,7 +98756,7 @@
     },
     {
       "id": "book4-step4",
-      "title": "Rear 4 — Fit four lateral pins to the lower rails.",
+      "title": "Rear module · 4",
       "description": "Fit four lateral pins to the lower rails.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99008,9 +98782,7 @@
         "rear-lower-side-pin-2-1",
         "rear-lower-side-pin-2-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99035,7 +98807,7 @@
     },
     {
       "id": "book4-step5",
-      "title": "Rear 5 — Seat and index the medium angular motor.",
+      "title": "Rear module · 5",
       "description": "Seat and index the medium angular motor.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99055,9 +98827,7 @@
       "requiredPartInstanceIds": [
         "rear-motor"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99082,7 +98852,7 @@
     },
     {
       "id": "book4-step6",
-      "title": "Rear 6 — Fit four motor-housing pins.",
+      "title": "Rear module · 6",
       "description": "Fit four motor-housing pins.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99108,9 +98878,7 @@
         "rear-housing-pin-2-1",
         "rear-housing-pin-2-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99135,7 +98903,7 @@
     },
     {
       "id": "book4-step7",
-      "title": "Rear 7 — Prepare the magenta connector and four black pins.",
+      "title": "Rear module · 7",
       "description": "Prepare the magenta connector and four black pins.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99163,9 +98931,7 @@
         "rear-biscuit-pin-2-1",
         "rear-biscuit-pin-2-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99190,7 +98956,7 @@
     },
     {
       "id": "book4-step8",
-      "title": "Rear 8 — Attach the first H-frame to the prepared connector.",
+      "title": "Rear module · 8",
       "description": "Attach the first H-frame to the prepared connector.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99210,9 +98976,7 @@
       "requiredPartInstanceIds": [
         "rear-bracket-frame-1"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99237,7 +99001,7 @@
     },
     {
       "id": "book4-step9",
-      "title": "Rear 9 — Install the prepared bracket over the motor.",
+      "title": "Rear module · 9",
       "description": "Install the prepared bracket over the motor.",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -99255,9 +99019,7 @@
         "rear-join-step9"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99282,7 +99044,7 @@
     },
     {
       "id": "book4-step10",
-      "title": "Rear 10 — Change camera side and install the opposite H-frame.",
+      "title": "Rear module · 10",
       "description": "Change camera side and install the opposite H-frame.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99302,9 +99064,7 @@
       "requiredPartInstanceIds": [
         "rear-bracket-frame-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99329,7 +99089,7 @@
     },
     {
       "id": "book4-step11",
-      "title": "Rear 11 — Prepare four blue/gray coaxial stop-bush units.",
+      "title": "Rear module · 11",
       "description": "Prepare four blue/gray coaxial stop-bush units.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99363,9 +99123,7 @@
         "rear-extended-gray-4",
         "rear-extended-blue-4"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99390,7 +99148,7 @@
     },
     {
       "id": "book4-step12",
-      "title": "Rear 12 — Install the four prepared connector units.",
+      "title": "Rear module · 12",
       "description": "Install the four prepared connector units.",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -99408,9 +99166,7 @@
         "rear-join-step12"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99435,7 +99191,7 @@
     },
     {
       "id": "book4-step13",
-      "title": "Rear 13 — Install two outer nine-hole black rails.",
+      "title": "Rear module · 13",
       "description": "Install two outer nine-hole black rails.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99457,9 +99213,7 @@
         "rear-outer-rail-1",
         "rear-outer-rail-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99484,7 +99238,7 @@
     },
     {
       "id": "book4-step14",
-      "title": "Rear 14 — Prepare the medium azure cable-clip unit.",
+      "title": "Rear module · 14",
       "description": "Prepare the medium azure cable-clip unit.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99506,9 +99260,7 @@
         "rear-rail-clip",
         "rear-rail-clip-pin"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99533,7 +99285,7 @@
     },
     {
       "id": "book4-step15",
-      "title": "Rear 15 — Install the clip and guide the captive motor lead.",
+      "title": "Rear module · 15",
       "description": "Install the clip and guide the captive motor lead.",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -99551,9 +99303,7 @@
         "rear-join-step15"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99578,7 +99328,7 @@
     },
     {
       "id": "book4-step16",
-      "title": "Rear 16 — Prepare two white cross blocks with four yellow three-module shafts.",
+      "title": "Rear module · 16",
       "description": "Prepare two white cross blocks with four yellow three-module shafts.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99608,9 +99358,7 @@
         "rear-yellow-shaft-2-1",
         "rear-yellow-shaft-2-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99635,7 +99383,7 @@
     },
     {
       "id": "book4-step17",
-      "title": "Rear 17 — Fit H-frames and medium azure clips to the two mounts.",
+      "title": "Rear module · 17",
       "description": "Fit H-frames and medium azure clips to the two mounts.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99661,9 +99409,7 @@
         "rear-mount-frame-2",
         "rear-mount-clip-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99688,7 +99434,7 @@
     },
     {
       "id": "book4-step18",
-      "title": "Rear 18 — Close both mounts with the second pair of WHITE cross blocks.",
+      "title": "Rear module · 18",
       "description": "Close both mounts with the second pair of WHITE cross blocks.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99711,8 +99457,7 @@
         "rear-white-upper-2"
       ],
       "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified.",
-        "Source-image correction: two white32184 cross blocks, not the earlier gray55615 transcription."
+        "Use the two white axle/pin/axle cross blocks shown in the manual, not gray cross blocks."
       ],
       "durationMs": 3300,
       "cameraPreset": {
@@ -99738,7 +99483,7 @@
     },
     {
       "id": "book4-step19",
-      "title": "Rear 19 — Install both prepared mounting brackets.",
+      "title": "Rear module · 19",
       "description": "Install both prepared mounting brackets.",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -99756,9 +99501,7 @@
         "rear-join-step19"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99783,7 +99526,7 @@
     },
     {
       "id": "book4-step20",
-      "title": "Rear 20 — Prepare the thirteen-hole medium azure rail and its two pins.",
+      "title": "Rear module · 20",
       "description": "Prepare the thirteen-hole medium azure rail and its two pins.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99807,9 +99550,7 @@
         "rear-azur-rail-pin-1",
         "rear-azur-rail-pin-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99834,7 +99575,7 @@
     },
     {
       "id": "book4-step21",
-      "title": "Rear 21 — Install the prepared thirteen-hole rail.",
+      "title": "Rear module · 21",
       "description": "Install the prepared thirteen-hole rail.",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -99852,9 +99593,7 @@
         "rear-join-step21"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99879,7 +99618,7 @@
     },
     {
       "id": "book4-step22",
-      "title": "Rear 22 — Install the second parallel thirteen-hole rail.",
+      "title": "Rear module · 22",
       "description": "Install the second parallel thirteen-hole rail.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99899,9 +99638,7 @@
       "requiredPartInstanceIds": [
         "rear-azur-rail-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99926,7 +99663,7 @@
     },
     {
       "id": "book4-step23",
-      "title": "Rear 23 — Prepare two yellow standoffs with pins at both ends.",
+      "title": "Rear module · 23",
       "description": "Prepare two yellow standoffs with pins at both ends.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -99956,9 +99693,7 @@
         "rear-standoff-bottom-pin-2",
         "rear-standoff-top-pin-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -99983,7 +99718,7 @@
     },
     {
       "id": "book4-step24",
-      "title": "Rear 24 — Install the two prepared standoffs.",
+      "title": "Rear module · 24",
       "description": "Install the two prepared standoffs.",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -100001,9 +99736,7 @@
         "rear-join-step24"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -100028,7 +99761,7 @@
     },
     {
       "id": "book4-step25",
-      "title": "Rear 25 — Prepare the output gear with two black pins.",
+      "title": "Rear module · 25",
       "description": "Prepare the output gear with two black pins.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -100052,9 +99785,7 @@
         "rear-gear-pin-1",
         "rear-gear-pin-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -100079,7 +99810,7 @@
     },
     {
       "id": "book4-step26",
-      "title": "Rear 26 — Seat the output gear on the indexed medium rotor.",
+      "title": "Rear module · 26",
       "description": "Seat the output gear on the indexed medium rotor.",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -100097,9 +99828,7 @@
         "rear-join-step26"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -100124,7 +99853,7 @@
     },
     {
       "id": "book4-step27",
-      "title": "Rear 27 — Prepare the magenta frame with two red axle/pins.",
+      "title": "Rear module · 27",
       "description": "Prepare the magenta frame with two red axle/pins.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -100148,9 +99877,7 @@
         "rear-red-interface-pin-1",
         "rear-red-interface-pin-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -100175,7 +99902,7 @@
     },
     {
       "id": "book4-step28",
-      "title": "Rear 28 — Add two gray axle2/pin1 connectors on the opposite frame side.",
+      "title": "Rear module · 28",
       "description": "Add two gray axle2/pin1 connectors on the opposite frame side.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -100197,9 +99924,7 @@
         "rear-top-upright-pin-1",
         "rear-top-upright-pin-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -100224,7 +99949,7 @@
     },
     {
       "id": "book4-step29",
-      "title": "Rear 29 — Install the prepared top frame on its supports.",
+      "title": "Rear module · 29",
       "description": "Install the prepared top frame on its supports.",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -100242,9 +99967,7 @@
         "rear-join-step29"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -100269,7 +99992,7 @@
     },
     {
       "id": "book4-step30",
-      "title": "Rear 30 — Prepare two seven-hole uprights with bottom transverse axle/pins.",
+      "title": "Rear module · 30",
       "description": "Prepare two seven-hole uprights with bottom transverse axle/pins.",
       "kind": "numbered-instruction",
       "action": "assembly",
@@ -100295,9 +100018,7 @@
         "rear-upright-2",
         "rear-upright-axle-2"
       ],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -100322,7 +100043,7 @@
     },
     {
       "id": "book4-step31",
-      "title": "Rear 31 — Change camera side and install both uprights.",
+      "title": "Rear module · 31",
       "description": "Change camera side and install both uprights.",
       "kind": "numbered-instruction",
       "action": "reuse",
@@ -100340,9 +100061,7 @@
         "rear-join-step31"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Native geometry and source topology are authored; mold identity and selected mounting fits are not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -100367,8 +100086,8 @@
     },
     {
       "id": "book5-step1",
-      "title": "Connect the front medium output to D",
-      "description": "Introduce the one prepared hub with installed battery and connect the existing front-medium captive lead to D. No battery, plug or captive wire is recounted.",
+      "title": "Connect the front motor to D",
+      "description": "Prepare the hub with its battery installed. Plug the front medium motor’s attached cable into port D.",
       "kind": "numbered-instruction",
       "action": "wiring",
       "sourceReferences": [
@@ -100389,8 +100108,7 @@
         "assembly-hub-unit"
       ],
       "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
+        "Cable paths and lengths are not shown accurately in 3D. Follow the official wiring diagram and check cable reach before connecting."
       ],
       "durationMs": 4900,
       "cameraPreset": {
@@ -100416,8 +100134,8 @@
     },
     {
       "id": "book5-step2",
-      "title": "Connect both color sensors to B and F",
-      "description": "Follow the source crossed electrical assignment. Both sensor identities remain the original Front units; unverified flexible routing/length is not fabricated.",
+      "title": "Connect the color sensors to B and F",
+      "description": "Plug the two front color-sensor cables into ports B and F. Follow the crossed cable assignment in the official wiring diagram.",
       "kind": "numbered-instruction",
       "action": "wiring",
       "sourceReferences": [
@@ -100436,8 +100154,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
+        "Cable paths and lengths are not shown accurately in 3D. Follow the official wiring diagram and check cable reach before connecting."
       ],
       "durationMs": 2200,
       "cameraPreset": {
@@ -100463,8 +100180,8 @@
     },
     {
       "id": "book5-step3",
-      "title": "Connect left propulsion to A",
-      "description": "Connect the existing left large angular motor to source port A while its complete module remains in its own work area.",
+      "title": "Connect the left drive motor to A",
+      "description": "Plug the left large motor’s attached cable into port A. Keep the completed left module beside the front assembly for now.",
       "kind": "numbered-instruction",
       "action": "wiring",
       "sourceReferences": [
@@ -100482,8 +100199,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
+        "Cable paths and lengths are not shown accurately in 3D. Follow the official wiring diagram and check cable reach before connecting."
       ],
       "durationMs": 2200,
       "cameraPreset": {
@@ -100509,8 +100225,8 @@
     },
     {
       "id": "book5-step4",
-      "title": "Connect rear output to C",
-      "description": "Connect the already-built rear medium motor to C. Its tool output remains independent of front D.",
+      "title": "Connect the rear motor to C",
+      "description": "Plug the rear medium motor’s cable into port C. This motor drives the rear tool output.",
       "kind": "numbered-instruction",
       "action": "wiring",
       "sourceReferences": [
@@ -100528,8 +100244,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
+        "Cable paths and lengths are not shown accurately in 3D. Follow the official wiring diagram and check cable reach before connecting."
       ],
       "durationMs": 2200,
       "cameraPreset": {
@@ -100555,8 +100270,8 @@
     },
     {
       "id": "book5-step5",
-      "title": "Connect right propulsion to E",
-      "description": "Connect the existing right large angular motor to E. The four motor bindings and two color assignments now match the official port page.",
+      "title": "Connect the right drive motor to E",
+      "description": "Plug the right large motor’s cable into port E. Check all six hub connections against the official wiring diagram.",
       "kind": "numbered-instruction",
       "action": "wiring",
       "sourceReferences": [
@@ -100574,8 +100289,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
+        "Cable paths and lengths are not shown accurately in 3D. Follow the official wiring diagram and check cable reach before connecting."
       ],
       "durationMs": 2200,
       "cameraPreset": {
@@ -100601,8 +100315,8 @@
     },
     {
       "id": "book5-step6",
-      "title": "Seat the complete left drive module",
-      "description": "Move the actual left module root from its separate work area and seat its two real housing-pin collars into the Front frame. Every descendant travels continuously.",
+      "title": "Attach the left drive module",
+      "description": "Bring the completed left module to the front frame. Align its two housing pins with the matching frame holes and press the module into place.",
       "kind": "numbered-instruction",
       "action": "reuse",
       "sourceReferences": [
@@ -100619,10 +100333,7 @@
         "assembly-join-left-side"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 4500,
       "cameraPreset": {
         "position": [
@@ -100647,8 +100358,8 @@
     },
     {
       "id": "book5-step7",
-      "title": "Seat the complete right drive module",
-      "description": "Move the actual right module root into the opposite Front bores, preserving its independently authored handedness and every tracked identity.",
+      "title": "Attach the right drive module",
+      "description": "Bring the completed right module to the opposite side of the front frame. Check its mirrored orientation before aligning and seating the housing pins.",
       "kind": "numbered-instruction",
       "action": "reuse",
       "sourceReferences": [
@@ -100665,10 +100376,7 @@
         "assembly-join-right-side"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 4500,
       "cameraPreset": {
         "position": [
@@ -100693,8 +100401,8 @@
     },
     {
       "id": "book5-step8",
-      "title": "Lower the prepared hub into the chassis",
-      "description": "Move the already-introduced hub onto the source upper support plane between the drive modules; rear axles will retain it in the next instruction. No invented underside pin grid is asserted.",
+      "title": "Lower the hub into the chassis",
+      "description": "Lower the hub onto the upper supports between the drive modules. The rear module’s upper axles will retain it in the next step.",
       "kind": "numbered-instruction",
       "action": "reuse",
       "sourceReferences": [
@@ -100711,10 +100419,7 @@
         "assembly-seat-assembly-hub"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 4300,
       "cameraPreset": {
         "position": [
@@ -100739,8 +100444,8 @@
     },
     {
       "id": "book5-step9",
-      "title": "Approach the rear frame and retain the hub",
-      "description": "Slide the entire rear module toward the source blue drive pins. Actual free rear H/upright bores span64mm across the relevant axis while side pins span96mm: rear-to-side physical mating is unresolved, not reported as four fitted connections. Two real top axles approach the corresponding hub bores.",
+      "title": "Position the rear module",
+      "description": "Bring the rear module toward the blue pins on the drive modules, with its two upper axles facing the hub holes. Compare these connections with Book 5 before trying to join them.",
       "kind": "numbered-instruction",
       "action": "reuse",
       "sourceReferences": [
@@ -100758,8 +100463,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
+        "The rear mounting points do not align in this 3D guide: the modeled spans differ by 32 mm. Check Book 5 before joining the rear module. Do not force the parts to match the animation."
       ],
       "durationMs": 4500,
       "cameraPreset": {
@@ -100785,8 +100489,8 @@
     },
     {
       "id": "book5-step10",
-      "title": "Inspect the rear fit discrepancy",
-      "description": "Source seated view: inspect the gap at the four lower side-pin candidates and the upper axle/hub interface. Rigid closure is not certified.",
+      "title": "Check the rear connections",
+      "description": "Inspect the four lower side-pin positions and the upper axle-to-hub connections from this side. Compare the gaps with the official illustration; pause if the parts do not align.",
       "kind": "numbered-instruction",
       "action": "view",
       "sourceReferences": [
@@ -100804,8 +100508,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
+        "The rear mounting points do not align in this 3D guide: the modeled spans differ by 32 mm. Check Book 5 before joining the rear module. Do not force the parts to match the animation."
       ],
       "durationMs": 2500,
       "cameraPreset": {
@@ -100831,8 +100534,8 @@
     },
     {
       "id": "book5-step11",
-      "title": "Prepare the second magenta upper frame",
-      "description": "Build the source11×7 frame with its two red axle/pins in the long-edge transverse bores, in a separate work area.",
+      "title": "Prepare the second upper frame",
+      "description": "Fit two red axle/pins into the long-edge transverse holes of the magenta 11 × 7 frame. Build this small assembly beside the robot.",
       "kind": "numbered-instruction",
       "action": "assembly",
       "sourceReferences": [
@@ -100855,10 +100558,7 @@
         "assembly-top-pin-1",
         "assembly-top-pin-2"
       ],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 5000,
       "cameraPreset": {
         "position": [
@@ -100884,7 +100584,7 @@
     {
       "id": "book5-step12",
       "title": "Fit the front upper frame",
-      "description": "Lower the prepared frame over the actual four upright pins around the front motor/output. The source view change is represented by camera framing, not a teleport of the robot.",
+      "description": "Align the prepared frame with the four upright pins around the front motor and lower it into place. Rotate the view to check all four connections.",
       "kind": "numbered-instruction",
       "action": "reuse",
       "sourceReferences": [
@@ -100901,10 +100601,7 @@
         "assembly-seat-assembly-top-frame"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 4300,
       "cameraPreset": {
         "position": [
@@ -100929,8 +100626,8 @@
     },
     {
       "id": "book5-step13",
-      "title": "Insert both5L stop axles",
-      "description": "Insert the two source reddish-brown stop axles through the selected upper side-support bores; stop shoulders determine seating, not a generic pin-depth constant.",
+      "title": "Insert both 5L stop axles",
+      "description": "Insert the two reddish-brown 5L stop axles through the upper side supports. Their stop shoulders determine how far they seat.",
       "kind": "numbered-instruction",
       "action": "assembly",
       "sourceReferences": [
@@ -100951,10 +100648,7 @@
         "assembly-stop-axle-1",
         "assembly-stop-axle-2"
       ],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -100980,7 +100674,7 @@
     {
       "id": "book5-step14",
       "title": "Retain the axles from below",
-      "description": "Use the source underside camera and press the two gray bushes onto the projecting axle ends. The robot remains in one stable world frame.",
+      "description": "Look underneath the robot and press the two gray bushes onto the projecting axle ends.",
       "kind": "numbered-instruction",
       "action": "assembly",
       "sourceReferences": [
@@ -101001,10 +100695,7 @@
         "assembly-bush-1",
         "assembly-bush-2"
       ],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -101029,8 +100720,8 @@
     },
     {
       "id": "book5-step15",
-      "title": "Prepare the first underside frame and bridge",
-      "description": "Build one black7×5 frame with the gray four-integral-pin cross block; integral projections are features of one prepared unit.",
+      "title": "Prepare the first underside frame",
+      "description": "Fit the gray cross block with four integral pins to one black 7 × 5 frame.",
       "kind": "numbered-instruction",
       "action": "assembly",
       "sourceReferences": [
@@ -101051,10 +100742,7 @@
         "assembly-underside-frame-1",
         "assembly-underside-crossblock"
       ],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 5000,
       "cameraPreset": {
         "position": [
@@ -101079,8 +100767,8 @@
     },
     {
       "id": "book5-step16",
-      "title": "Join the second underside frame",
-      "description": "Attach the second source7×5 frame to the opposite integral pin pair, preserving the actual8mm bridge-body gap.",
+      "title": "Join the underside frames",
+      "description": "Attach the second black 7 × 5 frame to the opposite pair of pins on the gray cross block. Keep the 8 mm gap between the frame bodies.",
       "kind": "numbered-instruction",
       "action": "assembly",
       "sourceReferences": [
@@ -101099,10 +100787,7 @@
       "requiredPartInstanceIds": [
         "assembly-underside-frame-2"
       ],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -101127,8 +100812,8 @@
     },
     {
       "id": "book5-step17",
-      "title": "Insert four outer-corner pins",
-      "description": "Insert four individually tracked black pins into the four outer corner holes of the paired frames.",
+      "title": "Insert the outer-corner pins",
+      "description": "Insert one black pin into each of the four outer corner holes of the paired frames.",
       "kind": "numbered-instruction",
       "action": "assembly",
       "sourceReferences": [
@@ -101153,10 +100838,7 @@
         "assembly-underside-pin-3",
         "assembly-underside-pin-4"
       ],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 3300,
       "cameraPreset": {
         "position": [
@@ -101182,7 +100864,7 @@
     {
       "id": "book5-step18",
       "title": "Fit the underside reinforcement",
-      "description": "Move the actual paired-frame root from its work area into the source four underside frame receivers, then return the camera upright.",
+      "description": "Align the paired frames with the four receiving points underneath the robot and attach them. Return the view upright when finished.",
       "kind": "numbered-instruction",
       "action": "reuse",
       "sourceReferences": [
@@ -101199,10 +100881,7 @@
         "assembly-seat-assembly-underside"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 4300,
       "cameraPreset": {
         "position": [
@@ -101227,8 +100906,8 @@
     },
     {
       "id": "book5-step19",
-      "title": "Inspect the completed source assembly",
-      "description": "Final upright source view. All136 numbered instructions are represented; only previously independently checked poses retain verified status.",
+      "title": "Check the completed assembly",
+      "description": "Compare the upright robot with the final official illustration. Check the frame connections and wiring before trying the movement demonstration.",
       "kind": "numbered-instruction",
       "action": "view",
       "sourceReferences": [
@@ -101245,10 +100924,7 @@
         "assembly-view-19"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.",
-        "Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed."
-      ],
+      "warnings": [],
       "durationMs": 2500,
       "cameraPreset": {
         "position": [
@@ -213532,7 +213208,7 @@
   "milestones": [
     {
       "id": "front-datum-complete",
-      "title": "Original seven-unit datum bracket",
+      "title": "Front bracket",
       "stepId": "book1-step3"
     },
     {
@@ -213542,12 +213218,12 @@
     },
     {
       "id": "front-two-sensors",
-      "title": "Both distinct source sensor/caster units installed",
+      "title": "Front sensors and casters",
       "stepId": "book1-step29"
     },
     {
       "id": "front-book1-authored",
-      "title": "Front Part source coverage complete — fits unchecked",
+      "title": "Front module",
       "stepId": "book1-step38"
     },
     {
@@ -213562,7 +213238,7 @@
     },
     {
       "id": "right-complete",
-      "title": "right source module assembled",
+      "title": "Right drive module",
       "stepId": "book2-step24"
     },
     {
@@ -213577,7 +213253,7 @@
     },
     {
       "id": "left-complete",
-      "title": "left source module assembled",
+      "title": "Left drive module",
       "stepId": "book3-step24"
     },
     {
@@ -213587,27 +213263,27 @@
     },
     {
       "id": "rear-output-ready",
-      "title": "Rear output installed — fit unchecked",
+      "title": "Rear motor output",
       "stepId": "book4-step26"
     },
     {
       "id": "rear-module-authored",
-      "title": "Rear source sequence authored — not independently verified",
+      "title": "Rear module",
       "stepId": "book4-step31"
     },
     {
       "id": "adb-drive-modules-seated",
-      "title": "Both drive modules seated — fit unchecked",
+      "title": "Both drive modules attached",
       "stepId": "book5-step7"
     },
     {
       "id": "adb-rear-hub-retained",
-      "title": "Rear module approached; lower pin closure unresolved",
+      "title": "Rear module attachment — check fit",
       "stepId": "book5-step9"
     },
     {
       "id": "adb-source-sequence-authored",
-      "title": "All source instructions authored — new poses unchecked",
+      "title": "Final assembly check",
       "stepId": "book5-step19"
     }
   ],

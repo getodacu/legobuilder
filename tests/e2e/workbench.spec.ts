@@ -1,4 +1,5 @@
 import { test, expect, type Page, type TestInfo } from '@playwright/test';
+import { openDetails, showParts, chooseStep, showReference } from './ui';
 import { readFileSync } from 'node:fs';
 
 // Independent transcription of the official manual callouts, not the generated model.
@@ -10,8 +11,8 @@ const failures = new WeakMap<Page, string[]>();
 const partIds = ['beam-1', 'pin-1', 'pin-2', 'grey-connector-1', 'grey-connector-2', 'pin-3', 'pin-4'];
 const seekRange = (page: Page) => page.getByRole('slider', { name: /Assembly position/ });
 const counts = (page: Page) => page.getByLabel('Assembly counts');
-const inventory = (page: Page) => page.getByRole('complementary', { name: 'Inventory and inspection' });
-const instructions = (page: Page) => page.getByRole('complementary', { name: 'Instructions and sources' });
+const inventory = (page: Page) => page.getByRole('complementary', { name: 'Parts and inspection' });
+const instructions = (page: Page) => page.getByRole('complementary', { name: 'Build instructions' });
 const viewer = (page: Page) => page.getByRole('img', { name: /^Interactive assembly/ });
 
 // Observe only this test's page, never pre-existing console/CDP history.
@@ -46,6 +47,7 @@ async function openWorkbench(page: Page, reducedMotion: 'reduce' | 'no-preferenc
   await expect(page.getByRole('alert')).toHaveCount(0);
   await expect(page.locator('.robot-scene')).toHaveAttribute('aria-busy', 'false');
   await expect(seekRange(page)).toHaveValue('0');
+  if ((page.viewportSize()?.width ?? 0) >= 1200) { await showParts(page); await openDetails(page, '.view-options'); await openDetails(page, '.playback-options'); }
 }
 
 async function seek(page: Page, timeMs: number) {
@@ -54,24 +56,25 @@ async function seek(page: Page, timeMs: number) {
 }
 
 async function expectCounts(page: Page, installed: number, steps: number) {
-  await expect(counts(page).locator('strong').nth(0)).toHaveText(`${installed}/234`);
-  await expect(counts(page).locator('strong').nth(1)).toHaveText(String(234 - installed));
-  await expect(counts(page).locator('strong').nth(2)).toHaveText(`${steps}/136`);
+  await expect(counts(page).locator('.guide-part-count strong')).toHaveText(`${installed}/234`);
+  await expect(counts(page).locator('.guide-step-count strong')).toHaveText(`${steps}/136`);
 }
 
 async function expectPage(page: Page, number: number, step: string) {
   const book = /^book(\d+)-/.exec(step)![1];
-  await expect(instructions(page).getByRole('combobox', { name: 'Document', exact: true })).toHaveValue(`adb-book${book}`);
-  await expect(instructions(page).getByLabel('One-based PDF page')).toHaveValue(String(number));
-  await expect(instructions(page).getByLabel('Implemented source steps')).toHaveValue(step);
-  await expect(instructions(page).getByRole('link', { name: new RegExp(`Open official page ${number} `) })).toHaveAttribute('href', new RegExp(`book${book}of5\\.pdf.*#page=${number}$`));
+  await expect(instructions(page).locator('.step-picker select')).toHaveValue(step);
+  const panel = await showReference(page);
+  await expect(panel.getByRole('combobox', { name: 'Document', exact: true })).toHaveValue(`adb-book${book}`);
+  await expect(panel.getByLabel('PDF page', { exact: true })).toHaveValue(String(number));
+  await expect(panel.getByRole('link', { name: new RegExp(`Open official page ${number} `) })).toHaveAttribute('href', new RegExp(`book${book}of5\\.pdf.*#page=${number}$`));
+  await panel.getByRole('button', { name: 'Close reference', exact: true }).click();
 }
 
 async function selectSourceStep(page: Page, book: number, step: number) {
   const index = source.steps.findIndex((entry) => entry.book === book && entry.step === step);
   expect(index, 'Numbered instruction exists in the independent manual transcription').toBeGreaterThanOrEqual(0);
   const installed = source.steps.slice(0, index).reduce((sum, entry) => sum + entry.addedParts.reduce((total, part) => total + part.quantity, 0), 0);
-  await instructions(page).getByLabel('Implemented source steps').selectOption(`book${book}-step${step}`);
+  await chooseStep(page, `book${book}-step${step}`);
   await expectCounts(page, installed, index);
   await expectPage(page, source.steps[index].pdfPage, `book${book}-step${step}`);
 }
@@ -86,24 +89,23 @@ test('catalog has all five source identities; permission-blocked VEX never reque
     await expect(cards.getByRole('heading', { name })).toHaveCount(1);
   }
   const adb = cards.filter({ has: page.getByRole('heading', { name: /Advanced Driving Base/i }) });
-  await expect(adb).toContainText(/136\s*\/\s*136/);
-  await expect(adb).toContainText(/authored.*fit unchecked/i);
-  await expect(adb.locator('.card-facts')).toContainText(/3 source steps/);
-  await expect(adb.getByRole('button', { name: /Open workbench/i })).toBeEnabled();
+  await expect(adb).toContainText('136 steps');
+  await expect(page.locator('.intro-note')).toContainText(/not been fully checked on physical robots/);
+  await expect(adb.getByRole('button', { name: /Start building/i })).toBeEnabled();
   const preview = adb.getByRole('img');
   await expect(preview).toBeVisible();
-  await expect(preview).toHaveAttribute('alt', /136\/136 instructions authored.*fit remains unverified/);
+  await expect(preview).toHaveAttribute('alt', 'Advanced Driving Base robot');
   await expect.poll(() => preview.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
   const vex = cards.filter({ has: page.getByRole('heading', { name: /(?:V5|VEX).*Clawbot/i }) });
   await expect(vex.getByRole('img')).toHaveCount(0);
-  await expect(vex.getByRole('button', { name: /Open.*workbench/i })).toHaveCount(0);
+  await expect(vex.getByRole('button', { name: /Start building/i })).toHaveCount(0);
   await expect(vex).toContainText(/permission.*blocked|permission|conversion/i);
-  await expect(vex).toContainText(/no procurement total|unresolved/i);
-  const sourceButton = vex.getByRole('button', { name: /sources.*limitations/i });
+  const sourceButton = vex.getByRole('button', { name: /Instructions.*availability/i });
   await sourceButton.click();
   const dialog = page.getByRole('dialog', { name: /Clawbot/i });
   await expect(dialog).toBeVisible();
   await expect(dialog).toContainText(/permission/i);
+  await expect(dialog).toContainText(/No procurement total|unresolved/i);
   await expect(dialog.getByRole('link', { name: /Build Instructions/i })).toHaveAttribute('href', /^https:\/\/content\.vexrobotics\.com\//);
   await capture(page, info, 'vex-source-blocked-not-model-acceptance');
   await page.keyboard.press('Escape');
@@ -114,13 +116,13 @@ test('catalog has all five source identities; permission-blocked VEX never reque
 
 test('234 real inventory instances retain the first seven source seating events and reversible boundaries', async ({ page }, info) => {
   await openWorkbench(page);
-  await expect(inventory(page).locator('.inventory-list > li')).toHaveCount(234);
+  await expect(inventory(page).locator('.instance-list > li')).toHaveCount(234);
   const ids = await inventory(page).locator('.inventory-list button > .mono').allTextContents();
   expect(new Set(ids).size, 'Each prepared unit is represented once').toBe(234);
   for (const id of partIds) await expect(inventory(page).locator('.inventory-list button').filter({ has: page.getByText(id, { exact: true }) })).toHaveCount(1);
   await expectCounts(page, 0, 0);
   await expectPage(page, 1, 'book1-step1');
-  await expect(page.getByRole('button', { name: 'Previous source-step boundary' })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Previous step' })).toBeDisabled();
   await capture(page, info, 'first-staged-234-real-parts');
   const canvasBox = await viewer(page).boundingBox();
   expect(canvasBox).not.toBeNull();
@@ -128,15 +130,15 @@ test('234 real inventory instances retain the first seven source seating events 
   expect(canvasBox!.height).toBeGreaterThanOrEqual(390);
   expect(canvasBox!.y + canvasBox!.height).toBeLessThanOrEqual(982);
 
-  await page.getByRole('button', { name: 'Next source-step boundary' }).click();
+  await page.getByRole('button', { name: 'Next step' }).click();
   await expect(seekRange(page)).toHaveValue('4000');
   await expectCounts(page, 3, 1);
   await expectPage(page, 2, 'book1-step2');
-  await page.getByRole('button', { name: 'Next source-step boundary' }).click();
+  await page.getByRole('button', { name: 'Next step' }).click();
   await expect(seekRange(page)).toHaveValue('7000');
   await expectCounts(page, 5, 2);
   await expectPage(page, 3, 'book1-step3');
-  await page.getByRole('button', { name: 'Previous source-step boundary' }).click();
+  await page.getByRole('button', { name: 'Previous step' }).click();
   await expect(seekRange(page)).toHaveValue('4000');
   await expectCounts(page, 3, 1);
 
@@ -167,15 +169,14 @@ test('234 real inventory instances retain the first seven source seating events 
   await capture(page, info, 'first-seven-source-bracket-seated');
   await seek(page, 10000);
   await expectCounts(page, 7, 3);
-  await expect(inventory(page).locator('.part-state').filter({ hasText: /^Installed/ })).toHaveCount(7);
+  await expect(inventory(page).locator('.part-state').filter({ hasText: /^Placed/ })).toHaveCount(7);
   await expectPage(page, 4, 'book1-step4');
-  await expect(page.getByRole('button', { name: 'Next source-step boundary' })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Next step' })).toBeEnabled();
   await expect(page.getByRole('button', { name: /Play step/ })).toBeEnabled();
   await page.getByRole('button', { name: 'Focus active', exact: true }).click();
   await capture(page, info, 'first-seven-bracket-continues-to-step-four');
-  await instructions(page).getByText('Assembly status & viewing', { exact: true }).click();
-  await expect(page.getByRole('button', { name: 'Simulation locked' })).toBeDisabled();
-  await expect(page.getByLabel('Post-assembly demonstration')).toContainText(/entire implemented assembly/);
+  await expect(page.getByRole('button', { name: 'Try the movement demo →' })).toHaveCount(0);
+  await expect(page.getByLabel('Post-assembly demonstration')).toContainText(/last building step/);
   await seek(page, 0);
   await expectCounts(page, 0, 0);
   await expectPage(page, 1, 'book1-step1');
@@ -183,34 +184,34 @@ test('234 real inventory instances retain the first seven source seating events 
 
 test('manual reading stays independent while mapped figures synchronize all books, including nonmatching Book 5 pages', async ({ page }, info) => {
   await openWorkbench(page);
-  const panel = instructions(page);
-  const pdfPage = panel.getByLabel('One-based PDF page');
-  await pdfPage.fill('2');
+  let panel = await showReference(page);
+  await panel.getByLabel('PDF page', { exact: true }).fill('2');
   await expect(seekRange(page)).toHaveValue('0');
   await expectCounts(page, 0, 0);
-  await panel.getByRole('button', { name: /Seek figure.*step 2/i }).first().click();
+  await panel.getByRole('button', { name: /Go to figure.*step 2/i }).first().click();
   await expect(seekRange(page)).toHaveValue('4000');
   await expectCounts(page, 3, 1);
   await expectPage(page, 2, 'book1-step2');
-  await pdfPage.fill('38');
-  await expect(panel.getByRole('button', { name: /Seek figure.*step 38/i })).toHaveCount(1);
+  panel = await showReference(page);
+  await panel.getByLabel('PDF page', { exact: true }).fill('38');
   await expect(seekRange(page)).toHaveValue('4000');
-  await panel.getByRole('button', { name: /Seek figure.*step 38/i }).click();
+  await panel.getByRole('button', { name: /Go to figure.*step 38/i }).click();
   await expectCounts(page, 73, 37);
   await expectPage(page, 38, 'book1-step38');
-  await panel.getByRole('button', { name: 'Frame active operation ↗', exact: true }).click();
+  await page.getByRole('button', { name: 'Focus active', exact: true }).click();
   await capture(page, info, 'manual-mapped-book1-final-gear');
   const beforeReading = await seekRange(page).inputValue();
+  panel = await showReference(page);
   await panel.getByRole('combobox', { name: 'Document', exact: true }).selectOption('adb-book5');
-  await expect(pdfPage).toHaveValue('1');
-  await expect(panel.getByRole('button', { name: /Seek figure|Seek instruction/i })).toHaveCount(0);
+  await expect(panel.getByLabel('PDF page', { exact: true })).toHaveValue('1');
+  await expect(panel.getByRole('button', { name: /Go to figure|Go to instruction/i })).toHaveCount(0);
   await expect(seekRange(page)).toHaveValue(beforeReading);
-  await pdfPage.fill('22');
+  await panel.getByLabel('PDF page', { exact: true }).fill('22');
   await expect(seekRange(page)).toHaveValue(beforeReading);
-  await panel.getByRole('button', { name: /Seek figure.*instruction 19/i }).click();
+  await panel.getByRole('button', { name: /Go to figure.*instruction 19/i }).click();
   await expectPage(page, 22, 'book5-step19');
   await expectCounts(page, 234, 135);
-  await expect(panel.getByText('No additional hardware in this instruction.', { exact: true })).toBeVisible();
+  await expect(instructions(page).getByText('No additional hardware in this instruction.', { exact: true })).toBeVisible();
   await capture(page, info, 'manual-book5-page22-is-instruction19');
   await selectSourceStep(page, 2, 24);
   await capture(page, info, 'manual-mapped-other-book-wheel-join');
@@ -222,7 +223,7 @@ test('manual reading stays independent while mapped figures synchronize all book
 
 test('the full 136-instruction source assembly reaches 234 units without recounting joins or final views and resets reversibly', async ({ page }, info) => {
   await openWorkbench(page);
-  const stepOptions = instructions(page).getByLabel('Implemented source steps').locator('option');
+  const stepOptions = instructions(page).locator('.step-picker option');
   await expect(stepOptions).toHaveCount(136);
   expect(await stepOptions.evaluateAll((options) => options.map((option) => (option as HTMLOptionElement).value)))
     .toEqual(source.steps.map((entry) => `book${entry.book}-step${entry.step}`));
@@ -233,7 +234,7 @@ test('the full 136-instruction source assembly reaches 234 units without recount
   for (const [book, step] of [[1, 38], [2, 24], [3, 24], [4, 31], [5, 6]]) {
     await selectSourceStep(page, book, step);
   }
-  await instructions(page).getByRole('button', { name: 'Frame active operation ↗', exact: true }).click();
+  await page.getByRole('button', { name: 'Focus active', exact: true }).click();
   const beforeJoin = await viewer(page).screenshot();
   await page.getByRole('button', { name: /Play step/ }).click();
   await expectCounts(page, 220, 123);
@@ -248,22 +249,25 @@ test('the full 136-instruction source assembly reaches 234 units without recount
   await expect(seekRange(page)).toHaveValue(String(end));
   await expectCounts(page, 234, 136);
   await expectPage(page, 22, 'book5-step19');
-  await expect(instructions(page).locator('.source-list').first()).toContainText('PDF page 22 · printed instruction 19');
-  await expect(inventory(page).locator('.part-state').filter({ hasText: /^Installed/ })).toHaveCount(234);
-  await expect(page.getByRole('button', { name: 'Next source-step boundary' })).toBeDisabled();
+  const stepEvidence = await showReference(page);
+  await stepEvidence.getByText('Current step evidence', { exact: true }).click();
+  await expect(stepEvidence.locator('.source-list').first()).toContainText('PDF page 22 · printed instruction 19');
+  await stepEvidence.getByRole('button', { name: 'Close reference' }).click();
+  await expect(inventory(page).locator('.part-state').filter({ hasText: /^Placed/ })).toHaveCount(234);
+  await expect(page.getByRole('button', { name: 'Next step' })).toBeDisabled();
   await expect(page.getByRole('button', { name: /Play step/ })).toBeDisabled();
-  await expect(page.getByRole('button', { name: 'Enter post-assembly demonstration', exact: true })).toBeEnabled();
-  await expect(page.locator('.header-coverage')).toHaveText(/136\/136 authored.*new fits unverified/);
-  await expect(page.getByLabel('Post-assembly demonstration')).toContainText(/3\/136 source steps verified/);
-  await expect(page.getByLabel('Post-assembly demonstration')).toContainText(/not a verified-robot seal/);
+  await expect(page.getByRole('button', { name: 'Try the movement demo →', exact: true })).toBeEnabled();
+  await expect(page.getByLabel('Post-assembly demonstration')).toContainText(/Physical fit|physical fit/);
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
   await expect.poll(async () => (await viewer(page).screenshot()).equals(firstSeven), { message: 'Full authored scene differs from the original seven-unit bracket' }).toBe(false);
   await capture(page, info, 'full-source-234-assembled-fit-unverified');
-  const coverage = instructions(page).locator('details').filter({ has: page.getByText('Whole-source coverage & limitations', { exact: true }) });
+  const references = await showReference(page);
+  const coverage = references.locator('details').filter({ has: page.getByText('Coverage & limitations', { exact: true }) });
   await coverage.locator('summary').click();
   await expect(coverage).toContainText(/136\/136 steps implemented · 3 verified/);
   await expect(coverage).toContainText(/unchecked|unverified|not.*certif/i);
   await capture(page, info, 'full-source-coverage-not-fit-certification');
+  await references.getByRole('button', { name: 'Close reference' }).click();
   await seek(page, end);
   await expectCounts(page, 234, 136);
 
@@ -276,8 +280,8 @@ test('the full 136-instruction source assembly reaches 234 units without recount
   await expect(seekRange(page)).toHaveValue('0');
   await expectCounts(page, 0, 0);
   await expectPage(page, 1, 'book1-step1');
-  await expect(inventory(page).locator('.part-state').filter({ hasText: /pending · robot$/ })).toHaveCount(234);
-  await expect(page.getByRole('button', { name: 'Simulation locked' })).toBeDisabled();
+  await expect(inventory(page).locator('.part-state').filter({ hasText: /In the parts tray|Moving into place/ })).toHaveCount(234);
+  await expect(page.getByRole('button', { name: 'Try the movement demo →' })).toHaveCount(0);
   await capture(page, info, 'full-source-reset-staged-inventory');
 });
 
@@ -292,7 +296,7 @@ test('real non-reduced playback moves while pending, pauses, resumes to one-step
   expect(pausedAt).toBeGreaterThan(0);
   expect(pausedAt).toBeLessThan(1200);
   await expectCounts(page, 0, 0);
-  await expect(inventory(page).locator('.inventory-list button').filter({ has: page.getByText('beam-1', { exact: true }) })).toContainText(/motion.*pending/i);
+  await expect(inventory(page).locator('.inventory-list button').filter({ has: page.getByText('beam-1', { exact: true }) })).toContainText(/Moving into place/i);
   expect((await viewer(page).screenshot()).equals(first), 'Actual rendered geometry moves before installation').toBe(false);
   await capture(page, info, 'actual-play-intermediate-pending');
   await page.evaluate(() => new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
@@ -302,12 +306,12 @@ test('real non-reduced playback moves while pending, pauses, resumes to one-step
   await expect(seekRange(page)).toHaveValue('4000');
   await expectCounts(page, 3, 1);
   await expect(page.getByRole('button', { name: /Pause/ })).toHaveCount(0);
-  await expect(page.getByRole('button', { name: 'Resume', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Play step', exact: true })).toBeEnabled();
   await page.getByRole('button', { name: 'Play all', exact: true }).click();
   await expect.poll(async () => Number(await seekRange(page).inputValue())).toBeGreaterThan(4200);
   await seek(page, 7000);
   await expect(page.getByRole('button', { name: /Pause/ })).toHaveCount(0);
-  await expect(page.getByRole('button', { name: 'Resume', exact: true })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Play step', exact: true })).toBeEnabled();
   await seek(page, 10000);
   await page.getByRole('combobox', { name: 'Speed', exact: true }).selectOption('0.25');
   await page.getByRole('button', { name: /Reverse/ }).click();
@@ -329,28 +333,39 @@ test('inspection, presentation modes and camera controls preserve assembly accou
   const end = Number(await seekRange(page).getAttribute('max'));
   await seek(page, end);
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
+  await page.locator('.view-options > summary').click();
+  await page.locator('.playback-options > summary').click();
   const studioPixels = await viewer(page).screenshot();
+  await openDetails(page, '.view-options');
   await page.getByRole('button', { name: 'Technical', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Technical', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('.view-options > summary').click();
   await expect.poll(async () => (await viewer(page).screenshot()).equals(studioPixels), { message: 'Technical mode changes the actual full-source rendering' }).toBe(false);
   await capture(page, info, 'technical-full-source-real-geometry');
   const technicalPixels = await viewer(page).screenshot();
+  await openDetails(page, '.view-options');
   await page.getByRole('button', { name: 'Explode', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Explode', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('.view-options > summary').click();
   await expectCounts(page, 234, 136);
   await expect(seekRange(page)).toHaveValue(String(end));
   await expect.poll(async () => (await viewer(page).screenshot()).equals(technicalPixels), { message: 'Explode must separate actual rendered geometry' }).toBe(false);
   await capture(page, info, 'exploded-full-source-234-units');
   const row = inventory(page).locator('.inventory-list button').filter({ has: page.getByText('pin-1', { exact: true }) });
+  await row.locator('xpath=ancestor::details').locator(':scope > summary').click();
   await row.click();
   await expect(inventory(page).locator('.inspector-facts')).toContainText('pin-1');
   await expect(inventory(page).locator('.inspector-facts')).toContainText('2780');
   const assemblyPixels = await viewer(page).screenshot();
   await inventory(page).getByRole('button', { name: 'Isolate part', exact: true }).click();
+  await openDetails(page, '.view-options');
   await expect(page.getByRole('group', { name: 'View mode' }).getByRole('button', { name: 'Inspection', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await page.locator('.view-options > summary').click();
   await expect.poll(async () => (await viewer(page).screenshot()).equals(assemblyPixels), { message: 'Isolation must change rendered component visibility' }).toBe(false);
   await capture(page, info, 'inspection-isolated-pin-1');
-  await counts(page).getByRole('button', { name: 'Exit isolate', exact: true }).click();
+  if (await page.locator('.view-options').getAttribute('open') !== null) await page.locator('.view-options > summary').click();
+  await page.getByRole('button', { name: 'Show all parts', exact: true }).click();
+  await openDetails(page, '.view-options');
   await expectCounts(page, 234, 136);
   for (const name of ['Fit module', 'Focus active', 'Fit whole', 'Reset view']) {
     await expect(page.getByRole('button', { name, exact: true })).toBeEnabled();
@@ -358,12 +373,15 @@ test('inspection, presentation modes and camera controls preserve assembly accou
     await expect(page.getByRole('button', { name: 'Resume auto camera', exact: true })).toBeVisible();
   }
   await page.getByRole('button', { name: 'Resume auto camera', exact: true }).click();
+  await page.locator('.view-options > summary').click();
   const beforeManualOrbit = await viewer(page).screenshot();
   await viewer(page).focus();
   await page.keyboard.press('ArrowLeft');
   await expect(page.getByRole('button', { name: 'Resume auto camera', exact: true })).toBeVisible();
   await expect.poll(async () => (await viewer(page).screenshot()).equals(beforeManualOrbit), { message: 'Manual orbit changes the actual camera view' }).toBe(false);
+  await openDetails(page, '.view-options');
   await page.getByRole('button', { name: 'Reset view', exact: true }).click();
+  await page.locator('.view-options > summary').click();
   await expect.poll(async () => (await viewer(page).screenshot()).equals(beforeManualOrbit), { message: 'Reset restores the authored source view, not an unrelated generic rear camera' }).toBe(true);
   await expect(page.getByRole('button', { name: 'Resume auto camera', exact: true })).toBeVisible();
   await seek(page, 4000);
@@ -383,16 +401,19 @@ test('keyboard shortcuts respect typing, range and help-dialog focus', async ({ 
   await expect(seekRange(page)).toHaveValue('0');
   await expect(page.getByRole('button', { name: 'Explode', exact: true })).toHaveAttribute('aria-pressed', 'false');
   await search.fill('');
-  const documentSelector = instructions(page).getByRole('combobox', { name: 'Document', exact: true });
+  const references = await showReference(page);
+  const documentSelector = references.getByRole('combobox', { name: 'Document', exact: true });
   await documentSelector.focus();
   await page.keyboard.press('x');
   await page.keyboard.press(']');
   await expect(seekRange(page)).toHaveValue('0');
   await expect(page.getByRole('button', { name: 'Explode', exact: true })).toHaveAttribute('aria-pressed', 'false');
+  await references.getByRole('button', { name: 'Close reference' }).click();
   await seekRange(page).focus();
   await page.keyboard.press('End');
   await expectCounts(page, 234, 136);
   await expectPage(page, 22, 'book5-step19');
+  await seekRange(page).focus();
   await page.keyboard.press('Home');
   await expectCounts(page, 0, 0);
   await expectPage(page, 1, 'book1-step1');
@@ -433,28 +454,29 @@ for (const width of [320, 390]) {
     await openWorkbench(page);
     await expect.poll(() => page.locator('.workspace-header').evaluate((header) => Math.round(header.getBoundingClientRect().top)), { message: 'Opening from a scrolled catalog must show the mobile robot title' }).toBe(0);
     await assertNoOverflow();
-    await expect(page.getByRole('button', { name: 'Instructions', exact: true })).toHaveAttribute('aria-expanded', 'false');
+    await expect(page.getByRole('button', { name: 'Instructions', exact: true })).toHaveAttribute('aria-expanded', 'true');
+    await page.getByRole('button', { name: 'Instructions', exact: true }).click();
     await page.getByRole('button', { name: 'Instructions', exact: true }).click();
     await expect(instructions(page).getByRole('heading', { name: 'Instructions', exact: true })).toBeFocused();
     await expect(page.getByRole('button', { name: 'Instructions', exact: true })).toHaveAttribute('aria-expanded', 'true');
-    await expect(page.getByRole('button', { name: 'Inventory & inspection', exact: true })).toHaveAttribute('aria-expanded', 'false');
+    await expect(page.getByRole('button', { name: 'Parts', exact: true })).toHaveAttribute('aria-expanded', 'false');
     await selectSourceStep(page, 5, 19);
-    await expect(instructions(page).getByLabel('One-based PDF page')).toHaveValue('22');
+    await expectPage(page, 22, 'book5-step19');
     expect(await instructions(page).locator('.panel-content').evaluate((element) => element.scrollWidth - element.clientWidth), 'Source panel content fits the mobile drawer').toBeLessThanOrEqual(1);
     await assertNoOverflow();
     await capture(page, info, `instructions-drawer-${width}`);
     await page.keyboard.press('Escape');
     await expect(page.getByRole('button', { name: 'Instructions', exact: true })).toBeFocused();
-    await page.getByRole('button', { name: 'Inventory & inspection', exact: true }).click();
-    await expect(inventory(page).getByRole('heading', { name: 'Parts & evidence', exact: true })).toBeFocused();
+    await page.getByRole('button', { name: 'Parts', exact: true }).click();
+    await expect(inventory(page).getByRole('heading', { name: 'Parts', exact: true })).toBeFocused();
     await expect(page.getByRole('button', { name: 'Instructions', exact: true })).toHaveAttribute('aria-expanded', 'false');
-    await expect(inventory(page).locator('.inventory-list > li')).toHaveCount(234);
-    await expect(inventory(page)).toContainText('234 individual instances shown');
+    await expect(inventory(page).locator('.instance-list > li')).toHaveCount(234);
+    await expect(inventory(page)).toContainText('234 components');
     expect(await inventory(page).locator('.panel-content').evaluate((element) => element.scrollWidth - element.clientWidth), '234-instance inventory content fits the mobile drawer').toBeLessThanOrEqual(1);
     await assertNoOverflow();
     await capture(page, info, `inventory-drawer-${width}`);
-    await inventory(page).getByRole('button', { name: 'Collapse inventory' }).click();
-    await expect(page.getByRole('button', { name: 'Inventory & inspection', exact: true })).toBeFocused();
+    await inventory(page).getByRole('button', { name: 'Collapse parts' }).click();
+    await expect(page.getByRole('button', { name: 'Parts', exact: true })).toBeFocused();
     await assertNoOverflow();
     await capture(page, info, `workbench-${width}`);
     const help = page.getByRole('button', { name: /Keyboard help/ });

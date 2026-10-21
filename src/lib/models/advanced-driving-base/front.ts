@@ -113,7 +113,7 @@ const descriptions = [
 const steps: AssemblyStep[] = descriptions.map(([title, description, ids], index) => ({
   id: stepId(1, index + 1), title, description, kind: 'numbered-instruction', action: 'assembly', sourceReferences: [source(index + 1)],
   operationIds: operations.filter((op) => op.stepId === stepId(1, index + 1)).map((op) => op.id), requiredPartInstanceIds: [...ids],
-  warnings: ['CAD-derived seating is not independently fit-verified. Animation timing and inventory arrangement are RoboBuild presentation.'],
+  warnings: [],
   durationMs: index === 0 ? 4000 : 3000, cameraPreset: cameras[index]!
 }));
 
@@ -873,7 +873,7 @@ const extraSteps: AssemblyStep[] = sourcePages.filter((page) => page.step > 3).m
   id: stepId(1, page.step), title: `Front Part ${page.step}: ${page.description.split(';')[0].split('.')[0]}`,
   description: page.description, kind: 'numbered-instruction', action: page.step === 36 ? 'view' : page.additions.length ? 'assembly' : 'reuse', sourceReferences: [source(page.step)],
   operationIds: operations.filter((op) => op.stepId === stepId(1, page.step)).map((op) => op.id), requiredPartInstanceIds: newByStep[page.step] ?? [],
-  warnings: ['Source topology and licensed native CAD authored; only the original steps1–3 have parent-exercised verification. Source-view registration, tolerances and contact fits remain unchecked. Staging/timing are presentation-only.'],
+  warnings: [],
   durationMs: Math.max(2000, ...operations.filter((op) => op.stepId === stepId(1, page.step)).map((op) => op.startMs + op.durationMs)) + 300, cameraPreset: pageCamera(page.step)
 }));
 export const front: BuildFragment = {
@@ -883,6 +883,6 @@ export const front: BuildFragment = {
   joints: [{ id: 'front-tool-joint', name: 'Front medium-motor supported output', type: 'revolute', parent: { kind: 'subassembly', id: 'front-medium-body' }, child: { kind: 'subassembly', id: 'front-tool-output' }, origin: pose([8, 36, 8]), childTransform: pose([-8, -36, -8]), axis: [0, 1, 0], zero: 0, drivenByMotorId: 'front-medium', internalBinding: { partInstanceId: 'front-medium-motor', geometryNodeId: 'parts/u9363p01.dat', movingSide: 'rotor' }, evidence: outputEvidence }],
   linkageConstraints: [], motors: [{ id: 'front-medium', partInstanceId: 'front-medium-motor', port: 'D', jointId: 'front-tool-joint', assignmentEvidence: evidence('documented', 'Book5 page4 portD front medium output; motor remains one prepared unit with captive cable.', [integrationSource(4)]) }], cables: [],
   inventory: (Object.keys(families) as Family[]).map((family) => ({ id: `book1-${family}`, name: families[family].name, scope: 'robot', basis: 'prepared-callout-units', accounting: 'tracked', quantity: sourcePages.reduce((sum, page) => sum + page.additions.filter((line) => line.family === family).reduce((n, line) => n + line.quantity, 0), 0), partInstanceIds: parts.filter((p) => familyByPartId[p.id] === family).map((p) => p.id), sourceReferences: sourcePages.filter((page) => page.additions.some((line) => line.family === family)).map((page) => source(page.step)) })),
-  milestones: [{ id: 'front-datum-complete', title: 'Original seven-unit datum bracket', stepId: stepId(1, 3) }, { id: 'front-frame-prepared', title: 'Frame and motor mount pins prepared', stepId: stepId(1, 7) }, { id: 'front-two-sensors', title: 'Both distinct source sensor/caster units installed', stepId: stepId(1, 29) }, { id: 'front-book1-authored', title: 'Front Part source coverage complete — fits unchecked', stepId: stepId(1, 38) }],
+  milestones: [{ id: 'front-datum-complete', title: 'Front bracket', stepId: stepId(1, 3) }, { id: 'front-frame-prepared', title: 'Frame and motor mount pins prepared', stepId: stepId(1, 7) }, { id: 'front-two-sensors', title: 'Front sensors and casters', stepId: stepId(1, 29) }, { id: 'front-book1-authored', title: 'Front module', stepId: stepId(1, 38) }],
   sourceMappings: operations.map((op) => ({ source: op.sourceReference!, stepId: op.stepId, operationId: op.id }))
 };

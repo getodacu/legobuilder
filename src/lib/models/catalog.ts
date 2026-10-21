@@ -9,8 +9,8 @@ const manual = (id: string, title: string, path: string, sha256: string, pageCou
 
 export const advancedDrivingBaseIdentity: ModelIdentity = {
   id: 'advanced-driving-base', name: 'Advanced Driving Base', manufacturer: 'LEGO Education',
-  edition: '2019 five-book export', category: 'Mobile robot', complexity: 'Advanced',
-  description: 'All 234 prepared source units and 136 numbered instructions are authored. First three instructions/seven-unit datum retain nominal verification; rear-to-drive 32mm bracket span mismatch and new physical fits remain unresolved.'
+  edition: '2019 · five instruction books', category: 'Mobile robot', complexity: 'Advanced',
+  description: 'Build a wheeled base with two drive motors, color sensors and front and rear tool outputs. The rear mounting fit in this guide needs checking against the official instructions.'
 };
 
 export const advancedDrivingBaseDocuments: SourceDocument[] = [

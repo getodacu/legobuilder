@@ -8,7 +8,7 @@
   let selected = $state<Extract<CatalogEntry, { status: 'available' }> | null>(null);
   let Workspace = $state.raw<typeof import('#lib/components/Workspace.svelte').default | null>(null);
   let workspaceError = $state('');
-  let visits = $state<Record<string, { timeMs: number; installed: number; total: number; steps: number }>>({});
+  let visits = $state<Record<string, { timeMs: number; installed: number; total: number; steps: number; complete: boolean }>>({});
   let request = 0;
 
   async function open(entry: Extract<CatalogEntry, { status: 'available' }>) {
@@ -29,7 +29,7 @@
     }
   }
 
-  async function back(progress?: { timeMs: number; installed: number; total: number; steps: number }) {
+  async function back(progress?: { timeMs: number; installed: number; total: number; steps: number; complete: boolean }) {
     const id = selected?.identity.id;
     if (id && progress) visits = { ...visits, [id]: progress };
     request++;
@@ -41,8 +41,8 @@
 </script>
 
 <svelte:head>
-  <title>{selected ? `${selected.identity.name} · RoboBuild` : 'RoboBuild · Assembly workbench'}</title>
-  <meta name="description" content="A source-linked robotics assembly workbench. Explore genuine components, reversible assembly, and the evidence behind each build." />
+  <title>{selected ? `${selected.identity.name} · RoboBuild` : 'RoboBuild · Build your robot'}</title>
+  <meta name="description" content="Build your robot one step at a time with interactive 3D instructions, parts lists and links to the official building manuals." />
 </svelte:head>
 
 <a class="skip-link" href="#main">Skip to workbench</a>
@@ -61,7 +61,7 @@
           <div role="alert"><h2>Workbench could not load</h2><p>{workspaceError}</p></div>
           <button class="primary" onclick={() => { if (selected) void open(selected); }}>Retry workbench</button>
         {:else}
-          <div role="status"><h2>Loading the 3D workbench…</h2><p>Downloading the viewer. Source-linked components load next.</p></div>
+          <div role="status"><h2>Opening your building guide…</h2><p>Loading the 3D viewer and parts.</p></div>
         {/if}
         <button onclick={() => void back()}>Back to builds</button>
       </main>

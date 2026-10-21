@@ -300,7 +300,7 @@ function makeSide(side: 'right' | 'left', book: 2 | 3): BuildFragment {
     const page = index + 1;
     return { id: stepId(book, page), title: `${side === 'right' ? 'Right' : 'Left'} side — ${page}`, description, kind: 'numbered-instruction', action: [13, 22, 24].includes(page) ? 'reuse' : 'assembly',
       sourceReferences: [source(page)], operationIds: operations.filter((op) => op.stepId === stepId(book, page)).map((op) => op.id), requiredPartInstanceIds: parts.filter((p) => introduced.get(p.id) === page).map((p) => p.id),
-      warnings: ['Source/CAD-derived placement is not independent physical fit verification.', 'Timing and separate work areas are RoboBuild presentation; original source pages remain private.'], durationMs: [13, 22, 24].includes(page) ? 3400 : 2800, cameraPreset: camera(page) };
+      warnings: [], durationMs: [13, 22, 24].includes(page) ? 3400 : 2800, cameraPreset: camera(page) };
   });
   const assemblyEvidence = sourceFit(24, 'Complete source module hierarchy, including fixed housing and genuinely driven wheel/shaft group; no second motor inventory unit for rotor.', ['54675', '49295p01']);
   const rootParts = parts.filter((p) => p.subassemblyId === rootId).map((p) => p.id);
@@ -320,7 +320,7 @@ function makeSide(side: 'right' | 'left', book: 2 | 3): BuildFragment {
     linkageConstraints: [], motors: [{ id: `${side}-drive-motor`, partInstanceId: motor.id, port: side === 'left' ? 'A' : 'E', jointId: `${side}-wheel-joint`, assignmentEvidence: evidence('documented', `Book5 source drive port${side === 'left' ? 'A' : 'E'}; mechanical positive joint angle is not a claim about hardware encoder polarity.`, [{ ...advancedDrivingBaseDocuments[4]!, documentId: advancedDrivingBaseDocuments[4]!.id, page: side === 'left' ? 6 : 8, instructionId: side === 'left' ? '3' : '5', sourceUrl: `${advancedDrivingBaseDocuments[4]!.sourceUrl}#page=${side === 'left' ? 6 : 8}`, confidence: 0.98 }]) }],
     cables: [],
     inventory: Object.keys(families).flatMap((family) => { const selected = parts.filter((p) => familyByPartId[p.id] === family); return selected.length ? [{ id: `${side}-inventory-${family}`, name: families[family]![3], scope: 'robot' as const, basis: 'prepared-callout-units' as const, accounting: 'tracked' as const, quantity: selected.length, partInstanceIds: selected.map((p) => p.id), sourceReferences: [...new Set(selected.map((p) => introduced.get(p.id)!))].map(source) }] : []; }),
-    milestones: [{ id: `${side}-wheel-seated`, title: `${side} wheel and retaining block`, stepId: stepId(book, 6) }, { id: `${side}-outside-seated`, title: `${side} outside reinforcement joined`, stepId: stepId(book, 13) }, { id: `${side}-complete`, title: `${side} source module assembled`, stepId: stepId(book, 24) }],
+    milestones: [{ id: `${side}-wheel-seated`, title: `${side} wheel and retaining block`, stepId: stepId(book, 6) }, { id: `${side}-outside-seated`, title: `${side} outside reinforcement joined`, stepId: stepId(book, 13) }, { id: `${side}-complete`, title: `${side === 'right' ? 'Right' : 'Left'} drive module`, stepId: stepId(book, 24) }],
     sourceMappings: operations.map((op) => ({ source: op.sourceReference!, stepId: op.stepId, operationId: op.id })), attachmentSites, familyByPartId
   };
 }

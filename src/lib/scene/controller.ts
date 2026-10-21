@@ -411,7 +411,7 @@ export class SceneController implements RendererController {
     if (!this.model || this.disposed) return;
     if (frame.compiled.model !== this.model) throw new Error('The assembly frame belongs to a different model.');
     const first = !this.frame;
-    const returningToInventory = frame.timeMs === 0 && this.lastFrameTimeMs !== 0;
+    const returningToStart = frame.timeMs === 0 && this.lastFrameTimeMs !== 0;
     if (first || this.frame?.compiled !== frame.compiled) {
       this.cameraSteps = frame.compiled.stepTimes.map((stepTime) => ({
         startMs: stepTime.startMs,
@@ -443,8 +443,8 @@ export class SceneController implements RendererController {
     this.environmentVisible = frame.environmentVisible.includes(1);
     if (this.environmentVisible && !wasEnvironmentVisible) this.flight = null;
     this.applyFrame();
-    if (first) this.fitBounds('all', false);
-    if (!first && returningToInventory && this.autoCamera && !this.environmentVisible) this.fitBounds('all', false);
+    if (first) this.fitBounds(frame.timeMs === 0 ? 'active' : 'all', false);
+    if (!first && returningToStart && this.autoCamera && !this.environmentVisible) this.fitBounds('active', false);
     const preset = this.currentPreset();
     if (preset !== this.lastPreset) {
       this.lastPreset = preset;
@@ -634,7 +634,7 @@ export class SceneController implements RendererController {
     else this.position.set(160, 130, 200);
     this.camera.position.copy(this.controls.target).add(this.position);
     this.camera.up.set(0, 1, 0);
-    this.fitBounds('all', false);
+    this.fitBounds(this.frame?.timeMs === 0 ? 'active' : 'all', false);
   }
 
   setAutoCamera(enabled: boolean): void {
@@ -642,13 +642,13 @@ export class SceneController implements RendererController {
     if (enabled) {
       const preset = this.currentPreset();
       if (preset) this.applyPreset(preset, true);
-      else if (this.frame?.timeMs === 0) this.fitBounds('all', false);
+      else if (this.frame?.timeMs === 0) this.fitBounds('active', false);
     }
     else this.flight = null;
   }
 
   private currentPreset(): CameraPreset | undefined {
-    // Time zero is the staged inventory view, not the first instruction's close-up.
+    // At time zero the working part is still in the tray, before its instruction pose.
     if (!this.frame || this.frame.timeMs === 0 || this.environmentVisible) return undefined;
     const step = this.cameraSteps[this.frame.stepIndex];
     if (!step) return undefined;

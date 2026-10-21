@@ -2,10 +2,10 @@
   "id": "quality-check",
   "name": "Quality Check Robot",
   "manufacturer": "LEGO Education",
-  "edition": "SPIKE Prime ·2019 Idea Detector + Robot Head",
+  "edition": "Idea Detector + Robot Head · 2019",
   "category": "Expressive sensor robot",
-  "complexity": "Intermediate · two-axis head",
-  "description": "Complete30-numbered-step reconstruction:55 prepared robot units plus8 real loose sample bricks. Source/CAD placement fit remains unchecked; physical A/F axis assignment is unknown.",
+  "complexity": "Intermediate",
+  "description": "Build a color-sensing base and a head that turns and tilts. Prepare four colored samples to try the inspection demonstration. Check the A/F motor wiring against the manual.",
   "schemaVersion": 1,
   "sourceDocuments": [
     {
@@ -37255,9 +37255,7 @@
         "quality-rear-frame",
         "quality-rear-clip-pin"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1500,
       "cameraPreset": {
         "position": [
@@ -37309,9 +37307,7 @@
         "quality-frame-pin-24-104",
         "quality-rear-red-clip"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3750,
       "cameraPreset": {
         "position": [
@@ -37357,9 +37353,7 @@
         "quality-l-beam-left",
         "quality-l-beam-right"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1500,
       "cameraPreset": {
         "position": [
@@ -37405,9 +37399,7 @@
         "quality-hub-crossblock--24",
         "quality-hub-crossblock-24"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1500,
       "cameraPreset": {
         "position": [
@@ -37457,9 +37449,7 @@
         "quality-plate-join-pin-8",
         "quality-plate-join-pin-16"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3000,
       "cameraPreset": {
         "position": [
@@ -37503,9 +37493,7 @@
       "requiredPartInstanceIds": [
         "quality-baseplate"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 750,
       "cameraPreset": {
         "position": [
@@ -37559,9 +37547,7 @@
         "quality-plate-pin-0-32",
         "quality-plate-pin-0-48"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 4500,
       "cameraPreset": {
         "position": [
@@ -37605,9 +37591,7 @@
       "requiredPartInstanceIds": [
         "quality-color-sensor"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 750,
       "cameraPreset": {
         "position": [
@@ -37661,9 +37645,7 @@
         "quality-surround-pin-right-0",
         "quality-surround-pin-right-16"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 4500,
       "cameraPreset": {
         "position": [
@@ -37706,9 +37688,7 @@
         "quality-merge-quality-surround-right"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3200,
       "cameraPreset": {
         "position": [
@@ -37754,9 +37734,7 @@
         "quality-yellow-curve-left",
         "quality-yellow-curve-right"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1500,
       "cameraPreset": {
         "position": [
@@ -37802,9 +37780,7 @@
         "quality-panel-left",
         "quality-panel-right"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1500,
       "cameraPreset": {
         "position": [
@@ -37849,9 +37825,7 @@
       "requiredPartInstanceIds": [
         "quality-hub"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1400,
       "cameraPreset": {
         "position": [
@@ -37899,9 +37873,7 @@
         "quality-disc-pin--56",
         "quality-disc-pin--40"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2250,
       "cameraPreset": {
         "position": [
@@ -37945,9 +37917,7 @@
       "requiredPartInstanceIds": [
         "quality-lower-square"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 750,
       "cameraPreset": {
         "position": [
@@ -37997,9 +37967,7 @@
         "quality-coupling-pin-52--56",
         "quality-coupling-pin-52--40"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 3000,
       "cameraPreset": {
         "position": [
@@ -38041,9 +38009,7 @@
         "quality-merge-quality-lower-bracket"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1600,
       "cameraPreset": {
         "position": [
@@ -38089,9 +38055,7 @@
         "quality-gray-elbow",
         "quality-gray-axle-pin"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1500,
       "cameraPreset": {
         "position": [
@@ -38135,9 +38099,7 @@
       "requiredPartInstanceIds": [
         "quality-plain-gray-pin"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 750,
       "cameraPreset": {
         "position": [
@@ -38179,9 +38141,7 @@
         "quality-merge-quality-gray-coupler"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1600,
       "cameraPreset": {
         "position": [
@@ -38229,9 +38189,7 @@
         "quality-upper-body-pin--32",
         "quality-upper-body-pin--16"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2250,
       "cameraPreset": {
         "position": [
@@ -38279,9 +38237,7 @@
         "quality-sensor-pin-100",
         "quality-sensor-pin-116"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 2250,
       "cameraPreset": {
         "position": [
@@ -38325,9 +38281,7 @@
       "requiredPartInstanceIds": [
         "quality-distance-sensor"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 750,
       "cameraPreset": {
         "position": [
@@ -38371,8 +38325,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified.",
-        "A/F are documented motor ports; which port drives which physical axis is unknown."
+        "The motors use ports A and F, but this guide cannot confirm which port drives turning or tilting. Check the official wiring diagram and your robot before testing."
       ],
       "durationMs": 2250,
       "cameraPreset": {
@@ -38417,10 +38370,9 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified.",
-        "A/F are documented motor ports; which port drives which physical axis is unknown.",
-        "Modeling assumption only: A→lower yaw, F→upper body/pitch. Source verifies two motors at A/F but NOT the physical port-to-axis mapping.",
-        "Modeling assumption only: A→lower yaw, F→upper body/pitch. Source verifies two motors at A/F but NOT the physical port-to-axis mapping."
+        "The motors use ports A and F, but this guide cannot confirm which port drives turning or tilting. Check the official wiring diagram and your robot before testing.",
+        "The demo assumes A turns the head and F tilts it. The physical port-to-axis assignment is unverified; check your wiring before running a program.",
+        "The demo assumes A turns the head and F tilts it. The physical port-to-axis assignment is unverified; check your wiring before running a program."
       ],
       "durationMs": 1300,
       "cameraPreset": {
@@ -38467,9 +38419,7 @@
         "quality-retainer-azure",
         "quality-retainer-axle"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 1500,
       "cameraPreset": {
         "position": [
@@ -38513,9 +38463,7 @@
       "requiredPartInstanceIds": [
         "quality-retainer-magenta"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 750,
       "cameraPreset": {
         "position": [
@@ -38558,8 +38506,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified.",
-        "Nominal display seat beside the upper motor only. Flexible lead geometry is absent; the manual does not dimension the bundle, clip seat, cable lengths or exact route. Pitch parenting is playback ownership, not a rigid physical mount."
+        "Cable-retainer placement and cable routing are approximate in this view. Check the manual and leave enough cable movement for the head to tilt."
       ],
       "durationMs": 1600,
       "cameraPreset": {
@@ -38618,9 +38565,7 @@
         "quality-sample-violet-1",
         "quality-sample-violet-2"
       ],
-      "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified."
-      ],
+      "warnings": [],
       "durationMs": 6000,
       "cameraPreset": {
         "position": [
@@ -38663,8 +38608,7 @@
       ],
       "requiredPartInstanceIds": [],
       "warnings": [
-        "Nominal source/CAD reconstruction; numerical fit is not independently verified.",
-        "A/F are documented motor ports; which port drives which physical axis is unknown."
+        "The motors use ports A and F, but this guide cannot confirm which port drives turning or tilting. Check the official wiring diagram and your robot before testing."
       ],
       "durationMs": 1500,
       "cameraPreset": {

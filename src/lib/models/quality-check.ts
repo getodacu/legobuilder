@@ -96,8 +96,8 @@ for (const [index, color] of ['green', 'blue', 'red', 'violet'].entries()) group
 let step: AssemblyStep;
 function begin(manual: string, number: number, action: AssemblyStep['action'] = 'assembly'): void {
   const row = research.builds['quality-check'].steps.find((entry) => entry.manual === manual && entry.step === number)!;
-  step = { id: `quality-${manual}-step${number}`, title: `${manual === 'idea-detector' ? 'Idea Detector' : 'Robot Head'} · ${number}`, description: row.action, kind: 'numbered-instruction', action, sourceReferences: [source(manual, number)], operationIds: [], requiredPartInstanceIds: [], warnings: ['Nominal source/CAD reconstruction; numerical fit is not independently verified.'], durationMs: 0, cameraPreset: manual === 'robot-head' && [12, 15].includes(number) ? rearCamera : camera };
-  if (manual === 'robot-head' && [11, 12, 17].includes(number)) step.warnings.push('A/F are documented motor ports; which port drives which physical axis is unknown.');
+  step = { id: `quality-${manual}-step${number}`, title: `${manual === 'idea-detector' ? 'Idea Detector' : 'Robot Head'} · ${number}`, description: row.action, kind: 'numbered-instruction', action, sourceReferences: [source(manual, number)], operationIds: [], requiredPartInstanceIds: [], warnings: [], durationMs: 0, cameraPreset: manual === 'robot-head' && [12, 15].includes(number) ? rearCamera : camera };
+  if (manual === 'robot-head' && [11, 12, 17].includes(number)) step.warnings.push('The motors use ports A and F, but this guide cannot confirm which port drives turning or tilting. Check the official wiring diagram and your robot before testing.');
   steps.push(step);
 }
 function record(op: AssemblyOperation): void {
@@ -254,7 +254,7 @@ const retainerSeat = placement(
 retainerSeat.placement = 'diagram-derived';
 for (const id of ['quality-retainer-azure', 'quality-retainer-axle', 'quality-retainer-magenta']) part(id).placementEvidence = retainerSeat;
 operations.find((operation) => operation.id === 'quality-merge-quality-retainer')!.evidence = retainerSeat;
-steps.find((entry) => entry.id === 'quality-robot-head-step15')!.warnings.push(retainerSeat.evidence.note);
+steps.find((entry) => entry.id === 'quality-robot-head-step15')!.warnings.push('Cable-retainer placement and cable routing are approximate in this view. Check the manual and leave enough cable movement for the head to tilt.');
 begin('robot-head', 16);
 for (const color of ['green', 'blue', 'red', 'violet']) {
   const owner = `quality-sample-${color}`, root = roots.get(owner)!;
@@ -288,7 +288,7 @@ for (const [deviceId, port, nativeStub, manual, number] of electrical) {
   connections.push({ id, a: { partInstanceId: device.id, connectionPointId: `${id}-device` }, b: { partInstanceId: hub.id, connectionPointId: `${id}-hub` }, type: 'electrical', installedByOperationId: id, evidence: relation });
   const op: AssemblyOperation = { id, stepId: step.id, operationType: 'connect', partInstanceIds: [device.id, hub.id], fromTransforms: [device.finalTransform, hub.finalTransform], toTransforms: [device.finalTransform, hub.finalTransform], startMs: step.durationMs, durationMs: 650, easing: 'smoothstep', dependencies: [step.operationIds.at(-1) ?? operations.find((entry) => entry.stepId === steps[steps.indexOf(step) - 1]?.id)?.id!].filter(Boolean), cameraPreset: step.cameraPreset, sourceReference: ref, stages: [], parentChanges: [], evidence: relation };
   operations.push(op); step.operationIds.push(id); step.durationMs += op.durationMs;
-  if (assumption) step.warnings.push(note);
+  if (assumption) step.warnings.push('The demo assumes A turns the head and F tilts it. The physical port-to-axis assignment is unverified; check your wiring before running a program.');
   cables.push({ id: `${id}-captive-route`, devicePartInstanceId: device.id, captive: true, fromConnection: id, toConnection: id, controlPoints: [
     { parent: { kind: 'part', id: device.id }, position: nativeLDrawTransform(nativeStub).position },
     { parent: { kind: 'part', id: device.id }, position: [0, 32, 12] },
@@ -402,7 +402,7 @@ const documents: SourceDocument[] = [
   ...sourceDocumentsFor(geometryAssets, selectedMaterials)
 ];
 export const qualityCheck: RobotModel = {
-  id: 'quality-check', name: 'Quality Check Robot', manufacturer: 'LEGO Education', edition: 'SPIKE Prime ·2019 Idea Detector + Robot Head', category: 'Expressive sensor robot', complexity: 'Intermediate · two-axis head', description: 'Complete30-numbered-step reconstruction:55 prepared robot units plus8 real loose sample bricks. Source/CAD placement fit remains unchecked; physical A/F axis assignment is unknown.', schemaVersion: 1,
+  id: 'quality-check', name: 'Quality Check Robot', manufacturer: 'LEGO Education', edition: 'Idea Detector + Robot Head · 2019', category: 'Expressive sensor robot', complexity: 'Intermediate', description: 'Build a color-sensing base and a head that turns and tilts. Prepare four colored samples to try the inspection demonstration. Check the A/F motor wiring against the manual.', schemaVersion: 1,
   sourceDocuments: documents, parts, geometryAssets, materials: selectedMaterials, steps, operations, installations, visibility: [], subassemblies, connections, joints: [yawJoint, pitchJoint], linkageConstraints: [], motors: [
     { id: 'quality-motor-A-assumption', partInstanceId: 'quality-lower-motor', port: 'A', jointId: yawJoint.id, assignmentEvidence: evidence('app-authored', 'App-authored command binding only: modeled A→lower yaw. Physical source A/F port-to-axis mapping remains UNKNOWN and unverified.', [source('robot-head', 17, 20)], 0.35) },
     { id: 'quality-motor-F-assumption', partInstanceId: 'quality-upper-motor', port: 'F', jointId: pitchJoint.id, assignmentEvidence: evidence('app-authored', 'App-authored command binding only: modeled F→upper body/pitch. Physical source A/F port-to-axis mapping remains UNKNOWN and unverified.', [source('robot-head', 17, 20)], 0.35) }
