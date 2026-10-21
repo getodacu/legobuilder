@@ -48,11 +48,11 @@ export class MechanicalOverlays {
     this.distances = new Float32Array(model.connections.length * 2);
     this.geometries = this.positions.map((positions) => new BufferGeometry().setAttribute('position', new BufferAttribute(positions, 3)));
     this.geometries[1].setAttribute('lineDistance', new BufferAttribute(this.distances, 1));
-    this.solid = new LineSegments(this.geometries[0], new LineBasicMaterial({ color: '#006a67', depthTest: false, transparent: true, opacity: 0.85 }));
-    this.inferred = new LineSegments(this.geometries[1], new LineDashedMaterial({ color: '#815000', dashSize: 2, gapSize: 1.5, depthTest: false }));
-    this.axes = new LineSegments(this.geometries[2], new LineBasicMaterial({ color: '#b83d20', depthTest: false }));
-    this.mounts = new Points(this.geometries[3], new PointsMaterial({ color: '#006a67', size: 5, sizeAttenuation: false, depthTest: false }));
-    this.explosion = new LineSegments(this.geometries[4], new LineBasicMaterial({ color: '#555f59', transparent: true, opacity: 0.55, depthTest: true }));
+    this.solid = new LineSegments(this.geometries[0], new LineBasicMaterial({ color: '#65dfcf', depthTest: false, transparent: true, opacity: 0.85 }));
+    this.inferred = new LineSegments(this.geometries[1], new LineDashedMaterial({ color: '#ffd187', dashSize: 2, gapSize: 1.5, depthTest: false }));
+    this.axes = new LineSegments(this.geometries[2], new LineBasicMaterial({ color: '#ff936f', depthTest: false }));
+    this.mounts = new Points(this.geometries[3], new PointsMaterial({ color: '#65dfcf', size: 5, sizeAttenuation: false, depthTest: false }));
+    this.explosion = new LineSegments(this.geometries[4], new LineBasicMaterial({ color: '#b2c3d6', transparent: true, opacity: 0.65, depthTest: true }));
     this.root.add(this.solid, this.inferred, this.axes, this.mounts, this.explosion);
     this.root.renderOrder = 4;
     for (const object of this.root.children) { object.frustumCulled = false; object.renderOrder = 4; }

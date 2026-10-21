@@ -123,14 +123,14 @@
 </div>
 
 <style>
-  .robot-scene { position: relative; width: 100%; height: 100%; min-height: 0; overflow: hidden; background: #f4f1ea; border-radius: 8px; }
+  .robot-scene { position: relative; width: 100%; height: 100%; min-height: 0; overflow: hidden; background: var(--scene); border-radius: 8px; }
   .canvas-host { position: absolute; inset: 0; }
-  .canvas-host :global(canvas:focus-visible) { outline: 3px solid #005fcc; }
-  .scene-status, .scene-error { position: absolute; z-index: 2; left: 16px; right: 16px; top: 16px; padding: 14px 16px; background: #fffdfa; color: #202522; border: 1px solid #555f59; border-radius: 6px; font: 14px/1.5 system-ui, sans-serif; }
-  .scene-error { border-color: #b83d20; }
+  .canvas-host :global(canvas:focus-visible) { outline: 3px solid var(--focus); }
+  .scene-status, .scene-error { position: absolute; z-index: 2; left: 16px; right: 16px; top: 16px; padding: 14px 16px; background: var(--panel); color: var(--ink); border: 1px solid var(--control); border-radius: 6px; font: 14px/1.5 system-ui, sans-serif; }
+  .scene-error { border-color: var(--accent); }
   .scene-error p { margin: 8px 0 0; }
-  .scene-help { position: absolute; z-index: 3; bottom: 12px; left: 12px; max-width: min(340px, calc(100% - 24px)); color: #202522; background: #fffdfaf2; border: 1px solid #555f59; border-radius: 6px; font: 12px/1.5 system-ui, sans-serif; }
+  .scene-help { position: absolute; z-index: 3; bottom: 12px; left: 12px; max-width: min(340px, calc(100% - 24px)); color: var(--ink); background: var(--panel); border: 1px solid var(--control); border-radius: 6px; font: 12px/1.5 system-ui, sans-serif; }
   .scene-help summary { min-height: 44px; padding: 12px; cursor: pointer; box-sizing: border-box; }
-  .scene-help summary:focus-visible { outline: 3px solid #005fcc; outline-offset: 2px; }
+  .scene-help summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
   .scene-help p { margin: 0; padding: 0 12px 12px; }
 </style>

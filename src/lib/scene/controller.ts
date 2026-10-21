@@ -27,6 +27,7 @@ export class SceneController implements RendererController {
   private readonly root = new Group();
   private readonly ground: Mesh<PlaneGeometry, ShadowMaterial>;
   private readonly light = new DirectionalLight('#fff8ef', 3.2);
+  private readonly rimLight = new DirectionalLight('#d2e5ff', 2);
   private readonly grid: GridHelper;
   private readonly environment: WebGLRenderTarget;
   private readonly labelLayer: HTMLDivElement;
@@ -51,8 +52,8 @@ export class SceneController implements RendererController {
   private outlines: Outline[] = [];
   private labels: Label[] = [];
   private readonly edgeGeometries = new Map<BufferGeometry, EdgesGeometry>();
-  private readonly selectedMaterial = new LineBasicMaterial({ color: '#006a67', depthTest: false, transparent: true, opacity: 1 });
-  private readonly activeMaterial = new LineBasicMaterial({ color: '#b83d20', depthTest: false, transparent: true, opacity: 0.9 });
+  private readonly selectedMaterial = new LineBasicMaterial({ color: '#65dfcf', depthTest: false, transparent: true, opacity: 1 });
+  private readonly activeMaterial = new LineBasicMaterial({ color: '#ff936f', depthTest: false, transparent: true, opacity: 0.9 });
   private matrices: Matrix4[] = [];
   private explodeVectors: Vector3[] = [];
   private internalIndices = new Map<string, number>();
@@ -100,30 +101,30 @@ export class SceneController implements RendererController {
     this.renderer = new WebGLRenderer({ canvas, context, antialias: true, alpha: false });
     this.renderer.outputColorSpace = SRGBColorSpace;
     this.renderer.toneMapping = ACESFilmicToneMapping;
-    this.renderer.toneMappingExposure = 1.12;
+    this.renderer.toneMappingExposure = 1;
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = PCFShadowMap;
     this.renderer.setPixelRatio(this.ratio);
-    this.scene.background = new Color('#f4f1ea');
+    this.scene.background = new Color('#303e4e');
     const room = new RoomEnvironment();
     const pmrem = new PMREMGenerator(this.renderer);
     this.environment = pmrem.fromScene(room, 0.04);
     this.scene.environment = this.environment.texture;
-    this.scene.environmentIntensity = 0.55;
+    this.scene.environmentIntensity = 0.75;
     room.dispose(); pmrem.dispose();
-    this.scene.add(new HemisphereLight('#fffdf8', '#aaa89c', 1.7));
+    this.scene.add(new HemisphereLight('#e9f2ff', '#65758a', 1.7));
     this.light.position.set(-160, 300, 180);
     this.light.castShadow = true;
     this.light.shadow.mapSize.set(1024, 1024);
     this.light.shadow.normalBias = 0.12;
     this.light.shadow.bias = -0.0001;
     this.light.shadow.radius = 4;
-    this.scene.add(this.light, this.light.target, this.root);
-    this.ground = new Mesh(new PlaneGeometry(1, 1), new ShadowMaterial({ color: '#44493c', opacity: 0.16 }));
+    this.scene.add(this.light, this.light.target, this.rimLight, this.rimLight.target, this.root);
+    this.ground = new Mesh(new PlaneGeometry(1, 1), new ShadowMaterial({ color: '#050a10', opacity: 0.32 }));
     this.ground.rotation.x = -Math.PI / 2;
     this.ground.receiveShadow = true;
     this.scene.add(this.ground);
-    this.grid = new GridHelper(1000, 100, '#b9beb4', '#deded4');
+    this.grid = new GridHelper(1000, 100, '#788ba0', '#46586b');
     this.grid.visible = false;
     this.scene.add(this.grid);
     canvas.tabIndex = 0;
@@ -289,10 +290,10 @@ export class SceneController implements RendererController {
           }
         }
         const label = document.createElement('div');
-        label.style.cssText = 'position:absolute;left:0;top:0;display:none;max-width:220px;padding:4px 7px 4px 14px;border-left:2px solid #006a67;border-radius:2px;background:#fffdfaee;color:#202522;font:11px/1.4 ui-monospace,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 1px 3px #20252220;';
+        label.style.cssText = 'position:absolute;left:0;top:0;display:none;max-width:220px;padding:4px 7px 4px 14px;border-left:2px solid var(--teal);border-radius:2px;background:var(--panel);color:var(--ink);font:11px/1.4 ui-monospace,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 1px 3px #00000066;';
         label.textContent = `${part.name} · ${part.id}`;
         const leader = document.createElement('div');
-        leader.style.cssText = 'position:absolute;left:0;top:0;display:none;width:12px;height:1px;background:#006a67;';
+        leader.style.cssText = 'position:absolute;left:0;top:0;display:none;width:12px;height:1px;background:var(--teal);';
         this.labelLayer.append(leader, label); this.labels.push({ element: label, leader, index });
       }
       this.batches = [...groups.values()];
@@ -716,6 +717,8 @@ export class SceneController implements RendererController {
     this.grid.position.set(center.x, floorY + 0.05, center.z);
     this.light.position.copy(center).add(this.position.set(-span, span * 2, span));
     this.light.target.position.copy(center);
+    this.rimLight.position.copy(center).add(this.position.set(span, span, -span));
+    this.rimLight.target.position.copy(center);
     const camera = this.light.shadow.camera;
     camera.left = camera.bottom = -span; camera.right = camera.top = span;
     camera.near = 0.1; camera.far = span * 6; camera.updateProjectionMatrix();

@@ -55,13 +55,13 @@ function unavailableCoverage(steps: number, units: number | undefined, note: str
 function available(id: string): Extract<CatalogEntry, { status: 'available' }> {
   const summary = (authoredSummaries as unknown as { identity: ModelIdentity; coverage: ModelCoverage }[]).find((entry) => entry.identity.id === id);
   if (!summary) throw new Error(`Missing published model metadata: ${id}`);
-  return { status: 'available', ...summary, modelUrl: `/models/${id}/manifest.json`, previewUrl: `/previews/${id}.webp` };
+  return { status: 'available', ...summary, modelUrl: `/models/${id}/manifest.json`, previewUrl: `/previews/${id}.png` };
 }
 
 
 export const catalog: CatalogEntry[] = [
   { status: 'available', identity: advancedDrivingBaseIdentity, modelUrl: '/models/advanced-driving-base/manifest.json',
-    previewUrl: '/previews/advanced-driving-base.webp', coverage: advancedDrivingBaseCoverage },
+    previewUrl: '/previews/advanced-driving-base.png', coverage: advancedDrivingBaseCoverage },
   available('robotic-hand'),
   available('quality-check'),
   available('package-sorter'),

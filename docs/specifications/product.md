@@ -34,7 +34,7 @@ Available models have attractive previews generated from actual runtime geometry
 
 ## Workspace and source workflow
 
-The original warm off-white/graphite laboratory workbench is specified in [visual design](visual-design.md). Desktop uses left instructions/sources, central 3D, right inventory/inspection and persistent bottom transport. Panels collapse into accessible drawers/sheets on smaller screens without losing warnings, source access, step state or inventory. No horizontal mobile overflow.
+The original dark graphite/slate laboratory workbench is specified in [visual design](visual-design.md). Desktop uses left instructions/sources, central 3D, right inventory/inspection and persistent bottom transport. Panels collapse into accessible drawers/sheets on smaller screens without losing warnings, source access, step state or inventory. No horizontal mobile overflow.
 
 Each active step shows an original concise instruction, current module/subassembly, required parts with quantities, operation verb, mounting relationship, warnings, exact document/page/printed-step/figure reference, and evidence classification. Use actual part previews or independently authored schematics; official page imagery, PDF scans and program artwork remain private unless permission is obtained. Always link the official source. Export metadata is not a claimed publication revision.
 

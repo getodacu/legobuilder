@@ -1,0 +1,704 @@
+- generic [ref=e2]:
+  - link "Skip to workbench" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3395]:
+    - banner [ref=e3396]:
+      - button "Back to build catalog" [ref=e3397] [cursor=pointer]: RoboBuild
+      - generic [ref=e3399]:
+        - text: LEGO Education / Expressive sensor robot
+        - heading "Quality Check Robot" [level=1] [ref=e3400]
+      - generic [ref=e3401]: 30/30 authored · new fits unverified
+      - button "Keyboard help ?" [ref=e3402] [cursor=pointer]:
+        - text: Keyboard help
+        - generic [ref=e3403]: "?"
+    - generic [ref=e3404]:
+      - generic [ref=e3405]: SPIKE Prime ·2019 Idea Detector + Robot Head
+      - generic [ref=e3406]:
+        - button "Instructions" [expanded] [ref=e3407] [cursor=pointer]
+        - button "Inventory & inspection" [expanded] [ref=e3408] [cursor=pointer]
+    - main [ref=e3409]:
+      - complementary "Instructions and sources" [ref=e3410]:
+        - generic [ref=e3411]:
+          - heading "Instructions" [level=2] [ref=e3412]
+          - button "Collapse instructions" [ref=e3413] [cursor=pointer]: ×
+        - generic [ref=e3414]:
+          - paragraph [ref=e3415]: Current module · view
+          - generic [ref=e3416]:
+            - text: Implemented source steps
+            - combobox "Implemented source steps" [ref=e3417]:
+              - option "Idea Detector · 1"
+              - option "Idea Detector · 2"
+              - option "Idea Detector · 3"
+              - option "Idea Detector · 4"
+              - option "Idea Detector · 5"
+              - option "Idea Detector · 6"
+              - option "Idea Detector · 7"
+              - option "Idea Detector · 8"
+              - option "Idea Detector · 9"
+              - option "Idea Detector · 10"
+              - option "Idea Detector · 11"
+              - option "Idea Detector · 12"
+              - option "Idea Detector · 13"
+              - option "Robot Head · 1"
+              - option "Robot Head · 2"
+              - option "Robot Head · 3"
+              - option "Robot Head · 4"
+              - option "Robot Head · 5"
+              - option "Robot Head · 6"
+              - option "Robot Head · 7"
+              - option "Robot Head · 8"
+              - option "Robot Head · 9"
+              - option "Robot Head · 10"
+              - option "Robot Head · 11"
+              - option "Robot Head · 12"
+              - option "Robot Head · 13"
+              - option "Robot Head · 14"
+              - option "Robot Head · 15"
+              - option "Robot Head · 16"
+              - option "Robot Head · 17" [selected]
+          - heading "Robot Head · 17" [level=3] [ref=e4044]
+          - paragraph [ref=e3419]: Show complete combined robot and four separate sample packages; turn/review view.
+          - generic [ref=e4045]: Source view-only step. Camera guidance changes; physical parts and counts do not.
+          - generic [ref=e3422]:
+            - text: Original CAD instruction view
+            - paragraph [ref=e3423]: The live center view shows the actual components for this instruction. No official manual images are reproduced.
+            - button "Frame active operation ↗" [ref=e3424] [cursor=pointer]
+          - heading "Required hardware 0" [level=3] [ref=e4046]
+          - paragraph [ref=e4047]: No additional hardware in this instruction.
+          - generic [ref=e3437]:
+            - generic [ref=e3438]:
+              - strong [ref=e3439]: Warning / uncertainty
+              - paragraph [ref=e3440]: Nominal source/CAD reconstruction; numerical fit is not independently verified.
+            - generic [ref=e4048]:
+              - strong [ref=e4049]: Warning / uncertainty
+              - paragraph [ref=e4050]: A/F are documented motor ports; which port drives which physical axis is unknown.
+          - heading "Instruction evidence" [level=3] [ref=e3441]
+          - list [ref=e3442]:
+            - listitem [ref=e3443]:
+              - link "Quality Check Robot / Robot Head / book 2 of 2 ↗" [ref=e4051] [cursor=pointer]:
+                - /url: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt7f40beca9b715331/5f8802ef18cd5f0f67ac48f8/place-your-order-bi-pdf-book2of2.pdf?locale=en-us#page=19
+              - generic [ref=e3445]: PDF page 19 · printed instruction 17
+              - generic [ref=e3446]: Source confidence 100% · evidence rating, not accuracy
+          - group [ref=e3447]:
+            - generic "Browse original manuals" [ref=e3448] [cursor=pointer]
+            - generic [ref=e3449]:
+              - text: Document
+              - combobox "Document" [ref=e3450]:
+                - option "Quality Check Robot / Idea Detector / book 1 of 2"
+                - option "Quality Check Robot / Robot Head / book 2 of 2" [selected]
+            - generic [ref=e3451]:
+              - text: One-based PDF page
+              - spinbutton "One-based PDF page" [ref=e3452]: "19"
+            - link "Open official page 19 ↗" [ref=e4052] [cursor=pointer]:
+              - /url: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt7f40beca9b715331/5f8802ef18cd5f0f67ac48f8/place-your-order-bi-pdf-book2of2.pdf?locale=en-us#page=19
+            - paragraph [ref=e3454]: Reading a page does not seek. Only an explicitly mapped figure below changes the assembly.
+            - button "Seek instruction 17 →" [ref=e4053] [cursor=pointer]
+          - group [ref=e3456]:
+            - generic "Assembly status & viewing" [ref=e3457] [cursor=pointer]
+          - group [ref=e3458]:
+            - generic "Whole-source coverage & limitations" [ref=e3459] [cursor=pointer]
+          - group [ref=e3460]:
+            - generic "Geometry attribution & licenses" [ref=e3461] [cursor=pointer]
+          - group [ref=e3462]:
+            - generic "Material evidence" [ref=e3463] [cursor=pointer]
+          - paragraph [ref=e3464]: Independent educational reconstruction. Not affiliated with or endorsed by the manufacturer. Source documents are linked, not redistributed.
+      - region "3D assembly workbench" [ref=e3465]:
+        - generic [ref=e3466]:
+          - group "View mode" [ref=e3467]:
+            - button "Studio" [pressed] [ref=e3468] [cursor=pointer]
+            - button "Technical" [ref=e3469] [cursor=pointer]
+            - button "Explode" [ref=e3470] [cursor=pointer]
+            - button "Inspection" [ref=e3471] [cursor=pointer]
+          - group [ref=e3472]:
+            - generic "View options" [ref=e3473] [cursor=pointer]
+        - generic [ref=e3474]:
+          - generic [ref=e3475]:
+            - img "Interactive assembly. Arrow keys orbit; Shift and arrow keys pan; plus and minus zoom; R resets; F focuses active parts. Part selection is also available in inventory." [ref=e3477]
+            - group [ref=e3478]:
+              - generic "Camera help" [ref=e3479] [cursor=pointer]
+          - generic:
+            - generic: Source-backed assembly
+            - strong: Robot Head · 17
+        - generic [ref=e3480]:
+          - generic [ref=e3481]:
+            - button "Reset view" [ref=e3482] [cursor=pointer]
+            - button "Fit whole" [ref=e3483] [cursor=pointer]
+            - button "Focus active" [ref=e3484] [cursor=pointer]
+            - button "Fit module" [disabled] [ref=e3485]
+          - generic [ref=e3486]: Auto camera
+        - generic "Assembly counts" [ref=e3488]:
+          - generic [ref=e3489]:
+            - strong [ref=e3490]: 55/55
+            - text: units installed
+          - generic [ref=e3491]:
+            - strong [ref=e3492]: "0"
+            - text: remaining
+          - generic [ref=e3493]:
+            - strong [ref=e3494]: 30/30
+            - text: source steps
+        - region "Post-assembly demonstration" [ref=e3495]:
+          - button "Enter post-assembly demonstration" [ref=e4054] [cursor=pointer]
+          - paragraph [ref=e3497]: 0/30 source steps verified. Placement remains unchecked; demonstration availability is not a verified-robot seal.
+        - generic [ref=e3498]:
+          - generic "Nominal source/CAD reconstruction; numerical fit is not independently verified." [ref=e3499]:
+            - strong [ref=e3500]: "Step warning:"
+            - text: Nominal source/CAD reconstruction; numerical fit is not independently verified.
+          - button "Read warnings" [ref=e4055] [cursor=pointer]
+      - complementary "Inventory and inspection" [ref=e3502]:
+        - generic [ref=e3503]:
+          - heading "Parts & evidence" [level=2] [ref=e3504]
+          - button "Collapse inventory" [ref=e3505] [cursor=pointer]: ×
+        - group "Parts panel" [ref=e3506]:
+          - button "Inventory" [pressed] [ref=e3507] [cursor=pointer]
+          - button "Inspection" [ref=e3508] [cursor=pointer]
+        - generic [ref=e3509]:
+          - generic [ref=e3510]:
+            - text: Search family, geometry or instance
+            - searchbox "Search family, geometry or instance" [ref=e3511]
+          - generic [ref=e3512]:
+            - text: Inventory scope
+            - combobox "Inventory scope" [ref=e3513]:
+              - option "Robot & samples (separate scopes)" [selected]
+              - option "Robot only"
+              - option "Samples only"
+          - paragraph [ref=e3514]: 63 individual instances shown. Placement verification remains incomplete, independently of inventory coverage. Select a row to inspect its actual CAD instance.
+          - list [ref=e3515]:
+            - listitem [ref=e3516]:
+              - 'button "Black rectangular open Technic frame ×1 quality-rear-frame Geometry (LDraw): 64179 Installed · robot" [ref=e4056] [cursor=pointer]':
+                - generic [ref=e3518]:
+                  - strong [ref=e3519]: Black rectangular open Technic frame
+                  - generic [ref=e3520]: ×1
+                - generic [ref=e3521]: quality-rear-frame
+                - generic [ref=e3522]: "Geometry (LDraw): 64179"
+                - generic [ref=e3523]: Installed · robot
+            - listitem [ref=e3524]:
+              - 'button "Tan axle/pin connector ×1 quality-rear-clip-pin Geometry (LDraw): 3749 Installed · robot" [ref=e4057] [cursor=pointer]':
+                - generic [ref=e3526]:
+                  - strong [ref=e3527]: Tan axle/pin connector
+                  - generic [ref=e3528]: ×1
+                - generic [ref=e3529]: quality-rear-clip-pin
+                - generic [ref=e3530]: "Geometry (LDraw): 3749"
+                - generic [ref=e3531]: Installed · robot
+            - listitem [ref=e3532]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-frame-pin--24-72 Geometry (LDraw): 2780 Installed · robot" [ref=e4058] [cursor=pointer]':
+                - generic [ref=e3534]:
+                  - strong [ref=e3535]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3536]: ×1
+                - generic [ref=e3537]: quality-frame-pin--24-72
+                - generic [ref=e3538]: "Geometry (LDraw): 2780"
+                - generic [ref=e3539]: Installed · robot
+            - listitem [ref=e3540]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-frame-pin--24-104 Geometry (LDraw): 2780 Installed · robot" [ref=e4059] [cursor=pointer]':
+                - generic [ref=e3542]:
+                  - strong [ref=e3543]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3544]: ×1
+                - generic [ref=e3545]: quality-frame-pin--24-104
+                - generic [ref=e3546]: "Geometry (LDraw): 2780"
+                - generic [ref=e3547]: Installed · robot
+            - listitem [ref=e3548]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-frame-pin-24-72 Geometry (LDraw): 2780 Installed · robot" [ref=e4060] [cursor=pointer]':
+                - generic [ref=e3550]:
+                  - strong [ref=e3551]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3552]: ×1
+                - generic [ref=e3553]: quality-frame-pin-24-72
+                - generic [ref=e3554]: "Geometry (LDraw): 2780"
+                - generic [ref=e3555]: Installed · robot
+            - listitem [ref=e3556]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-frame-pin-24-104 Geometry (LDraw): 2780 Installed · robot" [ref=e4061] [cursor=pointer]':
+                - generic [ref=e3558]:
+                  - strong [ref=e3559]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3560]: ×1
+                - generic [ref=e3561]: quality-frame-pin-24-104
+                - generic [ref=e3562]: "Geometry (LDraw): 2780"
+                - generic [ref=e3563]: Installed · robot
+            - listitem [ref=e3564]:
+              - 'button "Red small connector at rear of detector frame ×1 quality-rear-red-clip Geometry (LDraw): 49283 Installed · robot" [ref=e4062] [cursor=pointer]':
+                - generic [ref=e3566]:
+                  - strong [ref=e3567]: Red small connector at rear of detector frame
+                  - generic [ref=e3568]: ×1
+                - generic [ref=e3569]: quality-rear-red-clip
+                - generic [ref=e3570]: "Geometry (LDraw): 49283"
+                - generic [ref=e3571]: Installed · robot
+            - listitem [ref=e3572]:
+              - 'button "Azure L-shaped perforated beam ×1 quality-l-beam-left Geometry (LDraw): 32526 Installed · robot" [ref=e4063] [cursor=pointer]':
+                - generic [ref=e3574]:
+                  - strong [ref=e3575]: Azure L-shaped perforated beam
+                  - generic [ref=e3576]: ×1
+                - generic [ref=e3577]: quality-l-beam-left
+                - generic [ref=e3578]: "Geometry (LDraw): 32526"
+                - generic [ref=e3579]: Installed · robot
+            - listitem [ref=e3580]:
+              - 'button "Azure L-shaped perforated beam ×1 quality-l-beam-right Geometry (LDraw): 32526 Installed · robot" [ref=e4064] [cursor=pointer]':
+                - generic [ref=e3582]:
+                  - strong [ref=e3583]: Azure L-shaped perforated beam
+                  - generic [ref=e3584]: ×1
+                - generic [ref=e3585]: quality-l-beam-right
+                - generic [ref=e3586]: "Geometry (LDraw): 32526"
+                - generic [ref=e3587]: Installed · robot
+            - listitem [ref=e3588]:
+              - 'button "Light bluish gray 1 x 3 cross block with four integral pins (two on each face) ×1 quality-hub-crossblock--24 Geometry (LDraw): 48989 Installed · robot" [ref=e4065] [cursor=pointer]':
+                - generic [ref=e3590]:
+                  - strong [ref=e3591]: Light bluish gray 1 x 3 cross block with four integral pins (two on each face)
+                  - generic [ref=e3592]: ×1
+                - generic [ref=e3593]: quality-hub-crossblock--24
+                - generic [ref=e3594]: "Geometry (LDraw): 48989"
+                - generic [ref=e3595]: Installed · robot
+            - listitem [ref=e3596]:
+              - 'button "Light bluish gray 1 x 3 cross block with four integral pins (two on each face) ×1 quality-hub-crossblock-24 Geometry (LDraw): 48989 Installed · robot" [ref=e4066] [cursor=pointer]':
+                - generic [ref=e3598]:
+                  - strong [ref=e3599]: Light bluish gray 1 x 3 cross block with four integral pins (two on each face)
+                  - generic [ref=e3600]: ×1
+                - generic [ref=e3601]: quality-hub-crossblock-24
+                - generic [ref=e3602]: "Geometry (LDraw): 48989"
+                - generic [ref=e3603]: Installed · robot
+            - listitem [ref=e3604]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-join-pin--16 Geometry (LDraw): 2780 Installed · robot" [ref=e4067] [cursor=pointer]':
+                - generic [ref=e3606]:
+                  - strong [ref=e3607]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3608]: ×1
+                - generic [ref=e3609]: quality-plate-join-pin--16
+                - generic [ref=e3610]: "Geometry (LDraw): 2780"
+                - generic [ref=e3611]: Installed · robot
+            - listitem [ref=e3612]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-join-pin--8 Geometry (LDraw): 2780 Installed · robot" [ref=e4068] [cursor=pointer]':
+                - generic [ref=e3614]:
+                  - strong [ref=e3615]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3616]: ×1
+                - generic [ref=e3617]: quality-plate-join-pin--8
+                - generic [ref=e3618]: "Geometry (LDraw): 2780"
+                - generic [ref=e3619]: Installed · robot
+            - listitem [ref=e3620]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-join-pin-8 Geometry (LDraw): 2780 Installed · robot" [ref=e4069] [cursor=pointer]':
+                - generic [ref=e3622]:
+                  - strong [ref=e3623]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3624]: ×1
+                - generic [ref=e3625]: quality-plate-join-pin-8
+                - generic [ref=e3626]: "Geometry (LDraw): 2780"
+                - generic [ref=e3627]: Installed · robot
+            - listitem [ref=e3628]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-join-pin-16 Geometry (LDraw): 2780 Installed · robot" [ref=e4070] [cursor=pointer]':
+                - generic [ref=e3630]:
+                  - strong [ref=e3631]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3632]: ×1
+                - generic [ref=e3633]: quality-plate-join-pin-16
+                - generic [ref=e3634]: "Geometry (LDraw): 2780"
+                - generic [ref=e3635]: Installed · robot
+            - listitem [ref=e3636]:
+              - 'button "Yellow perforated rectangular base plate ×1 quality-baseplate Geometry (LDraw): 39369 Installed · robot" [ref=e4071] [cursor=pointer]':
+                - generic [ref=e3638]:
+                  - strong [ref=e3639]: Yellow perforated rectangular base plate
+                  - generic [ref=e3640]: ×1
+                - generic [ref=e3641]: quality-baseplate
+                - generic [ref=e3642]: "Geometry (LDraw): 39369"
+                - generic [ref=e3643]: Installed · robot
+            - listitem [ref=e3644]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-pin--8--48 Geometry (LDraw): 2780 Installed · robot" [ref=e4072] [cursor=pointer]':
+                - generic [ref=e3646]:
+                  - strong [ref=e3647]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3648]: ×1
+                - generic [ref=e3649]: quality-plate-pin--8--48
+                - generic [ref=e3650]: "Geometry (LDraw): 2780"
+                - generic [ref=e3651]: Installed · robot
+            - listitem [ref=e3652]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-pin-8--48 Geometry (LDraw): 2780 Installed · robot" [ref=e4073] [cursor=pointer]':
+                - generic [ref=e3654]:
+                  - strong [ref=e3655]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3656]: ×1
+                - generic [ref=e3657]: quality-plate-pin-8--48
+                - generic [ref=e3658]: "Geometry (LDraw): 2780"
+                - generic [ref=e3659]: Installed · robot
+            - listitem [ref=e3660]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-pin--8-8 Geometry (LDraw): 2780 Installed · robot" [ref=e4074] [cursor=pointer]':
+                - generic [ref=e3662]:
+                  - strong [ref=e3663]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3664]: ×1
+                - generic [ref=e3665]: quality-plate-pin--8-8
+                - generic [ref=e3666]: "Geometry (LDraw): 2780"
+                - generic [ref=e3667]: Installed · robot
+            - listitem [ref=e3668]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-pin-8-8 Geometry (LDraw): 2780 Installed · robot" [ref=e4075] [cursor=pointer]':
+                - generic [ref=e3670]:
+                  - strong [ref=e3671]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3672]: ×1
+                - generic [ref=e3673]: quality-plate-pin-8-8
+                - generic [ref=e3674]: "Geometry (LDraw): 2780"
+                - generic [ref=e3675]: Installed · robot
+            - listitem [ref=e3676]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-pin-0-32 Geometry (LDraw): 2780 Installed · robot" [ref=e4076] [cursor=pointer]':
+                - generic [ref=e3678]:
+                  - strong [ref=e3679]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3680]: ×1
+                - generic [ref=e3681]: quality-plate-pin-0-32
+                - generic [ref=e3682]: "Geometry (LDraw): 2780"
+                - generic [ref=e3683]: Installed · robot
+            - listitem [ref=e3684]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-plate-pin-0-48 Geometry (LDraw): 2780 Installed · robot" [ref=e4077] [cursor=pointer]':
+                - generic [ref=e3686]:
+                  - strong [ref=e3687]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3688]: ×1
+                - generic [ref=e3689]: quality-plate-pin-0-48
+                - generic [ref=e3690]: "Geometry (LDraw): 2780"
+                - generic [ref=e3691]: Installed · robot
+            - listitem [ref=e3692]:
+              - 'button "SPIKE Color Sensor with captive cable ×1 quality-color-sensor Geometry (LDraw): 37308 Installed · robot" [ref=e4078] [cursor=pointer]':
+                - generic [ref=e3694]:
+                  - strong [ref=e3695]: SPIKE Color Sensor with captive cable
+                  - generic [ref=e3696]: ×1
+                - generic [ref=e3697]: quality-color-sensor
+                - generic [ref=e3698]: "Geometry (LDraw): 37308"
+                - generic [ref=e3699]: Installed · robot
+            - listitem [ref=e3700]:
+              - 'button "Yellow 2 x 4 studded brick with three vertical axle holes ×1 quality-yellow-brick-left Geometry (LDraw): 39789 Installed · robot" [ref=e4079] [cursor=pointer]':
+                - generic [ref=e3702]:
+                  - strong [ref=e3703]: Yellow 2 x 4 studded brick with three vertical axle holes
+                  - generic [ref=e3704]: ×1
+                - generic [ref=e3705]: quality-yellow-brick-left
+                - generic [ref=e3706]: "Geometry (LDraw): 39789"
+                - generic [ref=e3707]: Installed · robot
+            - listitem [ref=e3708]:
+              - 'button "Tan axle/pin connector ×1 quality-surround-pin-left-0 Geometry (LDraw): 3749 Installed · robot" [ref=e4080] [cursor=pointer]':
+                - generic [ref=e3710]:
+                  - strong [ref=e3711]: Tan axle/pin connector
+                  - generic [ref=e3712]: ×1
+                - generic [ref=e3713]: quality-surround-pin-left-0
+                - generic [ref=e3714]: "Geometry (LDraw): 3749"
+                - generic [ref=e3715]: Installed · robot
+            - listitem [ref=e3716]:
+              - 'button "Tan axle/pin connector ×1 quality-surround-pin-left-16 Geometry (LDraw): 3749 Installed · robot" [ref=e4081] [cursor=pointer]':
+                - generic [ref=e3718]:
+                  - strong [ref=e3719]: Tan axle/pin connector
+                  - generic [ref=e3720]: ×1
+                - generic [ref=e3721]: quality-surround-pin-left-16
+                - generic [ref=e3722]: "Geometry (LDraw): 3749"
+                - generic [ref=e3723]: Installed · robot
+            - listitem [ref=e3724]:
+              - 'button "Yellow 2 x 4 studded brick with three vertical axle holes ×1 quality-yellow-brick-right Geometry (LDraw): 39789 Installed · robot" [ref=e4082] [cursor=pointer]':
+                - generic [ref=e3726]:
+                  - strong [ref=e3727]: Yellow 2 x 4 studded brick with three vertical axle holes
+                  - generic [ref=e3728]: ×1
+                - generic [ref=e3729]: quality-yellow-brick-right
+                - generic [ref=e3730]: "Geometry (LDraw): 39789"
+                - generic [ref=e3731]: Installed · robot
+            - listitem [ref=e3732]:
+              - 'button "Tan axle/pin connector ×1 quality-surround-pin-right-0 Geometry (LDraw): 3749 Installed · robot" [ref=e4083] [cursor=pointer]':
+                - generic [ref=e3734]:
+                  - strong [ref=e3735]: Tan axle/pin connector
+                  - generic [ref=e3736]: ×1
+                - generic [ref=e3737]: quality-surround-pin-right-0
+                - generic [ref=e3738]: "Geometry (LDraw): 3749"
+                - generic [ref=e3739]: Installed · robot
+            - listitem [ref=e3740]:
+              - 'button "Tan axle/pin connector ×1 quality-surround-pin-right-16 Geometry (LDraw): 3749 Installed · robot" [ref=e4084] [cursor=pointer]':
+                - generic [ref=e3742]:
+                  - strong [ref=e3743]: Tan axle/pin connector
+                  - generic [ref=e3744]: ×1
+                - generic [ref=e3745]: quality-surround-pin-right-16
+                - generic [ref=e3746]: "Geometry (LDraw): 3749"
+                - generic [ref=e3747]: Installed · robot
+            - listitem [ref=e3748]:
+              - 'button "Yellow curved top/slope element ×1 quality-yellow-curve-left Geometry (LDraw): 24309 Installed · robot" [ref=e4085] [cursor=pointer]':
+                - generic [ref=e3750]:
+                  - strong [ref=e3751]: Yellow curved top/slope element
+                  - generic [ref=e3752]: ×1
+                - generic [ref=e3753]: quality-yellow-curve-left
+                - generic [ref=e3754]: "Geometry (LDraw): 24309"
+                - generic [ref=e3755]: Installed · robot
+            - listitem [ref=e3756]:
+              - 'button "Yellow curved top/slope element ×1 quality-yellow-curve-right Geometry (LDraw): 24309 Installed · robot" [ref=e4086] [cursor=pointer]':
+                - generic [ref=e3758]:
+                  - strong [ref=e3759]: Yellow curved top/slope element
+                  - generic [ref=e3760]: ×1
+                - generic [ref=e3761]: quality-yellow-curve-right
+                - generic [ref=e3762]: "Geometry (LDraw): 24309"
+                - generic [ref=e3763]: Installed · robot
+            - listitem [ref=e3764]:
+              - 'button "One handed azure long curved panel shown at detector step 12 ×1 quality-panel-left Geometry (LDraw): 41750 Installed · robot" [ref=e4087] [cursor=pointer]':
+                - generic [ref=e3766]:
+                  - strong [ref=e3767]: One handed azure long curved panel shown at detector step 12
+                  - generic [ref=e3768]: ×1
+                - generic [ref=e3769]: quality-panel-left
+                - generic [ref=e3770]: "Geometry (LDraw): 41750"
+                - generic [ref=e3771]: Installed · robot
+            - listitem [ref=e3772]:
+              - 'button "Opposite handed azure long curved panel shown at detector step 12 ×1 quality-panel-right Geometry (LDraw): 41749 Installed · robot" [ref=e4088] [cursor=pointer]':
+                - generic [ref=e3774]:
+                  - strong [ref=e3775]: Opposite handed azure long curved panel shown at detector step 12
+                  - generic [ref=e3776]: ×1
+                - generic [ref=e3777]: quality-panel-right
+                - generic [ref=e3778]: "Geometry (LDraw): 41749"
+                - generic [ref=e3779]: Installed · robot
+            - listitem [ref=e3780]:
+              - 'button "Yellow/white SPIKE Prime Large Hub, prepared with rechargeable battery ×1 quality-hub Geometry (LDraw): 45601c01 Installed · robot" [ref=e4089] [cursor=pointer]':
+                - generic [ref=e3782]:
+                  - strong [ref=e3783]: Yellow/white SPIKE Prime Large Hub, prepared with rechargeable battery
+                  - generic [ref=e3784]: ×1
+                - generic [ref=e3785]: quality-hub
+                - generic [ref=e3786]: "Geometry (LDraw): 45601c01"
+                - generic [ref=e3787]: Installed · robot
+            - listitem [ref=e3788]:
+              - 'button "SPIKE medium angular motor with captive cable ×1 quality-lower-motor Geometry (LDraw): 54696p01 Installed · robot" [ref=e4090] [cursor=pointer]':
+                - generic [ref=e3790]:
+                  - strong [ref=e3791]: SPIKE medium angular motor with captive cable
+                  - generic [ref=e3792]: ×1
+                - generic [ref=e3793]: quality-lower-motor
+                - generic [ref=e3794]: "Geometry (LDraw): 54696p01"
+                - generic [ref=e3795]: Installed · robot
+            - listitem [ref=e3796]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-disc-pin--56 Geometry (LDraw): 2780 Installed · robot" [ref=e4091] [cursor=pointer]':
+                - generic [ref=e3798]:
+                  - strong [ref=e3799]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3800]: ×1
+                - generic [ref=e3801]: quality-disc-pin--56
+                - generic [ref=e3802]: "Geometry (LDraw): 2780"
+                - generic [ref=e3803]: Installed · robot
+            - listitem [ref=e3804]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-disc-pin--40 Geometry (LDraw): 2780 Installed · robot" [ref=e4092] [cursor=pointer]':
+                - generic [ref=e3806]:
+                  - strong [ref=e3807]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3808]: ×1
+                - generic [ref=e3809]: quality-disc-pin--40
+                - generic [ref=e3810]: "Geometry (LDraw): 2780"
+                - generic [ref=e3811]: Installed · robot
+            - listitem [ref=e3812]:
+              - 'button "Magenta square multi-hole right-angle connector ×1 quality-lower-square Geometry (LDraw): 39793 Installed · robot" [ref=e4093] [cursor=pointer]':
+                - generic [ref=e3814]:
+                  - strong [ref=e3815]: Magenta square multi-hole right-angle connector
+                  - generic [ref=e3816]: ×1
+                - generic [ref=e3817]: quality-lower-square
+                - generic [ref=e3818]: "Geometry (LDraw): 39793"
+                - generic [ref=e3819]: Installed · robot
+            - listitem [ref=e3820]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-coupling-pin-44--48 Geometry (LDraw): 2780 Installed · robot" [ref=e4094] [cursor=pointer]':
+                - generic [ref=e3822]:
+                  - strong [ref=e3823]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3824]: ×1
+                - generic [ref=e3825]: quality-coupling-pin-44--48
+                - generic [ref=e3826]: "Geometry (LDraw): 2780"
+                - generic [ref=e3827]: Installed · robot
+            - listitem [ref=e3828]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-coupling-pin-60--48 Geometry (LDraw): 2780 Installed · robot" [ref=e4095] [cursor=pointer]':
+                - generic [ref=e3830]:
+                  - strong [ref=e3831]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3832]: ×1
+                - generic [ref=e3833]: quality-coupling-pin-60--48
+                - generic [ref=e3834]: "Geometry (LDraw): 2780"
+                - generic [ref=e3835]: Installed · robot
+            - listitem [ref=e3836]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-coupling-pin-52--56 Geometry (LDraw): 2780 Installed · robot" [ref=e4096] [cursor=pointer]':
+                - generic [ref=e3838]:
+                  - strong [ref=e3839]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3840]: ×1
+                - generic [ref=e3841]: quality-coupling-pin-52--56
+                - generic [ref=e3842]: "Geometry (LDraw): 2780"
+                - generic [ref=e3843]: Installed · robot
+            - listitem [ref=e3844]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-coupling-pin-52--40 Geometry (LDraw): 2780 Installed · robot" [ref=e4097] [cursor=pointer]':
+                - generic [ref=e3846]:
+                  - strong [ref=e3847]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3848]: ×1
+                - generic [ref=e3849]: quality-coupling-pin-52--40
+                - generic [ref=e3850]: "Geometry (LDraw): 2780"
+                - generic [ref=e3851]: Installed · robot
+            - listitem [ref=e3852]:
+              - 'button "Gray small right-angle axle/pin connector ×1 quality-gray-elbow Geometry (LDraw): 6536 Installed · robot" [ref=e4098] [cursor=pointer]':
+                - generic [ref=e3854]:
+                  - strong [ref=e3855]: Gray small right-angle axle/pin connector
+                  - generic [ref=e3856]: ×1
+                - generic [ref=e3857]: quality-gray-elbow
+                - generic [ref=e3858]: "Geometry (LDraw): 6536"
+                - generic [ref=e3859]: Installed · robot
+            - listitem [ref=e3860]:
+              - 'button "Tan axle/pin connector ×1 quality-gray-axle-pin Geometry (LDraw): 3749 Installed · robot" [ref=e4099] [cursor=pointer]':
+                - generic [ref=e3862]:
+                  - strong [ref=e3863]: Tan axle/pin connector
+                  - generic [ref=e3864]: ×1
+                - generic [ref=e3865]: quality-gray-axle-pin
+                - generic [ref=e3866]: "Geometry (LDraw): 3749"
+                - generic [ref=e3867]: Installed · robot
+            - listitem [ref=e3868]:
+              - 'button "Light bluish gray plain non-friction 2L pin with end slots and collars; no cross axle ×1 quality-plain-gray-pin Geometry (LDraw): 3673 Installed · robot" [ref=e4100] [cursor=pointer]':
+                - generic [ref=e3870]:
+                  - strong [ref=e3871]: Light bluish gray plain non-friction 2L pin with end slots and collars; no cross axle
+                  - generic [ref=e3872]: ×1
+                - generic [ref=e3873]: quality-plain-gray-pin
+                - generic [ref=e3874]: "Geometry (LDraw): 3673"
+                - generic [ref=e3875]: Installed · robot
+            - listitem [ref=e3876]:
+              - 'button "SPIKE medium angular motor with captive cable ×1 quality-upper-motor Geometry (LDraw): 54696p01 Installed · robot" [ref=e4101] [cursor=pointer]':
+                - generic [ref=e3878]:
+                  - strong [ref=e3879]: SPIKE medium angular motor with captive cable
+                  - generic [ref=e3880]: ×1
+                - generic [ref=e3881]: quality-upper-motor
+                - generic [ref=e3882]: "Geometry (LDraw): 54696p01"
+                - generic [ref=e3883]: Installed · robot
+            - listitem [ref=e3884]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-upper-body-pin--32 Geometry (LDraw): 2780 Installed · robot" [ref=e4102] [cursor=pointer]':
+                - generic [ref=e3886]:
+                  - strong [ref=e3887]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3888]: ×1
+                - generic [ref=e3889]: quality-upper-body-pin--32
+                - generic [ref=e3890]: "Geometry (LDraw): 2780"
+                - generic [ref=e3891]: Installed · robot
+            - listitem [ref=e3892]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-upper-body-pin--16 Geometry (LDraw): 2780 Installed · robot" [ref=e4103] [cursor=pointer]':
+                - generic [ref=e3894]:
+                  - strong [ref=e3895]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3896]: ×1
+                - generic [ref=e3897]: quality-upper-body-pin--16
+                - generic [ref=e3898]: "Geometry (LDraw): 2780"
+                - generic [ref=e3899]: Installed · robot
+            - listitem [ref=e3900]:
+              - 'button "Magenta square multi-hole right-angle connector ×1 quality-upper-square Geometry (LDraw): 39793 Installed · robot" [ref=e4104] [cursor=pointer]':
+                - generic [ref=e3902]:
+                  - strong [ref=e3903]: Magenta square multi-hole right-angle connector
+                  - generic [ref=e3904]: ×1
+                - generic [ref=e3905]: quality-upper-square
+                - generic [ref=e3906]: "Geometry (LDraw): 39793"
+                - generic [ref=e3907]: Installed · robot
+            - listitem [ref=e3908]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-sensor-pin-100 Geometry (LDraw): 2780 Installed · robot" [ref=e4105] [cursor=pointer]':
+                - generic [ref=e3910]:
+                  - strong [ref=e3911]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3912]: ×1
+                - generic [ref=e3913]: quality-sensor-pin-100
+                - generic [ref=e3914]: "Geometry (LDraw): 2780"
+                - generic [ref=e3915]: Installed · robot
+            - listitem [ref=e3916]:
+              - 'button "Short black friction pin, visually matching repeated callouts ×1 quality-sensor-pin-116 Geometry (LDraw): 2780 Installed · robot" [ref=e4106] [cursor=pointer]':
+                - generic [ref=e3918]:
+                  - strong [ref=e3919]: Short black friction pin, visually matching repeated callouts
+                  - generic [ref=e3920]: ×1
+                - generic [ref=e3921]: quality-sensor-pin-116
+                - generic [ref=e3922]: "Geometry (LDraw): 2780"
+                - generic [ref=e3923]: Installed · robot
+            - listitem [ref=e3924]:
+              - 'button "SPIKE ultrasonic Distance Sensor with captive cable ×1 quality-distance-sensor Geometry (LDraw): 37316 Installed · robot" [ref=e4107] [cursor=pointer]':
+                - generic [ref=e3926]:
+                  - strong [ref=e3927]: SPIKE ultrasonic Distance Sensor with captive cable
+                  - generic [ref=e3928]: ×1
+                - generic [ref=e3929]: quality-distance-sensor
+                - generic [ref=e3930]: "Geometry (LDraw): 37316"
+                - generic [ref=e3931]: Installed · robot
+            - listitem [ref=e3932]:
+              - 'button "Medium azure build-specific connector; resolve by build/manual, never globally by key ×1 quality-retainer-azure Geometry (LDraw): 49283 Installed · robot" [ref=e4108] [cursor=pointer]':
+                - generic [ref=e3934]:
+                  - strong [ref=e3935]: Medium azure build-specific connector; resolve by build/manual, never globally by key
+                  - generic [ref=e3936]: ×1
+                - generic [ref=e3937]: quality-retainer-azure
+                - generic [ref=e3938]: "Geometry (LDraw): 49283"
+                - generic [ref=e3939]: Installed · robot
+            - listitem [ref=e3940]:
+              - 'button "Red cross axle in head cable retainer ×1 quality-retainer-axle Geometry (LDraw): 32062 Installed · robot" [ref=e4109] [cursor=pointer]':
+                - generic [ref=e3942]:
+                  - strong [ref=e3943]: Red cross axle in head cable retainer
+                  - generic [ref=e3944]: ×1
+                - generic [ref=e3945]: quality-retainer-axle
+                - generic [ref=e3946]: "Geometry (LDraw): 32062"
+                - generic [ref=e3947]: Installed · robot
+            - listitem [ref=e3948]:
+              - 'button "Magenta rounded short connector, cable retainer ×1 quality-retainer-magenta Geometry (LDraw): 49283 Installed · robot" [ref=e4110] [cursor=pointer]':
+                - generic [ref=e3950]:
+                  - strong [ref=e3951]: Magenta rounded short connector, cable retainer
+                  - generic [ref=e3952]: ×1
+                - generic [ref=e3953]: quality-retainer-magenta
+                - generic [ref=e3954]: "Geometry (LDraw): 49283"
+                - generic [ref=e3955]: Installed · robot
+            - listitem [ref=e3956]:
+              - 'button "Green 2 x 4 brick with three vertical axle holes for sample package ×1 quality-sample-green-1 Geometry (LDraw): 39789 Installed · sample" [ref=e4111] [cursor=pointer]':
+                - generic [ref=e3958]:
+                  - strong [ref=e3959]: Green 2 x 4 brick with three vertical axle holes for sample package
+                  - generic [ref=e3960]: ×1
+                - generic [ref=e3961]: quality-sample-green-1
+                - generic [ref=e3962]: "Geometry (LDraw): 39789"
+                - generic [ref=e3963]: Installed · sample
+            - listitem [ref=e3964]:
+              - 'button "Green 2 x 4 brick with three vertical axle holes for sample package ×1 quality-sample-green-2 Geometry (LDraw): 39789 Installed · sample" [ref=e4112] [cursor=pointer]':
+                - generic [ref=e3966]:
+                  - strong [ref=e3967]: Green 2 x 4 brick with three vertical axle holes for sample package
+                  - generic [ref=e3968]: ×1
+                - generic [ref=e3969]: quality-sample-green-2
+                - generic [ref=e3970]: "Geometry (LDraw): 39789"
+                - generic [ref=e3971]: Installed · sample
+            - listitem [ref=e3972]:
+              - 'button "Blue 2 x 4 brick with three vertical axle holes for sample package ×1 quality-sample-blue-1 Geometry (LDraw): 39789 Installed · sample" [ref=e4113] [cursor=pointer]':
+                - generic [ref=e3974]:
+                  - strong [ref=e3975]: Blue 2 x 4 brick with three vertical axle holes for sample package
+                  - generic [ref=e3976]: ×1
+                - generic [ref=e3977]: quality-sample-blue-1
+                - generic [ref=e3978]: "Geometry (LDraw): 39789"
+                - generic [ref=e3979]: Installed · sample
+            - listitem [ref=e3980]:
+              - 'button "Blue 2 x 4 brick with three vertical axle holes for sample package ×1 quality-sample-blue-2 Geometry (LDraw): 39789 Installed · sample" [ref=e4114] [cursor=pointer]':
+                - generic [ref=e3982]:
+                  - strong [ref=e3983]: Blue 2 x 4 brick with three vertical axle holes for sample package
+                  - generic [ref=e3984]: ×1
+                - generic [ref=e3985]: quality-sample-blue-2
+                - generic [ref=e3986]: "Geometry (LDraw): 39789"
+                - generic [ref=e3987]: Installed · sample
+            - listitem [ref=e3988]:
+              - 'button "Red 2 x 4 brick with three vertical axle holes for sample package ×1 quality-sample-red-1 Geometry (LDraw): 39789 Installed · sample" [ref=e4115] [cursor=pointer]':
+                - generic [ref=e3990]:
+                  - strong [ref=e3991]: Red 2 x 4 brick with three vertical axle holes for sample package
+                  - generic [ref=e3992]: ×1
+                - generic [ref=e3993]: quality-sample-red-1
+                - generic [ref=e3994]: "Geometry (LDraw): 39789"
+                - generic [ref=e3995]: Installed · sample
+            - listitem [ref=e3996]:
+              - 'button "Red 2 x 4 brick with three vertical axle holes for sample package ×1 quality-sample-red-2 Geometry (LDraw): 39789 Installed · sample" [ref=e4116] [cursor=pointer]':
+                - generic [ref=e3998]:
+                  - strong [ref=e3999]: Red 2 x 4 brick with three vertical axle holes for sample package
+                  - generic [ref=e4000]: ×1
+                - generic [ref=e4001]: quality-sample-red-2
+                - generic [ref=e4002]: "Geometry (LDraw): 39789"
+                - generic [ref=e4003]: Installed · sample
+            - listitem [ref=e4004]:
+              - 'button "Magenta 2 x 4 brick with three vertical axle holes for sample package ×1 quality-sample-violet-1 Geometry (LDraw): 39789 Installed · sample" [ref=e4117] [cursor=pointer]':
+                - generic [ref=e4006]:
+                  - strong [ref=e4007]: Magenta 2 x 4 brick with three vertical axle holes for sample package
+                  - generic [ref=e4008]: ×1
+                - generic [ref=e4009]: quality-sample-violet-1
+                - generic [ref=e4010]: "Geometry (LDraw): 39789"
+                - generic [ref=e4011]: Installed · sample
+            - listitem [ref=e4012]:
+              - 'button "Magenta 2 x 4 brick with three vertical axle holes for sample package ×1 quality-sample-violet-2 Geometry (LDraw): 39789 Installed · sample" [ref=e4118] [cursor=pointer]':
+                - generic [ref=e4014]:
+                  - strong [ref=e4015]: Magenta 2 x 4 brick with three vertical axle holes for sample package
+                  - generic [ref=e4016]: ×1
+                - generic [ref=e4017]: quality-sample-violet-2
+                - generic [ref=e4018]: "Geometry (LDraw): 39789"
+                - generic [ref=e4019]: Installed · sample
+          - group [ref=e4020]:
+            - generic "Source inventory accounting" [ref=e4021] [cursor=pointer]
+    - region "Assembly timeline" [ref=e4022]:
+      - generic [ref=e4023]:
+        - generic [ref=e4024]:
+          - text: Assembly position
+          - status [ref=e4025]: 1:01.0 / 1:01.0
+        - generic [ref=e4026]: Manual seeking pauses playback
+      - slider "Assembly position" [active] [ref=e4027] [cursor=pointer]: "60950"
+      - generic [ref=e4028]:
+        - generic [ref=e4029]:
+          - button "Previous source-step boundary" [ref=e4030] [cursor=pointer]: "|←"
+          - button "▷ Play step" [disabled] [ref=e4031]
+          - button "Resume" [disabled] [ref=e4119]
+          - button "Next source-step boundary" [disabled] [ref=e4033]: →|
+        - generic [ref=e4034]:
+          - button "Play all" [disabled] [ref=e4035]
+          - button "← Reverse" [ref=e4036] [cursor=pointer]
+        - generic [ref=e4037]:
+          - generic [ref=e4038]:
+            - text: Speed
+            - combobox "Speed" [ref=e4039]:
+              - option "0.25×"
+              - option "0.5×"
+              - option "1×" [selected]
+              - option "2×"
+          - generic [ref=e4040]:
+            - text: Milestones
+            - combobox "Milestones" [ref=e4041]:
+              - option "Jump to…" [selected]
+              - option "Idea Detector complete"
+              - option "Head mounted on detector"
+              - option "Eight bricks, four loose samples"
+      - paragraph [ref=e4042]: Installed counts commit at each instance’s seating event; in-flight parts remain pending. Reverse is an explanation, not a safe disassembly procedure.
+  - generic [ref=e4043]: Robot Head · 17. Source view-only instruction; no parts added.

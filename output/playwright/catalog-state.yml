@@ -1,0 +1,185 @@
+- generic [ref=e2]:
+  - link "Skip to workbench" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e8216]:
+    - banner [ref=e8217]:
+      - link "RoboBuild home" [ref=e8218] [cursor=pointer]:
+        - /url: /
+        - text: RoboBuild
+      - generic [ref=e8220]: Assembly workbench / 01
+      - link "Official building resources ↗" [ref=e8221] [cursor=pointer]:
+        - /url: https://education.lego.com/en-us/product-resources/spike-prime/downloads/building-instructions/
+    - main [ref=e8222]:
+      - generic [ref=e8223]:
+        - generic [ref=e8224]:
+          - paragraph [ref=e8225]: Understand what holds it together.
+          - heading "From individual parts. To working principles." [level=1] [ref=e8226]: From individual parts.To working principles.
+        - generic [ref=e8227]:
+          - text: 01 — THE BUILDS
+          - paragraph [ref=e8228]: Explore the mechanics, follow the source, inspect every connection. Real component geometry. Assembly you can rewind.
+          - paragraph [ref=e8229]: Reconstruction is in progress. Coverage is shown separately from the complete official build.
+      - generic [ref=e8230]:
+        - heading "Choose your workbench" [level=2] [ref=e8231]
+        - generic [ref=e8232]: 5 source-backed builds
+      - status [ref=e8233]: Workbench controls ready.
+      - generic [ref=e8234]:
+        - article [ref=e8235]:
+          - generic [ref=e8236]:
+            - generic [ref=e8237]: "01"
+            - img "Advanced Driving Base component preview; 136/136 instructions authored, physical fit remains unverified" [ref=e8238]
+            - generic [ref=e8239]: Assembly authored · fit unchecked · 136/136 source steps implemented
+          - generic [ref=e8240]:
+            - generic [ref=e8241]:
+              - generic [ref=e8242]: LEGO Education
+              - generic [ref=e8243]: Mobile robot
+            - heading "Advanced Driving Base" [level=3] [ref=e8244]
+            - paragraph [ref=e8245]: All 234 prepared source units and 136 numbered instructions are authored. First three instructions/seven-unit datum retain nominal verification; rear-to-drive 32mm bracket span mismatch and new physical fits remain unresolved.
+            - generic [ref=e8246]:
+              - generic [ref=e8247]:
+                - term [ref=e8248]: Edition
+                - definition [ref=e8249]: 2019 five-book export
+              - generic [ref=e8250]:
+                - term [ref=e8251]: Complexity
+                - definition [ref=e8252]: Advanced
+              - generic [ref=e8253]:
+                - term [ref=e8254]: Inventory scope
+                - definition [ref=e8255]: 234 distinct prepared callout identities are authored, reconciled by exact source-book/family rows at manifest generation. Historical molds/element numbers remain uncertified; reuse never adds another unit.
+              - generic [ref=e8256]:
+                - term [ref=e8257]: Verified reconstruction
+                - definition [ref=e8258]: 3 source steps · 7 components
+            - generic "Advanced Driving Base visit progress" [ref=e8259]:
+              - strong [ref=e8260]: Authored assembly reached
+              - generic [ref=e8261]: 234/234 robot units · 136/136 source steps
+              - progressbar "Advanced Driving Base source-step progress" [ref=e8262]
+            - button "Resume workbench" [active] [ref=e8263] [cursor=pointer]:
+              - text: Resume workbench
+              - generic [aria-hidden] [ref=e8264]: ↗
+        - article [ref=e8265]:
+          - generic [ref=e8266]:
+            - generic [ref=e8267]: "02"
+            - img "Robot Hand component preview; 28/28 instructions authored, physical fit remains unverified" [ref=e8268]
+            - generic [ref=e8269]: Assembly authored · fit unchecked · 28/28 source steps implemented
+          - generic [ref=e8270]:
+            - generic [ref=e8271]:
+              - generic [ref=e8272]: LEGO Education
+              - generic [ref=e8273]: Coupled gripper
+            - heading "Robot Hand" [level=3] [ref=e8274]
+            - paragraph [ref=e8275]: Complete28-numbered-step /39-prepared-unit source reconstruction with one F-powered coupled linkage. Independently compared nominal handle/motor/linkage contacts, corrected4×4 jaws and diagonal H seats; physical fits remain unchecked. The separate original-block grip/hold/release demonstration is a RoboBuild extension.
+            - generic [ref=e8276]:
+              - generic [ref=e8277]:
+                - term [ref=e8278]: Edition
+                - definition [ref=e8279]: Pass the Brick — 2019 export
+              - generic [ref=e8280]:
+                - term [ref=e8281]: Complexity
+                - definition [ref=e8282]: Intermediate
+              - generic [ref=e8283]:
+                - term [ref=e8284]: Inventory scope
+                - definition [ref=e8285]: 39 individual prepared-unit identities reconcile to published numbered-step callout family rows; corrected32348 jaws preserve every instance and source step.
+              - generic [ref=e8286]:
+                - term [ref=e8287]: Verified reconstruction
+                - definition [ref=e8288]: 0 source steps · 0 components
+            - generic "Robot Hand visit progress" [ref=e8289]:
+              - strong [ref=e8290]: Authored assembly reached
+              - generic [ref=e8291]: 39/39 robot units · 28/28 source steps
+              - progressbar "Robot Hand source-step progress" [ref=e8292]
+            - button "Resume workbench" [ref=e8293] [cursor=pointer]:
+              - text: Resume workbench
+              - generic [aria-hidden] [ref=e8294]: ↗
+        - article [ref=e8295]:
+          - generic [ref=e8296]:
+            - generic [ref=e8297]: "03"
+            - img "Quality Check Robot component preview; 30/30 instructions authored, physical fit remains unverified" [ref=e8298]
+            - generic [ref=e8299]: Assembly authored · fit unchecked · 30/30 source steps implemented
+          - generic [ref=e8300]:
+            - generic [ref=e8301]:
+              - generic [ref=e8302]: LEGO Education
+              - generic [ref=e8303]: Expressive sensor robot
+            - heading "Quality Check Robot" [level=3] [ref=e8304]
+            - paragraph [ref=e8305]: Complete30-numbered-step reconstruction:55 prepared robot units plus8 real loose sample bricks. Source/CAD placement fit remains unchecked; physical A/F axis assignment is unknown.
+            - generic [ref=e8306]:
+              - generic [ref=e8307]:
+                - term [ref=e8308]: Edition
+                - definition [ref=e8309]: SPIKE Prime ·2019 Idea Detector + Robot Head
+              - generic [ref=e8310]:
+                - term [ref=e8311]: Complexity
+                - definition [ref=e8312]: Intermediate · two-axis head
+              - generic [ref=e8313]:
+                - term [ref=e8314]: Inventory scope
+                - definition [ref=e8315]: Independent official callout transcription:34 detector +21 head +8 loose sample units; historical element IDs not certified.
+              - generic [ref=e8316]:
+                - term [ref=e8317]: Verified reconstruction
+                - definition [ref=e8318]: 0 source steps · 0 components
+            - generic "Quality Check Robot visit progress" [ref=e8319]:
+              - strong [ref=e8320]: Authored assembly reached
+              - generic [ref=e8321]: 55/55 robot units · 30/30 source steps
+              - progressbar "Quality Check Robot source-step progress" [ref=e8322]
+            - button "Resume workbench" [ref=e8323] [cursor=pointer]:
+              - text: Resume workbench
+              - generic [aria-hidden] [ref=e8324]: ↗
+        - article [ref=e8325]:
+          - generic [ref=e8326]:
+            - generic [ref=e8327]: "04"
+            - img "Package Sorter component preview; 80/80 instructions authored, physical fit remains unverified" [ref=e8328]
+            - generic [ref=e8329]: Assembly authored · fit unchecked · 80/80 source steps implemented
+          - generic [ref=e8330]:
+            - generic [ref=e8331]:
+              - generic [ref=e8332]: LEGO Education
+              - generic [ref=e8333]: Color sorting mechanism
+            - heading "Package Sorter" [level=3] [ref=e8334]
+            - paragraph [ref=e8335]: 158 prepared robot units plus eight separately built source package units. Authentic licensed geometry and all80 numbered source instructions; assembled fit is unchecked and pickup/sorting is disabled until the compound linkage is reconstructed.
+            - generic [ref=e8336]:
+              - generic [ref=e8337]:
+                - term [ref=e8338]: Edition
+                - definition [ref=e8339]: "Official index2019: Robot19 + Base58 + separate Packages3"
+              - generic [ref=e8340]:
+                - term [ref=e8341]: Complexity
+                - definition [ref=e8342]: Advanced · bilateral closed linkage
+              - generic [ref=e8343]:
+                - term [ref=e8344]: Inventory scope
+                - definition [ref=e8345]: Independent canonical2019 printed callout transcription:57+101 robot,8 sample.
+              - generic [ref=e8346]:
+                - term [ref=e8347]: Verified reconstruction
+                - definition [ref=e8348]: 0 source steps · 0 components
+            - generic "Package Sorter visit progress" [ref=e8349]:
+              - strong [ref=e8350]: Authored assembly reached
+              - generic [ref=e8351]: 158/158 robot units · 80/80 source steps
+              - progressbar "Package Sorter source-step progress" [ref=e8352]
+            - button "Resume workbench" [ref=e8353] [cursor=pointer]:
+              - text: Resume workbench
+              - generic [aria-hidden] [ref=e8354]: ↗
+        - article [ref=e8355]:
+          - generic [ref=e8356]:
+            - generic [ref=e8357]: "05"
+            - generic [ref=e8358]:
+              - generic [aria-hidden] [ref=e8359]: +
+              - strong [ref=e8360]: App geometry permission blocked
+              - generic [ref=e8361]: Source record · no app model or invented preview
+            - generic [ref=e8362]: Partial reconstruction · 0/41 source steps implemented
+          - generic [ref=e8363]:
+            - generic [ref=e8364]:
+              - generic [ref=e8365]: VEX Robotics
+              - generic [ref=e8366]: Mobile manipulator
+            - heading "V5 Clawbot" [level=3] [ref=e8367]
+            - paragraph [ref=e8368]: Permission-blocked historical build. Private official CAD inspection does not grant application conversion/use rights.
+            - generic [ref=e8369]:
+              - generic [ref=e8370]:
+                - term [ref=e8371]: Edition
+                - definition [ref=e8372]: historical2018 — manual 276-6009-750 Rev1
+              - generic [ref=e8373]:
+                - term [ref=e8374]: Complexity
+                - definition [ref=e8375]: Advanced
+              - generic [ref=e8376]:
+                - term [ref=e8377]: Inventory scope
+                - definition [ref=e8378]: 41 documented historical2018 steps; conflicting printed/step inventories and preassembled claw scope remain unresolved. No procurement total asserted; no VEX runtime geometry converted or used.
+              - generic [ref=e8379]:
+                - term [ref=e8380]: Verified reconstruction
+                - definition [ref=e8381]: 0 source steps · 0 components
+            - button "View sources & limitations" [ref=e8382] [cursor=pointer]:
+              - text: View sources & limitations
+              - generic [aria-hidden] [ref=e8383]: ↗
+      - generic [ref=e8384]:
+        - paragraph [ref=e8385]:
+          - text: Built around evidence, not approximations disguised as completion.
+          - link "Geometry & preview credits ↗" [ref=e8386] [cursor=pointer]:
+            - /url: /models/library/CREDITS.txt
+        - generic [ref=e8387]: Independent learning tool. Not affiliated with or endorsed by LEGO Education or VEX Robotics.

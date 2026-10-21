@@ -4,7 +4,7 @@ Status: visual design specification, not a claim that every source pose is accur
 
 ## Identity: the laboratory workbench
 
-RoboBuild is an original precision-learning workbench, not a toy-store landing page or a copy of Flatpack. Use warm off-white surfaces, graphite instruments, restrained vermilion actions and teal mechanical feedback. Actual licensed robot geometry is the subject. Do not use generated robot art, unrelated robots, copied benchmark compositions, instruction scans, fake CAD, decorative stock machinery or fabricated VEX previews.
+RoboBuild is an original precision-learning workbench, not a toy-store landing page or a copy of Flatpack. Use dark graphite panels, a lighter slate 3D stage, peach actions and bright teal mechanical feedback. Actual licensed robot geometry is the subject. Preserve component colors and use neutral studio illumination plus a cool rim light to distinguish black pins, axles and tyres from the background. Do not use generated robot art, unrelated robots, copied benchmark compositions, instruction scans, fake CAD, decorative stock machinery or fabricated VEX previews.
 
 The header wordmark is plain typeset **RoboBuild**, with a small original two-line alignment mark; no manufacturer logo imitation. A small `ASSEMBLY WORKBENCH` descriptor and model/edition establish context. Keep a factual manufacturer attribution and non-endorsement statement in Sources, not a marketing badge implying affiliation.
 
@@ -12,15 +12,16 @@ The header wordmark is plain typeset **RoboBuild**, with a small original two-li
 
 | Token | Value | Role |
 |---|---|---|
-| Canvas / page | `#F4F1EA` | Warm off-white field |
-| Panel / elevated | `#FFFDFA` | Readable instruction and inventory surfaces |
-| Graphite | `#202522` | Primary text and instrument controls |
-| Muted ink | `#555F59` | Secondary text; never low-opacity body copy |
-| Rule | `#D4D4CB` | Panel dividers and passive grid, not a sole state indicator |
-| Vermilion | `#B83D20` | Primary playback/action, active timeline thumb |
-| Mechanical teal | `#006A67` | Selected connections, joint feedback, inspection emphasis |
-| Warning ink | `#815000` | Warning text with icon and explicit wording |
-| Focus | `#005FCC` | Visible outer keyboard-focus ring |
+| Canvas / page | `#0F141B` | Dark graphite field |
+| Panel / elevated | `#171F29` / `#222D3A` | Instruction surfaces and raised controls |
+| 3D stage | `#303E4E` | Lighter slate behind authentic component colors |
+| Primary ink | `#EDF2F7` | Primary text and instrument labels |
+| Muted ink | `#B2BFCE` | Secondary text; never low-opacity body copy |
+| Rule / control boundary | `#3C4B5D` / `#6F8197` | Passive dividers and explicit input boundaries |
+| Peach | `#FF936F` | Primary actions with dark text, timeline thumb, moving parts |
+| Mechanical teal | `#65DFCF` | Selected connections, joint feedback, inspection emphasis |
+| Warning ink / field | `#FFD187` / `#352B1C` | Warning text with icon and explicit wording |
+| Focus | `#9AC4FF` | Visible outer keyboard-focus ring |
 
 These are authored starting values, not evidence of measured accessibility. Verify every actual text/background and control-state combination to WCAG 2.2 AA: 4.5:1 normal text, 3:1 large text and meaningful non-text boundaries. Do not depend on the pale rule for input boundaries. Use text/icon/outline in addition to hue. A selected teal part must remain legible against teal LEGO geometry.
 
@@ -30,7 +31,7 @@ Use native system UI: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 
 Show five named builds in a responsive grid, ordered Advanced Driving Base, Robot Hand, Quality Check Robot, Package Sorter and V5 Clawbot. Every card has manufacturer, locked edition, documented step scope, quantity scope, reconstruction coverage and source access. Render these as real data, not text baked into an image.
 
-For an available reconstruction, use a render from its actual runtime geometry and hierarchy, consistently framed at a three-quarter view on the warm background. A partial reconstruction shows only that actual slice with a conspicuous `Partial reconstruction — n/N source steps` label; never frame a component pile as the completed robot. An unimplemented build has a quiet typographic `Reconstruction not available` panel, not invented geometry. VEX has a graphite outlined source-record tile with `App geometry permission blocked`, selected historical2018 edition and `View sources`; no robot silhouette, fake total, mesh, clickable Play or simulation marketing. All five entries remain discoverable. See the product source table for exact count language.
+For an available reconstruction, use a render from its actual runtime geometry and hierarchy, consistently framed at a three-quarter view on the same slate background as the live viewer. A partial reconstruction shows only that actual slice with a conspicuous `Partial reconstruction — n/N source steps` label; never frame a component pile as the completed robot. An unimplemented build has a quiet typographic `Reconstruction not available` panel, not invented geometry. VEX has a graphite outlined source-record tile with `App geometry permission blocked`, selected historical2018 edition and `View sources`; no robot silhouette, fake total, mesh, clickable Play or simulation marketing. All five entries remain discoverable. See the product source table for exact count language.
 
 ## Workbench composition
 

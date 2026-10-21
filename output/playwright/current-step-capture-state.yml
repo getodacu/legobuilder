@@ -1,0 +1,94 @@
+- generic [ref=e2]:
+  - link "Skip to workbench" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e8388]:
+    - banner [ref=e8389]:
+      - button "Back to build catalog" [ref=e8390] [cursor=pointer]: RoboBuild
+      - generic [ref=e8392]:
+        - text: LEGO Education / Coupled gripper
+        - heading "Robot Hand" [level=1] [ref=e8393]
+      - generic [ref=e8394]: 28/28 authored · new fits unverified
+      - button "Keyboard help ?" [ref=e8395] [cursor=pointer]:
+        - text: Keyboard help
+        - generic [ref=e8396]: "?"
+    - generic [ref=e8397]:
+      - generic [ref=e8398]: Pass the Brick — 2019 export
+      - generic [ref=e8399]:
+        - button "Instructions" [ref=e8400] [cursor=pointer]
+        - button "Inventory & inspection" [ref=e8401] [cursor=pointer]
+    - main [ref=e8402]:
+      - region "3D assembly workbench" [ref=e8446]:
+        - generic [ref=e8447]:
+          - group "View mode" [ref=e8448]:
+            - button "Studio" [pressed] [ref=e8449] [cursor=pointer]
+            - button "Technical" [ref=e8450] [cursor=pointer]
+            - button "Explode" [ref=e8451] [cursor=pointer]
+            - button "Inspection" [ref=e8452] [cursor=pointer]
+          - group [ref=e8453]:
+            - generic "View options" [ref=e8454] [cursor=pointer]
+        - generic [ref=e8455]:
+          - generic [ref=e8456]:
+            - img "Interactive assembly. Arrow keys orbit; Shift and arrow keys pan; plus and minus zoom; R resets; F focuses active parts. Part selection is also available in inventory." [ref=e8458]
+            - group [ref=e8459]:
+              - generic "Camera help" [ref=e8460] [cursor=pointer]
+          - generic:
+            - generic: Post-assembly · RoboBuild extension
+            - strong: RoboBuild extension — coupled grip, hold and release
+        - generic [ref=e8461]:
+          - generic [ref=e8462]:
+            - button "Reset view" [ref=e8463] [cursor=pointer]
+            - button "Fit whole" [ref=e8464] [cursor=pointer]
+            - button "Focus active" [ref=e8465] [cursor=pointer]
+            - button "Fit module" [disabled] [ref=e8466]
+          - generic [ref=e8467]: Simulation camera · manual orbit
+        - generic "Assembly counts" [ref=e8469]:
+          - generic [ref=e8470]:
+            - strong [ref=e8471]: 39/39
+            - text: units installed
+          - generic [ref=e8472]:
+            - strong [ref=e8473]: "0"
+            - text: remaining
+          - generic [ref=e8474]:
+            - strong [ref=e8475]: 29/29
+            - text: timeline stages
+        - generic [ref=e8479]:
+          - generic "Flexible lead routing/length is not measured; electrical topology alone is documented." [ref=e8480]:
+            - strong [ref=e8481]: "Step warning:"
+            - text: Flexible lead routing/length is not measured; electrical topology alone is documented.
+          - button "Read warning" [ref=e8482] [cursor=pointer]
+    - region "Post-assembly simulation" [ref=e8834]:
+      - generic [ref=e8835]:
+        - generic [ref=e8836]:
+          - text: Same assembled mechanism · deterministic kinematics
+          - heading "Post-assembly demonstration" [level=2] [ref=e8837]
+        - button "Return to assembly end" [ref=e8838] [cursor=pointer]
+      - paragraph [ref=e8839]: 28/28 source steps implemented · 0/28 verified. Source-backed partial placement remains unchecked; this is not a fully verified robot. The scenario distinguishes documented motor commands from RoboBuild extensions. Props and scripted sample signals do not add robot components.
+      - generic [ref=e8840]:
+        - generic [ref=e8841]:
+          - text: Scenario
+          - combobox "Scenario" [ref=e8842]:
+            - option "RoboBuild extension — coupled grip, hold and release" [selected]
+        - button "Play demonstration" [ref=e8843] [cursor=pointer]
+        - button "Pause" [disabled] [ref=e8844]
+        - button "Reverse" [ref=e8845] [cursor=pointer]
+        - button "Reset time" [ref=e8846] [cursor=pointer]
+        - button "Restore scenario" [ref=e8847] [cursor=pointer]
+        - generic [ref=e8848]:
+          - text: Speed
+          - combobox "Speed" [ref=e8849]:
+            - option "0.25×"
+            - option "0.5×"
+            - option "1×" [selected]
+            - option "2×"
+      - generic [ref=e8850]:
+        - text: Simulation position
+        - status [ref=e8851]: 7.34 s / 9.00 s · paused
+      - slider "Simulation position" [ref=e8852] [cursor=pointer]: "7345"
+      - status [ref=e8853]: Original authored scenario loaded; manual edits cleared.
+      - generic "Sampled motor angles and sensor readings" [ref=e8854]: "Port F: 0.101 rad"
+      - group [ref=e8856]:
+        - generic "Motor commands, sensor inputs & source limitations" [ref=e8857] [cursor=pointer]
+        - option "Port F · F · actual keyed azure motor crank" [selected]
+        - option "Speed" [selected]
+        - option "Position"
+  - generic [ref=e8832]: Post-assembly demonstration. Robot-focused camera; Fit whole frames visible model and props. The scenario distinguishes documented motions from RoboBuild extensions. Unverified placement remains unverified.

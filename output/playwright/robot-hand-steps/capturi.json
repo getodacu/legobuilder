@@ -1,0 +1,292 @@
+[
+  {
+    "number": 1,
+    "id": "hand-step-1",
+    "title": "Step 1 — Insert four black pins into hub end.",
+    "timeMs": 4990,
+    "startMs": 0,
+    "endMs": 5000,
+    "file": "pas-01.png",
+    "counts": "4/39 units installed35 remaining0/29 timeline stages"
+  },
+  {
+    "number": 2,
+    "id": "hand-step-2",
+    "title": "Step 2 — Fit gray cross block with four integral pins to first magenta frame.",
+    "timeMs": 6990,
+    "startMs": 5000,
+    "endMs": 7000,
+    "file": "pas-02.png",
+    "counts": "6/39 units installed33 remaining1/29 timeline stages"
+  },
+  {
+    "number": 3,
+    "id": "hand-step-3",
+    "title": "Step 3 — Stack second magenta frame onto connector.",
+    "timeMs": 7990,
+    "startMs": 7000,
+    "endMs": 8000,
+    "file": "pas-03.png",
+    "counts": "7/39 units installed32 remaining2/29 timeline stages"
+  },
+  {
+    "number": 4,
+    "id": "hand-step-4",
+    "title": "Step 4 — Join stacked-frame handle to hub pins.",
+    "timeMs": 9990,
+    "startMs": 8000,
+    "endMs": 10000,
+    "file": "pas-04.png",
+    "counts": "8/39 units installed31 remaining3/29 timeline stages"
+  },
+  {
+    "number": 5,
+    "id": "hand-step-5",
+    "title": "Step 5 — Insert two pins at free end of handle.",
+    "timeMs": 11990,
+    "startMs": 10000,
+    "endMs": 12000,
+    "file": "pas-05.png",
+    "counts": "9/39 units installed30 remaining4/29 timeline stages"
+  },
+  {
+    "number": 6,
+    "id": "hand-step-6",
+    "title": "Step 6 — Prepare aligned medium motor with two pins and length-3 axle; alignment inset is mandatory evidence.",
+    "timeMs": 15990,
+    "startMs": 12000,
+    "endMs": 16000,
+    "file": "pas-06.png",
+    "counts": "13/39 units installed26 remaining5/29 timeline stages"
+  },
+  {
+    "number": 7,
+    "id": "hand-step-7",
+    "title": "Step 7 — Fit magenta length-5 crank/link and two pins.",
+    "timeMs": 18990,
+    "startMs": 16000,
+    "endMs": 19000,
+    "file": "pas-07.png",
+    "counts": "16/39 units installed23 remaining6/29 timeline stages"
+  },
+  {
+    "number": 8,
+    "id": "hand-step-8",
+    "title": "Step 8 — Build white short link with tan axle/pin.",
+    "timeMs": 20990,
+    "startMs": 19000,
+    "endMs": 21000,
+    "file": "pas-08.png",
+    "counts": "18/39 units installed21 remaining7/29 timeline stages"
+  },
+  {
+    "number": 9,
+    "id": "hand-step-9",
+    "title": "Step 9 — Fit medium azure 2L liftarm (60483 geometry, not head cable clip) to tan axle/pin.",
+    "timeMs": 21990,
+    "startMs": 21000,
+    "endMs": 22000,
+    "file": "pas-09.png",
+    "counts": "19/39 units installed20 remaining8/29 timeline stages"
+  },
+  {
+    "number": 10,
+    "id": "hand-step-10",
+    "title": "Step 10 — Join white/azure link subassembly to motor assembly.",
+    "timeMs": 23990,
+    "startMs": 22000,
+    "endMs": 24000,
+    "file": "pas-10.png",
+    "counts": "20/39 units installed19 remaining9/29 timeline stages"
+  },
+  {
+    "number": 11,
+    "id": "hand-step-11",
+    "title": "Step 11 — Fit white wheel hub into tire, first jaw.",
+    "timeMs": 25990,
+    "startMs": 24000,
+    "endMs": 26000,
+    "file": "pas-11.png",
+    "counts": "21/39 units installed18 remaining10/29 timeline stages"
+  },
+  {
+    "number": 12,
+    "id": "hand-step-12",
+    "title": "Step 12 — Insert length-3 axle into wheel.",
+    "timeMs": 26990,
+    "startMs": 26000,
+    "endMs": 27000,
+    "file": "pas-12.png",
+    "counts": "22/39 units installed17 remaining11/29 timeline stages"
+  },
+  {
+    "number": 13,
+    "id": "hand-step-13",
+    "title": "Step 13 — Fit magenta 2 x 4 jaw brick with three vertical axle holes to wheel axle.",
+    "timeMs": 27990,
+    "startMs": 27000,
+    "endMs": 28000,
+    "file": "pas-13.png",
+    "counts": "23/39 units installed16 remaining12/29 timeline stages"
+  },
+  {
+    "number": 14,
+    "id": "hand-step-14",
+    "title": "Step 14 — Prepare angled jaw link with length-3 axle.",
+    "timeMs": 29990,
+    "startMs": 28000,
+    "endMs": 30000,
+    "file": "pas-14.png",
+    "counts": "25/39 units installed14 remaining13/29 timeline stages"
+  },
+  {
+    "number": 15,
+    "id": "hand-step-15",
+    "title": "Step 15 — Join first wheel/brick jaw to angled link.",
+    "timeMs": 31990,
+    "startMs": 30000,
+    "endMs": 32000,
+    "file": "pas-15.png",
+    "counts": "26/39 units installed13 remaining14/29 timeline stages"
+  },
+  {
+    "number": 16,
+    "id": "hand-step-16",
+    "title": "Step 16 — Add two black round 2 x 2 through-hole tiles to first jaw, leaving axles exposed.",
+    "timeMs": 33990,
+    "startMs": 32000,
+    "endMs": 34000,
+    "file": "pas-16.png",
+    "counts": "27/39 units installed12 remaining15/29 timeline stages"
+  },
+  {
+    "number": 17,
+    "id": "hand-step-17",
+    "title": "Step 17 — Add tan axle/pin to rear of first angled link.",
+    "timeMs": 34990,
+    "startMs": 34000,
+    "endMs": 35000,
+    "file": "pas-17.png",
+    "counts": "28/39 units installed11 remaining16/29 timeline stages"
+  },
+  {
+    "number": 18,
+    "id": "hand-step-18",
+    "title": "Step 18 — Attach first jaw to motor/link subassembly.",
+    "timeMs": 36990,
+    "startMs": 35000,
+    "endMs": 37000,
+    "file": "pas-18.png",
+    "counts": "29/39 units installed10 remaining17/29 timeline stages"
+  },
+  {
+    "number": 19,
+    "id": "hand-step-19",
+    "title": "Step 19 — Fit white wheel hub into tire, second jaw.",
+    "timeMs": 38990,
+    "startMs": 37000,
+    "endMs": 39000,
+    "file": "pas-19.png",
+    "counts": "30/39 units installed9 remaining18/29 timeline stages"
+  },
+  {
+    "number": 20,
+    "id": "hand-step-20",
+    "title": "Step 20 — Insert length-3 axle into second wheel.",
+    "timeMs": 39990,
+    "startMs": 39000,
+    "endMs": 40000,
+    "file": "pas-20.png",
+    "counts": "31/39 units installed8 remaining19/29 timeline stages"
+  },
+  {
+    "number": 21,
+    "id": "hand-step-21",
+    "title": "Step 21 — Fit second magenta 2 x 4 jaw brick with three vertical axle holes to wheel axle.",
+    "timeMs": 40990,
+    "startMs": 40000,
+    "endMs": 41000,
+    "file": "pas-21.png",
+    "counts": "32/39 units installed7 remaining20/29 timeline stages"
+  },
+  {
+    "number": 22,
+    "id": "hand-step-22",
+    "title": "Step 22 — Prepare second angled jaw link with length-3 axle.",
+    "timeMs": 42990,
+    "startMs": 41000,
+    "endMs": 43000,
+    "file": "pas-22.png",
+    "counts": "34/39 units installed5 remaining21/29 timeline stages"
+  },
+  {
+    "number": 23,
+    "id": "hand-step-23",
+    "title": "Step 23 — Join second wheel/brick jaw to angled link.",
+    "timeMs": 44990,
+    "startMs": 43000,
+    "endMs": 45000,
+    "file": "pas-23.png",
+    "counts": "35/39 units installed4 remaining22/29 timeline stages"
+  },
+  {
+    "number": 24,
+    "id": "hand-step-24",
+    "title": "Step 24 — Add two black round 2 x 2 through-hole tiles to second jaw, leaving axles exposed.",
+    "timeMs": 46990,
+    "startMs": 45000,
+    "endMs": 47000,
+    "file": "pas-24.png",
+    "counts": "36/39 units installed3 remaining23/29 timeline stages"
+  },
+  {
+    "number": 25,
+    "id": "hand-step-25",
+    "title": "Step 25 — Attach second jaw to motor/link subassembly.",
+    "timeMs": 48990,
+    "startMs": 47000,
+    "endMs": 49000,
+    "file": "pas-25.png",
+    "counts": "37/39 units installed2 remaining24/29 timeline stages"
+  },
+  {
+    "number": 26,
+    "id": "hand-step-26",
+    "title": "Step 26 — Insert longer black pivot/retaining pin.",
+    "timeMs": 49990,
+    "startMs": 49000,
+    "endMs": 50000,
+    "file": "pas-26.png",
+    "counts": "37/39 units installed2 remaining25/29 timeline stages"
+  },
+  {
+    "number": 27,
+    "id": "hand-step-27",
+    "title": "Step 27 — Fit gray H-shaped coupling link over rear jaw connections.",
+    "timeMs": 50990,
+    "startMs": 50000,
+    "endMs": 51000,
+    "file": "pas-27.png",
+    "counts": "38/39 units installed1 remaining26/29 timeline stages"
+  },
+  {
+    "number": 28,
+    "id": "hand-step-28",
+    "title": "Step 28 — Turn and join complete motor/gripper to frame handle.",
+    "timeMs": 52990,
+    "startMs": 51000,
+    "endMs": 53000,
+    "file": "pas-28.png",
+    "counts": "39/39 units installed0 remaining27/29 timeline stages"
+  },
+  {
+    "number": 29,
+    "id": "hand-wiring",
+    "title": "Source p32 — connect medium motor to F",
+    "timeMs": 54600,
+    "startMs": 53000,
+    "endMs": 54600,
+    "file": "29-cablare.png",
+    "counts": "39/39 units installed0 remaining29/29 timeline stages"
+  }
+]

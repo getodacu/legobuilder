@@ -1,0 +1,2194 @@
+- generic [ref=e2]:
+  - link "Skip to workbench" [ref=e3] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e169]:
+    - banner [ref=e170]:
+      - button "Back to build catalog" [ref=e171] [cursor=pointer]: RoboBuild
+      - generic [ref=e173]:
+        - text: LEGO Education / Mobile robot
+        - heading "Advanced Driving Base" [level=1] [ref=e174]
+      - generic [ref=e175]: 136/136 authored · new fits unverified
+      - button "Keyboard help ?" [ref=e176] [cursor=pointer]:
+        - text: Keyboard help
+        - generic [ref=e177]: "?"
+    - generic [ref=e178]:
+      - generic [ref=e179]: 2019 five-book export
+      - generic [ref=e180]:
+        - button "Instructions" [expanded] [ref=e181] [cursor=pointer]
+        - button "Inventory & inspection" [expanded] [ref=e182] [cursor=pointer]
+    - main [ref=e183]:
+      - complementary "Instructions and sources" [ref=e184]:
+        - generic [ref=e185]:
+          - heading "Instructions" [level=2] [ref=e186]
+          - button "Collapse instructions" [ref=e187] [cursor=pointer]: ×
+        - generic [ref=e188]:
+          - paragraph [ref=e189]: Current module · view
+          - generic [ref=e190]:
+            - text: Implemented source steps
+            - combobox "Implemented source steps" [ref=e191]:
+              - option "Prepare the 9-hole beam"
+              - option "Seat the two gray cross blocks"
+              - option "Insert the upper pins"
+              - 'option "Front Part 4: Join bracket to outside of one frame rail"'
+              - 'option "Front Part 5: Insert five side-facing frame connection pins at the shown rail locations"'
+              - 'option "Front Part 6: Build two white double-cross connectors, each with blue3-pin inserted axially through one end cross hole, short pin end emerging above"'
+              - 'option "Front Part 7: Attach two white connector units onto frame near motor rail ends, blue ends upward"'
+              - 'option "Front Part 8: Prepare medium motor, circular output pointing upward and cable toward lower-right"'
+              - 'option "Front Part 9: Fit blue and green cable clips on opposite sides of medium motor housing"'
+              - 'option "Front Part 10: Lower medium motor onto prepared frame mount"'
+              - 'option "Front Part 11: Insert four lateral black pins into magenta 1x3x3 connector block, two at each side"'
+              - 'option "Front Part 12: Attach grey I-frame side bracket to magenta block"'
+              - 'option "Front Part 13: Attach red cable clip to blue pin on I-frame bracket"'
+              - 'option "Front Part 14: Lower magenta-and-grey bracket over medium motor, pinning to surrounding frame connectors"'
+              - 'option "Front Part 15: Rotate camera to opposite side"'
+              - 'option "Front Part 16: Prepare first color sensor with two blue3-pins pointing upward from mount side"'
+              - 'option "Front Part 17: Attach grey four-pin beam to sensor side using protruding mount pins"'
+              - 'option "Front Part 18: Press white19mm ball into Medium Azur ball-cup frame"'
+              - 'option "Front Part 19: Join first ball-cup frame to first color-sensor unit using grey connector"'
+              - 'option "Front Part 20: Insert two black pins into visible side holes of ball-cup frame"'
+              - 'option "Front Part 21: Attach Medium Azur L-shaped3x5 beam to this caster/sensor unit"'
+              - 'option "Front Part 22: Attach first caster/sensor unit to front frame/motor side"'
+              - 'option "Front Part 23: Prepare second color sensor with two blue3-pins"'
+              - 'option "Front Part 24: Attach second grey four-pin beam to second sensor, mirrored placement"'
+              - 'option "Front Part 25: Prepare second white ball in Medium Azur ball-cup frame"'
+              - 'option "Front Part 26: Join second caster frame to second sensor unit"'
+              - 'option "Front Part 27: Insert two black side pins into second ball-cup frame"'
+              - 'option "Front Part 28: Attach second3x5 angular beam, mirrored relative to first sensor/caster"'
+              - 'option "Front Part 29: Attach second caster/sensor unit on other motor side"'
+              - 'option "Front Part 30: Add black15-hole rail spanning two sensor/caster units across front"'
+              - 'option "Front Part 31: Make two yellow2x4 cross-hole brick units, two red axle/pins per brick, axles entering holes in brick face opposite studs"'
+              - 'option "Front Part 32: Slide one short black tube onto one red pin in each yellow brick unit"'
+              - 'option "Front Part 33: Mount both yellow brick units atop outer front supports, studs outward/up in displayed orientation"'
+              - 'option "Front Part 34: Make two magenta connector blocks, each with two upward black pins"'
+              - 'option "Front Part 35: Attach the two magenta connector blocks alongside motor, their pinned edges upward"'
+              - 'option "Front Part 36: Rotate camera to opposite end"'
+              - 'option "Front Part 37: Insert two black pins into opposing round holes of grey28-tooth double-bevel gear"'
+              - 'option "Front Part 38: Mount grey gear on circular medium-motor output, using the two pin connections"'
+              - option "Right side — 1"
+              - option "Right side — 2"
+              - option "Right side — 3"
+              - option "Right side — 4"
+              - option "Right side — 5"
+              - option "Right side — 6"
+              - option "Right side — 7"
+              - option "Right side — 8"
+              - option "Right side — 9"
+              - option "Right side — 10"
+              - option "Right side — 11"
+              - option "Right side — 12"
+              - option "Right side — 13"
+              - option "Right side — 14"
+              - option "Right side — 15"
+              - option "Right side — 16"
+              - option "Right side — 17"
+              - option "Right side — 18"
+              - option "Right side — 19"
+              - option "Right side — 20"
+              - option "Right side — 21"
+              - option "Right side — 22"
+              - option "Right side — 23"
+              - option "Right side — 24"
+              - option "Left side — 1"
+              - option "Left side — 2"
+              - option "Left side — 3"
+              - option "Left side — 4"
+              - option "Left side — 5"
+              - option "Left side — 6"
+              - option "Left side — 7"
+              - option "Left side — 8"
+              - option "Left side — 9"
+              - option "Left side — 10"
+              - option "Left side — 11"
+              - option "Left side — 12"
+              - option "Left side — 13"
+              - option "Left side — 14"
+              - option "Left side — 15"
+              - option "Left side — 16"
+              - option "Left side — 17"
+              - option "Left side — 18"
+              - option "Left side — 19"
+              - option "Left side — 20"
+              - option "Left side — 21"
+              - option "Left side — 22"
+              - option "Left side — 23"
+              - option "Left side — 24"
+              - option "Rear 1 — Prepare the first nine-hole rail with two gray integral-pin bridge blocks."
+              - option "Rear 2 — Close the lower parallel rail pair."
+              - option "Rear 3 — Insert the two upward-facing black pins."
+              - option "Rear 4 — Fit four lateral pins to the lower rails."
+              - option "Rear 5 — Seat and index the medium angular motor."
+              - option "Rear 6 — Fit four motor-housing pins."
+              - option "Rear 7 — Prepare the magenta connector and four black pins."
+              - option "Rear 8 — Attach the first H-frame to the prepared connector."
+              - option "Rear 9 — Install the prepared bracket over the motor."
+              - option "Rear 10 — Change camera side and install the opposite H-frame."
+              - option "Rear 11 — Prepare four blue/gray coaxial stop-bush units."
+              - option "Rear 12 — Install the four prepared connector units."
+              - option "Rear 13 — Install two outer nine-hole black rails."
+              - option "Rear 14 — Prepare the medium azure cable-clip unit."
+              - option "Rear 15 — Install the clip and guide the captive motor lead."
+              - option "Rear 16 — Prepare two white cross blocks with four yellow three-module shafts."
+              - option "Rear 17 — Fit H-frames and medium azure clips to the two mounts."
+              - option "Rear 18 — Close both mounts with the second pair of WHITE cross blocks."
+              - option "Rear 19 — Install both prepared mounting brackets."
+              - option "Rear 20 — Prepare the thirteen-hole medium azure rail and its two pins."
+              - option "Rear 21 — Install the prepared thirteen-hole rail."
+              - option "Rear 22 — Install the second parallel thirteen-hole rail."
+              - option "Rear 23 — Prepare two yellow standoffs with pins at both ends."
+              - option "Rear 24 — Install the two prepared standoffs."
+              - option "Rear 25 — Prepare the output gear with two black pins."
+              - option "Rear 26 — Seat the output gear on the indexed medium rotor."
+              - option "Rear 27 — Prepare the magenta frame with two red axle/pins."
+              - option "Rear 28 — Add two gray axle2/pin1 connectors on the opposite frame side."
+              - option "Rear 29 — Install the prepared top frame on its supports."
+              - option "Rear 30 — Prepare two seven-hole uprights with bottom transverse axle/pins."
+              - option "Rear 31 — Change camera side and install both uprights."
+              - option "Connect the front medium output to D"
+              - option "Connect both color sensors to B and F"
+              - option "Connect left propulsion to A"
+              - option "Connect rear output to C"
+              - option "Connect right propulsion to E"
+              - option "Seat the complete left drive module"
+              - option "Seat the complete right drive module"
+              - option "Lower the prepared hub into the chassis"
+              - option "Approach the rear frame and retain the hub"
+              - option "Inspect the rear fit discrepancy"
+              - option "Prepare the second magenta upper frame"
+              - option "Fit the front upper frame"
+              - option "Insert both5L stop axles"
+              - option "Retain the axles from below"
+              - option "Prepare the first underside frame and bridge"
+              - option "Join the second underside frame"
+              - option "Insert four outer-corner pins"
+              - option "Fit the underside reinforcement"
+              - option "Inspect the completed source assembly" [selected]
+          - heading "Inspect the completed source assembly" [level=3] [ref=e2348]
+          - paragraph [ref=e193]: Final upright source view. All136 numbered instructions are represented; only previously independently checked poses retain verified status.
+          - generic [ref=e2349]: Source view-only step. Camera guidance changes; physical parts and counts do not.
+          - generic [ref=e196]:
+            - text: Original CAD instruction view
+            - paragraph [ref=e197]: The live center view shows the actual components for this instruction. No official manual images are reproduced.
+            - button "Frame active operation ↗" [ref=e198] [cursor=pointer]
+          - heading "Required hardware 0" [level=3] [ref=e2350]
+          - paragraph [ref=e2351]: No additional hardware in this instruction.
+          - generic [ref=e216]:
+            - generic [ref=e217]:
+              - strong [ref=e218]: Warning / uncertainty
+              - paragraph [ref=e219]: New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.
+            - generic [ref=e2222]:
+              - strong [ref=e2223]: Warning / uncertainty
+              - paragraph [ref=e2224]: Flexible cable route/length, compliance and physical tolerances are not certified. Private manual imagery is not redistributed.
+          - heading "Instruction evidence" [level=3] [ref=e220]
+          - list [ref=e221]:
+            - listitem [ref=e222]:
+              - link "Advanced Driving Base — Assembly ↗" [ref=e2352] [cursor=pointer]:
+                - /url: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt12341bbb85ea4318/5f8802c42792080f77214054/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=22
+              - generic [ref=e224]: PDF page 22 · printed instruction 19 · figure Assembly instruction 19
+              - generic [ref=e225]: Source confidence 98% · evidence rating, not accuracy
+          - group [ref=e226]:
+            - generic "Browse original manuals" [ref=e227] [cursor=pointer]
+            - generic [ref=e228]:
+              - text: Document
+              - combobox "Document" [ref=e229]:
+                - option "Advanced Driving Base — Front Part"
+                - option "Advanced Driving Base — Right Side"
+                - option "Advanced Driving Base — Left Side"
+                - option "Advanced Driving Base — Rear Part"
+                - option "Advanced Driving Base — Assembly" [selected]
+            - generic [ref=e230]:
+              - text: One-based PDF page
+              - spinbutton "One-based PDF page" [ref=e231]: "22"
+            - link "Open official page 22 ↗" [ref=e2353] [cursor=pointer]:
+              - /url: https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt12341bbb85ea4318/5f8802c42792080f77214054/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=22
+            - paragraph [ref=e233]: Reading a page does not seek. Only an explicitly mapped figure below changes the assembly.
+            - button "Seek figure Assembly instruction 19 →" [ref=e2354] [cursor=pointer]
+          - group [ref=e235]:
+            - generic "Assembly status & viewing" [ref=e236] [cursor=pointer]
+          - group [ref=e237]:
+            - generic "Whole-source coverage & limitations" [ref=e238] [cursor=pointer]
+          - group [ref=e239]:
+            - generic "Geometry attribution & licenses" [ref=e240] [cursor=pointer]
+          - group [ref=e241]:
+            - generic "Material evidence" [ref=e242] [cursor=pointer]
+          - paragraph [ref=e243]: Independent educational reconstruction. Not affiliated with or endorsed by the manufacturer. Source documents are linked, not redistributed.
+      - region "3D assembly workbench" [ref=e244]:
+        - generic [ref=e245]:
+          - group "View mode" [ref=e246]:
+            - button "Studio" [pressed] [ref=e247] [cursor=pointer]
+            - button "Technical" [ref=e248] [cursor=pointer]
+            - button "Explode" [ref=e249] [cursor=pointer]
+            - button "Inspection" [ref=e250] [cursor=pointer]
+          - group [ref=e251]:
+            - generic "View options" [ref=e252] [cursor=pointer]
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - img "Interactive assembly. Arrow keys orbit; Shift and arrow keys pan; plus and minus zoom; R resets; F focuses active parts. Part selection is also available in inventory." [ref=e256]
+            - group [ref=e257]:
+              - generic "Camera help" [ref=e258] [cursor=pointer]
+          - generic:
+            - generic: Source-backed assembly
+            - strong: Inspect the completed source assembly
+        - generic [ref=e259]:
+          - generic [ref=e260]:
+            - button "Reset view" [ref=e261] [cursor=pointer]
+            - button "Fit whole" [ref=e262] [cursor=pointer]
+            - button "Focus active" [ref=e263] [cursor=pointer]
+            - button "Fit module" [disabled] [ref=e264]
+          - generic [ref=e265]: Auto camera
+        - generic "Assembly counts" [ref=e267]:
+          - generic [ref=e268]:
+            - strong [ref=e269]: 234/234
+            - text: units installed
+          - generic [ref=e270]:
+            - strong [ref=e271]: "0"
+            - text: remaining
+          - generic [ref=e272]:
+            - strong [ref=e273]: 136/136
+            - text: source steps
+        - region "Post-assembly demonstration" [ref=e274]:
+          - button "Enter post-assembly demonstration" [ref=e2355] [cursor=pointer]
+          - paragraph [ref=e276]: 3/136 source steps verified. Placement remains unchecked; demonstration availability is not a verified-robot seal.
+        - generic [ref=e277]:
+          - generic "New source/CAD registrations remain independently unchecked; authored coverage is not verified fit." [ref=e2356]:
+            - strong [ref=e279]: "Step warning:"
+            - text: New source/CAD registrations remain independently unchecked; authored coverage is not verified fit.
+          - button "Read warnings" [ref=e2228] [cursor=pointer]
+      - complementary "Inventory and inspection" [ref=e281]:
+        - generic [ref=e282]:
+          - heading "Parts & evidence" [level=2] [ref=e283]
+          - button "Collapse inventory" [ref=e284] [cursor=pointer]: ×
+        - group "Parts panel" [ref=e285]:
+          - button "Inventory" [pressed] [ref=e286] [cursor=pointer]
+          - button "Inspection" [ref=e287] [cursor=pointer]
+        - generic [ref=e288]:
+          - generic [ref=e289]:
+            - text: Search family, geometry or instance
+            - searchbox "Search family, geometry or instance" [ref=e290]
+          - generic [ref=e291]:
+            - text: Inventory scope
+            - combobox "Inventory scope" [ref=e292]:
+              - option "Robot & samples (separate scopes)" [selected]
+              - option "Robot only"
+              - option "Samples only"
+          - paragraph [ref=e293]: 234 individual instances shown. Inventory coverage is incomplete; this is not the complete official inventory. Placement verification remains incomplete, independently of inventory coverage. Select a row to inspect its actual CAD instance.
+          - list [ref=e294]:
+            - listitem [ref=e295]:
+              - 'button "Black Technic 9-hole beam ×1 beam-1 Geometry (LDraw): 40490 Installed · robot" [ref=e2229] [cursor=pointer]':
+                - generic [ref=e297]:
+                  - strong [ref=e298]: Black Technic 9-hole beam
+                  - generic [ref=e299]: ×1
+                - generic [ref=e300]: beam-1
+                - generic [ref=e301]: "Geometry (LDraw): 40490"
+                - generic [ref=e302]: Installed · robot
+            - listitem [ref=e303]:
+              - 'button "Black friction pin — beam hole 4 ×1 pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2230] [cursor=pointer]':
+                - generic [ref=e305]:
+                  - strong [ref=e306]: Black friction pin — beam hole 4
+                  - generic [ref=e307]: ×1
+                - generic [ref=e308]: pin-1
+                - generic [ref=e309]: "Geometry (LDraw): 2780"
+                - generic [ref=e310]: Installed · robot
+            - listitem [ref=e311]:
+              - 'button "Black friction pin — beam hole 6 ×1 pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2231] [cursor=pointer]':
+                - generic [ref=e313]:
+                  - strong [ref=e314]: Black friction pin — beam hole 6
+                  - generic [ref=e315]: ×1
+                - generic [ref=e316]: pin-2
+                - generic [ref=e317]: "Geometry (LDraw): 2780"
+                - generic [ref=e318]: Installed · robot
+            - listitem [ref=e319]:
+              - 'button "Light bluish gray 3-hole cross block — holes 1/3 ×1 grey-connector-1 Geometry (LDraw): 48989 Installed · robot" [ref=e2232] [cursor=pointer]':
+                - generic [ref=e321]:
+                  - strong [ref=e322]: Light bluish gray 3-hole cross block — holes 1/3
+                  - generic [ref=e323]: ×1
+                - generic [ref=e324]: grey-connector-1
+                - generic [ref=e325]: "Geometry (LDraw): 48989"
+                - generic [ref=e326]: Installed · robot
+            - listitem [ref=e327]:
+              - 'button "Light bluish gray 3-hole cross block — holes 7/9 ×1 grey-connector-2 Geometry (LDraw): 48989 Installed · robot" [ref=e2233] [cursor=pointer]':
+                - generic [ref=e329]:
+                  - strong [ref=e330]: Light bluish gray 3-hole cross block — holes 7/9
+                  - generic [ref=e331]: ×1
+                - generic [ref=e332]: grey-connector-2
+                - generic [ref=e333]: "Geometry (LDraw): 48989"
+                - generic [ref=e334]: Installed · robot
+            - listitem [ref=e335]:
+              - 'button "Black upper friction pin — hole 1 end ×1 pin-3 Geometry (LDraw): 2780 Installed · robot" [ref=e2234] [cursor=pointer]':
+                - generic [ref=e337]:
+                  - strong [ref=e338]: Black upper friction pin — hole 1 end
+                  - generic [ref=e339]: ×1
+                - generic [ref=e340]: pin-3
+                - generic [ref=e341]: "Geometry (LDraw): 2780"
+                - generic [ref=e342]: Installed · robot
+            - listitem [ref=e343]:
+              - 'button "Black upper friction pin — hole 9 end ×1 pin-4 Geometry (LDraw): 2780 Installed · robot" [ref=e2235] [cursor=pointer]':
+                - generic [ref=e345]:
+                  - strong [ref=e346]: Black upper friction pin — hole 9 end
+                  - generic [ref=e347]: ×1
+                - generic [ref=e348]: pin-4
+                - generic [ref=e349]: "Geometry (LDraw): 2780"
+                - generic [ref=e350]: Installed · robot
+            - listitem [ref=e351]:
+              - 'button "Technic Beam 15 x 11 with Open Center 13 x 9 ×1 front-frame Geometry (LDraw): 39790 Installed · robot" [ref=e2236] [cursor=pointer]':
+                - generic [ref=e353]:
+                  - strong [ref=e354]: Technic Beam 15 x 11 with Open Center 13 x 9
+                  - generic [ref=e355]: ×1
+                - generic [ref=e356]: front-frame
+                - generic [ref=e357]: "Geometry (LDraw): 39790"
+                - generic [ref=e358]: Installed · robot
+            - listitem [ref=e359]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-left-side-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2237] [cursor=pointer]':
+                - generic [ref=e361]:
+                  - strong [ref=e362]: Technic Pin with Friction and Slots
+                  - generic [ref=e363]: ×1
+                - generic [ref=e364]: front-left-side-pin-1
+                - generic [ref=e365]: "Geometry (LDraw): 2780"
+                - generic [ref=e366]: Installed · robot
+            - listitem [ref=e367]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-left-side-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2238] [cursor=pointer]':
+                - generic [ref=e369]:
+                  - strong [ref=e370]: Technic Pin with Friction and Slots
+                  - generic [ref=e371]: ×1
+                - generic [ref=e372]: front-left-side-pin-2
+                - generic [ref=e373]: "Geometry (LDraw): 2780"
+                - generic [ref=e374]: Installed · robot
+            - listitem [ref=e375]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-right-side-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2239] [cursor=pointer]':
+                - generic [ref=e377]:
+                  - strong [ref=e378]: Technic Pin with Friction and Slots
+                  - generic [ref=e379]: ×1
+                - generic [ref=e380]: front-right-side-pin-1
+                - generic [ref=e381]: "Geometry (LDraw): 2780"
+                - generic [ref=e382]: Installed · robot
+            - listitem [ref=e383]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-right-side-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2240] [cursor=pointer]':
+                - generic [ref=e385]:
+                  - strong [ref=e386]: Technic Pin with Friction and Slots
+                  - generic [ref=e387]: ×1
+                - generic [ref=e388]: front-right-side-pin-2
+                - generic [ref=e389]: "Geometry (LDraw): 2780"
+                - generic [ref=e390]: Installed · robot
+            - listitem [ref=e391]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-inner-front-pin Geometry (LDraw): 2780 Installed · robot" [ref=e2241] [cursor=pointer]':
+                - generic [ref=e393]:
+                  - strong [ref=e394]: Technic Pin with Friction and Slots
+                  - generic [ref=e395]: ×1
+                - generic [ref=e396]: front-inner-front-pin
+                - generic [ref=e397]: "Geometry (LDraw): 2780"
+                - generic [ref=e398]: Installed · robot
+            - listitem [ref=e399]:
+              - 'button "Technic Cross Block 1 x 3 (Axle/Pin/Axle) ×1 front-left-white-block Geometry (LDraw): 32184 Installed · robot" [ref=e2242] [cursor=pointer]':
+                - generic [ref=e401]:
+                  - strong [ref=e402]: Technic Cross Block 1 x 3 (Axle/Pin/Axle)
+                  - generic [ref=e403]: ×1
+                - generic [ref=e404]: front-left-white-block
+                - generic [ref=e405]: "Geometry (LDraw): 32184"
+                - generic [ref=e406]: Installed · robot
+            - listitem [ref=e407]:
+              - 'button "Technic Pin Long with Friction and Slot ×1 front-left-white-blue-pin Geometry (LDraw): 6558 Installed · robot" [ref=e2243] [cursor=pointer]':
+                - generic [ref=e409]:
+                  - strong [ref=e410]: Technic Pin Long with Friction and Slot
+                  - generic [ref=e411]: ×1
+                - generic [ref=e412]: front-left-white-blue-pin
+                - generic [ref=e413]: "Geometry (LDraw): 6558"
+                - generic [ref=e414]: Installed · robot
+            - listitem [ref=e415]:
+              - 'button "Technic Cross Block 1 x 3 (Axle/Pin/Axle) ×1 front-right-white-block Geometry (LDraw): 32184 Installed · robot" [ref=e2244] [cursor=pointer]':
+                - generic [ref=e417]:
+                  - strong [ref=e418]: Technic Cross Block 1 x 3 (Axle/Pin/Axle)
+                  - generic [ref=e419]: ×1
+                - generic [ref=e420]: front-right-white-block
+                - generic [ref=e421]: "Geometry (LDraw): 32184"
+                - generic [ref=e422]: Installed · robot
+            - listitem [ref=e423]:
+              - 'button "Technic Pin Long with Friction and Slot ×1 front-right-white-blue-pin Geometry (LDraw): 6558 Installed · robot" [ref=e2245] [cursor=pointer]':
+                - generic [ref=e425]:
+                  - strong [ref=e426]: Technic Pin Long with Friction and Slot
+                  - generic [ref=e427]: ×1
+                - generic [ref=e428]: front-right-white-blue-pin
+                - generic [ref=e429]: "Geometry (LDraw): 6558"
+                - generic [ref=e430]: Installed · robot
+            - listitem [ref=e431]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-frame-upper-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2246] [cursor=pointer]':
+                - generic [ref=e433]:
+                  - strong [ref=e434]: Technic Pin with Friction and Slots
+                  - generic [ref=e435]: ×1
+                - generic [ref=e436]: front-frame-upper-pin-1
+                - generic [ref=e437]: "Geometry (LDraw): 2780"
+                - generic [ref=e438]: Installed · robot
+            - listitem [ref=e439]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-frame-upper-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2247] [cursor=pointer]':
+                - generic [ref=e441]:
+                  - strong [ref=e442]: Technic Pin with Friction and Slots
+                  - generic [ref=e443]: ×1
+                - generic [ref=e444]: front-frame-upper-pin-2
+                - generic [ref=e445]: "Geometry (LDraw): 2780"
+                - generic [ref=e446]: Installed · robot
+            - listitem [ref=e447]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-frame-upper-pin-3 Geometry (LDraw): 2780 Installed · robot" [ref=e2248] [cursor=pointer]':
+                - generic [ref=e449]:
+                  - strong [ref=e450]: Technic Pin with Friction and Slots
+                  - generic [ref=e451]: ×1
+                - generic [ref=e452]: front-frame-upper-pin-3
+                - generic [ref=e453]: "Geometry (LDraw): 2780"
+                - generic [ref=e454]: Installed · robot
+            - listitem [ref=e455]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-frame-upper-pin-4 Geometry (LDraw): 2780 Installed · robot" [ref=e2249] [cursor=pointer]':
+                - generic [ref=e457]:
+                  - strong [ref=e458]: Technic Pin with Friction and Slots
+                  - generic [ref=e459]: ×1
+                - generic [ref=e460]: front-frame-upper-pin-4
+                - generic [ref=e461]: "Geometry (LDraw): 2780"
+                - generic [ref=e462]: Installed · robot
+            - listitem [ref=e463]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-frame-upper-pin-5 Geometry (LDraw): 2780 Installed · robot" [ref=e2250] [cursor=pointer]':
+                - generic [ref=e465]:
+                  - strong [ref=e466]: Technic Pin with Friction and Slots
+                  - generic [ref=e467]: ×1
+                - generic [ref=e468]: front-frame-upper-pin-5
+                - generic [ref=e469]: "Geometry (LDraw): 2780"
+                - generic [ref=e470]: Installed · robot
+            - listitem [ref=e471]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-frame-upper-pin-6 Geometry (LDraw): 2780 Installed · robot" [ref=e2251] [cursor=pointer]':
+                - generic [ref=e473]:
+                  - strong [ref=e474]: Technic Pin with Friction and Slots
+                  - generic [ref=e475]: ×1
+                - generic [ref=e476]: front-frame-upper-pin-6
+                - generic [ref=e477]: "Geometry (LDraw): 2780"
+                - generic [ref=e478]: Installed · robot
+            - listitem [ref=e479]:
+              - 'button "Electric Powered Up Medium Angular Motor with Medium Azure Back and Hub Pattern ×1 front-medium-motor Geometry (LDraw): 54696p01 Installed · robot" [ref=e2252] [cursor=pointer]':
+                - generic [ref=e481]:
+                  - strong [ref=e482]: Electric Powered Up Medium Angular Motor with Medium Azure Back and Hub Pattern
+                  - generic [ref=e483]: ×1
+                - generic [ref=e484]: front-medium-motor
+                - generic [ref=e485]: "Geometry (LDraw): 54696p01"
+                - generic [ref=e486]: Installed · robot
+            - listitem [ref=e487]:
+              - 'button "Technic Pin Long with Friction and Slot ×1 front-motor-blue-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2253] [cursor=pointer]':
+                - generic [ref=e489]:
+                  - strong [ref=e490]: Technic Pin Long with Friction and Slot
+                  - generic [ref=e491]: ×1
+                - generic [ref=e492]: front-motor-blue-pin-1
+                - generic [ref=e493]: "Geometry (LDraw): 6558"
+                - generic [ref=e494]: Installed · robot
+            - listitem [ref=e495]:
+              - 'button "Technic Pin Long with Friction and Slot ×1 front-motor-blue-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2254] [cursor=pointer]':
+                - generic [ref=e497]:
+                  - strong [ref=e498]: Technic Pin Long with Friction and Slot
+                  - generic [ref=e499]: ×1
+                - generic [ref=e500]: front-motor-blue-pin-2
+                - generic [ref=e501]: "Geometry (LDraw): 6558"
+                - generic [ref=e502]: Installed · robot
+            - listitem [ref=e503]:
+              - 'button "Technic Cable Clip ×1 front-blue-clip Geometry (LDraw): 49283 Installed · robot" [ref=e2255] [cursor=pointer]':
+                - generic [ref=e505]:
+                  - strong [ref=e506]: Technic Cable Clip
+                  - generic [ref=e507]: ×1
+                - generic [ref=e508]: front-blue-clip
+                - generic [ref=e509]: "Geometry (LDraw): 49283"
+                - generic [ref=e510]: Installed · robot
+            - listitem [ref=e511]:
+              - 'button "Technic Cable Clip ×1 front-green-clip Geometry (LDraw): 49283 Installed · robot" [ref=e2256] [cursor=pointer]':
+                - generic [ref=e513]:
+                  - strong [ref=e514]: Technic Cable Clip
+                  - generic [ref=e515]: ×1
+                - generic [ref=e516]: front-green-clip
+                - generic [ref=e517]: "Geometry (LDraw): 49283"
+                - generic [ref=e518]: Installed · robot
+            - listitem [ref=e519]:
+              - 'button "Technic Connector Block 3 x 3 with 9 Perpendicular Holes ×1 front-motor-top-block Geometry (LDraw): 39793 Installed · robot" [ref=e2257] [cursor=pointer]':
+                - generic [ref=e521]:
+                  - strong [ref=e522]: Technic Connector Block 3 x 3 with 9 Perpendicular Holes
+                  - generic [ref=e523]: ×1
+                - generic [ref=e524]: front-motor-top-block
+                - generic [ref=e525]: "Geometry (LDraw): 39793"
+                - generic [ref=e526]: Installed · robot
+            - listitem [ref=e527]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-top-block-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2258] [cursor=pointer]':
+                - generic [ref=e529]:
+                  - strong [ref=e530]: Technic Pin with Friction and Slots
+                  - generic [ref=e531]: ×1
+                - generic [ref=e532]: front-top-block-pin-1
+                - generic [ref=e533]: "Geometry (LDraw): 2780"
+                - generic [ref=e534]: Installed · robot
+            - listitem [ref=e535]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-top-block-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2259] [cursor=pointer]':
+                - generic [ref=e537]:
+                  - strong [ref=e538]: Technic Pin with Friction and Slots
+                  - generic [ref=e539]: ×1
+                - generic [ref=e540]: front-top-block-pin-2
+                - generic [ref=e541]: "Geometry (LDraw): 2780"
+                - generic [ref=e542]: Installed · robot
+            - listitem [ref=e543]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-top-block-pin-3 Geometry (LDraw): 2780 Installed · robot" [ref=e2260] [cursor=pointer]':
+                - generic [ref=e545]:
+                  - strong [ref=e546]: Technic Pin with Friction and Slots
+                  - generic [ref=e547]: ×1
+                - generic [ref=e548]: front-top-block-pin-3
+                - generic [ref=e549]: "Geometry (LDraw): 2780"
+                - generic [ref=e550]: Installed · robot
+            - listitem [ref=e551]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-top-block-pin-4 Geometry (LDraw): 2780 Installed · robot" [ref=e2261] [cursor=pointer]':
+                - generic [ref=e553]:
+                  - strong [ref=e554]: Technic Pin with Friction and Slots
+                  - generic [ref=e555]: ×1
+                - generic [ref=e556]: front-top-block-pin-4
+                - generic [ref=e557]: "Geometry (LDraw): 2780"
+                - generic [ref=e558]: Installed · robot
+            - listitem [ref=e559]:
+              - 'button "Technic Beam 5 x 3 H-shaped ×1 front-motor-h-brace-1 Geometry (LDraw): 14720 Installed · robot" [ref=e2262] [cursor=pointer]':
+                - generic [ref=e561]:
+                  - strong [ref=e562]: Technic Beam 5 x 3 H-shaped
+                  - generic [ref=e563]: ×1
+                - generic [ref=e564]: front-motor-h-brace-1
+                - generic [ref=e565]: "Geometry (LDraw): 14720"
+                - generic [ref=e566]: Installed · robot
+            - listitem [ref=e567]:
+              - 'button "Technic Pin Long with Friction and Slot ×1 front-brace-blue-pin Geometry (LDraw): 6558 Installed · robot" [ref=e2263] [cursor=pointer]':
+                - generic [ref=e569]:
+                  - strong [ref=e570]: Technic Pin Long with Friction and Slot
+                  - generic [ref=e571]: ×1
+                - generic [ref=e572]: front-brace-blue-pin
+                - generic [ref=e573]: "Geometry (LDraw): 6558"
+                - generic [ref=e574]: Installed · robot
+            - listitem [ref=e575]:
+              - 'button "Technic Cable Clip ×1 front-red-clip Geometry (LDraw): 49283 Installed · robot" [ref=e2264] [cursor=pointer]':
+                - generic [ref=e577]:
+                  - strong [ref=e578]: Technic Cable Clip
+                  - generic [ref=e579]: ×1
+                - generic [ref=e580]: front-red-clip
+                - generic [ref=e581]: "Geometry (LDraw): 49283"
+                - generic [ref=e582]: Installed · robot
+            - listitem [ref=e583]:
+              - 'button "Technic Beam 5 x 3 H-shaped ×1 front-motor-h-brace-2 Geometry (LDraw): 14720 Installed · robot" [ref=e2265] [cursor=pointer]':
+                - generic [ref=e585]:
+                  - strong [ref=e586]: Technic Beam 5 x 3 H-shaped
+                  - generic [ref=e587]: ×1
+                - generic [ref=e588]: front-motor-h-brace-2
+                - generic [ref=e589]: "Geometry (LDraw): 14720"
+                - generic [ref=e590]: Installed · robot
+            - listitem [ref=e591]:
+              - 'button "Electric Powered Up Colour Sensor ×1 front-left-color-sensor Geometry (LDraw): 37308 Installed · robot" [ref=e2266] [cursor=pointer]':
+                - generic [ref=e593]:
+                  - strong [ref=e594]: Electric Powered Up Colour Sensor
+                  - generic [ref=e595]: ×1
+                - generic [ref=e596]: front-left-color-sensor
+                - generic [ref=e597]: "Geometry (LDraw): 37308"
+                - generic [ref=e598]: Installed · robot
+            - listitem [ref=e599]:
+              - 'button "Technic Pin Long with Friction and Slot ×1 front-left-sensor-blue-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2267] [cursor=pointer]':
+                - generic [ref=e601]:
+                  - strong [ref=e602]: Technic Pin Long with Friction and Slot
+                  - generic [ref=e603]: ×1
+                - generic [ref=e604]: front-left-sensor-blue-pin-1
+                - generic [ref=e605]: "Geometry (LDraw): 6558"
+                - generic [ref=e606]: Installed · robot
+            - listitem [ref=e607]:
+              - 'button "Technic Pin Long with Friction and Slot ×1 front-left-sensor-blue-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2268] [cursor=pointer]':
+                - generic [ref=e609]:
+                  - strong [ref=e610]: Technic Pin Long with Friction and Slot
+                  - generic [ref=e611]: ×1
+                - generic [ref=e612]: front-left-sensor-blue-pin-2
+                - generic [ref=e613]: "Geometry (LDraw): 6558"
+                - generic [ref=e614]: Installed · robot
+            - listitem [ref=e615]:
+              - 'button "Technic Cross Block 1 x 3 (Pin/Pin/Pin) with 4 Pins ×1 front-left-sensor-crossblock Geometry (LDraw): 48989 Installed · robot" [ref=e2269] [cursor=pointer]':
+                - generic [ref=e617]:
+                  - strong [ref=e618]: Technic Cross Block 1 x 3 (Pin/Pin/Pin) with 4 Pins
+                  - generic [ref=e619]: ×1
+                - generic [ref=e620]: front-left-sensor-crossblock
+                - generic [ref=e621]: "Geometry (LDraw): 48989"
+                - generic [ref=e622]: Installed · robot
+            - listitem [ref=e623]:
+              - 'button "Technic Beam 5 x 3 H-shaped with Ball Socket ×1 front-left-ball-cup Geometry (LDraw): 39370 Installed · robot" [ref=e2270] [cursor=pointer]':
+                - generic [ref=e625]:
+                  - strong [ref=e626]: Technic Beam 5 x 3 H-shaped with Ball Socket
+                  - generic [ref=e627]: ×1
+                - generic [ref=e628]: front-left-ball-cup
+                - generic [ref=e629]: "Geometry (LDraw): 39370"
+                - generic [ref=e630]: Installed · robot
+            - listitem [ref=e631]:
+              - 'button "Technic Ball 19mm for Ball Castor ×1 front-left-ball Geometry (LDraw): 52629 Installed · robot" [ref=e2271] [cursor=pointer]':
+                - generic [ref=e633]:
+                  - strong [ref=e634]: Technic Ball 19mm for Ball Castor
+                  - generic [ref=e635]: ×1
+                - generic [ref=e636]: front-left-ball
+                - generic [ref=e637]: "Geometry (LDraw): 52629"
+                - generic [ref=e638]: Installed · robot
+            - listitem [ref=e639]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-left-caster-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2272] [cursor=pointer]':
+                - generic [ref=e641]:
+                  - strong [ref=e642]: Technic Pin with Friction and Slots
+                  - generic [ref=e643]: ×1
+                - generic [ref=e644]: front-left-caster-pin-1
+                - generic [ref=e645]: "Geometry (LDraw): 2780"
+                - generic [ref=e646]: Installed · robot
+            - listitem [ref=e647]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-left-caster-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2273] [cursor=pointer]':
+                - generic [ref=e649]:
+                  - strong [ref=e650]: Technic Pin with Friction and Slots
+                  - generic [ref=e651]: ×1
+                - generic [ref=e652]: front-left-caster-pin-2
+                - generic [ref=e653]: "Geometry (LDraw): 2780"
+                - generic [ref=e654]: Installed · robot
+            - listitem [ref=e655]:
+              - 'button "Technic Beam 3 x 5 Bent 90 ×1 front-left-caster-angle Geometry (LDraw): 32526 Installed · robot" [ref=e2274] [cursor=pointer]':
+                - generic [ref=e657]:
+                  - strong [ref=e658]: Technic Beam 3 x 5 Bent 90
+                  - generic [ref=e659]: ×1
+                - generic [ref=e660]: front-left-caster-angle
+                - generic [ref=e661]: "Geometry (LDraw): 32526"
+                - generic [ref=e662]: Installed · robot
+            - listitem [ref=e663]:
+              - 'button "Electric Powered Up Colour Sensor ×1 front-right-color-sensor Geometry (LDraw): 37308 Installed · robot" [ref=e2275] [cursor=pointer]':
+                - generic [ref=e665]:
+                  - strong [ref=e666]: Electric Powered Up Colour Sensor
+                  - generic [ref=e667]: ×1
+                - generic [ref=e668]: front-right-color-sensor
+                - generic [ref=e669]: "Geometry (LDraw): 37308"
+                - generic [ref=e670]: Installed · robot
+            - listitem [ref=e671]:
+              - 'button "Technic Pin Long with Friction and Slot ×1 front-right-sensor-blue-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2276] [cursor=pointer]':
+                - generic [ref=e673]:
+                  - strong [ref=e674]: Technic Pin Long with Friction and Slot
+                  - generic [ref=e675]: ×1
+                - generic [ref=e676]: front-right-sensor-blue-pin-1
+                - generic [ref=e677]: "Geometry (LDraw): 6558"
+                - generic [ref=e678]: Installed · robot
+            - listitem [ref=e679]:
+              - 'button "Technic Pin Long with Friction and Slot ×1 front-right-sensor-blue-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2277] [cursor=pointer]':
+                - generic [ref=e681]:
+                  - strong [ref=e682]: Technic Pin Long with Friction and Slot
+                  - generic [ref=e683]: ×1
+                - generic [ref=e684]: front-right-sensor-blue-pin-2
+                - generic [ref=e685]: "Geometry (LDraw): 6558"
+                - generic [ref=e686]: Installed · robot
+            - listitem [ref=e687]:
+              - 'button "Technic Cross Block 1 x 3 (Pin/Pin/Pin) with 4 Pins ×1 front-right-sensor-crossblock Geometry (LDraw): 48989 Installed · robot" [ref=e2278] [cursor=pointer]':
+                - generic [ref=e689]:
+                  - strong [ref=e690]: Technic Cross Block 1 x 3 (Pin/Pin/Pin) with 4 Pins
+                  - generic [ref=e691]: ×1
+                - generic [ref=e692]: front-right-sensor-crossblock
+                - generic [ref=e693]: "Geometry (LDraw): 48989"
+                - generic [ref=e694]: Installed · robot
+            - listitem [ref=e695]:
+              - 'button "Technic Beam 5 x 3 H-shaped with Ball Socket ×1 front-right-ball-cup Geometry (LDraw): 39370 Installed · robot" [ref=e2279] [cursor=pointer]':
+                - generic [ref=e697]:
+                  - strong [ref=e698]: Technic Beam 5 x 3 H-shaped with Ball Socket
+                  - generic [ref=e699]: ×1
+                - generic [ref=e700]: front-right-ball-cup
+                - generic [ref=e701]: "Geometry (LDraw): 39370"
+                - generic [ref=e702]: Installed · robot
+            - listitem [ref=e703]:
+              - 'button "Technic Ball 19mm for Ball Castor ×1 front-right-ball Geometry (LDraw): 52629 Installed · robot" [ref=e2280] [cursor=pointer]':
+                - generic [ref=e705]:
+                  - strong [ref=e706]: Technic Ball 19mm for Ball Castor
+                  - generic [ref=e707]: ×1
+                - generic [ref=e708]: front-right-ball
+                - generic [ref=e709]: "Geometry (LDraw): 52629"
+                - generic [ref=e710]: Installed · robot
+            - listitem [ref=e711]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-right-caster-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2281] [cursor=pointer]':
+                - generic [ref=e713]:
+                  - strong [ref=e714]: Technic Pin with Friction and Slots
+                  - generic [ref=e715]: ×1
+                - generic [ref=e716]: front-right-caster-pin-1
+                - generic [ref=e717]: "Geometry (LDraw): 2780"
+                - generic [ref=e718]: Installed · robot
+            - listitem [ref=e719]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-right-caster-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2282] [cursor=pointer]':
+                - generic [ref=e721]:
+                  - strong [ref=e722]: Technic Pin with Friction and Slots
+                  - generic [ref=e723]: ×1
+                - generic [ref=e724]: front-right-caster-pin-2
+                - generic [ref=e725]: "Geometry (LDraw): 2780"
+                - generic [ref=e726]: Installed · robot
+            - listitem [ref=e727]:
+              - 'button "Technic Beam 3 x 5 Bent 90 ×1 front-right-caster-angle Geometry (LDraw): 32526 Installed · robot" [ref=e2283] [cursor=pointer]':
+                - generic [ref=e729]:
+                  - strong [ref=e730]: Technic Beam 3 x 5 Bent 90
+                  - generic [ref=e731]: ×1
+                - generic [ref=e732]: front-right-caster-angle
+                - generic [ref=e733]: "Geometry (LDraw): 32526"
+                - generic [ref=e734]: Installed · robot
+            - listitem [ref=e735]:
+              - 'button "Technic Beam 15 ×1 front-sensor-cross-rail Geometry (LDraw): 32278 Installed · robot" [ref=e2284] [cursor=pointer]':
+                - generic [ref=e737]:
+                  - strong [ref=e738]: Technic Beam 15
+                  - generic [ref=e739]: ×1
+                - generic [ref=e740]: front-sensor-cross-rail
+                - generic [ref=e741]: "Geometry (LDraw): 32278"
+                - generic [ref=e742]: Installed · robot
+            - listitem [ref=e743]:
+              - 'button "Brick 2 x 4 with 3 Axleholes Vertical ×1 front-left-yellow-brick Geometry (LDraw): 39789 Installed · robot" [ref=e2285] [cursor=pointer]':
+                - generic [ref=e745]:
+                  - strong [ref=e746]: Brick 2 x 4 with 3 Axleholes Vertical
+                  - generic [ref=e747]: ×1
+                - generic [ref=e748]: front-left-yellow-brick
+                - generic [ref=e749]: "Geometry (LDraw): 39789"
+                - generic [ref=e750]: Installed · robot
+            - listitem [ref=e751]:
+              - 'button "Technic Axle Pin Long with Friction with 2L Pin ×1 front-left-yellow-axlepin-1 Geometry (LDraw): 11214 Installed · robot" [ref=e2286] [cursor=pointer]':
+                - generic [ref=e753]:
+                  - strong [ref=e754]: Technic Axle Pin Long with Friction with 2L Pin
+                  - generic [ref=e755]: ×1
+                - generic [ref=e756]: front-left-yellow-axlepin-1
+                - generic [ref=e757]: "Geometry (LDraw): 11214"
+                - generic [ref=e758]: Installed · robot
+            - listitem [ref=e759]:
+              - 'button "Technic Axle Pin Long with Friction with 2L Pin ×1 front-left-yellow-axlepin-2 Geometry (LDraw): 11214 Installed · robot" [ref=e2287] [cursor=pointer]':
+                - generic [ref=e761]:
+                  - strong [ref=e762]: Technic Axle Pin Long with Friction with 2L Pin
+                  - generic [ref=e763]: ×1
+                - generic [ref=e764]: front-left-yellow-axlepin-2
+                - generic [ref=e765]: "Geometry (LDraw): 11214"
+                - generic [ref=e766]: Installed · robot
+            - listitem [ref=e767]:
+              - 'button "Technic Beam 1 ×1 front-left-yellow-spacer Geometry (LDraw): 18654 Installed · robot" [ref=e2288] [cursor=pointer]':
+                - generic [ref=e769]:
+                  - strong [ref=e770]: Technic Beam 1
+                  - generic [ref=e771]: ×1
+                - generic [ref=e772]: front-left-yellow-spacer
+                - generic [ref=e773]: "Geometry (LDraw): 18654"
+                - generic [ref=e774]: Installed · robot
+            - listitem [ref=e775]:
+              - 'button "Brick 2 x 4 with 3 Axleholes Vertical ×1 front-right-yellow-brick Geometry (LDraw): 39789 Installed · robot" [ref=e2289] [cursor=pointer]':
+                - generic [ref=e777]:
+                  - strong [ref=e778]: Brick 2 x 4 with 3 Axleholes Vertical
+                  - generic [ref=e779]: ×1
+                - generic [ref=e780]: front-right-yellow-brick
+                - generic [ref=e781]: "Geometry (LDraw): 39789"
+                - generic [ref=e782]: Installed · robot
+            - listitem [ref=e783]:
+              - 'button "Technic Axle Pin Long with Friction with 2L Pin ×1 front-right-yellow-axlepin-1 Geometry (LDraw): 11214 Installed · robot" [ref=e2290] [cursor=pointer]':
+                - generic [ref=e785]:
+                  - strong [ref=e786]: Technic Axle Pin Long with Friction with 2L Pin
+                  - generic [ref=e787]: ×1
+                - generic [ref=e788]: front-right-yellow-axlepin-1
+                - generic [ref=e789]: "Geometry (LDraw): 11214"
+                - generic [ref=e790]: Installed · robot
+            - listitem [ref=e791]:
+              - 'button "Technic Axle Pin Long with Friction with 2L Pin ×1 front-right-yellow-axlepin-2 Geometry (LDraw): 11214 Installed · robot" [ref=e2291] [cursor=pointer]':
+                - generic [ref=e793]:
+                  - strong [ref=e794]: Technic Axle Pin Long with Friction with 2L Pin
+                  - generic [ref=e795]: ×1
+                - generic [ref=e796]: front-right-yellow-axlepin-2
+                - generic [ref=e797]: "Geometry (LDraw): 11214"
+                - generic [ref=e798]: Installed · robot
+            - listitem [ref=e799]:
+              - 'button "Technic Beam 1 ×1 front-right-yellow-spacer Geometry (LDraw): 18654 Installed · robot" [ref=e2292] [cursor=pointer]':
+                - generic [ref=e801]:
+                  - strong [ref=e802]: Technic Beam 1
+                  - generic [ref=e803]: ×1
+                - generic [ref=e804]: front-right-yellow-spacer
+                - generic [ref=e805]: "Geometry (LDraw): 18654"
+                - generic [ref=e806]: Installed · robot
+            - listitem [ref=e807]:
+              - 'button "Technic Connector Block 3 x 3 with 9 Perpendicular Holes ×1 front-left-upright-block Geometry (LDraw): 39793 Installed · robot" [ref=e2293] [cursor=pointer]':
+                - generic [ref=e809]:
+                  - strong [ref=e810]: Technic Connector Block 3 x 3 with 9 Perpendicular Holes
+                  - generic [ref=e811]: ×1
+                - generic [ref=e812]: front-left-upright-block
+                - generic [ref=e813]: "Geometry (LDraw): 39793"
+                - generic [ref=e814]: Installed · robot
+            - listitem [ref=e815]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-left-upright-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2294] [cursor=pointer]':
+                - generic [ref=e817]:
+                  - strong [ref=e818]: Technic Pin with Friction and Slots
+                  - generic [ref=e819]: ×1
+                - generic [ref=e820]: front-left-upright-pin-1
+                - generic [ref=e821]: "Geometry (LDraw): 2780"
+                - generic [ref=e822]: Installed · robot
+            - listitem [ref=e823]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-left-upright-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2295] [cursor=pointer]':
+                - generic [ref=e825]:
+                  - strong [ref=e826]: Technic Pin with Friction and Slots
+                  - generic [ref=e827]: ×1
+                - generic [ref=e828]: front-left-upright-pin-2
+                - generic [ref=e829]: "Geometry (LDraw): 2780"
+                - generic [ref=e830]: Installed · robot
+            - listitem [ref=e831]:
+              - 'button "Technic Connector Block 3 x 3 with 9 Perpendicular Holes ×1 front-right-upright-block Geometry (LDraw): 39793 Installed · robot" [ref=e2296] [cursor=pointer]':
+                - generic [ref=e833]:
+                  - strong [ref=e834]: Technic Connector Block 3 x 3 with 9 Perpendicular Holes
+                  - generic [ref=e835]: ×1
+                - generic [ref=e836]: front-right-upright-block
+                - generic [ref=e837]: "Geometry (LDraw): 39793"
+                - generic [ref=e838]: Installed · robot
+            - listitem [ref=e839]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-right-upright-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2297] [cursor=pointer]':
+                - generic [ref=e841]:
+                  - strong [ref=e842]: Technic Pin with Friction and Slots
+                  - generic [ref=e843]: ×1
+                - generic [ref=e844]: front-right-upright-pin-1
+                - generic [ref=e845]: "Geometry (LDraw): 2780"
+                - generic [ref=e846]: Installed · robot
+            - listitem [ref=e847]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-right-upright-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2298] [cursor=pointer]':
+                - generic [ref=e849]:
+                  - strong [ref=e850]: Technic Pin with Friction and Slots
+                  - generic [ref=e851]: ×1
+                - generic [ref=e852]: front-right-upright-pin-2
+                - generic [ref=e853]: "Geometry (LDraw): 2780"
+                - generic [ref=e854]: Installed · robot
+            - listitem [ref=e855]:
+              - 'button "Technic Gear 28 Tooth Double Bevel ×1 front-gear28 Geometry (LDraw): 46372 Installed · robot" [ref=e2299] [cursor=pointer]':
+                - generic [ref=e857]:
+                  - strong [ref=e858]: Technic Gear 28 Tooth Double Bevel
+                  - generic [ref=e859]: ×1
+                - generic [ref=e860]: front-gear28
+                - generic [ref=e861]: "Geometry (LDraw): 46372"
+                - generic [ref=e862]: Installed · robot
+            - listitem [ref=e863]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-gear-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2300] [cursor=pointer]':
+                - generic [ref=e865]:
+                  - strong [ref=e866]: Technic Pin with Friction and Slots
+                  - generic [ref=e867]: ×1
+                - generic [ref=e868]: front-gear-pin-1
+                - generic [ref=e869]: "Geometry (LDraw): 2780"
+                - generic [ref=e870]: Installed · robot
+            - listitem [ref=e871]:
+              - 'button "Technic Pin with Friction and Slots ×1 front-gear-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2301] [cursor=pointer]':
+                - generic [ref=e873]:
+                  - strong [ref=e874]: Technic Pin with Friction and Slots
+                  - generic [ref=e875]: ×1
+                - generic [ref=e876]: front-gear-pin-2
+                - generic [ref=e877]: "Geometry (LDraw): 2780"
+                - generic [ref=e878]: Installed · robot
+            - listitem [ref=e879]:
+              - 'button "Right — Large Angular Motor ×1 right-motor Geometry (LDraw): 54675 Installed · robot" [ref=e2302] [cursor=pointer]':
+                - generic [ref=e881]:
+                  - strong [ref=e882]: Right — Large Angular Motor
+                  - generic [ref=e883]: ×1
+                - generic [ref=e884]: right-motor
+                - generic [ref=e885]: "Geometry (LDraw): 54675"
+                - generic [ref=e886]: Installed · robot
+            - listitem [ref=e887]:
+              - 'button "Right — Black friction pin ×1 right-housing-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2303] [cursor=pointer]':
+                - generic [ref=e889]:
+                  - strong [ref=e890]: Right — Black friction pin
+                  - generic [ref=e891]: ×1
+                - generic [ref=e892]: right-housing-pin-1
+                - generic [ref=e893]: "Geometry (LDraw): 2780"
+                - generic [ref=e894]: Installed · robot
+            - listitem [ref=e895]:
+              - 'button "Right — Black friction pin ×1 right-housing-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2304] [cursor=pointer]':
+                - generic [ref=e897]:
+                  - strong [ref=e898]: Right — Black friction pin
+                  - generic [ref=e899]: ×1
+                - generic [ref=e900]: right-housing-pin-2
+                - generic [ref=e901]: "Geometry (LDraw): 2780"
+                - generic [ref=e902]: Installed · robot
+            - listitem [ref=e903]:
+              - 'button "Right — Black friction pin ×1 right-housing-pin-3 Geometry (LDraw): 2780 Installed · robot" [ref=e2305] [cursor=pointer]':
+                - generic [ref=e905]:
+                  - strong [ref=e906]: Right — Black friction pin
+                  - generic [ref=e907]: ×1
+                - generic [ref=e908]: right-housing-pin-3
+                - generic [ref=e909]: "Geometry (LDraw): 2780"
+                - generic [ref=e910]: Installed · robot
+            - listitem [ref=e911]:
+              - 'button "Right — Black friction pin ×1 right-housing-pin-4 Geometry (LDraw): 2780 Installed · robot" [ref=e2306] [cursor=pointer]':
+                - generic [ref=e913]:
+                  - strong [ref=e914]: Right — Black friction pin
+                  - generic [ref=e915]: ×1
+                - generic [ref=e916]: right-housing-pin-4
+                - generic [ref=e917]: "Geometry (LDraw): 2780"
+                - generic [ref=e918]: Installed · robot
+            - listitem [ref=e919]:
+              - 'button "Right — Black friction pin ×1 right-housing-pin-5 Geometry (LDraw): 2780 Installed · robot" [ref=e2307] [cursor=pointer]':
+                - generic [ref=e921]:
+                  - strong [ref=e922]: Right — Black friction pin
+                  - generic [ref=e923]: ×1
+                - generic [ref=e924]: right-housing-pin-5
+                - generic [ref=e925]: "Geometry (LDraw): 2780"
+                - generic [ref=e926]: Installed · robot
+            - listitem [ref=e927]:
+              - 'button "Right — Black 5 × 7 open frame ×1 right-frame Geometry (LDraw): 64179 Installed · robot" [ref=e2308] [cursor=pointer]':
+                - generic [ref=e929]:
+                  - strong [ref=e930]: Right — Black 5 × 7 open frame
+                  - generic [ref=e931]: ×1
+                - generic [ref=e932]: right-frame
+                - generic [ref=e933]: "Geometry (LDraw): 64179"
+                - generic [ref=e934]: Installed · robot
+            - listitem [ref=e935]:
+              - 'button "Right — Gray three-hole block with four integral pins ×1 right-frame-block Geometry (LDraw): 48989 Installed · robot" [ref=e2309] [cursor=pointer]':
+                - generic [ref=e937]:
+                  - strong [ref=e938]: Right — Gray three-hole block with four integral pins
+                  - generic [ref=e939]: ×1
+                - generic [ref=e940]: right-frame-block
+                - generic [ref=e941]: "Geometry (LDraw): 48989"
+                - generic [ref=e942]: Installed · robot
+            - listitem [ref=e943]:
+              - 'button "Right — Black friction pin ×1 right-rotor-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2310] [cursor=pointer]':
+                - generic [ref=e945]:
+                  - strong [ref=e946]: Right — Black friction pin
+                  - generic [ref=e947]: ×1
+                - generic [ref=e948]: right-rotor-pin-1
+                - generic [ref=e949]: "Geometry (LDraw): 2780"
+                - generic [ref=e950]: Installed · robot
+            - listitem [ref=e951]:
+              - 'button "Right — Black friction pin ×1 right-rotor-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2311] [cursor=pointer]':
+                - generic [ref=e953]:
+                  - strong [ref=e954]: Right — Black friction pin
+                  - generic [ref=e955]: ×1
+                - generic [ref=e956]: right-rotor-pin-2
+                - generic [ref=e957]: "Geometry (LDraw): 2780"
+                - generic [ref=e958]: Installed · robot
+            - listitem [ref=e959]:
+              - 'button "Right — Blue 3L friction pin ×1 right-frame-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2312] [cursor=pointer]':
+                - generic [ref=e961]:
+                  - strong [ref=e962]: Right — Blue 3L friction pin
+                  - generic [ref=e963]: ×1
+                - generic [ref=e964]: right-frame-pin-1
+                - generic [ref=e965]: "Geometry (LDraw): 6558"
+                - generic [ref=e966]: Installed · robot
+            - listitem [ref=e967]:
+              - 'button "Right — Blue 3L friction pin ×1 right-frame-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2313] [cursor=pointer]':
+                - generic [ref=e969]:
+                  - strong [ref=e970]: Right — Blue 3L friction pin
+                  - generic [ref=e971]: ×1
+                - generic [ref=e972]: right-frame-pin-2
+                - generic [ref=e973]: "Geometry (LDraw): 6558"
+                - generic [ref=e974]: Installed · robot
+            - listitem [ref=e975]:
+              - 'button "Right — 88 mm wheel with integral medium azure tyre ×1 right-wheel Geometry (LDraw): 49295p01 Installed · robot" [ref=e2314] [cursor=pointer]':
+                - generic [ref=e977]:
+                  - strong [ref=e978]: Right — 88 mm wheel with integral medium azure tyre
+                  - generic [ref=e979]: ×1
+                - generic [ref=e980]: right-wheel
+                - generic [ref=e981]: "Geometry (LDraw): 49295p01"
+                - generic [ref=e982]: Installed · robot
+            - listitem [ref=e983]:
+              - 'button "Right — Blue 3L friction pin ×1 right-wheel-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2315] [cursor=pointer]':
+                - generic [ref=e985]:
+                  - strong [ref=e986]: Right — Blue 3L friction pin
+                  - generic [ref=e987]: ×1
+                - generic [ref=e988]: right-wheel-pin-1
+                - generic [ref=e989]: "Geometry (LDraw): 6558"
+                - generic [ref=e990]: Installed · robot
+            - listitem [ref=e991]:
+              - 'button "Right — Blue 3L friction pin ×1 right-wheel-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2316] [cursor=pointer]':
+                - generic [ref=e993]:
+                  - strong [ref=e994]: Right — Blue 3L friction pin
+                  - generic [ref=e995]: ×1
+                - generic [ref=e996]: right-wheel-pin-2
+                - generic [ref=e997]: "Geometry (LDraw): 6558"
+                - generic [ref=e998]: Installed · robot
+            - listitem [ref=e999]:
+              - 'button "Right — Magenta 3 × 3 perpendicular connector ×1 right-wheel-block Geometry (LDraw): 39793 Installed · robot" [ref=e2317] [cursor=pointer]':
+                - generic [ref=e1001]:
+                  - strong [ref=e1002]: Right — Magenta 3 × 3 perpendicular connector
+                  - generic [ref=e1003]: ×1
+                - generic [ref=e1004]: right-wheel-block
+                - generic [ref=e1005]: "Geometry (LDraw): 39793"
+                - generic [ref=e1006]: Installed · robot
+            - listitem [ref=e1007]:
+              - 'button "Right — Gray 5L axle ×1 right-brace-axle5 Geometry (LDraw): 32073 Installed · robot" [ref=e2318] [cursor=pointer]':
+                - generic [ref=e1009]:
+                  - strong [ref=e1010]: Right — Gray 5L axle
+                  - generic [ref=e1011]: ×1
+                - generic [ref=e1012]: right-brace-axle5
+                - generic [ref=e1013]: "Geometry (LDraw): 32073"
+                - generic [ref=e1014]: Installed · robot
+            - listitem [ref=e1015]:
+              - 'button "Right — Gray perpendicular axle/pin connector ×1 right-brace-cross-1 Geometry (LDraw): 6536 Installed · robot" [ref=e2319] [cursor=pointer]':
+                - generic [ref=e1017]:
+                  - strong [ref=e1018]: Right — Gray perpendicular axle/pin connector
+                  - generic [ref=e1019]: ×1
+                - generic [ref=e1020]: right-brace-cross-1
+                - generic [ref=e1021]: "Geometry (LDraw): 6536"
+                - generic [ref=e1022]: Installed · robot
+            - listitem [ref=e1023]:
+              - 'button "Right — Black double-angular beam ×1 right-brace-beam-1 Geometry (LDraw): 32009 Installed · robot" [ref=e2320] [cursor=pointer]':
+                - generic [ref=e1025]:
+                  - strong [ref=e1026]: Right — Black double-angular beam
+                  - generic [ref=e1027]: ×1
+                - generic [ref=e1028]: right-brace-beam-1
+                - generic [ref=e1029]: "Geometry (LDraw): 32009"
+                - generic [ref=e1030]: Installed · robot
+            - listitem [ref=e1031]:
+              - 'button "Right — Gray perpendicular axle/pin connector ×1 right-brace-cross-2 Geometry (LDraw): 6536 Installed · robot" [ref=e2321] [cursor=pointer]':
+                - generic [ref=e1033]:
+                  - strong [ref=e1034]: Right — Gray perpendicular axle/pin connector
+                  - generic [ref=e1035]: ×1
+                - generic [ref=e1036]: right-brace-cross-2
+                - generic [ref=e1037]: "Geometry (LDraw): 6536"
+                - generic [ref=e1038]: Installed · robot
+            - listitem [ref=e1039]:
+              - 'button "Right — Gray three-hole block with four integral pins ×1 right-brace-upper-block Geometry (LDraw): 48989 Installed · robot" [ref=e2322] [cursor=pointer]':
+                - generic [ref=e1041]:
+                  - strong [ref=e1042]: Right — Gray three-hole block with four integral pins
+                  - generic [ref=e1043]: ×1
+                - generic [ref=e1044]: right-brace-upper-block
+                - generic [ref=e1045]: "Geometry (LDraw): 48989"
+                - generic [ref=e1046]: Installed · robot
+            - listitem [ref=e1047]:
+              - 'button "Right — Yellow 3L axle ×1 right-brace-axle3 Geometry (LDraw): 4519 Installed · robot" [ref=e2323] [cursor=pointer]':
+                - generic [ref=e1049]:
+                  - strong [ref=e1050]: Right — Yellow 3L axle
+                  - generic [ref=e1051]: ×1
+                - generic [ref=e1052]: right-brace-axle3
+                - generic [ref=e1053]: "Geometry (LDraw): 4519"
+                - generic [ref=e1054]: Installed · robot
+            - listitem [ref=e1055]:
+              - 'button "Right — Black double-angular beam ×1 right-brace-beam-2 Geometry (LDraw): 32009 Installed · robot" [ref=e2324] [cursor=pointer]':
+                - generic [ref=e1057]:
+                  - strong [ref=e1058]: Right — Black double-angular beam
+                  - generic [ref=e1059]: ×1
+                - generic [ref=e1060]: right-brace-beam-2
+                - generic [ref=e1061]: "Geometry (LDraw): 32009"
+                - generic [ref=e1062]: Installed · robot
+            - listitem [ref=e1063]:
+              - 'button "Right — Gray perpendicular axle/pin connector ×1 right-brace-cross-3 Geometry (LDraw): 6536 Installed · robot" [ref=e2325] [cursor=pointer]':
+                - generic [ref=e1065]:
+                  - strong [ref=e1066]: Right — Gray perpendicular axle/pin connector
+                  - generic [ref=e1067]: ×1
+                - generic [ref=e1068]: right-brace-cross-3
+                - generic [ref=e1069]: "Geometry (LDraw): 6536"
+                - generic [ref=e1070]: Installed · robot
+            - listitem [ref=e1071]:
+              - 'button "Right — Black friction pin ×1 right-brace-pin Geometry (LDraw): 2780 Installed · robot" [ref=e2326] [cursor=pointer]':
+                - generic [ref=e1073]:
+                  - strong [ref=e1074]: Right — Black friction pin
+                  - generic [ref=e1075]: ×1
+                - generic [ref=e1076]: right-brace-pin
+                - generic [ref=e1077]: "Geometry (LDraw): 2780"
+                - generic [ref=e1078]: Installed · robot
+            - listitem [ref=e1079]:
+              - 'button "Right — Black 4L axle ×1 right-output-axle4 Geometry (LDraw): 3705 Installed · robot" [ref=e2327] [cursor=pointer]':
+                - generic [ref=e1081]:
+                  - strong [ref=e1082]: Right — Black 4L axle
+                  - generic [ref=e1083]: ×1
+                - generic [ref=e1084]: right-output-axle4
+                - generic [ref=e1085]: "Geometry (LDraw): 3705"
+                - generic [ref=e1086]: Installed · robot
+            - listitem [ref=e1087]:
+              - 'button "Right — Black friction pin ×1 right-rear-housing-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2328] [cursor=pointer]':
+                - generic [ref=e1089]:
+                  - strong [ref=e1090]: Right — Black friction pin
+                  - generic [ref=e1091]: ×1
+                - generic [ref=e1092]: right-rear-housing-pin-1
+                - generic [ref=e1093]: "Geometry (LDraw): 2780"
+                - generic [ref=e1094]: Installed · robot
+            - listitem [ref=e1095]:
+              - 'button "Right — Black friction pin ×1 right-rear-housing-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2329] [cursor=pointer]':
+                - generic [ref=e1097]:
+                  - strong [ref=e1098]: Right — Black friction pin
+                  - generic [ref=e1099]: ×1
+                - generic [ref=e1100]: right-rear-housing-pin-2
+                - generic [ref=e1101]: "Geometry (LDraw): 2780"
+                - generic [ref=e1102]: Installed · robot
+            - listitem [ref=e1103]:
+              - 'button "Right — Gray axle/triple-pin cross block ×1 right-rear-cross-1 Geometry (LDraw): 63869 Installed · robot" [ref=e2330] [cursor=pointer]':
+                - generic [ref=e1105]:
+                  - strong [ref=e1106]: Right — Gray axle/triple-pin cross block
+                  - generic [ref=e1107]: ×1
+                - generic [ref=e1108]: right-rear-cross-1
+                - generic [ref=e1109]: "Geometry (LDraw): 63869"
+                - generic [ref=e1110]: Installed · robot
+            - listitem [ref=e1111]:
+              - 'button "Right — Blue 3L friction pin ×1 right-rear-blue-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2331] [cursor=pointer]':
+                - generic [ref=e1113]:
+                  - strong [ref=e1114]: Right — Blue 3L friction pin
+                  - generic [ref=e1115]: ×1
+                - generic [ref=e1116]: right-rear-blue-pin-1
+                - generic [ref=e1117]: "Geometry (LDraw): 6558"
+                - generic [ref=e1118]: Installed · robot
+            - listitem [ref=e1119]:
+              - 'button "Right — Blue 3L friction pin ×1 right-rear-blue-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2332] [cursor=pointer]':
+                - generic [ref=e1121]:
+                  - strong [ref=e1122]: Right — Blue 3L friction pin
+                  - generic [ref=e1123]: ×1
+                - generic [ref=e1124]: right-rear-blue-pin-2
+                - generic [ref=e1125]: "Geometry (LDraw): 6558"
+                - generic [ref=e1126]: Installed · robot
+            - listitem [ref=e1127]:
+              - 'button "Right — Black double-angular beam ×1 right-rear-beam Geometry (LDraw): 32009 Installed · robot" [ref=e2333] [cursor=pointer]':
+                - generic [ref=e1129]:
+                  - strong [ref=e1130]: Right — Black double-angular beam
+                  - generic [ref=e1131]: ×1
+                - generic [ref=e1132]: right-rear-beam
+                - generic [ref=e1133]: "Geometry (LDraw): 32009"
+                - generic [ref=e1134]: Installed · robot
+            - listitem [ref=e1135]:
+              - 'button "Right — Gray axle/triple-pin cross block — corrected source family ×1 right-rear-cross-2 Geometry (LDraw): 63869 Installed · robot" [ref=e2334] [cursor=pointer]':
+                - generic [ref=e1137]:
+                  - strong [ref=e1138]: Right — Gray axle/triple-pin cross block — corrected source family
+                  - generic [ref=e1139]: ×1
+                - generic [ref=e1140]: right-rear-cross-2
+                - generic [ref=e1141]: "Geometry (LDraw): 63869"
+                - generic [ref=e1142]: Installed · robot
+            - listitem [ref=e1143]:
+              - 'button "Right — Red 2L friction pin / 1L axle ×1 right-rear-red-pin-1 Geometry (LDraw): 11214 Installed · robot" [ref=e2335] [cursor=pointer]':
+                - generic [ref=e1145]:
+                  - strong [ref=e1146]: Right — Red 2L friction pin / 1L axle
+                  - generic [ref=e1147]: ×1
+                - generic [ref=e1148]: right-rear-red-pin-1
+                - generic [ref=e1149]: "Geometry (LDraw): 11214"
+                - generic [ref=e1150]: Installed · robot
+            - listitem [ref=e1151]:
+              - 'button "Right — Red 2L friction pin / 1L axle ×1 right-rear-red-pin-2 Geometry (LDraw): 11214 Installed · robot" [ref=e2336] [cursor=pointer]':
+                - generic [ref=e1153]:
+                  - strong [ref=e1154]: Right — Red 2L friction pin / 1L axle
+                  - generic [ref=e1155]: ×1
+                - generic [ref=e1156]: right-rear-red-pin-2
+                - generic [ref=e1157]: "Geometry (LDraw): 11214"
+                - generic [ref=e1158]: Installed · robot
+            - listitem [ref=e1159]:
+              - 'button "Right — Gray 3 × 5 H-frame ×1 right-rear-iframe Geometry (LDraw): 14720 Installed · robot" [ref=e2337] [cursor=pointer]':
+                - generic [ref=e1161]:
+                  - strong [ref=e1162]: Right — Gray 3 × 5 H-frame
+                  - generic [ref=e1163]: ×1
+                - generic [ref=e1164]: right-rear-iframe
+                - generic [ref=e1165]: "Geometry (LDraw): 14720"
+                - generic [ref=e1166]: Installed · robot
+            - listitem [ref=e1167]:
+              - 'button "Right — Yellow 3-hole beam ×1 right-rear-yellow-beam Geometry (LDraw): 32523 Installed · robot" [ref=e2338] [cursor=pointer]':
+                - generic [ref=e1169]:
+                  - strong [ref=e1170]: Right — Yellow 3-hole beam
+                  - generic [ref=e1171]: ×1
+                - generic [ref=e1172]: right-rear-yellow-beam
+                - generic [ref=e1173]: "Geometry (LDraw): 32523"
+                - generic [ref=e1174]: Installed · robot
+            - listitem [ref=e1175]:
+              - 'button "Right — Blue 3L friction pin ×1 right-clip-pin Geometry (LDraw): 6558 Installed · robot" [ref=e2339] [cursor=pointer]':
+                - generic [ref=e1177]:
+                  - strong [ref=e1178]: Right — Blue 3L friction pin
+                  - generic [ref=e1179]: ×1
+                - generic [ref=e1180]: right-clip-pin
+                - generic [ref=e1181]: "Geometry (LDraw): 6558"
+                - generic [ref=e1182]: Installed · robot
+            - listitem [ref=e1183]:
+              - 'button "Right — Magenta cable clip ×1 right-clip Geometry (LDraw): 49283 Installed · robot" [ref=e2340] [cursor=pointer]':
+                - generic [ref=e1185]:
+                  - strong [ref=e1186]: Right — Magenta cable clip
+                  - generic [ref=e1187]: ×1
+                - generic [ref=e1188]: right-clip
+                - generic [ref=e1189]: "Geometry (LDraw): 49283"
+                - generic [ref=e1190]: Installed · robot
+            - listitem [ref=e1191]:
+              - 'button "Left — Large Angular Motor ×1 left-motor Geometry (LDraw): 54675 Installed · robot" [ref=e2357] [cursor=pointer]':
+                - generic [ref=e1193]:
+                  - strong [ref=e1194]: Left — Large Angular Motor
+                  - generic [ref=e1195]: ×1
+                - generic [ref=e1196]: left-motor
+                - generic [ref=e1197]: "Geometry (LDraw): 54675"
+                - generic [ref=e1198]: Installed · robot
+            - listitem [ref=e1199]:
+              - 'button "Left — Black friction pin ×1 left-housing-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2358] [cursor=pointer]':
+                - generic [ref=e1201]:
+                  - strong [ref=e1202]: Left — Black friction pin
+                  - generic [ref=e1203]: ×1
+                - generic [ref=e1204]: left-housing-pin-1
+                - generic [ref=e1205]: "Geometry (LDraw): 2780"
+                - generic [ref=e1206]: Installed · robot
+            - listitem [ref=e1207]:
+              - 'button "Left — Black friction pin ×1 left-housing-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2359] [cursor=pointer]':
+                - generic [ref=e1209]:
+                  - strong [ref=e1210]: Left — Black friction pin
+                  - generic [ref=e1211]: ×1
+                - generic [ref=e1212]: left-housing-pin-2
+                - generic [ref=e1213]: "Geometry (LDraw): 2780"
+                - generic [ref=e1214]: Installed · robot
+            - listitem [ref=e1215]:
+              - 'button "Left — Black friction pin ×1 left-housing-pin-3 Geometry (LDraw): 2780 Installed · robot" [ref=e2360] [cursor=pointer]':
+                - generic [ref=e1217]:
+                  - strong [ref=e1218]: Left — Black friction pin
+                  - generic [ref=e1219]: ×1
+                - generic [ref=e1220]: left-housing-pin-3
+                - generic [ref=e1221]: "Geometry (LDraw): 2780"
+                - generic [ref=e1222]: Installed · robot
+            - listitem [ref=e1223]:
+              - 'button "Left — Black friction pin ×1 left-housing-pin-4 Geometry (LDraw): 2780 Installed · robot" [ref=e2361] [cursor=pointer]':
+                - generic [ref=e1225]:
+                  - strong [ref=e1226]: Left — Black friction pin
+                  - generic [ref=e1227]: ×1
+                - generic [ref=e1228]: left-housing-pin-4
+                - generic [ref=e1229]: "Geometry (LDraw): 2780"
+                - generic [ref=e1230]: Installed · robot
+            - listitem [ref=e1231]:
+              - 'button "Left — Black friction pin ×1 left-housing-pin-5 Geometry (LDraw): 2780 Installed · robot" [ref=e2362] [cursor=pointer]':
+                - generic [ref=e1233]:
+                  - strong [ref=e1234]: Left — Black friction pin
+                  - generic [ref=e1235]: ×1
+                - generic [ref=e1236]: left-housing-pin-5
+                - generic [ref=e1237]: "Geometry (LDraw): 2780"
+                - generic [ref=e1238]: Installed · robot
+            - listitem [ref=e1239]:
+              - 'button "Left — Black 5 × 7 open frame ×1 left-frame Geometry (LDraw): 64179 Installed · robot" [ref=e2363] [cursor=pointer]':
+                - generic [ref=e1241]:
+                  - strong [ref=e1242]: Left — Black 5 × 7 open frame
+                  - generic [ref=e1243]: ×1
+                - generic [ref=e1244]: left-frame
+                - generic [ref=e1245]: "Geometry (LDraw): 64179"
+                - generic [ref=e1246]: Installed · robot
+            - listitem [ref=e1247]:
+              - 'button "Left — Gray three-hole block with four integral pins ×1 left-frame-block Geometry (LDraw): 48989 Installed · robot" [ref=e2364] [cursor=pointer]':
+                - generic [ref=e1249]:
+                  - strong [ref=e1250]: Left — Gray three-hole block with four integral pins
+                  - generic [ref=e1251]: ×1
+                - generic [ref=e1252]: left-frame-block
+                - generic [ref=e1253]: "Geometry (LDraw): 48989"
+                - generic [ref=e1254]: Installed · robot
+            - listitem [ref=e1255]:
+              - 'button "Left — Black friction pin ×1 left-rotor-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2365] [cursor=pointer]':
+                - generic [ref=e1257]:
+                  - strong [ref=e1258]: Left — Black friction pin
+                  - generic [ref=e1259]: ×1
+                - generic [ref=e1260]: left-rotor-pin-1
+                - generic [ref=e1261]: "Geometry (LDraw): 2780"
+                - generic [ref=e1262]: Installed · robot
+            - listitem [ref=e1263]:
+              - 'button "Left — Black friction pin ×1 left-rotor-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2366] [cursor=pointer]':
+                - generic [ref=e1265]:
+                  - strong [ref=e1266]: Left — Black friction pin
+                  - generic [ref=e1267]: ×1
+                - generic [ref=e1268]: left-rotor-pin-2
+                - generic [ref=e1269]: "Geometry (LDraw): 2780"
+                - generic [ref=e1270]: Installed · robot
+            - listitem [ref=e1271]:
+              - 'button "Left — Blue 3L friction pin ×1 left-frame-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2367] [cursor=pointer]':
+                - generic [ref=e1273]:
+                  - strong [ref=e1274]: Left — Blue 3L friction pin
+                  - generic [ref=e1275]: ×1
+                - generic [ref=e1276]: left-frame-pin-1
+                - generic [ref=e1277]: "Geometry (LDraw): 6558"
+                - generic [ref=e1278]: Installed · robot
+            - listitem [ref=e1279]:
+              - 'button "Left — Blue 3L friction pin ×1 left-frame-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2368] [cursor=pointer]':
+                - generic [ref=e1281]:
+                  - strong [ref=e1282]: Left — Blue 3L friction pin
+                  - generic [ref=e1283]: ×1
+                - generic [ref=e1284]: left-frame-pin-2
+                - generic [ref=e1285]: "Geometry (LDraw): 6558"
+                - generic [ref=e1286]: Installed · robot
+            - listitem [ref=e1287]:
+              - 'button "Left — 88 mm wheel with integral medium azure tyre ×1 left-wheel Geometry (LDraw): 49295p01 Installed · robot" [ref=e2369] [cursor=pointer]':
+                - generic [ref=e1289]:
+                  - strong [ref=e1290]: Left — 88 mm wheel with integral medium azure tyre
+                  - generic [ref=e1291]: ×1
+                - generic [ref=e1292]: left-wheel
+                - generic [ref=e1293]: "Geometry (LDraw): 49295p01"
+                - generic [ref=e1294]: Installed · robot
+            - listitem [ref=e1295]:
+              - 'button "Left — Blue 3L friction pin ×1 left-wheel-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2370] [cursor=pointer]':
+                - generic [ref=e1297]:
+                  - strong [ref=e1298]: Left — Blue 3L friction pin
+                  - generic [ref=e1299]: ×1
+                - generic [ref=e1300]: left-wheel-pin-1
+                - generic [ref=e1301]: "Geometry (LDraw): 6558"
+                - generic [ref=e1302]: Installed · robot
+            - listitem [ref=e1303]:
+              - 'button "Left — Blue 3L friction pin ×1 left-wheel-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2371] [cursor=pointer]':
+                - generic [ref=e1305]:
+                  - strong [ref=e1306]: Left — Blue 3L friction pin
+                  - generic [ref=e1307]: ×1
+                - generic [ref=e1308]: left-wheel-pin-2
+                - generic [ref=e1309]: "Geometry (LDraw): 6558"
+                - generic [ref=e1310]: Installed · robot
+            - listitem [ref=e1311]:
+              - 'button "Left — Magenta 3 × 3 perpendicular connector ×1 left-wheel-block Geometry (LDraw): 39793 Installed · robot" [ref=e2372] [cursor=pointer]':
+                - generic [ref=e1313]:
+                  - strong [ref=e1314]: Left — Magenta 3 × 3 perpendicular connector
+                  - generic [ref=e1315]: ×1
+                - generic [ref=e1316]: left-wheel-block
+                - generic [ref=e1317]: "Geometry (LDraw): 39793"
+                - generic [ref=e1318]: Installed · robot
+            - listitem [ref=e1319]:
+              - 'button "Left — Gray 5L axle ×1 left-brace-axle5 Geometry (LDraw): 32073 Installed · robot" [ref=e2373] [cursor=pointer]':
+                - generic [ref=e1321]:
+                  - strong [ref=e1322]: Left — Gray 5L axle
+                  - generic [ref=e1323]: ×1
+                - generic [ref=e1324]: left-brace-axle5
+                - generic [ref=e1325]: "Geometry (LDraw): 32073"
+                - generic [ref=e1326]: Installed · robot
+            - listitem [ref=e1327]:
+              - 'button "Left — Gray perpendicular axle/pin connector ×1 left-brace-cross-1 Geometry (LDraw): 6536 Installed · robot" [ref=e2374] [cursor=pointer]':
+                - generic [ref=e1329]:
+                  - strong [ref=e1330]: Left — Gray perpendicular axle/pin connector
+                  - generic [ref=e1331]: ×1
+                - generic [ref=e1332]: left-brace-cross-1
+                - generic [ref=e1333]: "Geometry (LDraw): 6536"
+                - generic [ref=e1334]: Installed · robot
+            - listitem [ref=e1335]:
+              - 'button "Left — Black double-angular beam ×1 left-brace-beam-1 Geometry (LDraw): 32009 Installed · robot" [ref=e2375] [cursor=pointer]':
+                - generic [ref=e1337]:
+                  - strong [ref=e1338]: Left — Black double-angular beam
+                  - generic [ref=e1339]: ×1
+                - generic [ref=e1340]: left-brace-beam-1
+                - generic [ref=e1341]: "Geometry (LDraw): 32009"
+                - generic [ref=e1342]: Installed · robot
+            - listitem [ref=e1343]:
+              - 'button "Left — Gray perpendicular axle/pin connector ×1 left-brace-cross-2 Geometry (LDraw): 6536 Installed · robot" [ref=e2376] [cursor=pointer]':
+                - generic [ref=e1345]:
+                  - strong [ref=e1346]: Left — Gray perpendicular axle/pin connector
+                  - generic [ref=e1347]: ×1
+                - generic [ref=e1348]: left-brace-cross-2
+                - generic [ref=e1349]: "Geometry (LDraw): 6536"
+                - generic [ref=e1350]: Installed · robot
+            - listitem [ref=e1351]:
+              - 'button "Left — Gray three-hole block with four integral pins ×1 left-brace-upper-block Geometry (LDraw): 48989 Installed · robot" [ref=e2377] [cursor=pointer]':
+                - generic [ref=e1353]:
+                  - strong [ref=e1354]: Left — Gray three-hole block with four integral pins
+                  - generic [ref=e1355]: ×1
+                - generic [ref=e1356]: left-brace-upper-block
+                - generic [ref=e1357]: "Geometry (LDraw): 48989"
+                - generic [ref=e1358]: Installed · robot
+            - listitem [ref=e1359]:
+              - 'button "Left — Yellow 3L axle ×1 left-brace-axle3 Geometry (LDraw): 4519 Installed · robot" [ref=e2378] [cursor=pointer]':
+                - generic [ref=e1361]:
+                  - strong [ref=e1362]: Left — Yellow 3L axle
+                  - generic [ref=e1363]: ×1
+                - generic [ref=e1364]: left-brace-axle3
+                - generic [ref=e1365]: "Geometry (LDraw): 4519"
+                - generic [ref=e1366]: Installed · robot
+            - listitem [ref=e1367]:
+              - 'button "Left — Black double-angular beam ×1 left-brace-beam-2 Geometry (LDraw): 32009 Installed · robot" [ref=e2379] [cursor=pointer]':
+                - generic [ref=e1369]:
+                  - strong [ref=e1370]: Left — Black double-angular beam
+                  - generic [ref=e1371]: ×1
+                - generic [ref=e1372]: left-brace-beam-2
+                - generic [ref=e1373]: "Geometry (LDraw): 32009"
+                - generic [ref=e1374]: Installed · robot
+            - listitem [ref=e1375]:
+              - 'button "Left — Gray perpendicular axle/pin connector ×1 left-brace-cross-3 Geometry (LDraw): 6536 Installed · robot" [ref=e2380] [cursor=pointer]':
+                - generic [ref=e1377]:
+                  - strong [ref=e1378]: Left — Gray perpendicular axle/pin connector
+                  - generic [ref=e1379]: ×1
+                - generic [ref=e1380]: left-brace-cross-3
+                - generic [ref=e1381]: "Geometry (LDraw): 6536"
+                - generic [ref=e1382]: Installed · robot
+            - listitem [ref=e1383]:
+              - 'button "Left — Black friction pin ×1 left-brace-pin Geometry (LDraw): 2780 Installed · robot" [ref=e2381] [cursor=pointer]':
+                - generic [ref=e1385]:
+                  - strong [ref=e1386]: Left — Black friction pin
+                  - generic [ref=e1387]: ×1
+                - generic [ref=e1388]: left-brace-pin
+                - generic [ref=e1389]: "Geometry (LDraw): 2780"
+                - generic [ref=e1390]: Installed · robot
+            - listitem [ref=e1391]:
+              - 'button "Left — Black 4L axle ×1 left-output-axle4 Geometry (LDraw): 3705 Installed · robot" [ref=e2382] [cursor=pointer]':
+                - generic [ref=e1393]:
+                  - strong [ref=e1394]: Left — Black 4L axle
+                  - generic [ref=e1395]: ×1
+                - generic [ref=e1396]: left-output-axle4
+                - generic [ref=e1397]: "Geometry (LDraw): 3705"
+                - generic [ref=e1398]: Installed · robot
+            - listitem [ref=e1399]:
+              - 'button "Left — Black friction pin ×1 left-rear-housing-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2383] [cursor=pointer]':
+                - generic [ref=e1401]:
+                  - strong [ref=e1402]: Left — Black friction pin
+                  - generic [ref=e1403]: ×1
+                - generic [ref=e1404]: left-rear-housing-pin-1
+                - generic [ref=e1405]: "Geometry (LDraw): 2780"
+                - generic [ref=e1406]: Installed · robot
+            - listitem [ref=e1407]:
+              - 'button "Left — Black friction pin ×1 left-rear-housing-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2384] [cursor=pointer]':
+                - generic [ref=e1409]:
+                  - strong [ref=e1410]: Left — Black friction pin
+                  - generic [ref=e1411]: ×1
+                - generic [ref=e1412]: left-rear-housing-pin-2
+                - generic [ref=e1413]: "Geometry (LDraw): 2780"
+                - generic [ref=e1414]: Installed · robot
+            - listitem [ref=e1415]:
+              - 'button "Left — Gray axle/triple-pin cross block ×1 left-rear-cross-1 Geometry (LDraw): 63869 Installed · robot" [ref=e2385] [cursor=pointer]':
+                - generic [ref=e1417]:
+                  - strong [ref=e1418]: Left — Gray axle/triple-pin cross block
+                  - generic [ref=e1419]: ×1
+                - generic [ref=e1420]: left-rear-cross-1
+                - generic [ref=e1421]: "Geometry (LDraw): 63869"
+                - generic [ref=e1422]: Installed · robot
+            - listitem [ref=e1423]:
+              - 'button "Left — Blue 3L friction pin ×1 left-rear-blue-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2386] [cursor=pointer]':
+                - generic [ref=e1425]:
+                  - strong [ref=e1426]: Left — Blue 3L friction pin
+                  - generic [ref=e1427]: ×1
+                - generic [ref=e1428]: left-rear-blue-pin-1
+                - generic [ref=e1429]: "Geometry (LDraw): 6558"
+                - generic [ref=e1430]: Installed · robot
+            - listitem [ref=e1431]:
+              - 'button "Left — Blue 3L friction pin ×1 left-rear-blue-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2387] [cursor=pointer]':
+                - generic [ref=e1433]:
+                  - strong [ref=e1434]: Left — Blue 3L friction pin
+                  - generic [ref=e1435]: ×1
+                - generic [ref=e1436]: left-rear-blue-pin-2
+                - generic [ref=e1437]: "Geometry (LDraw): 6558"
+                - generic [ref=e1438]: Installed · robot
+            - listitem [ref=e1439]:
+              - 'button "Left — Black double-angular beam ×1 left-rear-beam Geometry (LDraw): 32009 Installed · robot" [ref=e2388] [cursor=pointer]':
+                - generic [ref=e1441]:
+                  - strong [ref=e1442]: Left — Black double-angular beam
+                  - generic [ref=e1443]: ×1
+                - generic [ref=e1444]: left-rear-beam
+                - generic [ref=e1445]: "Geometry (LDraw): 32009"
+                - generic [ref=e1446]: Installed · robot
+            - listitem [ref=e1447]:
+              - 'button "Left — Gray axle/triple-pin cross block — corrected source family ×1 left-rear-cross-2 Geometry (LDraw): 63869 Installed · robot" [ref=e2389] [cursor=pointer]':
+                - generic [ref=e1449]:
+                  - strong [ref=e1450]: Left — Gray axle/triple-pin cross block — corrected source family
+                  - generic [ref=e1451]: ×1
+                - generic [ref=e1452]: left-rear-cross-2
+                - generic [ref=e1453]: "Geometry (LDraw): 63869"
+                - generic [ref=e1454]: Installed · robot
+            - listitem [ref=e1455]:
+              - 'button "Left — Red 2L friction pin / 1L axle ×1 left-rear-red-pin-1 Geometry (LDraw): 11214 Installed · robot" [ref=e2390] [cursor=pointer]':
+                - generic [ref=e1457]:
+                  - strong [ref=e1458]: Left — Red 2L friction pin / 1L axle
+                  - generic [ref=e1459]: ×1
+                - generic [ref=e1460]: left-rear-red-pin-1
+                - generic [ref=e1461]: "Geometry (LDraw): 11214"
+                - generic [ref=e1462]: Installed · robot
+            - listitem [ref=e1463]:
+              - 'button "Left — Red 2L friction pin / 1L axle ×1 left-rear-red-pin-2 Geometry (LDraw): 11214 Installed · robot" [ref=e2391] [cursor=pointer]':
+                - generic [ref=e1465]:
+                  - strong [ref=e1466]: Left — Red 2L friction pin / 1L axle
+                  - generic [ref=e1467]: ×1
+                - generic [ref=e1468]: left-rear-red-pin-2
+                - generic [ref=e1469]: "Geometry (LDraw): 11214"
+                - generic [ref=e1470]: Installed · robot
+            - listitem [ref=e1471]:
+              - 'button "Left — Gray 3 × 5 H-frame ×1 left-rear-iframe Geometry (LDraw): 14720 Installed · robot" [ref=e2392] [cursor=pointer]':
+                - generic [ref=e1473]:
+                  - strong [ref=e1474]: Left — Gray 3 × 5 H-frame
+                  - generic [ref=e1475]: ×1
+                - generic [ref=e1476]: left-rear-iframe
+                - generic [ref=e1477]: "Geometry (LDraw): 14720"
+                - generic [ref=e1478]: Installed · robot
+            - listitem [ref=e1479]:
+              - 'button "Left — Yellow 3-hole beam ×1 left-rear-yellow-beam Geometry (LDraw): 32523 Installed · robot" [ref=e2393] [cursor=pointer]':
+                - generic [ref=e1481]:
+                  - strong [ref=e1482]: Left — Yellow 3-hole beam
+                  - generic [ref=e1483]: ×1
+                - generic [ref=e1484]: left-rear-yellow-beam
+                - generic [ref=e1485]: "Geometry (LDraw): 32523"
+                - generic [ref=e1486]: Installed · robot
+            - listitem [ref=e1487]:
+              - 'button "Left — Blue 3L friction pin ×1 left-clip-pin Geometry (LDraw): 6558 Installed · robot" [ref=e2394] [cursor=pointer]':
+                - generic [ref=e1489]:
+                  - strong [ref=e1490]: Left — Blue 3L friction pin
+                  - generic [ref=e1491]: ×1
+                - generic [ref=e1492]: left-clip-pin
+                - generic [ref=e1493]: "Geometry (LDraw): 6558"
+                - generic [ref=e1494]: Installed · robot
+            - listitem [ref=e1495]:
+              - 'button "Left — Yellow cable clip ×1 left-clip Geometry (LDraw): 49283 Installed · robot" [ref=e2395] [cursor=pointer]':
+                - generic [ref=e1497]:
+                  - strong [ref=e1498]: Left — Yellow cable clip
+                  - generic [ref=e1499]: ×1
+                - generic [ref=e1500]: left-clip
+                - generic [ref=e1501]: "Geometry (LDraw): 49283"
+                - generic [ref=e1502]: Installed · robot
+            - listitem [ref=e1503]:
+              - 'button "Black nine-hole beam ×1 rear-lower-rail-1 Geometry (LDraw): 40490 Installed · robot" [ref=e2396] [cursor=pointer]':
+                - generic [ref=e1505]:
+                  - strong [ref=e1506]: Black nine-hole beam
+                  - generic [ref=e1507]: ×1
+                - generic [ref=e1508]: rear-lower-rail-1
+                - generic [ref=e1509]: "Geometry (LDraw): 40490"
+                - generic [ref=e1510]: Installed · robot
+            - listitem [ref=e1511]:
+              - 'button "Gray cross block with four integral pins ×1 rear-bridge-1 Geometry (LDraw): 48989 Installed · robot" [ref=e2397] [cursor=pointer]':
+                - generic [ref=e1513]:
+                  - strong [ref=e1514]: Gray cross block with four integral pins
+                  - generic [ref=e1515]: ×1
+                - generic [ref=e1516]: rear-bridge-1
+                - generic [ref=e1517]: "Geometry (LDraw): 48989"
+                - generic [ref=e1518]: Installed · robot
+            - listitem [ref=e1519]:
+              - 'button "Gray cross block with four integral pins ×1 rear-bridge-2 Geometry (LDraw): 48989 Installed · robot" [ref=e2398] [cursor=pointer]':
+                - generic [ref=e1521]:
+                  - strong [ref=e1522]: Gray cross block with four integral pins
+                  - generic [ref=e1523]: ×1
+                - generic [ref=e1524]: rear-bridge-2
+                - generic [ref=e1525]: "Geometry (LDraw): 48989"
+                - generic [ref=e1526]: Installed · robot
+            - listitem [ref=e1527]:
+              - 'button "Black nine-hole beam ×1 rear-lower-rail-2 Geometry (LDraw): 40490 Installed · robot" [ref=e2399] [cursor=pointer]':
+                - generic [ref=e1529]:
+                  - strong [ref=e1530]: Black nine-hole beam
+                  - generic [ref=e1531]: ×1
+                - generic [ref=e1532]: rear-lower-rail-2
+                - generic [ref=e1533]: "Geometry (LDraw): 40490"
+                - generic [ref=e1534]: Installed · robot
+            - listitem [ref=e1535]:
+              - 'button "Black friction pin ×1 rear-lower-up-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2400] [cursor=pointer]':
+                - generic [ref=e1537]:
+                  - strong [ref=e1538]: Black friction pin
+                  - generic [ref=e1539]: ×1
+                - generic [ref=e1540]: rear-lower-up-pin-1
+                - generic [ref=e1541]: "Geometry (LDraw): 2780"
+                - generic [ref=e1542]: Installed · robot
+            - listitem [ref=e1543]:
+              - 'button "Black friction pin ×1 rear-lower-up-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2401] [cursor=pointer]':
+                - generic [ref=e1545]:
+                  - strong [ref=e1546]: Black friction pin
+                  - generic [ref=e1547]: ×1
+                - generic [ref=e1548]: rear-lower-up-pin-2
+                - generic [ref=e1549]: "Geometry (LDraw): 2780"
+                - generic [ref=e1550]: Installed · robot
+            - listitem [ref=e1551]:
+              - 'button "Black friction pin ×1 rear-lower-side-pin-1-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2402] [cursor=pointer]':
+                - generic [ref=e1553]:
+                  - strong [ref=e1554]: Black friction pin
+                  - generic [ref=e1555]: ×1
+                - generic [ref=e1556]: rear-lower-side-pin-1-1
+                - generic [ref=e1557]: "Geometry (LDraw): 2780"
+                - generic [ref=e1558]: Installed · robot
+            - listitem [ref=e1559]:
+              - 'button "Black friction pin ×1 rear-lower-side-pin-1-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2403] [cursor=pointer]':
+                - generic [ref=e1561]:
+                  - strong [ref=e1562]: Black friction pin
+                  - generic [ref=e1563]: ×1
+                - generic [ref=e1564]: rear-lower-side-pin-1-2
+                - generic [ref=e1565]: "Geometry (LDraw): 2780"
+                - generic [ref=e1566]: Installed · robot
+            - listitem [ref=e1567]:
+              - 'button "Black friction pin ×1 rear-lower-side-pin-2-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2404] [cursor=pointer]':
+                - generic [ref=e1569]:
+                  - strong [ref=e1570]: Black friction pin
+                  - generic [ref=e1571]: ×1
+                - generic [ref=e1572]: rear-lower-side-pin-2-1
+                - generic [ref=e1573]: "Geometry (LDraw): 2780"
+                - generic [ref=e1574]: Installed · robot
+            - listitem [ref=e1575]:
+              - 'button "Black friction pin ×1 rear-lower-side-pin-2-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2405] [cursor=pointer]':
+                - generic [ref=e1577]:
+                  - strong [ref=e1578]: Black friction pin
+                  - generic [ref=e1579]: ×1
+                - generic [ref=e1580]: rear-lower-side-pin-2-2
+                - generic [ref=e1581]: "Geometry (LDraw): 2780"
+                - generic [ref=e1582]: Installed · robot
+            - listitem [ref=e1583]:
+              - 'button "Medium angular output motor ×1 rear-motor Geometry (LDraw): 54696p01 Installed · robot" [ref=e2406] [cursor=pointer]':
+                - generic [ref=e1585]:
+                  - strong [ref=e1586]: Medium angular output motor
+                  - generic [ref=e1587]: ×1
+                - generic [ref=e1588]: rear-motor
+                - generic [ref=e1589]: "Geometry (LDraw): 54696p01"
+                - generic [ref=e1590]: Installed · robot
+            - listitem [ref=e1591]:
+              - 'button "Black friction pin ×1 rear-housing-pin-1-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2407] [cursor=pointer]':
+                - generic [ref=e1593]:
+                  - strong [ref=e1594]: Black friction pin
+                  - generic [ref=e1595]: ×1
+                - generic [ref=e1596]: rear-housing-pin-1-1
+                - generic [ref=e1597]: "Geometry (LDraw): 2780"
+                - generic [ref=e1598]: Installed · robot
+            - listitem [ref=e1599]:
+              - 'button "Black friction pin ×1 rear-housing-pin-1-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2408] [cursor=pointer]':
+                - generic [ref=e1601]:
+                  - strong [ref=e1602]: Black friction pin
+                  - generic [ref=e1603]: ×1
+                - generic [ref=e1604]: rear-housing-pin-1-2
+                - generic [ref=e1605]: "Geometry (LDraw): 2780"
+                - generic [ref=e1606]: Installed · robot
+            - listitem [ref=e1607]:
+              - 'button "Black friction pin ×1 rear-housing-pin-2-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2409] [cursor=pointer]':
+                - generic [ref=e1609]:
+                  - strong [ref=e1610]: Black friction pin
+                  - generic [ref=e1611]: ×1
+                - generic [ref=e1612]: rear-housing-pin-2-1
+                - generic [ref=e1613]: "Geometry (LDraw): 2780"
+                - generic [ref=e1614]: Installed · robot
+            - listitem [ref=e1615]:
+              - 'button "Black friction pin ×1 rear-housing-pin-2-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2410] [cursor=pointer]':
+                - generic [ref=e1617]:
+                  - strong [ref=e1618]: Black friction pin
+                  - generic [ref=e1619]: ×1
+                - generic [ref=e1620]: rear-housing-pin-2-2
+                - generic [ref=e1621]: "Geometry (LDraw): 2780"
+                - generic [ref=e1622]: Installed · robot
+            - listitem [ref=e1623]:
+              - 'button "Magenta perpendicular connector block ×1 rear-biscuit Geometry (LDraw): 39793 Installed · robot" [ref=e2411] [cursor=pointer]':
+                - generic [ref=e1625]:
+                  - strong [ref=e1626]: Magenta perpendicular connector block
+                  - generic [ref=e1627]: ×1
+                - generic [ref=e1628]: rear-biscuit
+                - generic [ref=e1629]: "Geometry (LDraw): 39793"
+                - generic [ref=e1630]: Installed · robot
+            - listitem [ref=e1631]:
+              - 'button "Black friction pin ×1 rear-biscuit-pin-1-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2412] [cursor=pointer]':
+                - generic [ref=e1633]:
+                  - strong [ref=e1634]: Black friction pin
+                  - generic [ref=e1635]: ×1
+                - generic [ref=e1636]: rear-biscuit-pin-1-1
+                - generic [ref=e1637]: "Geometry (LDraw): 2780"
+                - generic [ref=e1638]: Installed · robot
+            - listitem [ref=e1639]:
+              - 'button "Black friction pin ×1 rear-biscuit-pin-1-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2413] [cursor=pointer]':
+                - generic [ref=e1641]:
+                  - strong [ref=e1642]: Black friction pin
+                  - generic [ref=e1643]: ×1
+                - generic [ref=e1644]: rear-biscuit-pin-1-2
+                - generic [ref=e1645]: "Geometry (LDraw): 2780"
+                - generic [ref=e1646]: Installed · robot
+            - listitem [ref=e1647]:
+              - 'button "Black friction pin ×1 rear-biscuit-pin-2-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2414] [cursor=pointer]':
+                - generic [ref=e1649]:
+                  - strong [ref=e1650]: Black friction pin
+                  - generic [ref=e1651]: ×1
+                - generic [ref=e1652]: rear-biscuit-pin-2-1
+                - generic [ref=e1653]: "Geometry (LDraw): 2780"
+                - generic [ref=e1654]: Installed · robot
+            - listitem [ref=e1655]:
+              - 'button "Black friction pin ×1 rear-biscuit-pin-2-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2415] [cursor=pointer]':
+                - generic [ref=e1657]:
+                  - strong [ref=e1658]: Black friction pin
+                  - generic [ref=e1659]: ×1
+                - generic [ref=e1660]: rear-biscuit-pin-2-2
+                - generic [ref=e1661]: "Geometry (LDraw): 2780"
+                - generic [ref=e1662]: Installed · robot
+            - listitem [ref=e1663]:
+              - 'button "Gray H-shaped frame ×1 rear-bracket-frame-1 Geometry (LDraw): 14720 Installed · robot" [ref=e2416] [cursor=pointer]':
+                - generic [ref=e1665]:
+                  - strong [ref=e1666]: Gray H-shaped frame
+                  - generic [ref=e1667]: ×1
+                - generic [ref=e1668]: rear-bracket-frame-1
+                - generic [ref=e1669]: "Geometry (LDraw): 14720"
+                - generic [ref=e1670]: Installed · robot
+            - listitem [ref=e1671]:
+              - 'button "Gray H-shaped frame ×1 rear-bracket-frame-2 Geometry (LDraw): 14720 Installed · robot" [ref=e2417] [cursor=pointer]':
+                - generic [ref=e1673]:
+                  - strong [ref=e1674]: Gray H-shaped frame
+                  - generic [ref=e1675]: ×1
+                - generic [ref=e1676]: rear-bracket-frame-2
+                - generic [ref=e1677]: "Geometry (LDraw): 14720"
+                - generic [ref=e1678]: Installed · robot
+            - listitem [ref=e1679]:
+              - 'button "Gray long pin with coaxial stop bush ×1 rear-extended-gray-1 Geometry (LDraw): 32054 Installed · robot" [ref=e2418] [cursor=pointer]':
+                - generic [ref=e1681]:
+                  - strong [ref=e1682]: Gray long pin with coaxial stop bush
+                  - generic [ref=e1683]: ×1
+                - generic [ref=e1684]: rear-extended-gray-1
+                - generic [ref=e1685]: "Geometry (LDraw): 32054"
+                - generic [ref=e1686]: Installed · robot
+            - listitem [ref=e1687]:
+              - 'button "Blue long friction pin ×1 rear-extended-blue-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2419] [cursor=pointer]':
+                - generic [ref=e1689]:
+                  - strong [ref=e1690]: Blue long friction pin
+                  - generic [ref=e1691]: ×1
+                - generic [ref=e1692]: rear-extended-blue-1
+                - generic [ref=e1693]: "Geometry (LDraw): 6558"
+                - generic [ref=e1694]: Installed · robot
+            - listitem [ref=e1695]:
+              - 'button "Gray long pin with coaxial stop bush ×1 rear-extended-gray-2 Geometry (LDraw): 32054 Installed · robot" [ref=e2420] [cursor=pointer]':
+                - generic [ref=e1697]:
+                  - strong [ref=e1698]: Gray long pin with coaxial stop bush
+                  - generic [ref=e1699]: ×1
+                - generic [ref=e1700]: rear-extended-gray-2
+                - generic [ref=e1701]: "Geometry (LDraw): 32054"
+                - generic [ref=e1702]: Installed · robot
+            - listitem [ref=e1703]:
+              - 'button "Blue long friction pin ×1 rear-extended-blue-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2421] [cursor=pointer]':
+                - generic [ref=e1705]:
+                  - strong [ref=e1706]: Blue long friction pin
+                  - generic [ref=e1707]: ×1
+                - generic [ref=e1708]: rear-extended-blue-2
+                - generic [ref=e1709]: "Geometry (LDraw): 6558"
+                - generic [ref=e1710]: Installed · robot
+            - listitem [ref=e1711]:
+              - 'button "Gray long pin with coaxial stop bush ×1 rear-extended-gray-3 Geometry (LDraw): 32054 Installed · robot" [ref=e2422] [cursor=pointer]':
+                - generic [ref=e1713]:
+                  - strong [ref=e1714]: Gray long pin with coaxial stop bush
+                  - generic [ref=e1715]: ×1
+                - generic [ref=e1716]: rear-extended-gray-3
+                - generic [ref=e1717]: "Geometry (LDraw): 32054"
+                - generic [ref=e1718]: Installed · robot
+            - listitem [ref=e1719]:
+              - 'button "Blue long friction pin ×1 rear-extended-blue-3 Geometry (LDraw): 6558 Installed · robot" [ref=e2423] [cursor=pointer]':
+                - generic [ref=e1721]:
+                  - strong [ref=e1722]: Blue long friction pin
+                  - generic [ref=e1723]: ×1
+                - generic [ref=e1724]: rear-extended-blue-3
+                - generic [ref=e1725]: "Geometry (LDraw): 6558"
+                - generic [ref=e1726]: Installed · robot
+            - listitem [ref=e1727]:
+              - 'button "Gray long pin with coaxial stop bush ×1 rear-extended-gray-4 Geometry (LDraw): 32054 Installed · robot" [ref=e2424] [cursor=pointer]':
+                - generic [ref=e1729]:
+                  - strong [ref=e1730]: Gray long pin with coaxial stop bush
+                  - generic [ref=e1731]: ×1
+                - generic [ref=e1732]: rear-extended-gray-4
+                - generic [ref=e1733]: "Geometry (LDraw): 32054"
+                - generic [ref=e1734]: Installed · robot
+            - listitem [ref=e1735]:
+              - 'button "Blue long friction pin ×1 rear-extended-blue-4 Geometry (LDraw): 6558 Installed · robot" [ref=e2425] [cursor=pointer]':
+                - generic [ref=e1737]:
+                  - strong [ref=e1738]: Blue long friction pin
+                  - generic [ref=e1739]: ×1
+                - generic [ref=e1740]: rear-extended-blue-4
+                - generic [ref=e1741]: "Geometry (LDraw): 6558"
+                - generic [ref=e1742]: Installed · robot
+            - listitem [ref=e1743]:
+              - 'button "Black nine-hole beam ×1 rear-outer-rail-1 Geometry (LDraw): 40490 Installed · robot" [ref=e2426] [cursor=pointer]':
+                - generic [ref=e1745]:
+                  - strong [ref=e1746]: Black nine-hole beam
+                  - generic [ref=e1747]: ×1
+                - generic [ref=e1748]: rear-outer-rail-1
+                - generic [ref=e1749]: "Geometry (LDraw): 40490"
+                - generic [ref=e1750]: Installed · robot
+            - listitem [ref=e1751]:
+              - 'button "Black nine-hole beam ×1 rear-outer-rail-2 Geometry (LDraw): 40490 Installed · robot" [ref=e2427] [cursor=pointer]':
+                - generic [ref=e1753]:
+                  - strong [ref=e1754]: Black nine-hole beam
+                  - generic [ref=e1755]: ×1
+                - generic [ref=e1756]: rear-outer-rail-2
+                - generic [ref=e1757]: "Geometry (LDraw): 40490"
+                - generic [ref=e1758]: Installed · robot
+            - listitem [ref=e1759]:
+              - 'button "Medium azure cable clip ×1 rear-rail-clip Geometry (LDraw): 49283 Installed · robot" [ref=e2428] [cursor=pointer]':
+                - generic [ref=e1761]:
+                  - strong [ref=e1762]: Medium azure cable clip
+                  - generic [ref=e1763]: ×1
+                - generic [ref=e1764]: rear-rail-clip
+                - generic [ref=e1765]: "Geometry (LDraw): 49283"
+                - generic [ref=e1766]: Installed · robot
+            - listitem [ref=e1767]:
+              - 'button "Blue long friction pin ×1 rear-rail-clip-pin Geometry (LDraw): 6558 Installed · robot" [ref=e2429] [cursor=pointer]':
+                - generic [ref=e1769]:
+                  - strong [ref=e1770]: Blue long friction pin
+                  - generic [ref=e1771]: ×1
+                - generic [ref=e1772]: rear-rail-clip-pin
+                - generic [ref=e1773]: "Geometry (LDraw): 6558"
+                - generic [ref=e1774]: Installed · robot
+            - listitem [ref=e1775]:
+              - 'button "White axle/pin/axle cross block ×1 rear-white-lower-1 Geometry (LDraw): 32184 Installed · robot" [ref=e2430] [cursor=pointer]':
+                - generic [ref=e1777]:
+                  - strong [ref=e1778]: White axle/pin/axle cross block
+                  - generic [ref=e1779]: ×1
+                - generic [ref=e1780]: rear-white-lower-1
+                - generic [ref=e1781]: "Geometry (LDraw): 32184"
+                - generic [ref=e1782]: Installed · robot
+            - listitem [ref=e1783]:
+              - 'button "Yellow three-module axle ×1 rear-yellow-shaft-1-1 Geometry (LDraw): 4519 Installed · robot" [ref=e2431] [cursor=pointer]':
+                - generic [ref=e1785]:
+                  - strong [ref=e1786]: Yellow three-module axle
+                  - generic [ref=e1787]: ×1
+                - generic [ref=e1788]: rear-yellow-shaft-1-1
+                - generic [ref=e1789]: "Geometry (LDraw): 4519"
+                - generic [ref=e1790]: Installed · robot
+            - listitem [ref=e1791]:
+              - 'button "Yellow three-module axle ×1 rear-yellow-shaft-1-2 Geometry (LDraw): 4519 Installed · robot" [ref=e2432] [cursor=pointer]':
+                - generic [ref=e1793]:
+                  - strong [ref=e1794]: Yellow three-module axle
+                  - generic [ref=e1795]: ×1
+                - generic [ref=e1796]: rear-yellow-shaft-1-2
+                - generic [ref=e1797]: "Geometry (LDraw): 4519"
+                - generic [ref=e1798]: Installed · robot
+            - listitem [ref=e1799]:
+              - 'button "Gray H-shaped frame ×1 rear-mount-frame-1 Geometry (LDraw): 14720 Installed · robot" [ref=e2433] [cursor=pointer]':
+                - generic [ref=e1801]:
+                  - strong [ref=e1802]: Gray H-shaped frame
+                  - generic [ref=e1803]: ×1
+                - generic [ref=e1804]: rear-mount-frame-1
+                - generic [ref=e1805]: "Geometry (LDraw): 14720"
+                - generic [ref=e1806]: Installed · robot
+            - listitem [ref=e1807]:
+              - 'button "Medium azure cable clip ×1 rear-mount-clip-1 Geometry (LDraw): 49283 Installed · robot" [ref=e2434] [cursor=pointer]':
+                - generic [ref=e1809]:
+                  - strong [ref=e1810]: Medium azure cable clip
+                  - generic [ref=e1811]: ×1
+                - generic [ref=e1812]: rear-mount-clip-1
+                - generic [ref=e1813]: "Geometry (LDraw): 49283"
+                - generic [ref=e1814]: Installed · robot
+            - listitem [ref=e1815]:
+              - 'button "White axle/pin/axle cross block ×1 rear-white-upper-1 Geometry (LDraw): 32184 Installed · robot" [ref=e2435] [cursor=pointer]':
+                - generic [ref=e1817]:
+                  - strong [ref=e1818]: White axle/pin/axle cross block
+                  - generic [ref=e1819]: ×1
+                - generic [ref=e1820]: rear-white-upper-1
+                - generic [ref=e1821]: "Geometry (LDraw): 32184"
+                - generic [ref=e1822]: Installed · robot
+            - listitem [ref=e1823]:
+              - 'button "White axle/pin/axle cross block ×1 rear-white-lower-2 Geometry (LDraw): 32184 Installed · robot" [ref=e2436] [cursor=pointer]':
+                - generic [ref=e1825]:
+                  - strong [ref=e1826]: White axle/pin/axle cross block
+                  - generic [ref=e1827]: ×1
+                - generic [ref=e1828]: rear-white-lower-2
+                - generic [ref=e1829]: "Geometry (LDraw): 32184"
+                - generic [ref=e1830]: Installed · robot
+            - listitem [ref=e1831]:
+              - 'button "Yellow three-module axle ×1 rear-yellow-shaft-2-1 Geometry (LDraw): 4519 Installed · robot" [ref=e2437] [cursor=pointer]':
+                - generic [ref=e1833]:
+                  - strong [ref=e1834]: Yellow three-module axle
+                  - generic [ref=e1835]: ×1
+                - generic [ref=e1836]: rear-yellow-shaft-2-1
+                - generic [ref=e1837]: "Geometry (LDraw): 4519"
+                - generic [ref=e1838]: Installed · robot
+            - listitem [ref=e1839]:
+              - 'button "Yellow three-module axle ×1 rear-yellow-shaft-2-2 Geometry (LDraw): 4519 Installed · robot" [ref=e2438] [cursor=pointer]':
+                - generic [ref=e1841]:
+                  - strong [ref=e1842]: Yellow three-module axle
+                  - generic [ref=e1843]: ×1
+                - generic [ref=e1844]: rear-yellow-shaft-2-2
+                - generic [ref=e1845]: "Geometry (LDraw): 4519"
+                - generic [ref=e1846]: Installed · robot
+            - listitem [ref=e1847]:
+              - 'button "Gray H-shaped frame ×1 rear-mount-frame-2 Geometry (LDraw): 14720 Installed · robot" [ref=e2439] [cursor=pointer]':
+                - generic [ref=e1849]:
+                  - strong [ref=e1850]: Gray H-shaped frame
+                  - generic [ref=e1851]: ×1
+                - generic [ref=e1852]: rear-mount-frame-2
+                - generic [ref=e1853]: "Geometry (LDraw): 14720"
+                - generic [ref=e1854]: Installed · robot
+            - listitem [ref=e1855]:
+              - 'button "Medium azure cable clip ×1 rear-mount-clip-2 Geometry (LDraw): 49283 Installed · robot" [ref=e2440] [cursor=pointer]':
+                - generic [ref=e1857]:
+                  - strong [ref=e1858]: Medium azure cable clip
+                  - generic [ref=e1859]: ×1
+                - generic [ref=e1860]: rear-mount-clip-2
+                - generic [ref=e1861]: "Geometry (LDraw): 49283"
+                - generic [ref=e1862]: Installed · robot
+            - listitem [ref=e1863]:
+              - 'button "White axle/pin/axle cross block ×1 rear-white-upper-2 Geometry (LDraw): 32184 Installed · robot" [ref=e2441] [cursor=pointer]':
+                - generic [ref=e1865]:
+                  - strong [ref=e1866]: White axle/pin/axle cross block
+                  - generic [ref=e1867]: ×1
+                - generic [ref=e1868]: rear-white-upper-2
+                - generic [ref=e1869]: "Geometry (LDraw): 32184"
+                - generic [ref=e1870]: Installed · robot
+            - listitem [ref=e1871]:
+              - 'button "Medium azure thirteen-hole beam ×1 rear-azur-rail-1 Geometry (LDraw): 41239 Installed · robot" [ref=e2442] [cursor=pointer]':
+                - generic [ref=e1873]:
+                  - strong [ref=e1874]: Medium azure thirteen-hole beam
+                  - generic [ref=e1875]: ×1
+                - generic [ref=e1876]: rear-azur-rail-1
+                - generic [ref=e1877]: "Geometry (LDraw): 41239"
+                - generic [ref=e1878]: Installed · robot
+            - listitem [ref=e1879]:
+              - 'button "Blue long friction pin ×1 rear-azur-rail-pin-1 Geometry (LDraw): 6558 Installed · robot" [ref=e2443] [cursor=pointer]':
+                - generic [ref=e1881]:
+                  - strong [ref=e1882]: Blue long friction pin
+                  - generic [ref=e1883]: ×1
+                - generic [ref=e1884]: rear-azur-rail-pin-1
+                - generic [ref=e1885]: "Geometry (LDraw): 6558"
+                - generic [ref=e1886]: Installed · robot
+            - listitem [ref=e1887]:
+              - 'button "Blue long friction pin ×1 rear-azur-rail-pin-2 Geometry (LDraw): 6558 Installed · robot" [ref=e2444] [cursor=pointer]':
+                - generic [ref=e1889]:
+                  - strong [ref=e1890]: Blue long friction pin
+                  - generic [ref=e1891]: ×1
+                - generic [ref=e1892]: rear-azur-rail-pin-2
+                - generic [ref=e1893]: "Geometry (LDraw): 6558"
+                - generic [ref=e1894]: Installed · robot
+            - listitem [ref=e1895]:
+              - 'button "Medium azure thirteen-hole beam ×1 rear-azur-rail-2 Geometry (LDraw): 41239 Installed · robot" [ref=e2445] [cursor=pointer]':
+                - generic [ref=e1897]:
+                  - strong [ref=e1898]: Medium azure thirteen-hole beam
+                  - generic [ref=e1899]: ×1
+                - generic [ref=e1900]: rear-azur-rail-2
+                - generic [ref=e1901]: "Geometry (LDraw): 41239"
+                - generic [ref=e1902]: Installed · robot
+            - listitem [ref=e1903]:
+              - 'button "Yellow two-module pin joiner ×1 rear-yellow-standoff-1 Geometry (LDraw): 62462 Installed · robot" [ref=e2446] [cursor=pointer]':
+                - generic [ref=e1905]:
+                  - strong [ref=e1906]: Yellow two-module pin joiner
+                  - generic [ref=e1907]: ×1
+                - generic [ref=e1908]: rear-yellow-standoff-1
+                - generic [ref=e1909]: "Geometry (LDraw): 62462"
+                - generic [ref=e1910]: Installed · robot
+            - listitem [ref=e1911]:
+              - 'button "Black friction pin ×1 rear-standoff-bottom-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2447] [cursor=pointer]':
+                - generic [ref=e1913]:
+                  - strong [ref=e1914]: Black friction pin
+                  - generic [ref=e1915]: ×1
+                - generic [ref=e1916]: rear-standoff-bottom-pin-1
+                - generic [ref=e1917]: "Geometry (LDraw): 2780"
+                - generic [ref=e1918]: Installed · robot
+            - listitem [ref=e1919]:
+              - 'button "Black friction pin ×1 rear-standoff-top-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2448] [cursor=pointer]':
+                - generic [ref=e1921]:
+                  - strong [ref=e1922]: Black friction pin
+                  - generic [ref=e1923]: ×1
+                - generic [ref=e1924]: rear-standoff-top-pin-1
+                - generic [ref=e1925]: "Geometry (LDraw): 2780"
+                - generic [ref=e1926]: Installed · robot
+            - listitem [ref=e1927]:
+              - 'button "Yellow two-module pin joiner ×1 rear-yellow-standoff-2 Geometry (LDraw): 62462 Installed · robot" [ref=e2449] [cursor=pointer]':
+                - generic [ref=e1929]:
+                  - strong [ref=e1930]: Yellow two-module pin joiner
+                  - generic [ref=e1931]: ×1
+                - generic [ref=e1932]: rear-yellow-standoff-2
+                - generic [ref=e1933]: "Geometry (LDraw): 62462"
+                - generic [ref=e1934]: Installed · robot
+            - listitem [ref=e1935]:
+              - 'button "Black friction pin ×1 rear-standoff-bottom-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2450] [cursor=pointer]':
+                - generic [ref=e1937]:
+                  - strong [ref=e1938]: Black friction pin
+                  - generic [ref=e1939]: ×1
+                - generic [ref=e1940]: rear-standoff-bottom-pin-2
+                - generic [ref=e1941]: "Geometry (LDraw): 2780"
+                - generic [ref=e1942]: Installed · robot
+            - listitem [ref=e1943]:
+              - 'button "Black friction pin ×1 rear-standoff-top-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2451] [cursor=pointer]':
+                - generic [ref=e1945]:
+                  - strong [ref=e1946]: Black friction pin
+                  - generic [ref=e1947]: ×1
+                - generic [ref=e1948]: rear-standoff-top-pin-2
+                - generic [ref=e1949]: "Geometry (LDraw): 2780"
+                - generic [ref=e1950]: Installed · robot
+            - listitem [ref=e1951]:
+              - 'button "Gray 28-tooth double-bevel output gear ×1 rear-output-gear Geometry (LDraw): 46372 Installed · robot" [ref=e2452] [cursor=pointer]':
+                - generic [ref=e1953]:
+                  - strong [ref=e1954]: Gray 28-tooth double-bevel output gear
+                  - generic [ref=e1955]: ×1
+                - generic [ref=e1956]: rear-output-gear
+                - generic [ref=e1957]: "Geometry (LDraw): 46372"
+                - generic [ref=e1958]: Installed · robot
+            - listitem [ref=e1959]:
+              - 'button "Black friction pin ×1 rear-gear-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2453] [cursor=pointer]':
+                - generic [ref=e1961]:
+                  - strong [ref=e1962]: Black friction pin
+                  - generic [ref=e1963]: ×1
+                - generic [ref=e1964]: rear-gear-pin-1
+                - generic [ref=e1965]: "Geometry (LDraw): 2780"
+                - generic [ref=e1966]: Installed · robot
+            - listitem [ref=e1967]:
+              - 'button "Black friction pin ×1 rear-gear-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2454] [cursor=pointer]':
+                - generic [ref=e1969]:
+                  - strong [ref=e1970]: Black friction pin
+                  - generic [ref=e1971]: ×1
+                - generic [ref=e1972]: rear-gear-pin-2
+                - generic [ref=e1973]: "Geometry (LDraw): 2780"
+                - generic [ref=e1974]: Installed · robot
+            - listitem [ref=e1975]:
+              - 'button "Magenta seven-by-eleven frame ×1 rear-top-frame Geometry (LDraw): 39794 Installed · robot" [ref=e2455] [cursor=pointer]':
+                - generic [ref=e1977]:
+                  - strong [ref=e1978]: Magenta seven-by-eleven frame
+                  - generic [ref=e1979]: ×1
+                - generic [ref=e1980]: rear-top-frame
+                - generic [ref=e1981]: "Geometry (LDraw): 39794"
+                - generic [ref=e1982]: Installed · robot
+            - listitem [ref=e1983]:
+              - 'button "Red long axle/pin ×1 rear-red-interface-pin-1 Geometry (LDraw): 11214 Installed · robot" [ref=e2456] [cursor=pointer]':
+                - generic [ref=e1985]:
+                  - strong [ref=e1986]: Red long axle/pin
+                  - generic [ref=e1987]: ×1
+                - generic [ref=e1988]: rear-red-interface-pin-1
+                - generic [ref=e1989]: "Geometry (LDraw): 11214"
+                - generic [ref=e1990]: Installed · robot
+            - listitem [ref=e1991]:
+              - 'button "Red long axle/pin ×1 rear-red-interface-pin-2 Geometry (LDraw): 11214 Installed · robot" [ref=e2457] [cursor=pointer]':
+                - generic [ref=e1993]:
+                  - strong [ref=e1994]: Red long axle/pin
+                  - generic [ref=e1995]: ×1
+                - generic [ref=e1996]: rear-red-interface-pin-2
+                - generic [ref=e1997]: "Geometry (LDraw): 11214"
+                - generic [ref=e1998]: Installed · robot
+            - listitem [ref=e1999]:
+              - 'button "Gray two-module axle with one-module pin ×1 rear-top-upright-pin-1 Geometry (LDraw): 18651 Installed · robot" [ref=e2458] [cursor=pointer]':
+                - generic [ref=e2001]:
+                  - strong [ref=e2002]: Gray two-module axle with one-module pin
+                  - generic [ref=e2003]: ×1
+                - generic [ref=e2004]: rear-top-upright-pin-1
+                - generic [ref=e2005]: "Geometry (LDraw): 18651"
+                - generic [ref=e2006]: Installed · robot
+            - listitem [ref=e2007]:
+              - 'button "Gray two-module axle with one-module pin ×1 rear-top-upright-pin-2 Geometry (LDraw): 18651 Installed · robot" [ref=e2459] [cursor=pointer]':
+                - generic [ref=e2009]:
+                  - strong [ref=e2010]: Gray two-module axle with one-module pin
+                  - generic [ref=e2011]: ×1
+                - generic [ref=e2012]: rear-top-upright-pin-2
+                - generic [ref=e2013]: "Geometry (LDraw): 18651"
+                - generic [ref=e2014]: Installed · robot
+            - listitem [ref=e2015]:
+              - 'button "Medium azure seven-hole upright ×1 rear-upright-1 Geometry (LDraw): 32524 Installed · robot" [ref=e2460] [cursor=pointer]':
+                - generic [ref=e2017]:
+                  - strong [ref=e2018]: Medium azure seven-hole upright
+                  - generic [ref=e2019]: ×1
+                - generic [ref=e2020]: rear-upright-1
+                - generic [ref=e2021]: "Geometry (LDraw): 32524"
+                - generic [ref=e2022]: Installed · robot
+            - listitem [ref=e2023]:
+              - 'button "Gray two-module axle with one-module pin ×1 rear-upright-axle-1 Geometry (LDraw): 18651 Installed · robot" [ref=e2461] [cursor=pointer]':
+                - generic [ref=e2025]:
+                  - strong [ref=e2026]: Gray two-module axle with one-module pin
+                  - generic [ref=e2027]: ×1
+                - generic [ref=e2028]: rear-upright-axle-1
+                - generic [ref=e2029]: "Geometry (LDraw): 18651"
+                - generic [ref=e2030]: Installed · robot
+            - listitem [ref=e2031]:
+              - 'button "Medium azure seven-hole upright ×1 rear-upright-2 Geometry (LDraw): 32524 Installed · robot" [ref=e2462] [cursor=pointer]':
+                - generic [ref=e2033]:
+                  - strong [ref=e2034]: Medium azure seven-hole upright
+                  - generic [ref=e2035]: ×1
+                - generic [ref=e2036]: rear-upright-2
+                - generic [ref=e2037]: "Geometry (LDraw): 32524"
+                - generic [ref=e2038]: Installed · robot
+            - listitem [ref=e2039]:
+              - 'button "Gray two-module axle with one-module pin ×1 rear-upright-axle-2 Geometry (LDraw): 18651 Installed · robot" [ref=e2463] [cursor=pointer]':
+                - generic [ref=e2041]:
+                  - strong [ref=e2042]: Gray two-module axle with one-module pin
+                  - generic [ref=e2043]: ×1
+                - generic [ref=e2044]: rear-upright-axle-2
+                - generic [ref=e2045]: "Geometry (LDraw): 18651"
+                - generic [ref=e2046]: Installed · robot
+            - listitem [ref=e2047]:
+              - 'button "Six-port hub with installed battery ×1 assembly-hub-unit Geometry (LDraw): 45601c01 Installed · robot" [ref=e2464] [cursor=pointer]':
+                - generic [ref=e2049]:
+                  - strong [ref=e2050]: Six-port hub with installed battery
+                  - generic [ref=e2051]: ×1
+                - generic [ref=e2052]: assembly-hub-unit
+                - generic [ref=e2053]: "Geometry (LDraw): 45601c01"
+                - generic [ref=e2054]: Installed · robot
+            - listitem [ref=e2055]:
+              - 'button "Magenta11×7 upper frame ×1 assembly-top-frame-unit Geometry (LDraw): 39794 Installed · robot" [ref=e2465] [cursor=pointer]':
+                - generic [ref=e2057]:
+                  - strong [ref=e2058]: Magenta11×7 upper frame
+                  - generic [ref=e2059]: ×1
+                - generic [ref=e2060]: assembly-top-frame-unit
+                - generic [ref=e2061]: "Geometry (LDraw): 39794"
+                - generic [ref=e2062]: Installed · robot
+            - listitem [ref=e2063]:
+              - 'button "Red axle/pin — front tool attachment ×1 assembly-top-pin-1 Geometry (LDraw): 11214 Installed · robot" [ref=e2466] [cursor=pointer]':
+                - generic [ref=e2065]:
+                  - strong [ref=e2066]: Red axle/pin — front tool attachment
+                  - generic [ref=e2067]: ×1
+                - generic [ref=e2068]: assembly-top-pin-1
+                - generic [ref=e2069]: "Geometry (LDraw): 11214"
+                - generic [ref=e2070]: Installed · robot
+            - listitem [ref=e2071]:
+              - 'button "Red axle/pin — front tool attachment ×1 assembly-top-pin-2 Geometry (LDraw): 11214 Installed · robot" [ref=e2467] [cursor=pointer]':
+                - generic [ref=e2073]:
+                  - strong [ref=e2074]: Red axle/pin — front tool attachment
+                  - generic [ref=e2075]: ×1
+                - generic [ref=e2076]: assembly-top-pin-2
+                - generic [ref=e2077]: "Geometry (LDraw): 11214"
+                - generic [ref=e2078]: Installed · robot
+            - listitem [ref=e2079]:
+              - 'button "Reddish-brown5L axle with stop ×1 assembly-stop-axle-1 Geometry (LDraw): 15462 Installed · robot" [ref=e2468] [cursor=pointer]':
+                - generic [ref=e2081]:
+                  - strong [ref=e2082]: Reddish-brown5L axle with stop
+                  - generic [ref=e2083]: ×1
+                - generic [ref=e2084]: assembly-stop-axle-1
+                - generic [ref=e2085]: "Geometry (LDraw): 15462"
+                - generic [ref=e2086]: Installed · robot
+            - listitem [ref=e2087]:
+              - 'button "Reddish-brown5L axle with stop ×1 assembly-stop-axle-2 Geometry (LDraw): 15462 Installed · robot" [ref=e2469] [cursor=pointer]':
+                - generic [ref=e2089]:
+                  - strong [ref=e2090]: Reddish-brown5L axle with stop
+                  - generic [ref=e2091]: ×1
+                - generic [ref=e2092]: assembly-stop-axle-2
+                - generic [ref=e2093]: "Geometry (LDraw): 15462"
+                - generic [ref=e2094]: Installed · robot
+            - listitem [ref=e2095]:
+              - 'button "Gray axle retaining bush ×1 assembly-bush-1 Geometry (LDraw): 3713 Installed · robot" [ref=e2470] [cursor=pointer]':
+                - generic [ref=e2097]:
+                  - strong [ref=e2098]: Gray axle retaining bush
+                  - generic [ref=e2099]: ×1
+                - generic [ref=e2100]: assembly-bush-1
+                - generic [ref=e2101]: "Geometry (LDraw): 3713"
+                - generic [ref=e2102]: Installed · robot
+            - listitem [ref=e2103]:
+              - 'button "Gray axle retaining bush ×1 assembly-bush-2 Geometry (LDraw): 3713 Installed · robot" [ref=e2471] [cursor=pointer]':
+                - generic [ref=e2105]:
+                  - strong [ref=e2106]: Gray axle retaining bush
+                  - generic [ref=e2107]: ×1
+                - generic [ref=e2108]: assembly-bush-2
+                - generic [ref=e2109]: "Geometry (LDraw): 3713"
+                - generic [ref=e2110]: Installed · robot
+            - listitem [ref=e2111]:
+              - 'button "Black7×5 underside frame — first ×1 assembly-underside-frame-1 Geometry (LDraw): 64179 Installed · robot" [ref=e2472] [cursor=pointer]':
+                - generic [ref=e2113]:
+                  - strong [ref=e2114]: Black7×5 underside frame — first
+                  - generic [ref=e2115]: ×1
+                - generic [ref=e2116]: assembly-underside-frame-1
+                - generic [ref=e2117]: "Geometry (LDraw): 64179"
+                - generic [ref=e2118]: Installed · robot
+            - listitem [ref=e2119]:
+              - 'button "Gray four-integral-pin frame bridge ×1 assembly-underside-crossblock Geometry (LDraw): 48989 Installed · robot" [ref=e2473] [cursor=pointer]':
+                - generic [ref=e2121]:
+                  - strong [ref=e2122]: Gray four-integral-pin frame bridge
+                  - generic [ref=e2123]: ×1
+                - generic [ref=e2124]: assembly-underside-crossblock
+                - generic [ref=e2125]: "Geometry (LDraw): 48989"
+                - generic [ref=e2126]: Installed · robot
+            - listitem [ref=e2127]:
+              - 'button "Black7×5 underside frame — second ×1 assembly-underside-frame-2 Geometry (LDraw): 64179 Installed · robot" [ref=e2474] [cursor=pointer]':
+                - generic [ref=e2129]:
+                  - strong [ref=e2130]: Black7×5 underside frame — second
+                  - generic [ref=e2131]: ×1
+                - generic [ref=e2132]: assembly-underside-frame-2
+                - generic [ref=e2133]: "Geometry (LDraw): 64179"
+                - generic [ref=e2134]: Installed · robot
+            - listitem [ref=e2135]:
+              - 'button "Black outer-corner reinforcement pin ×1 assembly-underside-pin-1 Geometry (LDraw): 2780 Installed · robot" [ref=e2475] [cursor=pointer]':
+                - generic [ref=e2137]:
+                  - strong [ref=e2138]: Black outer-corner reinforcement pin
+                  - generic [ref=e2139]: ×1
+                - generic [ref=e2140]: assembly-underside-pin-1
+                - generic [ref=e2141]: "Geometry (LDraw): 2780"
+                - generic [ref=e2142]: Installed · robot
+            - listitem [ref=e2143]:
+              - 'button "Black outer-corner reinforcement pin ×1 assembly-underside-pin-2 Geometry (LDraw): 2780 Installed · robot" [ref=e2476] [cursor=pointer]':
+                - generic [ref=e2145]:
+                  - strong [ref=e2146]: Black outer-corner reinforcement pin
+                  - generic [ref=e2147]: ×1
+                - generic [ref=e2148]: assembly-underside-pin-2
+                - generic [ref=e2149]: "Geometry (LDraw): 2780"
+                - generic [ref=e2150]: Installed · robot
+            - listitem [ref=e2151]:
+              - 'button "Black outer-corner reinforcement pin ×1 assembly-underside-pin-3 Geometry (LDraw): 2780 Installed · robot" [ref=e2477] [cursor=pointer]':
+                - generic [ref=e2153]:
+                  - strong [ref=e2154]: Black outer-corner reinforcement pin
+                  - generic [ref=e2155]: ×1
+                - generic [ref=e2156]: assembly-underside-pin-3
+                - generic [ref=e2157]: "Geometry (LDraw): 2780"
+                - generic [ref=e2158]: Installed · robot
+            - listitem [ref=e2159]:
+              - 'button "Black outer-corner reinforcement pin ×1 assembly-underside-pin-4 Geometry (LDraw): 2780 Installed · robot" [ref=e2478] [cursor=pointer]':
+                - generic [ref=e2161]:
+                  - strong [ref=e2162]: Black outer-corner reinforcement pin
+                  - generic [ref=e2163]: ×1
+                - generic [ref=e2164]: assembly-underside-pin-4
+                - generic [ref=e2165]: "Geometry (LDraw): 2780"
+                - generic [ref=e2166]: Installed · robot
+          - group [ref=e2167]:
+            - generic "Source inventory accounting" [ref=e2168] [cursor=pointer]
+    - region "Assembly timeline" [ref=e2169]:
+      - generic [ref=e2170]:
+        - generic [ref=e2171]:
+          - text: Assembly position
+          - status [ref=e2172]: 7:59.0 / 7:59.0
+        - generic [ref=e2173]: Manual seeking pauses playback
+      - slider "Assembly position" [active] [ref=e2174] [cursor=pointer]: "479000"
+      - generic [ref=e2175]:
+        - generic [ref=e2176]:
+          - button "Previous source-step boundary" [ref=e2177] [cursor=pointer]: "|←"
+          - button "▷ Play step" [disabled] [ref=e2178]
+          - button "Resume" [disabled] [ref=e2347]
+          - button "Next source-step boundary" [disabled] [ref=e2180]: →|
+        - generic [ref=e2181]:
+          - button "Play all" [disabled] [ref=e2182]
+          - button "← Reverse" [ref=e2183] [cursor=pointer]
+        - generic [ref=e2184]:
+          - generic [ref=e2185]:
+            - text: Speed
+            - combobox "Speed" [ref=e2186]:
+              - option "0.25×"
+              - option "0.5×"
+              - option "1×" [selected]
+              - option "2×"
+          - generic [ref=e2187]:
+            - text: Milestones
+            - combobox "Milestones" [ref=e2188]:
+              - option "Jump to…" [selected]
+              - option "Original seven-unit datum bracket"
+              - option "Frame and motor mount pins prepared"
+              - option "Both distinct source sensor/caster units installed"
+              - option "Front Part source coverage complete — fits unchecked"
+              - option "right wheel and retaining block"
+              - option "right outside reinforcement joined"
+              - option "right source module assembled"
+              - option "left wheel and retaining block"
+              - option "left outside reinforcement joined"
+              - option "left source module assembled"
+              - option "Rear lower rail and motor mount"
+              - option "Rear output installed — fit unchecked"
+              - option "Rear source sequence authored — not independently verified"
+              - option "Both drive modules seated — fit unchecked"
+              - option "Rear module approached; lower pin closure unresolved"
+              - option "All source instructions authored — new poses unchecked"
+      - paragraph [ref=e2189]: Installed counts commit at each instance’s seating event; in-flight parts remain pending. Reverse is an explanation, not a safe disassembly procedure.
+  - generic [ref=e2190]: Inspect the completed source assembly. Source view-only instruction; no parts added.
