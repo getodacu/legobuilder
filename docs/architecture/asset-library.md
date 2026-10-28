@@ -1,6 +1,6 @@
 # Licensed component asset library
 
-The library is generated from the researched LEGO crosswalk, not from placeholder solids or a wholesale parts-library download. It is a geometry library, not a claim that any complete robot's placement, mold identity or assembly coverage is verified. VEX CAD remains permission-blocked and is not converted or distributed.
+The library is generated from the researched LEGO crosswalk for exactly four active builds: `advanced-driving-base`, `robotic-hand`, `quality-check` and `package-sorter`, not from placeholder solids or a wholesale parts-library download. It is a geometry library, not a claim that any complete robot's placement, mold identity or assembly coverage is verified. The user removed VEX V5 Clawbot; retained private CAD/rights research is historical, not an asset-preparation or delivery prerequisite. No VEX geometry is converted or distributed.
 
 ## Prepare once before authoring or building
 
@@ -26,7 +26,7 @@ Before building or deploying after a library change, run `npm run assets:prepare
 
 The workspace's manual-page selector accepts only source records with a defined `pageCount`; geometry and material references remain direct attribution/evidence links, never synthetic PDF-page links to DAT or LDConfig files.
 
-Catalog PNG previews under `static/previews/` are original RoboBuild WebGL renderings of the source-authored manifests, not copied manual art, manufacturer photography or generated substitute robots. All four previews use the dark viewer's slate background and studio/rim lighting; Hand and Quality include the32348/exterior source corrections. Their pictured LDraw-derived components retain the same authorship/license obligations as the meshes: `/models/library/CREDITS.txt`, `attribution.json` and the selected model's full per-file attribution identify sources and modifications. Rendered placements, camera, lighting and PBR choices are RoboBuild-authored and do not certify the model's fit. No VEX preview is fabricated while its geometry rights are unresolved.
+Catalog PNG previews under `static/previews/` are original RoboBuild WebGL renderings of the source-authored manifests, not copied manual art, manufacturer photography or generated substitute robots. All four previews use the dark viewer's slate background and studio/rim lighting; Hand and Quality include the32348/exterior source corrections. Their pictured LDraw-derived components retain the same authorship/license obligations as the meshes: `/models/library/CREDITS.txt`, `attribution.json` and the selected model's full per-file attribution identify sources and modifications. Rendered placements, camera, lighting and PBR choices are RoboBuild-authored and do not certify the model's fit. VEX has no active catalog entry, preview or unavailable-model dialog.
 
 
 ## Coordinates and articulation
@@ -54,7 +54,7 @@ LDraw type-2 lines and type-5 conditional lines remain distinct primitive kinds.
 
 Concurrent acquisitions coalesce by source hash, format, conversion version, transform, dependency list, material grouping and internal-node options. Each acquisition receives its own lease wrapper around shared immutable primitives/bounds. Releasing a lease is idempotent and cannot release another library's handle. The last release disposes owned geometries/materials/textures; model switching should release every acquired handle. `dispose()` aborts pending fetches, prevents late adoption, and disposes retained resources. Renderer model-generation tokens independently prevent an old model's completed acquisition from attaching to a new scene.
 
-DAT/MPD is the adopted component route. The same cache has real installed-loader routes for STL with explicitly declared source units, material-free OBJ with explicit instance material, and self-contained glTF/GLB declared in native meters with authored mm conversion. Material-bearing OBJ must first be converted offline with licensed MTL/textures into self-contained glTF; external glTF resources are rejected rather than silently ignored. STEP needs an authorized offline CAD conversion and remains blocked for VEX until rights are established. No format is relabeled or parsed as another.
+DAT/MPD is the adopted component route. The same cache has real installed-loader routes for STL with explicitly declared source units, material-free OBJ with explicit instance material, and self-contained glTF/GLB declared in native meters with authored mm conversion. Material-bearing OBJ must first be converted offline with licensed MTL/textures into self-contained glTF; external glTF resources are rejected rather than silently ignored. STEP needs an authorized offline CAD conversion; historical VEX conversion rights are unresolved but irrelevant to the four active LEGO builds. No format is relabeled or parsed as another.
 
 ## Checks to exercise
 

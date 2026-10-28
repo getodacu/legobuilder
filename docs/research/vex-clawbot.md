@@ -1,5 +1,7 @@
 # VEX V5 Clawbot — revision-locked evidence
 
+**Historical, out of active product scope:** the user explicitly removed VEX V5 Clawbot. The active product contains only `advanced-driving-base`, `robotic-hand`, `quality-check` and `package-sorter`. This original Rev6 source/license record is preserved without changing its counts; its unresolved prerequisites are not four-robot delivery gates. The later [2018 CAD recovery](vex-cad-recovery.md) supersedes the initial no-CAD-retrieval finding, not the unresolved Rev6 equivalence or rights evidence. No VEX app implementation or permission request is required. Remaining LEGO fidelity and Sorter pickup/routing acceptance is unchanged.
+
 ## Selected build and reference status
 
 Selected **VEX V5 Clawbot, manual 276-6009-750 Rev6, ©2023**, not Cortex, EXP or IQ. The official [Clawbot With Controller build lesson](https://education.vex.com/stemlabs/v5/stem-labs/clawbot-with-controller/build-instructions) links to [VEX's manual redirect](https://link.vex.com/docs/v5-clawbot-buildinstructions), which resolved to [276-6009-750-Rev6.pdf](https://content.vexrobotics.com/docs/276-6009-750-Rev6.pdf). Page 28 prints the revision and copyright. Page 4 explicitly sends Cortex System Bundle users to a different build. The V5 Brain, radio, battery and four 11W Smart Motors are explicitly listed on page 2.
@@ -112,7 +114,7 @@ Manual page 28 states **©2023 VEX Robotics, Inc. All rights reserved**. The ind
 
 The PDF and image renders therefore remain private development artifacts. Public runtime official meshes, copied pages/screenshots and downloaded manual bundles require an applicable explicit grant or permission first. Independently authored descriptive metadata is not represented as official engineering geometry. Third-party CAD repositories are not a substitute for a verified rights chain or revision match.
 
-## Exact unresolved prerequisites
+## Historical unresolved prerequisites (only if VEX is reintroduced)
 
 1. Retrieve official revision-compatible full-assembly STEP/native engineering files, verify hierarchy/component identity, and establish the internal preassembled claw BOM. Current blockers: official product/forum HTTP 403, curl failure 56, unavailable browser target; no guessed URL substituted.
 2. Obtain a file-specific redistribution grant covering public runtime mesh conversion and any manual/image reuse; current branding guidance is not explicitly CAD-specific.

@@ -5,13 +5,13 @@
   import { catalog } from '#lib/models/catalog.ts';
   import type { CatalogEntry } from '#lib/types/model.ts';
 
-  let selected = $state<Extract<CatalogEntry, { status: 'available' }> | null>(null);
+  let selected = $state<CatalogEntry | null>(null);
   let Workspace = $state.raw<typeof import('#lib/components/Workspace.svelte').default | null>(null);
   let workspaceError = $state('');
   let visits = $state<Record<string, { timeMs: number; installed: number; total: number; steps: number; complete: boolean }>>({});
   let request = 0;
 
-  async function open(entry: Extract<CatalogEntry, { status: 'available' }>) {
+  async function open(entry: CatalogEntry) {
     selected = entry;
     workspaceError = '';
     const current = ++request;

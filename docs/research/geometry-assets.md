@@ -2,6 +2,8 @@
 
 Research date: 2026-10-20. Scope: real, attributable geometry and an actionable acquisition path, not a complete five-build BOM or certified engineering dimensions. Machine-readable evidence is in [data/geometry-assets.json](data/geometry-assets.json).
 
+**Authoritative current scope:** the user explicitly removed VEX V5 Clawbot. The active product is exactly four LEGO builds: `advanced-driving-base`, `robotic-hand`, `quality-check` and `package-sorter`. This report preserves its original acquisition counts and license evidence; references to five builds describe the historical research set, not a fifth delivery obligation. VEX acquisition/permission findings are historical and are not acceptance prerequisites. LEGO fit/calibration, Quality cable/port mapping and Sorter pickup/routing gaps remain governed by [current coverage](../validation/coverage-baseline.md), not cleared by source availability.
+
 ## Decision
 
 Use the **official LDraw parts-library files**, which are community-authored models of LEGO parts, **not official LEGO engineering CAD**. Download only the root parts needed and their dependency ZIPs. This research retrieved 23 root assets, comprising 366 unique DAT files, 991,792 uncompressed DAT bytes and 733,850 dependency-ZIP bytes. Every retrieved DAT's actual author, `!LDRAW_ORG`, `!LICENSE`, history, BFC declarations, dependencies, source URL and SHA-256 are recorded in the JSON. The retrieved reference graph has no unresolved type-1 dependencies.
@@ -132,7 +134,9 @@ The [LDraw Official Model Repository](https://library.ldraw.org/omr) describes c
 
 An author-authorized **parts palette**, not a completed robot, was retrieved from [John Holbrook's educational-set files](https://www.johnholbrook.us/LDD_sets.html): [`45678.ldr`](https://www.johnholbrook.us/LEGO/sets/45678.ldr). The author explicitly permits use and derivatives with a backlink credit. The file itself has a blank author and no license header; preserve the web permission evidence if reusing that layout. Its page warns that the old LDraw palette omits 28T gears, and its arbitrary palette placements/quantities are not official build instructions. It supplies no verified robot assembly transforms. The asset's hash and source URL are recorded separately in the JSON.
 
-## 8. VEX official engineering CAD and licensing
+## 8. VEX official engineering CAD and licensing (historical, out of scope)
+
+This section records the initial retrieval attempt, not the current product scope. The later [CAD recovery report](vex-cad-recovery.md) supersedes its no-STEP-retrieval finding while retaining the rights boundary. No VEX recovery, conversion or permission work is required for the four-LEGO delivery.
 
 The indexed primary [V5 Classroom Starter Kit page](https://www.vexrobotics.com/v5-classroom-starter-kit.html) and [Super Kit page](https://www.vexrobotics.com/v5-classroom-super-kit.html) advertise **CAD Files → V5 Clawbot (276-6009) → STEP Download**, plus a download-all option. Exact STEP download URL, file contents, assembly hierarchy, units, embedded copyright and file hash were **not retrieved**. These are discoverability findings from indexed official-page results, not a claimed asset acquisition.
 
@@ -142,7 +146,9 @@ The accessible primary [VEX Branding Guidelines](https://kb.vex.com/hc/en-us/art
 
 A STEP conversion route is technically available through OpenCascade, but cannot repair an unknown content license. Keep VEX CAD and any renders/conversions private until the actual asset grant is established. Community GrabCAD/SolidWorks assemblies are not a licensed fallback merely because the geometry resembles the official robot.
 
-## Remaining unknowns and handoff
+## Historical research unknowns and handoff
+
+The following list records this acquisition report's original unknowns, not current release gates. Subsequent component work is documented in the [LEGO crosswalk](lego-part-crosswalk.md), and later VEX recovery remains out-of-scope historical research. See [current coverage](../validation/coverage-baseline.md) for unresolved active LEGO acceptance.
 
 - First-seed geometry is available; exact historical friction-pin and four-pin-block mold selection remains provisional.
 - Full BOM-to-geometry coverage across all five builds is not claimed. Additional lengths, gears, grippers, panels, connectors and cable routes must be matched to the manuals before acquiring their roots.

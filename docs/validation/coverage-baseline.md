@@ -1,6 +1,6 @@
 # RoboBuild — current coverage and acceptance
 
-Status: four interactive LEGO reconstructions, one VEX permission-blocked source record. This is an **implementation and verification ledger**, not a five-robot completion certificate. Updated after the source graph, material-mode and model-catalog integration; a later physical-fit or browser result must change this report rather than be assumed. See [research provenance](../research/robot-sources.md), [asset rights](../research/geometry-assets.md) and [the 12 acceptance criteria](../specifications/testing.md#section-18-acceptance-matrix-exact-criteria).
+Status: the active product contains exactly four interactive LEGO builds: `advanced-driving-base`, `robotic-hand`, `quality-check` and `package-sorter`. The user explicitly removed VEX V5 Clawbot; its [historical validation record](vex-clawbot.md) and private research are retained, but VEX geometry, rights and implementation are **not delivery prerequisites**. This is an **implementation and verification ledger**, not a four-robot completion certificate. Remaining LEGO accuracy and sorting gaps below still prevent full acceptance. See [research provenance](../research/robot-sources.md), [asset rights](../research/geometry-assets.md) and [the 12 acceptance criteria](../specifications/testing.md#section-18-acceptance-matrix-exact-criteria).
 
 ## Counting rule
 
@@ -12,43 +12,63 @@ Status: four interactive LEGO reconstructions, one VEX permission-blocked source
 | Robot Hand, *Pass the Brick* 2019 | **28 / 28 / 0**; separate real wiring stage | **39 / 0** robot; unsourced loose lesson bricks excluded | 0.85 source-shape estimate;53 nominal native registrations across39 identities independently supported; physical fits unchecked | Corrected32348 jaws, source-selected8/8mm rear arms, diagonal-end H, complete handle and fingertip faces. Axle insertion stop, physical zero/travel, compliant retention, cable route and collision tolerance remain unknown. |
 | Quality Check, 2019 Idea Detector + Robot Head | **30 / 30 / 0** (13+17) | **55 robot + 8 sample / 0** | 0.9 source-shape estimate; base/head/exterior native-contact audit completed, physical fit unchecked | Corrected frame/rails/hub, reversed output, surrounds, handed panels and coaxial retainer. Cable-supported retainer global seat and physical A/F-to-axis assignment are **unknown**; inspection behavior remains an app-authored extension. |
 | Package Sorter, 2019 Robot + Base + Packages | **80 / 80 / 0** (19+58+3); 2021 edition excluded | **158 robot + 8 sample / 0** | 0.9 source-shape estimate; fit unchecked | Compound 32140/32184/32526 fork joints, package contacts and continuous pickup/drop **unsolved**. Only source Python/SVG A/F motor-command replay is enabled; a complete sorting cycle is not implemented. |
-| [V5 Clawbot, historical 2018 manual Rev 1](vex-clawbot.md) | **41 / 0 / 0** | **0; physical total unresolved** | Official STEP inspected privately; **no VEX app geometry converted** | Explicit scoped app-conversion/use permission or independently licensed Rev1-compatible geometry is missing; manual/CAD version match and conflicting fastener inventory also unresolved. |
 
 Numerical geometry confidence measures candidate source-shape identification only, **not** a fraction of validated placements or a manufacturer tolerance. None of the additional LEGO models has an independently fit-verified numbered step. Do not infer completed acceptance from 100% authored-source coverage.
 
 The corrected canonical Sorter Base p24 callout has two genuine 6628 towball pins (historical stable IDs `base2019:peg-black-friction:19/20`), not two plain 2780 pins. Original robot count stays 158; corrected totals across the Sorter are 48 plain 2780 and 6 black 6628 pins. Rod-socket geometry is inspectable, but its as-authored end contacts and motor-to-crank axes do not close; this correction does **not** raise its fit-checked step count.
 
-## Current executable evidence
+## Four-robot cutover — final executable check
+
+The catalog, flat `CatalogEntry` contract, source-only UI removal, browser expectations, specifications and release matrix now target exactly the four LEGO builds above. Historical VEX evidence is retained outside product scope; no VEX implementation or permission is a release dependency. The following gates were executed together after the cutover, not inferred from the previous run:
+
+| Gate | Observed result |
+|---|---|
+| `npm run assets:prepare` | Passed: 64 genuine MPDs, 485 selected DATs, all 563 private source hashes verified. |
+| `npm run models:build` | Passed: all four source-backed graphs, inventory reconciliation and declared scenario compilations. |
+| `npm run check` | Passed: 875 files, zero errors and warnings. |
+| `npm run test:unit` | 53 passed, zero failed, **one explicit Sorter physical pickup/routing acceptance skipped**. The skip is not a passing sorting demonstration. |
+| `npm run build` | Passed: static `build/` emitted; largest client chunk 853.81 kB / 225.97 kB gzip. The existing 500 kB chunk advisory remains visible. |
+| `env -u CI npm run test:e2e` | **23/23 Chromium cases passed in 5.4 minutes**, including the four-card/no-Clawbot catalog, current guided UI and responsive workflows. |
+
+The production bundle was then served on isolated port5187 and exercised in real Chromium: every preview loaded; each of the four workbenches loaded its own real geometry, progressed from zero to its complete authored unit count, entered its same-hierarchy demonstration and returned to the catalog. Hand retained its real wiring-inclusive final stage; the Sorter explicitly continued to report **pickup disabled**, with only actual yaw/output replay. Seventy distinct manifest/MPD/GLB requests completed without a page exception, failed request or HTTP error. Public credits returned HTTP200 and included the corrected32348 source.
+
+At320px, the production catalog still contained four guides without horizontal overflow. Reopening Quality Check restored its completed guide; header top was0px, the live scene remained200.625px high and the scrollable instruction pane309px high. The [actual four-robot catalog](screenshots/catalog-four-robots.png) and [320px production workbench](screenshots/four-robot-mobile-320.png) were captured and visually reviewed. The production browser and temporary preview were closed after inspection; the development app remains on5179.
+
+**Software cutover checks pass; full mechanical/four-scenario acceptance does not.** VEX removal does not resolve the ADB rear join, remaining Hand/Quality fit/calibration uncertainty or the Sorter's missing closed linkage and functional package routing. The twelve-criterion matrix below intentionally preserves those gaps.
+
+## Previous executable evidence
+
+The results below predate the four-model-only catalog cutover. They remain historical evidence, **not a fresh verification of the changed product**. Passing executable checks demonstrate only their exercised software behavior; they do not resolve independent LEGO fit, Hand retention/calibration, Quality cable/port mapping or Sorter pickup/routing acceptance. Fresh final-run results must be recorded separately after execution.
 
 - `npm run assets:prepare` produced **64 selected LDraw root MPDs with485 selected DATs**, original attribution/hashes and all563 private cache hashes verified. The existing source-correct32348 Hand root reuses41 selected dependencies; original Blender-generated course marker and demonstration block GLBs remain separate source-scoped props.
 - `npm run models:build` strictly compiled four independent assembly graphs and their declared scenarios, writing a manifest for each and small derived catalog metadata. It reports 136/136, 28/28, 30/30 and 80/80 numbered instructions; the Hand's extra wiring stage is not a 29th manual step.
 - `npm run check` passed with **871 files, zero TypeScript/Svelte errors or warnings**; `npm run test:unit` reported **52 passed, zero failed, one explicitly skipped sorter pickup/compound-linkage acceptance test**. Independent source fixtures cover the corrected Hand jaw/H/53 nominal registrations and keyed fingertip surfaces; Quality frame/hub/reversed-output/exterior contact planes; ADB native features; Sorter towball/socket identity; and all four full-scene source-boundary/random-time pose, buffer, flag and accounting lanes.
 - A real Chromium browser loaded each of the four manifests and their authentic selected MPD assets: installed source counts **234/234, 39/39, 55/55 plus eight samples, 158/158 plus eight samples**. Robot Hand moved its *same* jaw geometry and separately authored block; Quality Check moved its actual coupled head and showed violet sensor input; sorter explicitly displayed **pickup disabled**. New user-visible panels, modes and transport were exercised; no manufacturer-fit conclusion follows from these views.
-- Final `env -u CI npm run test:e2e` completed **18/18 passed in Chromium** across catalog/source navigation and reversible visit resume; graph-backed education; every selected source root/resource lease; four assemblies; per-part reverse/scrub; studio/technical/explode/inspection; motor/sensor demonstrations; and320px transport. The source-camera reset restores the real view, and assembly return/course re-entry reproduce the same pixels after the studio-rig history bug was fixed. Obsolete exact demo-angle and orange-column heuristics were removed, not re-pinned. Sorter pickup remains the one explicit skipped unit acceptance; no browser pass is a source-fit certificate.
+- The previous final `env -u CI npm run test:e2e` completed **18/18 passed in Chromium** across catalog/source navigation and reversible visit resume; graph-backed education; every selected source root/resource lease; four assemblies; per-part reverse/scrub; studio/technical/explode/inspection; motor/sensor demonstrations; and320px transport. The source-camera reset restores the real view, and assembly return/course re-entry reproduce the same pixels after the studio-rig history bug was fixed. Obsolete exact demo-angle and orange-column heuristics were removed, not re-pinned. Sorter pickup remains the one explicit skipped unit acceptance; no browser pass is a source-fit certificate.
 - [ADB source-stage browser captures](advanced-driving-base.md) include staged inventory, first-seven bracket, a difficult unverified rear approach, final studio, technical, capped exploded, mid-course demonstration and [the actual 320 px viewport after catalog navigation](screenshots/mobile-320-workbench.png). [Hand](robotic-hand.md), [Quality](quality-check.md) and [Sorter](package-sorter.md) reports include their own live Chromium screenshots. These are real WebGL pixels, not redistributed instruction art or fit certificates. Further visual fit comparisons and calibrated collision tests remain open.
 - The actual [catalog with corrected WebGL previews and visit progress](screenshots/catalog-progress-current.png) and [live graph-backed educational guide](screenshots/graph-backed-education.png) were exercised in Chromium. Guide prerequisite actions seek their source step; inspection actions select real CAD; A/E live coordinates at5s independently integrate to9/10rad, then return to zero on reverse seek. Catalog reopen restored the exact10s,7/234-unit,3/136-step state without promoting physical-fit coverage.
-- Final production `build/` was served on an isolated preview port and exercised in Chromium: five catalog records; original current previews; credits HTTP200 including32348; the same39-unit Hand gripped at4.2s; catalog return reported28/28 **source** steps rather than29 wiring-inclusive stages; mobile320px Quality loaded55/55 units/30 steps with header top0. No new page errors or HTTP failures were observed. The temporary preview was stopped; the development application remains on5179.
+- The previous production `build/` was served on an isolated preview port and exercised in Chromium: **five historical catalog records, before VEX removal**; original previews; credits HTTP200 including32348; the same39-unit Hand gripped at4.2s; catalog return reported28/28 **source** steps rather than29 wiring-inclusive stages; mobile320px Quality loaded55/55 units/30 steps with header top0. No new page errors or HTTP failures were observed in that run. The temporary preview was stopped; that report recorded the development application on5179, not a current service guarantee.
 
 ## The twelve per-model acceptance criteria
 
-**P** = observable implementation but acceptance not certified; **N** = required behavior or independent evidence missing; **B** = blocked prerequisite. These are not pass percentages.
+**P** = observable implementation but acceptance not certified; **N** = required behavior or independent evidence missing. These are not pass percentages. The matrix covers only the four active LEGO models; a software test pass does not promote any cell to independently certified acceptance.
 
-| Criterion | Driving Base | Hand | Quality | Sorter 2019 | VEX 2018 |
-|---|---|---|---|---|---|
-| 01 Recognizable source build and credible geometry | P | P | P | P | B |
-| 02 Verified inventory, not merely prepared callout sum | P | P | P | P | B |
-| 03 Complete *validated* documented assembly coverage | P | P | P | P | B |
-| 04 Individual mounting animation or real subassembly merges | P | P | P | P | B |
-| 05 Independently validated installed placement/orientation | P (3 steps) | N | N | N | B |
-| 06 Reversible deterministic timeline | P | P | P | P | B |
-| 07 Manual/timeline synchronization | P | P | P | P | B |
-| 08 Mechanically readable exploded mode | P | P | P | P | B |
-| 09 Part identity and inspection | P | P | P | P | B |
-| 10 Required functioning post-assembly interaction | P (course extension) | P (grasp extension) | P (inspection extension) | **N: no pickup/routing** | B |
-| 11 Automated tests against actual model behavior | P | P | P | P, pickup test explicitly skipped | N for VEX model; blocked state is tested |
-| 12 Source provenance, license and model deviations | P | P | P | P | P for research, app rights blocked |
+| Criterion | Driving Base | Hand | Quality | Sorter 2019 |
+|---|---|---|---|---|
+| 01 Recognizable source build and credible geometry | P | P | P | P |
+| 02 Verified inventory, not merely prepared callout sum | P | P | P | P |
+| 03 Complete *validated* documented assembly coverage | P | P | P | P |
+| 04 Individual mounting animation or real subassembly merges | P | P | P | P |
+| 05 Independently validated installed placement/orientation | P (3 steps) | N | N | N |
+| 06 Reversible deterministic timeline | P | P | P | P |
+| 07 Manual/timeline synchronization | P | P | P | P |
+| 08 Mechanically readable exploded mode | P | P | P | P |
+| 09 Part identity and inspection | P | P | P | P |
+| 10 Required functioning post-assembly interaction | P (course extension) | P (grasp extension) | P (inspection extension) | **N: no pickup/routing** |
+| 11 Automated tests against actual model behavior | P | P | P | P, pickup test explicitly skipped |
+| 12 Source provenance, license and model deviations | P | P | P | P |
 
-The publicly linked official manuals are not bundled or reproduced. VEX STEP access, private research page screenshots or an authorized LDraw library do **not** convey permission to redistribute VEX conversion. See each robot's individual [validation report](./), [VEX evidence](../research/vex-cad-recovery.md), and the complete [testing contract](../specifications/testing.md). `npm run build` emitted a usable static `build/` with four model manifests and licensed library assets; its largest client chunk was approximately854 kB before gzip (226 kB gzip), above Vite's500 kB advisory threshold. Approximately60 FPS and integrated-GPU behavior are **targets**, not measured guarantees; clearance, friction, load and compliance remain uncalibrated.
+The publicly linked official manuals are not bundled or reproduced. See each active robot's individual [validation report](./) and the complete [testing contract](../specifications/testing.md). Retained [VEX evidence](../research/vex-cad-recovery.md) is historical and does not add a release gate; removal does not grant permission to convert or redistribute its sources. The previous `npm run build` emitted a usable static `build/` with four model manifests and licensed library assets; its largest client chunk was approximately854 kB before gzip (226 kB gzip), above Vite's500 kB advisory threshold. Approximately60 FPS and integrated-GPU behavior are **targets**, not measured guarantees; clearance, friction, load and compliance remain uncalibrated.
 
 **Measured local software-renderer limit:** Chromium identified ANGLE/Vulkan **SwiftShader**, not a hardware GPU. Viewport1280×800; each sample measures two animation frames including the actual WebGL draw/scheduling.
 

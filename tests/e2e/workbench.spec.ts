@@ -79,13 +79,13 @@ async function selectSourceStep(page: Page, book: number, step: number) {
   await expectPage(page, source.steps[index].pdfPage, `book${book}-step${step}`);
 }
 
-test('catalog has all five source identities; permission-blocked VEX never requests an invented model', async ({ page }, info) => {
+test('catalog offers exactly four source-backed LEGO guides with real previews', async ({ page }, info) => {
   const modelRequests: string[] = [];
   page.on('request', (request) => { if (/\/models\/.*(?:manifest\.json|\.(?:mpd|glb|gltf))/.test(request.url())) modelRequests.push(request.url()); });
   await page.goto('/');
   const cards = page.getByRole('article');
-  await expect(cards).toHaveCount(5);
-  for (const name of [/Advanced Driving Base/i, /Robot(?:ic)? Hand/i, /Quality Check/i, /Package Sorter/i, /(?:V5|VEX).*Clawbot/i]) {
+  await expect(cards).toHaveCount(4);
+  for (const name of [/Advanced Driving Base/i, /Robot(?:ic)? Hand/i, /Quality Check/i, /Package Sorter/i]) {
     await expect(cards.getByRole('heading', { name })).toHaveCount(1);
   }
   const adb = cards.filter({ has: page.getByRole('heading', { name: /Advanced Driving Base/i }) });
@@ -96,21 +96,8 @@ test('catalog has all five source identities; permission-blocked VEX never reque
   await expect(preview).toBeVisible();
   await expect(preview).toHaveAttribute('alt', 'Advanced Driving Base robot');
   await expect.poll(() => preview.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
-  const vex = cards.filter({ has: page.getByRole('heading', { name: /(?:V5|VEX).*Clawbot/i }) });
-  await expect(vex.getByRole('img')).toHaveCount(0);
-  await expect(vex.getByRole('button', { name: /Start building/i })).toHaveCount(0);
-  await expect(vex).toContainText(/permission.*blocked|permission|conversion/i);
-  const sourceButton = vex.getByRole('button', { name: /Instructions.*availability/i });
-  await sourceButton.click();
-  const dialog = page.getByRole('dialog', { name: /Clawbot/i });
-  await expect(dialog).toBeVisible();
-  await expect(dialog).toContainText(/permission/i);
-  await expect(dialog).toContainText(/No procurement total|unresolved/i);
-  await expect(dialog.getByRole('link', { name: /Build Instructions/i })).toHaveAttribute('href', /^https:\/\/content\.vexrobotics\.com\//);
-  await capture(page, info, 'vex-source-blocked-not-model-acceptance');
-  await page.keyboard.press('Escape');
-  await expect(sourceButton).toBeFocused();
-  expect(modelRequests.filter((url) => /vex|clawbot/i.test(url)), 'Permission-blocked VEX never loads geometry or a manifest').toEqual([]);
+  await expect(page.getByText(/\bVEX\b|Clawbot/i)).toHaveCount(0);
+  expect(modelRequests.filter((url) => /vex|clawbot/i.test(url)), 'Removed models never load geometry or a manifest').toEqual([]);
   await capture(page, info, 'catalog-actual-preview');
 });
 

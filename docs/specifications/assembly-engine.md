@@ -1,6 +1,6 @@
 # Assembly engine
 
-Status: implementable contract, not a claim of shipped playback. The full five-build acceptance scope remains required; the VEX permission blocker and incomplete placement reconstruction remain visible. Shared declarations live in `src/lib/types/model.ts`; no robot constants belong there. Source baseline: [fidelity requirements](../research/fidelity-requirements.md), [source register](../research/robot-sources.md), and the [contextual part crosswalk](../research/lego-part-crosswalk.md).
+Status: implementable contract, not a claim of shipped playback. The full four-LEGO-build acceptance scope remains required; incomplete placement reconstruction remains visible. Shared declarations live in `src/lib/types/model.ts`; no robot constants belong there. Source baseline: [fidelity requirements](../research/fidelity-requirements.md), [source register](../research/robot-sources.md), and the [contextual part crosswalk](../research/lego-part-crosswalk.md). Historical VEX research is outside the active assembly engine and acceptance scope.
 
 ## Deep module and public interface
 

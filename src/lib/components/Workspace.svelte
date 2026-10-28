@@ -8,7 +8,7 @@
   import { compileAssembly, createFrame, sampleAssembly, getStepTime } from '#lib/assembly/engine.ts';
   import type { AssemblyFrame, CatalogEntry, CompiledAssembly, RendererController, RobotModel, SimulationFrame, SourceReference, ViewOptions, PartInstance } from '#lib/types/model.ts';
 
-  let { entry, initialTimeMs = 0, onBack }: { entry: Extract<CatalogEntry, { status: 'available' }>; initialTimeMs?: number; onBack: (progress?: { timeMs: number; installed: number; total: number; steps: number; complete: boolean }) => void } = $props();
+  let { entry, initialTimeMs = 0, onBack }: { entry: CatalogEntry; initialTimeMs?: number; onBack: (progress?: { timeMs: number; installed: number; total: number; steps: number; complete: boolean }) => void } = $props();
   let model = $state.raw<RobotModel | null>(null);
   let compiled = $state.raw<CompiledAssembly | null>(null);
   let frame = $state.raw<AssemblyFrame | null>(null);

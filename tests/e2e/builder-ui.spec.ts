@@ -4,7 +4,6 @@ import { chooseStep, showParts, showReference } from './ui';
 test('building starts with one instruction, grouped required parts and optional references', async ({ page }, info) => {
   await page.goto('/');
   await expect(page.locator('.catalog-grid article')).toHaveCount(4);
-  await expect(page.locator('.unavailable-build')).toContainText('V5 Clawbot');
   await page.locator('#open-advanced-driving-base').click();
   await expect(page.getByLabel('Assembly position')).toBeEnabled();
   await expect(page.getByRole('button', { name: 'Parts', exact: true })).toHaveAttribute('aria-expanded', 'false');

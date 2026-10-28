@@ -42,34 +42,17 @@ export const advancedDrivingBaseCoverage: ModelCoverage = {
   ]
 };
 
-function unavailableCoverage(steps: number, units: number | undefined, note: string, permissionBlocked = false): ModelCoverage {
-  const missing = { status: permissionBlocked ? 'blocked' as const : 'unimplemented' as const, verified: 0, note };
-  return {
-    documentedSteps: steps, implementedSteps: 0, verifiedSteps: 0, modeledComponents: 0, verifiedComponents: 0, geometryConfidence: 0,
-    dimensions: {
-      inventory: { status: 'unimplemented', verified: 0, ...(units === undefined ? {} : { total: units }), note },
-      geometry: { ...missing }, placement: { ...missing }, kinematics: { ...missing }, simulation: { ...missing }
-    }, outstandingDeviations: [note]
-  };
-}
-function available(id: string): Extract<CatalogEntry, { status: 'available' }> {
+function available(id: string): CatalogEntry {
   const summary = (authoredSummaries as unknown as { identity: ModelIdentity; coverage: ModelCoverage }[]).find((entry) => entry.identity.id === id);
   if (!summary) throw new Error(`Missing published model metadata: ${id}`);
-  return { status: 'available', ...summary, modelUrl: `/models/${id}/manifest.json`, previewUrl: `/previews/${id}.png` };
+  return { ...summary, modelUrl: `/models/${id}/manifest.json`, previewUrl: `/previews/${id}.png` };
 }
 
 
 export const catalog: CatalogEntry[] = [
-  { status: 'available', identity: advancedDrivingBaseIdentity, modelUrl: '/models/advanced-driving-base/manifest.json',
+  { identity: advancedDrivingBaseIdentity, modelUrl: '/models/advanced-driving-base/manifest.json',
     previewUrl: '/previews/advanced-driving-base.png', coverage: advancedDrivingBaseCoverage },
   available('robotic-hand'),
   available('quality-check'),
-  available('package-sorter'),
-  {
-    status: 'blocked', identity: { id: 'vex-clawbot', name: 'V5 Clawbot', manufacturer: 'VEX Robotics', edition: 'historical2018 — manual 276-6009-750 Rev1', category: 'Mobile manipulator', complexity: 'Advanced', description: 'Permission-blocked historical build. Private official CAD inspection does not grant application conversion/use rights.' },
-    sourceDocuments: [{ id: 'vex-historical2018', title: 'V5 Clawbot Build Instructions', sourceUrl: 'https://content.vexrobotics.com/docs/V5-Clawbot-BuildInstructions-0720.pdf', edition: '276-6009-750 Rev1 ©2018; distinct from CAD assembly revision', sha256: 'cd08303f81e1e48d6ab6ca6ff126ca9dff5c92ec579e4e06cfeb99d44a00dd8b', pageCount: 28, redistribution: 'link-only' }],
-    coverage: unavailableCoverage(41, undefined, '41 documented historical2018 steps; conflicting printed/step inventories and preassembled claw scope remain unresolved. No procurement total asserted; no VEX runtime geometry converted or used.', true),
-    blockers: ['Explicit scoped CAD-to-app conversion/use permission is absent, including localhost use.', 'Historical manual/CAD exact equivalence and inventory discrepancies remain unresolved.'],
-    requiredScenario: 'Differential drive, arm and coupled claw pickup/transport/release on the actual source-backed hierarchy, only after permission and reconstruction.'
-  }
+  available('package-sorter')
 ];

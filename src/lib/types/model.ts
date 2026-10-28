@@ -396,9 +396,12 @@ export type RobotModel = ModelIdentity & {
   simulationObjects?: SimulationObject[];
   coverage: ModelCoverage;
 };
-export type CatalogEntry =
-  | { status: 'available'; identity: ModelIdentity; modelUrl: string; previewUrl: string; coverage: ModelCoverage }
-  | { status: 'blocked'; identity: ModelIdentity; sourceDocuments: SourceDocument[]; coverage: ModelCoverage; blockers: string[]; requiredScenario: string; modelUrl?: never; previewUrl?: never };
+export type CatalogEntry = {
+  identity: ModelIdentity;
+  modelUrl: string;
+  previewUrl: string;
+  coverage: ModelCoverage;
+};
 
 export type StepTime = { stepId: string; index: number; startMs: number; endMs: number };
 export interface CompiledAssembly {

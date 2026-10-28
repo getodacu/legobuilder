@@ -29,9 +29,9 @@ Use native system UI: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 
 ## Catalog
 
-Show five named builds in a responsive grid, ordered Advanced Driving Base, Robot Hand, Quality Check Robot, Package Sorter and V5 Clawbot. Every card has manufacturer, locked edition, documented step scope, quantity scope, reconstruction coverage and source access. Render these as real data, not text baked into an image.
+Show exactly four named LEGO builds in a responsive grid, ordered Advanced Driving Base, Robot Hand, Quality Check Robot and Package Sorter. Every card has manufacturer, locked edition, documented step scope, quantity scope, reconstruction coverage and source access. Render these as real data, not text baked into an image.
 
-For an available reconstruction, use a render from its actual runtime geometry and hierarchy, consistently framed at a three-quarter view on the same slate background as the live viewer. A partial reconstruction shows only that actual slice with a conspicuous `Partial reconstruction — n/N source steps` label; never frame a component pile as the completed robot. An unimplemented build has a quiet typographic `Reconstruction not available` panel, not invented geometry. VEX has a graphite outlined source-record tile with `App geometry permission blocked`, selected historical2018 edition and `View sources`; no robot silhouette, fake total, mesh, clickable Play or simulation marketing. All five entries remain discoverable. See the product source table for exact count language.
+Each card opens its actual interactive reconstruction. Use a render from its runtime geometry and hierarchy, consistently framed at a three-quarter view on the same slate background as the live viewer. A partial reconstruction shows only that actual slice with a conspicuous `Partial reconstruction — n/N source steps` label; never frame a component pile as the completed robot. Keep reconstruction and verification caveats visible without adding unavailable source-only cards or dialogs. See the product source table for exact count language.
 
 ## Workbench composition
 
@@ -72,4 +72,4 @@ Reduced motion defaults to immediate step/camera transitions and no automatic ca
 
 ## Required visual evidence
 
-Capture catalog and each implemented model at first, intermediate, difficult and final source steps, plus Technical, Explode and an eligible simulation state in an actual browser. Include mobile drawers and a keyboard-focus view. Record model/edition, timestamp, viewport, mode and evidence category beside each capture. Keep official manual imagery private. No design render, private research screenshot or generated robot image counts as evidence of the shipped scene. Acceptance and resource measurements follow [testing.md](testing.md); polished styling cannot turn a permission-blocked or partial build into a complete one.
+Capture catalog and each implemented model at first, intermediate, difficult and final source steps, plus Technical, Explode and an eligible simulation state in an actual browser. Include mobile drawers and a keyboard-focus view. Record model/edition, timestamp, viewport, mode and evidence category beside each capture. Keep official manual imagery private. No design render, private research screenshot or generated robot image counts as evidence of the shipped scene. Acceptance and resource measurements follow [testing.md](testing.md); polished styling cannot turn a partial or materially unverified build into a complete one.
