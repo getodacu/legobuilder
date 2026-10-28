@@ -188,6 +188,26 @@ test('independent native DAT motor/gear axes and stacked39789 sample through-hol
   }
 });
 
+test('source B2p26 crank cross bores are coaxial with F and both prepared rod sockets seat on genuine towballs', () => {
+  const assembled = sampleAssembly(compiled, compiled.durationMs, createFrame(compiled));
+  const motor = poseOf(assembled, 'base2019:motor-medium:01');
+  const shaft = nativePoint(motor, [0, -50, 0]);
+  const motorY = nativePoint(motor, [0, -30, 0]).map((v, i) => (v - shaft[i]) / 8) as Vec3;
+  for (const ordinal of [1, 2]) {
+    const crank = poseOf(assembled, `base2019:beam-azure-2-cross:0${ordinal}`);
+    const cross = nativePoint(crank, [0, 0, 0]);
+    const boreAxis = nativePoint(crank, [0, 20, 0]).map((v, i) => (v - cross[i]) / 8) as Vec3;
+    assert.ok(Math.abs(Math.abs(boreAxis.reduce((sum, v, i) => sum + v * motorY[i], 0)) - 1) < 1e-7, '60483 nativeY cross-hole axis, not an invented nativeZ bore');
+    const offset = cross.map((v, i) => v - shaft[i]) as Vec3;
+    const axial = offset.reduce((sum, v, i) => sum + v * motorY[i], 0);
+    close(offset.map((v, i) => v - axial * motorY[i]) as Vec3, [0, 0, 0], 'Crank cross hole lies on the actual F shaft line');
+    const pin = poseOf(assembled, correctedTowballIds[ordinal - 1]);
+    close(nativePoint(crank, [0, 0, 20]), nativePoint(pin, [10, 0, 0]), '6628 pin half centers in the60483 round bore');
+    const rod = poseOf(assembled, `base2019:rod-gray-6:0${ordinal}`);
+    close(nativePoint(pin, [-10, 0, 0]), nativePoint(rod, [0, 0, 100]), 'The prepared rod socket closes on the real sphere center on both mirrored sides');
+  }
+});
+
 test('Base p24 source towballs retain their exact identities and genuine native rod socket features', () => {
   correctedTowballIds.forEach((id, index) => {
     const pin = part(id), rod = part(`base2019:rod-gray-6:0${index + 1}`);

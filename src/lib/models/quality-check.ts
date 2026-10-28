@@ -20,10 +20,13 @@ const source = (manual: string, step: number, page?: number): SourceReference =>
   return { documentId: `quality-${manual}`, sourceUrl: document.url, instructionId: manual === 'robot-head' && page === 20 ? 'wiring-diagram' : String(step), page: page ?? step + (manual === 'idea-detector' ? 3 : 2), confidence: 1 };
 };
 const cad = (geometryId: string): SourceReference => ({ documentId: `ldraw-${geometryId}`, sourceUrl: `https://library.ldraw.org/library/official/parts/${geometryId}.dat`, confidence: 0.95 });
-const fit = (ref: SourceReference, note: string, ids: string[]) => placement(
-  evidence('documented', note, [ref]),
-  evidence('diagram-derived', 'Nominal native DAT seat/hole grid selected from the manual view; robot validation records the bounded source-contact audit. Assembled mesh-fit remains unchecked. ' + note, [ref, ...ids.map(cad)], 0.65)
-);
+const fit = (ref: SourceReference, note: string, ids: string[]) => ({
+  ...placement(
+    evidence('documented', note, [ref]),
+    evidence('diagram-derived', 'Nominal native DAT seat/hole grid selected from the manual view; robot validation records the bounded source-contact audit. Physical clearance and retention remain unmeasured. ' + note, [ref, ...ids.map(cad)], 0.65)
+  ),
+  placement: 'diagram-derived' as const
+});
 const authored = evidence('app-authored', 'RoboBuild work-area layout, approach timing and camera framing; not a physical source measurement.', [], 1);
 const camera: CameraPreset = { position: [-220, 170, 240], target: [0, 40, 24], up: [0, 1, 0], projection: 'perspective', framing: 44, transitionMs: 650 };
 const rearCamera: CameraPreset = { ...camera, position: [240, 190, -250] };
@@ -240,7 +243,7 @@ begin('robot-head', 12, 'wiring');
 // Electrical connection operations are appended below; this source step really turns and wires, not a fictitious new physical part.
 begin('robot-head', 13);
 // Head p17 retains the bundle with two cable clips, NOT a rigid motor-hole mount.
-// The global seat is diagram-derived: absent flexible leads cannot locate it exactly.
+// The global seat is a qualitative source-view registration, not a measured flex route.
 add('azure-short-connector', 'quality-retainer-azure', at([-40, 76, -48], ry(half)), 'quality-retainer');
 add('red-axle', 'quality-retainer-axle', at([-44, 76, -48]), 'quality-retainer', [-1, 0, 0], 8);
 begin('robot-head', 14);
@@ -249,7 +252,7 @@ begin('robot-head', 15, 'reuse');
 merge('quality-retainer', identityTransform(), 'quality-pitch', 'Place the prepared retainer beside the far side of the moving head, supported by the captured flexible cable bundle, not by a rigid motor connection.');
 const retainerSeat = placement(
   evidence('documented', 'Head pp15–17: two49283 clips joined by one32062 axle capture the flexible lead bundle. No rigid motor attachment is shown.', [source('robot-head', 15)]),
-  evidence('unknown', 'Nominal display seat beside the upper motor only. Flexible lead geometry is absent; the manual does not dimension the bundle, clip seat, cable lengths or exact route. Pitch parenting is playback ownership, not a rigid physical mount.', [source('robot-head', 15)], 0.35)
+  evidence('diagram-derived', 'Qualitative far-side seat and clip-threaded lead paths reconstructed from Head pp14/17. Exact bundle shape, clip friction, cable lengths and safe travel are unmeasured. Pitch parenting is playback ownership of a cable-supported retainer, not a rigid physical mount.', [source('robot-head', 15)], 0.55)
 );
 retainerSeat.placement = 'diagram-derived';
 for (const id of ['quality-retainer-azure', 'quality-retainer-axle', 'quality-retainer-magenta']) part(id).placementEvidence = retainerSeat;
@@ -271,6 +274,31 @@ const electrical: [string, string, Vec3, string, number][] = [
   ['quality-lower-motor', 'A', [0, 0, 143], 'robot-head', 12],
   ['quality-upper-motor', 'F', [0, 0, 143], 'robot-head', 12]
 ];
+const guide = (id: string, native: Vec3) => ({ parent: { kind: 'part' as const, id }, position: nativeLDrawTransform(native).position });
+const slack = (id: string, position: Vec3) => ({ parent: { kind: 'subassembly' as const, id }, position });
+// Source topology, not measured cable lengths. Free spans and slack are authored.
+const routing: Record<string, RobotModel['cables'][number]['controlPoints']> = {
+  'quality-color-sensor': [
+    slack('quality-base', [40, 16, 40]), slack('quality-base', [48, 12, 112]),
+    guide('quality-rear-red-clip', [12, -20, 0]), guide('quality-rear-red-clip', [-12, -20, 0]),
+    slack('quality-base', [-48, 36, 132])
+  ],
+  'quality-lower-motor': [
+    slack('quality-head', [-56, 32, 24]), slack('quality-pitch', [-60, 12, -32]),
+    guide('quality-retainer-magenta', [12, -20, 0]), guide('quality-retainer-magenta', [-12, -20, 0]),
+    slack('quality-head', [-64, 84, 32])
+  ],
+  'quality-upper-motor': [
+    guide('quality-upper-motor', [0, 0, 200]), slack('quality-pitch', [-44, 72, -24]),
+    guide('quality-retainer-azure', [12, -22, 0]), guide('quality-retainer-azure', [-12, -22, 0]),
+    slack('quality-head', [-56, 96, 32])
+  ],
+  'quality-distance-sensor': [
+    guide('quality-distance-sensor', [0, -50, 80]), slack('quality-pitch', [-52, 68, -48]),
+    guide('quality-retainer-azure', [12, -14, 0]), guide('quality-retainer-azure', [-12, -14, 0]),
+    slack('quality-head', [-48, 104, 48])
+  ]
+};
 const cables: RobotModel['cables'] = [];
 for (const [deviceId, port, nativeStub, manual, number] of electrical) {
   step = steps.find((entry) => entry.id === `quality-${manual}-step${number}`)!;
@@ -290,10 +318,8 @@ for (const [deviceId, port, nativeStub, manual, number] of electrical) {
   operations.push(op); step.operationIds.push(id); step.durationMs += op.durationMs;
   if (assumption) step.warnings.push('The demo assumes A turns the head and F tilts it. The physical port-to-axis assignment is unverified; check your wiring before running a program.');
   cables.push({ id: `${id}-captive-route`, devicePartInstanceId: device.id, captive: true, fromConnection: id, toConnection: id, controlPoints: [
-    { parent: { kind: 'part', id: device.id }, position: nativeLDrawTransform(nativeStub).position },
-    { parent: { kind: 'part', id: device.id }, position: [0, 32, 12] },
-    { parent: { kind: 'part', id: hub.id }, position: nativeLDrawTransform(nativePort).position }
-  ], routeEvidence: evidence(assumption ? 'unknown' : 'app-authored', note + ' Schematic flexible lead path; no additional inventory instance or cable-safe-motion claim.', [ref], assumption ? 0.35 : 0.7) });
+    guide(device.id, nativeStub), ...routing[device.id]!, guide(hub.id, nativePort)
+  ], routeEvidence: evidence('diagram-derived', note + ' Head pp14/17 show three head leads gathered by the paired retainer and a separate low Color Sensor route around the rear clip. These rendered guide/slack curves are qualitative original reconstructions, not measured cable length, exact bundle friction or cable-safe-motion proof.', [ref, source('robot-head', 15), cad('49283')], 0.55) });
 }
 // A late wiring operation extends a step, but no physical track in another step overlaps it.
 // Dependencies stay book-chronological rather than relying on array insertion order.
@@ -341,7 +367,10 @@ for (const [y, z, squareX, squareZ, rotorX, rotorZ] of [[44, -48, -20, 0, 0, -20
 nativeMate('quality-gray-axle-elbow-seat', 'quality-gray-elbow', [-10, 0, 0], 'quality-gray-axle-pin', [0, 0, 0], 'quality-install-quality-gray-axle-pin', 'fixed', 'X');
 nativeMate('quality-gray-plain-pin-seat', 'quality-gray-elbow', [0, 20, 10], 'quality-plain-gray-pin', [0, 0, 0], 'quality-install-quality-plain-gray-pin');
 nativeMate('quality-gray-pin-square-seat', 'quality-lower-square', [0, 10, 0], 'quality-gray-axle-pin', [0, 0, 0], 'quality-merge-quality-gray-coupler');
-for (const y of [100, 116]) nativeMate(`quality-eyes-side-seat-${y}`, 'quality-distance-sensor', [70, (108 - y) / 0.4, 0], `quality-sensor-pin-${y}`, [0, 0, 0], 'quality-install-quality-distance-sensor');
+for (const y of [100, 116]) {
+  nativeMate(`quality-eyes-bracket-seat-${y}`, 'quality-upper-square', [0, 10, (y - 108) / 0.4], `quality-sensor-pin-${y}`, [0, 0, 0], `quality-install-quality-sensor-pin-${y}`);
+  nativeMate(`quality-eyes-side-seat-${y}`, 'quality-distance-sensor', [70, (108 - y) / 0.4, 0], `quality-sensor-pin-${y}`, [0, 0, 0], 'quality-install-quality-distance-sensor');
+}
 // Detector pp12–15: axle up into brick underside, pin down into the real plate bore.
 for (const [side, z, panel, panelSign] of [['left', 16, 'quality-panel-left', 1], ['right', 64, 'quality-panel-right', -1]] as const) {
   for (const [index, bx] of [-20, 20].entries()) {
@@ -410,6 +439,6 @@ export const qualityCheck: RobotModel = {
   milestones: [{ id: 'quality-base-complete', title: 'Idea Detector complete', stepId: 'quality-idea-detector-step13' }, { id: 'quality-head-integrated', title: 'Head mounted on detector', stepId: 'quality-robot-head-step11' }, { id: 'quality-samples-prepared', title: 'Eight bricks, four loose samples', stepId: 'quality-robot-head-step16' }],
   sourceMappings: steps.flatMap((entry) => entry.sourceReferences.map((reference) => ({ source: reference, stepId: entry.id }))),
   coverage: { documentedSteps: 30, implementedSteps: 30, verifiedSteps: 0, modeledComponents: 63, verifiedComponents: 0, geometryConfidence: 0.9,
-    dimensions: { inventory: { status: 'complete', verified: 63, total: 63, note: 'Independent official callout transcription:34 detector +21 head +8 loose sample units; historical element IDs not certified.' }, geometry: { status: 'complete', verified: 0, total: 63, note: 'Licensed genuine DAT geometry, native origins preserved; historical molds and assembled mesh fit unchecked.' }, placement: { status: 'partial', verified: 0, total: 63, note: 'Detector frame/L/crossblock/hub and plate-join contacts source-audited; Head output/bracket seats compared. Whole-step mesh fit and remaining contacts unchecked.' }, kinematics: { status: 'partial', verified: 0, total: 2, note: 'Actual serial yaw/upper-body hierarchy and rotor/body binding; source physical A/F mapping and safe travel unknown.' }, simulation: { status: 'partial', verified: 0, total: 1, note: 'Authored deterministic response scenario using source violet sequence and distinct labeled extensions; current corrections not yet exercised.' } },
-    outstandingDeviations: ['Bounded Detector support/exterior and Head native-seat audit is not whole-model source/mesh verification; not acceptance-complete.', '48989 circular-center crossblock is a provisional historical mold.', 'Physical motor-port-to-axis mapping is UNKNOWN; A→yaw/F→body is a modeling assumption, not source truth.', 'Modeled ±35° demo travel is not a physical stop or cable-clearance calibration.', 'Retainer clips capture flexible leads, not a rigid motor mount; absent lead geometry leaves its exact global seat UNKNOWN. Flexible cable paths are illustrative; no measured cable length.', 'Teacher red-A/green-F and possible-solution violet-A programs remain distinct; authored demo does not claim an automatic defect classifier.'] }
+    dimensions: { inventory: { status: 'complete', verified: 63, total: 63, note: 'Independent official callout transcription:34 detector +21 head +8 loose sample units; historical element IDs not certified.' }, geometry: { status: 'complete', verified: 0, total: 63, note: 'Licensed genuine DAT geometry with native origins; historical molds and physical interference remain unmeasured.' }, placement: { status: 'partial', verified: 0, total: 63, note: 'Nominal source/native audit covers Detector support, exterior stud pockets, head motor/output/bracket/eyes and retainer internal seats. Clip-threaded leads now render as qualitative source-view reconstruction; physical-fit certifications remain zero, not nominal validation work.' }, kinematics: { status: 'partial', verified: 0, total: 2, note: 'Actual serial yaw/upper-body hierarchy and rotor/body binding; physical A/F mapping and cable-safe travel remain uncalibrated.' }, simulation: { status: 'partial', verified: 0, total: 1, note: 'Useful authored deterministic response uses the documented violet sequence and distinct labeled extensions, not a source-calibrated inspection classifier.' } },
+    outstandingDeviations: ['Source/native nominal contact validation is distinct from unmeasured molded fit, swept clearance and physical calibration.', '48989 circular-center crossblock is a provisional historical mold.', 'Physical motor-port-to-axis mapping is UNKNOWN; A→yaw/F→body is a transparent modeling assumption.', 'Modeled ±35° demo travel is not a physical stop or cable-clearance calibration.', 'Three flexible head leads qualitatively thread the paired retainer; separate Color Sensor lead threads the rear red clip. Exact bundle shape, friction and captive cable lengths are unmeasured; no rigid motor mount is invented.', 'Teacher red-A/green-F and possible-solution violet-A programs remain distinct; authored demo does not claim an automatic defect classifier.'] }
 };

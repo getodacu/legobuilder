@@ -6,6 +6,8 @@ import { composeTransforms, identityTransform, readTransform, relativeTransform,
 import { qualityCheck as model, qualityCheckSourceFamilies } from '../../src/lib/models/quality-check.ts';
 import { compileSimulation, createSimulationFrame, sampleSimulation } from '../../src/lib/simulation/kinematics.ts';
 import type { AssemblyFrame, Transform, Vec3 } from '../../src/lib/types/model.ts';
+import { Matrix4, Mesh, Quaternion, Vector3 } from 'three';
+import { FlexibleCables } from '../../src/lib/scene/cables.ts';
 
 function close(actual: ArrayLike<number>, expected: ArrayLike<number>, label: string): void {
   assert.equal(actual.length, expected.length, label);
@@ -164,8 +166,8 @@ test('Quality source inventory, integration, real native mates and serial body/r
   contact('quality-retainer-magenta', [0, 0, 10], [0, 0, 1], 'quality-retainer-axle', [-20, 0, 0], [1, 0, 0]);
   for (const id of ['quality-retainer-azure', 'quality-retainer-magenta']) {
     const clip = model.parts.find((entry) => entry.id === id)!;
-    assert.equal(clip.placementEvidence!.evidence.category, 'unknown', 'Cable-supported global seat is not an exact rigid mount');
-    assert.match(clip.placementEvidence!.evidence.note, /Flexible lead geometry is absent/);
+    assert.equal(clip.placementEvidence!.evidence.category, 'diagram-derived', 'Cable-supported seat is a qualitative reconstruction, not an exact rigid mount');
+    assert.match(clip.placementEvidence!.evidence.note, /Exact bundle shape.*unmeasured/);
     assert.ok(nativePoint(pose(frame, id), [0, -20, 0])[1] > pose(frame, id).position[1], 'Clip channel opens above its bush, not sideways through the motor');
   }
   const retainerIds = model.subassemblies.find((entry) => entry.id === 'quality-retainer')!.partInstanceIds;
@@ -189,6 +191,14 @@ test('Quality source inventory, integration, real native mates and serial body/r
   const upperInsertion = model.operations.find((entry) => entry.id === 'quality-install-quality-upper-motor')!.stages.find((stage) => stage.phase === 'insert')!.insertion!;
   close(upperInsertion.axis, [1, 0, 0], 'Reversed upper output slides onto the prepared face pins');
   assert.equal(upperInsertion.depthMm, 8);
+  // The sensor pins introduced on Head p11 occupy the other pair of main-face bores.
+  for (const [y, squareZ] of [[100, -20], [116, 20]]) {
+    contact('quality-upper-square', [0, 10, squareZ!], [0, 1, 0], `quality-sensor-pin-${y}`, [0, 0, 0], [1, 0, 0]);
+    contact('quality-upper-square', [0, 10, squareZ!], [0, 1, 0], 'quality-distance-sensor', [70, -squareZ!, 0], [1, 0, 0]);
+    const seat = model.connections.find((entry) => entry.id === `quality-eyes-bracket-seat-${y}`)!;
+    assert.ok(seat, 'Source bracket-to-pin relationship is inspectable, not an unsupported sensor pin');
+    assert.equal(seat.evidence.placement, 'diagram-derived', 'Manual-selected nominal registration is not a measured attachment');
+  }
   for (const color of ['green', 'blue', 'red', 'violet']) {
     const lower = model.parts.find((part) => part.id === `quality-sample-${color}-1`)!;
     const upper = model.parts.find((part) => part.id === `quality-sample-${color}-2`)!;
@@ -247,4 +257,51 @@ test('Quality source inventory, integration, real native mates and serial body/r
     close(frame.transforms, snapshot, 'Reversible manual assembly');
   }
   assert.equal(model.coverage.verifiedSteps, 0, 'Authoring must not silently promote source-view/mesh fit verification');
+});
+
+test('Quality flexible leads thread the real clip channels and follow snapshot parents without phantom rigid mounts', () => {
+  const assembly = compileAssembly(model), frame = createFrame(assembly), cables = new FlexibleCables(model);
+  const view = { mode: 'studio' as const, explodedFactor: 0, labels: false, showJoints: false, showConnections: false, isolatedPartIds: [] };
+  const matrices = model.parts.map(() => new Matrix4());
+  const position = new Vector3(), quaternion = new Quaternion(), scale = new Vector3();
+  const update = (out: AssemblyFrame) => {
+    matrices.forEach((matrix, index) => matrix.compose(position.fromArray(out.transforms, index * 10), quaternion.fromArray(out.transforms, index * 10 + 3), scale.fromArray(out.transforms, index * 10 + 7)));
+    cables.update(matrices, out, view, out.visible);
+  };
+  const midpoint = (mesh: Mesh, ring: number) => {
+    const vertices = mesh.geometry.getAttribute('position'), result = [0, 0, 0];
+    for (let side = 0; side < 4; side++) for (let axis = 0; axis < 3; axis++) result[axis] += vertices.array[(ring * 4 + side) * 3 + axis]! / 4;
+    return result;
+  };
+  try {
+    sampleAssembly(assembly, 0, frame); update(frame);
+    assert.ok(cables.root.children.every((mesh) => !mesh.visible), 'Unwired inventory has no cross-workbench phantom leads');
+    const sim = compileSimulation(assembly, model.scenarios[0]!), out = createSimulationFrame(sim);
+    const channelKnots = [
+      ['quality-wire-A-captive-route', 'quality-retainer-magenta', [12, -20, 0]],
+      ['quality-wire-F-captive-route', 'quality-retainer-azure', [12, -22, 0]],
+      ['quality-wire-C-captive-route', 'quality-retainer-azure', [12, -14, 0]],
+      ['quality-wire-D-captive-route', 'quality-rear-red-clip', [12, -20, 0]]
+    ] as const;
+    for (const time of [0, 2000, 5000, 0]) {
+      sampleSimulation(sim, time, out); update(out.assembly);
+      assert.ok(cables.root.children.every((mesh) => mesh.visible));
+      for (const [id, clip, native] of channelKnots) {
+        const route = model.cables.find((entry) => entry.id === id)!;
+        assert.equal(route.lengthMm, undefined, 'No invented measured captive length');
+        assert.equal(route.routeEvidence.category, 'diagram-derived');
+        const knot = route.controlPoints.findIndex((control) => control.parent?.id === clip);
+        const clipIndex = model.parts.findIndex((entry) => entry.id === clip);
+        const expected = new Vector3(native[0] * 0.4, -native[1] * 0.4, -native[2] * 0.4).applyMatrix4(matrices[clipIndex]);
+        const mesh = cables.root.getObjectByName(`cable:${id}`) as Mesh;
+        const actual = midpoint(mesh, knot * 12);
+        assert.ok(Math.hypot(...actual.map((value, axis) => value - expected.getComponent(axis))) < 1e-4, 'Rendered ribbon actually traverses the source-native open channel on the moving clip');
+        assert.ok(mesh.geometry.getAttribute('position').array.every(Number.isFinite));
+      }
+    }
+    cables.update(matrices, out.assembly, { ...view, explodedFactor: 1 }, out.assembly.visible);
+    assert.ok(cables.root.children.every((mesh) => !mesh.visible), 'Explode does not pretend to stretch measured cables');
+    cables.update(matrices, out.assembly, { ...view, isolatedPartIds: ['quality-retainer-azure'] }, out.assembly.visible);
+    assert.ok(cables.root.children.every((mesh) => !mesh.visible), 'Isolation does not leave detached flexible spans');
+  } finally { cables.dispose(); }
 });

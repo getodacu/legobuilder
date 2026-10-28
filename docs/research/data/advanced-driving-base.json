@@ -7,7 +7,7 @@
   "geometryCrosswalk": {
     "documentation": "../lego-part-crosswalk.md",
     "data": "lego-part-crosswalk.json",
-    "authority": "Contextual source-shape and material selection by build/local key; geometryId is an LDraw basename, not a certified manufacturer element ID or exact2019 mold. sourceCorrections includes black-angle4x4 and the book4 p11 coaxial stop-bush / p18 white cross-block corrections. Book4 p28 top axle/pin pair is also corrected to existing grey-axlepin2/18651."
+    "authority": "Contextual source-shape and material selection by build/local key; geometryId is an LDraw basename, not a certified manufacturer element ID or exact2019 mold. Includes Book4 p11 stop bush, p18 white cross blocks, p28 axle/pins and p17 gray63869 + azure60483 corrections. P17 does not introduce H-frames or cable clips."
   },
   "sources": [
     {
@@ -1215,6 +1215,15 @@
       "color": "Medium Azur",
       "elementId": "6263192",
       "catalogPage": 1
+    },
+    "azur-beam2-cross": {
+      "name": "Technic Beam 2 Liftarm",
+      "color": "Medium Azur",
+      "elementId": null,
+      "catalogPage": null,
+      "geometryId": "60483",
+      "ldrawSource": "https://library.ldraw.org/library/official/parts/60483.dat",
+      "identificationStatus": "high-source-shape; Book4 p17 two-hole callout and p21 round-hole pin insertion, not a cable clip"
     },
     "azur-beam13": {
       "name": "Beam, 13",
@@ -3201,19 +3210,19 @@
       "step": 17,
       "pdfPage": 17,
       "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17",
-      "observation": "Add grey I-frames and Medium Azur clips to these two mount units.",
+      "observation": "Add two gray63869 axle/triple-pin cross blocks and two Medium Azur60483 axle/pin two-hole liftarms onto the four vertical yellow shafts. Neither item is an H-frame or a cable clip. P21 blue rail pins use the liftarms' free round bores.",
       "addedParts": [
         {
-          "partKey": "grey-iframe3x5",
+          "partKey": "grey-cross3x2",
           "quantity": 2,
           "quantityEvidence": "Visible illustrated parts callout on this PDF page",
-          "identificationStatus": "visual catalog match"
+          "identificationStatus": "high-source-shape; direct p17 callout/shaft inspection corrected former14720"
         },
         {
-          "partKey": "azur-wireclip",
+          "partKey": "azur-beam2-cross",
           "quantity": 2,
           "quantityEvidence": "Visible illustrated parts callout on this PDF page",
-          "identificationStatus": "visual catalog match"
+          "identificationStatus": "high-source-shape; direct p17 callout and p21 round-hole insertion corrected former49283"
         }
       ],
       "existingSubassembliesCountedAgain": false,
@@ -3243,7 +3252,7 @@
       "step": 19,
       "pdfPage": 19,
       "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
-      "observation": "Attach both mount units to opposite motor sides.",
+      "observation": "Attach both prepared63869/60483/32184 brackets to the motor housing side pins; the yellow shafts remain vertical, not rotated into horizontal motor-length axes.",
       "addedParts": [],
       "existingSubassembliesCountedAgain": false,
       "newPartsCalloutPresent": false,
@@ -3278,7 +3287,7 @@
       "step": 21,
       "pdfPage": 21,
       "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=21",
-      "observation": "Mount prepared13-hole rail across bracket ends.",
+      "observation": "Mount prepared13-hole rail through the free ROUND holes of the two60483 liftarms, not the perpendicular center bores of the white32184 caps.",
       "addedParts": [],
       "existingSubassembliesCountedAgain": false,
       "newPartsCalloutPresent": false,
@@ -3803,10 +3812,12 @@
         "black-pin2": 20,
         "medium-motor": 1,
         "pink-connector3": 1,
-        "grey-iframe3x5": 4,
+        "grey-iframe3x5": 2,
+        "grey-cross3x2": 2,
         "blue-pin3": 7,
         "grey-pin3cross": 4,
-        "azur-wireclip": 3,
+        "azur-wireclip": 1,
+        "azur-beam2-cross": 2,
         "white-doublecross": 4,
         "yellow-axle3": 4,
         "azur-beam13": 2,
@@ -3839,7 +3850,7 @@
       "blue-wireclip": 1,
       "green-wireclip": 1,
       "pink-connector3": 6,
-      "grey-iframe3x5": 8,
+      "grey-iframe3x5": 6,
       "red-wireclip": 1,
       "color-sensor": 2,
       "ballcup": 2,
@@ -3859,13 +3870,14 @@
       "yellow-axle3": 6,
       "grey-cross2x1": 6,
       "black-axle4": 2,
-      "grey-cross3x2": 2,
+      "grey-cross3x2": 4,
       "black-angle4x4": 2,
       "yellow-beam3": 2,
       "magenta-wireclip": 1,
       "yellow-wireclip": 1,
       "grey-pin3cross": 4,
-      "azur-wireclip": 3,
+      "azur-wireclip": 1,
+      "azur-beam2-cross": 2,
       "azur-beam13": 2,
       "yellow-tube2": 2,
       "pink-frame7x11": 2,

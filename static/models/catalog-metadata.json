@@ -51,7 +51,7 @@
       "outstandingDeviations": [
         "Authored136-step coverage is not136 verified placements: only the original3 instructions/seven datum units have retained nominal source/CAD verification.",
         "Side64179 motor-frame registration uses actual native-X connhol2 bores at local x±40,z±40 after a proper90° yaw. Outside/lower reinforcement and retention/clearance remain independently unchecked; previous false Y-axis corner-hole connections were removed.",
-        "Real free rear H/upright receiver span64mm versus side blue-pin span96mm and actual13L rail endpoint bores face a different axis: the rear approaches at diagram-derived source-feature midpoints, but four lower contacts are intentionally not claimed as fixed fits.",
+        "Book4p17 now uses actual63869 cross blocks and60483 short liftarms with vertical shafts and native rail seats. Genuine free white32184 receiver rows still span64mm versus side blue-pin rows96mm: all four lower links retain16mm lateral residual and are not asserted as fitted.",
         "Captive electrical topology and source clip identities are authored; unverified flexible cable splines, lengths, compliance and dynamic routing are not invented.",
         "LDraw dimensions use0.4mm/LDU, not certified manufacturer measurements; historical molds and manufacturer element IDs are not certified.",
         "Course props and behaviors are RoboBuild extensions, outside the234-unit source BOM; scripted color samples, modeled rates and no certified traction/collision physics.",
@@ -78,43 +78,43 @@
       "geometryConfidence": 0.85,
       "dimensions": {
         "inventory": {
-          "status": "partial",
-          "verified": 0,
+          "status": "complete",
+          "verified": 39,
           "total": 39,
-          "note": "39 individual prepared-unit identities reconcile to published numbered-step callout family rows; corrected32348 jaws preserve every instance and source step."
+          "note": "39 prepared-unit identities independently reconcile to source numbered-step callouts; no manufacturer molded-piece total implied."
         },
         "geometry": {
           "status": "partial",
           "verified": 0,
           "total": 39,
-          "note": "Genuine licensed LDraw roots; independent p17/p25 four-hole-per-arm comparison corrects32271 to32348. Historical connector mold remains provisional."
+          "note": "Genuine licensed LDraw roots; independent p17/p25 four-hole-per-arm comparison selects32348. Historical connector mold remains provisional."
         },
         "placement": {
           "status": "partial",
           "verified": 0,
           "total": 39,
-          "note": "33 nominal contacts independently compared against actual source figures/native features across25 identities: p4–8 complete handle/hub, p9–13 motor underside, p20–30 jaw/H seats and p31 rear motor join. No physical-fit promotion; fingertip stack remains unapproved."
+          "note": "53 nominal source/native registrations cover all39 identities, including20 fingertip registrations: actual bearing planes, keyed shafts and stud pockets. Zero physical-fit certifications does not mean zero nominal validation; undimensioned axle stops remain authored."
         },
         "kinematics": {
           "status": "partial",
           "verified": 0,
           "total": 1,
-          "note": "One actual powered azure crank; two nonlinear source-indexed passive loops, equal8mm rear lever lengths on opposite sides, diagonal H span hypot(32,16). Parent must exercise corrected branch/residual tests."
+          "note": "One actual powered azure crank; two nonlinear source-indexed passive loops, equal8mm rear lever lengths on opposite sides, diagonal H span hypot(32,16). Physical encoder zero and endpoints are uncalibrated."
         },
         "simulation": {
           "status": "partial",
           "verified": 0,
           "total": 1,
-          "note": "Separate original GLB block; tyre contact registration recomputed from corrected source linkage. Grip/hold/release regression awaits parent execution."
+          "note": "Original non-BOM GLB block with two nominal tyre-band contacts; coupled grip/hold/release is an authored kinematic demonstration, not measured force or compliant-contact physics."
         }
       },
       "outstandingDeviations": [
-        "Nominal source contact evidence is not physical fit, collision or tolerance certification; no verified-step/component count promotion.",
-        "Frame bridge48989 historical mold remains provisional; four nominal seats independently compared. Wheel/brick/tile underside seating and exact wheel-axle engagement require further native/section or physical measurement.",
-        "Physical jaw endpoints, force, motor-power calibration, compliant tyre contact and full swept collision clearance are unknown; 0…0.6rad range is modeled only.",
+        "53 nominal source/native registrations are distinct from physical fit, swept collision and tolerance certification; no physically verified-step/component count promotion.",
+        "Frame bridge48989 historical mold remains provisional. Fingertip bearing/stud stations are nominally validated; wheel-axle insertion stops and elastic retention are not measured.",
+        "Physical jaw endpoints, force, motor-power calibration, compliant tyre contact and full swept collision clearance are unknown; 0…0.6rad range is app-authored.",
         "Battery is prepared inside hub; six lesson scoring-brick types are unknown and excluded; no invented Force Sensor.",
-        "Lesson prose left/right buttons differs from linked SVG left press/release; the calibrated position demo is explicitly a RoboBuild extension.",
-        "Captive lead electrical topology is documented but flexible route/length is not reconstructed."
+        "Lesson prose left/right buttons differs from linked SVG left press/release; the position-controlled demo is explicitly a RoboBuild extension, not a calibrated source program.",
+        "Captive F lead has documented topology and a rendered qualitative p31 handle loop; exact flex shape, length and cable-safe travel remain unmeasured."
       ]
     }
   },
@@ -146,33 +146,33 @@
           "status": "complete",
           "verified": 0,
           "total": 63,
-          "note": "Licensed genuine DAT geometry, native origins preserved; historical molds and assembled mesh fit unchecked."
+          "note": "Licensed genuine DAT geometry with native origins; historical molds and physical interference remain unmeasured."
         },
         "placement": {
           "status": "partial",
           "verified": 0,
           "total": 63,
-          "note": "Detector frame/L/crossblock/hub and plate-join contacts source-audited; Head output/bracket seats compared. Whole-step mesh fit and remaining contacts unchecked."
+          "note": "Nominal source/native audit covers Detector support, exterior stud pockets, head motor/output/bracket/eyes and retainer internal seats. Clip-threaded leads now render as qualitative source-view reconstruction; physical-fit certifications remain zero, not nominal validation work."
         },
         "kinematics": {
           "status": "partial",
           "verified": 0,
           "total": 2,
-          "note": "Actual serial yaw/upper-body hierarchy and rotor/body binding; source physical A/F mapping and safe travel unknown."
+          "note": "Actual serial yaw/upper-body hierarchy and rotor/body binding; physical A/F mapping and cable-safe travel remain uncalibrated."
         },
         "simulation": {
           "status": "partial",
           "verified": 0,
           "total": 1,
-          "note": "Authored deterministic response scenario using source violet sequence and distinct labeled extensions; current corrections not yet exercised."
+          "note": "Useful authored deterministic response uses the documented violet sequence and distinct labeled extensions, not a source-calibrated inspection classifier."
         }
       },
       "outstandingDeviations": [
-        "Bounded Detector support/exterior and Head native-seat audit is not whole-model source/mesh verification; not acceptance-complete.",
+        "Source/native nominal contact validation is distinct from unmeasured molded fit, swept clearance and physical calibration.",
         "48989 circular-center crossblock is a provisional historical mold.",
-        "Physical motor-port-to-axis mapping is UNKNOWN; A→yaw/F→body is a modeling assumption, not source truth.",
+        "Physical motor-port-to-axis mapping is UNKNOWN; A→yaw/F→body is a transparent modeling assumption.",
         "Modeled ±35° demo travel is not a physical stop or cable-clearance calibration.",
-        "Retainer clips capture flexible leads, not a rigid motor mount; absent lead geometry leaves its exact global seat UNKNOWN. Flexible cable paths are illustrative; no measured cable length.",
+        "Three flexible head leads qualitatively thread the paired retainer; separate Color Sensor lead threads the rear red clip. Exact bundle shape, friction and captive cable lengths are unmeasured; no rigid motor mount is invented.",
         "Teacher red-A/green-F and possible-solution violet-A programs remain distinct; authored demo does not claim an automatic defect classifier."
       ]
     }

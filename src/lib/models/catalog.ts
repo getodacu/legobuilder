@@ -34,7 +34,7 @@ export const advancedDrivingBaseCoverage: ModelCoverage = {
   outstandingDeviations: [
     'Authored136-step coverage is not136 verified placements: only the original3 instructions/seven datum units have retained nominal source/CAD verification.',
     'Side64179 motor-frame registration uses actual native-X connhol2 bores at local x±40,z±40 after a proper90° yaw. Outside/lower reinforcement and retention/clearance remain independently unchecked; previous false Y-axis corner-hole connections were removed.',
-    'Real free rear H/upright receiver span64mm versus side blue-pin span96mm and actual13L rail endpoint bores face a different axis: the rear approaches at diagram-derived source-feature midpoints, but four lower contacts are intentionally not claimed as fixed fits.',
+    'Book4p17 now uses actual63869 cross blocks and60483 short liftarms with vertical shafts and native rail seats. Genuine free white32184 receiver rows still span64mm versus side blue-pin rows96mm: all four lower links retain16mm lateral residual and are not asserted as fitted.',
     'Captive electrical topology and source clip identities are authored; unverified flexible cable splines, lengths, compliance and dynamic routing are not invented.',
     'LDraw dimensions use0.4mm/LDU, not certified manufacturer measurements; historical molds and manufacturer element IDs are not certified.',
     'Course props and behaviors are RoboBuild extensions, outside the234-unit source BOM; scripted color samples, modeled rates and no certified traction/collision physics.',

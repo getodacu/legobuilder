@@ -11,9 +11,9 @@
   },
   "summary": {
     "builds": 4,
-    "contextualVisualFamilies": 131,
+    "contextualVisualFamilies": 132,
     "distinctInputKeys": {
-      "advanced-driving-base": 44,
+      "advanced-driving-base": 45,
       "package-sorter": 45,
       "hand-quality": 36
     },
@@ -879,12 +879,6 @@
           "pdfPage": 10,
           "printedStep": 10,
           "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=10"
-        },
-        {
-          "manual": "book4",
-          "pdfPage": 17,
-          "printedStep": 17,
-          "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17"
         }
       ],
       "officialOverview": {
@@ -899,9 +893,9 @@
       "confidence": "high-source-shape",
       "moldUncertainty": "Exact physical manufacturing revision is not certified by this manual-to-CAD visual comparison.",
       "alternativeGeometryCandidates": [],
-      "correctionIndexes": [],
+      "correctionIndexes": [14],
       "notes": [
-        "Plain H-shaped5x3 beam; do not substitute39370 ball-socket beam."
+        "Plain H-shaped5x3 beam; do not substitute39370 ball-socket beam. Book4 p17 was misidentified and belongs to63869, not this family."
       ],
       "dimensionsMm": null
     },
@@ -2045,6 +2039,12 @@
           "pdfPage": 16,
           "printedStep": 16,
           "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt43751cee8daa89a7/5ec8e7f4f32b1a633f9052d7/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=16"
+        },
+        {
+          "manual": "book4",
+          "pdfPage": 17,
+          "printedStep": 17,
+          "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17"
         }
       ],
       "officialOverview": {
@@ -2059,8 +2059,8 @@
       "confidence": "high-source-shape",
       "moldUncertainty": "Exact physical manufacturing revision is not certified by this manual-to-CAD visual comparison.",
       "alternativeGeometryCandidates": [],
-      "correctionIndexes": [],
-      "notes": [],
+      "correctionIndexes": [14],
+      "notes": ["Book4 p17 callout has one triple round-hole row and one perpendicular axle bore, not an H-frame."],
       "dimensionsMm": null
     },
     {
@@ -2787,12 +2787,6 @@
           "pdfPage": 14,
           "printedStep": 14,
           "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=14"
-        },
-        {
-          "manual": "book4",
-          "pdfPage": 17,
-          "printedStep": 17,
-          "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17"
         }
       ],
       "officialOverview": {
@@ -2807,8 +2801,33 @@
       "confidence": "high-source-shape",
       "moldUncertainty": "Exact physical manufacturing revision is not certified by this manual-to-CAD visual comparison.",
       "alternativeGeometryCandidates": [],
-      "correctionIndexes": [],
-      "notes": [],
+      "correctionIndexes": [15],
+      "notes": ["Only Book4 p14 is this cable clip. P17 introduces two60483 liftarms with separate axle and round bores."],
+      "dimensionsMm": null
+    },
+    {
+      "input": "docs/research/data/advanced-driving-base.json",
+      "build": "advanced-driving-base",
+      "localKey": "azur-beam2-cross",
+      "originalDescription": "P17 medium azure two-hole bracket",
+      "originalColor": "Medium Azur",
+      "correctedName": "Technic Beam  2 Liftarm",
+      "geometryId": "60483",
+      "dat": "60483.dat",
+      "localPath": ".research-cache/geometry/ldraw/parts/60483.dat",
+      "sourceUrl": "https://library.ldraw.org/library/official/parts/60483.dat",
+      "elementIds": [],
+      "retailSku": null,
+      "material": { "name": "Medium azure", "ldrawCode": 322, "status": "Visual source color; not a calibrated shade." },
+      "evidence": [
+        { "manual": "book4", "pdfPage": 17, "printedStep": 17, "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17" },
+        { "manual": "book4", "pdfPage": 21, "printedStep": 21, "url": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltbaec24f63e4075fc/5ec8e806f555a00375660930/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=21" }
+      ],
+      "confidence": "high-source-shape",
+      "moldUncertainty": "Source shape agrees; exact2019 mold is not certified.",
+      "alternativeGeometryCandidates": [],
+      "correctionIndexes": [15],
+      "notes": ["Yellow shaft enters native axle bore atZ0; blue rail pin enters the independent round bore atZ20, both axisY. No cable-clip geometry is substituted."],
       "dimensionsMm": null
     },
     {
@@ -7266,6 +7285,26 @@
       "rejectedGeometryId": "32271",
       "correctedGeometryId": "32348",
       "detail": "Official Pass-the-Brick2019 PDFp17/25 printed14/22 depicts4x4 bent beams, not3x7. Two existing Hand instances retain identities and quantities. Compare real32348 native ground-round(32,0,84), first rear-round(16,0,72) and terminal cross(48,0,96); Sorter32271 remains unchanged. Cached original mixed CC BY2.0/4.0 root and all41 dependencies are already license/hash recorded."
+    },
+    {
+      "input": "advanced-driving-base",
+      "build": "advanced-driving-base",
+      "key": "grey-cross3x2",
+      "rejectedStepPartKey": "grey-iframe3x5",
+      "rejectedGeometryId": "14720",
+      "geometryId": "63869",
+      "evidence": [{ "book": 4, "pdfPage": 17, "printedStep": 17 }],
+      "detail": "The p17 gray callout is the axle/triple-pin cross block63869, not an H-frame. Book4 H-frames4→2 and gray-cross3x2 0→2; wholeADB H-frames8→6 and gray-cross3x2 2→4. Four stable source17 instance IDs and all234 source units are retained."
+    },
+    {
+      "input": "advanced-driving-base",
+      "build": "advanced-driving-base",
+      "key": "azur-beam2-cross",
+      "rejectedStepPartKey": "azur-wireclip",
+      "rejectedGeometryId": "49283",
+      "geometryId": "60483",
+      "evidence": [{ "book": 4, "pdfPage": 17, "printedStep": 17 }, { "book": 4, "pdfPage": 21, "printedStep": 21 }],
+      "detail": "The p17 azure callout is a two-hole axle/pin liftarm60483; p21 inserts rail pins into its FREE ROUND bore. The real p14 cable clip remains49283. Book4/wholeADB azur-wireclip3→1 and new azur-beam2-cross0→2;234 units and136 steps are unchanged. The corrected vertical shaft stack does not itself close the four Book5 drive contacts."
     }
   ],
   "assets": [
@@ -96354,6 +96393,12 @@
           "localKey": "azur-wireclip",
           "geometryId": "49283",
           "dat": "49283.dat",
+          "color": 322
+        },
+        {
+          "localKey": "azur-beam2-cross",
+          "geometryId": "60483",
+          "dat": "60483.dat",
           "color": 322
         }
       ],

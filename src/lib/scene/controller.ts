@@ -11,6 +11,7 @@ import { GeometryLibrary, type ThreeGeometryHandle, type ThreeGeometryPrimitive 
 import type { AssemblyFrame, CameraPreset, RendererCallbacks, RendererController, RobotModel, ViewOptions } from '../types/model';
 import { SceneMaterials } from './materials';
 import { MechanicalOverlays, transformMatrix } from './overlays';
+import { FlexibleCables } from './cables';
 
 type CameraType = PerspectiveCamera | OrthographicCamera;
 type Batch = { object: InstancedMesh; primitive: ThreeGeometryPrimitive; indices: number[]; materialId: string };
@@ -40,6 +41,7 @@ export class SceneController implements RendererController {
   private handles: ThreeGeometryHandle[] = [];
   private materials: SceneMaterials | null = null;
   private overlays: MechanicalOverlays | null = null;
+  private cables: FlexibleCables | null = null;
   private batches: Batch[] = [];
   private lines: PartLine[] = [];
   private propBatches: Batch[] = [];
@@ -351,6 +353,7 @@ export class SceneController implements RendererController {
       }
       this.explodeVectors = this.createExplodeVectors(model);
       this.overlays = new MechanicalOverlays(model); this.root.add(this.overlays.root);
+      this.cables = new FlexibleCables(model); this.root.add(this.cables.root);
       this.autoCamera = !this.reducedMotion.matches; this.selected = null; this.lastPreset = undefined; this.flight = null;
       this.dirty = true;
     } catch (cause) {
@@ -513,6 +516,7 @@ export class SceneController implements RendererController {
       }
     }
     this.overlays?.update(this.matrices, frame, this.view, this.included);
+    this.cables?.update(this.matrices, frame, this.view, this.included);
     this.configureStudio();
     this.dirty = true;
   }
@@ -799,6 +803,7 @@ export class SceneController implements RendererController {
     for (const geometry of this.edgeGeometries.values()) geometry.dispose();
     this.edgeGeometries.clear();
     this.overlays?.dispose(); this.overlays = null;
+    this.cables?.dispose(); this.cables = null;
     this.materials?.dispose(); this.materials = null;
     this.root.clear(); this.labelLayer.replaceChildren();
     for (const handle of this.handles) this.cache.release(handle);

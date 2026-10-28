@@ -86,10 +86,12 @@ put(B, 'peg-black-friction', 17, 'arm-support', [[-20, -320, 160], [20, -320, 16
 put(B, 'biscuit-magenta', 3, 'arm-support', [[0, -330, 160]]);
 put(B, 'connector-gray-3-four-snaps', 1, 'arm-support', [[-80, -310, 160], [80, -310, 160]], [0, 90, 0]);
 put(B, 'beam-azure-7', 1, 'arm-support', [[-100, -310, 140], [100, -310, 140]]);
-put(B, 'beam-azure-2-cross', 1, 'rod-left', [[-80, -330, 80]], [90, 0, 90]);
-put(B, 'beam-azure-2-cross', 2, 'rod-right', [[80, -330, 80]], [90, 0, 90]);
+// B2p26 keys each60483 cross passage onto the F shaft. NativeY is its
+// axle axis; nativeZ points from the cross hole to the pictured upper round hole.
+put(B, 'beam-azure-2-cross', 1, 'rod-left', [[-80, -310, 80]], [90, -90, 0]);
+put(B, 'beam-azure-2-cross', 2, 'rod-right', [[80, -310, 80]], [90, -90, 0]);
 put(B, 'peg-black-friction', 19, 'rod-left', [[-90, -330, 80]]);
-put(B, 'peg-black-friction', 20, 'rod-right', [[90, -330, 80]]);
+put(B, 'peg-black-friction', 20, 'rod-right', [[90, -330, 80]], [0, 180, 0]);
 // Historical :19/:20 IDs are stable; their corrected research family is6628 towball, not2780.
 put(B, 'rod-gray-6', 1, 'rod-left', [[-100, -330, 180]], [0, 180, 0]);
 put(B, 'rod-gray-6', 2, 'rod-right', [[100, -330, 180]], [0, 180, 0]);

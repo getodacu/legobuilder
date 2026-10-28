@@ -18,7 +18,7 @@ function alignRoot(receiver: Transform, moving: Transform, quaternion: Quaternio
   const rotated = composeTransforms(at([0, 0, 0], quaternion), moving);
   return at(receiver.position.map((value, index) => value - rotated.position[index]!) as Vec3, quaternion);
 }
-// The actual side pin rows span96mm, but true rear free receiver rows span64mm; center the two source-feature midpoints without inventing four rigid mates or stretching either module.
+// Corrected Book4 p17 uses63869/60483 and vertical shafts. Its free32184 cap-bore rows still span64mm versus96mm for the drive pins; preserve the residual, never invent four mates.
 const midpoint = (a: Transform, b: Transform): Transform => at(a.position.map((value, index) => (value + b.position[index]!) / 2) as Vec3);
 const rearFinal = alignRoot(
   midpoint(composeTransforms(leftFinal, attachmentFrame(leftSide, 'rear-join-1')), composeTransforms(rightFinal, attachmentFrame(rightSide, 'rear-join-1'))),
@@ -59,7 +59,7 @@ for (const [fragment, number, axis] of [[leftSide, 6, [0, -1, 0]], [rightSide, 7
   const fit = number === 9
     ? placement(
         evidence('documented', 'Book5 step9 brings the completed rear module toward four side pin ends and retains the hub with two top axles.', [assemblySource(9)]),
-        evidence('diagram-derived', 'Real side blue-pin rows span96mm, while free rear H/upright bores with matching insertion axes span64mm. The aligned midpoints do NOT establish a four-point rear connection.', [assemblySource(9)], 0.45),
+        evidence('diagram-derived', 'Source17 gray63869/azure60483 correction restores the vertical shaft stack and true free32184 cap bores. Their64mm row span still differs from the96mm drive-pin span; midpoint placement is not a four-point connection.', [assemblySource(9)], 0.45),
         true
       )
     : assemblyFit(number, 'Two housing-pin collars seat in actual unoccupied upper39790 bores; source pair correspondence preserves16mm pitch and handedness.', ['39790', '2780', '54675']);

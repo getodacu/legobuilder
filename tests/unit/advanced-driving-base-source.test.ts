@@ -3,6 +3,7 @@ import test from 'node:test';
 import manual from '../../docs/research/data/advanced-driving-base.json' with { type: 'json' };
 import { composeTransforms } from '../../src/lib/core/transforms.ts';
 import { advancedDrivingBase as model, advancedDrivingBaseSourceFamilies } from '../../src/lib/models/advanced-driving-base.ts';
+import type { Vec3 } from '../../src/lib/types/model.ts';
 
 const parts = new Map(model.parts.map((part) => [part.id, part]));
 
@@ -101,4 +102,43 @@ test('Front motor source step 10 seats the actual bottom bores on original pins 
     if (!visited.has(neighbor)) { visited.add(neighbor); remaining.push(neighbor); }
   }
   assert.equal(visited.size, front.length, 'every authored Front unit must physically join the same source-rooted mechanism');
+});
+
+test('Book4 p17/p21 source-native brackets use63869 and60483, vertical shafts and independent round-hole rail seats', () => {
+  // Independent source: Book4 PDF17/19/21. Native features:63869.dat:15–16,
+  // 32184.dat:17–18/37–38 and s/60483s01.dat:16/20. No authored contact markers.
+  const nativePoint = (id: string, xyz: Vec3): Vec3 => composeTransforms(parts.get(id)!.finalTransform, {
+    position: [xyz[0] * 0.4, -xyz[1] * 0.4, -xyz[2] * 0.4], quaternion: [0, 0, 0, 1], scale: [1, 1, 1]
+  }).position;
+  const axis = (id: string, xyz: Vec3): Vec3 => {
+    const origin = nativePoint(id, [0, 0, 0]), end = nativePoint(id, xyz);
+    const delta = end.map((value, index) => value - origin[index]!) as Vec3;
+    return delta.map((value) => value / Math.hypot(...delta)) as Vec3;
+  };
+  const contact = (a: string, ap: Vec3, aa: Vec3, b: string, bp: Vec3, ba: Vec3): void => {
+    const left = nativePoint(a, ap), right = nativePoint(b, bp), u = axis(a, aa), v = axis(b, ba);
+    assert.ok(Math.hypot(...left.map((value, index) => value - right[index]!)) < 1e-8, `${a}/${b}: native seat planes`);
+    assert.ok(Math.abs(u.reduce((sum, value, index) => sum + value * v[index]!, 0)) > 1 - 1e-10, `${a}/${b}: native axes`);
+  };
+  assert.equal(parts.get('rear-rail-clip')!.geometryId, '49283', 'the actual p14 cable clip remains');
+  for (const i of [1, 2]) {
+    const block = `rear-mount-frame-${i}`, beam = `rear-mount-clip-${i}`, pin = `rear-azur-rail-pin-${i}`;
+    assert.equal(parts.get(block)!.geometryId, '63869');
+    assert.equal(parts.get(beam)!.geometryId, '60483');
+    assert.equal(parts.get(block)!.sourceReference?.page, 17);
+    assert.equal(parts.get(beam)!.sourceReference?.page, 17);
+    for (const [j, y] of [-20, 20].entries()) {
+      contact(block, [y, 20, i === 1 ? 10 : -10], [0, 0, 1], `rear-housing-pin-${i}-${j + 1}`, [0, 0, 0], [1, 0, 0]);
+      const shaft = `rear-yellow-shaft-${i}-${j + 1}`;
+      contact(`rear-white-lower-${i}`, [-10, y, 0], [1, 0, 0], shaft, [-10, 0, 0], [1, 0, 0]);
+      contact(`rear-white-upper-${i}`, [10, y, 0], [1, 0, 0], shaft, [10, 0, 0], [1, 0, 0]);
+      assert.ok(Math.abs(axis(shaft, [1, 0, 0])[1]) > 1 - 1e-10, 'source yellow shaft stays vertical');
+    }
+    contact(block, [10, 0, 0], [1, 0, 0], `rear-yellow-shaft-${i}-${i === 1 ? 1 : 2}`, [-10, 0, 0], [1, 0, 0]);
+    contact(beam, [0, 10, 0], [0, 1, 0], `rear-yellow-shaft-${i}-${i === 1 ? 2 : 1}`, [-10, 0, 0], [1, 0, 0]);
+    contact(beam, [0, 10, 20], [0, 1, 0], pin, [-10, 0, 0], [1, 0, 0]);
+    contact('rear-azur-rail-1', [0, -10, i === 1 ? -60 : 60], [0, 1, 0], pin, [-10, 0, 0], [1, 0, 0]);
+    contact('rear-azur-rail-2', [0, 10, i === 1 ? -60 : 60], [0, 1, 0], pin, [10, 0, 0], [1, 0, 0]);
+    assert.ok(!model.connections.some((edge) => edge.a.partInstanceId === `rear-white-upper-${i}` && edge.b.partInstanceId === pin), 'no fictional white-center rail mate');
+  }
 });

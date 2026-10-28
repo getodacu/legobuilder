@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "sourceCrosswalk": "docs/research/data/lego-part-crosswalk.json",
-  "sourceCrosswalkSha256": "8104056d442c8bac97b0e65051a09be121cb82a11980e4c84d21e6a799c8924e",
+  "sourceCrosswalkSha256": "2eeec20965d28872adfe23bc08355c64f4ac87cac5d996ddf0587a16c79e8478",
   "roots": [
     {
       "id": "11214",

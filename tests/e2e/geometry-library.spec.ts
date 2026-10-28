@@ -3,6 +3,10 @@ import type { GeometryAsset, MaterialDefinition } from '../../src/lib/types/mode
 import type { ThreeGeometryHandle } from '../../src/lib/geometry/cache';
 import type { MeshStandardMaterial } from 'three';
 
+// This source-module integration case needs Vite transforms; product workflows
+// use the isolated immutable production preview configured for the rest of the suite.
+test.use({ baseURL: 'http://127.0.0.1:5188' });
+
 test('all selected authorised roots load their real closure, retain source origins, fixed colours and independent leases', async ({ page }, info) => {
   test.setTimeout(180_000);
   const failures: string[] = [];

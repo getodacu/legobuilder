@@ -11,7 +11,7 @@ npm run models:build
 npm run dev -- --host 127.0.0.1 --port 5179 --strictPort
 ```
 
-Open `http://127.0.0.1:5179`. To create a static distributable, run `npm run build` after asset preparation. Checks: `npm run check`, `npm run test:unit`, `npm run test:e2e` (Playwright Chromium). The browser suite uses port 5179; stop another process occupying **that** port before running it, or let Playwright reuse this project's running server outside CI.
+Open `http://127.0.0.1:5179`. To create a static distributable, run `npm run build` after asset preparation. Checks: `npm run check`, `npm run test:unit`, `npm run test:e2e` (Playwright Chromium). The browser suite builds once and serves its own production preview on port5187; the source-module geometry integration case uses a separate Vite server on5188. Both test servers are suite-owned and never reuse your development server. Keep those test ports free; normal development may continue on5179.
 
 ## What is playable
 
@@ -22,7 +22,7 @@ Open `http://127.0.0.1:5179`. To create a static distributable, run `npm run bui
 | Quality Check, Idea Detector + Robot Head 2019 | 30/30 | 55 robot + 8 sample | Fits and physical A/F motor-axis assignments unchecked | Two-axis inspection response; RoboBuild extension |
 | Package Sorter, Robot + Base + Packages 2019 | 80/80 | 158 robot + 8 samples | Fits and compound fork linkage unchecked | **Motor-command replay only; no actual package pickup or sorting** |
 
-A tracked unit is a prepared part callout from the cited manual, not a claim about every molded element inside a motor, hub, wheel or prepared sample. `authored` means the instruction and its source-linked operations exist; it does **not** certify physical fit. All four LEGO workbenches are available and interactive. Remaining limitations include the Advanced Driving Base rear receiver mismatch, Hand calibration and retention, Quality Check cable routing and physical port-to-axis mapping, and Sorter's disabled capture/routing and unresolved linkage. See [robot sources](docs/research/robot-sources.md) and [per-robot reports](docs/validation/). Historical VEX research is archived outside the active product and is not a delivery prerequisite.
+A tracked unit is a prepared part callout from the cited manual, not a claim about every molded element inside a motor, hub, wheel or prepared sample. `authored` means the instruction and its source-linked operations exist; it does **not** certify physical fit. All four LEGO workbenches are available and interactive. Hand and Quality now render qualitative captive-lead paths through their real moving frames; lengths and dynamic clearances are not measured. Remaining limitations include the Advanced Driving Base rear receiver mismatch, Hand calibration and retention, Quality Check's exact flexible support and physical port-to-axis mapping, and Sorter's disabled capture/routing and unresolved linkage. See [robot sources](docs/research/robot-sources.md) and [per-robot reports](docs/validation/). Historical VEX research is archived outside the active product and is not a delivery prerequisite.
 
 ## Controls
 

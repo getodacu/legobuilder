@@ -44,7 +44,9 @@ test('Hand has every published family,39 identities,28 numbered steps, battery p
   assert.ok(!roboticHand.inventory.some((line) => line.partInstanceIds.includes('hand-demo-block')));
   assert.ok(roboticHand.sourceMappings.some((mapping) => mapping.source.page === 3));
   assert.ok(roboticHand.steps.some((step) => step.action === 'wiring' && step.sourceReferences[0]!.page === 32));
-  assert.ok(roboticHand.parts.every((part) => part.placementEvidence.fit === 'unchecked'));
+  assert.ok(roboticHand.parts.every((part) => part.placementEvidence.placement === 'diagram-derived'), 'Nominal manual/CAD registration is not a measured attachment');
+  assert.equal(roboticHand.cables[0]!.routeEvidence.category, 'diagram-derived');
+  assert.equal(roboticHand.cables[0]!.lengthMm, undefined, 'Visual slack is not a measured captive length');
 });
 
 test('Hand actual assembly journal counts each new callout once and carries existing modules reversibly', () => {
