@@ -229,6 +229,10 @@ function makeSide(side: 'right' | 'left', book: 2 | 3): BuildFragment {
   for (const [i, x] of [0, sign * 40].entries()) {
     const p = pin(`frame-pin-${i + 1}`);
     mate(frame, point(frame, `projecting-pin-seat-${i}`, 'hole', [50, 0, x], [0, 0, -s, s]), p, point(p, 'frame-collar', 'pin', [-10, 0, 0]), 3);
+    // The first projecting bearing occupies6536; Book5's63869 takes the second.
+    const brace = pin(`brace-cross-${x / 40 + 2}`);
+    connections.push(addMate(brace, point(brace, 'rear-pin-first-bearing', 'hole', [0, 20, 0], rx),
+      p, point(p, 'brace-first-bearing', 'pin', [0, 0, 0]), { id: `${side}-brace-rear-pin-${i + 1}`, type: 'fixed', installedByOperationId: `${side}-merge-13`, evidence: sourceFit(13, 'Source13 seats6536 on the first free blue-pin bearing; its far face later contacts the Book5 outward63869 row.', ['6536', '6558']) }));
   }
   const frameBlock = pin('frame-block');
   for (const [i, z] of [-20, 20].entries()) {

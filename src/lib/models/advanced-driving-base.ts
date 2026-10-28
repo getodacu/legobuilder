@@ -18,11 +18,10 @@ function alignRoot(receiver: Transform, moving: Transform, quaternion: Quaternio
   const rotated = composeTransforms(at([0, 0, 0], quaternion), moving);
   return at(receiver.position.map((value, index) => value - rotated.position[index]!) as Vec3, quaternion);
 }
-// Corrected Book4 p17 uses63869/60483 and vertical shafts. Its free32184 cap-bore rows still span64mm versus96mm for the drive pins; preserve the residual, never invent four mates.
-const midpoint = (a: Transform, b: Transform): Transform => at(a.position.map((value, index) => (value + b.position[index]!) / 2) as Vec3);
+// Book4 white centers receive motor pins; the outward63869 rows receive the four drive pins.
 const rearFinal = alignRoot(
-  midpoint(composeTransforms(leftFinal, attachmentFrame(leftSide, 'rear-join-1')), composeTransforms(rightFinal, attachmentFrame(rightSide, 'rear-join-1'))),
-  midpoint(attachmentFrame(rear, 'side-receiver-1-upper'), attachmentFrame(rear, 'side-receiver-2-upper')),
+  composeTransforms(leftFinal, attachmentFrame(leftSide, 'rear-join-1')),
+  attachmentFrame(rear, 'side-receiver-2-upper'),
   yaw
 );
 const hubFinal = alignRoot(composeTransforms(rearFinal, attachmentFrame(rear, 'hub-axle-1')), nativeLDrawTransform([-70, -30, -80]), yaw);
@@ -59,7 +58,7 @@ for (const [fragment, number, axis] of [[leftSide, 6, [0, -1, 0]], [rightSide, 7
   const fit = number === 9
     ? placement(
         evidence('documented', 'Book5 step9 brings the completed rear module toward four side pin ends and retains the hub with two top axles.', [assemblySource(9)]),
-        evidence('diagram-derived', 'Source17 gray63869/azure60483 correction restores the vertical shaft stack and true free32184 cap bores. Their64mm row span still differs from the96mm drive-pin span; midpoint placement is not a four-point connection.', [assemblySource(9)], 0.45),
+        evidence('diagram-derived', 'The official physical assembly film at18s identifies white32184 motor-pin seats and outward63869 side-pin rows. Four native bore centers and contacting brace faces register without changing the cap/shaft/rail stack.', [assemblySource(9)], 0.95),
         true
       )
     : assemblyFit(number, 'Two housing-pin collars seat in actual unoccupied upper39790 bores; source pair correspondence preserves16mm pitch and handedness.', ['39790', '2780', '54675']);
@@ -77,6 +76,7 @@ function connectSites(receiver: BuildFragment, receiverKey: string, moving: Buil
   connections.push({ id: `assembly-mate-${receiver.rootId}-${receiverKey}-${moving.rootId}-${movingKey}`, a: { partInstanceId: a.partInstanceId, connectionPointId: a.connectionPointId }, b: { partInstanceId: b.partInstanceId, connectionPointId: b.connectionPointId }, type: 'fixed', installedByOperationId: operationId, evidence: assemblyFit(number, `${a.description} ${b.description} Source-selected local bores/shafts; independent fit remains unchecked.`, [byId[a.partInstanceId]!.geometryId, byId[b.partInstanceId]!.geometryId]) });
 }
 for (const [side, number] of [[leftSide, 6], [rightSide, 7]] as const) for (const [receiver, moving] of [[1, 2], [2, 1]]) connectSites(front, `${side === leftSide ? 'left' : 'right'}-side-front-${receiver}`, side, `front-join-${moving}`, number, `assembly-join-${side.rootId}`);
+for (const [side, receiver] of [[leftSide, 2], [rightSide, 1]] as const) for (const [pin, name] of [[1, 'upper'], [2, 'lower']] as const) connectSites(rear, `side-receiver-${receiver}-${name}`, side, `rear-join-${pin}`, 9, 'assembly-join-rear');
 
 const hub = byId['assembly-hub-unit']!;
 const hubWork = hardware.subassemblies.find((assembly) => assembly.id === 'assembly-hub')!.localTransform;
@@ -126,8 +126,8 @@ const descriptions = [
   ['Attach the left drive module', 'Bring the completed left module to the front frame. Align its two housing pins with the matching frame holes and press the module into place.'],
   ['Attach the right drive module', 'Bring the completed right module to the opposite side of the front frame. Check its mirrored orientation before aligning and seating the housing pins.'],
   ['Lower the hub into the chassis', 'Lower the hub onto the upper supports between the drive modules. The rear module’s upper axles will retain it in the next step.'],
-  ['Position the rear module', 'Bring the rear module toward the blue pins on the drive modules, with its two upper axles facing the hub holes. Compare these connections with Book 5 before trying to join them.'],
-  ['Check the rear connections', 'Inspect the four lower side-pin positions and the upper axle-to-hub connections from this side. Compare the gaps with the official illustration; pause if the parts do not align.'],
+  ['Attach the rear module', 'Align the four blue drive-module pins with the free outer gray cross-block holes, and the two upper axles with the hub holes. Press the rear module into place. The white cross-block holes already hold the rear motor’s black pins.'],
+  ['Check the rear connections', 'Inspect all four gray cross-block joints and the two upper axle-to-hub connections from this side. Compare the assembly with Book 5.'],
   ['Prepare the second upper frame', 'Fit two red axle/pins into the long-edge transverse holes of the magenta 11 × 7 frame. Build this small assembly beside the robot.'],
   ['Fit the front upper frame', 'Align the prepared frame with the four upright pins around the front motor and lower it into place. Rotate the view to check all four connections.'],
   ['Insert both 5L stop axles', 'Insert the two reddish-brown 5L stop axles through the upper side supports. Their stop shoulders determine how far they seat.'],
@@ -142,7 +142,7 @@ for (const number of [10, 19]) operations.push(viewOperation(`assembly-view-${nu
 for (const operation of operations) if (operation.stepId === stepId(5, 14) || operation.stepId === stepId(5, 18)) operation.cameraPreset = undersideCamera;
 const assemblySteps: AssemblyStep[] = descriptions.map(([title, description], index) => {
   const number = index + 1, ownOperations = operations.filter((operation) => operation.stepId === stepId(5, number));
-  return { id: stepId(5, number), title: title!, description: description!, kind: 'numbered-instruction', action: number <= 5 ? 'wiring' : number === 10 || number === 19 ? 'view' : [6, 7, 8, 9, 12, 18].includes(number) ? 'reuse' : 'assembly', sourceReferences: [assemblySource(number)], operationIds: ownOperations.map((operation) => operation.id), requiredPartInstanceIds: hardware.parts.filter((part) => part.sourceReference!.instructionId === String(number)).map((part) => part.id), warnings: number <= 5 ? ['Cable paths and lengths are not shown accurately in 3D. Follow the official wiring diagram and check cable reach before connecting.'] : number === 9 || number === 10 ? ['The rear mounting points do not align in this 3D guide: the modeled spans differ by 32 mm. Check Book 5 before joining the rear module. Do not force the parts to match the animation.'] : [], durationMs: Math.max(2200, ...ownOperations.map((operation) => operation.startMs + operation.durationMs + 300)), cameraPreset: number === 14 || number === 18 ? undersideCamera : assemblyCamera };
+  return { id: stepId(5, number), title: title!, description: description!, kind: 'numbered-instruction', action: number <= 5 ? 'wiring' : number === 10 || number === 19 ? 'view' : [6, 7, 8, 9, 12, 18].includes(number) ? 'reuse' : 'assembly', sourceReferences: [assemblySource(number)], operationIds: ownOperations.map((operation) => operation.id), requiredPartInstanceIds: hardware.parts.filter((part) => part.sourceReference!.instructionId === String(number)).map((part) => part.id), warnings: number <= 5 ? ['Cable paths and lengths are not shown accurately in 3D. Follow the official wiring diagram and check cable reach before connecting.'] : [], durationMs: Math.max(2200, ...ownOperations.map((operation) => operation.startMs + operation.durationMs + 300)), cameraPreset: number === 14 || number === 18 ? undersideCamera : assemblyCamera };
 });
 const geometryAssets = geometryAssetsFor([...new Set(parts.map((part) => part.geometryId))]);
 const sourceCourseAsset = simulationAssets.assets.find((asset) => asset.id === 'robobuild-course-marker');
@@ -161,9 +161,9 @@ const authored: RobotModel = {
   ...advancedDrivingBaseIdentity, schemaVersion: 1, parts, geometryAssets: [...geometryAssets, courseAsset], materials: [...materials, ...propMaterials], sourceDocuments: [...advancedDrivingBaseDocuments, ...sourceDocumentsFor(geometryAssets, materials)],
   steps: [...fragments.flatMap((fragment) => fragment.steps), ...assemblySteps], operations,
   installations: [...fragments.flatMap((fragment) => fragment.installations), ...hardware.installations], visibility: [],
-  subassemblies: [{ id: robotRootId, name: 'Advanced Driving Base — tracked source modules', localTransform: identityTransform(), partInstanceIds: [], childSubassemblyIds: [...originals.map((fragment) => fragment.rootId), hardware.rootId], evidence: placement(evidence('documented', 'Book5 directs four source modules and fifteen new prepared units into the build.', [assemblySource(19)]), evidence('diagram-derived', 'Front H1 remains the fixed world datum. Rear registration aligns candidate feature midpoints only: source/CAD free-bore geometry does not close its four pin contacts.', [assemblySource(6), assemblySource(7), assemblySource(9)], 0.5), true) }, ...fragments.flatMap((fragment) => fragment.subassemblies), ...hardware.subassemblies],
+  subassemblies: [{ id: robotRootId, name: 'Advanced Driving Base — tracked source modules', localTransform: identityTransform(), partInstanceIds: [], childSubassemblyIds: [...originals.map((fragment) => fragment.rootId), hardware.rootId], evidence: placement(evidence('documented', 'Book5 directs four source modules and fifteen new prepared units into the build.', [assemblySource(19)]), evidence('diagram-derived', 'Front H1 remains the world datum. Four source-selected outward63869 rear bores register with the drive-pin second bearings; white32184 centers retain the motor pins.', [assemblySource(6), assemblySource(7), assemblySource(9)], 0.95), true) }, ...fragments.flatMap((fragment) => fragment.subassemblies), ...hardware.subassemblies],
   connections, joints: fragments.flatMap((fragment) => fragment.joints), linkageConstraints: fragments.flatMap((fragment) => fragment.linkageConstraints), motors: fragments.flatMap((fragment) => fragment.motors), cables: fragments.flatMap((fragment) => fragment.cables),
-  inventory: inventoryBySource(parts, advancedDrivingBaseSourceFamilies), milestones: [...fragments.flatMap((fragment) => fragment.milestones), { id: 'adb-drive-modules-seated', title: 'Both drive modules attached', stepId: stepId(5, 7) }, { id: 'adb-rear-hub-retained', title: 'Rear module attachment — check fit', stepId: stepId(5, 9) }, { id: 'adb-source-sequence-authored', title: 'Final assembly check', stepId: stepId(5, 19) }],
+  inventory: inventoryBySource(parts, advancedDrivingBaseSourceFamilies), milestones: [...fragments.flatMap((fragment) => fragment.milestones), { id: 'adb-drive-modules-seated', title: 'Both drive modules attached', stepId: stepId(5, 7) }, { id: 'adb-rear-hub-retained', title: 'Rear module and hub attached', stepId: stepId(5, 9) }, { id: 'adb-source-sequence-authored', title: 'Final assembly check', stepId: stepId(5, 19) }],
   sourceMappings: operations.map((operation) => ({ source: operation.sourceReference!, stepId: operation.stepId, operationId: operation.id })),
   scenarios: [], simulationObjects: [[280, -250], [-420, -530], [-510, -800], [20, -1080]].map(([x, z], index) => ({ id: `adb-course-marker-${index + 1}`, name: `RoboBuild course marker${index + 1}`, geometryId: courseAsset.id, materialId: 'robobuild-marker-charcoal', initialTransform: at([x!, floorY, z!]), evidence: courseEvidence })), coverage: advancedDrivingBaseCoverage
 };

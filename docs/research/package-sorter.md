@@ -121,9 +121,9 @@ An additional official **2016 Element Survey** supplies visually matching legacy
 **Two actuated degrees of freedom, not a three-axis arm or a powered gripper:**
 
 1. **Base yaw, port A:** the book-1 large motor sits on the yellow platform with its output vertical. The magenta output biscuit and two blue three-module pins support the complete book-2 frame. Book-2 p58 shows that lowering/mating operation. The arm, sensor mast and forks yaw as one moving superassembly relative to the fixed panel/hub/pedestals. [R pp11,14–16][robot], [B p58][base], [Python p13][python].
-2. **Linked fork lift, port F:** the book-2 medium motor sits upright in the stacked black frames. Opposite horizontal shaft extensions (yellow 7m and gray 5m) drive the bilateral bracket/track-rod linkage and paired fork prongs. The mechanism includes passive pin/axle pivots, not another independently actuated coordinate. No prismatic carriage, conveyor drive, or independent claw-opening motor is introduced. [B pp5,13,17,22,26,32,40,48,53,57][base], [Python p13][python].
+2. **F motor crank and passive fork lift, port F:** the book-2 medium motor sits upright in stacked black frames. Opposite horizontal shaft extensions (yellow7m and gray5m) power the bilateral keyed cranks. Their two genuine40mm ball/socket rods pull a carrier with round F-shaft bearings and two passive fork pivots. The F encoder sets a crank angle, **not** an independently prescribed fork or lift angle. No prismatic carriage, conveyor drive or separate claw-opening motor is introduced. [B pp5,13,17,22,26,32,40,48,53,57][base], [Python p13][python], [native contact reconstruction](sorter-linkage-resolution.md).
 
-The color sensor is fixed high on the twin black 15m mast, aimed toward the raised package region; it connects to **D**. The package gear base is supported by the two rigid fork prongs. The two side pedestals hold the two samples; the empty large azure frame defines the illustrated front catch area, not a belt conveyor. [B pp42,44,57–61][base], [R p22][robot].
+The color sensor is fixed high on the twin black15m mast, aimed toward the raised package region; it connects to **D**. The sample gear bases initially sit over two exposed pedestal axles. The two source fork assemblies carry native32034 black tips and11954 panel lips; whether a specific gear tooth/face or brick facet seats against them at each instant requires actual registered contact evidence. The large azure front frame is a catch region, not a powered conveyor. [B pp42,44,57–61][base], [R p22][robot], [physical example](sorter-linkage-resolution.md).
 
 There is only **one transmission-position gear introduced in book 2** (z28, step15), with no second meshing gear in the sorter parts callouts. A reduction ratio cannot be inferred just because a gear-shaped part is visible. Likewise, no third DOF should be added for the transparent dishes, passive links, or sample gears. [B pp17,45–48][base].
 
@@ -153,6 +153,10 @@ This documents **one pickup from each side and one magenta acceptance test**, no
 
 The official Python PDF's extracted code includes typographic quotation marks around sound names; it is evidence to transcribe carefully, not an executable artifact copied into this repository.
 
+### Physical example and native-fit follow-up
+
+The [official lesson][lesson] embeds a22.2s physical example film (player, private source hash and source-frame findings in [sorter linkage resolution](sorter-linkage-resolution.md)). At8.2s the yellow package sits between the actual black fork tips above its pedestal; at8.5s the carrier rises and the package has left that pedestal. At9.5s the package moves separately near the raised fork, and at10s it falls beside the robot, lying by the pedestal at12s. The film establishes an actual close–lift–release sequence but **does not establish a sustained rigid hold throughout yaw or a measured destination coordinate**. Source Python separately documents a magenta acceptance/bin branch and a yellow shake/drop branch. Its encoder targets must not be converted into unverified passive joint tracks or a fabricated object teleport. Internal native DAT contact geometry permits inspectable seats; no full dynamic contact law or authorized complete assembly CAD was recovered.
+
 ## CAD availability and rights
 
 Inspected the official building index, lesson resources and element overview, plus targeted searches for `automate-it` with CAD/MPD/LDR/IO terms. **No authorized downloadable complete assembly CAD/MPD was found.** This is a scoped negative finding, not proof no such asset exists anywhere. The inspected public resource links are PDFs, images, program artwork and teaching resources; none supplies exact assembly transforms.
@@ -161,7 +165,7 @@ Manual and overview imagery carries **©2019 The LEGO Group. All rights reserved
 
 ## Deliverable boundaries
 
-`data/package-sorter.json` contains document metadata/hashes, every page/numbered step, printed-callout quantities, an inventory rollup, **166 numbered-callout instances across sorter158 + separate samples8**, separately evidenced battery preparation, source-specific program behavior, relational joints/mountings, source references and explicit uncertainties. Stable instance IDs identify transcription instances, **not verified CAD transforms**. No app implementation, build, lint, test or formatter was run for this research task.
+`data/package-sorter.json` contains document metadata/hashes, every page/numbered step, printed-callout quantities, an inventory rollup, **166 numbered-callout instances across sorter158 + separate samples8**, separately evidenced battery preparation, source-specific program behavior, relational joints/mountings, source references and explicit uncertainties. Stable instance IDs identify transcription instances, **not verified CAD transforms**. The original research transcription did not run application checks; [the later validation ledger](../validation/package-sorter.md) records subsequent source-native implementation and its actual software gates.
 
 [index]: https://education.lego.com/en-us/product-resources/spike-prime/downloads/building-instructions/
 [robot]: https://assets.education.lego.com/v3/assets/blt293eea581807678a/bltebfffd33fc0a5e72/5f8802a1bc43790f5c4389f2/automate-it-bi-pdf-book1of3.pdf?locale=en-us

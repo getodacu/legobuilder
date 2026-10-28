@@ -98,11 +98,11 @@ add('rail-clip', 'azur-wireclip', 14, pose([80, 20, 60], q([0, 1, 0], Math.PI / 
 add('rail-clip-pin', 'blue-pin3', 14, pose([60, 20, 60], q([0, 1, 0], Math.PI)), 'rear-rail-clip-unit', clipOffset);
 for (const [i, z] of [-20, 140].entries()) {
   const group = `rear-mount-${i + 1}`, delta: Vec3 = [-100, 25, i * 55];
-  // Book4 p17 is 63869 + 60483, not an H-frame + cable clip.
-  // The two yellow shafts remain vertical through the lower/middle/upper 1L layers.
+  // Book4 p19 and the official lesson film at18s: motor pins occupy white
+  // centers;63869's triple-pin rows face outward for the four Book5 pins.
   add(`white-lower-${i + 1}`, 'white-doublecross', 16, pose([-40, 20, z], cycle), group, delta);
   for (const [j, shaftZ] of [z - 20, z + 20].entries()) add(`yellow-shaft-${i + 1}-${j + 1}`, 'yellow-axle3', 16, pose([-40, 0, shaftZ], rz), group, delta);
-  add(`mount-frame-${i + 1}`, 'grey-cross3x2', 17, pose([-40, 0, z + (i === 0 ? -20 : 20)], i === 0 ? cycle : reverseMount), group, delta);
+  add(`mount-frame-${i + 1}`, 'grey-cross3x2', 17, pose([-40, 0, z + (i === 0 ? -20 : 20)], i === 0 ? reverseMount : cycle), group, delta);
   add(`mount-clip-${i + 1}`, 'azur-beam2-cross', 17, pose([-40, 0, z + (i === 0 ? 20 : -20)], ry), group, delta);
   add(`white-upper-${i + 1}`, 'white-doublecross', 18, pose([-40, -20, z], cycle), group, delta);
 }
@@ -234,7 +234,7 @@ for (const i of [1, 2]) {
   }
   mateNative(`cross-block-shaft-${i}`, `mount-frame-${i}`, [10, 0, 0], `yellow-shaft-${i}-${i === 1 ? 1 : 2}`, [-10, 0, 0], 17);
   mateNative(`short-beam-shaft-${i}`, `mount-clip-${i}`, [0, 10, 0], `yellow-shaft-${i}-${i === 1 ? 2 : 1}`, [-10, 0, 0], 17);
-  for (const [j, y] of [-20, 20].entries()) mateNative(`housing-cross-block-${i}-${j + 1}`, `mount-frame-${i}`, [y, 20, i === 1 ? 10 : -10], `housing-pin-${i}-${j + 1}`, [0, 0, 0], 19);
+  for (const [j, name] of ['upper', 'lower'].entries()) mateNative(`housing-white-cap-${i}-${j + 1}`, `white-${name}-${i}`, [0, 0, 10], `housing-pin-${i}-${j + 1}`, [0, 0, 0], 19);
   mateNative(`rail-short-beam-round-${i}`, `mount-clip-${i}`, [0, 10, 20], `azur-rail-pin-${i}`, [-10, 0, 0], 21);
   mateNative(`rail-lower-pin-${i}`, 'azur-rail-1', [0, -10, i === 1 ? -60 : 60], `azur-rail-pin-${i}`, [-10, 0, 0], 20);
   mateNative(`rail-upper-pin-${i}`, 'azur-rail-2', [0, 10, i === 1 ? -60 : 60], `azur-rail-pin-${i}`, [10, 0, 0], 22);
@@ -254,9 +254,10 @@ point(get('motor'), 'captive-lead', 'electrical', [0, 0, 143], motorFit);
 const attachmentSites: BuildFragment['attachmentSites'] = {};
 attachmentSites['motor-electrical'] = { partInstanceId: 'rear-motor', connectionPointId: 'rear-captive-lead', description: 'Actual captive motor cable stub native(0,0,143); no separate cable inventory instance.', sourceReference: source(15) };
 for (const i of [1, 2]) for (const name of ['upper', 'lower'] as const) {
-  const p = get(`white-${name}-${i}`), cp = point(p, `side-receiver-${i}-${name}`, 'hole', [0, 0, 0], fit(18, 'True32184 free central pin-bore CENTER; faces nativeZ±10. Compare with the drive pin second-bearing CENTER, not with a mismatched entry face. Yellow shafts occupy the two separate axle bores. Book5 four-point correspondence remains unresolved.', ['32184']));
-  cp.localTransform = pose([0, 0, 0], q([1, 0, 0], Math.PI / 2));
-  attachmentSites[`side-receiver-${i}-${name}`] = { partInstanceId: p.id, connectionPointId: cp.id, description: 'Free white32184 central pin-bore center, nativeZ axis; genuine bracket feature, not a fit-approved Book5 correspondence.', sourceReference: source(18) };
+  const native: Vec3 = [name === 'upper' ? -20 : 20, 20, 0];
+  const p = get(`mount-frame-${i}`), cp = point(p, `side-receiver-${i}-${name}`, 'hole', native, fit(17, 'Free63869 triple-row end bore; nativeZ axis. White32184 centers are already occupied by source6 motor pins. Outward rows match the four Book5 drive-pin bearings.', ['63869', '32184']));
+  cp.localTransform = pose(native, q([1, 0, 0], Math.PI / 2));
+  attachmentSites[`side-receiver-${i}-${name}`] = { partInstanceId: p.id, connectionPointId: cp.id, description: 'Free outward63869 triple-row end bore center, nativeZ axis; Book5 side-pin bearing, independently identified in the official physical assembly film at18s.', sourceReference: source(17) };
 }
 for (const [i, z] of [20, 100].entries()) {
   const p = get('top-frame'), cp = point(p, `upper-frame-bore-${i + 1}`, 'hole', [-70, 0, z - 60], topFit);

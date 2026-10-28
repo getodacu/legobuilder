@@ -8,20 +8,33 @@ Status: the active product contains exactly four interactive LEGO builds: `advan
 
 | Selected official build | Numbered instructions documented / authored / independently fit-checked | Authored tracked source units / placement-checked units | Reported geometry confidence; independently checked fit | Outstanding acceptance issue |
 |---|---|---|---|---|
-| Advanced Driving Base, five 2019 books | **136 / 136 / 3** (38+24+24+31+19) | **234 / 7** (73+39+39+68+15) | 0.9 source-shape estimate; original seven-unit bracket nominally checked, **not clearance-certified** | Rear receiver pin centers span 64 mm versus side pins 96 mm; four lower mechanical links not asserted. New fit, rigid-body intersections, outside braces, cable travel and motor limits unverified. |
+| Advanced Driving Base, five2019 books | **136 / 136 / 3** (38+24+24+31+19) | **234 / 7** (73+39+39+68+15) | 0.9 source-shape estimate; initial seven-unit bracket plus bounded34-contact rear audit, **not clearance-certified** | Former rear-width mismatch resolved by official physical film and native gray receivers/white motor seats. Whole-model intersections, other braces/stops, cable travel and motor calibration remain unmeasured. |
 | Robot Hand, *Pass the Brick* 2019 | **28 / 28 / 0**; separate real wiring stage | **39 / 0** robot; unsourced loose lesson bricks excluded | 0.85 source-shape estimate;53 nominal native registrations across39 identities independently supported; physical fits unchecked | Corrected32348 jaws, source-selected8/8mm rear arms, diagonal-end H, handle and fingertip faces. Qualitative captive F lead is rendered; axle stop, physical zero/travel, compliant retention and dynamic cable clearance remain unmeasured. |
 | Quality Check, 2019 Idea Detector + Robot Head | **30 / 30 / 0** (13+17) | **55 robot + 8 sample / 0** | 0.9 source-shape estimate; base/head/exterior native-contact audit completed, physical fit unchecked | Corrected frame/rails/hub, reversed output, surrounds, handed panels and coaxial retainer. Cable-supported retainer global seat and physical A/F-to-axis assignment are **unknown**; inspection behavior remains an app-authored extension. |
-| Package Sorter, 2019 Robot + Base + Packages | **80 / 80 / 0** (19+58+3); 2021 edition excluded | **158 robot + 8 sample / 0** | 0.9 source-shape estimate; fit unchecked | Compound 32140/32184/32526 fork joints, package contacts and continuous pickup/drop **unsolved**. Only source Python/SVG A/F motor-command replay is enabled; a complete sorting cycle is not implemented. |
+| Package Sorter, 2019 Robot + Base + Packages | **80 / 80 / 0** (19+58+3); 2021 edition excluded | **158 robot + 8 sample / 0** | 0.9 source-shape estimate; selected nominal native bearing/crank/fork/rod/pedestal/package seats now independently regressed, whole fit unchecked | Two40mm spherical rods constrain three passive coordinates; no source-registered active contact/stop, F phase/sign, genuine capture or accepted/rejected package cycle. Python/SVG replay moves only the actual A/F motor outputs. |
 
 Numerical geometry confidence measures candidate source-shape identification only, **not** a fraction of validated placements or a manufacturer tolerance. None of the additional LEGO models has an independently fit-verified numbered step. Do not infer completed acceptance from 100% authored-source coverage.
 
-The corrected canonical Sorter Base p24 callout has two genuine6628 towball pins (historical stable IDs `base2019:peg-black-friction:19/20`), not two plain2780 pins. Original robot count stays158; corrected totals are48 plain2780 and6 black6628 pins. Both60483 crank cross-bores now align with the actual F shaft, and both native sphere/socket seats close at the authored reference. These independently exercised input seats do **not** establish the remaining carrier/prong bearings, a continuous closed branch or package capture, and do not raise the fit-checked step count.
+The canonical Sorter Base p24 callout contains genuine6628 towballs (stable historical IDs `base2019:peg-black-friction:19/20`), not ordinary2780 pins; its158 robot/8 sample total remains unchanged:48 genuine2780 plus6 genuine6628. The new [native reconstruction](../research/sorter-linkage-resolution.md) checks the asymmetric source F shaft stack, round-bearing carrier, direct yellow/black mast, four L-to-11L cage pins, source fork receiver rows, outward side pedestal H supports, two40mm nominal rod closures and all three package cross rows. This **resolves the earlier static indexing mismatch**, not the continuous passive branch, release/grip or placement certification. The independent-fit-checked step count remains0.
 
-## Native geometry and flexible leads — final integration check
+## Latest four-robot gates — rear join and source-native Sorter correction
+
+| Gate | Observed result on current four-model code |
+|---|---|
+| `npm run assets:prepare` | Passed:64 licensed MPD roots,485 selected DATs and563 private source hashes checked; no unauthorized Blender/VEX conversion introduced. |
+| `npm run models:build` | Passed: four manifests;234/136 ADB,39/28 Hand,63/30 Quality including8 source samples,166/80 Sorter including8 separate packages; all placement-fit flags remain honest. |
+| `npm run check` | Passed:876 files, zero errors and warnings. |
+| `npm run test:unit` | **64 passed, zero failed, one explicitly skipped full Sorter physical pickup/routing test.** Regressions check official ADB rear receiver contacts at source6/19/Book5p9 and six new Sorter native seat/body families including nominal40mm rod closure. |
+| `npm run build` | Passed: static `build/` emitted, largest client chunk861.53kB /228.40kB gzip; existing500kB advisory retained, not suppressed. |
+| `env -u CI npm run test:e2e` | **23/23 passed in real Chromium,5.3min**: exactly four catalog models; all four source-linked workbenches; selected manual PDF pages; responsive navigation; reverse/seek, source camera override and post-assembly scenes. Suite-owned production5187 and source-module Vite5188; not dev5179. |
+
+Direct desktop WebGL inspection separately exercised [ADB Book5 source9 rear insertion and differential driving](advanced-driving-base.md#actual-browser-captures-and-limits), plus [Sorter Robotp22 transfer, Basep60 final, technical/explode and Python motor replay at10s](package-sorter.md#acceptance-status). Sorter A/F read **−1.571/−1.745rad** at10s; seeking19.14s→0 restored both motor outputs and the scripted D signal, **but both real package assemblies stayed on their pedestals**. No browser page errors were observed in these inspected surfaces. Source-video findings fix the ADB rear receiver ownership and nominal Sorter static fit; they do not supply the missing underactuated Sorter active contact law, F encoder phase/sign, continuous capture or distinct delivery. Criterion10 for Sorter therefore remains **N** despite all software gates passing.
+
+## Native geometry and flexible leads — earlier integration check
 
 The four-model cutover below is retained as history. This later integration corrects the ADB Rear17 families to63869/60483 and its native cap/rail stack, the Sorter F/crank and mirrored sphere/socket seats, and the missing Hand/Quality flexible-lead scene consumer. The source callout totals and numbered-step counts do not change.
 
-| Gate | Observed current result |
+| Gate | Observed earlier result, before the new join research |
 |---|---|
 | `npm run assets:prepare` | Passed:64 licensed root MPDs,485 selected DATs,563 private source hashes verified; no new geometry substitution. |
 | `npm run models:build` | Passed:four source-backed model graphs and declared scenario compilations. |
@@ -36,7 +49,7 @@ Afterward, real Chromium independently exercised **all four current production w
 
 Fresh actual WebGL views show the [Hand's captive handle lead](screenshots/hand-routed-lead-assembly.png), [hidden flexible span during exploded inspection](screenshots/hand-routed-lead-exploded.png), [coupled grip with that same lead](screenshots/hand-routed-lead-grip.png), [Quality's routed head leads](screenshots/quality-routed-leads-assembly.png) and [moving head/support bundle](screenshots/quality-routed-leads-motion.png). Hand captures use the current production build; Quality captures use the identical current source renderer on development5179. These are qualitative surfaces, not cable-length, clearance, force or source-port certification.
 
-**Software gates pass; full four-robot mechanical/scenario acceptance remains open.** ADB's four lower joins retain16mm lateral residual; Sorter's complete coupled fork and real package cycle remain unimplemented. Source/CAD nominal registrations and educational demonstrations do not require manufacturer certification, but those two concrete missing behaviors cannot be waived by removing VEX.
+**Those software gates passed; full four-robot mechanical/scenario acceptance remains open.** The subsequent [ADB investigation](../research/adb-join-resolution.md) resolves the former16mm rear residual and is exercised in [fresh actual WebGL captures](advanced-driving-base.md#actual-browser-captures-and-limits). Sorter's complete coupled contact branch and real package cycle remain open; source/CAD registration must not be promoted into an unsupported physical sorting claim.
 
 ## Four-robot cutover — previous executable check
 
@@ -55,7 +68,7 @@ The production bundle was then served on isolated port5187 and exercised in real
 
 At320px, the production catalog still contained four guides without horizontal overflow. Reopening Quality Check restored its completed guide; header top was0px, the live scene remained200.625px high and the scrollable instruction pane309px high. The [actual four-robot catalog](screenshots/catalog-four-robots.png) and [320px production workbench](screenshots/four-robot-mobile-320.png) were captured and visually reviewed. The production browser and temporary preview were closed after inspection; the development app remains on5179.
 
-**Software cutover checks pass; full mechanical/four-scenario acceptance does not.** VEX removal does not resolve the ADB rear join, remaining Hand/Quality fit/calibration uncertainty or the Sorter's missing closed linkage and functional package routing. The twelve-criterion matrix below intentionally preserves those gaps.
+**At that cutover, software checks passed but full mechanical/four-scenario acceptance did not.** Its ADB rear mismatch has since been resolved; remaining Hand/Quality fit/calibration uncertainty and Sorter's closed-contact branch/package routing are separate issues. VEX remains out of scope, and the twelve-criterion matrix intentionally preserves unverified behavior.
 
 ## Previous executable evidence
 

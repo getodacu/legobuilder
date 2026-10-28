@@ -153,6 +153,10 @@ Individual source-backed shape candidates include [LDraw6536.dat, Technic Cross 
 
 No authorization/license for a complete assembly CAD or for redistribution of manual imagery was established. Keep original PDFs and page images private; source citations alone are not a redistribution grant.
 
+### Follow-up: physical assembly film resolves receiver ownership
+
+The official lesson also embeds a44.8s physical-build film through23video, distinct from the earlier PDF-animation clips. Its00:18 underside view identifies the four white32184 central bores as rear-motor pin seats and the outward gray63869 rows as the four free drive-module receivers. Combining those source identities with unmodified LDraw features resolves the former64/96mm mismatch without changing the cap, rail or axle positions. The34-contact actual-model audit and source-time regression are recorded in [ADB join resolution](adb-join-resolution.md), including the original player/video URLs, private-cache SHA-256 and remaining clearance limits. The film and extracted source frame remain private; this follow-up establishes no redistribution grant.
+
 ## Explicit remaining unknowns
 
 - Formal manual revision strings: not found; use locked SHA-256 and embedded creation/modification metadata.
@@ -161,4 +165,4 @@ No authorization/license for a complete assembly CAD or for redistribution of ma
 - Complete front/whole-build part-origin transforms, hidden insertion depths, all non-seed hole-index coordinates and numerical manual camera angles: not recovered from pictorial manuals, not guessed.
 - Complete authorized source CAD/MPD: not found by this bounded investigation.
 
-No application code, tests, builds, linters or formatters were run as part of this research assignment.
+The original research pass did not run application checks. The follow-up join-resolution report separately records the exercised native-contact and source-time regressions.

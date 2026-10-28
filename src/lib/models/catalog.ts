@@ -10,7 +10,7 @@ const manual = (id: string, title: string, path: string, sha256: string, pageCou
 export const advancedDrivingBaseIdentity: ModelIdentity = {
   id: 'advanced-driving-base', name: 'Advanced Driving Base', manufacturer: 'LEGO Education',
   edition: '2019 · five instruction books', category: 'Mobile robot', complexity: 'Advanced',
-  description: 'Build a wheeled base with two drive motors, color sensors and front and rear tool outputs. The rear mounting fit in this guide needs checking against the official instructions.'
+  description: 'Build a reinforced wheeled base with two drive motors, color sensors and independently powered front and rear tool outputs.'
 };
 
 export const advancedDrivingBaseDocuments: SourceDocument[] = [
@@ -27,14 +27,13 @@ export const advancedDrivingBaseCoverage: ModelCoverage = {
   dimensions: {
     inventory: { status: 'partial', verified: 7, total: 234, note: '234 distinct prepared callout identities are authored, reconciled by exact source-book/family rows at manifest generation. Historical molds/element numbers remain uncertified; reuse never adds another unit.' },
     geometry: { status: 'partial', verified: 7, total: 234, note: 'Actual licensed LDraw component roots, fixed source colors and genuine motor rotor nodes; later source-view correspondence, historical molds and physical fits remain independently unchecked.' },
-    placement: { status: 'partial', verified: 7, total: 234, note: 'Original seven-unit datum retained; first three nominal source/CAD checks are not physical clearance certification. Side64179 frames now register actual motor-face bores; rear free bracket span64mm versus side pin span96mm still leaves four lower drive-to-rear contacts unjoined.' },
+    placement: { status: 'partial', verified: 7, total: 234, note: 'Original seven-unit datum retained. Official physical-build footage and34 native-contact comparisons now resolve the four gray63869 rear receivers, white motor mounts and contacting side-brace faces. Whole-model intersections and molded clearances remain unchecked; this is nominal source/CAD evidence, not physical certification.' },
     kinematics: { status: 'partial', verified: 0, total: 4, note: 'Two real wheel joints and independent front D/rear C motor-output joints share the completed assembly hierarchy. Deterministic unit and real-browser motion checks passed; physical calibration and safe travel remain unverified.' },
     simulation: { status: 'partial', verified: 0, total: 1, note: 'Deterministic -Z-forward course, original non-BOM markers, typed B/F inputs and independent C/D commands passed real-browser checks. Collision/clearance, traction, motor power and optical response remain simplified extensions.' }
   },
   outstandingDeviations: [
     'Authored136-step coverage is not136 verified placements: only the original3 instructions/seven datum units have retained nominal source/CAD verification.',
     'Side64179 motor-frame registration uses actual native-X connhol2 bores at local x±40,z±40 after a proper90° yaw. Outside/lower reinforcement and retention/clearance remain independently unchecked; previous false Y-axis corner-hole connections were removed.',
-    'Book4p17 now uses actual63869 cross blocks and60483 short liftarms with vertical shafts and native rail seats. Genuine free white32184 receiver rows still span64mm versus side blue-pin rows96mm: all four lower links retain16mm lateral residual and are not asserted as fitted.',
     'Captive electrical topology and source clip identities are authored; unverified flexible cable splines, lengths, compliance and dynamic routing are not invented.',
     'LDraw dimensions use0.4mm/LDU, not certified manufacturer measurements; historical molds and manufacturer element IDs are not certified.',
     'Course props and behaviors are RoboBuild extensions, outside the234-unit source BOM; scripted color samples, modeled rates and no certified traction/collision physics.',

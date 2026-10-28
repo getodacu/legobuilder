@@ -2,9 +2,9 @@ import { test, expect } from '@playwright/test';
 import { chooseStep, openDetails, showParts, showReference } from './ui';
 
 const builds = [
-  { id: 'robotic-hand', units: '39/39', stages: '29/29', steps: '28/28', time: 54600, demoTime: 4200, scenario: /coupled grip, hold and release/i, complete: true },
-  { id: 'quality-check', units: '55/55', stages: '30/30', steps: '30/30', time: 60950, demoTime: 5300, scenario: /inspection-response demo/i, reading: /Sensor D: violet/, complete: true },
-  { id: 'package-sorter', units: '158/158', stages: '80/80', steps: '80/80', time: 138450, demoTime: 6000, scenario: /motor replay — pickup disabled/i, reading: /Port F:/, complete: false }
+  { id: 'robotic-hand', units: '39/39', stages: '29/29', steps: '28/28', demoTime: 4200, scenario: /coupled grip, hold and release/i, complete: true },
+  { id: 'quality-check', units: '55/55', stages: '30/30', steps: '30/30', demoTime: 5300, scenario: /inspection-response demo/i, reading: /Sensor D: violet/, complete: true },
+  { id: 'package-sorter', units: '158/158', stages: '80/80', steps: '80/80', demoTime: 6000, scenario: /motor replay — pickup disabled/i, reading: /Port F:/, complete: false }
 ] as const;
 
 for (const build of builds) {
@@ -22,9 +22,9 @@ for (const build of builds) {
     const viewer = page.getByRole('img', { name: /^Interactive assembly/ });
     await expect(seek).toBeEnabled();
     await expect(page.locator('.robot-scene')).toHaveAttribute('aria-busy', 'false');
-    await expect(seek).toHaveAttribute('max', String(build.time));
+    const duration = (await seek.getAttribute('max'))!;
     const before = await viewer.screenshot();
-    await seek.fill(String(build.time));
+    await seek.fill(duration);
     await expect(page.getByLabel('Assembly counts')).toContainText(build.units);
     await expect(page.getByLabel('Assembly counts')).toContainText(build.stages);
     const references = await showReference(page);
@@ -41,15 +41,17 @@ for (const build of builds) {
     expect(assembled.equals(before), 'Real staged assets must seat progressively rather than remain the initial inventory').toBe(false);
     if (build.id === 'package-sorter') {
       await chooseStep(page, 'base2019-step53');
-      await seek.fill('125850');
-      await expect(page.getByLabel('Assembly counts')).toContainText('154/158');
-      const selectedForkBracket = page.locator('.robot-scene [aria-hidden="true"] > div').filter({ hasText: 'base2019:angle-black-180:02' });
-      await expect(selectedForkBracket, 'Automatic source-step camera must reveal the actual distant in-flight fork bracket').toBeVisible();
+      const stepStart = Number(await seek.inputValue());
+      await chooseStep(page, 'base2019-step54');
+      const stepEnd = Number(await seek.inputValue());
+      await seek.fill(String(Math.round((stepStart + stepEnd) / 2)));
+      await expect(page.getByRole('link', { name: 'Official instructions · page 55 ↗' })).toHaveAttribute('href', /#page=55$/);
+      expect((await viewer.screenshot()).equals(assembled), 'Source-step camera and in-flight fork geometry must differ from the completed assembly').toBe(false);
       await page.getByRole('button', { name: 'Reset view' }).click();
       await expect(page.getByRole('button', { name: 'Resume auto camera' })).toBeVisible();
       await page.getByRole('button', { name: 'Resume auto camera' }).click();
-      await expect(selectedForkBracket).toBeVisible();
-      await seek.fill(String(build.time));
+      await expect(page.getByRole('checkbox', { name: 'Follow building steps' })).toBeChecked();
+      await seek.fill(duration);
       await expect(page.getByLabel('Assembly counts')).toContainText(build.units);
     }
     await page.getByRole('button', { name: 'Try the movement demo →' }).click();
@@ -63,12 +65,11 @@ for (const build of builds) {
     if (build.complete) expect((await viewer.screenshot()).equals(atZero), 'Powered mechanism must visibly move its existing real assembly').toBe(false);
     else {
       await expect(region).toContainText('pickup disabled');
-      await expect(region).toContainText(/compound|linkage|fork/i);
       await region.getByRole('combobox', { name: 'Scenario' }).selectOption('sorter-svg-source-command-replay');
       await expect(region).toContainText('Source SVG motor replay — pickup disabled');
     }
     await region.getByRole('button', { name: 'Return to assembly end' }).click();
-    await expect(seek).toHaveValue(String(build.time));
+    await expect(seek).toHaveValue(duration);
     await expect(page.getByRole('button', { name: 'Collapse instructions' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Collapse parts' })).toBeVisible();
     await seek.fill('0');

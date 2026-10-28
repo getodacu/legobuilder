@@ -5,7 +5,7 @@
   "edition": "2019 · five instruction books",
   "category": "Mobile robot",
   "complexity": "Advanced",
-  "description": "Build a wheeled base with two drive motors, color sensors and front and rear tool outputs. The rear mounting fit in this guide needs checking against the official instructions.",
+  "description": "Build a reinforced wheeled base with two drive motors, color sensors and independently powered front and rear tool outputs.",
   "schemaVersion": 1,
   "parts": [
     {
@@ -25039,6 +25039,60 @@
           }
         },
         {
+          "id": "brace-first-bearing",
+          "type": "pin",
+          "localTransform": {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0.7071067811865476,
+              0.7071067811865476
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.98,
+              "sources": [
+                {
+                  "documentId": "adb-book2",
+                  "page": 3,
+                  "instructionId": "3",
+                  "figure": "Right Side step 3",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt0ee7fdaec9e58ae1/5f88021925f8972408a02fde/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=3",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source3 uses adjacent middle+lower bores of the front LONG rail: nativeframe[50,0,Z=0/sign×40]. ProperRy(pi/2) maps their collarfaces to motorZ=-130. Pin short1L entersframe, long2L projects to motorZ=-170; second free bearing centreZ=-160."
+            },
+            "placement": "measured-attachment",
+            "evidence": {
+              "category": "cad-derived",
+              "confidence": 0.9,
+              "sources": [
+                {
+                  "documentId": "ldraw-6558",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+                  "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source3 uses adjacent middle+lower bores of the front LONG rail: nativeframe[50,0,Z=0/sign×40]. ProperRy(pi/2) maps their collarfaces to motorZ=-130. Pin short1L entersframe, long2L projects to motorZ=-170; second free bearing centreZ=-160."
+            },
+            "fit": "unchecked"
+          }
+        },
+        {
           "id": "integration-rear-join-1",
           "type": "pin",
           "localTransform": {
@@ -25207,6 +25261,60 @@
           "localTransform": {
             "position": [
               -4,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0.7071067811865476,
+              0.7071067811865476
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.98,
+              "sources": [
+                {
+                  "documentId": "adb-book2",
+                  "page": 3,
+                  "instructionId": "3",
+                  "figure": "Right Side step 3",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt0ee7fdaec9e58ae1/5f88021925f8972408a02fde/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=3",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source3 uses adjacent middle+lower bores of the front LONG rail: nativeframe[50,0,Z=0/sign×40]. ProperRy(pi/2) maps their collarfaces to motorZ=-130. Pin short1L entersframe, long2L projects to motorZ=-170; second free bearing centreZ=-160."
+            },
+            "placement": "measured-attachment",
+            "evidence": {
+              "category": "cad-derived",
+              "confidence": 0.9,
+              "sources": [
+                {
+                  "documentId": "ldraw-6558",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+                  "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source3 uses adjacent middle+lower bores of the front LONG rail: nativeframe[50,0,Z=0/sign×40]. ProperRy(pi/2) maps their collarfaces to motorZ=-130. Pin short1L entersframe, long2L projects to motorZ=-170; second free bearing centreZ=-160."
+            },
+            "fit": "unchecked"
+          }
+        },
+        {
+          "id": "brace-first-bearing",
+          "type": "pin",
+          "localTransform": {
+            "position": [
+              0,
               0,
               0
             ],
@@ -27154,6 +27262,60 @@
       },
       "connectionPoints": [
         {
+          "id": "rear-pin-first-bearing",
+          "type": "hole",
+          "localTransform": {
+            "position": [
+              0,
+              -8,
+              0
+            ],
+            "quaternion": [
+              0.7071067811865476,
+              0,
+              0,
+              0.7071067811865476
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.98,
+              "sources": [
+                {
+                  "documentId": "adb-book2",
+                  "page": 8,
+                  "instructionId": "8",
+                  "figure": "Right Side step 8",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt0ee7fdaec9e58ae1/5f88021925f8972408a02fde/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=8",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source-view placement on the native 20-LDU Technic grid; independent fit has not been verified."
+            },
+            "placement": "measured-attachment",
+            "evidence": {
+              "category": "cad-derived",
+              "confidence": 0.9,
+              "sources": [
+                {
+                  "documentId": "ldraw-6536",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/6536.dat",
+                  "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source-view placement on the native 20-LDU Technic grid; independent fit has not been verified."
+            },
+            "fit": "unchecked"
+          }
+        },
+        {
           "id": "axle-bearing",
           "type": "axle-hole",
           "localTransform": {
@@ -28183,6 +28345,60 @@
         ]
       },
       "connectionPoints": [
+        {
+          "id": "rear-pin-first-bearing",
+          "type": "hole",
+          "localTransform": {
+            "position": [
+              0,
+              -8,
+              0
+            ],
+            "quaternion": [
+              0.7071067811865476,
+              0,
+              0,
+              0.7071067811865476
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.98,
+              "sources": [
+                {
+                  "documentId": "adb-book2",
+                  "page": 11,
+                  "instructionId": "11",
+                  "figure": "Right Side step 11",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt0ee7fdaec9e58ae1/5f88021925f8972408a02fde/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=11",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source-view placement on the native 20-LDU Technic grid; independent fit has not been verified."
+            },
+            "placement": "measured-attachment",
+            "evidence": {
+              "category": "cad-derived",
+              "confidence": 0.9,
+              "sources": [
+                {
+                  "documentId": "ldraw-6536",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/6536.dat",
+                  "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source-view placement on the native 20-LDU Technic grid; independent fit has not been verified."
+            },
+            "fit": "unchecked"
+          }
+        },
         {
           "id": "black-pin-front-seat",
           "type": "hole",
@@ -35350,6 +35566,60 @@
           }
         },
         {
+          "id": "brace-first-bearing",
+          "type": "pin",
+          "localTransform": {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0.7071067811865476,
+              0.7071067811865476
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.98,
+              "sources": [
+                {
+                  "documentId": "adb-book3",
+                  "page": 3,
+                  "instructionId": "3",
+                  "figure": "Left Side step 3",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt493de8c0e8747730/5f88021dce1f390e99419eca/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=3",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source3 uses adjacent middle+lower bores of the front LONG rail: nativeframe[50,0,Z=0/sign×40]. ProperRy(pi/2) maps their collarfaces to motorZ=-130. Pin short1L entersframe, long2L projects to motorZ=-170; second free bearing centreZ=-160."
+            },
+            "placement": "measured-attachment",
+            "evidence": {
+              "category": "cad-derived",
+              "confidence": 0.9,
+              "sources": [
+                {
+                  "documentId": "ldraw-6558",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+                  "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source3 uses adjacent middle+lower bores of the front LONG rail: nativeframe[50,0,Z=0/sign×40]. ProperRy(pi/2) maps their collarfaces to motorZ=-130. Pin short1L entersframe, long2L projects to motorZ=-170; second free bearing centreZ=-160."
+            },
+            "fit": "unchecked"
+          }
+        },
+        {
           "id": "integration-rear-join-1",
           "type": "pin",
           "localTransform": {
@@ -35518,6 +35788,60 @@
           "localTransform": {
             "position": [
               -4,
+              0,
+              0
+            ],
+            "quaternion": [
+              0,
+              0,
+              0.7071067811865476,
+              0.7071067811865476
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.98,
+              "sources": [
+                {
+                  "documentId": "adb-book3",
+                  "page": 3,
+                  "instructionId": "3",
+                  "figure": "Left Side step 3",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt493de8c0e8747730/5f88021dce1f390e99419eca/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=3",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source3 uses adjacent middle+lower bores of the front LONG rail: nativeframe[50,0,Z=0/sign×40]. ProperRy(pi/2) maps their collarfaces to motorZ=-130. Pin short1L entersframe, long2L projects to motorZ=-170; second free bearing centreZ=-160."
+            },
+            "placement": "measured-attachment",
+            "evidence": {
+              "category": "cad-derived",
+              "confidence": 0.9,
+              "sources": [
+                {
+                  "documentId": "ldraw-6558",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+                  "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source3 uses adjacent middle+lower bores of the front LONG rail: nativeframe[50,0,Z=0/sign×40]. ProperRy(pi/2) maps their collarfaces to motorZ=-130. Pin short1L entersframe, long2L projects to motorZ=-170; second free bearing centreZ=-160."
+            },
+            "fit": "unchecked"
+          }
+        },
+        {
+          "id": "brace-first-bearing",
+          "type": "pin",
+          "localTransform": {
+            "position": [
+              0,
               0,
               0
             ],
@@ -37031,6 +37355,60 @@
       },
       "connectionPoints": [
         {
+          "id": "rear-pin-first-bearing",
+          "type": "hole",
+          "localTransform": {
+            "position": [
+              0,
+              -8,
+              0
+            ],
+            "quaternion": [
+              0.7071067811865476,
+              0,
+              0,
+              0.7071067811865476
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.98,
+              "sources": [
+                {
+                  "documentId": "adb-book3",
+                  "page": 7,
+                  "instructionId": "7",
+                  "figure": "Left Side step 7",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt493de8c0e8747730/5f88021dce1f390e99419eca/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=7",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source-view placement on the native 20-LDU Technic grid; independent fit has not been verified."
+            },
+            "placement": "measured-attachment",
+            "evidence": {
+              "category": "cad-derived",
+              "confidence": 0.9,
+              "sources": [
+                {
+                  "documentId": "ldraw-6536",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/6536.dat",
+                  "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source-view placement on the native 20-LDU Technic grid; independent fit has not been verified."
+            },
+            "fit": "unchecked"
+          }
+        },
+        {
           "id": "axle-bearing",
           "type": "axle-hole",
           "localTransform": {
@@ -37464,6 +37842,60 @@
         ]
       },
       "connectionPoints": [
+        {
+          "id": "rear-pin-first-bearing",
+          "type": "hole",
+          "localTransform": {
+            "position": [
+              0,
+              -8,
+              0
+            ],
+            "quaternion": [
+              0.7071067811865476,
+              0,
+              0,
+              0.7071067811865476
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "evidence": {
+            "relationship": {
+              "category": "documented",
+              "confidence": 0.98,
+              "sources": [
+                {
+                  "documentId": "adb-book3",
+                  "page": 8,
+                  "instructionId": "8",
+                  "figure": "Left Side step 8",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt493de8c0e8747730/5f88021dce1f390e99419eca/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=8",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source-view placement on the native 20-LDU Technic grid; independent fit has not been verified."
+            },
+            "placement": "measured-attachment",
+            "evidence": {
+              "category": "cad-derived",
+              "confidence": 0.9,
+              "sources": [
+                {
+                  "documentId": "ldraw-6536",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/6536.dat",
+                  "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+                  "confidence": 0.98
+                }
+              ],
+              "note": "Source-view placement on the native 20-LDU Technic grid; independent fit has not been verified."
+            },
+            "fit": "unchecked"
+          }
+        },
         {
           "id": "axle-bearing",
           "type": "axle-hole",
@@ -46742,7 +47174,7 @@
           }
         },
         {
-          "id": "rear-housing-cross-block-1-1-b",
+          "id": "rear-housing-white-cap-1-1-b",
           "type": "pin",
           "localTransform": {
             "position": [
@@ -46784,8 +47216,8 @@
               "confidence": 0.85,
               "sources": [
                 {
-                  "documentId": "ldraw-63869",
-                  "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+                  "documentId": "ldraw-32184",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
                 },
@@ -46971,7 +47403,7 @@
           }
         },
         {
-          "id": "rear-housing-cross-block-1-2-b",
+          "id": "rear-housing-white-cap-1-2-b",
           "type": "pin",
           "localTransform": {
             "position": [
@@ -47013,8 +47445,8 @@
               "confidence": 0.85,
               "sources": [
                 {
-                  "documentId": "ldraw-63869",
-                  "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+                  "documentId": "ldraw-32184",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
                 },
@@ -47200,7 +47632,7 @@
           }
         },
         {
-          "id": "rear-housing-cross-block-2-1-b",
+          "id": "rear-housing-white-cap-2-1-b",
           "type": "pin",
           "localTransform": {
             "position": [
@@ -47242,8 +47674,8 @@
               "confidence": 0.85,
               "sources": [
                 {
-                  "documentId": "ldraw-63869",
-                  "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+                  "documentId": "ldraw-32184",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
                 },
@@ -47429,7 +47861,7 @@
           }
         },
         {
-          "id": "rear-housing-cross-block-2-2-b",
+          "id": "rear-housing-white-cap-2-2-b",
           "type": "pin",
           "localTransform": {
             "position": [
@@ -47471,8 +47903,8 @@
               "confidence": 0.85,
               "sources": [
                 {
-                  "documentId": "ldraw-63869",
-                  "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+                  "documentId": "ldraw-32184",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
                 },
@@ -52669,13 +53101,13 @@
           }
         },
         {
-          "id": "rear-side-receiver-1-lower",
+          "id": "rear-housing-white-cap-1-2-a",
           "type": "hole",
           "localTransform": {
             "position": [
               0,
               0,
-              0
+              -4
             ],
             "quaternion": [
               0.7071067811865475,
@@ -52696,14 +53128,14 @@
               "sources": [
                 {
                   "documentId": "adb-book4",
-                  "page": 18,
-                  "instructionId": "18",
-                  "figure": "Rear Part step 18",
-                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=18",
+                  "page": 19,
+                  "instructionId": "19",
+                  "figure": "Rear Part step 19",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
                   "confidence": 0.98
                 }
               ],
-              "note": "True32184 free central pin-bore CENTER; faces nativeZ±10. Compare with the drive pin second-bearing CENTER, not with a mismatched entry face. Yellow shafts occupy the two separate axle bores. Book5 four-point correspondence remains unresolved."
+              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification."
             },
             "placement": "measured-attachment",
             "evidence": {
@@ -52715,9 +53147,15 @@
                   "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
+                },
+                {
+                  "documentId": "ldraw-2780",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/2780.dat",
+                  "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
+                  "confidence": 0.98
                 }
               ],
-              "note": "True32184 free central pin-bore CENTER; faces nativeZ±10. Compare with the drive pin second-bearing CENTER, not with a mismatched entry face. Yellow shafts occupy the two separate axle bores. Book5 four-point correspondence remains unresolved. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
+              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
             },
             "fit": "unchecked"
           }
@@ -53379,10 +53817,10 @@
           160
         ],
         "quaternion": [
-          5.551115123125783e-17,
-          -5.551115123125783e-17,
+          0.7071067811865475,
           -0.7071067811865475,
-          0.7071067811865475
+          5.551115123125783e-17,
+          -5.551115123125783e-17
         ],
         "scale": [
           1,
@@ -53394,13 +53832,13 @@
         "position": [
           -310.4,
           11.600000000000001,
-          760.8233642578125
+          752.8233642578125
         ],
         "quaternion": [
           0.5,
           -0.5,
-          -0.5,
-          0.5
+          0.5,
+          -0.5
         ],
         "scale": [
           1,
@@ -53470,13 +53908,13 @@
           }
         },
         {
-          "id": "rear-housing-cross-block-1-1-a",
+          "id": "rear-side-receiver-1-upper",
           "type": "hole",
           "localTransform": {
             "position": [
               -8,
               -8,
-              -4
+              0
             ],
             "quaternion": [
               0.7071067811865475,
@@ -53497,14 +53935,14 @@
               "sources": [
                 {
                   "documentId": "adb-book4",
-                  "page": 19,
-                  "instructionId": "19",
-                  "figure": "Rear Part step 19",
-                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
+                  "page": 17,
+                  "instructionId": "17",
+                  "figure": "Rear Part step 17",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17",
                   "confidence": 0.98
                 }
               ],
-              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification."
+              "note": "Free63869 triple-row end bore; nativeZ axis. White32184 centers are already occupied by source6 motor pins. Outward rows match the four Book5 drive-pin bearings."
             },
             "placement": "measured-attachment",
             "evidence": {
@@ -53518,25 +53956,25 @@
                   "confidence": 0.98
                 },
                 {
-                  "documentId": "ldraw-2780",
-                  "sourceUrl": "https://library.ldraw.org/library/official/parts/2780.dat",
+                  "documentId": "ldraw-32184",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
                 }
               ],
-              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
+              "note": "Free63869 triple-row end bore; nativeZ axis. White32184 centers are already occupied by source6 motor pins. Outward rows match the four Book5 drive-pin bearings. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
             },
             "fit": "unchecked"
           }
         },
         {
-          "id": "rear-housing-cross-block-1-2-a",
+          "id": "rear-side-receiver-1-lower",
           "type": "hole",
           "localTransform": {
             "position": [
               8,
               -8,
-              -4
+              0
             ],
             "quaternion": [
               0.7071067811865475,
@@ -53557,14 +53995,14 @@
               "sources": [
                 {
                   "documentId": "adb-book4",
-                  "page": 19,
-                  "instructionId": "19",
-                  "figure": "Rear Part step 19",
-                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
+                  "page": 17,
+                  "instructionId": "17",
+                  "figure": "Rear Part step 17",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17",
                   "confidence": 0.98
                 }
               ],
-              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification."
+              "note": "Free63869 triple-row end bore; nativeZ axis. White32184 centers are already occupied by source6 motor pins. Outward rows match the four Book5 drive-pin bearings."
             },
             "placement": "measured-attachment",
             "evidence": {
@@ -53578,13 +54016,13 @@
                   "confidence": 0.98
                 },
                 {
-                  "documentId": "ldraw-2780",
-                  "sourceUrl": "https://library.ldraw.org/library/official/parts/2780.dat",
+                  "documentId": "ldraw-32184",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
                 }
               ],
-              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
+              "note": "Free63869 triple-row end bore; nativeZ axis. White32184 centers are already occupied by source6 motor pins. Outward rows match the four Book5 drive-pin bearings. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
             },
             "fit": "unchecked"
           }
@@ -54048,13 +54486,13 @@
           }
         },
         {
-          "id": "rear-side-receiver-1-upper",
+          "id": "rear-housing-white-cap-1-1-a",
           "type": "hole",
           "localTransform": {
             "position": [
               0,
               0,
-              0
+              -4
             ],
             "quaternion": [
               0.7071067811865475,
@@ -54075,14 +54513,14 @@
               "sources": [
                 {
                   "documentId": "adb-book4",
-                  "page": 18,
-                  "instructionId": "18",
-                  "figure": "Rear Part step 18",
-                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=18",
+                  "page": 19,
+                  "instructionId": "19",
+                  "figure": "Rear Part step 19",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
                   "confidence": 0.98
                 }
               ],
-              "note": "True32184 free central pin-bore CENTER; faces nativeZ±10. Compare with the drive pin second-bearing CENTER, not with a mismatched entry face. Yellow shafts occupy the two separate axle bores. Book5 four-point correspondence remains unresolved."
+              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification."
             },
             "placement": "measured-attachment",
             "evidence": {
@@ -54094,9 +54532,15 @@
                   "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
+                },
+                {
+                  "documentId": "ldraw-2780",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/2780.dat",
+                  "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
+                  "confidence": 0.98
                 }
               ],
-              "note": "True32184 free central pin-bore CENTER; faces nativeZ±10. Compare with the drive pin second-bearing CENTER, not with a mismatched entry face. Yellow shafts occupy the two separate axle bores. Book5 four-point correspondence remains unresolved. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
+              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
             },
             "fit": "unchecked"
           }
@@ -54331,13 +54775,13 @@
           }
         },
         {
-          "id": "rear-side-receiver-2-lower",
+          "id": "rear-housing-white-cap-2-2-a",
           "type": "hole",
           "localTransform": {
             "position": [
               0,
               0,
-              0
+              -4
             ],
             "quaternion": [
               0.7071067811865475,
@@ -54358,14 +54802,14 @@
               "sources": [
                 {
                   "documentId": "adb-book4",
-                  "page": 18,
-                  "instructionId": "18",
-                  "figure": "Rear Part step 18",
-                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=18",
+                  "page": 19,
+                  "instructionId": "19",
+                  "figure": "Rear Part step 19",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
                   "confidence": 0.98
                 }
               ],
-              "note": "True32184 free central pin-bore CENTER; faces nativeZ±10. Compare with the drive pin second-bearing CENTER, not with a mismatched entry face. Yellow shafts occupy the two separate axle bores. Book5 four-point correspondence remains unresolved."
+              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification."
             },
             "placement": "measured-attachment",
             "evidence": {
@@ -54377,9 +54821,15 @@
                   "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
+                },
+                {
+                  "documentId": "ldraw-2780",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/2780.dat",
+                  "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
+                  "confidence": 0.98
                 }
               ],
-              "note": "True32184 free central pin-bore CENTER; faces nativeZ±10. Compare with the drive pin second-bearing CENTER, not with a mismatched entry face. Yellow shafts occupy the two separate axle bores. Book5 four-point correspondence remains unresolved. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
+              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
             },
             "fit": "unchecked"
           }
@@ -55041,10 +55491,10 @@
           160
         ],
         "quaternion": [
-          0.7071067811865475,
-          -0.7071067811865475,
           5.551115123125783e-17,
-          -5.551115123125783e-17
+          -5.551115123125783e-17,
+          -0.7071067811865475,
+          0.7071067811865475
         ],
         "scale": [
           1,
@@ -55056,13 +55506,13 @@
         "position": [
           -189.59999999999997,
           11.600000000000001,
-          752.8233642578125
+          760.8233642578125
         ],
         "quaternion": [
           0.5,
           -0.5,
-          0.5,
-          -0.5
+          -0.5,
+          0.5
         ],
         "scale": [
           1,
@@ -55132,13 +55582,13 @@
           }
         },
         {
-          "id": "rear-housing-cross-block-2-1-a",
+          "id": "rear-side-receiver-2-upper",
           "type": "hole",
           "localTransform": {
             "position": [
               -8,
               -8,
-              4
+              0
             ],
             "quaternion": [
               0.7071067811865475,
@@ -55159,14 +55609,14 @@
               "sources": [
                 {
                   "documentId": "adb-book4",
-                  "page": 19,
-                  "instructionId": "19",
-                  "figure": "Rear Part step 19",
-                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
+                  "page": 17,
+                  "instructionId": "17",
+                  "figure": "Rear Part step 17",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17",
                   "confidence": 0.98
                 }
               ],
-              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification."
+              "note": "Free63869 triple-row end bore; nativeZ axis. White32184 centers are already occupied by source6 motor pins. Outward rows match the four Book5 drive-pin bearings."
             },
             "placement": "measured-attachment",
             "evidence": {
@@ -55180,25 +55630,25 @@
                   "confidence": 0.98
                 },
                 {
-                  "documentId": "ldraw-2780",
-                  "sourceUrl": "https://library.ldraw.org/library/official/parts/2780.dat",
+                  "documentId": "ldraw-32184",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
                 }
               ],
-              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
+              "note": "Free63869 triple-row end bore; nativeZ axis. White32184 centers are already occupied by source6 motor pins. Outward rows match the four Book5 drive-pin bearings. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
             },
             "fit": "unchecked"
           }
         },
         {
-          "id": "rear-housing-cross-block-2-2-a",
+          "id": "rear-side-receiver-2-lower",
           "type": "hole",
           "localTransform": {
             "position": [
               8,
               -8,
-              4
+              0
             ],
             "quaternion": [
               0.7071067811865475,
@@ -55219,14 +55669,14 @@
               "sources": [
                 {
                   "documentId": "adb-book4",
-                  "page": 19,
-                  "instructionId": "19",
-                  "figure": "Rear Part step 19",
-                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
+                  "page": 17,
+                  "instructionId": "17",
+                  "figure": "Rear Part step 17",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=17",
                   "confidence": 0.98
                 }
               ],
-              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification."
+              "note": "Free63869 triple-row end bore; nativeZ axis. White32184 centers are already occupied by source6 motor pins. Outward rows match the four Book5 drive-pin bearings."
             },
             "placement": "measured-attachment",
             "evidence": {
@@ -55240,13 +55690,13 @@
                   "confidence": 0.98
                 },
                 {
-                  "documentId": "ldraw-2780",
-                  "sourceUrl": "https://library.ldraw.org/library/official/parts/2780.dat",
+                  "documentId": "ldraw-32184",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
                 }
               ],
-              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
+              "note": "Free63869 triple-row end bore; nativeZ axis. White32184 centers are already occupied by source6 motor pins. Outward rows match the four Book5 drive-pin bearings. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
             },
             "fit": "unchecked"
           }
@@ -55710,13 +56160,13 @@
           }
         },
         {
-          "id": "rear-side-receiver-2-upper",
+          "id": "rear-housing-white-cap-2-1-a",
           "type": "hole",
           "localTransform": {
             "position": [
               0,
               0,
-              0
+              -4
             ],
             "quaternion": [
               0.7071067811865475,
@@ -55737,14 +56187,14 @@
               "sources": [
                 {
                   "documentId": "adb-book4",
-                  "page": 18,
-                  "instructionId": "18",
-                  "figure": "Rear Part step 18",
-                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=18",
+                  "page": 19,
+                  "instructionId": "19",
+                  "figure": "Rear Part step 19",
+                  "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt31204a16915d90ff/5f88023d0fa6ca0be8c8d3bd/advanced-driving-base-bi-pdf-book4of5.pdf?locale=en-us#page=19",
                   "confidence": 0.98
                 }
               ],
-              "note": "True32184 free central pin-bore CENTER; faces nativeZ±10. Compare with the drive pin second-bearing CENTER, not with a mismatched entry face. Yellow shafts occupy the two separate axle bores. Book5 four-point correspondence remains unresolved."
+              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification."
             },
             "placement": "measured-attachment",
             "evidence": {
@@ -55756,9 +56206,15 @@
                   "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
                   "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
                   "confidence": 0.98
+                },
+                {
+                  "documentId": "ldraw-2780",
+                  "sourceUrl": "https://library.ldraw.org/library/official/parts/2780.dat",
+                  "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
+                  "confidence": 0.98
                 }
               ],
-              "note": "True32184 free central pin-bore CENTER; faces nativeZ±10. Compare with the drive pin second-bearing CENTER, not with a mismatched entry face. Yellow shafts occupy the two separate axle bores. Book5 four-point correspondence remains unresolved. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
+              "note": "Manual mating relationship; local positions are native bore/seat features. Unchecked selected hole registration is explicitly not fit verification. Native LDraw pitch20 LDU; N=Rx(pi)*0.4. Source-selected hole correspondence remains unchecked, not a measured physical fit."
             },
             "fit": "unchecked"
           }
@@ -99376,8 +99832,8 @@
     },
     {
       "id": "book5-step9",
-      "title": "Position the rear module",
-      "description": "Bring the rear module toward the blue pins on the drive modules, with its two upper axles facing the hub holes. Compare these connections with Book 5 before trying to join them.",
+      "title": "Attach the rear module",
+      "description": "Align the four blue drive-module pins with the free outer gray cross-block holes, and the two upper axles with the hub holes. Press the rear module into place. The white cross-block holes already hold the rear motor’s black pins.",
       "kind": "numbered-instruction",
       "action": "reuse",
       "sourceReferences": [
@@ -99394,9 +99850,7 @@
         "assembly-join-rear"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "The rear mounting points do not align in this 3D guide: the modeled spans differ by 32 mm. Check Book 5 before joining the rear module. Do not force the parts to match the animation."
-      ],
+      "warnings": [],
       "durationMs": 4500,
       "cameraPreset": {
         "position": [
@@ -99422,7 +99876,7 @@
     {
       "id": "book5-step10",
       "title": "Check the rear connections",
-      "description": "Inspect the four lower side-pin positions and the upper axle-to-hub connections from this side. Compare the gaps with the official illustration; pause if the parts do not align.",
+      "description": "Inspect all four gray cross-block joints and the two upper axle-to-hub connections from this side. Compare the assembly with Book 5.",
       "kind": "numbered-instruction",
       "action": "view",
       "sourceReferences": [
@@ -99439,9 +99893,7 @@
         "assembly-view-10"
       ],
       "requiredPartInstanceIds": [],
-      "warnings": [
-        "The rear mounting points do not align in this 3D guide: the modeled spans differ by 32 mm. Check Book 5 before joining the rear module. Do not force the parts to match the animation."
-      ],
+      "warnings": [],
       "durationMs": 2500,
       "cameraPreset": {
         "position": [
@@ -163293,13 +163745,13 @@
           "position": [
             -310.4,
             11.600000000000001,
-            760.8233642578125
+            752.8233642578125
           ],
           "quaternion": [
             0.5,
             -0.5,
-            -0.5,
-            0.5
+            0.5,
+            -0.5
           ],
           "scale": [
             1,
@@ -163318,8 +163770,8 @@
           "quaternion": [
             0.5,
             -0.5,
-            -0.5,
-            0.5
+            0.5,
+            -0.5
           ],
           "scale": [
             1,
@@ -163405,13 +163857,13 @@
               "position": [
                 -310.4,
                 11.600000000000001,
-                760.8233642578125
+                752.8233642578125
               ],
               "quaternion": [
                 0.5,
                 -0.5,
-                -0.5,
-                0.5
+                0.5,
+                -0.5
               ],
               "scale": [
                 1,
@@ -163430,8 +163882,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                -0.5,
-                0.5
+                0.5,
+                -0.5
               ],
               "scale": [
                 1,
@@ -163491,8 +163943,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                -0.5,
-                0.5
+                0.5,
+                -0.5
               ],
               "scale": [
                 1,
@@ -163511,8 +163963,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                -0.5,
-                0.5
+                0.5,
+                -0.5
               ],
               "scale": [
                 1,
@@ -163867,13 +164319,13 @@
           "position": [
             -189.59999999999997,
             11.600000000000001,
-            752.8233642578125
+            760.8233642578125
           ],
           "quaternion": [
             0.5,
             -0.5,
-            0.5,
-            -0.5
+            -0.5,
+            0.5
           ],
           "scale": [
             1,
@@ -163892,8 +164344,8 @@
           "quaternion": [
             0.5,
             -0.5,
-            0.5,
-            -0.5
+            -0.5,
+            0.5
           ],
           "scale": [
             1,
@@ -163979,13 +164431,13 @@
               "position": [
                 -189.59999999999997,
                 11.600000000000001,
-                752.8233642578125
+                760.8233642578125
               ],
               "quaternion": [
                 0.5,
                 -0.5,
-                0.5,
-                -0.5
+                -0.5,
+                0.5
               ],
               "scale": [
                 1,
@@ -164004,8 +164456,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                0.5,
-                -0.5
+                -0.5,
+                0.5
               ],
               "scale": [
                 1,
@@ -164065,8 +164517,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                0.5,
-                -0.5
+                -0.5,
+                0.5
               ],
               "scale": [
                 1,
@@ -164085,8 +164537,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                0.5,
-                -0.5
+                -0.5,
+                0.5
               ],
               "scale": [
                 1,
@@ -165085,8 +165537,8 @@
           "quaternion": [
             0.5,
             -0.5,
-            -0.5,
-            0.5
+            0.5,
+            -0.5
           ],
           "scale": [
             1,
@@ -165193,8 +165645,8 @@
           "quaternion": [
             0.5,
             -0.5,
-            0.5,
-            -0.5
+            -0.5,
+            0.5
           ],
           "scale": [
             1,
@@ -165303,8 +165755,8 @@
           "quaternion": [
             0.5,
             -0.5,
-            -0.5,
-            0.5
+            0.5,
+            -0.5
           ],
           "scale": [
             1,
@@ -165411,8 +165863,8 @@
           "quaternion": [
             0.5,
             -0.5,
-            0.5,
-            -0.5
+            -0.5,
+            0.5
           ],
           "scale": [
             1,
@@ -165679,8 +166131,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                -0.5,
-                0.5
+                0.5,
+                -0.5
               ],
               "scale": [
                 1,
@@ -165787,8 +166239,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                0.5,
-                -0.5
+                -0.5,
+                0.5
               ],
               "scale": [
                 1,
@@ -165897,8 +166349,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                -0.5,
-                0.5
+                0.5,
+                -0.5
               ],
               "scale": [
                 1,
@@ -166005,8 +166457,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                0.5,
-                -0.5
+                -0.5,
+                0.5
               ],
               "scale": [
                 1,
@@ -166191,8 +166643,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                -0.5,
-                0.5
+                0.5,
+                -0.5
               ],
               "scale": [
                 1,
@@ -166299,8 +166751,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                0.5,
-                -0.5
+                -0.5,
+                0.5
               ],
               "scale": [
                 1,
@@ -166409,8 +166861,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                -0.5,
-                0.5
+                0.5,
+                -0.5
               ],
               "scale": [
                 1,
@@ -166517,8 +166969,8 @@
               "quaternion": [
                 0.5,
                 -0.5,
-                0.5,
-                -0.5
+                -0.5,
+                0.5
               ],
               "scale": [
                 1,
@@ -185274,8 +185726,8 @@
           "quaternion": [
             0.5,
             -0.5,
-            -0.5,
-            0.5
+            0.5,
+            -0.5
           ],
           "scale": [
             1,
@@ -185382,8 +185834,8 @@
           "quaternion": [
             0.5,
             -0.5,
-            0.5,
-            -0.5
+            -0.5,
+            0.5
           ],
           "scale": [
             1,
@@ -186498,10 +186950,10 @@
             160
           ],
           "quaternion": [
-            5.551115123125783e-17,
-            -5.551115123125783e-17,
+            0.7071067811865475,
             -0.7071067811865475,
-            0.7071067811865475
+            5.551115123125783e-17,
+            -5.551115123125783e-17
           ],
           "scale": [
             1,
@@ -186606,10 +187058,10 @@
             160
           ],
           "quaternion": [
-            0.7071067811865475,
-            -0.7071067811865475,
             5.551115123125783e-17,
-            -5.551115123125783e-17
+            -5.551115123125783e-17,
+            -0.7071067811865475,
+            0.7071067811865475
           ],
           "scale": [
             1,
@@ -187106,7 +187558,7 @@
         "placement": "presentation-only",
         "evidence": {
           "category": "diagram-derived",
-          "confidence": 0.45,
+          "confidence": 0.95,
           "sources": [
             {
               "documentId": "adb-book5",
@@ -187117,7 +187569,7 @@
               "confidence": 0.98
             }
           ],
-          "note": "Source17 gray63869/azure60483 correction restores the vertical shaft stack and true free32184 cap bores. Their64mm row span still differs from the96mm drive-pin span; midpoint placement is not a four-point connection."
+          "note": "The official physical assembly film at18s identifies white32184 motor-pin seats and outward63869 side-pin rows. Four native bore centers and contacting brace faces register without changing the cap/shaft/rail stack."
         },
         "fit": "unchecked"
       },
@@ -187286,7 +187738,7 @@
             "placement": "presentation-only",
             "evidence": {
               "category": "diagram-derived",
-              "confidence": 0.45,
+              "confidence": 0.95,
               "sources": [
                 {
                   "documentId": "adb-book5",
@@ -187297,7 +187749,7 @@
                   "confidence": 0.98
                 }
               ],
-              "note": "Source17 gray63869/azure60483 correction restores the vertical shaft stack and true free32184 cap bores. Their64mm row span still differs from the96mm drive-pin span; midpoint placement is not a four-point connection."
+              "note": "The official physical assembly film at18s identifies white32184 motor-pin seats and outward63869 side-pin rows. Four native bore centers and contacting brace faces register without changing the cap/shaft/rail stack."
             },
             "fit": "unchecked"
           }
@@ -189839,7 +190291,7 @@
         "placement": "presentation-only",
         "evidence": {
           "category": "diagram-derived",
-          "confidence": 0.5,
+          "confidence": 0.95,
           "sources": [
             {
               "documentId": "adb-book5",
@@ -189866,7 +190318,7 @@
               "confidence": 0.98
             }
           ],
-          "note": "Front H1 remains the fixed world datum. Rear registration aligns candidate feature midpoints only: source/CAD free-bore geometry does not close its four pin contacts."
+          "note": "Front H1 remains the world datum. Four source-selected outward63869 rear bores register with the drive-pin second bearings; white32184 centers retain the motor pins."
         },
         "fit": "unchecked"
       }
@@ -199301,7 +199753,58 @@
       }
     },
     {
-      "id": "right-mate-21",
+      "id": "right-brace-rear-pin-1",
+      "type": "fixed",
+      "installedByOperationId": "right-merge-13",
+      "evidence": {
+        "relationship": {
+          "category": "documented",
+          "confidence": 0.98,
+          "sources": [
+            {
+              "documentId": "adb-book2",
+              "page": 13,
+              "instructionId": "13",
+              "figure": "Right Side step 13",
+              "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt0ee7fdaec9e58ae1/5f88021925f8972408a02fde/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=13",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Source13 seats6536 on the first free blue-pin bearing; its far face later contacts the Book5 outward63869 row."
+        },
+        "placement": "measured-attachment",
+        "evidence": {
+          "category": "cad-derived",
+          "confidence": 0.9,
+          "sources": [
+            {
+              "documentId": "ldraw-6536",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6536.dat",
+              "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+              "confidence": 0.98
+            },
+            {
+              "documentId": "ldraw-6558",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+              "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Source13 seats6536 on the first free blue-pin bearing; its far face later contacts the Book5 outward63869 row."
+        },
+        "fit": "unchecked"
+      },
+      "a": {
+        "partInstanceId": "right-brace-cross-2",
+        "connectionPointId": "rear-pin-first-bearing"
+      },
+      "b": {
+        "partInstanceId": "right-frame-pin-1",
+        "connectionPointId": "brace-first-bearing"
+      }
+    },
+    {
+      "id": "right-mate-22",
       "type": "fixed",
       "installedByOperationId": "right-mount-frame-pin-2",
       "evidence": {
@@ -199346,7 +199849,58 @@
       }
     },
     {
-      "id": "right-mate-22",
+      "id": "right-brace-rear-pin-2",
+      "type": "fixed",
+      "installedByOperationId": "right-merge-13",
+      "evidence": {
+        "relationship": {
+          "category": "documented",
+          "confidence": 0.98,
+          "sources": [
+            {
+              "documentId": "adb-book2",
+              "page": 13,
+              "instructionId": "13",
+              "figure": "Right Side step 13",
+              "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt0ee7fdaec9e58ae1/5f88021925f8972408a02fde/advanced-driving-base-bi-pdf-book2of5.pdf?locale=en-us#page=13",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Source13 seats6536 on the first free blue-pin bearing; its far face later contacts the Book5 outward63869 row."
+        },
+        "placement": "measured-attachment",
+        "evidence": {
+          "category": "cad-derived",
+          "confidence": 0.9,
+          "sources": [
+            {
+              "documentId": "ldraw-6536",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6536.dat",
+              "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+              "confidence": 0.98
+            },
+            {
+              "documentId": "ldraw-6558",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+              "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Source13 seats6536 on the first free blue-pin bearing; its far face later contacts the Book5 outward63869 row."
+        },
+        "fit": "unchecked"
+      },
+      "a": {
+        "partInstanceId": "right-brace-cross-3",
+        "connectionPointId": "rear-pin-first-bearing"
+      },
+      "b": {
+        "partInstanceId": "right-frame-pin-2",
+        "connectionPointId": "brace-first-bearing"
+      }
+    },
+    {
+      "id": "right-mate-24",
       "type": "fixed",
       "installedByOperationId": "right-mount-frame-block",
       "evidence": {
@@ -199391,7 +199945,7 @@
       }
     },
     {
-      "id": "right-mate-23",
+      "id": "right-mate-25",
       "type": "fixed",
       "installedByOperationId": "right-mount-frame-block",
       "evidence": {
@@ -199436,7 +199990,7 @@
       }
     },
     {
-      "id": "right-mate-24",
+      "id": "right-mate-26",
       "type": "fixed",
       "installedByOperationId": "right-mount-brace-pin",
       "evidence": {
@@ -199481,7 +200035,7 @@
       }
     },
     {
-      "id": "right-mate-25",
+      "id": "right-mate-27",
       "type": "fixed",
       "installedByOperationId": "right-mount-brace-cross-1",
       "evidence": {
@@ -199526,7 +200080,7 @@
       }
     },
     {
-      "id": "right-mate-26",
+      "id": "right-mate-28",
       "type": "fixed",
       "installedByOperationId": "right-mount-brace-cross-2",
       "evidence": {
@@ -199571,7 +200125,7 @@
       }
     },
     {
-      "id": "right-mate-27",
+      "id": "right-mate-29",
       "type": "fixed",
       "installedByOperationId": "right-mount-brace-cross-3",
       "evidence": {
@@ -199616,7 +200170,7 @@
       }
     },
     {
-      "id": "right-mate-28",
+      "id": "right-mate-30",
       "type": "fixed",
       "installedByOperationId": "right-mount-brace-beam-1",
       "evidence": {
@@ -199661,7 +200215,7 @@
       }
     },
     {
-      "id": "right-mate-29",
+      "id": "right-mate-31",
       "type": "fixed",
       "evidence": {
         "relationship": {
@@ -199705,7 +200259,7 @@
       }
     },
     {
-      "id": "right-mate-30",
+      "id": "right-mate-32",
       "type": "fixed",
       "evidence": {
         "relationship": {
@@ -199749,7 +200303,7 @@
       }
     },
     {
-      "id": "right-mate-31",
+      "id": "right-mate-33",
       "type": "fixed",
       "installedByOperationId": "right-mount-brace-beam-2",
       "evidence": {
@@ -199794,7 +200348,7 @@
       }
     },
     {
-      "id": "right-mate-32",
+      "id": "right-mate-34",
       "type": "fixed",
       "installedByOperationId": "right-mount-brace-beam-2",
       "evidence": {
@@ -199839,7 +200393,7 @@
       }
     },
     {
-      "id": "right-mate-33",
+      "id": "right-mate-35",
       "type": "fixed",
       "installedByOperationId": "right-mount-brace-beam-2",
       "evidence": {
@@ -199884,7 +200438,7 @@
       }
     },
     {
-      "id": "right-mate-34",
+      "id": "right-mate-36",
       "type": "pivot",
       "installedByOperationId": "right-mount-output-axle4",
       "evidence": {
@@ -199929,7 +200483,7 @@
       }
     },
     {
-      "id": "right-mate-35",
+      "id": "right-mate-37",
       "type": "fixed",
       "installedByOperationId": "right-mount-brace-axle3",
       "evidence": {
@@ -199974,7 +200528,7 @@
       }
     },
     {
-      "id": "right-mate-36",
+      "id": "right-mate-38",
       "type": "fixed",
       "installedByOperationId": "right-mount-clip",
       "evidence": {
@@ -200019,7 +200573,7 @@
       }
     },
     {
-      "id": "right-mate-37",
+      "id": "right-mate-39",
       "type": "fixed",
       "installedByOperationId": "right-merge-24",
       "evidence": {
@@ -200064,7 +200618,7 @@
       }
     },
     {
-      "id": "right-mate-38",
+      "id": "right-mate-40",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-blue-pin-1",
       "evidence": {
@@ -200109,7 +200663,7 @@
       }
     },
     {
-      "id": "right-mate-39",
+      "id": "right-mate-41",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-beam",
       "evidence": {
@@ -200154,7 +200708,7 @@
       }
     },
     {
-      "id": "right-mate-40",
+      "id": "right-mate-42",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-cross-2",
       "evidence": {
@@ -200199,7 +200753,7 @@
       }
     },
     {
-      "id": "right-mate-41",
+      "id": "right-mate-43",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-blue-pin-2",
       "evidence": {
@@ -200244,7 +200798,7 @@
       }
     },
     {
-      "id": "right-mate-42",
+      "id": "right-mate-44",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-beam",
       "evidence": {
@@ -200289,7 +200843,7 @@
       }
     },
     {
-      "id": "right-mate-43",
+      "id": "right-mate-45",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-cross-2",
       "evidence": {
@@ -200334,7 +200888,7 @@
       }
     },
     {
-      "id": "right-mate-44",
+      "id": "right-mate-46",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-red-pin-1",
       "evidence": {
@@ -200379,7 +200933,7 @@
       }
     },
     {
-      "id": "right-mate-45",
+      "id": "right-mate-47",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-iframe",
       "evidence": {
@@ -200424,7 +200978,7 @@
       }
     },
     {
-      "id": "right-mate-46",
+      "id": "right-mate-48",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-yellow-beam",
       "evidence": {
@@ -200469,7 +201023,7 @@
       }
     },
     {
-      "id": "right-mate-47",
+      "id": "right-mate-49",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-red-pin-2",
       "evidence": {
@@ -200514,7 +201068,7 @@
       }
     },
     {
-      "id": "right-mate-48",
+      "id": "right-mate-50",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-iframe",
       "evidence": {
@@ -200559,7 +201113,7 @@
       }
     },
     {
-      "id": "right-mate-49",
+      "id": "right-mate-51",
       "type": "fixed",
       "installedByOperationId": "right-mount-rear-yellow-beam",
       "evidence": {
@@ -201504,7 +202058,58 @@
       }
     },
     {
-      "id": "left-mate-21",
+      "id": "left-brace-rear-pin-1",
+      "type": "fixed",
+      "installedByOperationId": "left-merge-13",
+      "evidence": {
+        "relationship": {
+          "category": "documented",
+          "confidence": 0.98,
+          "sources": [
+            {
+              "documentId": "adb-book3",
+              "page": 13,
+              "instructionId": "13",
+              "figure": "Left Side step 13",
+              "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt493de8c0e8747730/5f88021dce1f390e99419eca/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=13",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Source13 seats6536 on the first free blue-pin bearing; its far face later contacts the Book5 outward63869 row."
+        },
+        "placement": "measured-attachment",
+        "evidence": {
+          "category": "cad-derived",
+          "confidence": 0.9,
+          "sources": [
+            {
+              "documentId": "ldraw-6536",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6536.dat",
+              "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+              "confidence": 0.98
+            },
+            {
+              "documentId": "ldraw-6558",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+              "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Source13 seats6536 on the first free blue-pin bearing; its far face later contacts the Book5 outward63869 row."
+        },
+        "fit": "unchecked"
+      },
+      "a": {
+        "partInstanceId": "left-brace-cross-2",
+        "connectionPointId": "rear-pin-first-bearing"
+      },
+      "b": {
+        "partInstanceId": "left-frame-pin-1",
+        "connectionPointId": "brace-first-bearing"
+      }
+    },
+    {
+      "id": "left-mate-22",
       "type": "fixed",
       "installedByOperationId": "left-mount-frame-pin-2",
       "evidence": {
@@ -201549,7 +202154,58 @@
       }
     },
     {
-      "id": "left-mate-22",
+      "id": "left-brace-rear-pin-2",
+      "type": "fixed",
+      "installedByOperationId": "left-merge-13",
+      "evidence": {
+        "relationship": {
+          "category": "documented",
+          "confidence": 0.98,
+          "sources": [
+            {
+              "documentId": "adb-book3",
+              "page": 13,
+              "instructionId": "13",
+              "figure": "Left Side step 13",
+              "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt493de8c0e8747730/5f88021dce1f390e99419eca/advanced-driving-base-bi-pdf-book3of5.pdf?locale=en-us#page=13",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Source13 seats6536 on the first free blue-pin bearing; its far face later contacts the Book5 outward63869 row."
+        },
+        "placement": "measured-attachment",
+        "evidence": {
+          "category": "cad-derived",
+          "confidence": 0.9,
+          "sources": [
+            {
+              "documentId": "ldraw-6536",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6536.dat",
+              "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+              "confidence": 0.98
+            },
+            {
+              "documentId": "ldraw-6558",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+              "figure": "Native source features; see docs/validation/adb-drivetrain.md",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Source13 seats6536 on the first free blue-pin bearing; its far face later contacts the Book5 outward63869 row."
+        },
+        "fit": "unchecked"
+      },
+      "a": {
+        "partInstanceId": "left-brace-cross-1",
+        "connectionPointId": "rear-pin-first-bearing"
+      },
+      "b": {
+        "partInstanceId": "left-frame-pin-2",
+        "connectionPointId": "brace-first-bearing"
+      }
+    },
+    {
+      "id": "left-mate-24",
       "type": "fixed",
       "installedByOperationId": "left-mount-frame-block",
       "evidence": {
@@ -201594,7 +202250,7 @@
       }
     },
     {
-      "id": "left-mate-23",
+      "id": "left-mate-25",
       "type": "fixed",
       "installedByOperationId": "left-mount-frame-block",
       "evidence": {
@@ -201639,7 +202295,7 @@
       }
     },
     {
-      "id": "left-mate-24",
+      "id": "left-mate-26",
       "type": "fixed",
       "installedByOperationId": "left-mount-brace-pin",
       "evidence": {
@@ -201684,7 +202340,7 @@
       }
     },
     {
-      "id": "left-mate-25",
+      "id": "left-mate-27",
       "type": "fixed",
       "installedByOperationId": "left-mount-brace-cross-1",
       "evidence": {
@@ -201729,7 +202385,7 @@
       }
     },
     {
-      "id": "left-mate-26",
+      "id": "left-mate-28",
       "type": "fixed",
       "installedByOperationId": "left-mount-brace-cross-2",
       "evidence": {
@@ -201774,7 +202430,7 @@
       }
     },
     {
-      "id": "left-mate-27",
+      "id": "left-mate-29",
       "type": "fixed",
       "installedByOperationId": "left-mount-brace-cross-3",
       "evidence": {
@@ -201819,7 +202475,7 @@
       }
     },
     {
-      "id": "left-mate-28",
+      "id": "left-mate-30",
       "type": "fixed",
       "installedByOperationId": "left-mount-brace-beam-1",
       "evidence": {
@@ -201864,7 +202520,7 @@
       }
     },
     {
-      "id": "left-mate-29",
+      "id": "left-mate-31",
       "type": "fixed",
       "evidence": {
         "relationship": {
@@ -201908,7 +202564,7 @@
       }
     },
     {
-      "id": "left-mate-30",
+      "id": "left-mate-32",
       "type": "fixed",
       "evidence": {
         "relationship": {
@@ -201952,7 +202608,7 @@
       }
     },
     {
-      "id": "left-mate-31",
+      "id": "left-mate-33",
       "type": "fixed",
       "installedByOperationId": "left-mount-brace-beam-2",
       "evidence": {
@@ -201997,7 +202653,7 @@
       }
     },
     {
-      "id": "left-mate-32",
+      "id": "left-mate-34",
       "type": "fixed",
       "installedByOperationId": "left-mount-brace-beam-2",
       "evidence": {
@@ -202042,7 +202698,7 @@
       }
     },
     {
-      "id": "left-mate-33",
+      "id": "left-mate-35",
       "type": "fixed",
       "installedByOperationId": "left-mount-brace-beam-2",
       "evidence": {
@@ -202087,7 +202743,7 @@
       }
     },
     {
-      "id": "left-mate-34",
+      "id": "left-mate-36",
       "type": "pivot",
       "installedByOperationId": "left-mount-output-axle4",
       "evidence": {
@@ -202132,7 +202788,7 @@
       }
     },
     {
-      "id": "left-mate-35",
+      "id": "left-mate-37",
       "type": "fixed",
       "installedByOperationId": "left-mount-brace-axle3",
       "evidence": {
@@ -202177,7 +202833,7 @@
       }
     },
     {
-      "id": "left-mate-36",
+      "id": "left-mate-38",
       "type": "fixed",
       "installedByOperationId": "left-mount-clip",
       "evidence": {
@@ -202222,7 +202878,7 @@
       }
     },
     {
-      "id": "left-mate-37",
+      "id": "left-mate-39",
       "type": "fixed",
       "installedByOperationId": "left-merge-24",
       "evidence": {
@@ -202267,7 +202923,7 @@
       }
     },
     {
-      "id": "left-mate-38",
+      "id": "left-mate-40",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-blue-pin-1",
       "evidence": {
@@ -202312,7 +202968,7 @@
       }
     },
     {
-      "id": "left-mate-39",
+      "id": "left-mate-41",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-beam",
       "evidence": {
@@ -202357,7 +203013,7 @@
       }
     },
     {
-      "id": "left-mate-40",
+      "id": "left-mate-42",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-cross-2",
       "evidence": {
@@ -202402,7 +203058,7 @@
       }
     },
     {
-      "id": "left-mate-41",
+      "id": "left-mate-43",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-blue-pin-2",
       "evidence": {
@@ -202447,7 +203103,7 @@
       }
     },
     {
-      "id": "left-mate-42",
+      "id": "left-mate-44",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-beam",
       "evidence": {
@@ -202492,7 +203148,7 @@
       }
     },
     {
-      "id": "left-mate-43",
+      "id": "left-mate-45",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-cross-2",
       "evidence": {
@@ -202537,7 +203193,7 @@
       }
     },
     {
-      "id": "left-mate-44",
+      "id": "left-mate-46",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-red-pin-1",
       "evidence": {
@@ -202582,7 +203238,7 @@
       }
     },
     {
-      "id": "left-mate-45",
+      "id": "left-mate-47",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-iframe",
       "evidence": {
@@ -202627,7 +203283,7 @@
       }
     },
     {
-      "id": "left-mate-46",
+      "id": "left-mate-48",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-yellow-beam",
       "evidence": {
@@ -202672,7 +203328,7 @@
       }
     },
     {
-      "id": "left-mate-47",
+      "id": "left-mate-49",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-red-pin-2",
       "evidence": {
@@ -202717,7 +203373,7 @@
       }
     },
     {
-      "id": "left-mate-48",
+      "id": "left-mate-50",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-iframe",
       "evidence": {
@@ -202762,7 +203418,7 @@
       }
     },
     {
-      "id": "left-mate-49",
+      "id": "left-mate-51",
       "type": "fixed",
       "installedByOperationId": "left-mount-rear-yellow-beam",
       "evidence": {
@@ -206071,7 +206727,7 @@
       }
     },
     {
-      "id": "rear-housing-cross-block-1-1",
+      "id": "rear-housing-white-cap-1-1",
       "type": "fixed",
       "installedByOperationId": "rear-join-step19",
       "evidence": {
@@ -206096,8 +206752,8 @@
           "confidence": 0.85,
           "sources": [
             {
-              "documentId": "ldraw-63869",
-              "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+              "documentId": "ldraw-32184",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
               "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
               "confidence": 0.98
             },
@@ -206113,16 +206769,16 @@
         "fit": "unchecked"
       },
       "a": {
-        "partInstanceId": "rear-mount-frame-1",
-        "connectionPointId": "rear-housing-cross-block-1-1-a"
+        "partInstanceId": "rear-white-upper-1",
+        "connectionPointId": "rear-housing-white-cap-1-1-a"
       },
       "b": {
         "partInstanceId": "rear-housing-pin-1-1",
-        "connectionPointId": "rear-housing-cross-block-1-1-b"
+        "connectionPointId": "rear-housing-white-cap-1-1-b"
       }
     },
     {
-      "id": "rear-housing-cross-block-1-2",
+      "id": "rear-housing-white-cap-1-2",
       "type": "fixed",
       "installedByOperationId": "rear-join-step19",
       "evidence": {
@@ -206147,8 +206803,8 @@
           "confidence": 0.85,
           "sources": [
             {
-              "documentId": "ldraw-63869",
-              "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+              "documentId": "ldraw-32184",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
               "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
               "confidence": 0.98
             },
@@ -206164,12 +206820,12 @@
         "fit": "unchecked"
       },
       "a": {
-        "partInstanceId": "rear-mount-frame-1",
-        "connectionPointId": "rear-housing-cross-block-1-2-a"
+        "partInstanceId": "rear-white-lower-1",
+        "connectionPointId": "rear-housing-white-cap-1-2-a"
       },
       "b": {
         "partInstanceId": "rear-housing-pin-1-2",
-        "connectionPointId": "rear-housing-cross-block-1-2-b"
+        "connectionPointId": "rear-housing-white-cap-1-2-b"
       }
     },
     {
@@ -206632,7 +207288,7 @@
       }
     },
     {
-      "id": "rear-housing-cross-block-2-1",
+      "id": "rear-housing-white-cap-2-1",
       "type": "fixed",
       "installedByOperationId": "rear-join-step19",
       "evidence": {
@@ -206657,8 +207313,8 @@
           "confidence": 0.85,
           "sources": [
             {
-              "documentId": "ldraw-63869",
-              "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+              "documentId": "ldraw-32184",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
               "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
               "confidence": 0.98
             },
@@ -206674,16 +207330,16 @@
         "fit": "unchecked"
       },
       "a": {
-        "partInstanceId": "rear-mount-frame-2",
-        "connectionPointId": "rear-housing-cross-block-2-1-a"
+        "partInstanceId": "rear-white-upper-2",
+        "connectionPointId": "rear-housing-white-cap-2-1-a"
       },
       "b": {
         "partInstanceId": "rear-housing-pin-2-1",
-        "connectionPointId": "rear-housing-cross-block-2-1-b"
+        "connectionPointId": "rear-housing-white-cap-2-1-b"
       }
     },
     {
-      "id": "rear-housing-cross-block-2-2",
+      "id": "rear-housing-white-cap-2-2",
       "type": "fixed",
       "installedByOperationId": "rear-join-step19",
       "evidence": {
@@ -206708,8 +207364,8 @@
           "confidence": 0.85,
           "sources": [
             {
-              "documentId": "ldraw-63869",
-              "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+              "documentId": "ldraw-32184",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/32184.dat",
               "figure": "Native part feature/seat derivations recorded in docs/validation/adb-rear.md",
               "confidence": 0.98
             },
@@ -206725,12 +207381,12 @@
         "fit": "unchecked"
       },
       "a": {
-        "partInstanceId": "rear-mount-frame-2",
-        "connectionPointId": "rear-housing-cross-block-2-2-a"
+        "partInstanceId": "rear-white-lower-2",
+        "connectionPointId": "rear-housing-white-cap-2-2-a"
       },
       "b": {
         "partInstanceId": "rear-housing-pin-2-2",
-        "connectionPointId": "rear-housing-cross-block-2-2-b"
+        "connectionPointId": "rear-housing-white-cap-2-2-b"
       }
     },
     {
@@ -208268,6 +208924,210 @@
             }
           ],
           "note": "Book5 side housing-pin receiver: actual39790 vertical bore (100,-10,20)LDU; upper face worldX72,Y4,Z64. Source correspondence unchecked. Not a pin-to-pin joint with Book1step5 horizontal pins. Housing-pin collar seat on Front39790 upper face; motor native x=50,y20,z80. Frame +Y follows downward native +X. Source-selected local bores/shafts; independent fit remains unchecked."
+        },
+        "fit": "unchecked"
+      }
+    },
+    {
+      "id": "assembly-mate-rear-side-receiver-2-upper-left-side-rear-join-1",
+      "a": {
+        "partInstanceId": "rear-mount-frame-2",
+        "connectionPointId": "rear-side-receiver-2-upper"
+      },
+      "b": {
+        "partInstanceId": "left-frame-pin-1",
+        "connectionPointId": "integration-rear-join-1"
+      },
+      "type": "fixed",
+      "installedByOperationId": "assembly-join-rear",
+      "evidence": {
+        "relationship": {
+          "category": "documented",
+          "confidence": 0.98,
+          "sources": [
+            {
+              "documentId": "adb-book5",
+              "page": 12,
+              "instructionId": "9",
+              "figure": "Assembly instruction 9",
+              "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt12341bbb85ea4318/5f8802c42792080f77214054/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=12",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Free outward63869 triple-row end bore center, nativeZ axis; Book5 side-pin bearing, independently identified in the official physical assembly film at18s. Source3 adjacent front-long-rail pin second bearing at motor native[0,0,-160], axis motorZ; not a guessed symmetric±20 pair. Source-selected local bores/shafts; independent fit remains unchecked."
+        },
+        "placement": "measured-attachment",
+        "evidence": {
+          "category": "cad-derived",
+          "confidence": 0.95,
+          "sources": [
+            {
+              "documentId": "ldraw-63869",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+              "figure": "Native source connection primitives; no recentering",
+              "confidence": 0.95
+            },
+            {
+              "documentId": "ldraw-6558",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+              "figure": "Native source connection primitives; no recentering",
+              "confidence": 0.95
+            }
+          ],
+          "note": "Free outward63869 triple-row end bore center, nativeZ axis; Book5 side-pin bearing, independently identified in the official physical assembly film at18s. Source3 adjacent front-long-rail pin second bearing at motor native[0,0,-160], axis motorZ; not a guessed symmetric±20 pair. Source-selected local bores/shafts; independent fit remains unchecked."
+        },
+        "fit": "unchecked"
+      }
+    },
+    {
+      "id": "assembly-mate-rear-side-receiver-2-lower-left-side-rear-join-2",
+      "a": {
+        "partInstanceId": "rear-mount-frame-2",
+        "connectionPointId": "rear-side-receiver-2-lower"
+      },
+      "b": {
+        "partInstanceId": "left-frame-pin-2",
+        "connectionPointId": "integration-rear-join-2"
+      },
+      "type": "fixed",
+      "installedByOperationId": "assembly-join-rear",
+      "evidence": {
+        "relationship": {
+          "category": "documented",
+          "confidence": 0.98,
+          "sources": [
+            {
+              "documentId": "adb-book5",
+              "page": 12,
+              "instructionId": "9",
+              "figure": "Assembly instruction 9",
+              "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt12341bbb85ea4318/5f8802c42792080f77214054/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=12",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Free outward63869 triple-row end bore center, nativeZ axis; Book5 side-pin bearing, independently identified in the official physical assembly film at18s. Source3 adjacent front-long-rail pin second bearing at motor native[-40,0,-160], axis motorZ; not a guessed symmetric±20 pair. Source-selected local bores/shafts; independent fit remains unchecked."
+        },
+        "placement": "measured-attachment",
+        "evidence": {
+          "category": "cad-derived",
+          "confidence": 0.95,
+          "sources": [
+            {
+              "documentId": "ldraw-63869",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+              "figure": "Native source connection primitives; no recentering",
+              "confidence": 0.95
+            },
+            {
+              "documentId": "ldraw-6558",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+              "figure": "Native source connection primitives; no recentering",
+              "confidence": 0.95
+            }
+          ],
+          "note": "Free outward63869 triple-row end bore center, nativeZ axis; Book5 side-pin bearing, independently identified in the official physical assembly film at18s. Source3 adjacent front-long-rail pin second bearing at motor native[-40,0,-160], axis motorZ; not a guessed symmetric±20 pair. Source-selected local bores/shafts; independent fit remains unchecked."
+        },
+        "fit": "unchecked"
+      }
+    },
+    {
+      "id": "assembly-mate-rear-side-receiver-1-upper-right-side-rear-join-1",
+      "a": {
+        "partInstanceId": "rear-mount-frame-1",
+        "connectionPointId": "rear-side-receiver-1-upper"
+      },
+      "b": {
+        "partInstanceId": "right-frame-pin-1",
+        "connectionPointId": "integration-rear-join-1"
+      },
+      "type": "fixed",
+      "installedByOperationId": "assembly-join-rear",
+      "evidence": {
+        "relationship": {
+          "category": "documented",
+          "confidence": 0.98,
+          "sources": [
+            {
+              "documentId": "adb-book5",
+              "page": 12,
+              "instructionId": "9",
+              "figure": "Assembly instruction 9",
+              "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt12341bbb85ea4318/5f8802c42792080f77214054/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=12",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Free outward63869 triple-row end bore center, nativeZ axis; Book5 side-pin bearing, independently identified in the official physical assembly film at18s. Source3 adjacent front-long-rail pin second bearing at motor native[0,0,-160], axis motorZ; not a guessed symmetric±20 pair. Source-selected local bores/shafts; independent fit remains unchecked."
+        },
+        "placement": "measured-attachment",
+        "evidence": {
+          "category": "cad-derived",
+          "confidence": 0.95,
+          "sources": [
+            {
+              "documentId": "ldraw-63869",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+              "figure": "Native source connection primitives; no recentering",
+              "confidence": 0.95
+            },
+            {
+              "documentId": "ldraw-6558",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+              "figure": "Native source connection primitives; no recentering",
+              "confidence": 0.95
+            }
+          ],
+          "note": "Free outward63869 triple-row end bore center, nativeZ axis; Book5 side-pin bearing, independently identified in the official physical assembly film at18s. Source3 adjacent front-long-rail pin second bearing at motor native[0,0,-160], axis motorZ; not a guessed symmetric±20 pair. Source-selected local bores/shafts; independent fit remains unchecked."
+        },
+        "fit": "unchecked"
+      }
+    },
+    {
+      "id": "assembly-mate-rear-side-receiver-1-lower-right-side-rear-join-2",
+      "a": {
+        "partInstanceId": "rear-mount-frame-1",
+        "connectionPointId": "rear-side-receiver-1-lower"
+      },
+      "b": {
+        "partInstanceId": "right-frame-pin-2",
+        "connectionPointId": "integration-rear-join-2"
+      },
+      "type": "fixed",
+      "installedByOperationId": "assembly-join-rear",
+      "evidence": {
+        "relationship": {
+          "category": "documented",
+          "confidence": 0.98,
+          "sources": [
+            {
+              "documentId": "adb-book5",
+              "page": 12,
+              "instructionId": "9",
+              "figure": "Assembly instruction 9",
+              "sourceUrl": "https://assets.education.lego.com/v3/assets/blt293eea581807678a/blt12341bbb85ea4318/5f8802c42792080f77214054/advanced-driving-base-bi-pdf-book5of5.pdf?locale=en-us#page=12",
+              "confidence": 0.98
+            }
+          ],
+          "note": "Free outward63869 triple-row end bore center, nativeZ axis; Book5 side-pin bearing, independently identified in the official physical assembly film at18s. Source3 adjacent front-long-rail pin second bearing at motor native[40,0,-160], axis motorZ; not a guessed symmetric±20 pair. Source-selected local bores/shafts; independent fit remains unchecked."
+        },
+        "placement": "measured-attachment",
+        "evidence": {
+          "category": "cad-derived",
+          "confidence": 0.95,
+          "sources": [
+            {
+              "documentId": "ldraw-63869",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/63869.dat",
+              "figure": "Native source connection primitives; no recentering",
+              "confidence": 0.95
+            },
+            {
+              "documentId": "ldraw-6558",
+              "sourceUrl": "https://library.ldraw.org/library/official/parts/6558.dat",
+              "figure": "Native source connection primitives; no recentering",
+              "confidence": 0.95
+            }
+          ],
+          "note": "Free outward63869 triple-row end bore center, nativeZ axis; Book5 side-pin bearing, independently identified in the official physical assembly film at18s. Source3 adjacent front-long-rail pin second bearing at motor native[40,0,-160], axis motorZ; not a guessed symmetric±20 pair. Source-selected local bores/shafts; independent fit remains unchecked."
         },
         "fit": "unchecked"
       }
@@ -212372,7 +213232,7 @@
     },
     {
       "id": "adb-rear-hub-retained",
-      "title": "Rear module attachment — check fit",
+      "title": "Rear module and hub attached",
       "stepId": "book5-step9"
     },
     {
@@ -216297,7 +217157,7 @@
         "status": "partial",
         "verified": 7,
         "total": 234,
-        "note": "Original seven-unit datum retained; first three nominal source/CAD checks are not physical clearance certification. Side64179 frames now register actual motor-face bores; rear free bracket span64mm versus side pin span96mm still leaves four lower drive-to-rear contacts unjoined."
+        "note": "Original seven-unit datum retained. Official physical-build footage and34 native-contact comparisons now resolve the four gray63869 rear receivers, white motor mounts and contacting side-brace faces. Whole-model intersections and molded clearances remain unchecked; this is nominal source/CAD evidence, not physical certification."
       },
       "kinematics": {
         "status": "partial",
@@ -216315,7 +217175,6 @@
     "outstandingDeviations": [
       "Authored136-step coverage is not136 verified placements: only the original3 instructions/seven datum units have retained nominal source/CAD verification.",
       "Side64179 motor-frame registration uses actual native-X connhol2 bores at local x±40,z±40 after a proper90° yaw. Outside/lower reinforcement and retention/clearance remain independently unchecked; previous false Y-axis corner-hole connections were removed.",
-      "Book4p17 now uses actual63869 cross blocks and60483 short liftarms with vertical shafts and native rail seats. Genuine free white32184 receiver rows still span64mm versus side blue-pin rows96mm: all four lower links retain16mm lateral residual and are not asserted as fitted.",
       "Captive electrical topology and source clip identities are authored; unverified flexible cable splines, lengths, compliance and dynamic routing are not invented.",
       "LDraw dimensions use0.4mm/LDU, not certified manufacturer measurements; historical molds and manufacturer element IDs are not certified.",
       "Course props and behaviors are RoboBuild extensions, outside the234-unit source BOM; scripted color samples, modeled rates and no certified traction/collision physics.",

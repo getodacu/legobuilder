@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import manual from '../../docs/research/data/advanced-driving-base.json' with { type: 'json' };
-import { composeTransforms } from '../../src/lib/core/transforms.ts';
+import { compileAssembly, createFrame, getStepTime, sampleAssembly } from '../../src/lib/assembly/engine.ts';
+import { composeTransforms, readTransform } from '../../src/lib/core/transforms.ts';
 import { advancedDrivingBase as model, advancedDrivingBaseSourceFamilies } from '../../src/lib/models/advanced-driving-base.ts';
 import type { Vec3 } from '../../src/lib/types/model.ts';
 
@@ -128,7 +129,7 @@ test('Book4 p17/p21 source-native brackets use63869 and60483, vertical shafts an
     assert.equal(parts.get(block)!.sourceReference?.page, 17);
     assert.equal(parts.get(beam)!.sourceReference?.page, 17);
     for (const [j, y] of [-20, 20].entries()) {
-      contact(block, [y, 20, i === 1 ? 10 : -10], [0, 0, 1], `rear-housing-pin-${i}-${j + 1}`, [0, 0, 0], [1, 0, 0]);
+      contact(`rear-white-${j === 0 ? 'upper' : 'lower'}-${i}`, [0, 0, 10], [0, 0, 1], `rear-housing-pin-${i}-${j + 1}`, [0, 0, 0], [1, 0, 0]);
       const shaft = `rear-yellow-shaft-${i}-${j + 1}`;
       contact(`rear-white-lower-${i}`, [-10, y, 0], [1, 0, 0], shaft, [-10, 0, 0], [1, 0, 0]);
       contact(`rear-white-upper-${i}`, [10, y, 0], [1, 0, 0], shaft, [10, 0, 0], [1, 0, 0]);
@@ -140,5 +141,70 @@ test('Book4 p17/p21 source-native brackets use63869 and60483, vertical shafts an
     contact('rear-azur-rail-1', [0, -10, i === 1 ? -60 : 60], [0, 1, 0], pin, [-10, 0, 0], [1, 0, 0]);
     contact('rear-azur-rail-2', [0, 10, i === 1 ? -60 : 60], [0, 1, 0], pin, [10, 0, 0], [1, 0, 0]);
     assert.ok(!model.connections.some((edge) => edge.a.partInstanceId === `rear-white-upper-${i}` && edge.b.partInstanceId === pin), 'no fictional white-center rail mate');
+  }
+});
+
+test('official physical assembly receiver ownership closes four native63869 bearings and their contacting6536 faces', () => {
+  // LEGO lesson film photo51454837 at18s, not the authored connection markers.
+  // Native sources:63869.dat:15–16,6536.dat and6558.dat axial primitives.
+  const nativePoint = (id: string, xyz: Vec3): Vec3 => composeTransforms(parts.get(id)!.finalTransform, {
+    position: [xyz[0] * 0.4, -xyz[1] * 0.4, -xyz[2] * 0.4], quaternion: [0, 0, 0, 1], scale: [1, 1, 1]
+  }).position;
+  const near = (a: Vec3, b: Vec3, label: string): void => {
+    assert.ok(Math.hypot(...a.map((value, i) => value - b[i]!)) < 1e-8, label);
+  };
+  const axis = (id: string, xyz: Vec3): Vec3 => {
+    const origin = nativePoint(id, [0, 0, 0]), end = nativePoint(id, xyz);
+    const delta = end.map((value, i) => value - origin[i]!) as Vec3;
+    return delta.map((value) => value / Math.hypot(...delta)) as Vec3;
+  };
+  for (const [side, index, sign, x] of [['left', 2, -1, -16], ['right', 1, 1, 80]] as const) {
+    const receiver = `rear-mount-frame-${index}`;
+    for (const [pinIndex, nativeX, y] of [[1, -20, 24], [2, 20, 8]] as const) {
+      const pin = `${side}-frame-pin-${pinIndex}`, brace = `${side}-brace-cross-${pinIndex === 1 ? 2 : sign + 2}`;
+      near(nativePoint(receiver, [nativeX, 20, 0]), [x, y, 160], `${receiver}: actual bore center`);
+      near(nativePoint(pin, [20, 0, 0]), nativePoint(receiver, [nativeX, 20, 0]), `${pin}: second bearing`);
+      near(nativePoint(pin, [0, 0, 0]), nativePoint(brace, [0, 20, 0]), `${pin}: first bearing`);
+      // First and second free bearings occupy adjacent8mm layers.6536's
+      // far face meets63869's near face atworldZ156; no unexplained air gap.
+      const face = nativePoint(receiver, [nativeX, 20, index === 1 ? -10 : 10]);
+      near(face, nativePoint(brace, [0, 20, -10]), `${pin}: contacting real faces`);
+      near(face, nativePoint(pin, [10, 0, 0]), `${pin}: shaft enters second bearing`);
+      const a = axis(pin, [1, 0, 0]), b = axis(receiver, [0, 0, 1]);
+      assert.ok(Math.abs(a.reduce((sum, value, i) => sum + value * b[i]!, 0)) > 1 - 1e-10, `${pin}: coaxial`);
+      const edge = model.connections.find((entry) => entry.a.partInstanceId === receiver && entry.b.partInstanceId === pin);
+      assert.equal(edge?.installedByOperationId, 'assembly-join-rear', 'all four real joints installed during source9');
+      assert.ok(!model.connections.some((entry) => entry.a.partInstanceId.startsWith('rear-white-') && entry.b.partInstanceId === pin), 'white bores are motor-occupied, not alternate side receivers');
+    }
+  }
+  assert.deepEqual(model.steps.find((step) => step.id === 'book5-step9')!.warnings, []);
+});
+
+test('source-time replay seats motor pins at6, white receivers at19 and free gray receivers only during final assembly9', () => {
+  const compiled = compileAssembly(model), frame = createFrame(compiled);
+  const indices = new Map(model.parts.map((part, index) => [part.id, index]));
+  const nativeAt = (id: string, xyz: Vec3): Vec3 => composeTransforms(readTransform(frame.transforms, indices.get(id)! * 10), {
+    position: [xyz[0] * 0.4, -xyz[1] * 0.4, -xyz[2] * 0.4], quaternion: [0, 0, 0, 1], scale: [1, 1, 1]
+  }).position;
+  const equal = (a: Vec3, b: Vec3): void => assert.ok(Math.hypot(...a.map((value, i) => value - b[i]!)) < 1e-8);
+  sampleAssembly(compiled, getStepTime(compiled, 'book4-step6')!.endMs, frame);
+  for (const i of [1, 2]) {
+    assert.equal(frame.installed[indices.get(`rear-mount-frame-${i}`)!], 0, 'future gray part cannot receive source6 pins');
+    for (const [j, y] of [-20, 20].entries()) equal(
+      nativeAt('rear-motor', [-30, y, i === 1 ? -20 : 140]),
+      nativeAt(`rear-housing-pin-${i}-${j + 1}`, [0, 0, 0]));
+    for (const name of ['upper', 'lower']) assert.equal(frame.installed[indices.get(`rear-white-${name}-${i}`)!], 0, 'white preparation is also introduced later, at16/18');
+  }
+  sampleAssembly(compiled, getStepTime(compiled, 'book4-step19')!.endMs, frame);
+  for (const i of [1, 2]) for (const [j, name] of ['upper', 'lower'].entries()) {
+    equal(nativeAt(`rear-white-${name}-${i}`, [0, 0, 10]), nativeAt(`rear-housing-pin-${i}-${j + 1}`, [0, 0, 0]));
+    const edge = model.connections.find((entry) => entry.id === `rear-housing-white-cap-${i}-${j + 1}`)!;
+    assert.ok(edge);
+    assert.equal(model.operations.find((operation) => operation.id === edge.installedByOperationId)?.stepId, 'book4-step19');
+    assert.ok(!model.connections.some((entry) => entry.a.partInstanceId === `rear-mount-frame-${i}` && entry.b.partInstanceId === `rear-housing-pin-${i}-${j + 1}`), 'no later gray-part marker can certify the wrong motor receiver');
+  }
+  sampleAssembly(compiled, getStepTime(compiled, 'book5-step9')!.endMs, frame);
+  for (const [side, i] of [['left', 2], ['right', 1]] as const) for (const [j, x] of [[1, -20], [2, 20]] as const) {
+    equal(nativeAt(`${side}-frame-pin-${j}`, [20, 0, 0]), nativeAt(`rear-mount-frame-${i}`, [x, 20, 0]));
   }
 });

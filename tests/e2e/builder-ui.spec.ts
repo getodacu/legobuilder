@@ -23,8 +23,7 @@ test('building starts with one instruction, grouped required parts and optional 
   await page.keyboard.press('Escape');
   await expect(page.getByRole('button', { name: 'Reference & credits', exact: true })).toBeFocused();
   await chooseStep(page, 'book5-step9');
-  await expect(page.locator('#step-warnings')).toContainText('32 mm');
-  await expect(page.locator('#step-warnings')).toContainText('Do not force');
+  await expect(page.getByRole('link', { name: 'Official instructions · page 12 ↗' })).toHaveAttribute('href', /advanced-driving-base-bi-pdf-book5of5\.pdf.*#page=12$/);
   await info.attach('builder-desktop', { body: await page.screenshot({ fullPage: true }), contentType: 'image/png' });
 });
 
