@@ -5,6 +5,7 @@ Original DAT text is packed without editing into MPD FILE sections.
 Runtime conversion: Rx(pi) * scale(0.4), LDU to scene mm. No endorsement by LEGO or LDraw.
 Mixed files retain CC BY 2.0 and CC BY 4.0 history obligations; see licenses/CAreadme.txt.
 RoboBuild's authored display palette is not measured material calibration.
+Part preview WebPs in /previews/parts/ are renders of these attributed LDraw roots, not official instruction images.
 
 p/1-16chrd.dat
 Philippe Hurbain [Philo]

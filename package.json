@@ -17,7 +17,8 @@
     "test:unit": "node --experimental-strip-types --test tests/unit/*.test.ts",
     "test:e2e": "playwright test",
     "assets:prepare": "node scripts/assets/prepare.ts",
-    "models:build": "node scripts/models/build.ts"
+    "models:build": "node scripts/models/build.ts",
+    "models:part-previews": "node scripts/models/part-previews.ts"
   },
   "dependencies": {
     "three": "0.186.1"
