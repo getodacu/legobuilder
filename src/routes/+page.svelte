@@ -1,17 +1,64 @@
 <script lang="ts">
   import '../app.css';
-  import { tick } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import Catalog from '#lib/components/Catalog.svelte';
+  import GuideOpenError from '#lib/components/GuideOpenError.svelte';
+  import { guideProgressKey, parseGuideProgress, type GuideProgress } from '#lib/components/guide-progress.ts';
   import { catalog } from '#lib/models/catalog.ts';
   import type { CatalogEntry } from '#lib/types/model.ts';
 
   let selected = $state<CatalogEntry | null>(null);
   let Workspace = $state.raw<typeof import('#lib/components/Workspace.svelte').default | null>(null);
   let workspaceError = $state('');
-  let visits = $state<Record<string, { timeMs: number; installed: number; total: number; steps: number; complete: boolean }>>({});
+  let progress = $state.raw<Partial<Record<string, GuideProgress>>>({});
+  let persistenceFailed = $state(false);
+  let initialProgress = $state.raw<GuideProgress | undefined>();
   let request = 0;
 
+  onMount(() => {
+    try {
+      for (const entry of catalog) {
+        const id = entry.identity.id;
+        const checkpoint = parseGuideProgress(localStorage.getItem(guideProgressKey(id)), entry.coverage.documentedSteps);
+        if (checkpoint) progress[id] = checkpoint;
+      }
+      progress = { ...progress };
+    } catch { persistenceFailed = true; }
+    const id = new URL(location.href).searchParams.get('build');
+    const entry = catalog.find((candidate) => candidate.identity.id === id);
+    if (entry) void open(entry);
+  });
+
+  function retryWorkspace() {
+    if (!selected) return;
+    const url = new URL(location.href);
+    url.searchParams.set('build', selected.identity.id);
+    history.replaceState(history.state, '', url);
+    location.reload();
+  }
+
+  function saveProgress(id: string, checkpoint: GuideProgress | null) {
+    const next = { ...progress };
+    if (checkpoint) next[id] = checkpoint;
+    else delete next[id];
+    progress = next;
+    try {
+      if (checkpoint) localStorage.setItem(guideProgressKey(id), JSON.stringify(checkpoint));
+      else localStorage.removeItem(guideProgressKey(id));
+    } catch { persistenceFailed = true; }
+  }
+
+  function resetProgress(id: string) {
+    try { localStorage.removeItem(guideProgressKey(id)); }
+    catch { return false; }
+    const next = { ...progress };
+    delete next[id]; progress = next;
+    initialProgress = undefined;
+    return true;
+  }
+
   async function open(entry: CatalogEntry) {
+    initialProgress = progress[entry.identity.id];
     selected = entry;
     workspaceError = '';
     const current = ++request;
@@ -29,12 +76,16 @@
     }
   }
 
-  async function back(progress?: { timeMs: number; installed: number; total: number; steps: number; complete: boolean }) {
+  async function back() {
     const id = selected?.identity.id;
-    if (id && progress) visits = { ...visits, [id]: progress };
     request++;
     selected = null;
     workspaceError = '';
+    const url = new URL(location.href);
+    if (url.searchParams.has('build')) {
+      url.searchParams.delete('build');
+      history.replaceState(history.state, '', url);
+    }
     await tick();
     if (id) document.getElementById(`open-${id}`)?.focus();
   }
@@ -49,7 +100,8 @@
 {#if selected}
   {#if Workspace}
     {#key selected.identity.id}
-      <Workspace entry={selected} initialTimeMs={visits[selected.identity.id]?.timeMs ?? 0} onBack={(progress) => void back(progress)} />
+      {@const id = selected.identity.id}
+      <Workspace entry={selected} {initialProgress} {persistenceFailed} onProgress={(checkpoint) => saveProgress(id, checkpoint)} onReset={() => resetProgress(id)} onBack={() => void back()} />
     {/key}
   {:else}
     <div class="workspace-loading">
@@ -58,15 +110,14 @@
         <p class="eyebrow">{selected.identity.manufacturer} / Assembly workbench</p>
         <h1>{selected.identity.name}</h1>
         {#if workspaceError}
-          <div role="alert"><h2>Workbench could not load</h2><p>{workspaceError}</p></div>
-          <button class="primary" onclick={() => { if (selected) void open(selected); }}>Retry workbench</button>
+          <GuideOpenError error={workspaceError} onRetry={retryWorkspace} onBack={() => void back()} />
         {:else}
-          <div role="status"><h2>Opening your building guide…</h2><p>Loading the 3D viewer and parts.</p></div>
+          <div role="status"><h2>Opening your building guide…</h2></div>
+          <button onclick={() => void back()}>All builds</button>
         {/if}
-        <button onclick={() => void back()}>Back to builds</button>
       </main>
     </div>
   {/if}
 {:else}
-  <Catalog entries={catalog} {visits} onOpen={(entry) => void open(entry)} />
+  <Catalog entries={catalog} {progress} {persistenceFailed} onOpen={(entry) => void open(entry)} />
 {/if}

@@ -1,5 +1,5 @@
 import { test, expect, type Locator, type Page, type TestInfo } from '@playwright/test';
-import { openDetails, showParts } from './ui';
+import { cameraView, openDetails, showParts, showWorkshop } from './ui';
 
 const failures = new WeakMap<Page, string[]>();
 const geometryRequests = new WeakMap<Page, Set<string>>();
@@ -33,7 +33,7 @@ test.afterEach(async ({ page }, info) => {
 
 async function capture(page: Page, info: TestInfo, name: string) {
   await info.attach(name, { body: await page.screenshot({ fullPage: true }), contentType: 'image/png' });
-  await info.attach(`${name}-actual-canvas`, { body: await viewer(page).screenshot(), contentType: 'image/png' });
+  await info.attach(`${name}-actual-canvas`, { body: await cameraView(page).screenshot(), contentType: 'image/png' });
 }
 
 async function expectComplete(page: Page) {
@@ -45,7 +45,8 @@ async function expectComplete(page: Page) {
 async function openCompletedAssembly(page: Page) {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
-  await page.locator('#open-advanced-driving-base').click();
+  await page.getByRole('button', { name: 'Start Advanced Driving Base', exact: true }).click();
+  await showWorkshop(page);
   await expect(assemblySeek(page)).toBeEnabled();
   await expect(page.locator('.robot-scene')).toHaveAttribute('aria-busy', 'false');
   await expect(viewer(page)).toBeVisible();
@@ -179,13 +180,13 @@ test('full source assembly enters the same actual scene; guarded course, replay 
   await openDetails(page, '.view-options');
   await page.getByRole('button', { name: 'Reset view', exact: true }).click();
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
-  const assemblyPixels = await viewer(page).screenshot();
+  const assemblyPixels = await cameraView(page).screenshot();
   await enterSimulation(page);
   await expect(viewer(page)).toHaveCount(1);
   expect(await viewer(page).evaluate((canvas, original) => canvas === original, originalCanvas)).toBe(true);
   expect([...geometryRequests.get(page)!].sort(), 'Entry reuses loaded genuine CAD rather than requesting a replacement robot').toEqual(assetsBeforeEntry);
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
-  const startPixels = await viewer(page).screenshot();
+  const startPixels = await cameraView(page).screenshot();
   await capture(page, info, 'simulation-start-original-course');
   const collision = controls(page).locator('.simulation-collision');
   await expect(collision).toContainText('Simplified collision stop, no physics');
@@ -202,7 +203,7 @@ test('full source assembly enters the same actual scene; guarded course, replay 
     await sensor(page, 'B', time === 6000 ? 'black' : 'white');
     await sensor(page, 'F', time === 6000 ? 'black' : 'white');
     await expectComplete(page);
-    const pixels = await viewer(page).screenshot();
+    const pixels = await cameraView(page).screenshot();
     const state = await readings(page).locator('span').allTextContents();
     const previous = saved.get(time);
     if (previous) {
@@ -234,11 +235,11 @@ test('full source assembly enters the same actual scene; guarded course, replay 
   expect(await viewer(page).evaluate((canvas, original) => canvas === original, originalCanvas)).toBe(true);
   await page.getByRole('button', { name: 'Reset view', exact: true }).click();
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
-  expect(await changedFraction(page, assemblyPixels, await viewer(page).screenshot()), 'Returning restores the same complete assembly without external simulation objects').toBeLessThan(0.001);
+  expect(await changedFraction(page, assemblyPixels, await cameraView(page).screenshot()), 'Returning restores the same complete assembly without external simulation objects').toBeLessThan(0.001);
   await enterSimulation(page);
   expect(await viewer(page).evaluate((canvas, original) => canvas === original, originalCanvas)).toBe(true);
   await page.getByRole('button', { name: 'Fit whole', exact: true }).click();
-  expect(await changedFraction(page, startPixels, await viewer(page).screenshot()), 'Re-entry restores the original course and robot at zero without stale transforms').toBeLessThan(0.001);
+  expect(await changedFraction(page, startPixels, await cameraView(page).screenshot()), 'Re-entry restores the original course and robot at zero without stale transforms').toBeLessThan(0.001);
   await expect(simulationSeek(page)).toHaveValue('0');
 });
 
@@ -248,37 +249,37 @@ test('native motor plans move actual independent C/D gears; typed B/F events rew
   await expect(motor.locator('option')).toHaveCount(4);
   for (const port of ['A', 'E', 'C', 'D']) await expect(motor.locator('option').filter({ hasText: new RegExp(`^Port ${port} ·`) })).toHaveCount(1);
   await isolatePart(page, 'left-wheel');
-  const drivenWheelAtZero = await viewer(page).screenshot();
+  const drivenWheelAtZero = await cameraView(page).screenshot();
   await seek(page, 1000);
   // Recenter the same real wheel to remove chassis translation from this comparison.
   await page.getByRole('button', { name: 'Focus active', exact: true }).click();
   expect(await angle(page, 'A')).toBeGreaterThan(0);
-  expect(await changedFraction(page, drivenWheelAtZero, await viewer(page).screenshot()), 'Actual powered wheel rotates, not only its text readout').toBeGreaterThan(0.002);
+  expect(await changedFraction(page, drivenWheelAtZero, await cameraView(page).screenshot()), 'Actual powered wheel rotates, not only its text readout').toBeGreaterThan(0.002);
   await capture(page, info, 'simulation-actual-drive-wheel-rotation');
   // Isolate tool actuation from root/wheel motion using actual native commands.
   await command(page, 'A', 0); await command(page, 'E', 0);
   await command(page, 'D', 0.5);
   await page.getByRole('button', { name: 'Focus active', exact: true }).click();
-  const stoppedWheel = await viewer(page).screenshot();
+  const stoppedWheel = await cameraView(page).screenshot();
   await seek(page, 1000);
-  expect(await changedFraction(page, stoppedWheel, await viewer(page).screenshot()), 'Independent D actuation leaves the actual isolated drive wheel unchanged').toBeLessThan(0.001);
+  expect(await changedFraction(page, stoppedWheel, await cameraView(page).screenshot()), 'Independent D actuation leaves the actual isolated drive wheel unchanged').toBeLessThan(0.001);
   await seek(page, 0);
   await isolatePart(page, 'front-gear28');
-  const frontAtZero = await viewer(page).screenshot();
+  const frontAtZero = await cameraView(page).screenshot();
   await seek(page, 1000);
   expect(await angle(page, 'A')).toBe(0); expect(await angle(page, 'E')).toBe(0);
   expect(await angle(page, 'C')).toBe(0); expect(await angle(page, 'D')).toBeCloseTo(0.5, 3);
-  const frontMoving = await viewer(page).screenshot();
+  const frontMoving = await cameraView(page).screenshot();
   expect(await changedFraction(page, frontAtZero, frontMoving), 'Real front output gear rotates while the drive wheels remain at zero').toBeGreaterThan(0.002);
   await capture(page, info, 'simulation-front-D-actual-gear-during-motion');
   await command(page, 'C', -0.4); await seek(page, 1000);
   expect(await angle(page, 'C')).toBeCloseTo(-0.4, 3); expect(await angle(page, 'D')).toBeCloseTo(0.5, 3);
   expect(await angle(page, 'A')).toBe(0); expect(await angle(page, 'E')).toBe(0);
-  expect(await changedFraction(page, frontMoving, await viewer(page).screenshot()), 'C edit does not replace D plan or perturb its rendered gear').toBeLessThan(0.001);
+  expect(await changedFraction(page, frontMoving, await cameraView(page).screenshot()), 'C edit does not replace D plan or perturb its rendered gear').toBeLessThan(0.001);
   await isolatePart(page, 'rear-output-gear');
-  const rearMoving = await viewer(page).screenshot();
+  const rearMoving = await cameraView(page).screenshot();
   await seek(page, 0);
-  expect(await changedFraction(page, rearMoving, await viewer(page).screenshot()), 'Real rear output gear independently rotates').toBeGreaterThan(0.002);
+  expect(await changedFraction(page, rearMoving, await cameraView(page).screenshot()), 'Real rear output gear independently rotates').toBeGreaterThan(0.002);
   await seek(page, 1000);
   await page.getByRole('button', { name: 'Technical', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Technical', exact: true })).toHaveAttribute('aria-pressed', 'true');

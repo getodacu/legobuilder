@@ -44,13 +44,13 @@ export const advancedDrivingBaseCoverage: ModelCoverage = {
 function available(id: string): CatalogEntry {
   const summary = (authoredSummaries as unknown as { identity: ModelIdentity; coverage: ModelCoverage }[]).find((entry) => entry.identity.id === id);
   if (!summary) throw new Error(`Missing published model metadata: ${id}`);
-  return { ...summary, modelUrl: `/models/${id}/manifest.json`, previewUrl: `/previews/${id}.png` };
+  return { ...summary, modelUrl: `/models/${id}/manifest.json`, previewUrl: `/previews/${id}.png?v=pale-blue` };
 }
 
 
 export const catalog: CatalogEntry[] = [
   { identity: advancedDrivingBaseIdentity, modelUrl: '/models/advanced-driving-base/manifest.json',
-    previewUrl: '/previews/advanced-driving-base.png', coverage: advancedDrivingBaseCoverage },
+    previewUrl: '/previews/advanced-driving-base.png?v=pale-blue', coverage: advancedDrivingBaseCoverage },
   available('robotic-hand'),
   available('quality-check'),
   available('package-sorter')

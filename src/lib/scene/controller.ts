@@ -12,12 +12,15 @@ import type { AssemblyFrame, CameraPreset, RendererCallbacks, RendererController
 import { SceneMaterials } from './materials';
 import { MechanicalOverlays, transformMatrix } from './overlays';
 import { FlexibleCables } from './cables';
+import { learnerPartNames } from '../components/learner-parts';
+import { groupParts } from '../components/part-groups';
+import { fitStepCamera, stepCameraPoints, stepSubjects } from './step-camera';
 
 type CameraType = PerspectiveCamera | OrthographicCamera;
 type Batch = { object: InstancedMesh; primitive: ThreeGeometryPrimitive; indices: number[]; materialId: string };
 type PartLine = { object: LineSegments; primitive: ThreeGeometryPrimitive; index: number };
 type Outline = { object: LineSegments; primitive: ThreeGeometryPrimitive; index: number };
-type Label = { element: HTMLDivElement; leader: HTMLDivElement; index: number };
+type Label = { element: HTMLDivElement; leader: HTMLDivElement; index: number; full: string; short: string };
 type CameraFlight = { start: number; duration: number; fromPosition: Vector3; fromTarget: Vector3; fromUp: Vector3; toPosition: Vector3; toTarget: Vector3; toUp: Vector3 };
 const INITIAL_VIEW: ViewOptions = { mode: 'studio', explodedFactor: 0, labels: false, showJoints: false, showConnections: false, isolatedPartIds: [] };
 
@@ -38,6 +41,13 @@ export class SceneController implements RendererController {
   private controls: OrbitControls;
   private model: RobotModel | null = null;
   private frame: AssemblyFrame | null = null;
+  private guidedStepIndex?: number;
+  private guidedCamera: 'step' | 'whole' | 'manual' = 'step';
+  private showGuideTray = false;
+  private guidedSubjects = new Set<string>();
+  private guidedPoints: Vector3[] | null = null;
+  private viewArea?: HTMLElement;
+  private aperture = { left: 0, top: 0, width: 1, height: 1 };
   private handles: ThreeGeometryHandle[] = [];
   private materials: SceneMaterials | null = null;
   private overlays: MechanicalOverlays | null = null;
@@ -107,7 +117,7 @@ export class SceneController implements RendererController {
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = PCFShadowMap;
     this.renderer.setPixelRatio(this.ratio);
-    this.scene.background = new Color('#303e4e');
+    this.scene.background = new Color('#a9bad1');
     const room = new RoomEnvironment();
     const pmrem = new PMREMGenerator(this.renderer);
     this.environment = pmrem.fromScene(room, 0.04);
@@ -131,7 +141,7 @@ export class SceneController implements RendererController {
     this.scene.add(this.grid);
     canvas.tabIndex = 0;
     canvas.setAttribute('role', 'img');
-    canvas.setAttribute('aria-label', 'Interactive assembly. Arrow keys orbit; Shift and arrow keys pan; plus and minus zoom; R resets; F focuses active parts. Part selection is also available in inventory.');
+    canvas.setAttribute('aria-label', 'Interactive assembly. Arrow keys orbit; Shift and arrow keys pan; plus and minus zoom; R resets; F focuses the step or active parts. Part selection is also available in inventory.');
     canvas.style.cssText = 'display:block;width:100%;height:100%;touch-action:none;outline-offset:-4px;';
     this.labelLayer = document.createElement('div');
     this.labelLayer.style.cssText = 'position:absolute;inset:0;pointer-events:none;overflow:hidden;';
@@ -173,7 +183,8 @@ export class SceneController implements RendererController {
   };
   private onManual = (): void => {
     this.flight = null;
-    if (this.autoCamera) { this.autoCamera = false; this.callbacks.onCameraOverride(); }
+    if (this.guidedStepIndex !== undefined) this.guidedCamera = 'manual';
+    else if (this.autoCamera) { this.autoCamera = false; this.callbacks.onCameraOverride(); }
     this.dirty = true;
   };
   private onContextLost = (event: Event): void => {
@@ -199,16 +210,24 @@ export class SceneController implements RendererController {
     if (event.target !== this.renderer.domElement || event.altKey || event.ctrlKey || event.metaKey) return;
     const key = event.key.toLowerCase();
     if (!['arrowleft', 'arrowright', 'arrowup', 'arrowdown', '+', '=', '-', '_', 'r', 'f'].includes(key)) return;
-    event.preventDefault(); event.stopPropagation(); this.onManual();
+    event.preventDefault(); event.stopPropagation();
     if (key === 'r') { this.resetCamera(); return; }
-    if (key === 'f') { this.fit('active'); return; }
-    if (key === '+' || key === '=') this.controls.dollyIn(0.86);
-    else if (key === '-' || key === '_') this.controls.dollyOut(0.86);
-    else if (event.shiftKey) this.controls.pan(key === 'arrowleft' ? 24 : key === 'arrowright' ? -24 : 0, key === 'arrowup' ? 24 : key === 'arrowdown' ? -24 : 0);
-    else if (key === 'arrowleft' || key === 'arrowright') this.controls.rotateLeft(key === 'arrowleft' ? 0.12 : -0.12);
-    else this.controls.rotateUp(key === 'arrowup' ? 0.12 : -0.12);
-    this.dirty = true;
+    if (key === 'f') { this.fit(this.guidedStepIndex === undefined ? 'active' : 'step'); return; }
+    if (key === '+' || key === '=') this.nudgeCamera('in');
+    else if (key === '-' || key === '_') this.nudgeCamera('out');
+    else if (event.shiftKey) {
+      this.onManual();
+      this.controls.pan(key === 'arrowleft' ? 24 : key === 'arrowright' ? -24 : 0, key === 'arrowup' ? 24 : key === 'arrowdown' ? -24 : 0);
+    } else if (key === 'arrowleft' || key === 'arrowright') this.nudgeCamera(key === 'arrowleft' ? 'left' : 'right');
+    else { this.onManual(); this.controls.rotateUp(key === 'arrowup' ? 0.12 : -0.12); }
   };
+
+  private nudgeCamera(action: 'left' | 'right' | 'in' | 'out'): void {
+    this.onManual();
+    if (action === 'in') this.controls.dollyIn(0.86);
+    else if (action === 'out') this.controls.dollyOut(0.86);
+    else this.controls.rotateLeft(action === 'left' ? 0.12 : -0.12);
+  }
 
   unloadModel(): void {
     this.generation++;
@@ -244,6 +263,9 @@ export class SceneController implements RendererController {
       this.included = new Uint8Array(model.parts.length);
       for (const handle of acquired) this.handleById.set(handle.assetId, handle);
       const groups = new Map<string, Batch>();
+      const unknownParts = model.parts.filter((part) => !Object.hasOwn(learnerPartNames, part.geometryId));
+      const unknownNames = new Map(unknownParts.length ? groupParts(unknownParts, model.geometryAssets)
+        .flatMap((group) => group.parts.map((part) => [part.id, group.name] as const)) : []);
       for (let index = 0; index < model.parts.length; index++) {
         const part = model.parts[index];
         const handle = this.handleById.get(part.geometryId)!;
@@ -293,10 +315,11 @@ export class SceneController implements RendererController {
         }
         const label = document.createElement('div');
         label.style.cssText = 'position:absolute;left:0;top:0;display:none;max-width:220px;padding:4px 7px 4px 14px;border-left:2px solid var(--teal);border-radius:2px;background:var(--panel);color:var(--ink);font:11px/1.4 ui-monospace,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 1px 3px #00000066;';
-        label.textContent = `${part.name} · ${part.id}`;
         const leader = document.createElement('div');
         leader.style.cssText = 'position:absolute;left:0;top:0;display:none;width:12px;height:1px;background:var(--teal);';
-        this.labelLayer.append(leader, label); this.labels.push({ element: label, leader, index });
+        this.labelLayer.append(leader, label);
+        this.labels.push({ element: label, leader, index, full: `${part.name} · ${part.id}`,
+          short: unknownNames.get(part.id) ?? learnerPartNames[part.geometryId] });
       }
       this.batches = [...groups.values()];
       for (const batch of this.batches) { batch.object.userData.partIndices = batch.indices; batch.object.visible = false; }
@@ -354,7 +377,7 @@ export class SceneController implements RendererController {
       this.explodeVectors = this.createExplodeVectors(model);
       this.overlays = new MechanicalOverlays(model); this.root.add(this.overlays.root);
       this.cables = new FlexibleCables(model); this.root.add(this.cables.root);
-      this.autoCamera = !this.reducedMotion.matches; this.selected = null; this.lastPreset = undefined; this.flight = null;
+      this.selected = null; this.lastPreset = undefined; this.flight = null;
       this.dirty = true;
     } catch (cause) {
       if (adopted) {
@@ -410,10 +433,11 @@ export class SceneController implements RendererController {
     return vectors;
   }
 
-  update(frame: AssemblyFrame): void {
+  update(frame: AssemblyFrame, guidedStepIndex?: number): void {
     if (!this.model || this.disposed) return;
     if (frame.compiled.model !== this.model) throw new Error('The assembly frame belongs to a different model.');
     const first = !this.frame;
+    const guideChanged = first || this.guidedStepIndex !== guidedStepIndex;
     const returningToStart = frame.timeMs === 0 && this.lastFrameTimeMs !== 0;
     if (first || this.frame?.compiled !== frame.compiled) {
       this.cameraSteps = frame.compiled.stepTimes.map((stepTime) => ({
@@ -442,10 +466,22 @@ export class SceneController implements RendererController {
     }
     const wasEnvironmentVisible = this.environmentVisible;
     this.frame = frame;
+    this.guidedStepIndex = guidedStepIndex;
+    if (guideChanged) {
+      this.guidedSubjects = guidedStepIndex === undefined ? new Set() : stepSubjects(this.model, guidedStepIndex);
+      this.guidedPoints = null;
+      this.showGuideTray = false;
+      this.guidedCamera = 'step';
+      this.lastPreset = undefined;
+    }
     this.lastFrameTimeMs = frame.timeMs;
     this.environmentVisible = frame.environmentVisible.includes(1);
     if (this.environmentVisible && !wasEnvironmentVisible) this.flight = null;
     this.applyFrame();
+    if (guidedStepIndex !== undefined) {
+      if (guideChanged) this.frameStep(!first);
+      return;
+    }
     if (first) this.fitBounds(frame.timeMs === 0 ? 'active' : 'all', false);
     if (!first && returningToStart && this.autoCamera && !this.environmentVisible) this.fitBounds('active', false);
     const preset = this.currentPreset();
@@ -466,12 +502,17 @@ export class SceneController implements RendererController {
       this.quaternion.fromArray(frame.transforms, offset + 3);
       this.scale.fromArray(frame.transforms, offset + 7);
       this.matrices[index].compose(this.position, this.quaternion, this.scale);
-      this.included[index] = frame.visible[index] && (!this.view.isolatedPartIds.length || this.view.isolatedPartIds.includes(this.model.parts[index].id)) ? 1 : 0;
+      const id = this.model.parts[index].id;
+      const showInGuide = this.guidedStepIndex === undefined || this.showGuideTray || frame.installed[index] || this.guidedSubjects.has(id) || this.selected === id;
+      this.included[index] = frame.visible[index] && (this.view.isolatedPartIds.length ? this.view.isolatedPartIds.includes(id) : showInGuide) ? 1 : 0;
     }
     for (const batch of this.batches) {
-      batch.object.visible = true;
+      batch.object.visible = false;
       batch.indices.forEach((index, instance) => {
-        if (this.included[index]) batch.object.setMatrixAt(instance, this.primitiveMatrix(index, batch.primitive));
+        if (this.included[index]) {
+          batch.object.visible = true;
+          batch.object.setMatrixAt(instance, this.primitiveMatrix(index, batch.primitive));
+        }
         else batch.object.setMatrixAt(instance, this.hidden);
       });
       batch.object.instanceMatrix.needsUpdate = true;
@@ -508,7 +549,7 @@ export class SceneController implements RendererController {
     }
     for (const outline of this.outlines) {
       const selected = this.model.parts[outline.index].id === this.selected;
-      outline.object.visible = Boolean(this.included[outline.index]) && (selected || Boolean(frame.active[outline.index]));
+      outline.object.visible = this.guidedStepIndex === undefined && Boolean(this.included[outline.index]) && (selected || Boolean(frame.active[outline.index]));
       if (outline.object.visible) {
         outline.object.material = selected ? this.selectedMaterial : this.activeMaterial;
         outline.object.matrix.copy(this.primitiveMatrix(outline.index, outline.primitive));
@@ -571,7 +612,52 @@ export class SceneController implements RendererController {
     this.dirty = true;
   }
 
-  fit(target: 'all' | 'active' | { subassemblyId: string }): void { this.onManual(); this.fitBounds(target, false, target === 'all'); }
+  fit(target: 'all' | 'active' | 'step' | { subassemblyId: string }): void {
+    if (target === 'step') {
+      if (this.guidedStepIndex === undefined) return;
+      this.guidedCamera = 'step';
+      this.showGuideTray = false;
+      this.applyFrame();
+      this.frameStep(true);
+      return;
+    }
+    this.onManual();
+    const showTray = target === 'all' && this.guidedStepIndex !== undefined;
+    if (showTray) {
+      this.guidedCamera = 'whole';
+      this.showGuideTray = true;
+      this.applyFrame();
+    }
+    this.fitBounds(target, showTray, target === 'all');
+  }
+
+  private frameStep(animate: boolean): void {
+    if (!this.frame || this.guidedStepIndex === undefined) return;
+    const step = this.cameraSteps[this.guidedStepIndex];
+    const preset = step.preset ?? step.operations[0]?.preset;
+    const direction = preset ? new Vector3().fromArray(preset.position).sub(new Vector3().fromArray(preset.target)) : new Vector3(160, 130, 200);
+    const up = preset ? new Vector3().fromArray(preset.up) : new Vector3(0, 1, 0);
+    if (direction.lengthSq() === 0) direction.set(160, 130, 200);
+    direction.normalize();
+    this.guidedPoints ??= stepCameraPoints(this.frame, this.guidedStepIndex, this.guidedSubjects, (id) => this.handleById.get(id)!.bounds);
+    if (!this.guidedPoints.length) { this.fitBounds('all', animate); return; }
+    this.setProjection(preset?.projection === 'orthographic');
+    this.camera.zoom = 1;
+    const slope = Math.tan((this.camera instanceof PerspectiveCamera ? preset?.framing ?? 36 : 36) * Math.PI / 360);
+    const { width, height } = this.aperture;
+    const framingMargin = 0.86;
+    const { target, distance, halfSize } = fitStepCamera(this.guidedPoints, direction, up, slope * width / this.height * framingMargin, slope * height / this.height * framingMargin);
+    if (this.camera instanceof PerspectiveCamera) this.camera.fov = preset?.framing ?? 36;
+    else {
+      const halfHeight = Math.max(5, halfSize.y * this.height / height, halfSize.x * this.height / width) / framingMargin;
+      this.camera.top = halfHeight; this.camera.bottom = -halfHeight;
+      this.camera.right = halfHeight * this.width / this.height; this.camera.left = -this.camera.right;
+    }
+    this.camera.near = Math.max(0.05, distance / 10000);
+    this.camera.far = Math.max(20000, distance * 20);
+    this.camera.updateProjectionMatrix();
+    this.moveCamera(direction.multiplyScalar(distance).add(target), target, up, animate ? 400 : 0);
+  }
 
   private fitBounds(target: 'all' | 'active' | { subassemblyId: string }, animate: boolean, includeEnvironment = false): void {
     if (!this.model || !this.frame) return;
@@ -607,16 +693,17 @@ export class SceneController implements RendererController {
     this.bounds.getCenter(this.center);
     const radius = Math.max(5, this.sphere.radius);
     const aspect = this.width / this.height;
+    const apertureRatio = Math.min(this.aperture.width, this.aperture.height) / this.height;
     if (this.camera instanceof PerspectiveCamera) {
       this.camera.zoom = 1;
-      const halfFov = Math.min(this.camera.fov * Math.PI / 360, Math.atan(Math.tan(this.camera.fov * Math.PI / 360) * aspect));
+      const halfFov = Math.atan(Math.tan(this.camera.fov * Math.PI / 360) * apertureRatio);
       const distance = radius / Math.sin(halfFov) * 1.15;
       this.position.copy(this.camera.position).sub(this.controls.target).normalize();
       if (this.position.lengthSq() < 0.01) this.position.set(1, 0.8, 1.3).normalize();
       this.position.multiplyScalar(distance).add(this.center);
       this.camera.near = Math.max(0.05, distance / 10000); this.camera.far = Math.max(20000, distance * 20);
     } else {
-      const halfHeight = radius * 1.15 / Math.min(1, aspect);
+      const halfHeight = radius * 1.15 / apertureRatio;
       this.camera.top = halfHeight; this.camera.bottom = -halfHeight;
       this.camera.right = halfHeight * aspect; this.camera.left = -this.camera.right; this.camera.zoom = 1;
       this.position.copy(this.camera.position).sub(this.controls.target).normalize();
@@ -630,6 +717,7 @@ export class SceneController implements RendererController {
   }
 
   resetCamera(): void {
+    if (this.guidedStepIndex !== undefined) { this.fit('step'); return; }
     this.onManual();
     const preset = this.currentPreset();
     if (preset) { this.applyPreset(preset, false); return; }
@@ -643,6 +731,7 @@ export class SceneController implements RendererController {
 
   setAutoCamera(enabled: boolean): void {
     this.autoCamera = enabled;
+    if (this.guidedStepIndex !== undefined) return;
     if (enabled) {
       const preset = this.currentPreset();
       if (preset) this.applyPreset(preset, true);
@@ -652,7 +741,6 @@ export class SceneController implements RendererController {
   }
 
   private currentPreset(): CameraPreset | undefined {
-    // At time zero the working part is still in the tray, before its instruction pose.
     if (!this.frame || this.frame.timeMs === 0 || this.environmentVisible) return undefined;
     const step = this.cameraSteps[this.frame.stepIndex];
     if (!step) return undefined;
@@ -665,13 +753,7 @@ export class SceneController implements RendererController {
     return preset;
   }
 
-  private applyPreset(preset: CameraPreset, animate: boolean): void {
-    const orthographic = preset.projection === 'orthographic';
-    if (!Number.isFinite(preset.framing) || preset.framing <= 0 || (!orthographic && preset.framing >= 180)) {
-      throw new Error(orthographic
-        ? `Invalid camera framing ${preset.framing}: orthographic framing must be a positive finite vertical span in millimetres. Correct the source camera preset.`
-        : `Invalid camera framing ${preset.framing}: perspective framing must be a finite vertical field of view greater than 0 and less than 180 degrees. Correct the source camera preset.`);
-    }
+  private setProjection(orthographic: boolean): void {
     if (orthographic !== (this.camera instanceof OrthographicCamera)) {
       const oldPosition = this.camera.position.clone();
       const oldUp = this.camera.up.clone();
@@ -680,7 +762,18 @@ export class SceneController implements RendererController {
       this.camera = orthographic ? new OrthographicCamera(-100, 100, 100, -100, 0.05, 100000) : new PerspectiveCamera(36, this.width / this.height, 0.05, 100000);
       this.camera.position.copy(oldPosition); this.camera.up.copy(oldUp);
       this.controls = this.createControls(); this.controls.target.copy(target);
+      this.applyAperture();
     }
+  }
+
+  private applyPreset(preset: CameraPreset, animate: boolean): void {
+    const orthographic = preset.projection === 'orthographic';
+    if (!Number.isFinite(preset.framing) || preset.framing <= 0 || (!orthographic && preset.framing >= 180)) {
+      throw new Error(orthographic
+        ? `Invalid camera framing ${preset.framing}: orthographic framing must be a positive finite vertical span in millimetres. Correct the source camera preset.`
+        : `Invalid camera framing ${preset.framing}: perspective framing must be a finite vertical field of view greater than 0 and less than 180 degrees. Correct the source camera preset.`);
+    }
+    this.setProjection(orthographic);
     const position = new Vector3().fromArray(preset.position);
     const target = new Vector3().fromArray(preset.target);
     if (this.camera instanceof OrthographicCamera) {
@@ -728,14 +821,45 @@ export class SceneController implements RendererController {
     camera.near = 0.1; camera.far = span * 6; camera.updateProjectionMatrix();
   }
 
+  setViewArea(area?: HTMLElement): void {
+    if (this.viewArea === area) return;
+    if (this.viewArea) this.observer.unobserve(this.viewArea);
+    this.viewArea = area;
+    if (area) this.observer.observe(area);
+    this.resize();
+  }
+
+  private applyAperture(): void {
+    const { left, top, width, height } = this.aperture;
+    this.camera.setViewOffset(this.width, this.height, (this.width - width) / 2 - left, (this.height - height) / 2 - top, this.width, this.height);
+  }
+
   private resize = (): void => {
     if (this.disposed) return;
-    this.width = Math.max(1, this.host.clientWidth); this.height = Math.max(1, this.host.clientHeight);
-    this.renderer.setSize(this.width, this.height, false);
-    if (this.camera instanceof PerspectiveCamera) this.camera.aspect = this.width / this.height;
-    else { const halfHeight = (this.camera.top - this.camera.bottom) / 2; this.camera.left = -halfHeight * this.width / this.height; this.camera.right = -this.camera.left; }
-    this.camera.updateProjectionMatrix(); this.dirty = true;
-    if (this.autoCamera && this.frame?.timeMs === 0) this.fitBounds('all', false);
+    const host = this.host.getBoundingClientRect();
+    const area = this.viewArea?.getBoundingClientRect();
+    const width = Math.max(1, this.host.clientWidth), height = Math.max(1, this.host.clientHeight);
+    const resized = this.width !== width || this.height !== height;
+    this.width = width; this.height = height;
+    if (resized) {
+      this.renderer.setSize(width, height, false);
+      if (this.camera instanceof OrthographicCamera) {
+        this.camera.right = (this.camera.top - this.camera.bottom) / 2 * width / height;
+        this.camera.left = -this.camera.right;
+      }
+    }
+    const aperture = area && area.width > 0 && area.height > 0
+      ? { left: area.left - host.left, top: area.top - host.top, width: area.width, height: area.height }
+      : { left: 0, top: 0, width, height };
+    const old = this.aperture;
+    if (!resized && old.left === aperture.left && old.top === aperture.top && old.width === aperture.width && old.height === aperture.height) return;
+    this.aperture = aperture;
+    this.applyAperture();
+    this.dirty = true;
+    if (this.guidedStepIndex !== undefined) {
+      if (this.guidedCamera === 'step') this.frameStep(Boolean(this.flight));
+      else if (this.guidedCamera === 'whole') this.fitBounds('all', Boolean(this.flight));
+    } else if (this.autoCamera && this.frame?.timeMs === 0) this.fitBounds('all', false);
   };
 
   private updateLabels(): void {
@@ -744,14 +868,20 @@ export class SceneController implements RendererController {
     for (const label of this.labels) {
       const index = label.index;
       const selected = this.model.parts[index].id === this.selected;
-      const show = Boolean(this.included[index]) && (selected || (this.view.labels || this.view.mode === 'inspection') && (this.frame.active[index] || shown < 12));
+      const show = Boolean(this.included[index]) && (selected || this.guidedStepIndex === undefined && (this.view.labels || this.view.mode === 'inspection') && (this.frame.active[index] || shown < 12));
       if (!show) { label.element.style.display = label.leader.style.display = 'none'; continue; }
       const handle = this.handleById.get(this.model.parts[index].geometryId)!;
       handle.bounds.getCenter(this.projected).applyMatrix4(this.matrices[index]).project(this.camera);
       if (Math.abs(this.projected.x) > 1 || Math.abs(this.projected.y) > 1 || this.projected.z < -1 || this.projected.z > 1) { label.element.style.display = label.leader.style.display = 'none'; continue; }
+      const x = (this.projected.x * 0.5 + 0.5) * this.width, y = (-this.projected.y * 0.5 + 0.5) * this.height;
+      const { left, top, width, height } = this.aperture;
+      if (x < left || x > left + width || y < top || y > top + height) { label.element.style.display = label.leader.style.display = 'none'; continue; }
+      const text = this.guidedStepIndex === undefined ? label.full : label.short;
+      if (label.element.textContent !== text) label.element.textContent = text;
       label.element.style.display = label.leader.style.display = 'block';
-      label.leader.style.transform = `translate(${(this.projected.x * 0.5 + 0.5) * this.width}px,${(-this.projected.y * 0.5 + 0.5) * this.height}px)`;
-      label.element.style.transform = `translate(${(this.projected.x * 0.5 + 0.5) * this.width + 10}px,${(-this.projected.y * 0.5 + 0.5) * this.height - 12}px)`;
+      const labelX = Math.max(left, Math.min(x + 10, left + width - label.element.offsetWidth));
+      label.leader.style.transform = `translate(${x}px,${y}px)`;
+      label.element.style.transform = `translate(${labelX}px,${Math.max(top, y - 12)}px)`;
       shown++;
     }
   }
@@ -772,6 +902,7 @@ export class SceneController implements RendererController {
     this.controls.update();
     if (!this.dirty) return;
     this.dirty = false;
+    this.camera.updateMatrixWorld();
     this.updateLabels();
     const start = performance.now();
     this.renderer.render(this.scene, this.camera);
@@ -813,6 +944,7 @@ export class SceneController implements RendererController {
     this.propBatches = []; this.propLines = []; this.propMatrices = []; this.propIncluded = new Uint8Array(0);
     this.courseRootY = null; this.environmentVisible = false; this.lastFrameTimeMs = null;
     this.cameraSteps = []; this.lastPreset = undefined;
+    this.guidedStepIndex = undefined; this.guidedPoints = null; this.guidedSubjects.clear();
     this.model = null; this.frame = null; this.selected = null; this.flight = null;
     this.dirty = true;
   }

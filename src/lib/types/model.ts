@@ -470,10 +470,10 @@ export type ViewOptions = {
 };
 export interface RendererController {
   loadModel(model: RobotModel): Promise<void>;
-  update(frame: AssemblyFrame): void;
+  update(frame: AssemblyFrame, guidedStepIndex?: number): void;
   select(partInstanceId: string | null): void;
   setView(options: ViewOptions): void;
-  fit(target: 'all' | 'active' | { subassemblyId: string }): void;
+  fit(target: 'all' | 'active' | 'step' | { subassemblyId: string }): void;
   resetCamera(): void;
   setAutoCamera(enabled: boolean): void;
   dispose(): void;
