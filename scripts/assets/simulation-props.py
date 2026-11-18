@@ -220,9 +220,9 @@ def main():
     attribution = {
         "sourcePath": SOURCE.relative_to(ROOT).as_posix(),
         "sourceUrl": PROVENANCE_URL, "sha256": source_sha,
-        "originalHeader": "RoboBuild original procedural simulation props; no external source assets or manufacturer dimensions. Project licensing unchanged.",
-        "authors": ["RoboBuild"], "licenseIds": ["LicenseRef-Project-Original"],
-        "licenseUrls": [PROVENANCE_URL],
+        "originalHeader": "RoboBuild original procedural simulation props with project-authored dimensions and materials.",
+        "authors": ["RoboBuild"], "licenseIds": ["MIT"],
+        "licenseUrls": ["https://opensource.org/license/mit"],
         "modifications": ["Generated directly from original meter-valued design parameters; bevels and transforms baked before glTF Y-up export. No acquired mesh modified. Runtime uniform scale 1000 converts meters to scene millimeters exactly once."],
     }
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
@@ -243,13 +243,11 @@ def main():
 Author attribution: RoboBuild
 Source path: {SOURCE.relative_to(ROOT).as_posix()}
 Source SHA-256: {source_sha}
-License identifier: LicenseRef-Project-Original
+License identifier: MIT
 
-This identifier records original project authorship, not a new license grant.
-This source and generated work remain subject to the project's applicable
-licensing; this notice does not change it, assert public domain, or claim any
-third-party license/endorsement. No external meshes, CAD, textures, fonts,
-vendor logos, manufacturer measurements, or copied assets are used.
+The generator and generated props are original RoboBuild work. The full
+MIT license is in LICENSE at the repository root and at /LICENSE.txt in
+the production build.
 
 All dimensions below are OUR explicit original design parameters, not measured
 or manufacturer specifications. These are visual simulation props outside the

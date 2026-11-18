@@ -1,7 +1,7 @@
 import manifest from '../../../static/models/library/manifest.json' with { type: 'json' };
 import type { GeometryAsset, MaterialDefinition, SourceDocument } from '../types/model';
 
-/** Generated, licensed source assets; run `npm run assets:prepare` before authoring/build. */
+/** Checked-in licensed geometry for model authoring. */
 const assets = manifest.assets as GeometryAsset[];
 const byId: Record<string, GeometryAsset> = Object.fromEntries(assets.map((asset) => [asset.id, asset]));
 export const materials = manifest.materials as MaterialDefinition[];

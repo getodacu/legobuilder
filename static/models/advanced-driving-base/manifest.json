@@ -93191,16 +93191,16 @@
         {
           "sourcePath": "scripts/assets/simulation-props.py",
           "sourceUrl": "/models/simulation/PROVENANCE.txt",
-          "sha256": "6e7c96eff0109b55c33b95681290d9502559048cb852f5562d250629c1a41947",
-          "originalHeader": "RoboBuild original procedural simulation props; no external source assets or manufacturer dimensions. Project licensing unchanged.",
+          "sha256": "74e5588c21c88bdd6583d18f2ddc9831e779e4f8df610291a5315cad472dd50f",
+          "originalHeader": "RoboBuild original procedural simulation props with project-authored dimensions and materials.",
           "authors": [
             "RoboBuild"
           ],
           "licenseIds": [
-            "LicenseRef-Project-Original"
+            "MIT"
           ],
           "licenseUrls": [
-            "/models/simulation/PROVENANCE.txt"
+            "https://opensource.org/license/mit"
           ],
           "modifications": [
             "Generated directly from original meter-valued design parameters; bevels and transforms baked before glTF Y-up export. No acquired mesh modified. Runtime uniform scale 1000 converts meters to scene millimeters exactly once."

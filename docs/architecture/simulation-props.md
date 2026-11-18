@@ -60,7 +60,7 @@ All materials are opaque, nonmetallic PBR. The source sRGB colors are converted 
 
 Generated attribution identifies **RoboBuild** as author, records `sourcePath: scripts/assets/simulation-props.py`, and hashes the actual generator bytes. Each asset hash is separately computed from its actual exported GLB bytes. The public provenance includes both source and generated asset hashes and the original parameter/origin/material descriptions.
 
-Both `sourceUrl` and the sole `licenseUrls` entry point to `/models/simulation/PROVENANCE.txt`. `LicenseRef-Project-Original` identifies original project work; it does **not** invent a third-party grant, assert public domain, change project licensing, or create a new permission regime. Applicable project licensing remains unchanged. No VEX CAD is used or converted.
+`sourceUrl` points to `/models/simulation/PROVENANCE.txt`. The generator and its original props are available under the [project MIT license](../../LICENSE), which the production site serves at `/LICENSE.txt`.
 
 Material/design evidence is `category: app-authored`, `confidence: 1`, `sources: []`: confidence is in the original authorship/design, **not physical validation**. Source references to nonexistent manuals or CAD documents are unnecessary. The current engine accepts these nonempty public local URLs and the cache permits self-contained meter-native GLBs; neither validator needs weakening.
 

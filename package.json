@@ -1,6 +1,7 @@
 {
   "name": "robobuild",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "imports": {
@@ -11,7 +12,7 @@
   },
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "vite build && node --input-type=module -e \"import { copyFileSync } from 'node:fs'; copyFileSync('LICENSE', 'build/LICENSE.txt')\"",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "test:unit": "node --experimental-strip-types --test tests/unit/*.test.ts",

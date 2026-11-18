@@ -4,16 +4,20 @@ Independent SvelteKit/Three.js robotics assembly workbench. The robot meshes com
 
 ## Run
 
+Use Node.js 24.19.x with npm. The repository includes the generated model manifests, preview images, and licensed geometry needed to run and build the app from a fresh checkout.
+
 ```sh
 npm ci
-npm run assets:prepare
-npm run models:build
 npm run dev -- --host 127.0.0.1 --port 5179 --strictPort
 ```
 
-Open `http://127.0.0.1:5179`. To create a static distributable, run `npm run build` after asset preparation. Checks: `npm run check`, `npm run test:unit`, `npm run test:e2e` (Playwright Chromium). The browser suite builds once and serves its own production preview on port5187; the source-module geometry integration case uses a separate Vite server on5188. Both test servers are suite-owned and never reuse your development server. Keep those test ports free; normal development may continue on5179.
+Open `http://127.0.0.1:5179`. Run `npm run build` to create the static site in `build/`.
 
-After changing the published manifests or LDraw geometry, regenerate the learner part thumbnails with `npm run models:part-previews -- http://127.0.0.1:5179/` while Vite is running. The generator uses installed Playwright Chromium. The WebPs are derived from the [same attributed LDraw library](static/models/library/CREDITS.txt) as the workbench.
+## Contribute
+
+Run `npm run check` and `npm run test:unit` before opening a pull request. For browser tests, run `npx playwright install chromium` and then `npm run test:e2e`. The browser suite starts its own servers on ports 5187 and 5188.
+
+After editing model definitions, run `npm run models:build` to refresh the published manifests. To regenerate learner part thumbnails, install Playwright Chromium and run `npm run models:part-previews -- http://127.0.0.1:5179/` while Vite is running. Repacking the LDraw library with `npm run assets:prepare` requires the original hash-verified research files. See the [asset library guide](docs/architecture/asset-library.md).
 
 ## What is playable
 
@@ -43,3 +47,7 @@ The browser keeps one anonymous checkpoint per build. **Continue {name}** restor
 ## Learner validation
 
 Before calling the guide child-ready, run a supervised session with learners roughly 8–12. Ask them to start the recommended build, choose between similar-looking parts, replay a step without losing it, resume after an interruption, and explain what the demo does. Record which tasks needed an adult hint. Browser tests do not cover this.
+
+## License
+
+RoboBuild's original work is available under the [MIT License](LICENSE). See the [third-party notices](THIRD_PARTY_NOTICES.md) for LDraw assets, rendered previews, the bundled font, and manufacturer references.

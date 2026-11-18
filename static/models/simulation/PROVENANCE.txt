@@ -1,14 +1,12 @@
 RoboBuild original procedural simulation props
 Author attribution: RoboBuild
 Source path: scripts/assets/simulation-props.py
-Source SHA-256: 6e7c96eff0109b55c33b95681290d9502559048cb852f5562d250629c1a41947
-License identifier: LicenseRef-Project-Original
+Source SHA-256: 74e5588c21c88bdd6583d18f2ddc9831e779e4f8df610291a5315cad472dd50f
+License identifier: MIT
 
-This identifier records original project authorship, not a new license grant.
-This source and generated work remain subject to the project's applicable
-licensing; this notice does not change it, assert public domain, or claim any
-third-party license/endorsement. No external meshes, CAD, textures, fonts,
-vendor logos, manufacturer measurements, or copied assets are used.
+The generator and generated props are original RoboBuild work. The full
+MIT license is in LICENSE at the repository root and at /LICENSE.txt in
+the production build.
 
 All dimensions below are OUR explicit original design parameters, not measured
 or manufacturer specifications. These are visual simulation props outside the

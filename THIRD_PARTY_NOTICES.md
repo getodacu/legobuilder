@@ -1,0 +1,8 @@
+# Third-party notices
+
+The [MIT license](LICENSE) covers RoboBuild's original source code, documentation, and procedural simulation props. The following materials retain their own terms.
+
+- **LDraw geometry and renders.** The bundled MPDs contain community-authored LDraw DAT files packed with their original headers and history. The app rotates and scales them for rendering. The part thumbnails, catalog images, and workbench screenshots depict these components with RoboBuild's materials, lighting, and assembly poses. Keep the [creator credits](static/models/library/CREDITS.txt), [per-source attribution and modifications](static/models/library/attribution.json), and [license notices](static/models/library/licenses/) with redistributed assets and renders. Individual source files use CC BY 4.0 or contain contributions under both CC BY 2.0 and CC BY 4.0, as described in the [LDraw library notice](static/models/library/licenses/CAreadme.txt).
+- **Source Serif 4.** The bundled font is available under the [SIL Open Font License 1.1](static/fonts/source-serif-4-license.md).
+- **JavaScript dependencies.** Package dependencies retain their upstream licenses. The production build includes `DEPENDENCY-LICENSES.txt` for bundled dependencies and `LICENSE.txt` for RoboBuild.
+- **Manufacturer references.** RoboBuild links to official instructions and uses its own assembly visualizations and source notes. Manufacturer manuals, program artwork, and trademarks remain subject to their respective owners' rights. LEGO® is a trademark of the LEGO Group. RoboBuild is an independent project. [LEGO Group Fair Play policy](https://www.lego.com/en-us/legal/notices-and-policies/fair-play/)

@@ -2,7 +2,9 @@
 
 The library is generated from the researched LEGO crosswalk for exactly four active builds: `advanced-driving-base`, `robotic-hand`, `quality-check` and `package-sorter`, not from placeholder solids or a wholesale parts-library download. It is a geometry library, not a claim that any complete robot's placement, mold identity or assembly coverage is verified. The user removed VEX V5 Clawbot; retained private CAD/rights research is historical, not an asset-preparation or delivery prerequisite. No VEX geometry is converted or distributed.
 
-## Prepare once before authoring or building
+## Regenerate the geometry library
+
+The checked-in library and model manifests are sufficient for a fresh checkout. Run asset preparation when changing the LDraw selection or display palette.
 
 Run `npm run assets:prepare` (equivalently `node scripts/assets/prepare.ts`) on Node 24 with project dependencies installed and the original private `.research-cache/geometry/ldraw` and `.research-cache/geometry/licenses` available, including the hash-locked private `LDConfig.ldr` used only for factual RGB cross-check provenance. The script needs no network, conversion kernel or compression package. The authoring-only `src/lib/geometry/library.ts` imports the full generated `manifest.json` directly, including its JSON import attribute for Node model-authoring scripts; it does not import runtime loaders or issue browser-relative fetches during authoring.
 
@@ -22,7 +24,7 @@ Original DAT bodies, including full authorship/history/comments, BFC certificati
 
 Models merge `sourceDocumentsFor` with their manual records. The helper builds selected root CAD records from each root's actual attribution URL, original DAT SHA-256 and `!LDRAW_ORG` edition, not the packed MPD hash. It adds only documents actually referenced by selected materials; no full research/crosswalk metadata or unused component-document catalog is copied into the browser to construct these records. CAD redistribution remains subject to the accompanying licensed attribution. The private LDConfig bytes are checked against the research download's size/hash; only its URL, edition, hash and link-only status are emitted, with no configuration text or inferred DAT license grant.
 
-Before building or deploying after a library change, run `npm run assets:prepare && npm run models:build` in that order, then the application build. Both the runtime `materials.json` import and Node authoring manifest require asset preparation first. Deploy the generated library directory, selected model manifests and application build together: each model's `GeometryAsset` retains its own selected closure, source attribution and packed hash for `acquire(asset)`, while full attribution, credits and license artifacts remain public for Sources links. Do not import `library.ts` into runtime code to look up asset metadata.
+After a library change, run `npm run assets:prepare && npm run models:build` in that order, then build the app. Deploy the generated library and model manifests with the app. Each model retains its dependency closure, attribution and packed asset hashes for `acquire(asset)`. The static library also provides full attribution, credits and license notices. Use `library.ts` in model-authoring scripts only.
 
 The workspace's manual-page selector accepts only source records with a defined `pageCount`; geometry and material references remain direct attribution/evidence links, never synthetic PDF-page links to DAT or LDConfig files.
 
@@ -58,4 +60,4 @@ DAT/MPD is the adopted component route. The same cache has real installed-loader
 
 ## Checks to exercise
 
-Preparation itself is a runnable integrity/closure/license check and must run before model generation. Parent preparation verified64 genuine roots/485 selected DATs and all563 cached hashes; real Chromium parsing checks every selected root against an independent triangle/dependency walk, source-local dimensions, fixed/inherited/transparent/rubber materials, retained motor nodes and lease disposal. See [current executable evidence](../validation/coverage-baseline.md) for the latest exercised gate results. Neither source-mesh parsing nor nominal mating tests certify historical molds, full mechanical clearance or manufacturer-safe motor limits.
+Asset preparation verifies integrity, dependency closure and licenses when regenerating the library. Parent preparation verified64 genuine roots/485 selected DATs and all563 cached hashes; real Chromium parsing checks every selected root against an independent triangle/dependency walk, source-local dimensions, fixed/inherited/transparent/rubber materials, retained motor nodes and lease disposal. See [current executable evidence](../validation/coverage-baseline.md) for the latest exercised gate results. Neither source-mesh parsing nor nominal mating tests certify historical molds, full mechanical clearance or manufacturer-safe motor limits.
