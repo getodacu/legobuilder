@@ -15,10 +15,6 @@ Open `http://127.0.0.1:5179`. To create a static distributable, run `npm run bui
 
 After changing the published manifests or LDraw geometry, regenerate the learner part thumbnails with `npm run models:part-previews -- http://127.0.0.1:5179/` while Vite is running. The generator uses installed Playwright Chromium. The WebPs are derived from the [same attributed LDraw library](static/models/library/CREDITS.txt) as the workbench.
 
-## Local design skill
-
-[Impeccable](https://github.com/pbakaus/impeccable) is installed project-locally in `.agents/skills/impeccable`, with Codex hooks in `.codex/hooks.json`. UI refinements use its Operate-mode and polish guidance while preserving the existing workbench and physical-fit warnings. Read `.agents/skills/impeccable/SKILL.md` before using it; `/impeccable polish` and `/impeccable audit` are available in compatible coding agents. The platform engine is ignored by Git; the included launcher downloads its pinned engine when needed. To reinstall: `npx impeccable install --providers=codex --scope=project`.
-
 ## What is playable
 
 | Model / official edition | Authored numbered steps | Tracked source callout units | Physical placement verification | Demonstration |
